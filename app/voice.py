@@ -86,7 +86,9 @@ def norm(w: str) -> str:
 
 def word_time(timing: dict, key: str, word: str, nth: int = 0, default: float | None = None) -> float:
     seg = next(s for s in timing["segments"] if s["key"] == key)
-    hits = [w["s"] for w in seg["words"] if norm(w["w"]).startswith(norm(word))]
+    nw = norm(word)
+    # the TTS may glue neighbours into one boundary ("In 1960", "by 2026"): match any token of it
+    hits = [w["s"] for w in seg["words"] if norm(w["w"]).startswith(nw) or any(norm(t).startswith(nw) for t in w["w"].split())]
     if len(hits) > nth:
         return hits[nth]
     if default is not None:

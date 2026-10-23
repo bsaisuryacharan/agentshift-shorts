@@ -178,3 +178,9 @@ def test_finish_survives_unavailable_judge(monkeypatch, tmp_path):
     monkeypatch.setattr(auto, "judge", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("no judge")))
     ok, notes, rd, j = auto.finish({"id": "x", "beats": []}, "groq", tmp_path, False, None)
     assert ok is False and j is None and "judge unavailable" in notes[0]
+
+
+def test_word_time_matches_glued_tts_boundaries():
+    from app import voice
+    timing = {"segments": [{"key": "b", "words": [{"w": "In 1960", "s": 0.5, "e": 1.0}, {"w": "scientists", "s": 1.1, "e": 1.5}]}]}
+    assert voice.word_time(timing, "b", "1960") == 0.5 and voice.word_time(timing, "b", "In") == 0.5 and voice.word_time(timing, "b", "scientists") == 1.1
