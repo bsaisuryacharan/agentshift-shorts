@@ -109,6 +109,8 @@ def main() -> int:
     for k, v in {"TG_SECRET": tg_secret, "TG_TOKEN": env["TELEGRAM_BOT_TOKEN"], "ALLOWED_CHAT": env["TELEGRAM_CHAT_ID"], "GH_TOKEN": gh_token, "GH_REPO": full}.items():
         sh(["npx", "--yes", "wrangler", "secret", "put", k], cwd=wd, stdin=v)
     url = input("   Worker URL printed above (https://....workers.dev): ").strip() if not DRY else "https://example.workers.dev"
+    if not DRY and not url.startswith("http"):
+        url = "https://" + url.lstrip("/")
     print("5/5 Telegram webhook (stop `app.orchestrator listen` first)")
     import httpx
     if DRY:

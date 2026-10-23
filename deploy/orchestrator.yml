@@ -25,10 +25,25 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12", cache: pip }
-      - run: sudo apt-get update -y && sudo apt-get install -y ffmpeg fonts-noto fonts-noto-color-emoji
-      - run: pip install -e . && playwright install --with-deps chromium
-      - name: Handle message
-        run: python -m app.orchestrator handle --chat "$CHAT" --text "$TEXT"
+      - name: Light command? (no render needed)
+        id: kind
+        run: |
+          if [[ "$TEXT" =~ ^/(status|list|use|approve|help|start)([[:space:]]|$) ]]; then echo "light=true" >> "$GITHUB_OUTPUT"; fi
+      - name: Handle (light, ~20 s)
+        if: steps.kind.outputs.light == 'true'
+        run: |
+          pip install -q httpx python-dotenv
+          python -m app.orchestrator handle --chat "$CHAT" --text "$TEXT"
+      - name: Cache Chromium
+        if: steps.kind.outputs.light != 'true'
+        uses: actions/cache@v4
+        with: { path: ~/.cache/ms-playwright, key: pw-${{ runner.os }}-v1 }
+      - name: Handle (full pipeline)
+        if: steps.kind.outputs.light != 'true'
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y ffmpeg fonts-noto fonts-noto-color-emoji
+          pip install -e . && playwright install --with-deps chromium
+          python -m app.orchestrator handle --chat "$CHAT" --text "$TEXT"
       - name: Save state (also keeps the repo active)
         if: always()
         run: |

@@ -8,6 +8,14 @@ export default {
     const m = u.message || u.edited_message;
     if (!m || !m.text) return new Response("ok");
     if (String(m.chat.id) !== String(env.ALLOWED_CHAT)) return new Response("ok");          // only the owner is obeyed
+    const t = m.text.trim().toLowerCase();
+    if (t === "/help" || t === "/start") {          // answered instantly, no pipeline needed
+      await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: m.chat.id, text: "Commands:\n/new <topic> - make a Short (~15-20 min)\n/approve - title + description for the current Short\n/status - current Short\n/list - recent Shorts\n/use <id> - switch\nOr just describe a change: \"shorter hook\", \"re-roll image 3\"." }),
+      });
+      return new Response("ok");
+    }
     const r = await fetch(`https://api.github.com/repos/${env.GH_REPO}/dispatches`, {
       method: "POST",
       headers: { Authorization: `Bearer ${env.GH_TOKEN}`, Accept: "application/vnd.github+json", "User-Agent": "shorts-orchestrator" },

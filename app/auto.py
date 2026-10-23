@@ -31,7 +31,6 @@ try:   # keys come from the project's .env (never printed); on CI they are alrea
 except ImportError:
     pass
 
-from . import produce, qa_v2, stills
 
 LIMITS = {"attempts": 3, "similarity_reject": 0.62, "history": Path("data/history.jsonl"), "max_mb": 48}
 PASS = {"hook": 8, "visual_quality": 8, "accuracy": 9, "originality": 7, "policy": 10}   # the plan's judge table
@@ -319,6 +318,7 @@ def finish(spec: dict, writer: str, out: Path, deliver: bool, chat: str | None) 
     out.mkdir(parents=True, exist_ok=True)
     sp = out / f"{spec['id']}.spec.json"
     sp.write_text(json.dumps(spec, ensure_ascii=False, indent=1))
+    from . import produce            # heavy deps (opencv, playwright) load only when a render is needed
     m = produce.run(sp, out)
     run_dir = out / spec["id"]
     bad = [k for k, v in m["checks"].items() if v != "pass" and k != "vision"]
