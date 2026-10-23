@@ -37,7 +37,9 @@ jobs:
       - name: Cache Chromium
         if: steps.kind.outputs.light != 'true'
         uses: actions/cache@v4
-        with: { path: ~/.cache/ms-playwright, key: pw-${{ runner.os }}-v1 }
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-${{ runner.os }}-v1
       - name: Handle (full pipeline)
         if: steps.kind.outputs.light != 'true'
         run: |
