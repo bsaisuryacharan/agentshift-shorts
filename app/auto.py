@@ -159,6 +159,11 @@ def pick_topic(deliver_chat: str | None = None) -> tuple[str, str]:
 
 
 # ---------------------------------------------------------------- script -> spec -------------------------------------------
+try:
+    from . import motionbank as _mb
+    MOTION_CLIPS = ", ".join(c["name"] for c in _mb.manifest() if c.get("role", "ambient") != "object")
+except Exception:                                   # the bank is optional
+    MOTION_CLIPS = "none"
 SYSTEM = f"""You write 35-45 second YouTube Shorts for the channel Agent Shift (brand AGENT SHIFT, 'what if' explainers). Output ONLY JSON.
 Spec schema (JSON object): id (slug), title, voice "en-US-AndrewNeural", rate "+10%", brand "AGENT SHIFT", series_label (short upper-case tag),
 Beats about a REAL named person/place/institution may add "photo":"<exact Wikipedia/Commons search term>" (a real free-licence photo is used; keep the prompt as fallback). Image prompts: no text/letters/numbers/people faces, and every beat a DIFFERENT shot type (macro, aerial, top-down, wide, silhouette). TOP-LEVEL key subscribe {{"title":"SUBSCRIBE","sub":"for daily what-ifs"}} (never a hud element), sources {{beat_key: "citation incl. URL"}}, beats[].
@@ -169,7 +174,10 @@ hud element: {{"t": one of {sorted(HUD_TYPES)}, ...}}  bubble{{text}} title{{htm
 sub{{html}} rows{{items:[[label,value,unit,col]],stagger}} chain{{steps:[[a,b]]}} list{{items:[[emoji,a,b]]}} stamp{{text,col}}; col in cy|am|ir|ok.
 Motion graphics (use at least 2 per Short, vary them, prefer data ones when you have numbers): bars{{items:[[name,value,col]],unit}} line{{values:[numbers],labels:[first,last],col}}
 ring{{pct:0-100,label,col}} delta{{text:"+176%",dir:"up|down",col}} kinetic{{text:"words with *accent*"}} tape{{text,col}} toast{{title,sub,icon}} cursor{{text}}.
-Any element may add "fx":"shine". Do not stack two big elements in one beat (max ~1100px tall total).
+Any element may add "fx":"shine".
+Moving-picture layers (optional, they make a still feel like video): beat "footage":"<2-3 concrete nouns, MOST SPECIFIC FIRST>" swaps that beat's picture for a real NASA clip
+(only for space/Earth/science beats, at most 2 per Short, e.g. "asteroid impact", "earth night lights"; a still is still required as fallback). Beat "motion":"<clip>" picks a light layer
+over the picture: {MOTION_CLIPS}; omit it and one is chosen from the mood. Do not stack two big elements in one beat (max ~1100px tall total).
 EVERY hud element needs "at": a word that appears in that beat's "say" (exact word) - the element appears when it is spoken.
 Hook = first beat: a surprising promise in <=2 seconds, with a bubble "what if?" and a title. Last beat: payoff + 'Follow for more what-ifs'.
 Facts: use ONLY the supplied FACTS. Every number you write (digits in hud text or numbers in say) must be present in FACTS. Never invent statistics.
@@ -231,6 +239,14 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
         errs.append(f"spoken words {words} outside 70-128")
     elif words > 100 and not errs:
         spec["rate"] = "+20%"                      # long script: speak faster so the Short stays <= ~45 s
+    nfoot = 0
+    for b in beats:                                   # optional moving layers: sanitise instead of failing the script
+        if b.get("footage"):
+            nfoot += 1
+            if nfoot > 2 or not isinstance(b["footage"], str) or len(b["footage"]) > 60:
+                b.pop("footage")
+        if b.get("motion") not in (None, False) and b["motion"] not in MOTION_CLIPS.split(", "):
+            b.pop("motion")
     if beats and not any(e.get("t") == "bubble" for e in beats[0].get("hud", [])):
         errs.append("hook needs a bubble")
     return sorted(set(errs))
@@ -351,11 +367,15 @@ def send_draft(spec: dict, run_dir: Path, j: dict, chat: str | None) -> None:
 
 
 def credits_line(run_dir: Path) -> str:
+    out = ""
     cj = run_dir / "img" / "credits.json"
-    if not cj.exists():
-        return ""
-    c = json.loads(cj.read_text())
-    return "\nPhoto credits: " + "; ".join(f"{v['file']} ({v['license']}, {v['artist'][:40]})" for v in c.values())
+    if cj.exists():
+        c = json.loads(cj.read_text())
+        out += "\nPhoto credits: " + "; ".join(f"{v['file']} ({v['license']}, {v['artist'][:40]})" for v in c.values())
+    vj = run_dir / "vid" / "credits.json"
+    if vj.exists():
+        out += "\nFootage: " + "; ".join(f"{v['title'][:50]} ({v['center']}, {v['source']})" for v in json.loads(vj.read_text()).values())
+    return out
 
 
 def facts_for(topic: str, wiki: str | None, facts_file: Path | None, deliver: bool, chat: str | None) -> dict:

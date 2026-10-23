@@ -8,4 +8,5 @@ videos/
 logs/
 __pycache__/
 *.mp4
+!assets/motion/*.mp4
 *.egg-info/

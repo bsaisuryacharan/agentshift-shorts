@@ -21,7 +21,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ALLOW = ["app", "tests", "examples", "docs", "skills", "templates", "deploy", "pyproject.toml", "README.md", "INTEGRATION.md"]
+ALLOW = ["app", "tests", "examples", "docs", "skills", "templates", "assets", "deploy", "pyproject.toml", "README.md", "INTEGRATION.md"]
 SECRET_FILES = {".env", "token.json", "oauth_client.json"}
 ACTION_SECRETS = ["GEMINI_API_KEY", "GROQ_API_KEY", "OPENROUTER_API_KEY", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN",
                   "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"]
@@ -44,11 +44,12 @@ def stage(dest: Path) -> list[str]:
         if not src.exists():
             continue
         if src.is_dir():
-            shutil.copytree(src, dest / name, ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".env*", "token.json", "oauth_client.json", "*.mp4", "runs", "output"))
+            skip = ["__pycache__", "*.pyc", ".env*", "token.json", "oauth_client.json", "runs", "output"] + ([] if name == "assets" else ["*.mp4"])   # assets/motion/*.mp4 is the shipped motion bank
+            shutil.copytree(src, dest / name, ignore=shutil.ignore_patterns(*skip))
         else:
             shutil.copy2(src, dest / name)
         copied.append(name)
-    (dest / ".gitignore").write_text(".env\n.env.*\ntoken.json\noauth_client.json\nruns/\noutput/\nvideos/\nlogs/\n__pycache__/\n*.mp4\n*.egg-info/\n")
+    (dest / ".gitignore").write_text(".env\n.env.*\ntoken.json\noauth_client.json\nruns/\noutput/\nvideos/\nlogs/\n__pycache__/\n*.mp4\n!assets/motion/*.mp4\n*.egg-info/\n")
     (dest / ".github" / "workflows").mkdir(parents=True, exist_ok=True)
     for wf in ("orchestrator.yml", "free-daily.yml"):
         for cand in (ROOT / "deploy" / wf, ROOT / "scripts" / wf):

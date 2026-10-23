@@ -27,6 +27,8 @@ from pathlib import Path
 import cv2
 import numpy as np
 
+from . import motionbank
+
 W, H, FPS = 1080, 1920, 30
 
 
@@ -42,7 +44,9 @@ class Cinematic:
         self.total = float(spec["total"])
         self.shots = spec["shots"]
         self.starts = [float(s["start"]) for s in self.shots] + [self.total + 1]
-        self.imgs = [self._load(s["img"]) for s in self.shots]
+        self.vids = {i: motionbank.ClipLayer("", path=self.root / s["video"], size=(540, 960), pingpong=False)
+                     for i, s in enumerate(self.shots) if s.get("video")}        # real footage cutaways (app.footage)
+        self.imgs = [self.vids[i].frames[0] if i in self.vids else self._load(s["img"]) for i, s in enumerate(self.shots)]
         self.base = [max(W / im.shape[1], H / im.shape[0]) for im in self.imgs]
         self.rng = np.random.default_rng(spec.get("seed", 7))
         self.parts = self._bursts(spec.get("bursts", []))
@@ -55,6 +59,10 @@ class Cinematic:
         if self.ovl_dir and (self.ovl_dir / "map.json").exists():           # dedup map written by app.overlay
             self.ovl_map = {int(k): int(v) for k, v in json.loads((self.ovl_dir / "map.json").read_text()).items()}
         self._ovl_cache: tuple[int, tuple | None] = (-1, None)
+        self.fx = [sh.get("fx") for sh in self.shots]
+        self.layers = {n: motionbank.ClipLayer(n) for n in {f["clip"] for f in self.fx if f}}
+        ys = np.arange(H, dtype=np.float32)[:, None, None]
+        self.fx_mask = np.clip(1 - (ys - (H - 700)) / 300, 0.45, 1.0) * np.ones((1, W, 1), np.float32)   # calmer under the caption/UI zone
         self.vig8 = np.repeat((self.vig * 255).astype(np.uint8), 3, axis=2)
         g = np.random.default_rng(3)
         tiles = [cv2.resize(g.normal(0, 3.0, (H // 4, W // 4)).astype(np.float32), (W, H)) for _ in range(6)]
@@ -70,8 +78,10 @@ class Cinematic:
         return cv2.addWeighted(im, 1.3, cv2.GaussianBlur(im, (0, 0), 2.0), -0.3, 0)  # mild unsharp
 
     # ---- camera ------------------------------------------------------------------------
-    def _draw(self, i: int, s: float, rot: float = 0.0) -> np.ndarray:
+    def _draw(self, i: int, s: float, rot: float = 0.0, t: float = 0.0) -> np.ndarray:
         im, b = self.imgs[i], self.base[i]
+        if i in self.vids:
+            im = self.vids[i].raw_at(t - self.starts[i])
         h, w = im.shape[:2]
         fx, fy = self.shots[i].get("focal", (0.5, 0.5))
         k = b * s
@@ -102,15 +112,15 @@ class Cinematic:
             zo = float(self.shots[i - 1].get("zoom", 1.3)) * self.K ** p
             out = np.zeros((H, W, 3), np.float32)
             for d in (0.0, 0.06, 0.12):  # radial zoom blur on the outgoing frame
-                out += self._draw(i - 1, zo * (1 + d * p), self._rot(i - 1, t)).astype(np.float32)
+                out += self._draw(i - 1, zo * (1 + d * p), self._rot(i - 1, t), t).astype(np.float32)
             out /= 3
-            inc = self._draw(i, 1.0, self._rot(i, t)).astype(np.float32)
+            inc = self._draw(i, 1.0, self._rot(i, t), t).astype(np.float32)
             rad = 60 + (math.hypot(W, H) / 2 + 200) * p ** 1.6
             m = np.clip((rad - self.rr) / 160, 0, 1)[..., None] * min(1, p * 2.5)
             out = out * (1 - m) + inc * m
             out += 255 * max(0, 1 - abs(t - st) / 0.1) * float(self.shots[i].get("flash", 0.12))
             return out
-        return self._draw(i, self._zoom(i, t), self._rot(i, t))
+        return self._draw(i, self._zoom(i, t), self._rot(i, t), t)
 
     # ---- particles (free VFX) -----------------------------------------------------------
     def _bursts(self, bursts: list[dict]) -> np.ndarray:
@@ -142,6 +152,21 @@ class Cinematic:
                      max(1, int(sz * (.5 + fr))), cv2.LINE_AA)
         return f + cv2.GaussianBlur(layer, (0, 0), 3) * 1.4 + layer
 
+    def _shot_at(self, t: float) -> int:
+        n = len(self.shots)
+        return max(j for j in range(n) if self.starts[j] <= t + 0.02) if t + 0.02 < self.total + 1 else n - 1
+
+    def motion(self, f: np.ndarray, t: float) -> np.ndarray:
+        """moving light layer from the motion bank over the current shot (fx on the shot: clip, blend, op)"""
+        i = self._shot_at(t)
+        fx = self.fx[i]
+        if not fx or i in self.vids:
+            return f
+        st = self.starts[i]
+        fade = min(1.0, (t - st) / 0.35 + 0.25) if t < st + 0.35 else 1.0          # ease in after the cut
+        clip = self.layers[fx["clip"]].frame_at(t - st, (W, H))
+        return motionbank.blend(f, clip, float(fx.get("op", 0.5)) * fade, fx.get("blend", "screen"), self.fx_mask)
+
     # ---- frame --------------------------------------------------------------------------
     def _overlay(self, n: int):
         """decoded (premultiplied rgb, 1-alpha) for frame n; cached because HUD frames are held for `ovl_step` frames."""
@@ -164,6 +189,7 @@ class Cinematic:
         if len(self.parts) and self.parts[0, 0] <= t:
             bg = self.particles(bg.astype(np.float32), t)
         f = np.clip(bg, 0, 255).astype(np.uint8)
+        f = self.motion(f, t)
         f = cv2.multiply(f, self.vig8, scale=1 / 255)
         fi, fo = self.spec.get("fade_in", 0.35), self.spec.get("fade_out", 0.4)
         k = (t / fi if t < fi else 1.0) * (max(0, (self.total - t) / fo) if t > self.total - fo else 1.0)

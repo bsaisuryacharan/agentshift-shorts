@@ -16,7 +16,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import cinematic, hud, overlay, qa_v2, stills, voice
+from . import cinematic, footage, hud, motionbank, overlay, qa_v2, stills, voice
 
 TAIL_S = 2.2  # end-card time after the last spoken word
 
@@ -27,17 +27,19 @@ def _timed(m: dict, name: str, t0: float) -> float:
     return time.time()
 
 
-def shotlist(spec: dict, timing: dict, total: float) -> dict:
+def shotlist(spec: dict, timing: dict, total: float, vids: dict | None = None) -> dict:
     shots, flip = [], 1
     seg = {s["key"]: s for s in timing["segments"]}
-    for b in spec["beats"]:
+    fxs = motionbank.pick(spec)
+    for b, fx in zip(spec["beats"], fxs):
         start = seg[b["key"]]["start"] if shots else 0.0
         items = [(start, b)]
         for c in b.get("cuts", []):
             items.append((voice.word_time(timing, b["key"], c["at"], c.get("nth", 0)) - 0.05, c))
         for t, s in items:
             shots.append({"img": f"img/{s['img']}", "start": round(t, 3), "focal": s.get("focal", [0.5, 0.52]),
-                          "zoom": s.get("zoom", 1.32), "rot": s.get("rot", 0.7 * flip), "flash": s.get("flash", 0.12)})
+                          "zoom": s.get("zoom", 1.32), "rot": s.get("rot", 0.7 * flip), "flash": s.get("flash", 0.12), "fx": fx}
+                         | ({"video": vids[b["key"]], "zoom": 1.08} if vids and s is b and b["key"] in vids else {}))
             flip = -flip
     bursts = []
     for b in spec["beats"]:
@@ -69,12 +71,13 @@ def run(spec_path: Path, out_root: Path, workers: int | None = None) -> dict:
     print(f"[{spec['id']}] producing", flush=True)
 
     stills.ensure(spec, run_dir); t0 = _timed(m, "stills", t0)
+    vids = footage.ensure(spec, run_dir); t0 = _timed(m, "footage", t0)
     timing = asyncio.run(voice.synth(spec, run_dir)); t0 = _timed(m, "voice", t0)
     last = max(w["e"] for s in timing["segments"] for w in s["words"])
     total = round(last + TAIL_S, 2)
     voice.mix(spec, timing, run_dir, total); t0 = _timed(m, "mix", t0)
     page = hud.write(spec, timing, total, run_dir / "page.html"); t0 = _timed(m, "hud", t0)
-    sl = shotlist(spec, timing, total)
+    sl = shotlist(spec, timing, total, vids)
     (run_dir / "shotlist.json").write_text(json.dumps(sl, indent=1))
     asyncio.run(overlay.render(page, total, run_dir / "ovl", step=2, pages=3)); t0 = _timed(m, "overlay", t0)
     final = run_dir / "final.mp4"

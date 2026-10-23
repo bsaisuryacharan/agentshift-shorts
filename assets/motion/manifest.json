@@ -1,0 +1,684 @@
+[
+ {
+  "name": "aurora",
+  "file": "aurora.mp4",
+  "blend": "screen",
+  "role": "ambient",
+  "mood": [
+   "calm",
+   "space",
+   "tech"
+  ],
+  "dur": 2.0,
+  "kb": 21,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "light",
+   "aurora",
+   "sky"
+  ],
+  "title": "Aurora",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "godrays",
+  "file": "godrays.mp4",
+  "blend": "screen",
+  "role": "ambient",
+  "mood": [
+   "space",
+   "danger"
+  ],
+  "dur": 2.0,
+  "kb": 31,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "light",
+   "rays"
+  ],
+  "title": "Godrays",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "frost-sequence-camera-orbit",
+  "file": "frost-sequence-camera-orbit.mp4",
+  "blend": "screen",
+  "role": "ambient",
+  "mood": [
+   "space",
+   "danger",
+   "debris"
+  ],
+  "dur": 8.0,
+  "kb": 1498,
+  "tags": [
+   "3d-motion",
+   "ice",
+   "frost",
+   "camera-orbit",
+   "logo",
+   "particles",
+   "webgpu",
+   "two-headlines"
+  ],
+  "title": "Frost Sequence Camera Orbit",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "falling-lines",
+  "file": "falling-lines.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "data",
+   "tech"
+  ],
+  "dur": 2.0,
+  "kb": 14,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "texture",
+   "lines",
+   "rain",
+   "monochrome"
+  ],
+  "title": "Falling Lines",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "lens-flare",
+  "file": "lens-flare.mp4",
+  "blend": "screen",
+  "role": "ambient",
+  "mood": [
+   "space",
+   "warm"
+  ],
+  "dur": 2.0,
+  "kb": 16,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "light",
+   "flare",
+   "glow"
+  ],
+  "title": "Lens Flare",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "light-edge",
+  "file": "light-edge.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "tech",
+   "space"
+  ],
+  "dur": 2.0,
+  "kb": 21,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "object",
+   "light",
+   "glow",
+   "neon",
+   "edge"
+  ],
+  "title": "Light Edge",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "prism",
+  "file": "prism.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "tech",
+   "calm"
+  ],
+  "dur": 2.0,
+  "kb": 10,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "light",
+   "prism",
+   "rainbow"
+  ],
+  "title": "Prism",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "strands",
+  "file": "strands.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "tech",
+   "data"
+  ],
+  "dur": 2.0,
+  "kb": 46,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "light",
+   "lines",
+   "ribbons"
+  ],
+  "title": "Strands",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "sine-wave",
+  "file": "sine-wave.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "data",
+   "calm"
+  ],
+  "dur": 2.0,
+  "kb": 13,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "wave",
+   "line",
+   "glow"
+  ],
+  "title": "Sine Wave",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "waveform",
+  "file": "waveform.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "data",
+   "tech"
+  ],
+  "dur": 2.0,
+  "kb": 13,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "audio",
+   "music",
+   "visualizer",
+   "bars"
+  ],
+  "title": "Waveform",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "nebula",
+  "file": "nebula.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "space"
+  ],
+  "dur": 2.07,
+  "kb": 35,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "object",
+   "space",
+   "nebula",
+   "sphere"
+  ],
+  "title": "Nebula",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "hologram",
+  "file": "hologram.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "tech",
+   "data"
+  ],
+  "dur": 2.0,
+  "kb": 123,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "object",
+   "hologram",
+   "sci-fi",
+   "blue"
+  ],
+  "title": "Hologram",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "thin-film",
+  "file": "thin-film.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "tech",
+   "calm"
+  ],
+  "dur": 2.0,
+  "kb": 31,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "object",
+   "iridescent",
+   "bubble",
+   "rainbow"
+  ],
+  "title": "Thin Film",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "heatmap",
+  "file": "heatmap.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "data",
+   "danger"
+  ],
+  "dur": 2.0,
+  "kb": 38,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "object",
+   "heat",
+   "thermal",
+   "glow"
+  ],
+  "title": "Heatmap",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "frost",
+  "file": "frost.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "calm",
+   "space"
+  ],
+  "dur": 2.0,
+  "kb": 11,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "orb",
+   "ice",
+   "frost",
+   "material"
+  ],
+  "title": "Frost",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "obsidian",
+  "file": "obsidian.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "tech",
+   "space"
+  ],
+  "dur": 2.0,
+  "kb": 29,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "object",
+   "glass",
+   "iridescent",
+   "dark"
+  ],
+  "title": "Obsidian",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "goo",
+  "file": "goo.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "calm",
+   "tech"
+  ],
+  "dur": 2.0,
+  "kb": 25,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "liquid",
+   "3d",
+   "organic",
+   "orb"
+  ],
+  "title": "Goo",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "chrome-orb",
+  "file": "chrome-orb.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "tech",
+   "glass"
+  ],
+  "dur": 2.0,
+  "kb": 14,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "object",
+   "chrome",
+   "metal",
+   "material"
+  ],
+  "title": "Chrome Orb",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "holographic",
+  "file": "holographic.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "tech",
+   "glass"
+  ],
+  "dur": 2.0,
+  "kb": 38,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "holographic",
+   "iridescent",
+   "rainbow",
+   "orb"
+  ],
+  "title": "Holographic",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "liquid-metal",
+  "file": "liquid-metal.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "tech",
+   "glass"
+  ],
+  "dur": 2.0,
+  "kb": 21,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "object",
+   "metal",
+   "chrome",
+   "liquid",
+   "sphere"
+  ],
+  "title": "Liquid Metal",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "water",
+  "file": "water.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "space",
+   "calm",
+   "earth"
+  ],
+  "dur": 2.0,
+  "kb": 34,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "orb",
+   "water",
+   "material",
+   "blue"
+  ],
+  "title": "Water",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "plastic",
+  "file": "plastic.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "calm"
+  ],
+  "dur": 2.0,
+  "kb": 16,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "object",
+   "plastic",
+   "material",
+   "white"
+  ],
+  "title": "Plastic",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "vfx-liquid-glass",
+  "file": "vfx-liquid-glass.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "glass",
+   "tech"
+  ],
+  "dur": 8.0,
+  "kb": 336,
+  "tags": [
+   "html-in-canvas",
+   "webgl"
+  ],
+  "title": "Liquid Glass",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "sun-burst",
+  "file": "sun-burst.mp4",
+  "blend": "screen",
+  "role": "object",
+  "mood": [
+   "warm",
+   "space"
+  ],
+  "dur": 2.0,
+  "kb": 25,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "light",
+   "rays",
+   "radial"
+  ],
+  "title": "Sun Burst",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "blob",
+  "file": "blob.mp4",
+  "blend": "overlay",
+  "role": "wash",
+  "mood": [
+   "warm",
+   "calm"
+  ],
+  "dur": 2.0,
+  "kb": 22,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "abstract",
+   "organic",
+   "gradient"
+  ],
+  "title": "Blob",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "mesh-gradient",
+  "file": "mesh-gradient.mp4",
+  "blend": "overlay",
+  "role": "wash",
+  "mood": [
+   "warm",
+   "calm"
+  ],
+  "dur": 2.0,
+  "kb": 17,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "gradient",
+   "color"
+  ],
+  "title": "Mesh Gradient",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "flowing-gradient",
+  "file": "flowing-gradient.mp4",
+  "blend": "overlay",
+  "role": "wash",
+  "mood": [
+   "warm",
+   "danger"
+  ],
+  "dur": 2.0,
+  "kb": 25,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "gradient",
+   "color",
+   "flow"
+  ],
+  "title": "Flowing Gradient",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "plasma",
+  "file": "plasma.mp4",
+  "blend": "overlay",
+  "role": "wash",
+  "mood": [
+   "danger",
+   "tech"
+  ],
+  "dur": 2.0,
+  "kb": 27,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "texture",
+   "plasma",
+   "purple"
+  ],
+  "title": "Plasma",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "swirl",
+  "file": "swirl.mp4",
+  "blend": "overlay",
+  "role": "wash",
+  "mood": [
+   "warm",
+   "calm"
+  ],
+  "dur": 2.0,
+  "kb": 41,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "gradient",
+   "flow",
+   "abstract"
+  ],
+  "title": "Swirl",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "fractal-noise",
+  "file": "fractal-noise.mp4",
+  "blend": "overlay",
+  "role": "wash",
+  "mood": [
+   "calm",
+   "tech"
+  ],
+  "dur": 2.0,
+  "kb": 25,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "noise",
+   "texture",
+   "clouds"
+  ],
+  "title": "Fractal Noise",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ },
+ {
+  "name": "voronoi",
+  "file": "voronoi.mp4",
+  "blend": "overlay",
+  "role": "object",
+  "mood": [
+   "tech",
+   "glass"
+  ],
+  "dur": 2.0,
+  "kb": 47,
+  "tags": [
+   "webgpu",
+   "webgpu-shader",
+   "background",
+   "pattern",
+   "cells",
+   "voronoi"
+  ],
+  "title": "Voronoi",
+  "source": "HyperFrames registry preview (static.heygen.ai)"
+ }
+]
