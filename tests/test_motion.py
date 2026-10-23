@@ -103,3 +103,25 @@ def test_validate_rejects_people_prompts_but_allows_silhouettes():
     assert any("shows a person" in e for e in auto.validate_spec(spec("photoreal portrait of an old scientist, 9:16"), "f"))
     assert not any("shows a person" in e for e in auto.validate_spec(spec("silhouette of an astronaut from behind facing a huge dish"), "f"))
     assert not any("shows a person" in e for e in auto.validate_spec(spec("macro of a brass pocket watch on a desk"), "f"))
+
+
+def test_write_spec_rotates_provider_and_run_survives_writer_failure(monkeypatch, tmp_path):
+    prefers = []
+
+    def bad_ask(system, user, **kw):
+        prefers.append(kw["prefer"][0])
+        return {"id": "x"}, kw["prefer"][0]
+
+    monkeypatch.setattr(auto, "ask", bad_ask)
+    try:
+        auto.write_spec("t", {"url": "u", "text": "facts"})
+        raise AssertionError("expected failure")
+    except RuntimeError:
+        pass
+    assert prefers == ["groq", "groq", "gemini", "gemini", "openrouter"]
+    monkeypatch.setattr(auto, "write_spec", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("bad json")))
+    monkeypatch.setattr(auto, "facts_for", lambda *a, **k: {"url": "u", "text": "t"})
+    sent = []
+    monkeypatch.setattr(auto, "telegram", lambda text, video=None, chat=None: sent.append(text) or True)
+    assert auto.run("topic", None, tmp_path) == 2            # every attempt failed -> parked message, no crash
+    assert any("Parked" in s for s in sent)

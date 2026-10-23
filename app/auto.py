@@ -279,8 +279,9 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None) -> tuple
         user += f"\nCHANNEL INSIGHTS (advisory, never a source of facts): {insights.hint()}\n"
     if notes:
         user += "\nFIX THESE PROBLEMS FROM THE LAST ATTEMPT:\n- " + "\n- ".join(notes)
-    for _ in range(5):
-        spec, prov = ask(SYSTEM, user, prefer=["groq", "gemini", "openrouter"])
+    order = [["groq", "gemini", "openrouter"], ["gemini", "groq", "openrouter"], ["openrouter", "gemini", "groq"]]
+    for n in range(5):
+        spec, prov = ask(SYSTEM, user, prefer=order[n // 2 % 3])      # a model that keeps failing the schema is swapped out
         errs = validate_spec(spec, facts["text"])
         if not errs:
             spec.setdefault("sources", {})["wiki"] = facts["url"]
@@ -408,7 +409,12 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
     best = None                                   # best technically-clean attempt, delivered as a DRAFT if none is approved
     for attempt in range(1, LIMITS["attempts"] + 1):
         print(f"== attempt {attempt}/{LIMITS['attempts']}", flush=True)
-        spec, writer = write_spec(topic, facts, notes)
+        try:
+            spec, writer = write_spec(topic, facts, notes)
+        except RuntimeError as e:                       # the writer could not produce a valid script: retry the attempt, do not lose the run
+            print("   writer failed:", str(e)[:300], flush=True)
+            notes = [str(e)[:400]]
+            continue
         sim = too_similar(spec)
         if sim >= LIMITS["similarity_reject"]:
             notes = [f"too similar to a recent video ({sim:.2f}); choose a clearly different angle and title"]
