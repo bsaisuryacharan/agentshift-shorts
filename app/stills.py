@@ -72,6 +72,8 @@ def pollinations(prompt: str, dest: Path, seed: int = 7, tries: int = 4) -> Path
             if r.status_code == 200 and r.headers.get("content-type", "").startswith("image"):
                 return _fit(r.content, dest, crop_bottom=0.045)
             last = f"HTTP {r.status_code}"
+            if r.status_code in (401, 402, 403):      # payment / auth wall: retrying only wastes a minute per picture
+                break
         except httpx.HTTPError as e:  # network / timeout -> retry
             last = repr(e)
         time.sleep(4 * (a + 1))
@@ -81,6 +83,45 @@ def pollinations(prompt: str, dest: Path, seed: int = 7, tries: int = 4) -> Path
 STYLE = {"photoreal", "photorealistic", "cinematic", "image", "shot", "view", "dramatic", "lighting", "light", "ultra", "detailed", "highly", "background",
          "style", "realistic", "closeup", "close-up", "wide", "angle", "aerial", "macro", "top-down", "silhouette", "soft", "natural", "documentary", "with", "from",
          "against", "above", "over", "into", "that", "this", "their", "while", "scene", "composition", "depth", "field", "bokeh", "sharp", "focus"}
+
+
+def _blur_fit(raw: bytes, dest: Path) -> Path:
+    """landscape photos are shown whole (width 1000) over a blurred, darkened copy of themselves; portrait/square photos are cover-fitted."""
+    import io
+
+    from PIL import Image, ImageEnhance, ImageFilter
+    im = Image.open(io.BytesIO(raw)).convert("RGB")
+    W, H = 1080, 1920
+    if im.width / im.height < 0.75:
+        return _fit(raw, dest)
+    sc = max(W / im.width, H / im.height)
+    bg = im.resize((int(im.width * sc) + 1, int(im.height * sc) + 1), Image.LANCZOS).filter(ImageFilter.GaussianBlur(40))
+    bg = ImageEnhance.Brightness(bg.crop(((bg.width - W) // 2, (bg.height - H) // 2, (bg.width - W) // 2 + W, (bg.height - H) // 2 + H))).enhance(0.7)
+    fg = im.resize((1000, int(im.height * 1000 / im.width)), Image.LANCZOS)
+    bg.paste(fg, ((W - 1000) // 2, 620 - fg.height // 2))
+    bg.save(dest.with_suffix(".jpg"), quality=92)
+    return dest.with_suffix(".jpg")
+
+
+def texture_still(prompt: str, dest: Path, seed: int = 7) -> Path:
+    """last resort when every picture source is out of quota: a darkened, blurred frame of a motion-bank clip, so the run still completes.
+    It is deliberately plain; the judge will mark the Short down for it and the owner sees that in the DRAFT notes."""
+    import cv2
+
+    from . import motionbank
+    bank = [c for c in motionbank.manifest() if c.get("role") != "object"]
+    c = bank[(sum(map(ord, prompt)) + seed) % len(bank)]
+    cap = cv2.VideoCapture(str(motionbank.BANK / c["file"]))
+    cap.set(cv2.CAP_PROP_POS_FRAMES, int(cap.get(cv2.CAP_PROP_FRAME_COUNT) * 0.5))
+    ok, f = cap.read()
+    cap.release()
+    if not ok:
+        raise RuntimeError("motion bank unreadable")
+    f = cv2.resize(f, (1080, 1920), interpolation=cv2.INTER_CUBIC)
+    f = cv2.GaussianBlur(f, (0, 0), 5)
+    out = dest.with_suffix(".jpg")
+    cv2.imwrite(str(out), cv2.convertScaleAbs(f, alpha=0.8, beta=-10), [cv2.IMWRITE_JPEG_QUALITY, 90])
+    return out
 
 
 def keywords(prompt: str, n: int = 3) -> str:
@@ -116,7 +157,7 @@ def nasa_still(prompt: str, dest: Path) -> tuple[Path, dict]:
         img = httpx.get(links[0].replace("~thumb", "~large").replace("~small", "~large"), timeout=60, follow_redirects=True)
         if img.status_code != 200:
             continue
-        out = _fit(img.content, dest)
+        out = _blur_fit(img.content, dest)
         credit = {"file": d.get("title", "")[:80], "license": "NASA media (public domain)", "artist": d.get("center", "NASA"),
                   "url": f"https://images.nasa.gov/details/{d['nasa_id']}"}
         cj = Path(dest).parent / "credits.json"
@@ -127,24 +168,33 @@ def nasa_still(prompt: str, dest: Path) -> tuple[Path, dict]:
     raise RuntimeError(f"no NASA photo for {q!r}")
 
 
+_DEAD: set[str] = set()      # providers that told us their free quota is exhausted (reset per process)
+
+
 def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
     """free ladder: Cloudflare FLUX -> Pollinations -> real NASA photo -> real Wikimedia Commons photo. Returns (file, provider)."""
     errs = []
-    if os.environ.get("CLOUDFLARE_API_TOKEN") and os.environ.get("CLOUDFLARE_ACCOUNT_ID"):
+    if os.environ.get("CLOUDFLARE_API_TOKEN") and os.environ.get("CLOUDFLARE_ACCOUNT_ID") and "cloudflare" not in _DEAD:
         try:
             return flux(prompt, dest), "cloudflare-flux"
         except Exception as e:  # 429 / quota / network -> next provider
             errs.append(f"cloudflare: {e!r}")
-    try:
-        return pollinations(prompt, dest, seed=seed), "pollinations"
-    except Exception as e:
-        errs.append(str(e))
+            if "429" in str(e):
+                _DEAD.add("cloudflare")                  # daily free quota is gone: skip it for the rest of this process
+    if "pollinations" not in _DEAD:
+        try:
+            return pollinations(prompt, dest, seed=seed), "pollinations"
+        except Exception as e:
+            errs.append(str(e))
+            if "HTTP 402" in str(e):
+                _DEAD.add("pollinations")
     for name, fn in (("nasa-photo", nasa_still), ("commons-photo", lambda p, d: commons(keywords(p, 4), d))):
         try:
             return fn(prompt, dest)[0], name
         except Exception as e:
             errs.append(f"{name}: {e}")
-    raise RuntimeError("all free image providers failed: " + "; ".join(errs))
+    print("  all picture sources failed (" + "; ".join(errs)[:300] + ") -> plain texture frame", flush=True)
+    return texture_still(prompt, dest, seed), "texture-fallback"
 
 
 def commons(query: str, dest: Path, min_w: int = 700) -> tuple[Path, dict]:

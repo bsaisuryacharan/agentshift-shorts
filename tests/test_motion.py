@@ -143,3 +143,14 @@ def test_generate_falls_back_to_real_photos(monkeypatch, tmp_path):
     monkeypatch.setattr(stills, "nasa_still", lambda p, d: (_ for _ in ()).throw(RuntimeError("none")))
     monkeypatch.setattr(stills, "commons", lambda q, d: (d, {}))
     assert stills.generate("solar flare", tmp_path / "b")[1] == "commons-photo"
+
+
+def test_generate_never_raises_texture_is_last_resort(monkeypatch, tmp_path):
+    from app import stills
+    for n in ("flux", "pollinations", "nasa_still"):
+        monkeypatch.setattr(stills, n, lambda *a, **k: (_ for _ in ()).throw(RuntimeError("out")))
+    monkeypatch.setattr(stills, "commons", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("none")))
+    f, prov = stills.generate("intricate electrical substation", tmp_path / "t")
+    assert prov == "texture-fallback" and f.exists()
+    im = cv2.imread(str(f))
+    assert im.shape == (1920, 1080, 3)
