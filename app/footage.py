@@ -101,7 +101,7 @@ def fetch(query: str, dest: Path) -> dict | None:
         start = max(0.0, min(dur * 0.3, dur - SEG_S - 0.5))
         try:
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.2f}", "-t", str(SEG_S), "-i", url, "-an",
-                            "-vf", "scale=-2:960,crop=540:960,fps=24", "-c:v", "libx264", "-crf", "24", "-pix_fmt", "yuv420p", str(dest)],
+                            "-vf", "scale=-2:1120,crop=540:960:(iw-540)/2:0,fps=24", "-c:v", "libx264", "-crf", "24", "-pix_fmt", "yuv420p", str(dest)],
                            check=True, timeout=180)
         except (subprocess.SubprocessError, OSError):
             continue

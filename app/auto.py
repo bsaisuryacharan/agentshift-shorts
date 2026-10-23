@@ -25,6 +25,8 @@ from pathlib import Path
 
 import httpx
 
+from . import insights
+
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
     load_dotenv(Path(__file__).resolve().parents[1] / ".env")
@@ -151,7 +153,7 @@ def pick_topic(deliver_chat: str | None = None) -> tuple[str, str]:
                  "From the CANDIDATES pick ONE that is explainable in 40 s with a surprising angle, factual and policy-safe (no tragedies, politics, celebrities, sports results, "
                  "medical advice). Prefer timeless science/tech/space/history ideas that connect to something people search for. It must have a real English Wikipedia article. "
                  'Return ONLY JSON {"topic":"a what-if framing","wiki":"exact Wikipedia article title","why":"..."}. Do not repeat or closely resemble PAST titles.',
-                 f"CANDIDATES: {cands}\nPAST TITLES: {past}", prefer=["groq", "gemini", "openrouter"])
+                 f"CANDIDATES: {cands}\nPAST TITLES: {past}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}", prefer=["groq", "gemini", "openrouter"])
     wiki = out["wiki"]
     wiki_facts(wiki)                              # proves the article exists and is fetchable
     print("picked:", out)
@@ -166,7 +168,7 @@ except Exception:                                   # the bank is optional
     MOTION_CLIPS = "none"
 SYSTEM = f"""You write 35-45 second YouTube Shorts for the channel Agent Shift (brand AGENT SHIFT, 'what if' explainers). Output ONLY JSON.
 Spec schema (JSON object): id (slug), title, voice "en-US-AndrewNeural", rate "+10%", brand "AGENT SHIFT", series_label (short upper-case tag),
-Beats about a REAL named person/place/institution may add "photo":"<exact Wikipedia/Commons search term>" (a real free-licence photo is used; keep the prompt as fallback). Image prompts: no text/letters/numbers/people faces, and every beat a DIFFERENT shot type (macro, aerial, top-down, wide, silhouette). TOP-LEVEL key subscribe {{"title":"SUBSCRIBE","sub":"for daily what-ifs"}} (never a hud element), sources {{beat_key: "citation incl. URL"}}, beats[].
+Beats about a REAL named person/place/institution may add "photo":"<exact Wikipedia/Commons search term>" (a real free-licence photo is used; keep the prompt as fallback). Image prompts: no text/letters/numbers, NO people or faces at all (generated faces look uncanny and real people must never be generated: show an object, instrument, place, diagram-like scene or a silhouette from behind instead), documentary look with natural/practical light and real materials (no golden glow, no glowing orbs, no neon), and every beat a DIFFERENT shot type (macro, aerial, top-down, wide, silhouette). TOP-LEVEL key subscribe {{"title":"SUBSCRIBE","sub":"for daily what-ifs"}} (never a hud element), sources {{beat_key: "citation incl. URL"}}, beats[].
 beat: key ("hook","b1".."b6","outro"), img ("s0.jpg"... unique per picture; reuse a name only to show the SAME picture again),
 prompt (ONLY on the first beat that uses an img: photoreal cinematic 9:16 image prompt, no text, no logos, no real people's faces),
 focal [x,y] 0-1, say (one or two short spoken sentences; numbers spelled as words), hud[] on-screen elements, sfx optional [[word,"impact|pop|ding|whoosh",vol]].
@@ -181,7 +183,7 @@ over the picture: {MOTION_CLIPS}; omit it and one is chosen from the mood. Do no
 EVERY hud element needs "at": a word that appears in that beat's "say" (exact word) - the element appears when it is spoken.
 Hook = first beat: a surprising promise in <=2 seconds, with a bubble "what if?" and a title. Last beat: payoff + 'Follow for more what-ifs'.
 Facts: use ONLY the supplied FACTS. Every number you write (digits in hud text or numbers in say) must be present in FACTS. Never invent statistics.
-7-9 beats total, ~90-108 spoken words (hard max 112; the video must be under 45 s). Keep each hud text short (<=28 chars). No claims about real private individuals."""
+7-9 beats total, ~90-108 spoken words (hard max 112; the video must be under 45 s). Keep each hud text short (<=28 chars), written with digits not spelled numbers, as a complete short noun phrase (<=4 words, never a sentence fragment). No claims about real private individuals."""
 
 
 def _number_supported(num: str, facts_text: str) -> bool:
@@ -192,6 +194,10 @@ def _number_supported(num: str, facts_text: str) -> bool:
         return True
     toks = [re.sub(r"\D", "", t) for t in re.findall(r"\d[\d,\.]*", facts_text)]
     return any(t.startswith(d.rstrip("0") or d) for t in toks if t)
+
+
+PEOPLE = re.compile(r"\b(portrait|face|faces|man|men|woman|women|person|people|human|humans|scientist|physicist|engineer|child|children|crowd|boy|girl|elderly|selfie|headshot|astronaut)\b", re.I)
+BEHIND = re.compile(r"silhouette|from behind|back view|backs? turned|no faces?|faceless", re.I)
 
 
 def validate_spec(spec: dict, facts_text: str) -> list[str]:
@@ -221,6 +227,9 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
             seen.add(b.get("img"))
             if not b.get("prompt"):
                 errs.append(f"{k}: first use of {b.get('img')} needs a prompt")
+        pr = str(b.get("prompt", ""))
+        if PEOPLE.search(pr) and not BEHIND.search(pr):
+            errs.append(f"{k}: image prompt shows a person ({PEOPLE.search(pr).group(0)}); generated faces look uncanny - describe an object, instrument, place or a silhouette from behind")
         sw = {re.sub(r"[^a-z0-9]", "", w.lower()) for w in b["say"].split()}
         for e in b.get("hud", []):
             if re.sub(r"[^a-z0-9]", "", str(e.get("at", "")).lower()) not in sw:      # auto-repair: anchor to the first substantial spoken word
@@ -266,6 +275,8 @@ def too_similar(spec: dict) -> float:
 
 def write_spec(topic: str, facts: dict, notes: list[str] | None = None) -> tuple[dict, str]:
     user = f"TOPIC: {topic}\nFACTS (source {facts['url']}):\n{facts['text']}\n"
+    if insights.hint():
+        user += f"\nCHANNEL INSIGHTS (advisory, never a source of facts): {insights.hint()}\n"
     if notes:
         user += "\nFIX THESE PROBLEMS FROM THE LAST ATTEMPT:\n- " + "\n- ".join(notes)
     for _ in range(5):

@@ -80,3 +80,26 @@ def test_cinematic_renders_video_and_motion_shots(tmp_path):
     for t in (0.5, 1.9, 2.2, 3.5):
         f = c.frame(int(t * 30))
         assert f.shape == (1920, 1080, 3)
+
+
+def test_insights_hint_is_advisory_and_bounded(tmp_path, monkeypatch):
+    from app import insights
+    (tmp_path / "latest_channel_analytics.json").write_text(json.dumps({"status": "ok", "current_period": {"start": "a", "end": "b", "short_rows": 1,
+        "summary": {"views": 10, "averageViewDuration": 20, "averageViewPercentage": 61.0, "netSubscribers": 2}}}))
+    (tmp_path / "latest_trend_report.json").write_text(json.dumps({"region": "US", "signals": [{"title": "Black holes #shorts", "metric": 5}, {"title": "பிளாக்", "metric": 9}]}))
+    d = insights.build(tmp_path)
+    assert d["trending"] == ["Black holes"] and d["channel"]["caveat"] == "tiny sample"
+    monkeypatch.setattr(insights, "OUT", tmp_path / "i.json")
+    (tmp_path / "i.json").write_text(json.dumps(d))
+    assert "tiny sample" in insights.hint() and len(insights.hint()) <= 600
+    monkeypatch.setattr(insights, "OUT", tmp_path / "missing.json")
+    assert insights.hint() == ""
+
+
+def test_validate_rejects_people_prompts_but_allows_silhouettes():
+    def spec(prompt):
+        return {"id": "x", "title": "t", "sources": {"a": "b"}, "beats": [{"key": f"b{i}", "img": f"s{i}", "prompt": prompt, "say": " ".join(["word"] * 12),
+                "hud": [{"t": "bubble", "text": "what if?", "at": "word"}]} for i in range(7)]}
+    assert any("shows a person" in e for e in auto.validate_spec(spec("photoreal portrait of an old scientist, 9:16"), "f"))
+    assert not any("shows a person" in e for e in auto.validate_spec(spec("silhouette of an astronaut from behind facing a huge dish"), "f"))
+    assert not any("shows a person" in e for e in auto.validate_spec(spec("macro of a brass pocket watch on a desk"), "f"))
