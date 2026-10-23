@@ -80,3 +80,22 @@ def test_every_motion_element_builds_and_stays_in_stage():
     for cls in ("bars", "linec", "ringw", "delta", "kin", "tape", "toast", "curw", "shw"):
         assert f'class="{cls}' in html
     assert motion.CSS in html
+
+
+def test_malformed_hud_element_is_skipped_not_fatal(tmp_path):
+    import json as _j
+    from pathlib import Path as _P
+    from app import hud
+    spec = _j.loads((_P(__file__).resolve().parents[1] / "examples" / "doomsday.json").read_text())
+    tm = {"segments": [], "fps": 30}
+    # build timing from the spec itself: one fake word per spoken word
+    t = 0.0
+    for b in spec["beats"]:
+        words = []
+        for w in b["say"].split():
+            words.append({"w": w, "s": round(t, 2), "e": round(t + .3, 2)})
+            t += .3
+        tm["segments"].append({"key": b["key"], "text": b["say"], "start": words[0]["s"], "dur": t - words[0]["s"], "words": words})
+    spec["beats"][1]["hud"] = [{"t": "stamp"}, {"t": "big", "text": "1960", "count": 1960, "at": spec["beats"][1]["say"].split()[0].strip(".,'")}]
+    out = hud.write(spec, tm, t + 2, tmp_path / "p.html")
+    assert "window.__timelines" in out.read_text()

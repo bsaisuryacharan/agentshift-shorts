@@ -39,6 +39,16 @@ class Page:
         self.html, self.js = [], []
         self.n = 0
 
+    def safe_element(self, beat: dict, el: dict, i: int) -> str:
+        """one malformed hud element (LLM output) must never kill a render: drop it, say so, keep the Short."""
+        n = len(self.js)
+        try:
+            return self.element(beat, el, i)
+        except Exception as e:
+            del self.js[n:]
+            print(f"  hud: skipped malformed {el.get('t')!r} element in beat {beat.get('key')}: {type(e).__name__}: {e}", flush=True)
+            return ""
+
     def A(self, s: str) -> None:
         self.js.append("try{" + s + "}catch(e){console.error('hud:',e.message)}")
 
@@ -67,6 +77,10 @@ class Page:
             self.A(f'tl.from("{sel}",{{scale:.4,opacity:0,duration:.3,ease:"back.out(2)"}},{at});')
         elif t == "big":
             c = el.get("count")
+            if isinstance(c, (int, float)) and not isinstance(c, bool):      # writers sometimes send a bare number
+                c = {"to": c}
+            elif not isinstance(c, dict):
+                c = None
             h = f'<div class="big" id="{eid}" style="color:{col}">{_h.escape(el["text"]) if not c else "0"}</div>'
             self.A(f'tl.from("{sel}",{{scale:1.5,opacity:0,duration:.45,ease:"expo.out"}},{at});')
             if c:
@@ -118,7 +132,7 @@ class Page:
         for bi, beat in enumerate(self.spec["beats"]):
             seg = next(s for s in self.tm["segments"] if s["key"] == beat["key"])
             end = self.tm["segments"][bi + 1]["start"] if bi + 1 < len(self.tm["segments"]) else sub_t
-            inner = "".join(self.element(beat, el, i) for i, el in enumerate(beat.get("hud", [])))
+            inner = "".join(self.safe_element(beat, el, i) for i, el in enumerate(beat.get("hud", [])))
             dim = '<div class="dim"></div>' if beat.get("dim") else '<div class="scrim"></div>'
             self.html.append(f'<div class="beat" id="b{bi}">{dim}{inner}</div>')
             self.A(f'tl.set("#b{bi}",{{display:"flex"}},{seg["start"]});tl.set("#b{bi}",{{display:"none"}},{round(end, 3)});')
