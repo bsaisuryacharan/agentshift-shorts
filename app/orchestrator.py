@@ -67,7 +67,9 @@ def classify(text: str, st: dict) -> dict:
         return {"intent": "approve"}
     if low.startswith("/use "):
         return {"intent": "use", "id": t[5:].strip()}
-    if not st.get("current"):                      # nothing to revise yet -> a bare message is a topic
+    if not st.get("current"):                      # nothing to revise yet -> a bare message is a topic, unless it is chit-chat
+        if len(t.split()) < 3 or low.rstrip("!.? ") in ("hi", "hello", "hey", "test", "ping", "ok", "thanks"):
+            return {"intent": "help"}
         return {"intent": "new", "topic": t}
     out, _ = auto.ask(CLASSIFY_SYSTEM, f"CURRENT SHORT: {st['projects'][st['current']].get('title')}\nMESSAGE: {t}")
     return out if out.get("intent") in {"new", "revise", "status", "list", "help", "approve"} else {"intent": "revise", "instruction": t}

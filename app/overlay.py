@@ -17,8 +17,14 @@ FPS = 30
 async def _worker(browser, page: Path, frames: list[int], out: Path) -> dict[int, int]:
     """contiguous frame range; a frame whose DOM is identical to the previous one is not re-screenshotted (map idx->idx)."""
     pg = await browser.new_page(viewport={"width": 1080, "height": 1920})
+    errs: list[str] = []
+    pg.on("pageerror", lambda e: errs.append(str(e)))
+    pg.on("console", lambda m: errs.append(m.text) if m.type == "error" else None)
     await pg.goto(page.resolve().as_uri())
-    await pg.wait_for_timeout(1500)
+    try:
+        await pg.wait_for_function("!!(window.__timelines && window.__timelines.main)", timeout=45000, polling=100)
+    except Exception as ex:
+        raise RuntimeError("overlay page never built its timeline; page errors: " + " | ".join(errs)[:600] + f" ({type(ex).__name__}: {str(ex)[:120]})")
     mapping, prev_hash, prev_idx = {}, None, None
     for i in frames:
         h = await pg.evaluate("t=>{window.__timelines.main.seek(t,false);return document.body.innerHTML.length+':'+"

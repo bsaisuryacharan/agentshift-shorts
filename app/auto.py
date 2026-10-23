@@ -227,8 +227,10 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
             for num in re.findall(r"\d[\d,\.]*\d|\d", re.sub(r"<[^>]+>", " ", blob.replace('"at"', ""))):
                 if not _number_supported(num, facts_text):
                     errs.append(f"{k}: number {num} not in FACTS")
-    if not 70 <= words <= 112:
-        errs.append(f"spoken words {words} outside 70-112")
+    if not 70 <= words <= 128:
+        errs.append(f"spoken words {words} outside 70-128")
+    elif words > 100 and not errs:
+        spec["rate"] = "+20%"                      # long script: speak faster so the Short stays <= ~45 s
     if beats and not any(e.get("t") == "bubble" for e in beats[0].get("hud", [])):
         errs.append("hook needs a bubble")
     return sorted(set(errs))

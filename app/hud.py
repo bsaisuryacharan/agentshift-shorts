@@ -40,7 +40,7 @@ class Page:
         self.n = 0
 
     def A(self, s: str) -> None:
-        self.js.append(s)
+        self.js.append("try{" + s + "}catch(e){console.error('hud:',e.message)}")
 
     def at(self, beat: dict, el: dict, i: int) -> float:
         a = el.get("at")
