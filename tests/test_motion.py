@@ -154,3 +154,27 @@ def test_generate_never_raises_texture_is_last_resort(monkeypatch, tmp_path):
     assert prov == "texture-fallback" and f.exists()
     im = cv2.imread(str(f))
     assert im.shape == (1920, 1080, 3)
+
+
+def test_ask_retries_malformed_json_once(monkeypatch):
+    calls = []
+
+    def fake_call(p, system, user, image):
+        calls.append(p)
+        return "not json" if len(calls) == 1 else '{"ok": true}'
+
+    monkeypatch.setattr(auto, "_providers", lambda: ["gemini"])
+    monkeypatch.setattr(auto, "_call", fake_call)
+    assert auto.ask("s", "u") == ({"ok": True}, "gemini") and calls == ["gemini", "gemini"]
+
+
+def test_finish_survives_unavailable_judge(monkeypatch, tmp_path):
+    import types
+    run_dir = tmp_path / "x"
+    run_dir.mkdir()
+    fake = types.SimpleNamespace(run=lambda sp, out: {"checks": {"safe": "pass"}})
+    monkeypatch.setitem(__import__("sys").modules, "app.produce", fake)
+    monkeypatch.setattr("app.produce", fake, raising=False)
+    monkeypatch.setattr(auto, "judge", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("no judge")))
+    ok, notes, rd, j = auto.finish({"id": "x", "beats": []}, "groq", tmp_path, False, None)
+    assert ok is False and j is None and "judge unavailable" in notes[0]

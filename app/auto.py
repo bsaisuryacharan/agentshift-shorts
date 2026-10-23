@@ -100,10 +100,14 @@ def ask(system: str, user: str, image: bytes | None = None, prefer: list[str] | 
     order = order or [p for p in avail if image is None or p == "gemini"]
     errs = []
     for p in order:
-        try:
-            return _json(_call(p, system, user, image)), p
-        except (httpx.HTTPError, KeyError, ValueError, json.JSONDecodeError) as e:
-            errs.append(f"{p}: {e!r}"[:160])
+        for n in range(2):                                    # a malformed-JSON reply is usually one-off: ask the same provider once more
+            try:
+                return _json(_call(p, system, user, image)), p
+            except (ValueError, json.JSONDecodeError) as e:
+                errs.append(f"{p}: {e!r}"[:160])
+            except (httpx.HTTPError, KeyError) as e:
+                errs.append(f"{p}: {e!r}"[:160])
+                break
     raise RuntimeError("no free LLM provider answered: " + " | ".join(errs) if errs else "set GEMINI_API_KEY or GROQ_API_KEY")
 
 
@@ -196,7 +200,7 @@ def _number_supported(num: str, facts_text: str) -> bool:
     return any(t.startswith(d.rstrip("0") or d) for t in toks if t)
 
 
-PEOPLE = re.compile(r"\b(portrait|face|faces|man|men|woman|women|person|people|human|humans|scientist|physicist|engineer|child|children|crowd|boy|girl|elderly|selfie|headshot|astronaut)\b", re.I)
+PEOPLE = re.compile(r"\b(portrait|face|faces|man|men|woman|women|person|scientist|physicist|child|children|boy|girl|elderly|selfie|headshot)\b", re.I)   # close-up people: generated faces look uncanny
 BEHIND = re.compile(r"silhouette|from behind|back view|backs? turned|no faces?|faceless", re.I)
 
 
@@ -354,7 +358,11 @@ def finish(spec: dict, writer: str, out: Path, deliver: bool, chat: str | None) 
     bad = [k for k, v in m["checks"].items() if v != "pass" and k != "vision"]
     if bad:
         return False, [f"hard gate failed: {k}: {m['checks'][k]}" for k in bad], run_dir, None
-    j = judge(run_dir, spec, writer)
+    try:
+        j = judge(run_dir, spec, writer)
+    except RuntimeError as e:                    # no judge answered (quota / malformed JSON): this attempt cannot be scored, the next one may be
+        print("   judge unavailable:", str(e)[:300], flush=True)
+        return False, ["judge unavailable; keep the script and visuals as they are"], run_dir, None
     print("   judge:", j, flush=True)
     res = produce.regate(run_dir, run_dir / "vision.json")
     if j["approved"] and res["passed"]:
