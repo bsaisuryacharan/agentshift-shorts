@@ -78,8 +78,57 @@ def pollinations(prompt: str, dest: Path, seed: int = 7, tries: int = 4) -> Path
     raise RuntimeError(f"pollinations failed: {last}")
 
 
+STYLE = {"photoreal", "photorealistic", "cinematic", "image", "shot", "view", "dramatic", "lighting", "light", "ultra", "detailed", "highly", "background",
+         "style", "realistic", "closeup", "close-up", "wide", "angle", "aerial", "macro", "top-down", "silhouette", "soft", "natural", "documentary", "with", "from",
+         "against", "above", "over", "into", "that", "this", "their", "while", "scene", "composition", "depth", "field", "bokeh", "sharp", "focus"}
+
+
+def keywords(prompt: str, n: int = 3) -> str:
+    """the subject nouns of an image prompt, in order (style words dropped) -> a short search query"""
+    import re
+    words = [w for w in re.findall(r"[a-z][a-z-]{3,}", prompt.lower()) if w not in STYLE and not w.endswith(("ing", "ed", "ly"))]   # verbs/adverbs rarely appear in a title
+    out: list[str] = []
+    for w in words:
+        if w not in out:
+            out.append(w)
+    return " ".join(out[:n])
+
+
+def nasa_still(prompt: str, dest: Path) -> tuple[Path, dict]:
+    """real NASA photo for the prompt's subject (no key; used when image generation is out of free quota). Cover-fit to 9:16."""
+    import httpx
+    q = keywords(prompt)
+    head = q.split()[0] if q else ""
+    r = httpx.get("https://images-api.nasa.gov/search", params={"q": q, "media_type": "image"}, timeout=30)
+    r.raise_for_status()
+    items = r.json()["collection"]["items"]
+    if not items and len(q.split()) > 1:                       # the API ANDs words: retry with the subject alone
+        items = httpx.get("https://images-api.nasa.gov/search", params={"q": head, "media_type": "image"}, timeout=30).json()["collection"]["items"]
+    words = q.split()
+    for it in items[:10]:
+        d = it["data"][0]
+        text = (d.get("title", "") + " " + " ".join(d.get("keywords", []) or [])).lower()
+        if head not in text or sum(1 for w in words if w in text) < min(2, len(words)):      # relevance floor: a wrong real photo is worse than none
+            continue
+        links = [l["href"] for l in it.get("links", []) if l.get("render") == "image"]
+        if not links:
+            continue
+        img = httpx.get(links[0].replace("~thumb", "~large").replace("~small", "~large"), timeout=60, follow_redirects=True)
+        if img.status_code != 200:
+            continue
+        out = _fit(img.content, dest)
+        credit = {"file": d.get("title", "")[:80], "license": "NASA media (public domain)", "artist": d.get("center", "NASA"),
+                  "url": f"https://images.nasa.gov/details/{d['nasa_id']}"}
+        cj = Path(dest).parent / "credits.json"
+        allc = json.loads(cj.read_text()) if cj.exists() else {}
+        allc[out.name] = credit
+        cj.write_text(json.dumps(allc, indent=1))
+        return out, credit
+    raise RuntimeError(f"no NASA photo for {q!r}")
+
+
 def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
-    """free ladder: Cloudflare FLUX -> Pollinations. Returns (file, provider)."""
+    """free ladder: Cloudflare FLUX -> Pollinations -> real NASA photo -> real Wikimedia Commons photo. Returns (file, provider)."""
     errs = []
     if os.environ.get("CLOUDFLARE_API_TOKEN") and os.environ.get("CLOUDFLARE_ACCOUNT_ID"):
         try:
@@ -90,6 +139,11 @@ def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
         return pollinations(prompt, dest, seed=seed), "pollinations"
     except Exception as e:
         errs.append(str(e))
+    for name, fn in (("nasa-photo", nasa_still), ("commons-photo", lambda p, d: commons(keywords(p, 4), d))):
+        try:
+            return fn(prompt, dest)[0], name
+        except Exception as e:
+            errs.append(f"{name}: {e}")
     raise RuntimeError("all free image providers failed: " + "; ".join(errs))
 
 

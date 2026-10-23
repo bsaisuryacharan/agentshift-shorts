@@ -125,3 +125,21 @@ def test_write_spec_rotates_provider_and_run_survives_writer_failure(monkeypatch
     monkeypatch.setattr(auto, "telegram", lambda text, video=None, chat=None: sent.append(text) or True)
     assert auto.run("topic", None, tmp_path) == 2            # every attempt failed -> parked message, no crash
     assert any("Parked" in s for s in sent)
+
+
+def test_stills_keywords_drop_style_words():
+    from app import stills
+    assert stills.keywords("Photoreal cinematic aerial view of a solar flare erupting from the sun, dramatic lighting") == "solar flare"
+
+
+def test_generate_falls_back_to_real_photos(monkeypatch, tmp_path):
+    from app import stills
+    monkeypatch.setenv("CLOUDFLARE_API_TOKEN", "x")
+    monkeypatch.setenv("CLOUDFLARE_ACCOUNT_ID", "y")
+    monkeypatch.setattr(stills, "flux", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("429")))
+    monkeypatch.setattr(stills, "pollinations", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("402")))
+    monkeypatch.setattr(stills, "nasa_still", lambda p, d: (d, {}))
+    assert stills.generate("solar flare", tmp_path / "a")[1] == "nasa-photo"
+    monkeypatch.setattr(stills, "nasa_still", lambda p, d: (_ for _ in ()).throw(RuntimeError("none")))
+    monkeypatch.setattr(stills, "commons", lambda q, d: (d, {}))
+    assert stills.generate("solar flare", tmp_path / "b")[1] == "commons-photo"
