@@ -33,7 +33,12 @@ jobs:
       - name: Make one Short
         run: |
           T="${{ github.event.inputs.topic }}"
+          set +e
           if [ -n "$T" ]; then python -m app.auto --topic "$T" --out runs; else python -m app.auto --trend --out runs; fi
+          rc=$?
+          # exit 3 = DRAFT delivered to Telegram (judge below the visual bar): that is a delivery, not a failure
+          if [ "$rc" -eq 3 ]; then echo "::notice::DRAFT delivered to Telegram"; exit 0; fi
+          exit "$rc"
       - name: Keep the repo active (schedules pause after 60 idle days) and save the ledger
         if: always()
         run: |
