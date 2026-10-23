@@ -1,0 +1,85 @@
+<style data-brand-tokens></style>
+<style>
+  @font-face {
+    font-family: "Inter";
+    font-weight: 800;
+    font-display: block;
+    src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"),
+      url("https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-800-normal.woff2") format("woff2");
+  }
+
+  #captions-root {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    --cap-band-top: 1428px;
+    --cap-band-height: 344px;
+  }
+
+  #cap {
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    top: var(--cap-band-top);
+    height: var(--cap-band-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .caption-group {
+    position: absolute;
+    max-width: 92%;
+    padding: 16px 34px 20px;
+    background: rgba(8, 8, 11, 0.86);
+    border-radius: 6px;
+    border-left: 6px solid #ff3b1f;
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 76px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #f2ede3;
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .caption-word {
+    color: rgba(242, 237, 227, 0.42);
+  }
+</style>
+<div data-composition-id="captions" data-width="0" data-height="0" data-duration="0" id="captions-root">
+    <div id="cap"></div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2" crossorigin="anonymous"></script>
+<script>
+  (function () {
+    var GROUPS = [];
+    var DURATION = 0;
+    var cap = document.getElementById("cap");
+    var tl = gsap.timeline({ paused: true });
+    GROUPS.forEach(function (g) {
+      var el = document.createElement("div");
+      el.className = "caption-group";
+      g.words.forEach(function (w) {
+        var s = document.createElement("span");
+        s.className = "caption-word";
+        s.textContent = w.text + " ";
+        el.appendChild(s);
+      });
+      cap.appendChild(el);
+      tl.fromTo(el, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.16, overwrite: "auto" }, g.start);
+      tl.to(el, { opacity: 0, duration: 0.1, overwrite: "auto" }, g.end);
+      tl.set(el, { opacity: 0, visibility: "hidden" }, g.end + 0.1);
+      g.words.forEach(function (w, i) {
+        tl.to(el.children[i], { color: "#e8ff3d", duration: 0.04 }, w.start);
+        tl.to(el.children[i], { color: "#f2ede3", duration: 0.04 }, Math.max(w.start + 0.04, w.end - 0.02));
+      });
+    });
+    tl.to({}, { duration: DURATION }, 0);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["captions"] = tl;
+  })();
+</script>

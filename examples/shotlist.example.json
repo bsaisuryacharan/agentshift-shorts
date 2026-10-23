@@ -1,0 +1,9 @@
+{
+  "total": 45.39, "audio": "mix.wav", "overlay_dir": "work/ovl",
+  "shots": [
+    {"img": "img/s0.jpg", "start": 0.0,  "focal": [0.5, 0.55], "zoom": 1.30},
+    {"img": "img/s1.jpg", "start": 3.76, "focal": [0.5, 0.50], "zoom": 1.35, "rot": 0.8},
+    {"img": "img/s4.jpg", "start": 19.45, "focal": [0.5, 0.5], "zoom": 1.30, "flash": 0.55}
+  ],
+  "bursts": [{"t": 19.45, "x": 0.5, "y": 0.5, "n": 260, "speed": 1100, "life": [0.8, 1.8]}]
+}

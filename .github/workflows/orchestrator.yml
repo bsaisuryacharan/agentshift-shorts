@@ -1,0 +1,39 @@
+name: orchestrator
+# Runs once per Telegram message (sent by the Cloudflare Worker). Public repo = free unlimited minutes.
+on:
+  repository_dispatch:
+    types: [telegram]
+concurrency:
+  group: orchestrator            # one job at a time; GitHub keeps only the newest waiting message, so send one change at a time
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  handle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      CHAT: ${{ github.event.client_payload.chat }}
+      TEXT: ${{ github.event.client_payload.text }}     # passed via env, never interpolated into the shell
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: sudo apt-get update -y && sudo apt-get install -y ffmpeg fonts-noto fonts-noto-color-emoji
+      - run: pip install -e . && playwright install --with-deps chromium
+      - name: Handle message
+        run: python -m app.orchestrator handle --chat "$CHAT" --text "$TEXT"
+      - name: Save state (also keeps the repo active)
+        if: always()
+        run: |
+          git config user.name "shorts-bot"; git config user.email "shorts-bot@users.noreply.github.com"
+          git add state projects data/history.jsonl 2>/dev/null || true
+          git commit -m "state: $(date -u +%FT%TZ)" || true
+          git pull --rebase -q || true
+          git push || true

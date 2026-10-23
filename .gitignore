@@ -1,0 +1,11 @@
+.env
+.env.*
+token.json
+oauth_client.json
+runs/
+output/
+videos/
+logs/
+__pycache__/
+*.mp4
+*.egg-info/
