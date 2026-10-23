@@ -8,6 +8,7 @@ timing.json:  {"total": s, "segments": [{"key","text","start","dur","words":[{"w
 from __future__ import annotations
 
 import asyncio
+import random
 import json
 import os
 import re
@@ -33,6 +34,7 @@ async def _seg(text: str, voice: str, rate: str, path: Path) -> list[dict]:
         import edge_tts.communicate as c
         c._SSL_CTX = ssl.create_default_context(cafile=os.environ["AGENT_CA_BUNDLE"])
     words = []
+    text = text.replace("\u2019", "'").replace("\u2018", "'").replace("\u201c", '"').replace("\u201d", '"').replace("\u2014", ", ").replace("\u2013", "-").replace("\u2011", "-")
     comm = edge_tts.Communicate(text, voice, rate=rate, boundary="WordBoundary")
     with open(path, "wb") as f:
         async for ch in comm.stream():
@@ -45,20 +47,20 @@ async def _seg(text: str, voice: str, rate: str, path: Path) -> list[dict]:
 
 async def _seg_retry(sem: asyncio.Semaphore, *a) -> list[dict]:
     async with sem:                       # a few at a time: the free endpoint rejects bursts of 8+
-        for attempt in range(4):
+        for attempt in range(8):
             try:
                 return await _seg(*a)
-            except Exception:             # NoAudioReceived / transient WS errors
-                if attempt == 3:
+            except Exception:             # NoAudioReceived / transient WS errors (the free endpoint throttles datacenter IPs)
+                if attempt == 7:
                     raise
-                await asyncio.sleep(0.8 * (attempt + 1))
+                await asyncio.sleep(min(30, 1.5 * 2 ** attempt) + random.random())
 
 
 async def synth(spec: dict, out: Path) -> dict:
     out.mkdir(parents=True, exist_ok=True)
     beats = spec["beats"]
     paths = [out / f"seg{i}.mp3" for i in range(len(beats))]
-    sem = asyncio.Semaphore(int(os.environ.get("TTS_CONCURRENCY", "4")))
+    sem = asyncio.Semaphore(int(os.environ.get("TTS_CONCURRENCY", "2")))
     results = await asyncio.gather(*[_seg_retry(sem, b["say"], spec.get("voice", "en-US-AndrewNeural"), spec.get("rate", "+10%"), p)
                                      for b, p in zip(beats, paths)])
     t, segs = 0.0, []
