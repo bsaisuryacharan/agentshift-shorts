@@ -203,6 +203,8 @@ def pick_topic(deliver_chat: str | None = None) -> tuple[str, str]:
     import random
     used = used_topics()
     cands = [c for c in cands if _norm_topic(c) not in used]
+    news = (insights.load().get("news") or [])[:8]                       # science/tech headlines collected by the weekly job
+    cands += [f"IN THE NEWS: {n}" for n in news]
     fresh = [e for e in EVERGREEN if _norm_topic(e) not in used]
     cands += random.sample(fresh, min(10, len(fresh)))
     tried = sorted(used)[:60]
@@ -210,7 +212,7 @@ def pick_topic(deliver_chat: str | None = None) -> tuple[str, str]:
     for attempt in range(3):
         out, _ = ask("You choose the next topic for 'Agent Shift', a YouTube Shorts channel of 35-45 s science/tech/history 'what if' explainers. "
                      "From the CANDIDATES pick ONE that is explainable in 40 s with a surprising angle, factual and policy-safe (no tragedies, politics, celebrities, sports results, "
-                     "medical advice). Prefer timeless science/tech/space/history ideas that connect to something people search for; use CHANNEL INSIGHTS to favour what has worked "
+                     "medical advice). Prefer timeless science/tech/space/history ideas that connect to something people search for; items marked IN THE NEWS are current science/tech headlines: when one fits, choose the timeless topic that explains it (a news hook gets views) but never a tragedy or politics; use CHANNEL INSIGHTS to favour what has worked "
                      "and avoid what has scored badly. It must have a real English Wikipedia article. "
                      'Return ONLY JSON {"topic":"a what-if framing","wiki":"exact Wikipedia article title","why":"..."}. Never pick or closely resemble anything in PAST TITLES or ALREADY USED.',
                      f"CANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}",

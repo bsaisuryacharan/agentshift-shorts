@@ -54,6 +54,8 @@ def build(data: Path = ROOT / "data") -> dict:
         rows = [s for s in t.get("signals", []) if s.get("title") and _ascii_ratio(s["title"]) > 0.9]
         rows.sort(key=lambda s: -(s.get("metric") or 0))
         out["region"] = t.get("region")
+        news = [s for s in t.get("signals", []) if s.get("source") in ("news", "nasa") and s.get("title") and _ascii_ratio(s["title"]) > 0.9]
+        out["news"] = [re.sub(r"\s+[-|]\s+[^-|]{3,60}$", "", s["title"]).strip()[:110] for s in news[:12]]      # drop the " - Publisher" tail
         out["trending"] = [re.sub(r"#\w+", "", s["title"]).strip(" |-!") for s in rows[:12]]
     return out
 

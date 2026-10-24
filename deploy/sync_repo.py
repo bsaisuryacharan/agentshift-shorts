@@ -8,10 +8,15 @@ import provision  # noqa: E402
 repo = sys.argv[1] if len(sys.argv) > 1 and "/" in sys.argv[1] else "bsaisuryacharan/agentshift-shorts"
 wd = Path(tempfile.mkdtemp()) / "r"
 subprocess.run(["gh", "repo", "clone", repo, str(wd)], check=True)
+keep_insights = wd / "assets" / "insights.json"       # written by the weekly cloud job: the repo copy is newer than anything on the Mac
+saved = keep_insights.read_bytes() if keep_insights.exists() else None
 for item in list(wd.iterdir()):                      # replace code, keep state/ projects/ data/ .git
     if item.name in provision.ALLOW or item.name == ".github":
         subprocess.run(["rm", "-rf", str(item)], check=True)
 provision.stage(wd)
+if saved is not None:
+    keep_insights.parent.mkdir(parents=True, exist_ok=True)
+    keep_insights.write_bytes(saved)
 subprocess.run(["git", "add", "-A"], cwd=wd, check=True)
 subprocess.run(["git", "-c", "user.name=shorts-bot", "-c", "user.email=shorts-bot@users.noreply.github.com", "commit", "-qm", "sync code"], cwd=wd)
 subprocess.run(["git", "pull", "--rebase", "-q"], cwd=wd)
