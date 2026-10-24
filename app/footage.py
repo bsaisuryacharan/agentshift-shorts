@@ -88,6 +88,27 @@ def _usable(path: Path) -> bool:
     return bool(bright) and float(np.mean(bright)) > 22 and bool(motion) and float(np.median(motion)) > 0.35
 
 
+def _relevant(path: Path, query: str) -> bool:
+    """a vision model must confirm the clip's frame shows what was asked for; any doubt or failure = not relevant (never use unverified footage)."""
+    try:
+        from . import auto
+        cap = cv2.VideoCapture(str(path))
+        cap.set(cv2.CAP_PROP_POS_FRAMES, int(cap.get(cv2.CAP_PROP_FRAME_COUNT) * 0.5))
+        ok, f = cap.read()
+        cap.release()
+        if not ok:
+            return False
+        jpg = cv2.imencode(".jpg", cv2.resize(f, (270, 480)), [cv2.IMWRITE_JPEG_QUALITY, 80])[1].tobytes()
+        out, _ = auto.ask('You check stock footage for a science explainer. Reply ONLY JSON {"relevant": true|false, "shows": "<=8 words"}. '
+                          "relevant=true only if the frame clearly shows (or is an obviously fitting illustration of) the requested subject; people, interiors, aircraft cockpits, "
+                          "streets and unrelated objects are NOT relevant unless requested.", f"REQUESTED SUBJECT: {query}", image=jpg)
+        print(f"  footage check {query!r}: {out}", flush=True)
+        return bool(out.get("relevant"))
+    except Exception as e:
+        print(f"  footage check failed ({e!r}); not using it", flush=True)
+        return False
+
+
 def fetch(query: str, dest: Path) -> dict | None:
     """first relevant NASA clip that decodes, is bright enough and moves -> dest (9:16, 540x960, 24 fps, no audio)."""
     weak = 2 if len(_terms(query)) >= 2 else 1               # a multi-word request must match on at least two words
@@ -105,7 +126,7 @@ def fetch(query: str, dest: Path) -> dict | None:
                            check=True, timeout=180)
         except (subprocess.SubprocessError, OSError):
             continue
-        if dest.exists() and _usable(dest):
+        if dest.exists() and _usable(dest) and _relevant(dest, query):
             return {"file": dest.name, "id": item["id"], "title": item["title"][:80], "center": item["center"], "license": "NASA media (public domain)",
                     "source": f"https://images.nasa.gov/details/{item['id']}"}
         dest.unlink(missing_ok=True)
@@ -126,7 +147,7 @@ def ensure(spec: dict, run_dir: Path) -> dict[str, str]:
         vid.mkdir(parents=True, exist_ok=True)
         dest = vid / f"{b['key']}.mp4"
         try:
-            if dest.exists() and _usable(dest):
+            if dest.exists() and _usable(dest) and credits.get(dest.name):
                 meta = credits.get(dest.name)
             else:
                 meta = fetch(str(q), dest)

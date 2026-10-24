@@ -214,3 +214,17 @@ def test_run_parks_early_when_pictures_cannot_be_sourced(monkeypatch, tmp_path):
     sent = []
     monkeypatch.setattr(auto, "telegram", lambda text, video=None, chat=None: sent.append(text) or True)
     assert auto.run("topic", None, tmp_path) == 4 and "quotas" in sent[0]
+
+
+def test_footage_requires_a_vision_yes(monkeypatch, tmp_path):
+    out = tmp_path / "c.mp4"
+    vw = cv2.VideoWriter(str(out), cv2.VideoWriter_fourcc(*"mp4v"), 24, (540, 960))
+    for i in range(30):
+        vw.write(np.full((960, 540, 3), 100 + i * 4, np.uint8))
+    vw.release()
+    monkeypatch.setattr(auto, "ask", lambda *a, **k: ({"relevant": False, "shows": "airplane cockpit"}, "gemini"))
+    assert footage._relevant(out, "nuclear rocket") is False
+    monkeypatch.setattr(auto, "ask", lambda *a, **k: ({"relevant": True, "shows": "rocket"}, "gemini"))
+    assert footage._relevant(out, "nuclear rocket") is True
+    monkeypatch.setattr(auto, "ask", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("down")))
+    assert footage._relevant(out, "nuclear rocket") is False
