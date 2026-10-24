@@ -75,14 +75,24 @@ def classify(text: str, st: dict) -> dict:
     return out if out.get("intent") in {"new", "revise", "status", "list", "help", "approve"} else {"intent": "revise", "instruction": t}
 
 
-def _persist(st: dict, spec: dict, run_dir: Path, j: dict | None, status: str) -> None:
+def _persist(st: dict, spec: dict, run_dir: Path, j: dict | None, status: str, images: bool = True) -> None:
     base = spec["id"].rsplit("-r", 1)[0]
     d = PROJ / spec["id"]
     d.mkdir(parents=True, exist_ok=True)
     (d / "spec.json").write_text(json.dumps(spec, ensure_ascii=False, indent=1))
     if (run_dir / "img").exists():
-        shutil.copytree(run_dir / "img", d / "img", dirs_exist_ok=True)
-    st["projects"][spec["id"]] = {"title": spec["title"], "base": base, "status": status, "scores": (j or {}).get("scores")}
+        if images:
+            shutil.copytree(run_dir / "img", d / "img", dirs_exist_ok=True)
+        elif (run_dir / "img" / "credits.json").exists():        # the daily Short keeps only its credits in the repo (pictures would bloat it)
+            (d / "img").mkdir(exist_ok=True)
+            shutil.copy(run_dir / "img" / "credits.json", d / "img" / "credits.json")
+    scores = (j or {}).get("scores")
+    if scores is None and (run_dir / "vision.json").exists():          # DRAFTs carry the judge's scores in vision.json
+        try:
+            scores = json.loads((run_dir / "vision.json").read_text()).get("scores")
+        except ValueError:
+            scores = None
+    st["projects"][spec["id"]] = {"title": spec["title"], "base": base, "status": status, "scores": scores}
     st["current"] = spec["id"]
 
 
@@ -102,13 +112,19 @@ def changed_pictures(old: dict, new: dict) -> set[str]:
 def do_new(chat: str, st: dict, topic: str) -> None:
     say(chat, f"On it: researching and writing a Short about “{topic}”. This takes ~10-15 min.")
     rc = auto.run(topic, None, OUT, deliver=True, chat=chat)
+    if not register_last(st, rc):
+        print("[bot] nothing to register (auto.run already told the owner why)")   # auto.run sends the one "Not today" message itself
+
+
+def register_last(st: dict, rc: int = 0, images: bool = True) -> bool:
+    """make the Short auto.run just produced (runs/_last.json) the current one so /status, /list and /approve know it"""
     last = OUT / "_last.json"
-    if rc in (0, 3) and last.exists():
-        info = json.loads(last.read_text())
-        spec = json.loads(Path(info["spec"]).read_text())
-        _persist(st, spec, OUT / spec["id"], None, "draft" if rc == 3 else "delivered")
-    else:
-        say(chat, "That one didn't pass review three times, so I parked it. Send a different angle or /new <topic>.")
+    if rc not in (0, 3) or not last.exists():
+        return False
+    info = json.loads(last.read_text())
+    spec = json.loads(Path(info["spec"]).read_text())
+    _persist(st, spec, OUT / spec["id"], None, "draft" if (rc == 3 or info.get("draft")) else "delivered", images=images)
+    return True
 
 
 def do_revise(chat: str, st: dict, instruction: str) -> None:
@@ -262,8 +278,24 @@ def listen() -> int:
             handle(chat, text)
 
 
+def register_cli() -> int:
+    """after the daily cloud run: register runs/_last.json for the owner's chat (TELEGRAM_CHAT_ID) and save state"""
+    chat = os.environ.get("TELEGRAM_CHAT_ID")
+    if not chat:
+        print("TELEGRAM_CHAT_ID not set; nothing registered")
+        return 0
+    st = _state(chat)
+    ok = register_last(st, 0, images=False)
+    if ok:
+        _save(chat, st)
+    print("registered" if ok else "no fresh Short to register")
+    return 0
+
+
 if __name__ == "__main__":
     a = sys.argv[1:]
+    if a and a[0] == "register":
+        raise SystemExit(register_cli())
     if a and a[0] == "listen":
         raise SystemExit(listen())
     if a and a[0] == "handle":

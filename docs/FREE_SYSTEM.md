@@ -33,8 +33,17 @@ Beats can use bars, line, ring, delta, kinetic, tape, toast, cursor, plus `"fx":
 `assets/motion/` holds 31 small text-free clips curated from the HyperFrames catalog; `app/motionbank.py` blends one over each beat's still. A beat may also ask for
 real NASA footage (`"footage"`, `app/footage.py`). Details, sources and licences: `docs/MOTION_ASSETS.md`.
 
-## Insights feed
-`python -m app.insights` turns the local trend and channel-analytics reports into `assets/insights.json`; `deploy/sync_repo.py` ships it and the cloud topic picker / script writer read it as advice.
+## Insights feed (cloud, weekly)
+`.github/workflows/weekly-insights.yml` (Mondays 03:00 UTC) runs `python -m app.weekly`: trend signals (needs the `YOUTUBE_API_KEY` secret), the
+owner's channel analytics (needs the `YOUTUBE_TOKEN_JSON` secret = the content of a token.json with the yt-analytics.readonly scope), and the judge
+history from `data/history.jsonl`. It writes `assets/insights.json`, which the topic picker and script writer read: best/worst past Shorts and the
+dimensions that fail most, so topic and angle choice adjusts week by week. Without the two optional secrets the job still runs on judge history alone.
+Set them from your Mac without showing the values:  `gh secret set YOUTUBE_API_KEY -R <repo>`  (paste when prompted) and
+`gh secret set YOUTUBE_TOKEN_JSON -R <repo> < token.json`.
+
+## Telegram
+Typing `/` in the chat lists the commands (`app/botmenu.py` registers them at the start of every cloud job). A run that cannot make a Short sends
+one "Not today" message with the reason; nothing else runs on the owner's Mac (the launchd agents are unloaded).
 
 ## Known limits
 Free image quota: Cloudflare's daily allowance covers roughly 3-4 full runs (3 attempts each) and resets at 00:00 UTC; after that the ladder falls back to real photos and plain textures.

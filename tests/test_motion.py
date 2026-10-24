@@ -326,3 +326,23 @@ def test_openverse_filters_licence_and_size(monkeypatch, tmp_path):
     monkeypatch.setattr(httpx, "get", lambda url, **k: R(200, png, "image/png") if url == "u3" else R(200))
     out, credit = stills.openverse("thing", tmp_path / "o")
     assert out.exists() and credit["license"].startswith("CC BY") and credit["url"] == "L"
+
+
+def test_register_last_makes_daily_short_current(monkeypatch, tmp_path):
+    from app import orchestrator as o
+    out = tmp_path / "runs"
+    (out / "x").mkdir(parents=True)
+    (out / "x" / "img").mkdir()
+    (out / "x" / "img" / "credits.json").write_text("{}")
+    (out / "x" / "img" / "s0.jpg").write_bytes(b"x")
+    (out / "x" / "vision.json").write_text(json.dumps({"scores": {"hook": 7}}))
+    (out / "x.spec.json").write_text(json.dumps({"id": "x", "title": "T", "beats": []}))
+    (out / "_last.json").write_text(json.dumps({"id": "x", "spec": str(out / "x.spec.json"), "draft": True}))
+    monkeypatch.setattr(o, "OUT", out)
+    monkeypatch.setattr(o, "PROJ", tmp_path / "projects")
+    st = {"current": None, "projects": {}}
+    assert o.register_last(st, 0, images=False) is True
+    assert st["current"] == "x" and st["projects"]["x"]["status"] == "draft" and st["projects"]["x"]["scores"] == {"hook": 7}
+    assert (tmp_path / "projects" / "x" / "img" / "credits.json").exists() and not (tmp_path / "projects" / "x" / "img" / "s0.jpg").exists()
+    (out / "_last.json").unlink()
+    assert o.register_last({"current": None, "projects": {}}, 0) is False
