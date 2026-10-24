@@ -86,21 +86,36 @@ STYLE = {"prompt", "photoreal", "photorealistic", "cinematic", "image", "shot", 
          "against", "above", "over", "into", "that", "this", "their", "while", "scene", "composition", "depth", "field", "bokeh", "sharp", "focus"}
 
 
-def _blur_fit(raw: bytes, dest: Path) -> Path:
-    """landscape photos are shown whole (width 1000) over a blurred, darkened copy of themselves; portrait/square photos are cover-fitted."""
-    import io
-
+def _layout(im):
+    """9:16 picture from any photo: a full-bleed crop whose window is centred on the picture's bright mass (galaxies, rockets, lit subjects stay in frame).
+    Strips over a blurred copy looked amateur, so even wide panoramas are cropped rather than letterboxed."""
+    import numpy as np
     from PIL import Image, ImageEnhance, ImageFilter
-    im = Image.open(io.BytesIO(raw)).convert("RGB")
     W, H = 1080, 1920
-    if im.width / im.height < 0.75:
-        return _fit(raw, dest)
+    if True:
+        sc = max(W / im.width, H / im.height)
+        big = im.resize((int(im.width * sc) + 1, int(im.height * sc) + 1), Image.LANCZOS)
+        lum = np.asarray(big.convert("L").resize((big.width // 8 or 1, 1), Image.BOX), np.float32)[0]   # column brightness profile
+        lum = np.convolve(lum, np.ones(15) / 15, mode="same") ** 2
+        cx = float((lum * np.arange(len(lum))).sum() / max(lum.sum(), 1e-6)) * 8 if lum.sum() > 0 else big.width / 2
+        left = int(min(max(cx - W / 2, 0), big.width - W))
+        top = (big.height - H) // 2
+        return big.crop((left, top, left + W, top + H))
     sc = max(W / im.width, H / im.height)
     bg = im.resize((int(im.width * sc) + 1, int(im.height * sc) + 1), Image.LANCZOS).filter(ImageFilter.GaussianBlur(40))
     bg = ImageEnhance.Brightness(bg.crop(((bg.width - W) // 2, (bg.height - H) // 2, (bg.width - W) // 2 + W, (bg.height - H) // 2 + H))).enhance(0.7)
-    fg = im.resize((1000, int(im.height * 1000 / im.width)), Image.LANCZOS)
-    bg.paste(fg, ((W - 1000) // 2, 620 - fg.height // 2))
-    bg.save(dest.with_suffix(".jpg"), quality=92)
+    fg = im.resize((W, int(im.height * W / im.width)), Image.LANCZOS)
+    bg.paste(fg, (0, 760 - fg.height // 2))
+    return bg
+
+
+def _blur_fit(raw: bytes, dest: Path) -> Path:
+    """downloaded photo -> 1080x1920 JPEG via _layout"""
+    import io
+
+    from PIL import Image
+    out = _layout(Image.open(io.BytesIO(raw)).convert("RGB"))
+    out.save(dest.with_suffix(".jpg"), quality=92)
     return dest.with_suffix(".jpg")
 
 
@@ -375,19 +390,7 @@ def commons(query: str, dest: Path, min_w: int = 700) -> tuple[Path, dict]:
         if img.status_code != 200:
             continue
         im = Image.open(io.BytesIO(img.content)).convert("RGB")
-        W, H = 1080, 1920
-        bg = im.copy()
-        sc = max(W / bg.width, H / bg.height)
-        bg = bg.resize((int(bg.width * sc) + 1, int(bg.height * sc) + 1), Image.LANCZOS).filter(ImageFilter.GaussianBlur(40))
-        bg = bg.crop(((bg.width - W) // 2, (bg.height - H) // 2, (bg.width - W) // 2 + W, (bg.height - H) // 2 + H))
-        if im.width / im.height < 0.75:       # portrait: cover-fit
-            sc = max(W / im.width, H / im.height)
-            fg = im.resize((int(im.width * sc) + 1, int(im.height * sc) + 1), Image.LANCZOS)
-            bg = fg.crop(((fg.width - W) // 2, (fg.height - H) // 2, (fg.width - W) // 2 + W, (fg.height - H) // 2 + H))
-        else:                                  # landscape/square: whole photo, width 1000, centred over blur
-            fw = 1000
-            fg = im.resize((fw, int(im.height * fw / im.width)), Image.LANCZOS)
-            bg.paste(fg, ((W - fw) // 2, 520 - fg.height // 2 + 300 if fg.height < 900 else (H - fg.height) // 2))
+        bg = _layout(im)
         dest = Path(dest).with_suffix(".jpg")
         bg.save(dest, quality=92)
         credit = {"file": pg["title"], "license": ii["extmetadata"].get("LicenseShortName", {}).get("value"),
