@@ -134,12 +134,15 @@ def _relevant(path: Path, query: str) -> bool:
         cap.release()
         if not ok:
             return False
+        if stills.has_face(f):
+            print(f"  footage check {query!r}: rejected (identifiable person)", flush=True)
+            return False
         jpg = cv2.imencode(".jpg", cv2.resize(f, (270, 480)), [cv2.IMWRITE_JPEG_QUALITY, 80])[1].tobytes()
-        out, _ = auto.ask('You check stock footage for a science explainer. Reply ONLY JSON {"relevant": true|false, "shows": "<=8 words"}. '
+        out, _ = auto.ask('You check stock footage for a science explainer. Reply ONLY JSON {"relevant": true|false, "person": true|false, "text": true|false, "shows": "<=8 words"}. person=true if a real face/body is prominent; text=true if readable captions/labels are prominent. '
                           "relevant=true only if the frame clearly shows (or is an obviously fitting illustration of) the requested subject; people, interiors, aircraft cockpits, "
                           "streets and unrelated objects are NOT relevant unless requested.", f"REQUESTED SUBJECT: {query}", image=jpg, wait=False)
         print(f"  footage check {query!r}: {out}", flush=True)
-        return bool(out.get("relevant"))
+        return bool(out.get("relevant")) and not out.get("person") and not out.get("text")
     except Exception as e:
         if "429" in repr(e) or "Timeout" in repr(e):
             stills._VISION["dead"] = True

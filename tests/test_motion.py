@@ -407,3 +407,24 @@ def test_validate_fills_prompt_from_photo_term():
             "hud": [{"t": "bubble", "text": "what if?", "at": "word"}]} for i in range(7)]}
     errs = auto.validate_spec(spec, "facts")
     assert not any("needs a prompt" in e for e in errs) and "Gulf Stream satellite" in spec["beats"][0]["prompt"]
+
+
+def test_face_detector_rejects_portraits_but_not_galaxies():
+    from app import stills
+    gal = np.zeros((600, 400, 3), np.uint8)
+    cv2.circle(gal, (200, 300), 90, (200, 180, 150), -1)
+    assert stills.has_face(gal) is False
+    sample = cv2.imread(str(Path(cv2.data.haarcascades).parent / "samples" / "lena.jpg")) if (Path(cv2.data.haarcascades).parent / "samples" / "lena.jpg").exists() else None
+    if sample is not None:
+        assert stills.has_face(sample) is True
+
+
+def test_photo_check_rejects_people_and_text(monkeypatch, tmp_path):
+    from app import stills
+    img = tmp_path / "p.jpg"
+    cv2.imwrite(str(img), np.full((480, 270, 3), 90, np.uint8))
+    monkeypatch.setattr(stills, "_VISION", {"dead": False, "calls": 0})
+    for verdict, expect in (({"relevant": True, "person": False, "text": False}, True), ({"relevant": True, "person": True, "text": False}, False),
+                            ({"relevant": True, "person": False, "text": True}, False), ({"relevant": False}, False)):
+        monkeypatch.setattr(auto, "ask", lambda *a, _v=verdict, **k: (_v, "gemini"))
+        assert stills.photo_matches(img, "comet") is expect

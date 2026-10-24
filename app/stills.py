@@ -140,7 +140,21 @@ def texture_still(prompt: str, dest: Path, seed: int = 7) -> Path:
     return out
 
 
-def photo_matches(path: Path, subject: str) -> bool:
+def has_face(img) -> bool:
+    """offline (no quota): a frontal face covering >= 1.2% of the picture means an identifiable person - never used (real likenesses are off limits)"""
+    import cv2
+    try:
+        casc = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+        g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        scale = 480 / max(g.shape)
+        g = cv2.resize(g, None, fx=scale, fy=scale) if scale < 1 else g
+        faces = casc.detectMultiScale(g, scaleFactor=1.1, minNeighbors=6, minSize=(max(24, g.shape[1] // 14),) * 2)
+        return any(w * h >= 0.012 * g.shape[0] * g.shape[1] for (_, _, w, h) in faces)
+    except Exception:
+        return False
+
+
+def photo_matches(path: Path, subject: str) -> bool | None:
     """a vision model must confirm a real photo shows the subject (keyword matching alone picked a White House event for 'Carrington Event');
     any doubt or failure = reject, so the ladder moves on rather than putting a wrong picture on screen."""
     try:
@@ -148,15 +162,19 @@ def photo_matches(path: Path, subject: str) -> bool:
 
         from . import auto
         im = cv2.imread(str(path))
+        if has_face(im):
+            print(f"  photo check {subject!r}: rejected (identifiable person)", flush=True)
+            return False
         jpg = cv2.imencode(".jpg", cv2.resize(im, (270, 480)), [cv2.IMWRITE_JPEG_QUALITY, 80])[1].tobytes()
         if _VISION["dead"] or _VISION["calls"] >= 14:      # free vision quota is ~10/min: cap the calls per run, then rely on strict title matching
             raise RuntimeError("vision unavailable")
         _VISION["calls"] += 1
-        out, _ = auto.ask('You check a stock photo for a science explainer. Reply ONLY JSON {"relevant": true|false, "shows": "<=8 words"}. '
-                          "relevant=true only if the picture clearly shows or illustrates the requested subject; unrelated people, events, rooms and objects are NOT relevant.",
+        out, _ = auto.ask('You check a stock photo for a science explainer. Reply ONLY JSON {"relevant": true|false, "person": true|false, "text": true|false, "shows": "<=8 words"}. '
+                          "relevant=true only if the picture clearly shows or illustrates the requested subject; unrelated people, events, rooms and objects are NOT relevant. "
+                          "person=true if a real person's face or body is a prominent part. text=true if readable words, labels, captions, credits or signs are prominent.",
                           f"REQUESTED SUBJECT: {subject}", image=jpg, wait=False)
         print(f"  photo check {subject!r}: {out}", flush=True)
-        return bool(out.get("relevant"))
+        return bool(out.get("relevant")) and not out.get("person") and not out.get("text")
     except Exception as e:
         if "429" in repr(e) or "Timeout" in repr(e) or "vision unavailable" in repr(e):
             _VISION["dead"] = True                     # free vision quota gone for this run: no more checks, strict title match decides instead
