@@ -134,7 +134,7 @@ class Page:
             end = self.tm["segments"][bi + 1]["start"] if bi + 1 < len(self.tm["segments"]) else sub_t
             inner = "".join(self.safe_element(beat, el, i) for i, el in enumerate(beat.get("hud", [])))
             dim = '<div class="dim"></div>' if beat.get("dim") else '<div class="scrim"></div>'
-            self.html.append(f'<div class="beat" id="b{bi}">{dim}{inner}</div>')
+            self.html.append(f'<div class="beat" id="b{bi}">{dim}<div class="cnt">{inner}</div></div>')   # .cnt clips content to the 870px stage: nothing can reach YouTube\'s right-hand buttons
             self.A(f'tl.set("#b{bi}",{{display:"flex"}},{seg["start"]});tl.set("#b{bi}",{{display:"none"}},{round(end, 3)});')
         caps = self.captions()
         card = (f'<div id="card"><div class="logo">A</div><div class="nm">@agentshiftai</div><div class="btn"><span>🔔</span>{_h.escape(sub["title"])}</div>'
@@ -184,6 +184,7 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
 .stage{position:absolute;left:60px;top:150px;width:870px;height:1120px}
 .beat{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;text-align:center;padding-top:10px}
 .beat>*{flex:none}
+.cnt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:10px;overflow:hidden}.cnt>*{flex:none}
 .scrim{position:absolute;left:-60px;width:1080px;top:-150px;height:760px;background:linear-gradient(#000000cc,#00000080 55%,transparent);z-index:-1}
 .dim{position:absolute;left:-60px;width:1080px;top:-150px;height:1920px;background:#00000085;z-index:-1}
 .bub{margin-top:30px;padding:16px 46px 22px;border-radius:44px;background:#fff;color:#111;font-weight:800;font-size:92px;line-height:1;position:relative;box-shadow:0 8px 40px #000a}
