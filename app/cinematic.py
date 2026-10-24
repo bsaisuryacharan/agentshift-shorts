@@ -83,6 +83,8 @@ class Cinematic:
             self.ovl_map = {int(k): int(v) for k, v in json.loads((self.ovl_dir / "map.json").read_text()).items()}
         self._ovl_cache: tuple[int, tuple | None] = (-1, None)
         self.fx = [sh.get("fx") for sh in self.shots]
+        self._gy, self._gx = np.mgrid[0:240, 0:135].astype(np.float32) / np.array([240, 135], np.float32)[:, None, None]
+        self.drift_tint = {"warm": (14, 40, 70), "earth": (30, 55, 35), "mono": (45, 45, 45)}.get(spec.get("theme"), (70, 48, 18))   # BGR light colour, ~45 levels at its centre
         self.layers = {n: motionbank.ClipLayer(n) for n in {f["clip"] for f in self.fx if f}}
         ys = np.arange(H, dtype=np.float32)[:, None, None]
         self.fx_mask = np.clip(1 - (ys - (H - 700)) / 300, 0.45, 1.0) * np.ones((1, W, 1), np.float32)   # calmer under the caption/UI zone
@@ -180,6 +182,16 @@ class Cinematic:
         n = len(self.shots)
         return max(j for j in range(n) if self.starts[j] <= t + 0.02) if t + 0.02 < self.total + 1 else n - 1
 
+    def drift(self, f: np.ndarray, t: float) -> np.ndarray:
+        """a soft light that wanders across a motion-bank background: dark clips otherwise encode as identical frames and trip the freeze gate"""
+        cx = 0.5 + 0.30 * math.sin(2 * math.pi * t / 5.0)
+        cy = 0.45 + 0.22 * math.sin(2 * math.pi * t / 7.0 + 1.0)
+        yy, xx = self._gy, self._gx
+        g = np.exp(-(((xx - cx) ** 2) * 1.6 + ((yy - cy) ** 2)) / 0.045).astype(np.float32)
+        g = cv2.resize(g, (W, H), interpolation=cv2.INTER_LINEAR)[..., None]
+        tint = np.array(self.drift_tint, np.float32)
+        return np.clip(f.astype(np.float32) + g * tint, 0, 255).astype(np.uint8)
+
     def motion(self, f: np.ndarray, t: float) -> np.ndarray:
         """moving light layer from the motion bank over the current shot (fx on the shot: clip, blend, op)"""
         i = self._shot_at(t)
@@ -216,6 +228,9 @@ class Cinematic:
         if self.lut is not None:
             f = cv2.LUT(f, self.lut)
         f = self.motion(f, t)
+        i = self._shot_at(t)
+        if i in self.vids and self.shots[i].get("pingpong"):
+            f = self.drift(f, t)
         f = cv2.multiply(f, self.vig8, scale=1 / 255)
         fi, fo = self.spec.get("fade_in", 0.35), self.spec.get("fade_out", 0.4)
         k = (t / fi if t < fi else 1.0) * (max(0, (self.total - t) / fo) if t > self.total - fo else 1.0)

@@ -163,13 +163,25 @@ def _title_matches(path: Path, subject: str) -> bool:
     return bool(words) and all(w in title for w in words)
 
 
+def _used_titles(dest: Path) -> set[str]:
+    """titles of real photos already placed in this run's img/ folder, so each beat gets a different picture"""
+    cj = Path(dest).parent / "credits.json"
+    try:
+        return {v.get("file", "") for v in json.loads(cj.read_text()).values()}
+    except (OSError, ValueError):
+        return set()
+
+
 def openverse(query: str, dest: Path, min_w: int = 900) -> tuple[Path, dict]:
     """real CC-licensed photo from Openverse (keyless; commercial-use licences only; Flickr/Wikimedia/museum sources). Returns (file, credit)."""
     import httpx
     r = httpx.get("https://api.openverse.org/v1/images/", params={"q": query, "license_type": "commercial", "page_size": 12, "mature": "false"},
                   headers={"User-Agent": "AgentShiftShorts/1.0 (educational explainer Shorts)"}, timeout=30)
     r.raise_for_status()
+    used = _used_titles(dest)
     for it in r.json().get("results", []):
+        if (it.get("title") or query)[:80] in used:
+            continue
         if (it.get("width") or 0) < min_w or (it.get("license") or "").lower() not in ("cc0", "pdm", "by", "by-sa"):
             continue
         try:
@@ -248,6 +260,8 @@ def nasa_still(prompt: str, dest: Path) -> tuple[Path, dict]:
     raise RuntimeError(f"no NASA photo for {q!r}")
 
 
+TOPIC = ""                       # wiki title of the Short being made (set by auto.run)
+_TOPIC_USES = {"n": 0}
 TEXTURED: list[str] = []
 TEXTURED_FILES: dict[str, str] = {}   # img file name -> prompt, for beats whose picture is only a texture     # prompts that ended as plain texture frames (a Short made mostly of these is parked, not delivered)
 def gemini_image(prompt: str, dest: Path, model: str = "gemini-2.5-flash-image") -> Path:
@@ -317,6 +331,14 @@ def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
             return fn(prompt, dest)[0], name
         except Exception as e:
             errs.append(f"{name}: {e}")
+    if TOPIC and _TOPIC_USES["n"] < 3:      # photos of the topic itself (different ones per beat): better than a blank background, at most 3 per Short
+        for name, fn in (("topic-commons", lambda: commons(TOPIC, dest)), ("topic-openverse", lambda: openverse(TOPIC, dest))):
+            try:
+                out = fn()[0]
+                _TOPIC_USES["n"] += 1
+                return out, name
+            except Exception as e:
+                errs.append(f"{name}: {e}")
     TEXTURED.append(prompt)
     TEXTURED_FILES[Path(dest).with_suffix(".jpg").name] = prompt
     print("  all picture sources failed (" + "; ".join(errs)[:300] + ") -> plain texture frame", flush=True)
@@ -336,7 +358,10 @@ def commons(query: str, dest: Path, min_w: int = 700) -> tuple[Path, dict]:
         "prop": "imageinfo", "iiprop": "url|size|mime|extmetadata", "iiurlwidth": 1600})
     r.raise_for_status()
     pages = sorted((r.json().get("query", {}).get("pages", {})).values(), key=lambda x: x.get("index", 99))
+    used = _used_titles(dest)
     for pg in pages:
+        if pg["title"] in used:
+            continue
         ii = (pg.get("imageinfo") or [{}])[0]
         md = ii.get("extmetadata", {})
         lic = (md.get("LicenseShortName", {}).get("value") or "").lower()

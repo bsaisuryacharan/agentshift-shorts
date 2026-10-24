@@ -508,6 +508,7 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
         spec["_writer"] = writer
         from . import stills
         stills.TEXTURED.clear()
+        stills.TOPIC, stills._TOPIC_USES["n"] = wiki_title, 0
         ok, notes, run_dir, j = finish(spec, writer, out, deliver, chat)
         if not ok:
             print("   attempt notes:", "; ".join(notes)[:600], flush=True)
