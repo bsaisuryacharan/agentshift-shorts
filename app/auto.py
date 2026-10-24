@@ -91,24 +91,32 @@ def _json(text: str) -> dict:
 
 
 def ask(system: str, user: str, image: bytes | None = None, prefer: list[str] | None = None, exclude: str | None = None) -> tuple[dict, str]:
-    """first provider that answers valid JSON wins; 429/5xx/parse errors fail over. Returns (json, provider)."""
+    """first provider that answers valid JSON wins; 429/5xx/parse errors fail over. If every provider is throttled (429/5xx/timeout) wait and go round again
+    (free tiers recover within a minute or two). Returns (json, provider)."""
     avail = _providers()
     order = [p for p in (prefer or avail) if p in avail and p != exclude]
     if image is not None:
         order = [p for p in order if p != "groq" or os.environ.get("GROQ_VISION_MODEL")]   # Groq currently lists no vision model
         order = [p for p in order if p != "openrouter"]                                      # free OpenRouter vision models vary; not trusted as judge
     order = order or [p for p in avail if image is None or p == "gemini"]
-    errs = []
-    for p in order:
-        for n in range(2):                                    # a malformed-JSON reply is usually one-off: ask the same provider once more
-            try:
-                return _json(_call(p, system, user, image)), p
-            except (ValueError, json.JSONDecodeError) as e:
-                errs.append(f"{p}: {e!r}"[:160])
-            except (httpx.HTTPError, KeyError) as e:
-                errs.append(f"{p}: {e!r}"[:160])
-                break
-    raise RuntimeError("no free LLM provider answered: " + " | ".join(errs) if errs else "set GEMINI_API_KEY or GROQ_API_KEY")
+    errs: list[str] = []
+    for rnd in range(3):
+        throttled = False
+        for p in order:
+            for n in range(2):                                    # a malformed-JSON reply is usually one-off: ask the same provider once more
+                try:
+                    return _json(_call(p, system, user, image)), p
+                except (ValueError, json.JSONDecodeError) as e:
+                    errs.append(f"{p}: {e!r}"[:160])
+                except (httpx.HTTPError, KeyError) as e:
+                    errs.append(f"{p}: {e!r}"[:160])
+                    throttled = throttled or any(t in repr(e) for t in ("429", "503", "502", "500", "Timeout"))
+                    break
+        if not (throttled and rnd < 2):
+            break
+        print(f"   all LLM providers throttled; waiting {40 * (rnd + 1)} s", flush=True)
+        time.sleep(40 * (rnd + 1))
+    raise RuntimeError("no free LLM provider answered: " + " | ".join(errs[-4:]) if errs else "set GEMINI_API_KEY or GROQ_API_KEY")
 
 
 # ---------------------------------------------------------------- research (Wikipedia, keyless) -----------------------------

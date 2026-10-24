@@ -246,3 +246,19 @@ def test_ensure_prefers_real_photo_then_generation(monkeypatch, tmp_path):
     except FileNotFoundError:
         pass
     assert calls == [("nasa", "solar flare"), ("gen", "q")]
+
+
+def test_ask_waits_out_throttling_then_succeeds(monkeypatch):
+    import httpx
+    calls, sleeps = [], []
+
+    def fake_call(p, system, user, image):
+        calls.append(p)
+        if len(calls) < 3:
+            raise httpx.HTTPError("429 Too Many Requests")
+        return '{"ok": true}'
+
+    monkeypatch.setattr(auto, "_providers", lambda: ["groq", "gemini"])
+    monkeypatch.setattr(auto, "_call", fake_call)
+    monkeypatch.setattr(auto.time, "sleep", lambda s: sleeps.append(s))
+    assert auto.ask("s", "u")[0] == {"ok": True} and sleeps == [40]
