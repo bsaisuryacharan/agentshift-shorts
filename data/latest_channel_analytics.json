@@ -1,5 +1,52 @@
 {
-  "generated_at": "2026-10-24T02:18:29.550795+00:00",
-  "status": "needs_analytics_authorization",
-  "note": "Run authorize-youtube again to grant read-only YouTube Analytics access."
+  "generated_at": "2026-10-24T06:20:28.798305+00:00",
+  "status": "ok",
+  "date_basis": "YouTube Analytics reports use Pacific calendar days; current day excluded.",
+  "current_period": {
+    "start": "2026-09-24",
+    "end": "2026-10-23",
+    "short_rows": 1,
+    "summary": {
+      "views": 5552.0,
+      "engagedViews": 2229.0,
+      "estimatedMinutesWatched": 940.0,
+      "likes": 82.0,
+      "comments": 2.0,
+      "shares": 3.0,
+      "subscribersGained": 8.0,
+      "subscribersLost": 0.0,
+      "averageViewDuration": 23.0,
+      "averageViewPercentage": 61.85,
+      "netSubscribers": 8.0
+    }
+  },
+  "previous_period": {
+    "start": "2026-08-25",
+    "end": "2026-09-23",
+    "short_rows": 1,
+    "summary": {
+      "views": 3.0,
+      "engagedViews": 1.0,
+      "estimatedMinutesWatched": 0.0,
+      "likes": 0.0,
+      "comments": 0.0,
+      "shares": 0.0,
+      "subscribersGained": 0.0,
+      "subscribersLost": 0.0,
+      "averageViewDuration": 18.0,
+      "averageViewPercentage": 113.13,
+      "netSubscribers": 0.0
+    }
+  },
+  "top_shorts_sample": [],
+  "limitations": [
+    "This supported query provides a channel-level Shorts aggregate; it does not expose per-video retention rows.",
+    "Shown-in-feed and chose-to-view are Studio-specific diagnostics and are not asserted when absent from the API response.",
+    "Do not infer causation or a viral forecast from a small channel's historical sample."
+  ],
+  "topic_guidance": [
+    "Use the channel's own strongest Short patterns as a hypothesis, not a rule.",
+    "Average viewed percentage declined; test hook clarity and payoff structure before changing niche.",
+    "No per-video Shorts row is available from this report shape; use the channel-level retention baseline with broad verified trends."
+  ]
 }
