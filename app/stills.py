@@ -124,6 +124,35 @@ def texture_still(prompt: str, dest: Path, seed: int = 7) -> Path:
     return out
 
 
+def photo_matches(path: Path, subject: str) -> bool:
+    """a vision model must confirm a real photo shows the subject (keyword matching alone picked a White House event for 'Carrington Event');
+    any doubt or failure = reject, so the ladder moves on rather than putting a wrong picture on screen."""
+    try:
+        import cv2
+
+        from . import auto
+        im = cv2.imread(str(path))
+        jpg = cv2.imencode(".jpg", cv2.resize(im, (270, 480)), [cv2.IMWRITE_JPEG_QUALITY, 80])[1].tobytes()
+        out, _ = auto.ask('You check a stock photo for a science explainer. Reply ONLY JSON {"relevant": true|false, "shows": "<=8 words"}. '
+                          "relevant=true only if the picture clearly shows or illustrates the requested subject; unrelated people, events, rooms and objects are NOT relevant.",
+                          f"REQUESTED SUBJECT: {subject}", image=jpg)
+        print(f"  photo check {subject!r}: {out}", flush=True)
+        return bool(out.get("relevant"))
+    except Exception as e:
+        print(f"  photo check failed ({e!r}); not using it", flush=True)
+        return False
+
+
+def _verified(fn, subject: str, dest: Path):
+    """run a photo fetcher, keep the result only if it passes the vision check (and drop its credit entry otherwise)"""
+    got = fn()
+    out = got[0] if isinstance(got, tuple) else got
+    if photo_matches(Path(out), subject):
+        return got
+    Path(out).unlink(missing_ok=True)
+    raise RuntimeError(f"photo for {subject!r} did not match")
+
+
 def keywords(prompt: str, n: int = 3) -> str:
     """the subject nouns of an image prompt, in order (style words dropped) -> a short search query"""
     import re
@@ -139,13 +168,15 @@ def nasa_still(prompt: str, dest: Path) -> tuple[Path, dict]:
     """real NASA photo for the prompt's subject (no key; used when image generation is out of free quota). Cover-fit to 9:16."""
     import httpx
     q = keywords(prompt)
-    head = q.split()[0] if q else ""
+    generic = {"event", "events", "test", "tests", "space", "view", "views", "image", "images", "new", "scene"}
+    core = [w for w in q.split() if w not in generic] or q.split()
+    head = core[0] if core else ""
     r = httpx.get("https://images-api.nasa.gov/search", params={"q": q, "media_type": "image"}, timeout=30)
     r.raise_for_status()
     items = r.json()["collection"]["items"]
     if not items and len(q.split()) > 1:                       # the API ANDs words: retry with the subject alone
         items = httpx.get("https://images-api.nasa.gov/search", params={"q": head, "media_type": "image"}, timeout=30).json()["collection"]["items"]
-    words = q.split()
+    words = core
     for it in items[:10]:
         d = it["data"][0]
         text = (d.get("title", "") + " " + " ".join(d.get("keywords", []) or [])).lower()
@@ -203,7 +234,9 @@ def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
             return flux(prompt, dest), "cloudflare-flux"
         except Exception as e:  # 429 / quota / network -> next provider
             errs.append(f"cloudflare: {e!r}")
-            if "429" in str(e):                          # rate limit or the daily quota: wait once and retry; two misses in a row = skip it for this process
+            if "daily free allocation" in str(e):         # the quota is gone until the daily reset: no point waiting or retrying
+                _DEAD.add("cloudflare")
+            elif "429" in str(e):                          # rate limit or the daily quota: wait once and retry; two misses in a row = skip it for this process
                 import time
                 time.sleep(20)
                 try:
@@ -227,7 +260,8 @@ def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
             errs.append(str(e))
             if "429" in str(e) or "403" in str(e):
                 _DEAD.add("gemini")
-    for name, fn in (("nasa-photo", nasa_still), ("commons-photo", lambda p, d: commons(keywords(p, 4), d))):
+    for name, fn in (("nasa-photo", lambda p, d: _verified(lambda: nasa_still(p, d), prompt, d)),
+                     ("commons-photo", lambda p, d: _verified(lambda: commons(keywords(p, 4), d), prompt, d))):
         try:
             return fn(prompt, dest)[0], name
         except Exception as e:
@@ -300,12 +334,19 @@ def ensure(spec: dict, run: Path) -> list[Path]:
             p = img / shot["img"]
             if p.exists() or p.with_suffix(".jpg").exists():
                 continue
-            if shot.get("photo"):
-                try:
-                    commons(shot["photo"], p)
+            if shot.get("photo"):                      # real photo first: free, unlimited, credible, and it saves the daily image-generation quota
+                done = False
+                for name, fn in (("commons", lambda: _verified(lambda: commons(shot["photo"], p), shot["photo"], p)),
+                                 ("nasa", lambda: _verified(lambda: nasa_still(shot["photo"], p), shot["photo"], p))):
+                    try:
+                        fn()
+                        done = True
+                        break
+                    except Exception as e:
+                        print(f"  {name} {shot['photo']!r}: {e}", flush=True)
+                if done:
                     continue
-                except Exception as e:
-                    print(f"  commons {shot['photo']!r}: {e} -> generating instead", flush=True)
+                print("  no real photo found -> generating instead", flush=True)
             if shot.get("prompt") and os.environ.get("STILLS", "free") == "free":
                 generate(shot["prompt"], p, seed=int(shot.get("seed", 7)))
             else:

@@ -141,11 +141,14 @@ def test_generate_falls_back_to_real_photos(monkeypatch, tmp_path):
     monkeypatch.setenv("CLOUDFLARE_ACCOUNT_ID", "y")
     monkeypatch.setattr(stills, "flux", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("429")))
     monkeypatch.setattr(stills, "pollinations", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("402")))
+    monkeypatch.setattr(stills, "photo_matches", lambda p, s: True)
     monkeypatch.setattr(stills, "nasa_still", lambda p, d: (d, {}))
     assert stills.generate("solar flare", tmp_path / "a")[1] == "nasa-photo"
     monkeypatch.setattr(stills, "nasa_still", lambda p, d: (_ for _ in ()).throw(RuntimeError("none")))
     monkeypatch.setattr(stills, "commons", lambda q, d: (d, {}))
     assert stills.generate("solar flare", tmp_path / "b")[1] == "commons-photo"
+    monkeypatch.setattr(stills, "photo_matches", lambda p, s: False)         # a photo the vision check rejects is never used
+    assert stills.generate("solar flare", tmp_path / "c")[1] == "texture-fallback"
 
 
 def test_generate_never_raises_texture_is_last_resort(monkeypatch, tmp_path):
@@ -228,3 +231,18 @@ def test_footage_requires_a_vision_yes(monkeypatch, tmp_path):
     assert footage._relevant(out, "nuclear rocket") is True
     monkeypatch.setattr(auto, "ask", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("down")))
     assert footage._relevant(out, "nuclear rocket") is False
+
+
+def test_ensure_prefers_real_photo_then_generation(monkeypatch, tmp_path):
+    from app import stills
+    calls = []
+    monkeypatch.setattr(stills, "photo_matches", lambda p, s: True)
+    monkeypatch.setattr(stills, "commons", lambda q, d: (_ for _ in ()).throw(RuntimeError("none")))
+    monkeypatch.setattr(stills, "nasa_still", lambda q, d: calls.append(("nasa", q)) or (d, {}))
+    monkeypatch.setattr(stills, "generate", lambda *a, **k: calls.append(("gen", a[0])) or (a[1], "x"))
+    spec = {"beats": [{"key": "a", "img": "s0.jpg", "photo": "solar flare", "prompt": "p"}, {"key": "b", "img": "s1.jpg", "prompt": "q"}]}
+    try:
+        stills.ensure(spec, tmp_path)
+    except FileNotFoundError:
+        pass
+    assert calls == [("nasa", "solar flare"), ("gen", "q")]
