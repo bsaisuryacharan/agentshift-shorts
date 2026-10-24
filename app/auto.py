@@ -542,6 +542,8 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
     record_topic(topic, wiki_title, "parked")
     if deliver:
         why = "; ".join(notes)[:300] if notes else "no details"
+        if "no free LLM provider" in why or "429" in why:
+            why = "the free AI quota (Groq/Gemini) is used up for now"
         telegram(f"⏸ Not today: '{topic}' did not pass review after {LIMITS['attempts']} tries ({why}). No Short was made; tomorrow's run picks a fresh topic.", chat=chat)
     print("REJECTED after", LIMITS["attempts"], "attempts:", notes)
     return 2
