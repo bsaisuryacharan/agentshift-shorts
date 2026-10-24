@@ -30,6 +30,8 @@ jobs:
         run: sudo apt-get update -y && sudo apt-get install -y ffmpeg fonts-noto fonts-noto-color-emoji
       - name: Python deps
         run: pip install -e . && playwright install --with-deps chromium
+      - name: Telegram command menu (typing / lists the commands)
+        run: python -m app.botmenu || true
       - name: Make one Short
         run: |
           T="${{ github.event.inputs.topic }}"

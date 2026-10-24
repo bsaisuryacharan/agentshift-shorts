@@ -46,7 +46,8 @@ def shotlist(spec: dict, timing: dict, total: float, vids: dict | None = None) -
         for v in b.get("vfx", []):
             bursts.append({"t": voice.word_time(timing, b["key"], v["at"], v.get("nth", 0)), "x": v.get("x", .5), "y": v.get("y", .5),
                            "n": v.get("n", 220), "speed": v.get("speed", 1000), "life": v.get("life", [0.8, 1.6])})
-    return {"total": round(total, 3), "audio": "mix.wav", "overlay_dir": "ovl", "overlay_step": 2, "shots": shots, "bursts": bursts}
+    return {"total": round(total, 3), "audio": "mix.wav", "overlay_dir": "ovl", "overlay_step": 2, "shots": shots, "bursts": bursts,
+            "theme": spec.get("theme")}
 
 
 def onscreen_text(spec: dict) -> str:
@@ -71,7 +72,9 @@ def run(spec_path: Path, out_root: Path, workers: int | None = None) -> dict:
     print(f"[{spec['id']}] producing", flush=True)
 
     stills.ensure(spec, run_dir); t0 = _timed(m, "stills", t0)
-    vids = footage.ensure(spec, run_dir); t0 = _timed(m, "footage", t0)
+    # beats whose still is only a texture (free image quota gone) get real footage as their picture instead
+    need = {b["key"]: stills.keywords(stills.TEXTURED_FILES[b["img"]], 3) for b in spec["beats"] if b.get("img") in stills.TEXTURED_FILES}
+    vids = footage.ensure(spec, run_dir, need); t0 = _timed(m, "footage", t0)
     timing = asyncio.run(voice.synth(spec, run_dir)); t0 = _timed(m, "voice", t0)
     last = max(w["e"] for s in timing["segments"] for w in s["words"])
     total = round(last + TAIL_S, 2)

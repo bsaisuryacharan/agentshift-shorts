@@ -31,6 +31,38 @@ def _query(q: str) -> list[dict]:
     return [it["data"][0] for it in r.json()["collection"]["items"][:15]]
 
 
+INDEX = Path(__file__).resolve().parent.parent / "assets" / "motion" / "nasa_index.json"
+_INDEX: list[dict] | None = None
+
+
+def index() -> list[dict]:
+    """~1,000 NASA Image and Video Library clips indexed by theme/keywords (built from the API, see docs/MOTION_ASSETS.md); fetched on demand."""
+    global _INDEX
+    if _INDEX is None:
+        try:
+            _INDEX = json.loads(INDEX.read_text())
+        except (OSError, ValueError):
+            _INDEX = []
+    return _INDEX
+
+
+def search_index(query: str, limit: int = 12) -> list[dict]:
+    """rank the local index by query-word hits in title/keywords; the first (subject) word must appear."""
+    order = [w for w in re.findall(r"[a-z]{4,}", query.lower()) if w not in STOP]
+    if not order:
+        return []
+    need, primary = set(order), order[0]
+    out = []
+    for it in index():
+        text = (it["t"] + " " + " ".join(it["k"])).lower()
+        if primary not in text:
+            continue
+        hits = sum(1 for t in need if t in text)
+        if hits:
+            out.append({"id": it["id"], "title": it["t"], "hits": hits, "center": "NASA", "theme": it["th"]})
+    return sorted(out, key=lambda x: -x["hits"])[:limit]
+
+
 def search(query: str, limit: int = 12) -> list[dict]:
     """the NASA API ANDs every word, so a long phrase finds nothing: try the phrase, then word pairs, then single words,
     and rank every candidate by how many of the query's words appear in its title/description/keywords."""
@@ -112,7 +144,11 @@ def _relevant(path: Path, query: str) -> bool:
 def fetch(query: str, dest: Path) -> dict | None:
     """first relevant NASA clip that decodes, is bright enough and moves -> dest (9:16, 540x960, 24 fps, no audio)."""
     weak = 2 if len(_terms(query)) >= 2 else 1               # a multi-word request must match on at least two words
-    for item in [i for i in search(query) if i["hits"] >= weak][:6]:
+    cands = [i for i in search_index(query) if i["hits"] >= weak]
+    if len(cands) < 3:
+        seen = {c["id"] for c in cands}
+        cands += [i for i in search(query) if i["hits"] >= weak and i["id"] not in seen]
+    for item in cands[:6]:
         url = _medium_url(item["id"])
         if not url:
             continue
@@ -133,16 +169,18 @@ def fetch(query: str, dest: Path) -> dict | None:
     return None
 
 
-def ensure(spec: dict, run_dir: Path) -> dict[str, str]:
-    """fetch footage for beats that ask for it (max 2 per Short). Never raises: no footage -> the still is used."""
+def ensure(spec: dict, run_dir: Path, need_pictures: dict[str, str] | None = None) -> dict[str, str]:
+    """fetch footage for beats that ask for it (max 2 per Short), plus beats in need_pictures {key: subject} whose still could not be
+    sourced (then real footage is the picture, up to 4 in total). Never raises: no footage -> the still is used."""
     vid = run_dir / "vid"
     got, credits = {}, {}
     cj = vid / "credits.json"
     if cj.exists():
         credits = json.loads(cj.read_text())
+    need_pictures = need_pictures or {}
     for b in spec["beats"]:
-        q = b.get("footage")
-        if not q or len(got) >= 2:
+        q = b.get("footage") or need_pictures.get(b["key"])
+        if not q or len(got) >= (4 if need_pictures else 2):
             continue
         vid.mkdir(parents=True, exist_ok=True)
         dest = vid / f"{b['key']}.mp4"

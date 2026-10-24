@@ -143,6 +143,32 @@ def photo_matches(path: Path, subject: str) -> bool:
         return False
 
 
+def openverse(query: str, dest: Path, min_w: int = 900) -> tuple[Path, dict]:
+    """real CC-licensed photo from Openverse (keyless; commercial-use licences only; Flickr/Wikimedia/museum sources). Returns (file, credit)."""
+    import httpx
+    r = httpx.get("https://api.openverse.org/v1/images/", params={"q": query, "license_type": "commercial", "page_size": 12, "mature": "false"},
+                  headers={"User-Agent": "AgentShiftShorts/1.0 (educational explainer Shorts)"}, timeout=30)
+    r.raise_for_status()
+    for it in r.json().get("results", []):
+        if (it.get("width") or 0) < min_w or (it.get("license") or "").lower() not in ("cc0", "pdm", "by", "by-sa"):
+            continue
+        try:
+            img = httpx.get(it["url"], timeout=60, follow_redirects=True, headers={"User-Agent": "Mozilla/5.0"})
+        except httpx.HTTPError:
+            continue
+        if img.status_code != 200 or not img.headers.get("content-type", "").startswith("image"):
+            continue
+        out = _blur_fit(img.content, dest)
+        credit = {"file": (it.get("title") or query)[:80], "license": f"CC {it.get('license', '').upper()} {it.get('license_version', '')}".strip(),
+                  "artist": (it.get("creator") or it.get("source") or "")[:60], "url": it.get("foreign_landing_url") or it.get("url")}
+        cj = Path(dest).parent / "credits.json"
+        allc = json.loads(cj.read_text()) if cj.exists() else {}
+        allc[out.name] = credit
+        cj.write_text(json.dumps(allc, indent=1))
+        return out, credit
+    raise RuntimeError(f"no Openverse photo for {query!r}")
+
+
 def _verified(fn, subject: str, dest: Path):
     """run a photo fetcher, keep the result only if it passes the vision check (and drop its credit entry otherwise)"""
     got = fn()
@@ -199,7 +225,8 @@ def nasa_still(prompt: str, dest: Path) -> tuple[Path, dict]:
     raise RuntimeError(f"no NASA photo for {q!r}")
 
 
-TEXTURED: list[str] = []     # prompts that ended as plain texture frames (a Short made mostly of these is parked, not delivered)
+TEXTURED: list[str] = []
+TEXTURED_FILES: dict[str, str] = {}   # img file name -> prompt, for beats whose picture is only a texture     # prompts that ended as plain texture frames (a Short made mostly of these is parked, not delivered)
 def gemini_image(prompt: str, dest: Path, model: str = "gemini-2.5-flash-image") -> Path:
     """Gemini native image output (uses the free GEMINI_API_KEY; the free tier may refuse it, then the ladder moves on)."""
     import httpx
@@ -227,7 +254,7 @@ _DEAD: set[str] = set()      # providers that told us their free quota is exhaus
 
 
 def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
-    """free ladder: Cloudflare FLUX -> Pollinations -> real NASA photo -> real Wikimedia Commons photo. Returns (file, provider)."""
+    """free ladder: Cloudflare FLUX -> Pollinations -> Gemini image -> real photos (NASA, Wikimedia Commons, Openverse; each vision-verified) -> texture. Returns (file, provider)."""
     errs = []
     if os.environ.get("CLOUDFLARE_API_TOKEN") and os.environ.get("CLOUDFLARE_ACCOUNT_ID") and "cloudflare" not in _DEAD:
         try:
@@ -261,12 +288,14 @@ def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
             if "429" in str(e) or "403" in str(e):
                 _DEAD.add("gemini")
     for name, fn in (("nasa-photo", lambda p, d: _verified(lambda: nasa_still(p, d), prompt, d)),
-                     ("commons-photo", lambda p, d: _verified(lambda: commons(keywords(p, 4), d), prompt, d))):
+                     ("commons-photo", lambda p, d: _verified(lambda: commons(keywords(p, 4), d), prompt, d)),
+                     ("openverse-photo", lambda p, d: _verified(lambda: openverse(keywords(p, 3), d), prompt, d))):
         try:
             return fn(prompt, dest)[0], name
         except Exception as e:
             errs.append(f"{name}: {e}")
     TEXTURED.append(prompt)
+    TEXTURED_FILES[Path(dest).with_suffix(".jpg").name] = prompt
     print("  all picture sources failed (" + "; ".join(errs)[:300] + ") -> plain texture frame", flush=True)
     return texture_still(prompt, dest, seed), "texture-fallback"
 
@@ -337,7 +366,8 @@ def ensure(spec: dict, run: Path) -> list[Path]:
             if shot.get("photo"):                      # real photo first: free, unlimited, credible, and it saves the daily image-generation quota
                 done = False
                 for name, fn in (("commons", lambda: _verified(lambda: commons(shot["photo"], p), shot["photo"], p)),
-                                 ("nasa", lambda: _verified(lambda: nasa_still(shot["photo"], p), shot["photo"], p))):
+                                 ("nasa", lambda: _verified(lambda: nasa_still(shot["photo"], p), shot["photo"], p)),
+                                 ("openverse", lambda: _verified(lambda: openverse(shot["photo"], p), shot["photo"], p))):
                     try:
                         fn()
                         done = True

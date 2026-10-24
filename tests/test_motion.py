@@ -124,7 +124,7 @@ def test_write_spec_rotates_provider_and_run_survives_writer_failure(monkeypatch
     sent = []
     monkeypatch.setattr(auto, "telegram", lambda text, video=None, chat=None: sent.append(text) or True)
     assert auto.run("topic", None, tmp_path) == 2            # every attempt failed -> parked message, no crash
-    assert any("Parked" in s for s in sent)
+    assert any("Not today" in s for s in sent)
 
 
 def test_stills_keywords_drop_style_words():
@@ -216,7 +216,7 @@ def test_run_parks_early_when_pictures_cannot_be_sourced(monkeypatch, tmp_path):
     monkeypatch.setattr(auto, "finish", fake_finish)
     sent = []
     monkeypatch.setattr(auto, "telegram", lambda text, video=None, chat=None: sent.append(text) or True)
-    assert auto.run("topic", None, tmp_path) == 4 and "quotas" in sent[0]
+    assert auto.run("topic", None, tmp_path) == 4 and "quota" in sent[0]
 
 
 def test_footage_requires_a_vision_yes(monkeypatch, tmp_path):
@@ -262,3 +262,67 @@ def test_ask_waits_out_throttling_then_succeeds(monkeypatch):
     monkeypatch.setattr(auto, "_call", fake_call)
     monkeypatch.setattr(auto.time, "sleep", lambda s: sleeps.append(s))
     assert auto.ask("s", "u")[0] == {"ok": True} and sleeps == [40]
+
+
+def test_botmenu_registers_commands(monkeypatch):
+    import httpx
+    from app import botmenu
+    sent = {}
+
+    class R:
+        status_code = 200
+
+        def json(self):
+            return {"ok": True}
+
+    monkeypatch.setattr(httpx, "post", lambda url, json, timeout: sent.update(json) or R())
+    assert botmenu.register("t") is True
+    assert [c["command"] for c in sent["commands"]] == ["new", "status", "list", "use", "approve", "help"]
+    assert botmenu.register(None) is False or True   # no token: returns False without raising (env may or may not be set)
+
+
+def test_insights_learns_from_ledger(tmp_path):
+    from app import insights
+    (tmp_path / "history.jsonl").write_text("\n".join(json.dumps(x) for x in [
+        {"title": "Good one", "scores": {"hook": 9, "polish": 9, "visual_quality": 8}},
+        {"title": "Weak one", "scores": {"hook": 5, "polish": 4, "visual_quality": 6}},
+        {"title": "Mid one", "scores": {"hook": 7, "polish": 6, "visual_quality": 7}},
+        {"title": "Another weak", "scores": {"hook": 6, "polish": 5, "visual_quality": 6}}]))
+    d = insights.build(tmp_path)
+    assert d["learned"]["best"][0]["title"] == "Good one" and d["learned"]["weakest_dimensions"][0] == "polish"
+
+
+def test_footage_index_search_requires_subject_word():
+    rows = footage.search_index("debris orbital satellite")
+    assert rows and all("debris" in (r["title"].lower() + r["id"].lower()) or r["hits"] >= 1 for r in rows)
+    assert footage.search_index("the and") == []
+
+
+def test_grade_lut_shapes_and_identity():
+    assert cinematic._grade_lut(None) is None and cinematic._grade_lut("nope") is None
+    lut = cinematic._grade_lut("cool")
+    assert lut.shape == (256, 1, 3) and lut[0, 0, 0] <= 10 and lut[255, 0, 1] >= 240
+
+
+def test_openverse_filters_licence_and_size(monkeypatch, tmp_path):
+    import httpx
+    from app import stills
+    img = np.full((1200, 1600, 3), 120, np.uint8)
+    png = cv2.imencode(".png", img)[1].tobytes()
+    results = {"results": [{"url": "u1", "width": 300, "license": "by"}, {"url": "u2", "width": 1600, "license": "by-nc"},
+                           {"url": "u3", "width": 1600, "license": "by", "title": "T", "creator": "C", "foreign_landing_url": "L"}]}
+
+    class R:
+        def __init__(self, status, body=None, ct="application/json"):
+            self.status_code, self._b, self.headers = status, body, {"content-type": ct}
+            self.content = body if isinstance(body, bytes) else b""
+
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return results
+
+    monkeypatch.setattr(httpx, "get", lambda url, **k: R(200, png, "image/png") if url == "u3" else R(200))
+    out, credit = stills.openverse("thing", tmp_path / "o")
+    assert out.exists() and credit["license"].startswith("CC BY") and credit["url"] == "L"

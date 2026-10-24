@@ -1,0 +1,32 @@
+name: weekly-insights
+# Refreshes trend signals + the owner's channel analytics and commits assets/insights.json, which the topic picker and
+# script writer read. Runs in the cloud only. Optional secrets: YOUTUBE_API_KEY, YOUTUBE_TOKEN_JSON (see docs/FREE_SYSTEM.md).
+on:
+  schedule:
+    - cron: "0 3 * * 1"        # Mondays 03:00 UTC (08:30 IST)
+  workflow_dispatch:
+concurrency: weekly-insights
+permissions:
+  contents: write
+jobs:
+  insights:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+      TREND_REGION: IN
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -q -e .
+      - name: Refresh insights
+        run: python -m app.weekly
+      - name: Commit insights
+        run: |
+          git config user.name "shorts-bot"; git config user.email "shorts-bot@users.noreply.github.com"
+          git add assets/insights.json data/latest_trend_report.json data/latest_channel_analytics.json 2>/dev/null || true
+          git commit -m "insights: $(date -u +%F)" || true
+          git pull --rebase -q || true
+          git push || true

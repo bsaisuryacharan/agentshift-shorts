@@ -180,7 +180,7 @@ except Exception:                                   # the bank is optional
     MOTION_CLIPS = "none"
 SYSTEM = f"""You write 35-45 second YouTube Shorts for the channel Agent Shift (brand AGENT SHIFT, 'what if' explainers). Output ONLY JSON.
 Spec schema (JSON object): id (slug), title, voice "en-US-AndrewNeural", rate "+10%", brand "AGENT SHIFT", series_label (short upper-case tag),
-Beats about something REAL that has been photographed (a named spacecraft, telescope, instrument, rocket, place, event, or an actual phenomenon such as a solar flare or an aurora) should add "photo":"<2-3 word search term for the subject, most specific first>" - a real free-licence photo (NASA / Wikimedia Commons) is used instead of generating one, which is free, credible and preferred; use it on at least 3 beats when the topic allows; keep the prompt as the fallback (the prompt must still describe the same subject with no people). Image prompts: no text/letters/numbers, NO people or faces at all (generated faces look uncanny and real people must never be generated: show an object, instrument, place, diagram-like scene or a silhouette from behind instead), documentary look with natural/practical light and real materials (no golden glow, no glowing orbs, no neon), and every beat a DIFFERENT shot type (macro, aerial, top-down, wide, silhouette). TOP-LEVEL key subscribe {{"title":"SUBSCRIBE","sub":"for daily what-ifs"}} (never a hud element), sources {{beat_key: "citation incl. URL"}}, beats[].
+Beats about something REAL that has been photographed (a named spacecraft, telescope, instrument, rocket, place, event, or an actual phenomenon such as a solar flare or an aurora) should add "photo":"<2-3 word search term for the subject, most specific first>" - a real free-licence photo (NASA / Wikimedia Commons) is used instead of generating one, which is free, credible and preferred; use it on at least 3 beats when the topic allows; keep the prompt as the fallback (the prompt must still describe the same subject with no people). Image prompts: no text/letters/numbers, NO people or faces at all (generated faces look uncanny and real people must never be generated: show an object, instrument, place, diagram-like scene or a silhouette from behind instead), documentary look with natural/practical light and real materials (no golden glow, no glowing orbs, no neon), and every beat a DIFFERENT shot type (macro, aerial, top-down, wide, silhouette). TOP-LEVEL key theme: one of "cool" (space/tech), "warm" (history/people/desert), "mono" (archival/serious), "earth" (nature/climate) - every picture is graded to it so the Short looks like one film. TOP-LEVEL key subscribe {{"title":"SUBSCRIBE","sub":"for daily what-ifs"}} (never a hud element), sources {{beat_key: "citation incl. URL"}}, beats[].
 beat: key ("hook","b1".."b6","outro"), img ("s0.jpg"... unique per picture; reuse a name only to show the SAME picture again),
 prompt (ONLY on the first beat that uses an img: photoreal cinematic 9:16 image prompt, no text, no logos, no real people's faces),
 focal [x,y] 0-1, say (one or two short spoken sentences; write numbers as DIGITS like 1960, 8.3 billion, 17% - the voice reads them and the captions show them, so never spell a number out), hud[] on-screen elements, sfx optional [[word,"impact|pop|ding|whoosh",vol]].
@@ -274,6 +274,8 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
                 b.pop("footage")
         if b.get("motion") not in (None, False) and b["motion"] not in MOTION_CLIPS.split(", "):
             b.pop("motion")
+    if spec.get("theme") not in ("cool", "warm", "mono", "earth"):
+        spec["theme"] = "cool"
     if beats and not any(e.get("t") == "bubble" for e in beats[0].get("hud", [])):
         errs.append("hook needs a bubble")
     return sorted(set(errs))
@@ -450,8 +452,8 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
         if not ok:
             print("   attempt notes:", "; ".join(notes)[:600], flush=True)
         if not ok and len(stills.TEXTURED) >= 3:      # pictures could not be sourced (free image quota gone): more attempts today would only repeat this
-            msg = (f"Parked: '{topic}' could not get pictures - the free image quotas are used up for now ({len(stills.TEXTURED)} beats had no picture). "
-                   "The next scheduled run (or /new <topic>) will retry; quotas reset daily.")
+            msg = (f"⏸ Not today: '{topic}'. The free image quota is used up ({len(stills.TEXTURED)} beats had no picture), so no Short was made. "
+                   "Tomorrow's scheduled run will try again - nothing to do.")
             print(msg, flush=True)
             if deliver:
                 telegram(msg, chat=chat)
@@ -472,7 +474,8 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
         print("DRAFT delivered", run_dir / "telegram.mp4")
         return 3
     if deliver:
-        telegram(f"Parked: '{topic}' failed review {LIMITS['attempts']}x. Last notes: {notes}", chat=chat)
+        why = "; ".join(notes)[:300] if notes else "no details"
+        telegram(f"⏸ Not today: '{topic}' did not pass review after {LIMITS['attempts']} tries ({why}). No Short was made; tomorrow's run picks a fresh topic.", chat=chat)
     print("REJECTED after", LIMITS["attempts"], "attempts:", notes)
     return 2
 

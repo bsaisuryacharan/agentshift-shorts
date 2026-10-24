@@ -36,6 +36,29 @@ def _ease(p: float) -> float:
     return p * p * (3 - 2 * p)
 
 
+THEMES = {   # BGR gains, desaturation, contrast  - documentary looks, nothing neon
+    "cool": ((1.10, 1.00, 0.90), 0.12, 1.06),     # space / tech: teal shadows, cooler whites
+    "warm": ((0.90, 1.00, 1.08), 0.10, 1.05),     # history / people / desert: amber
+    "mono": ((1.02, 1.00, 0.98), 0.45, 1.10),     # archival / serious: near-monochrome
+    "earth": ((0.96, 1.04, 1.00), 0.08, 1.04),    # nature / climate: green-leaning neutral
+}
+
+
+def _grade_lut(theme: str | None) -> np.ndarray | None:
+    """per-channel 256-entry LUT: channel gain, pull toward grey (desaturate), contrast S-curve around mid-grey"""
+    if theme not in THEMES:
+        return None
+    gains, desat, contrast = THEMES[theme]
+    x = np.arange(256, dtype=np.float32) / 255
+    lut = np.zeros((256, 1, 3), np.uint8)
+    for c in range(3):
+        v = x * gains[c]
+        v = v * (1 - desat) + x * desat                      # desaturation approximated per channel (full grey pull happens in blend below)
+        v = 0.5 + (v - 0.5) * contrast
+        lut[:, 0, c] = np.clip(v * 255 + 0.5, 0, 255)
+    return lut
+
+
 class Cinematic:
     TR_PRE, TR_POST, K = 0.40, 0.10, 3.0
 
@@ -64,6 +87,7 @@ class Cinematic:
         ys = np.arange(H, dtype=np.float32)[:, None, None]
         self.fx_mask = np.clip(1 - (ys - (H - 700)) / 300, 0.45, 1.0) * np.ones((1, W, 1), np.float32)   # calmer under the caption/UI zone
         self.vig8 = np.repeat((self.vig * 255).astype(np.uint8), 3, axis=2)
+        self.lut = _grade_lut(spec.get("theme"))           # one colour grade for the whole Short so mixed sources read as one film
         g = np.random.default_rng(3)
         tiles = [cv2.resize(g.normal(0, 3.0, (H // 4, W // 4)).astype(np.float32), (W, H)) for _ in range(6)]
         self.grain = [(cv2.cvtColor(np.clip(t, 0, 255).astype(np.uint8), cv2.COLOR_GRAY2BGR),
@@ -189,6 +213,8 @@ class Cinematic:
         if len(self.parts) and self.parts[0, 0] <= t:
             bg = self.particles(bg.astype(np.float32), t)
         f = np.clip(bg, 0, 255).astype(np.uint8)
+        if self.lut is not None:
+            f = cv2.LUT(f, self.lut)
         f = self.motion(f, t)
         f = cv2.multiply(f, self.vig8, scale=1 / 255)
         fi, fo = self.spec.get("fade_in", 0.35), self.spec.get("fade_out", 0.4)
