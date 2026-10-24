@@ -354,3 +354,31 @@ def test_hud_page_fits_text_before_exposing_timeline(tmp_path):
     timing = {"segments": [{"key": "hook", "start": 0.0, "dur": 2.0, "words": [{"w": "a", "s": 0.0, "e": 0.5}, {"w": "b", "s": 0.6, "e": 1.0}, {"w": "c", "s": 1.1, "e": 1.5}]}]}
     html = hud.write(spec, timing, 4.0, tmp_path / "p.html").read_text()
     assert "function __fit()" in html and html.index("__fit();") < html.index("window.__timelines = {main: tl}")
+
+
+def test_topic_ledger_blocks_repeats_by_outcome(monkeypatch, tmp_path):
+    import datetime as dt
+    monkeypatch.setattr(auto, "ROOT", tmp_path)
+    today = dt.date.today()
+    rows = [("Kessler syndrome", "draft", today - dt.timedelta(days=10)), ("Dyson sphere", "parked", today - dt.timedelta(days=1)),
+            ("Tunguska event", "parked", today - dt.timedelta(days=9)), ("Old topic", "delivered", today - dt.timedelta(days=90)),
+            ("Project Orion (nuclear propulsion)", "started", today)]
+    (tmp_path / "data").mkdir()
+    (tmp_path / auto.TOPICS).write_text("\n".join(json.dumps({"date": d.isoformat(), "topic": "What if " + w, "wiki": w, "outcome": o}) for w, o, d in rows))
+    used = auto.used_topics()
+    assert auto._norm_topic("Kessler syndrome") in used and auto._norm_topic("Dyson sphere") in used
+    assert auto._norm_topic("Project Orion") in {auto._norm_topic("Project Orion (nuclear propulsion)")} and auto._norm_topic("Project Orion (nuclear propulsion)") in used
+    assert auto._norm_topic("Tunguska event") not in used and auto._norm_topic("Old topic") not in used
+
+
+def test_pick_topic_never_returns_a_used_topic(monkeypatch, tmp_path):
+    monkeypatch.setattr(auto, "ROOT", tmp_path)
+    (tmp_path / "data").mkdir()
+    auto.record_topic("What if Kessler syndrome", "Kessler syndrome", "draft")
+    monkeypatch.setattr(auto, "trend_topics", lambda *a, **k: ["Kessler syndrome", "Taylor Swift"])
+    monkeypatch.setattr(auto.httpx, "get", lambda *a, **k: (_ for _ in ()).throw(auto.httpx.HTTPError("offline")))
+    answers = iter([{"topic": "t", "wiki": "Kessler syndrome"}, {"topic": "t", "wiki": "Kessler syndrome"}, {"topic": "t", "wiki": "Kessler syndrome"}])
+    monkeypatch.setattr(auto, "ask", lambda *a, **k: (next(answers), "groq"))
+    monkeypatch.setattr(auto, "wiki_facts", lambda q: {"title": q})
+    topic, wiki = auto.pick_topic()
+    assert auto._norm_topic(wiki) != auto._norm_topic("Kessler syndrome") and wiki in auto.EVERGREEN

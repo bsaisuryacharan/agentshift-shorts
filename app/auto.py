@@ -138,7 +138,48 @@ def trend_topics(geo: str = "US", n: int = 15) -> list[str]:
 
 
 EVERGREEN = ["Dyson sphere", "Kessler syndrome", "Carrington Event", "Fermi paradox", "Tunguska event", "Grey goo", "Great Filter",
-             "Yellowstone Caldera", "Year Without a Summer", "Van Allen radiation belt", "Tardigrade", "Project Orion (nuclear propulsion)"]
+             "Yellowstone Caldera", "Year Without a Summer", "Van Allen radiation belt", "Tardigrade", "Project Orion (nuclear propulsion)",
+             "Voyager 1", "Great Dying", "Toba catastrophe theory", "Cretaceous-Paleogene extinction event", "Mars Climate Orbiter", "Space elevator",
+             "Event Horizon Telescope", "Antikythera mechanism", "Voynich manuscript", "Library of Alexandria", "Krakatoa", "Halley's Comet",
+             "Apollo 13", "Chernobyl exclusion zone", "Mid-Atlantic Ridge", "Marianas Trench", "Oort cloud", "Boltzmann brain",
+             "Roman concrete", "Greenland ice sheet", "Gulf Stream", "Antarctic ozone hole", "Cosmic microwave background", "Neutron star",
+             "Magnetar", "Pale Blue Dot", "Hubble Space Telescope", "International Space Station", "Starlink", "James Webb Space Telescope",
+             "Lagrange point", "Solar sail", "Nuclear winter", "Permafrost", "Coral bleaching", "Bioluminescence", "Mycelium", "Octopus intelligence",
+             "Svalbard Global Seed Vault", "Large Hadron Collider", "Quantum entanglement", "Turing test", "Moore's law", "Y2K problem",
+             "Great Pacific garbage patch", "Atacama Desert", "Tardigrades in space", "Ball lightning", "St. Elmo's fire", "Aurora"]
+TOPICS = Path("data/topics.jsonl")      # every topic ever started: unlike history.jsonl (approved Shorts only) this stops repeats of drafts and parked tries
+
+
+def _norm_topic(t: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", re.sub(r"\(.*?\)", "", t.lower()))
+
+
+def used_topics(days_done: int = 60, days_parked: int = 3) -> set[str]:
+    """normalised wiki titles / topics that must not be picked again: delivered or draft ones for `days_done`, parked or crashed ones for `days_parked`"""
+    import datetime as dt
+    path = ROOT / TOPICS
+    out: set[str] = set()
+    if not path.exists():
+        return out
+    today = dt.date.today()
+    for line in path.read_text().splitlines():
+        try:
+            r = json.loads(line)
+            age = (today - dt.date.fromisoformat(r["date"])).days
+        except (ValueError, KeyError):
+            continue
+        keep = days_done if r.get("outcome") in ("delivered", "draft") else days_parked
+        if age <= keep:
+            out |= {_norm_topic(r.get("wiki", "")), _norm_topic(r.get("topic", ""))} - {""}
+    return out
+
+
+def record_topic(topic: str, wiki: str, outcome: str, score: float | None = None) -> None:
+    import datetime as dt
+    path = ROOT / TOPICS
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "a") as f:
+        f.write(json.dumps({"date": dt.date.today().isoformat(), "topic": topic, "wiki": wiki, "outcome": outcome, "score": score}, ensure_ascii=False) + "\n")
 
 
 def pick_topic(deliver_chat: str | None = None) -> tuple[str, str]:
@@ -160,16 +201,31 @@ def pick_topic(deliver_chat: str | None = None) -> tuple[str, str]:
     hist = ROOT / LIMITS["history"]
     past = [json.loads(x)["title"] for x in hist.read_text().splitlines()[-40:]] if hist.exists() else []
     import random
-    cands += random.sample(EVERGREEN, 6)
-    out, _ = ask("You choose the next topic for 'Agent Shift', a YouTube Shorts channel of 35-45 s science/tech/history 'what if' explainers. "
-                 "From the CANDIDATES pick ONE that is explainable in 40 s with a surprising angle, factual and policy-safe (no tragedies, politics, celebrities, sports results, "
-                 "medical advice). Prefer timeless science/tech/space/history ideas that connect to something people search for. It must have a real English Wikipedia article. "
-                 'Return ONLY JSON {"topic":"a what-if framing","wiki":"exact Wikipedia article title","why":"..."}. Do not repeat or closely resemble PAST titles.',
-                 f"CANDIDATES: {cands}\nPAST TITLES: {past}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}", prefer=["groq", "gemini", "openrouter"])
-    wiki = out["wiki"]
-    wiki_facts(wiki)                              # proves the article exists and is fetchable
+    used = used_topics()
+    cands = [c for c in cands if _norm_topic(c) not in used]
+    fresh = [e for e in EVERGREEN if _norm_topic(e) not in used]
+    cands += random.sample(fresh, min(10, len(fresh)))
+    tried = sorted(used)[:60]
+    out = {}
+    for attempt in range(3):
+        out, _ = ask("You choose the next topic for 'Agent Shift', a YouTube Shorts channel of 35-45 s science/tech/history 'what if' explainers. "
+                     "From the CANDIDATES pick ONE that is explainable in 40 s with a surprising angle, factual and policy-safe (no tragedies, politics, celebrities, sports results, "
+                     "medical advice). Prefer timeless science/tech/space/history ideas that connect to something people search for; use CHANNEL INSIGHTS to favour what has worked "
+                     "and avoid what has scored badly. It must have a real English Wikipedia article. "
+                     'Return ONLY JSON {"topic":"a what-if framing","wiki":"exact Wikipedia article title","why":"..."}. Never pick or closely resemble anything in PAST TITLES or ALREADY USED.',
+                     f"CANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}",
+                     prefer=["groq", "gemini", "openrouter"])
+        w = wiki_facts(out["wiki"])["title"]         # proves the article exists and is fetchable; use its canonical title
+        if _norm_topic(w) not in used and _norm_topic(out["wiki"]) not in used:
+            out["wiki"] = w
+            break
+        print(f"   picker chose an already-used topic ({out['wiki']}); asking again", flush=True)
+        cands = [c for c in cands if _norm_topic(c) != _norm_topic(out["wiki"])]
+    else:                                             # the model keeps repeating itself: take an unused evergreen topic ourselves
+        pick = random.choice(fresh or EVERGREEN)
+        out = {"topic": f"What if {pick} happened or mattered more than we think?", "wiki": pick, "why": "fallback: first unused evergreen topic"}
     print("picked:", out)
-    return out["topic"], wiki
+    return out["topic"], out["wiki"]
 
 
 # ---------------------------------------------------------------- script -> spec -------------------------------------------
@@ -429,6 +485,8 @@ def facts_for(topic: str, wiki: str | None, facts_file: Path | None, deliver: bo
 def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_file: Path | None = None, chat: str | None = None) -> int:
     facts = facts_for(topic, wiki, facts_file, deliver, chat)
     (out / "_last.facts.json").parent.mkdir(parents=True, exist_ok=True)
+    wiki_title = facts.get("title") or wiki or topic
+    record_topic(topic, wiki_title, "started")
     notes: list[str] = []
     best = None                                   # best technically-clean attempt, delivered as a DRAFT if none is approved
     for attempt in range(1, LIMITS["attempts"] + 1):
@@ -455,6 +513,7 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
             msg = (f"⏸ Not today: '{topic}'. The free image quota is used up ({len(stills.TEXTURED)} beats had no picture), so no Short was made. "
                    "Tomorrow's scheduled run will try again - nothing to do.")
             print(msg, flush=True)
+            record_topic(topic, wiki_title, "parked")
             if deliver:
                 telegram(msg, chat=chat)
             return 4
@@ -463,16 +522,19 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
             if best is None or avg > best[0]:
                 best = (avg, spec, run_dir, j)
         if ok:
+            record_topic(topic, wiki_title, "delivered", round(sum(j["scores"].values()) / len(j["scores"]), 1))
             print("APPROVED", run_dir / "telegram.mp4")
             (out / "_last.json").write_text(json.dumps({"id": spec["id"], "spec": str(out / f"{spec['id']}.spec.json")}))
             return 0
     if best:                                      # factual + policy-safe but visually short of the bar -> hand to the owner as a clearly-labelled draft
         _, spec, run_dir, j = best
+        record_topic(topic, wiki_title, "draft", round(best[0], 1))
         (out / "_last.json").write_text(json.dumps({"id": spec["id"], "spec": str(out / f"{spec['id']}.spec.json"), "draft": True}))
         if deliver:
             send_draft(spec, run_dir, j, chat)
         print("DRAFT delivered", run_dir / "telegram.mp4")
         return 3
+    record_topic(topic, wiki_title, "parked")
     if deliver:
         why = "; ".join(notes)[:300] if notes else "no details"
         telegram(f"⏸ Not today: '{topic}' did not pass review after {LIMITS['attempts']} tries ({why}). No Short was made; tomorrow's run picks a fresh topic.", chat=chat)
@@ -487,6 +549,9 @@ if __name__ == "__main__":
     if "--trend" in a or "--auto" in a:
         topic, wiki_pick = pick_topic()
         a += ["--wiki", wiki_pick]
+    if "--pick-only" in a:                       # evaluate the picker without making a Short
+        print(json.dumps({"topic": topic, "wiki": arg("--wiki"), "already_used": sorted(used_topics())[:40]}, ensure_ascii=False))
+        raise SystemExit(0)
     if not topic:
         raise SystemExit(__doc__)
     raise SystemExit(run(topic, arg("--wiki"), Path(arg("--out") or "runs"), "--no-deliver" not in a, Path(arg("--facts")) if arg("--facts") else None))
