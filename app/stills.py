@@ -154,6 +154,32 @@ def has_face(img) -> bool:
         return False
 
 
+BAD_TITLE = re.compile(r"diagram|illustration|chart|schematic|infographic|poster|slide|screenshot|cartoon|drawing|logo|flag|svg|map of|graph\b|table\b", re.I)
+
+
+def has_text(img) -> bool:
+    """offline (no quota): text-like regions (rows of small high-contrast strokes) covering >= 2% of the picture, or 3+ of them, means a labelled
+    diagram / sign / caption. Calibrated: labelled diagrams 0.08, clean NASA photos 0-0.008."""
+    import cv2
+    try:
+        g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        k = 640 / max(g.shape)
+        g = cv2.resize(g, None, fx=k, fy=k) if k < 1 else g
+        grad = cv2.morphologyEx(g, cv2.MORPH_GRADIENT, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)))
+        _, bw = cv2.threshold(grad, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+        conn = cv2.morphologyEx(bw, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_RECT, (17, 3)))
+        cnts, _ = cv2.findContours(conn, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        cover = n = 0
+        for c in cnts:
+            x, y, w, h = cv2.boundingRect(c)
+            if 6 <= h <= 40 and w >= 2.2 * h and w >= 24 and 0.25 <= bw[y:y + h, x:x + w].mean() / 255 <= 0.8:
+                cover += w * h
+                n += 1
+        return cover / (g.shape[0] * g.shape[1]) >= 0.02 or n >= 3
+    except Exception:
+        return False
+
+
 def photo_matches(path: Path, subject: str) -> bool | None:
     """a vision model must confirm a real photo shows the subject (keyword matching alone picked a White House event for 'Carrington Event');
     any doubt or failure = reject, so the ladder moves on rather than putting a wrong picture on screen."""
@@ -164,6 +190,9 @@ def photo_matches(path: Path, subject: str) -> bool | None:
         im = cv2.imread(str(path))
         if has_face(im):
             print(f"  photo check {subject!r}: rejected (identifiable person)", flush=True)
+            return False
+        if has_text(im):
+            print(f"  photo check {subject!r}: rejected (labels / text in the picture)", flush=True)
             return False
         jpg = cv2.imencode(".jpg", cv2.resize(im, (270, 480)), [cv2.IMWRITE_JPEG_QUALITY, 80])[1].tobytes()
         if _VISION["dead"] or _VISION["calls"] >= 14:      # free vision quota is ~10/min: cap the calls per run, then rely on strict title matching
@@ -213,7 +242,7 @@ def openverse(query: str, dest: Path, min_w: int = 900) -> tuple[Path, dict]:
     r.raise_for_status()
     used = _used_titles(dest)
     for it in r.json().get("results", []):
-        if (it.get("title") or query)[:80] in used:
+        if (it.get("title") or query)[:80] in used or BAD_TITLE.search(it.get("title") or ""):
             continue
         if (it.get("width") or 0) < min_w or (it.get("license") or "").lower() not in ("cc0", "pdm", "by", "by-sa"):
             continue
@@ -274,7 +303,7 @@ def nasa_still(prompt: str, dest: Path) -> tuple[Path, dict]:
     for it in items[:10]:
         d = it["data"][0]
         text = (d.get("title", "") + " " + " ".join(d.get("keywords", []) or [])).lower()
-        if head not in text or sum(1 for w in words if w in text) < min(2, len(words)):      # relevance floor: a wrong real photo is worse than none
+        if BAD_TITLE.search(d.get("title", "")) or head not in text or sum(1 for w in words if w in text) < min(2, len(words)):      # relevance floor: a wrong real photo is worse than none
             continue
         links = [l["href"] for l in it.get("links", []) if l.get("render") == "image"]
         if not links:
@@ -402,7 +431,7 @@ def commons(query: str, dest: Path, min_w: int = 700) -> tuple[Path, dict]:
             continue
         if not (lic.startswith("cc") or "public domain" in lic or lic == "pd"):
             continue
-        if re.search(r"logo|map|diagram|flag|svg|coat of arms", pg["title"].lower()):
+        if re.search(r"logo|map|diagram|flag|svg|coat of arms", pg["title"].lower()) or BAD_TITLE.search(pg["title"]):
             continue
         img = httpx.get(ii.get("thumburl") or ii["url"], headers=h, timeout=60, follow_redirects=True)
         if img.status_code != 200:

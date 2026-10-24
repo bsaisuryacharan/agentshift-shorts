@@ -120,34 +120,36 @@ def _usable(path: Path) -> bool:
     return bool(bright) and float(np.mean(bright)) > 22 and bool(motion) and float(np.median(motion)) > 0.35
 
 
-def _relevant(path: Path, query: str) -> bool:
-    """a vision model must confirm the clip's frame shows what was asked for; any doubt or failure = not relevant (never use unverified footage)."""
+def _relevant(path: Path, query: str) -> bool | None:
+    """True/False = decided; None = no vision answer (the caller then requires every requested word in the clip's title).
+    Offline guards run first and always: no identifiable person, no on-screen text/labels. Then a vision model must confirm the subject."""
     from . import stills
+    cap = cv2.VideoCapture(str(path))
+    cap.set(cv2.CAP_PROP_POS_FRAMES, int(cap.get(cv2.CAP_PROP_FRAME_COUNT) * 0.5))
+    ok, f = cap.read()
+    cap.release()
+    if not ok:
+        return False
+    if stills.has_face(f) or stills.has_text(f):
+        print(f"  footage check {query!r}: rejected (person or on-screen text)", flush=True)
+        return False
     try:
         from . import auto
         if stills._VISION["dead"] or stills._VISION["calls"] >= 14:
             raise RuntimeError("vision unavailable")
         stills._VISION["calls"] += 1
-        cap = cv2.VideoCapture(str(path))
-        cap.set(cv2.CAP_PROP_POS_FRAMES, int(cap.get(cv2.CAP_PROP_FRAME_COUNT) * 0.5))
-        ok, f = cap.read()
-        cap.release()
-        if not ok:
-            return False
-        if stills.has_face(f):
-            print(f"  footage check {query!r}: rejected (identifiable person)", flush=True)
-            return False
         jpg = cv2.imencode(".jpg", cv2.resize(f, (270, 480)), [cv2.IMWRITE_JPEG_QUALITY, 80])[1].tobytes()
-        out, _ = auto.ask('You check stock footage for a science explainer. Reply ONLY JSON {"relevant": true|false, "person": true|false, "text": true|false, "shows": "<=8 words"}. person=true if a real face/body is prominent; text=true if readable captions/labels are prominent. '
+        out, _ = auto.ask('You check stock footage for a science explainer. Reply ONLY JSON {"relevant": true|false, "person": true|false, "text": true|false, "shows": "<=8 words"}. '
                           "relevant=true only if the frame clearly shows (or is an obviously fitting illustration of) the requested subject; people, interiors, aircraft cockpits, "
-                          "streets and unrelated objects are NOT relevant unless requested.", f"REQUESTED SUBJECT: {query}", image=jpg, wait=False)
+                          "streets and unrelated objects are NOT relevant unless requested. person=true if a real face/body is prominent; text=true if readable captions/labels are prominent.",
+                          f"REQUESTED SUBJECT: {query}", image=jpg, wait=False)
         print(f"  footage check {query!r}: {out}", flush=True)
         return bool(out.get("relevant")) and not out.get("person") and not out.get("text")
     except Exception as e:
         if "429" in repr(e) or "Timeout" in repr(e):
             stills._VISION["dead"] = True
         print(f"  footage check unavailable ({str(e)[:70]}); strict title match instead", flush=True)
-        return None                                   # caller falls back to the clip's own title
+        return None
 
 
 def fetch(query: str, dest: Path) -> dict | None:

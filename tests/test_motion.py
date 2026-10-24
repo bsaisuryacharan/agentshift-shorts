@@ -452,3 +452,21 @@ def test_earlier_good_draft_is_delivered_even_if_last_attempt_has_no_pictures(mo
     monkeypatch.setattr(auto, "send_draft", lambda s, rd, j, chat: sent.append("draft"))
     monkeypatch.setattr(auto, "telegram", lambda *a, **k: sent.append("msg") or True)
     assert auto.run("topic", None, tmp_path) == 3 and sent == ["draft"]
+
+
+def test_text_detector_flags_labelled_diagrams_not_plain_photos():
+    from app import stills
+    plain = np.zeros((720, 1280, 3), np.uint8)
+    cv2.circle(plain, (640, 360), 200, (180, 160, 140), -1)
+    plain = cv2.GaussianBlur(plain, (0, 0), 6)
+    diagram = np.full((720, 1280, 3), 40, np.uint8)
+    for k in range(8):
+        cv2.putText(diagram, f"Van Allen Probe {k}", (80 + 120 * (k % 3), 90 + 80 * k), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (240, 240, 240), 2, cv2.LINE_AA)
+    assert stills.has_text(plain) is False and stills.has_text(diagram) is True
+
+
+def test_title_blocklist_skips_diagrams_and_posters():
+    from app import stills
+    for t in ("Van Allen belt diagram", "Solar system poster", "Cassini illustration", "Voyager logo"):
+        assert stills.BAD_TITLE.search(t)
+    assert not stills.BAD_TITLE.search("Major Solar Flare") and not stills.BAD_TITLE.search("Andromeda Galaxy")
