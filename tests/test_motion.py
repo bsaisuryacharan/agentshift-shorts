@@ -225,12 +225,14 @@ def test_footage_requires_a_vision_yes(monkeypatch, tmp_path):
     for i in range(30):
         vw.write(np.full((960, 540, 3), 100 + i * 4, np.uint8))
     vw.release()
+    from app import stills
+    monkeypatch.setattr(stills, "_VISION", {"dead": False, "calls": 0})
     monkeypatch.setattr(auto, "ask", lambda *a, **k: ({"relevant": False, "shows": "airplane cockpit"}, "gemini"))
     assert footage._relevant(out, "nuclear rocket") is False
     monkeypatch.setattr(auto, "ask", lambda *a, **k: ({"relevant": True, "shows": "rocket"}, "gemini"))
     assert footage._relevant(out, "nuclear rocket") is True
     monkeypatch.setattr(auto, "ask", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("down")))
-    assert footage._relevant(out, "nuclear rocket") is False
+    assert footage._relevant(out, "nuclear rocket") is None            # no answer: the caller decides by the clip's title
 
 
 def test_ensure_prefers_real_photo_then_generation(monkeypatch, tmp_path):

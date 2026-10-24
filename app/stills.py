@@ -134,8 +134,9 @@ def photo_matches(path: Path, subject: str) -> bool:
         from . import auto
         im = cv2.imread(str(path))
         jpg = cv2.imencode(".jpg", cv2.resize(im, (270, 480)), [cv2.IMWRITE_JPEG_QUALITY, 80])[1].tobytes()
-        if _VISION["dead"]:
+        if _VISION["dead"] or _VISION["calls"] >= 14:      # free vision quota is ~10/min: cap the calls per run, then rely on strict title matching
             raise RuntimeError("vision unavailable")
+        _VISION["calls"] += 1
         out, _ = auto.ask('You check a stock photo for a science explainer. Reply ONLY JSON {"relevant": true|false, "shows": "<=8 words"}. '
                           "relevant=true only if the picture clearly shows or illustrates the requested subject; unrelated people, events, rooms and objects are NOT relevant.",
                           f"REQUESTED SUBJECT: {subject}", image=jpg, wait=False)
@@ -148,7 +149,7 @@ def photo_matches(path: Path, subject: str) -> bool:
         return None
 
 
-_VISION = {"dead": False}
+_VISION = {"dead": False, "calls": 0}
 
 
 def _title_matches(path: Path, subject: str) -> bool:
@@ -309,9 +310,9 @@ def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
             errs.append(str(e))
             if "429" in str(e) or "403" in str(e):
                 _DEAD.add("gemini")
-    for name, fn in (("nasa-photo", lambda p, d: _verified(lambda: nasa_still(p, d), prompt, d)),
-                     ("commons-photo", lambda p, d: _verified(lambda: commons(keywords(p, 4), d), prompt, d)),
-                     ("openverse-photo", lambda p, d: _verified(lambda: openverse(keywords(p, 3), d), prompt, d))):
+    for name, fn in (("nasa-photo", lambda p, d: _verified(lambda: nasa_still(p, d), keywords(prompt, 4), d)),
+                     ("commons-photo", lambda p, d: _verified(lambda: commons(keywords(p, 4), d), keywords(prompt, 4), d)),
+                     ("openverse-photo", lambda p, d: _verified(lambda: openverse(keywords(p, 3), d), keywords(prompt, 4), d))):
         try:
             return fn(prompt, dest)[0], name
         except Exception as e:

@@ -122,8 +122,12 @@ def _usable(path: Path) -> bool:
 
 def _relevant(path: Path, query: str) -> bool:
     """a vision model must confirm the clip's frame shows what was asked for; any doubt or failure = not relevant (never use unverified footage)."""
+    from . import stills
     try:
         from . import auto
+        if stills._VISION["dead"] or stills._VISION["calls"] >= 14:
+            raise RuntimeError("vision unavailable")
+        stills._VISION["calls"] += 1
         cap = cv2.VideoCapture(str(path))
         cap.set(cv2.CAP_PROP_POS_FRAMES, int(cap.get(cv2.CAP_PROP_FRAME_COUNT) * 0.5))
         ok, f = cap.read()
@@ -137,8 +141,10 @@ def _relevant(path: Path, query: str) -> bool:
         print(f"  footage check {query!r}: {out}", flush=True)
         return bool(out.get("relevant"))
     except Exception as e:
-        print(f"  footage check failed ({e!r}); not using it", flush=True)
-        return False
+        if "429" in repr(e) or "Timeout" in repr(e):
+            stills._VISION["dead"] = True
+        print(f"  footage check unavailable ({str(e)[:70]}); strict title match instead", flush=True)
+        return None                                   # caller falls back to the clip's own title
 
 
 def fetch(query: str, dest: Path) -> dict | None:
@@ -162,7 +168,10 @@ def fetch(query: str, dest: Path) -> dict | None:
                            check=True, timeout=180)
         except (subprocess.SubprocessError, OSError):
             continue
-        if dest.exists() and _usable(dest) and _relevant(dest, query):
+        verdict = _relevant(dest, query) if dest.exists() and _usable(dest) else False
+        if verdict is None:                           # no vision answer: accept only if every requested word is in the clip's title
+            verdict = all(w in item["title"].lower() for w in _terms(query))
+        if verdict:
             return {"file": dest.name, "id": item["id"], "title": item["title"][:80], "center": item["center"], "license": "NASA media (public domain)",
                     "source": f"https://images.nasa.gov/details/{item['id']}"}
         dest.unlink(missing_ok=True)
