@@ -428,3 +428,27 @@ def test_photo_check_rejects_people_and_text(monkeypatch, tmp_path):
                             ({"relevant": True, "person": False, "text": True}, False), ({"relevant": False}, False)):
         monkeypatch.setattr(auto, "ask", lambda *a, _v=verdict, **k: (_v, "gemini"))
         assert stills.photo_matches(img, "comet") is expect
+
+
+def test_earlier_good_draft_is_delivered_even_if_last_attempt_has_no_pictures(monkeypatch, tmp_path):
+    from app import stills
+    spec = {"id": "x", "title": "t", "sources": {}, "beats": [{"key": "a", "say": "word"}]}
+    monkeypatch.setattr(auto, "facts_for", lambda *a, **k: {"url": "u", "text": "t", "title": "T"})
+    monkeypatch.setattr(auto, "write_spec", lambda *a, **k: (dict(spec), "groq"))
+    monkeypatch.setattr(auto, "too_similar", lambda s: 0.0)
+    monkeypatch.setattr(auto, "TOPICS", Path("data/t.jsonl"))
+    monkeypatch.setattr(auto, "ROOT", tmp_path)
+    calls = []
+
+    def fake_finish(*a, **k):
+        calls.append(1)
+        if len(calls) == 1:
+            return False, ["polish"], tmp_path, {"scores": {"accuracy": 10, "policy": 10, "hook": 8}, "fixes": ["x"], "judge": "gemini"}
+        stills.TEXTURED.extend(list("abcde"))
+        return False, ["hard gate failed"], tmp_path, None
+
+    sent = []
+    monkeypatch.setattr(auto, "finish", fake_finish)
+    monkeypatch.setattr(auto, "send_draft", lambda s, rd, j, chat: sent.append("draft"))
+    monkeypatch.setattr(auto, "telegram", lambda *a, **k: sent.append("msg") or True)
+    assert auto.run("topic", None, tmp_path) == 3 and sent == ["draft"]
