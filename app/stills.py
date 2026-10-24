@@ -51,11 +51,11 @@ def flux(prompt: str, dest: Path, width: int = 576, height: int = 1024) -> Path:
                        files={"prompt": (None, prompt), "width": (None, str(width)), "height": (None, str(height))})
         if r.status_code == 200:
             return _fit(base64.b64decode(r.json()["result"]["image"]), dest)
-        last = r.status_code
+        last = f"{r.status_code} {r.text[:160]}"
     r = httpx.post(base + "flux-1-schnell", headers=h, json={"prompt": prompt, "steps": 8}, timeout=120)   # square -> cropped
     if r.status_code == 200:
         return _fit(base64.b64decode(r.json()["result"]["image"]), dest)
-    raise RuntimeError(f"cloudflare image models failed (klein {last}, schnell {r.status_code})")
+    raise RuntimeError(f"cloudflare image models failed (klein {last}, schnell {r.status_code} {r.text[:160]})")
 
 
 def pollinations(prompt: str, dest: Path, seed: int = 7, tries: int = 4) -> Path:
