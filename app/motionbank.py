@@ -70,6 +70,23 @@ def pick(spec: dict, max_distinct: int = 5) -> list[dict | None]:
     return out
 
 
+def texture_clips(prompts: list[str]) -> list[str]:
+    """one full-frame moving background per beat whose picture could not be sourced: ambient clips first (they suit a dark frame), then washes,
+    best mood match for the prompt, never the same clip twice in a row. Returns clip file paths (absolute)."""
+    bank = [c for c in manifest() if c.get("role") in ("ambient", "wash")]
+    out, last = [], None
+    for i, pr in enumerate(prompts):
+        moods = mood_of(pr)
+
+        def score(c):
+            return ((3 if c["role"] == "ambient" else 0) + sum(2 for m in moods[:1] if m in c["mood"]) + sum(1 for m in moods[1:] if m in c["mood"])
+                    - (4 if c["name"] == last else 0) - 0.5 * out.count(str(BANK / c["file"])) + ((i * 5 + len(c["name"])) % 7) * 0.01, c["name"])
+        c = max(bank, key=score)
+        out.append(str(BANK / c["file"]))
+        last = c["name"]
+    return out
+
+
 class ClipLayer:
     """a looping clip decoded to float RGB at DECODE size; frame_at(t) is stateless so forked workers can call it freely."""
 

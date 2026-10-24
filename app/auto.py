@@ -511,7 +511,7 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
         ok, notes, run_dir, j = finish(spec, writer, out, deliver, chat)
         if not ok:
             print("   attempt notes:", "; ".join(notes)[:600], flush=True)
-        if not ok and len(stills.TEXTURED) >= 3:      # pictures could not be sourced (free image quota gone): more attempts today would only repeat this
+        if not ok and len(stills.TEXTURED) >= 5:      # pictures could not be sourced (free image quota gone): more attempts today would only repeat this
             msg = (f"⏸ Not today: '{topic}'. The free image quota is used up ({len(stills.TEXTURED)} beats had no picture), so no Short was made. "
                    "Tomorrow's scheduled run will try again - nothing to do.")
             print(msg, flush=True)

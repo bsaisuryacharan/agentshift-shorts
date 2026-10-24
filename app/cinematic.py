@@ -67,7 +67,7 @@ class Cinematic:
         self.total = float(spec["total"])
         self.shots = spec["shots"]
         self.starts = [float(s["start"]) for s in self.shots] + [self.total + 1]
-        self.vids = {i: motionbank.ClipLayer("", path=self.root / s["video"], size=(540, 960), pingpong=False)
+        self.vids = {i: motionbank.ClipLayer("", path=self.root / s["video"], size=(540, 960), pingpong=bool(s.get("pingpong")))
                      for i, s in enumerate(self.shots) if s.get("video")}        # real footage cutaways (app.footage)
         self.imgs = [self.vids[i].frames[0] if i in self.vids else self._load(s["img"]) for i, s in enumerate(self.shots)]
         self.base = [max(W / im.shape[1], H / im.shape[0]) for im in self.imgs]

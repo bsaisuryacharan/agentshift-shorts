@@ -210,7 +210,7 @@ def test_run_parks_early_when_pictures_cannot_be_sourced(monkeypatch, tmp_path):
     monkeypatch.setattr(auto, "too_similar", lambda s: 0.0)
 
     def fake_finish(*a, **k):
-        stills.TEXTURED.extend(["a", "b", "c"])
+        stills.TEXTURED.extend(["a", "b", "c", "d", "e"])
         return False, ["hard gate failed: freeze"], tmp_path, None
 
     monkeypatch.setattr(auto, "finish", fake_finish)
@@ -384,3 +384,19 @@ def test_pick_topic_never_returns_a_used_topic(monkeypatch, tmp_path):
     monkeypatch.setattr(auto, "wiki_facts", lambda q: {"title": q})
     topic, wiki = auto.pick_topic()
     assert auto._norm_topic(wiki) != auto._norm_topic("Kessler syndrome") and wiki in auto.EVERGREEN
+
+
+def test_texture_beats_get_moving_clips_without_repeats():
+    prompts = ["dense space debris belt around Earth", "dense space debris cloud", "empty orbit", "abstract cascade"]
+    clips = motionbank.texture_clips(prompts)
+    assert len(clips) == 4 and all(Path(c).exists() for c in clips) and all(a != b for a, b in zip(clips, clips[1:]))
+    assert any("frost-sequence" in c for c in clips)            # debris prompt -> the drifting-debris clip
+
+
+def test_cinematic_plays_motion_bank_clip_as_beat_background(tmp_path):
+    (tmp_path / "img").mkdir()
+    cv2.imwrite(str(tmp_path / "img" / "a.jpg"), np.zeros((400, 225, 3), np.uint8))
+    clip = motionbank.texture_clips(["aurora over the polar night"])[0]
+    c = cinematic.Cinematic({"total": 3, "theme": "cool", "shots": [{"img": "img/a.jpg", "start": 0, "video": clip, "pingpong": True, "zoom": 1.08}]}, tmp_path)
+    a, b = c.frame(10), c.frame(40)
+    assert a.shape == (1920, 1080, 3) and np.abs(a.astype(int) - b.astype(int)).mean() > 0.3      # it moves

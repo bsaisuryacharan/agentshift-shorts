@@ -39,7 +39,7 @@ def shotlist(spec: dict, timing: dict, total: float, vids: dict | None = None) -
         for t, s in items:
             shots.append({"img": f"img/{s['img']}", "start": round(t, 3), "focal": s.get("focal", [0.5, 0.52]),
                           "zoom": s.get("zoom", 1.32), "rot": s.get("rot", 0.7 * flip), "flash": s.get("flash", 0.12), "fx": fx}
-                         | ({"video": vids[b["key"]], "zoom": 1.08} if vids and s is b and b["key"] in vids else {}))
+                         | ({"video": vids[b["key"]], "zoom": 1.08, "pingpong": vids[b["key"]].startswith("/")} if vids and s is b and b["key"] in vids else {}))
             flip = -flip
     bursts = []
     for b in spec["beats"]:
@@ -75,6 +75,12 @@ def run(spec_path: Path, out_root: Path, workers: int | None = None) -> dict:
     # beats whose still is only a texture (free image quota gone) get real footage as their picture instead
     need = {b["key"]: stills.keywords(stills.TEXTURED_FILES[b["img"]], 3) for b in spec["beats"] if b.get("img") in stills.TEXTURED_FILES}
     vids = footage.ensure(spec, run_dir, need); t0 = _timed(m, "footage", t0)
+    # a beat that still has no real picture gets a moving motion-bank background instead of a frozen texture (passes the motion gates, reads as intentional)
+    left = [b for b in spec["beats"] if b.get("img") in stills.TEXTURED_FILES and b["key"] not in vids]
+    for b, path in zip(left, motionbank.texture_clips([stills.TEXTURED_FILES[b["img"]] for b in left])):
+        vids[b["key"]] = path
+    if left:
+        print(f"  {len(left)} beat(s) use a motion-bank background: {[b['key'] for b in left]}", flush=True)
     timing = asyncio.run(voice.synth(spec, run_dir)); t0 = _timed(m, "voice", t0)
     last = max(w["e"] for s in timing["segments"] for w in s["words"])
     total = round(last + TAIL_S, 2)
