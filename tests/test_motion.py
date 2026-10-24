@@ -346,3 +346,11 @@ def test_register_last_makes_daily_short_current(monkeypatch, tmp_path):
     assert (tmp_path / "projects" / "x" / "img" / "credits.json").exists() and not (tmp_path / "projects" / "x" / "img" / "s0.jpg").exists()
     (out / "_last.json").unlink()
     assert o.register_last({"current": None, "projects": {}}, 0) is False
+
+
+def test_hud_page_fits_text_before_exposing_timeline(tmp_path):
+    from app import hud
+    spec = {"title": "t", "beats": [{"key": "hook", "say": "a b c", "hud": [{"t": "big", "text": "10,000 NEURONS PER DAY", "at": "a"}]}]}
+    timing = {"segments": [{"key": "hook", "start": 0.0, "dur": 2.0, "words": [{"w": "a", "s": 0.0, "e": 0.5}, {"w": "b", "s": 0.6, "e": 1.0}, {"w": "c", "s": 1.1, "e": 1.5}]}]}
+    html = hud.write(spec, timing, 4.0, tmp_path / "p.html").read_text()
+    assert "function __fit()" in html and html.index("__fit();") < html.index("window.__timelines = {main: tl}")

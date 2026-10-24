@@ -218,7 +218,23 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
 <script>
 const tl = gsap.timeline({paused:true});
 @@JS@@
-window.__timelines = {main: tl};
+// Fit: no HUD text may run past the 870px stage (x 60-930) into YouTube's right-hand button zone (qa_v2 safe_zone).
+// Beats are display:none until their time, so each is shown invisibly, measured and shrunk before the timeline is exposed.
+function __fit(){
+  const MAX = 870;
+  document.querySelectorAll('.beat').forEach(b => {
+    const prev = b.style.cssText; b.style.cssText = 'display:flex;visibility:hidden';
+    b.querySelectorAll('.big,.ttl,.bub,.lab,.stamp,.kin,.sub,.chip,.rows,.li,.stp').forEach(e => {
+      for (let i = 0; i < 6 && e.scrollWidth > MAX; i++) {
+        const fs = parseFloat(getComputedStyle(e).fontSize);
+        e.style.fontSize = Math.max(28, fs * MAX / e.scrollWidth * 0.96) + 'px';
+        e.style.whiteSpace = 'normal'; e.style.maxWidth = MAX + 'px'; e.style.overflowWrap = 'anywhere';
+      }
+    });
+    b.style.cssText = prev;
+  });
+}
+document.fonts.ready.then(() => { try { __fit(); } catch (e) {} window.__timelines = {main: tl}; });
 </script></body></html>"""
 
 

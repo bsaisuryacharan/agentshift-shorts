@@ -90,7 +90,7 @@ def _json(text: str) -> dict:
     return json.loads(m.group(0) if m else text)
 
 
-def ask(system: str, user: str, image: bytes | None = None, prefer: list[str] | None = None, exclude: str | None = None) -> tuple[dict, str]:
+def ask(system: str, user: str, image: bytes | None = None, prefer: list[str] | None = None, exclude: str | None = None, wait: bool = True) -> tuple[dict, str]:
     """first provider that answers valid JSON wins; 429/5xx/parse errors fail over. If every provider is throttled (429/5xx/timeout) wait and go round again
     (free tiers recover within a minute or two). Returns (json, provider)."""
     avail = _providers()
@@ -112,7 +112,7 @@ def ask(system: str, user: str, image: bytes | None = None, prefer: list[str] | 
                     errs.append(f"{p}: {e!r}"[:160])
                     throttled = throttled or any(t in repr(e) for t in ("429", "503", "502", "500", "Timeout"))
                     break
-        if not (throttled and rnd < 2):
+        if not (throttled and rnd < 2 and wait):     # wait=False: a cheap check (photo relevance) gives up at once instead of holding the run
             break
         print(f"   all LLM providers throttled; waiting {40 * (rnd + 1)} s", flush=True)
         time.sleep(40 * (rnd + 1))

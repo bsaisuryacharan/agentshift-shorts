@@ -12,6 +12,7 @@ from __future__ import annotations
 import base64
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -133,14 +134,32 @@ def photo_matches(path: Path, subject: str) -> bool:
         from . import auto
         im = cv2.imread(str(path))
         jpg = cv2.imencode(".jpg", cv2.resize(im, (270, 480)), [cv2.IMWRITE_JPEG_QUALITY, 80])[1].tobytes()
+        if _VISION["dead"]:
+            raise RuntimeError("vision unavailable")
         out, _ = auto.ask('You check a stock photo for a science explainer. Reply ONLY JSON {"relevant": true|false, "shows": "<=8 words"}. '
                           "relevant=true only if the picture clearly shows or illustrates the requested subject; unrelated people, events, rooms and objects are NOT relevant.",
-                          f"REQUESTED SUBJECT: {subject}", image=jpg)
+                          f"REQUESTED SUBJECT: {subject}", image=jpg, wait=False)
         print(f"  photo check {subject!r}: {out}", flush=True)
         return bool(out.get("relevant"))
     except Exception as e:
-        print(f"  photo check failed ({e!r}); not using it", flush=True)
+        if "429" in repr(e) or "Timeout" in repr(e) or "vision unavailable" in repr(e):
+            _VISION["dead"] = True                     # free vision quota gone for this run: no more checks, strict title match decides instead
+        print(f"  photo check unavailable ({str(e)[:80]}); strict title match instead", flush=True)
+        return None
+
+
+_VISION = {"dead": False}
+
+
+def _title_matches(path: Path, subject: str) -> bool:
+    """fallback when no vision model answers: every subject word must be in the photo's recorded title"""
+    cj = Path(path).parent / "credits.json"
+    try:
+        title = json.loads(cj.read_text()).get(Path(path).name, {}).get("file", "").lower()
+    except (OSError, ValueError):
         return False
+    words = [w for w in re.findall(r"[a-z]{3,}", subject.lower())]
+    return bool(words) and all(w in title for w in words)
 
 
 def openverse(query: str, dest: Path, min_w: int = 900) -> tuple[Path, dict]:
@@ -173,7 +192,10 @@ def _verified(fn, subject: str, dest: Path):
     """run a photo fetcher, keep the result only if it passes the vision check (and drop its credit entry otherwise)"""
     got = fn()
     out = got[0] if isinstance(got, tuple) else got
-    if photo_matches(Path(out), subject):
+    ok = photo_matches(Path(out), subject)
+    if ok is None:
+        ok = _title_matches(Path(out), subject)
+    if ok:
         return got
     Path(out).unlink(missing_ok=True)
     raise RuntimeError(f"photo for {subject!r} did not match")
