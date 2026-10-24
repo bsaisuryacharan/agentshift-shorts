@@ -1,0 +1,5 @@
+{
+  "generated_at": "2026-10-24T02:18:29.550795+00:00",
+  "status": "needs_analytics_authorization",
+  "note": "Run authorize-youtube again to grant read-only YouTube Analytics access."
+}
