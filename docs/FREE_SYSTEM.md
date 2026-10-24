@@ -6,7 +6,7 @@ hard gates -> judge (a different model than the writer) -> up to 3 tries -> Tele
 | Stage | Free provider | Needs |
 |---|---|---|
 | Writer / judge | Gemini Flash, Groq Llama (writer != judge when 2 keys exist), OpenRouter free | `GEMINI_API_KEY`, `GROQ_API_KEY` |
-| Stills | Cloudflare FLUX schnell -> Pollinations (keyless, lower quality) | `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN` |
+| Stills | Cloudflare FLUX -> Pollinations -> real NASA photo -> real Commons photo -> plain texture frame (last resort, marked down by the judge) | `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN` |
 | Facts | Wikipedia (or `--facts file`) | none |
 | Voice | edge-tts | none |
 | Render | GitHub Actions (public repo = unlimited) | none |
@@ -29,5 +29,13 @@ A beat about a real named person/place can set `"photo": "<search term>"`: a fre
 ## Motion graphics
 Beats can use bars, line, ring, delta, kinetic, tape, toast, cursor, plus `"fx":"shine"` (see `app/motion.py`); the writer is told when to use them.
 
+## Moving layers (video feel without a video model)
+`assets/motion/` holds 31 small text-free clips curated from the HyperFrames catalog; `app/motionbank.py` blends one over each beat's still. A beat may also ask for
+real NASA footage (`"footage"`, `app/footage.py`). Details, sources and licences: `docs/MOTION_ASSETS.md`.
+
+## Insights feed
+`python -m app.insights` turns the local trend and channel-analytics reports into `assets/insights.json`; `deploy/sync_repo.py` ships it and the cloud topic picker / script writer read it as advice.
+
 ## Known limits
+Free image quota: Cloudflare's daily allowance covers roughly 3-4 full runs (3 attempts each) and resets at 00:00 UTC; after that the ladder falls back to real photos and plain textures.
 Rendering needs Chromium; on a Linux box without root, a missing `libXdamage` can be unpacked locally and exposed via `LD_LIBRARY_PATH`. Composite with `workers=2` on machines with <=4 GB RAM.

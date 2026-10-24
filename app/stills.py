@@ -168,6 +168,7 @@ def nasa_still(prompt: str, dest: Path) -> tuple[Path, dict]:
     raise RuntimeError(f"no NASA photo for {q!r}")
 
 
+_MISSES: dict[str, int] = {}
 _DEAD: set[str] = set()      # providers that told us their free quota is exhausted (reset per process)
 
 
@@ -179,8 +180,16 @@ def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
             return flux(prompt, dest), "cloudflare-flux"
         except Exception as e:  # 429 / quota / network -> next provider
             errs.append(f"cloudflare: {e!r}")
-            if "429" in str(e):
-                _DEAD.add("cloudflare")                  # daily free quota is gone: skip it for the rest of this process
+            if "429" in str(e):                          # rate limit or the daily quota: wait once and retry; two misses in a row = skip it for this process
+                import time
+                time.sleep(20)
+                try:
+                    return flux(prompt, dest), "cloudflare-flux"
+                except Exception as e2:
+                    errs.append(f"cloudflare retry: {e2!r}")
+                    _MISSES["cloudflare"] = _MISSES.get("cloudflare", 0) + 1
+                    if _MISSES["cloudflare"] >= 2:
+                        _DEAD.add("cloudflare")
     if "pollinations" not in _DEAD:
         try:
             return pollinations(prompt, dest, seed=seed), "pollinations"

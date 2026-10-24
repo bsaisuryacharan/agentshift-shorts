@@ -134,6 +134,9 @@ def test_stills_keywords_drop_style_words():
 
 def test_generate_falls_back_to_real_photos(monkeypatch, tmp_path):
     from app import stills
+    monkeypatch.setattr("time.sleep", lambda s: None)
+    monkeypatch.setattr(stills, "_DEAD", set())
+    monkeypatch.setattr(stills, "_MISSES", {})
     monkeypatch.setenv("CLOUDFLARE_API_TOKEN", "x")
     monkeypatch.setenv("CLOUDFLARE_ACCOUNT_ID", "y")
     monkeypatch.setattr(stills, "flux", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("429")))
@@ -147,6 +150,9 @@ def test_generate_falls_back_to_real_photos(monkeypatch, tmp_path):
 
 def test_generate_never_raises_texture_is_last_resort(monkeypatch, tmp_path):
     from app import stills
+    monkeypatch.setattr("time.sleep", lambda s: None)
+    monkeypatch.setattr(stills, "_DEAD", set())
+    monkeypatch.setattr(stills, "_MISSES", {})
     for n in ("flux", "pollinations", "nasa_still"):
         monkeypatch.setattr(stills, n, lambda *a, **k: (_ for _ in ()).throw(RuntimeError("out")))
     monkeypatch.setattr(stills, "commons", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("none")))
@@ -184,3 +190,10 @@ def test_word_time_matches_glued_tts_boundaries():
     from app import voice
     timing = {"segments": [{"key": "b", "words": [{"w": "In 1960", "s": 0.5, "e": 1.0}, {"w": "scientists", "s": 1.1, "e": 1.5}]}]}
     assert voice.word_time(timing, "b", "1960") == 0.5 and voice.word_time(timing, "b", "In") == 0.5 and voice.word_time(timing, "b", "scientists") == 1.1
+
+
+def test_validate_accepts_type_key_for_hud_elements():
+    spec = {"id": "x", "title": "t", "sources": {"a": "b"}, "beats": [{"key": f"b{i}", "img": f"s{i}", "prompt": "an old brass watch", "say": " ".join(["word"] * 12),
+            "hud": [{"type": "bubble", "text": "what if?", "at": "word"}]} for i in range(7)]}
+    errs = auto.validate_spec(spec, "facts")
+    assert not any("bad hud type" in e for e in errs) and spec["beats"][0]["hud"][0]["t"] == "bubble"

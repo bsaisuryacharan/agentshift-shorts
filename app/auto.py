@@ -217,7 +217,13 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
     words = 0
     for b in beats:                       # the subscribe card is added by the pipeline; drop any the writer put in hud
         if isinstance(b.get("hud"), list):
-            b["hud"] = [e for e in b["hud"] if e.get("t") != "subscribe"]
+            for e in b["hud"]:            # models sometimes name the element kind "type"/"kind": accept it
+                if isinstance(e, dict) and "t" not in e:
+                    for alt in ("type", "kind", "element"):
+                        if alt in e:
+                            e["t"] = e.pop(alt)
+                            break
+            b["hud"] = [e for e in b["hud"] if isinstance(e, dict) and e.get("t") != "subscribe"]
     for b in beats:
         k = b.get("key", "?")
         if k in keys:
@@ -431,6 +437,8 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
         spec["_facts"] = facts          # kept with the spec so later edit requests are validated against the same sources
         spec["_writer"] = writer
         ok, notes, run_dir, j = finish(spec, writer, out, deliver, chat)
+        if not ok:
+            print("   attempt notes:", "; ".join(notes)[:600], flush=True)
         if not ok and j and j["scores"].get("accuracy", 0) >= 9 and j["scores"].get("policy", 0) >= 10:
             avg = sum(j["scores"].values()) / len(j["scores"])
             if best is None or avg > best[0]:
