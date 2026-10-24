@@ -38,7 +38,7 @@ def _fit(raw: bytes, dest: Path, crop_bottom: float = 0.0) -> Path:
     return dest.with_suffix(".jpg")
 
 
-def flux(prompt: str, dest: Path, width: int = 768, height: int = 1344) -> Path:
+def flux(prompt: str, dest: Path, width: int = 576, height: int = 1024) -> Path:
     """Cloudflare Workers AI. FLUX.2 klein supports true 9:16 (verified 768x1344); FLUX.1 schnell only returns 1024x1024, so it is the
     fallback and gets cover-cropped. Needs CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN."""
     import httpx
@@ -80,7 +80,7 @@ def pollinations(prompt: str, dest: Path, seed: int = 7, tries: int = 4) -> Path
     raise RuntimeError(f"pollinations failed: {last}")
 
 
-STYLE = {"photoreal", "photorealistic", "cinematic", "image", "shot", "view", "dramatic", "lighting", "light", "ultra", "detailed", "highly", "background",
+STYLE = {"prompt", "photoreal", "photorealistic", "cinematic", "image", "shot", "view", "dramatic", "lighting", "light", "ultra", "detailed", "highly", "background",
          "style", "realistic", "closeup", "close-up", "wide", "angle", "aerial", "macro", "top-down", "silhouette", "soft", "natural", "documentary", "with", "from",
          "against", "above", "over", "into", "that", "this", "their", "while", "scene", "composition", "depth", "field", "bokeh", "sharp", "focus"}
 
@@ -168,6 +168,29 @@ def nasa_still(prompt: str, dest: Path) -> tuple[Path, dict]:
     raise RuntimeError(f"no NASA photo for {q!r}")
 
 
+TEXTURED: list[str] = []     # prompts that ended as plain texture frames (a Short made mostly of these is parked, not delivered)
+def gemini_image(prompt: str, dest: Path, model: str = "gemini-2.5-flash-image") -> Path:
+    """Gemini native image output (uses the free GEMINI_API_KEY; the free tier may refuse it, then the ladder moves on)."""
+    import httpx
+    key = os.environ["GEMINI_API_KEY"]
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    last = ""
+    for cfg in ({"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "9:16"}}, {"responseModalities": ["IMAGE"]}):
+        r = httpx.post(url, headers={"x-goog-api-key": key}, timeout=120,
+                       json={"contents": [{"parts": [{"text": prompt + ". Vertical 9:16 photograph, no text, no letters, no people."}]}], "generationConfig": cfg})
+        if r.status_code == 200:
+            for part in r.json().get("candidates", [{}])[0].get("content", {}).get("parts", []):
+                data = (part.get("inlineData") or part.get("inline_data") or {}).get("data")
+                if data:
+                    return _fit(base64.b64decode(data), dest)
+            last = "no image in reply"
+        else:
+            last = f"HTTP {r.status_code}"
+            if r.status_code in (429, 403):
+                break
+    raise RuntimeError(f"gemini image failed: {last}")
+
+
 _MISSES: dict[str, int] = {}
 _DEAD: set[str] = set()      # providers that told us their free quota is exhausted (reset per process)
 
@@ -197,11 +220,19 @@ def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
             errs.append(str(e))
             if "HTTP 402" in str(e):
                 _DEAD.add("pollinations")
+    if os.environ.get("GEMINI_API_KEY") and "gemini" not in _DEAD:
+        try:
+            return gemini_image(prompt, dest), "gemini-image"
+        except Exception as e:
+            errs.append(str(e))
+            if "429" in str(e) or "403" in str(e):
+                _DEAD.add("gemini")
     for name, fn in (("nasa-photo", nasa_still), ("commons-photo", lambda p, d: commons(keywords(p, 4), d))):
         try:
             return fn(prompt, dest)[0], name
         except Exception as e:
             errs.append(f"{name}: {e}")
+    TEXTURED.append(prompt)
     print("  all picture sources failed (" + "; ".join(errs)[:300] + ") -> plain texture frame", flush=True)
     return texture_still(prompt, dest, seed), "texture-fallback"
 

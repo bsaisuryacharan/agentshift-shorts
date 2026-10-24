@@ -197,3 +197,20 @@ def test_validate_accepts_type_key_for_hud_elements():
             "hud": [{"type": "bubble", "text": "what if?", "at": "word"}]} for i in range(7)]}
     errs = auto.validate_spec(spec, "facts")
     assert not any("bad hud type" in e for e in errs) and spec["beats"][0]["hud"][0]["t"] == "bubble"
+
+
+def test_run_parks_early_when_pictures_cannot_be_sourced(monkeypatch, tmp_path):
+    from app import stills
+    spec = {"id": "x", "title": "t", "sources": {}, "beats": [{"key": "a", "say": "word"}]}
+    monkeypatch.setattr(auto, "facts_for", lambda *a, **k: {"url": "u", "text": "t"})
+    monkeypatch.setattr(auto, "write_spec", lambda *a, **k: (dict(spec), "groq"))
+    monkeypatch.setattr(auto, "too_similar", lambda s: 0.0)
+
+    def fake_finish(*a, **k):
+        stills.TEXTURED.extend(["a", "b", "c"])
+        return False, ["hard gate failed: freeze"], tmp_path, None
+
+    monkeypatch.setattr(auto, "finish", fake_finish)
+    sent = []
+    monkeypatch.setattr(auto, "telegram", lambda text, video=None, chat=None: sent.append(text) or True)
+    assert auto.run("topic", None, tmp_path) == 4 and "quotas" in sent[0]

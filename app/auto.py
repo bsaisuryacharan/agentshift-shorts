@@ -436,9 +436,18 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
         spec["id"] = f"{spec['id']}-a{attempt}"
         spec["_facts"] = facts          # kept with the spec so later edit requests are validated against the same sources
         spec["_writer"] = writer
+        from . import stills
+        stills.TEXTURED.clear()
         ok, notes, run_dir, j = finish(spec, writer, out, deliver, chat)
         if not ok:
             print("   attempt notes:", "; ".join(notes)[:600], flush=True)
+        if not ok and len(stills.TEXTURED) >= 3:      # pictures could not be sourced (free image quota gone): more attempts today would only repeat this
+            msg = (f"Parked: '{topic}' could not get pictures - the free image quotas are used up for now ({len(stills.TEXTURED)} beats had no picture). "
+                   "The next scheduled run (or /new <topic>) will retry; quotas reset daily.")
+            print(msg, flush=True)
+            if deliver:
+                telegram(msg, chat=chat)
+            return 4
         if not ok and j and j["scores"].get("accuracy", 0) >= 9 and j["scores"].get("policy", 0) >= 10:
             avg = sum(j["scores"].values()) / len(j["scores"])
             if best is None or avg > best[0]:
