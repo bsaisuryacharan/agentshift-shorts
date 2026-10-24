@@ -400,3 +400,10 @@ def test_cinematic_plays_motion_bank_clip_as_beat_background(tmp_path):
     c = cinematic.Cinematic({"total": 3, "theme": "cool", "shots": [{"img": "img/a.jpg", "start": 0, "video": clip, "pingpong": True, "zoom": 1.08}]}, tmp_path)
     a, b = c.frame(10), c.frame(40)
     assert a.shape == (1920, 1080, 3) and np.abs(a.astype(int) - b.astype(int)).mean() > 0.3      # it moves
+
+
+def test_validate_fills_prompt_from_photo_term():
+    spec = {"id": "x", "title": "t", "sources": {"a": "b"}, "beats": [{"key": f"b{i}", "img": f"s{i}", "photo": "Gulf Stream satellite", "say": " ".join(["word"] * 12),
+            "hud": [{"t": "bubble", "text": "what if?", "at": "word"}]} for i in range(7)]}
+    errs = auto.validate_spec(spec, "facts")
+    assert not any("needs a prompt" in e for e in errs) and "Gulf Stream satellite" in spec["beats"][0]["prompt"]

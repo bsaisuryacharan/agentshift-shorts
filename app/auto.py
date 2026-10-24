@@ -301,6 +301,8 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
         words += len(b["say"].split())
         if b.get("img") not in seen:
             seen.add(b.get("img"))
+            if not b.get("prompt") and (b.get("photo") or b.get("footage")):       # the writer gave a real-photo/footage term: that is also the fallback prompt
+                b["prompt"] = f"documentary photograph of {b.get('photo') or b.get('footage')}, natural light, no text, no people"
             if not b.get("prompt"):
                 errs.append(f"{k}: first use of {b.get('img')} needs a prompt")
         pr = str(b.get("prompt", ""))
