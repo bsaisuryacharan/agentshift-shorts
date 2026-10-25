@@ -27,7 +27,7 @@ from . import auto
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE, PROJ, OUT = ROOT / "state", ROOT / "projects", ROOT / "runs"
-HELP = ("Commands:\n/new <topic> - make a Short\n/approve - approve the current Short and get its title/description\n/status - current Short\n/list - recent Shorts\n/use <id> - switch\n"
+HELP = ("Commands:\n/new <topic> - make a Short\n/approve - approve the current Short and get its upload pack\n/upload - upload the approved Short to YouTube (private, scheduled 19:00 IST)\n/status - current Short\n/list - recent Shorts\n/use <id> - switch\n"
         "Or just describe a change to the current Short: \"shorter hook\", \"re-roll image 3\", \"change 8.3 to 8.2 billion\".")
 
 REVISE_SYSTEM = auto.SYSTEM + """
@@ -65,6 +65,8 @@ def classify(text: str, st: dict) -> dict:
             return {"intent": intent}
     if low in ("/approve", "approve", "approved", "/publish") or low.startswith("/approve "):
         return {"intent": "approve"}
+    if low == "/upload" or low.startswith("/upload "):
+        return {"intent": "upload"}
     if low.startswith("/use "):
         return {"intent": "use", "id": t[5:].strip()}
     if not st.get("current"):                      # nothing to revise yet -> a bare message is a topic, unless it is chit-chat
@@ -95,7 +97,7 @@ def _persist(st: dict, spec: dict, run_dir: Path, j: dict | None, status: str, i
             scores = json.loads((run_dir / "vision.json").read_text()).get("scores")
         except ValueError:
             scores = None
-    st["projects"][spec["id"]] = {"title": spec["title"], "base": base, "status": status, "scores": scores}
+    st["projects"][spec["id"]] = {"title": spec["title"], "base": base, "status": status, "scores": scores, "run_id": os.environ.get("GITHUB_RUN_ID")}
     st["current"] = spec["id"]
 
 
@@ -181,6 +183,36 @@ def publish_pack(spec: dict, proj: Path) -> str:
     return text
 
 
+def do_upload(chat: str, st: dict) -> None:
+    """/upload: only for the current Short, only after /approve, once. Private + scheduled; the owner stays in control of making it public."""
+    from . import pack, upload
+    cur = st.get("current")
+    p = st["projects"].get(cur) if cur else None
+    if not p:
+        say(chat, "Nothing to upload yet.")
+    elif p.get("uploaded"):
+        say(chat, f"Already uploaded: {p['uploaded']['url']}")
+    elif p.get("status") != "approved":
+        say(chat, "Approve it first with /approve (only Shorts that passed the review can be approved), then send /upload.")
+    elif not p.get("run_id"):
+        say(chat, "I can't find the video of this Short (no run id was recorded).")
+    else:
+        spec = json.loads((PROJ / cur / "spec.json").read_text())
+        parts = pack.parts(spec, [PROJ / cur / "img" / "credits.json", PROJ / cur / "vid" / "credits.json"])
+        try:
+            say(chat, "Uploading to YouTube (private, scheduled)...")
+            video = upload.fetch_video(p["run_id"], cur)
+            slot = upload.next_slot()
+            res = upload.upload(video, parts, slot)
+        except upload.UploadError as e:
+            say(chat, f"Upload did not happen: {e}")
+            return
+        p["uploaded"] = res
+        priv = res.get("privacy") or "private"
+        say(chat, f"Uploaded: {res['url']}\nVisibility now: {priv}; scheduled to go public {res['publish_at']}.\n"
+                  "Open YouTube Studio to check the copyright/audit result before it goes live. Pinned comment to add:\n" + parts["pinned"])
+
+
 def handle(chat: str, text: str) -> int:
     allowed = os.environ.get("TELEGRAM_CHAT_ID")
     if allowed and str(chat) != str(allowed):
@@ -219,6 +251,8 @@ def handle(chat: str, text: str) -> int:
                 with open(ledger, "a") as f:
                     f.write(json.dumps({"id": cur, "title": spec["title"], "blob": spec["title"].lower() + " " + " ".join(b["say"].lower() for b in spec["beats"])}) + "\n")
                 say(chat, "Approved. Publish pack:\n\n" + publish_pack(spec, PROJ / cur))
+        elif it == "upload":
+            do_upload(chat, st)
         elif it == "new":
             do_new(chat, st, c["topic"])
         else:

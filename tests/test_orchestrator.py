@@ -126,3 +126,68 @@ def test_a_draft_that_failed_review_cannot_be_approved(env, tmp_path):
     o._save("42", {"current": "d1", "projects": {"d1": {"title": "t", "status": "draft"}}})
     assert o.handle("42", "/approve") == 0
     assert o._state("42")["projects"]["d1"]["status"] == "draft" and "quality review" in env[-1][1]
+
+
+def _prep_upload(tmp_path, status="approved", run_id="777"):
+    spec = dict(SPEC, id="demo-a1")
+    d = o.PROJ / "demo-a1"
+    (d / "img").mkdir(parents=True, exist_ok=True)
+    (d / "spec.json").write_text(json.dumps(spec))
+    o._save("42", {"current": "demo-a1", "projects": {"demo-a1": {"title": spec["title"], "status": status, "run_id": run_id}}})
+
+
+def test_upload_requires_an_approved_short(env, tmp_path):
+    assert o.classify("/upload", {})["intent"] == "upload"
+    _prep_upload(tmp_path, status="delivered")
+    assert o.handle("42", "/upload") == 0
+    assert "Approve it first" in env[-1][1]
+    _prep_upload(tmp_path, status="draft")
+    assert o.handle("42", "/upload") == 0 and "Approve it first" in env[-1][1]
+
+
+def test_upload_happy_path_is_private_scheduled_and_only_once(env, tmp_path, monkeypatch):
+    from app import upload
+    _prep_upload(tmp_path)
+    seen = {}
+    monkeypatch.setattr(upload, "fetch_video", lambda run_id, spec_id: seen.update(run=run_id, spec=spec_id) or tmp_path / "v.mp4")
+    monkeypatch.setattr(upload, "upload", lambda video, parts, when: seen.update(parts=parts, when=when) or
+                        {"id": "abc", "url": "https://youtube.com/watch?v=abc", "privacy": "private", "publish_at": "2026-10-26T13:30:00Z"})
+    assert o.handle("42", "/upload") == 0
+    assert seen["run"] == "777" and seen["spec"] == "demo-a1" and seen["parts"]["title"].endswith("#shorts") and seen["when"].tzinfo is not None
+    assert "https://youtube.com/watch?v=abc" in env[-1][1] and "private" in env[-1][1]
+    assert o._state("42")["projects"]["demo-a1"]["uploaded"]["id"] == "abc"
+    assert o.handle("42", "/upload") == 0 and "Already uploaded" in env[-1][1]
+
+
+def test_upload_failure_is_reported_and_nothing_is_marked_uploaded(env, tmp_path, monkeypatch):
+    from app import upload
+    _prep_upload(tmp_path)
+    monkeypatch.setattr(upload, "fetch_video", lambda *a: tmp_path / "v.mp4")
+    monkeypatch.setattr(upload, "upload", lambda *a: (_ for _ in ()).throw(upload.UploadError("YouTube refused the upload (403 forbidden).")))
+    assert o.handle("42", "/upload") == 0
+    assert "Upload did not happen" in env[-1][1] and "403" in env[-1][1]
+    assert "uploaded" not in o._state("42")["projects"]["demo-a1"]
+
+
+def test_upload_slot_is_next_19_ist_with_lead_time():
+    from datetime import UTC, datetime
+    from app import upload
+    assert upload.next_slot(datetime(2026, 10, 25, 12, 0, tzinfo=UTC)) == datetime(2026, 10, 25, 13, 30, tzinfo=UTC)
+    assert upload.next_slot(datetime(2026, 10, 25, 13, 0, tzinfo=UTC)) == datetime(2026, 10, 26, 13, 30, tzinfo=UTC)     # < 45 min ahead -> tomorrow
+
+
+def test_upload_without_secret_or_scope_explains_what_to_do(monkeypatch):
+    from app import upload
+    monkeypatch.delenv("YOUTUBE_TOKEN_JSON", raising=False)
+    try:
+        upload.credentials()
+        raise AssertionError("expected UploadError")
+    except upload.UploadError as e:
+        assert "YOUTUBE_TOKEN_JSON" in str(e)
+    monkeypatch.setenv("YOUTUBE_TOKEN_JSON", json.dumps({"token": "x", "refresh_token": "r", "client_id": "c", "client_secret": "s",
+                                                       "scopes": ["https://www.googleapis.com/auth/yt-analytics.readonly"]}))
+    try:
+        upload.credentials()
+        raise AssertionError("expected UploadError")
+    except upload.UploadError as e:
+        assert "permission to upload" in str(e) and "authorize-youtube" in str(e)
