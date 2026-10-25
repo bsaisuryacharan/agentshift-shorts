@@ -50,7 +50,7 @@ jobs:
         if: always()
         run: |
           git config user.name "shorts-bot"; git config user.email "shorts-bot@users.noreply.github.com"
-          git add state projects data/history.jsonl data/topics.jsonl 2>/dev/null || true
+          for f in state projects data/history.jsonl data/topics.jsonl; do git add "$f" 2>/dev/null || true; done
           git commit -m "state: $(date -u +%FT%TZ)" || true
           git pull --rebase -q || true
           git push || true

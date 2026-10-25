@@ -272,6 +272,8 @@ BEHIND = re.compile(r"silhouette|from behind|back view|backs? turned|no faces?|f
 
 def validate_spec(spec: dict, facts_text: str) -> list[str]:
     errs, keys, seen = [], set(), set()
+    if not isinstance(spec, dict) or not isinstance(spec.get("beats"), list) or not all(isinstance(b, dict) for b in spec["beats"]):
+        return ["the spec must be a JSON object whose beats are a list of objects (not strings)"]
     beats = spec.get("beats") or []
     if not 6 <= len(beats) <= 10:
         errs.append(f"need 6-10 beats, got {len(beats)}")
@@ -434,10 +436,16 @@ def finish(spec: dict, writer: str, out: Path, deliver: bool, chat: str | None) 
     bad = [k for k, v in m["checks"].items() if v != "pass" and k != "vision"]
     if bad:
         return False, [f"hard gate failed: {k}: {m['checks'][k]}" for k in bad], run_dir, None
-    try:
-        j = judge(run_dir, spec, writer)
-    except RuntimeError as e:                    # no judge answered (quota / malformed JSON): this attempt cannot be scored, the next one may be
-        print("   judge unavailable:", str(e)[:300], flush=True)
+    j = None
+    for n in range(3):                            # the judge call is the one that must not be lost after a 5-minute render: wait out the throttle
+        try:
+            j = judge(run_dir, spec, writer)
+            break
+        except RuntimeError as e:
+            print(f"   judge unavailable ({n + 1}/3):", str(e)[:200], flush=True)
+            if n < 2:
+                time.sleep(90)
+    if j is None:                                # still no judge: this attempt cannot be scored, the next one may be
         return False, ["judge unavailable; keep the script and visuals as they are"], run_dir, None
     print("   judge:", j, flush=True)
     res = produce.regate(run_dir, run_dir / "vision.json")

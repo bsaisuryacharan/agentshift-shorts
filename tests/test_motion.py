@@ -185,6 +185,7 @@ def test_finish_survives_unavailable_judge(monkeypatch, tmp_path):
     monkeypatch.setitem(__import__("sys").modules, "app.produce", fake)
     monkeypatch.setattr("app.produce", fake, raising=False)
     monkeypatch.setattr(auto, "judge", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("no judge")))
+    monkeypatch.setattr(auto.time, "sleep", lambda s: None)
     ok, notes, rd, j = auto.finish({"id": "x", "beats": []}, "groq", tmp_path, False, None)
     assert ok is False and j is None and "judge unavailable" in notes[0]
 
@@ -470,3 +471,27 @@ def test_title_blocklist_skips_diagrams_and_posters():
     for t in ("Van Allen belt diagram", "Solar system poster", "Cassini illustration", "Voyager logo"):
         assert stills.BAD_TITLE.search(t)
     assert not stills.BAD_TITLE.search("Major Solar Flare") and not stills.BAD_TITLE.search("Andromeda Galaxy")
+
+
+def test_validate_rejects_non_object_beats_instead_of_crashing():
+    assert auto.validate_spec({"beats": ["a", "b"]}, "f")[0].startswith("the spec must be")
+    assert auto.validate_spec(["x"], "f")[0].startswith("the spec must be")
+
+
+def test_finish_retries_judge_before_giving_up(monkeypatch, tmp_path):
+    import types
+    fake = types.SimpleNamespace(run=lambda sp, out: {"checks": {"safe": "pass"}}, regate=lambda rd, v: {"passed": False})
+    monkeypatch.setitem(__import__("sys").modules, "app.produce", fake)
+    monkeypatch.setattr("app.produce", fake, raising=False)
+    calls, sleeps = [], []
+
+    def flaky(*a, **k):
+        calls.append(1)
+        if len(calls) < 3:
+            raise RuntimeError("429")
+        return {"approved": False, "scores": {"accuracy": 9}, "fixes": ["x"], "failing": "images", "judge": "gemini"}
+
+    monkeypatch.setattr(auto, "judge", flaky)
+    monkeypatch.setattr(auto.time, "sleep", lambda s: sleeps.append(s))
+    ok, notes, rd, j = auto.finish({"id": "x", "beats": []}, "groq", tmp_path, False, None)
+    assert j is not None and len(calls) == 3 and sleeps == [90, 90]
