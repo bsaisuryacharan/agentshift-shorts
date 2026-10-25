@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T14:13:30+00:00",
+ "generated_at": "2026-10-25T14:35:12+00:00",
  "channel": {
   "period": "2026-09-25..2026-10-24",
   "shorts": 1,
@@ -12,32 +12,76 @@
   "caveat": "tiny sample"
  },
  "trending": [
-  "Old TV to New TV in 1 CLICK - AI MAGIC 🔥",
-  "AI adoption by industry shows what other sectors can learn - MIT Technology Review",
-  "Gartner’s Top 10 Strategic Technology Trends For 2027 - Forbes",
-  "Why the United States Needs Europe in Order to Win the Technology Race - CSIS | Center for Strategic and International Studies",
-  "ICAR-CIRCOT, Mumbai Signs MoU for Technology Transfer of Protective Gloves for Cotton Picking Workers - Indian Council Of Agricultural Research",
-  "Faster to Science: A Letter to the Science Community - NASA Science (.gov)",
-  "My mother donated her body to science. I really wasn’t prepared for what came next - The Guardian",
-  "Scientists win 2026 Nobel Prize for controlling brain cells with light - Science Daily",
-  "America’s new era of private science - The Economist",
-  "Curtain Raiser for ESTIC 2026 Space Science & Technologies Thematic Session held at ISRO Headquarters - ISRO",
-  "Advancing global science diplomacy: The EU framework for science diplomacy and how it can support UNESCO’s science diplomacy efforts - research-and-innovation.ec.europa.eu",
-  "Why an expensive restaurant can feel uncomfortable even when you can afford it: Psychology explores how c - The Times of India"
+  "AFTER 2029 EARTH FUTURE 🌍☄️",
+  "How Small Is the Planck Length? 💀🔬",
+  "Bird & Animal Mutualism | Amazing Symbiotic Relationship in Nature 🏞️",
+  "The Most Unbelievable Animal Moments Ever Recorded",
+  "How Big is the Universe, Really? 🌌💀",
+  "Most Unbelievable Animal Moments Ever Captured on Camera",
+  "IKAN LELE SAMA BELUT",
+  "Flying Car ?",
+  "Kalpana Chawla Ki Kahani: Karnal Se NASA Aur Columbia Tak",
+  "Missing Bedroom Mystery in a 200year old house",
+  "Gdp growth ka sach ..",
+  "Three giant black holes discovered in a galaxy from the dawn of time"
  ],
  "region": "IN",
- "trend_signals_total": 70,
- "trend_signals_on_niche": 36,
+ "trend_signals_total": 54,
+ "trend_signals_on_niche": 37,
+ "niche_winners": [
+  {
+   "title": "IKAN LELE SAMA BELUT #facts #animals #nature #ngeshortsdulu",
+   "views": 2707696,
+   "url": "https://www.youtube.com/watch?v=C_nXqPmMxhc"
+  },
+  {
+   "title": "Why Nothing Can Survive Venus",
+   "views": 1509738,
+   "url": "https://www.youtube.com/watch?v=tKikZXrcZCQ"
+  },
+  {
+   "title": "AFTER 2029 EARTH FUTURE 🌍☄️#wingsye #solarsystem #earth #galaxy",
+   "views": 10124199,
+   "url": "https://www.youtube.com/watch?v=XhcNcMBBrWg"
+  },
+  {
+   "title": "How Small Is the Planck Length? 💀🔬 #Shorts #Space #Astronomy #Science #QuantumPhysics #Phy",
+   "views": 6041335,
+   "url": "https://www.youtube.com/watch?v=Buh0gX_-5lY"
+  },
+  {
+   "title": "The Weirdest Bird Nests You’ve Ever Seen!🙄#facts #shorts #birds #new #tending #shortvideo",
+   "views": 4479602,
+   "url": "https://www.youtube.com/watch?v=BneG3bVSJ54"
+  },
+  {
+   "title": "Is Machhli Ne Apne Hi Bachhon Ke Qatil Ko Paala! 😱",
+   "views": 3452593,
+   "url": "https://www.youtube.com/watch?v=4iBlF3hxGNo"
+  },
+  {
+   "title": "Missing Bedroom Mystery in a 200year old house",
+   "views": 2012938,
+   "url": "https://www.youtube.com/watch?v=Jz_IepdSed8"
+  },
+  {
+   "title": "Bird & Animal Mutualism | Amazing Symbiotic Relationship in Nature 🏞️  #shorts #Biology #m",
+   "views": 3757581,
+   "url": "https://www.youtube.com/watch?v=PcfANlf83DE"
+  }
+ ],
  "news": [
+  "Low-dose aspirin linked to 70% lower dementia risk, but there's a catch",
+  "This mysterious mushroom makes people see hundreds of tiny humans",
+  "Three giant black holes discovered in a galaxy from the dawn of time",
+  "New evidence suggests spinosaurus spent most of its life underwater",
+  "Scientists discover how pancreatic cancer rewrites its DNA to escape treatment",
+  "A hidden bias in human language challenges 70 years of science",
+  "Astronomers may have discovered the first moon beyond our Solar System",
+  "NASA’s asteroid Bennu samples reveal a 4.5-billion-year-old secret",
   "APOD: 2026 October 25 – Dark Matter in a Simulated Universe",
   "APOD: 2026 October 24 – Rosetta’s Selfie",
   "NASA, Partners Accelerate Lander Development for 2028 Moon Missions",
-  "NASA’s Artemis III Mission to Test Future Moon Lander Operations",
-  "NASA’s Swift Mission Ends, Leaves Behind Scientific Bonanza",
-  "RS-25 Engine Tests at NASA Stennis",
-  "NASA, Virginia Launch Power Partnership for Energy Security",
-  "APOD: 2026 October 23 – Andromeda in Southern Spring",
-  "El Niño Then and Now",
-  "NASA Invites Media to 2026 von Braun Space Exploration Symposium"
+  "NASA’s Artemis III Mission to Test Future Moon Lander Operations"
  ]
 }
