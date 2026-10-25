@@ -113,8 +113,8 @@ def run(state_dir: Path = ROOT / "state", perf_path: Path = PERF, insights_path:
     subs = channel_subscribers(rows[0]["channel_id"], key, client) if rows else None
     perf = summarise(rows, subs, now)
     perf["not_public_or_missing"] = missing
-    from . import playbook
-    perf["lessons"] = playbook.lessons(perf_path)
+    from . import learning
+    perf["lessons"] = learning.lessons(perf_path)
     write_insights(perf, insights_path)
     print(json.dumps({"shorts": len(rows), "missing": missing, "on_track": perf["on_track"], "behind": perf["behind"], "subs": subs}))
     return perf

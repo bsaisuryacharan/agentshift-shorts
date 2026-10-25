@@ -4,7 +4,7 @@ from pathlib import Path
 
 import httpx
 
-from app import monitor, orchestrator as o, playbook, scorecard, targets
+from app import learning, monitor, orchestrator as o, scorecard, targets
 
 
 def test_target_status_follows_the_curve():
@@ -53,14 +53,14 @@ def test_repeated_template_warning(tmp_path):
 def test_playbook_needs_enough_history_then_reports_a_gap(tmp_path):
     now = datetime.now(UTC)
     fp, pp = tmp_path / "f.jsonl", tmp_path / "p.jsonl"
-    assert playbook.lessons(pp, fp) == []
+    assert learning.lessons(pp, fp) == []
     for sid, mood, views in (("a", "space", 50000), ("b", "space", 60000), ("c", "history", 4000), ("d", "history", 5000)):
         fp.open("a").write(json.dumps({"spec_id": sid, "mood": mood, "theme": "cool", "hook_words": "<=7", "hf": 2}) + "\n")
         pp.open("a").write(json.dumps({"spec_id": sid, "views": views, "published_at": (now - timedelta(hours=100)).isoformat()}) + "\n")
-    out = playbook.lessons(pp, fp)
+    out = learning.lessons(pp, fp)
     assert len(out) == 1 and "'space'" in out[0] and "n=4" in out[0]
     pp.write_text("\n".join(json.dumps({"spec_id": s, "views": 9, "published_at": (now - timedelta(hours=2)).isoformat()}) for s in "abcd"))
-    assert playbook.lessons(pp, fp) == []                    # too young to judge: no lessons
+    assert learning.lessons(pp, fp) == []                    # too young to judge: no lessons
 
 
 def test_monitor_reads_stats_and_writes_summary(tmp_path):

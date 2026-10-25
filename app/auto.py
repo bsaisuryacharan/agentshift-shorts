@@ -487,12 +487,12 @@ def finish(spec: dict, writer: str, out: Path, deliver: bool, chat: str | None) 
         return False, ["judge unavailable; keep the script and visuals as they are"], run_dir, None
     print("   judge:", j, flush=True)
     res = produce.regate(run_dir, run_dir / "vision.json")
-    from . import playbook, scorecard
+    from . import learning, scorecard
     card = scorecard.build(spec, run_dir, j["scores"])
     print(f"   scorecard: {scorecard.summary_line(card)} | fix first: {card.get('fix_first')} | guidelines ok: {card['policy']['ok']}", flush=True)
     try:
         (run_dir / "scorecard.json").write_text(json.dumps(card, indent=1, ensure_ascii=False))
-        playbook.record_features(spec, run_dir, card["stages"])
+        learning.record_features(spec, run_dir, card["stages"])
         with open(ROOT / "data" / "scorecards.jsonl", "a") as f:
             f.write(json.dumps({"spec_id": spec["id"], "stages": card["stages"], "policy_ok": card["policy"]["ok"]}) + "\n")
     except OSError:

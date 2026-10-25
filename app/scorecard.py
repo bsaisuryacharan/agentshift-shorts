@@ -63,8 +63,8 @@ def policy(spec: dict, run_dir: Path, sig: dict, features_path: Path | None = No
     checks.append({"check": "length_under_60s", "hard": True, "ok": dur is None or dur <= 60, "note": f"{dur}s"})
     checks.append({"check": "synthetic_media_disclosed", "hard": False, "ok": True, "note": "set on every upload (containsSyntheticMedia)"})
     checks.append({"check": "original_narration_and_analysis", "hard": False, "ok": sig.get("words", 0) >= 70, "note": f"{sig.get('words')} spoken words"})
-    from . import playbook
-    prev = playbook._read(features_path or playbook.FEATURES)[-3:]
+    from . import learning
+    prev = learning._read(features_path or learning.FEATURES)[-3:]
     mine = (spec.get("theme", "cool"), tuple(sorted(sig.get("gallery_graphics", []))), len(spec["beats"]))
     same = [p for p in prev if p.get("theme") == mine[0] and p.get("beats") == mine[2]]
     checks.append({"check": "not_a_repeated_template", "hard": False, "ok": len(same) < 3, "note": "same theme and beat count as each of the last 3 Shorts" if len(same) >= 3 else "format varies"})
