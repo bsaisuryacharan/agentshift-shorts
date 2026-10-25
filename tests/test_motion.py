@@ -647,3 +647,15 @@ def test_science_feeds_parse_and_dedupe():
     rss = b"<rss><channel><item><title>Probe finds water</title><link>https://a/1</link></item><item><title>Probe finds water</title><link>https://a/2</link></item><item><title>Startup funding deal</title><link>https://a/3</link></item></channel></rss>"
     out = trends._science_feed_signals(None, client=httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, content=rss))))
     assert [s.title for s in out] == ["Probe finds water"] and out[0].source == "science_feed"
+
+
+def test_validate_repairs_gallery_name_used_as_element_type():
+    spec = {"id": "x", "title": "t", "sources": {"a": "b"}, "beats": [{"key": f"b{i}", "img": f"s{i}", "prompt": "an old brass watch", "say": " ".join(["word"] * 14),
+            "hud": [{"t": "bubble", "text": "vs", "at": "word"}]} for i in range(7)]}
+    spec["beats"][1]["hud"].append({"t": "titlecard-lockup", "wordmark": "Tardigrade", "kicker": "VS HUMANS", "at": "word"})
+    spec["beats"][2]["hud"].append({"t": "per-word-rise", "vars": {"text": "Built to survive"}, "at": "word", "dur": 2})
+    errs = auto.validate_spec(spec, "facts")
+    e1, e2 = spec["beats"][1]["hud"][-1], spec["beats"][2]["hud"][-1]
+    assert e1["t"] == "hf" and e1["name"] == "titlecard-lockup" and e1["vars"] == {"wordmark": "Tardigrade", "kicker": "VS HUMANS"} and e1["at"] == "word"
+    assert e2["t"] == "hf" and e2["vars"] == {"text": "Built to survive"} and e2["dur"] == 2
+    assert not any("bad hud type" in e or "unknown component" in e for e in errs)

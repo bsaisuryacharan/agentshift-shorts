@@ -316,6 +316,13 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
                         if alt in e:
                             e["t"] = e.pop(alt)
                             break
+                if isinstance(e, dict) and e.get("t") in gallery_hf.names():       # {"t":"titlecard-lockup", ...} -> {"t":"hf","name":"titlecard-lockup","vars":{...}}
+                    name = e.pop("t")
+                    given = e.pop("vars", None) if isinstance(e.get("vars"), dict) else {}
+                    keep = {k: e.pop(k) for k in ("at", "dur", "h") if k in e}
+                    given.update({k: v for k, v in e.items() if k != "name"})
+                    e.clear()
+                    e.update({"t": "hf", "name": name, "vars": given, **keep})
             b["hud"] = [e for e in b["hud"] if isinstance(e, dict) and e.get("t") != "subscribe"]
     for b in beats:
         k = b.get("key", "?")
