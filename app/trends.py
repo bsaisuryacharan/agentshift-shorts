@@ -4,7 +4,7 @@ from __future__ import annotations
 import logging
 import re
 import xml.etree.ElementTree as ET
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from urllib.parse import quote_plus
 
 import httpx
@@ -45,6 +45,64 @@ def _youtube_short_signals(settings: Settings) -> list[TrendSignal]:
                                  published_at=datetime.fromisoformat(snippet["publishedAt"]),
                                  metric=int(video.get("statistics", {}).get("viewCount", 0)), short_form_confidence=0.45,
                                  notes="Popular Science & Technology video; verify Short format before using as format inspiration."))
+    return found
+
+
+NICHE_SEARCHES = ["space facts", "science explained", "history mystery", "how it works science", "nature facts animals", "physics explained"]
+SCIENCE_FEEDS = {"ScienceDaily": "https://www.sciencedaily.com/rss/top/science.xml", "NASA": "https://www.nasa.gov/news-release/feed/",
+                 "ESA": "https://www.esa.int/rssfeed/Our_Activities/Space_Science", "Quanta": "https://www.quantamagazine.org/feed/"}
+
+
+def _youtube_niche_signals(settings: Settings, client=httpx, days: int = 14) -> list[TrendSignal]:
+    """what is working RIGHT NOW in this channel's niche: short science/space/history/nature videos from the last two weeks, ranked by views per hour.
+    (The old signal was the generic 'most popular in Science & Technology' chart, which is mostly phone reviews.) Costs ~600 of the free 10,000 daily API units."""
+    if not settings.youtube_api_key:
+        return []
+    since = (datetime.now(UTC) - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    ids: dict[str, str] = {}
+    for q in NICHE_SEARCHES:
+        r = client.get("https://www.googleapis.com/youtube/v3/search", params={"part": "snippet", "q": q, "type": "video", "videoDuration": "short", "order": "viewCount",
+                       "publishedAfter": since, "relevanceLanguage": "en", "regionCode": "US", "maxResults": 8, "key": settings.youtube_api_key}, timeout=25)
+        r.raise_for_status()
+        for it in r.json().get("items", []):
+            ids.setdefault(it["id"]["videoId"], q)
+    if not ids:
+        return []
+    r = client.get("https://www.googleapis.com/youtube/v3/videos", params={"part": "snippet,statistics,contentDetails", "id": ",".join(list(ids)[:50]), "key": settings.youtube_api_key}, timeout=25)
+    r.raise_for_status()
+    now = datetime.now(UTC)
+    found = []
+    for v in r.json().get("items", []):
+        sn, st = v["snippet"], v.get("statistics", {})
+        published = datetime.fromisoformat(sn["publishedAt"].replace("Z", "+00:00"))
+        age_h = max(1.0, (now - published).total_seconds() / 3600)
+        views = int(st.get("viewCount", 0))
+        if views < 20000 or not _in_scope(sn["title"]):
+            continue
+        found.append(TrendSignal(source="youtube", format="niche_short", title=sn["title"], url=f"https://www.youtube.com/watch?v={v['id']}", observed_at=now,
+                                 published_at=published, metric=views, short_form_confidence=0.8,
+                                 notes=f"niche search '{ids[v['id']]}': {views:,} views in {age_h / 24:.1f} days = {views / age_h:,.0f} views/hour; study the hook and format, never copy."))
+    found.sort(key=lambda s: -(s.metric or 0) / max(1.0, (now - s.published_at).total_seconds() / 3600))
+    return found[:15]
+
+
+def _science_feed_signals(settings: Settings, client=httpx) -> list[TrendSignal]:
+    """current science/space stories straight from primary publishers (ScienceDaily, NASA, ESA, Quanta), not keyword-matched Google News"""
+    observed, found, seen = datetime.now(UTC), [], set()
+    for name, url in SCIENCE_FEEDS.items():
+        try:
+            r = client.get(url, timeout=25, follow_redirects=True)
+            r.raise_for_status()
+            root = ET.fromstring(r.content)
+        except (httpx.HTTPError, ET.ParseError) as e:
+            logger.warning("feed %s unavailable: %s", name, e)
+            continue
+        for item in root.findall("./channel/item")[:8]:
+            title, link = (item.findtext("title") or "").strip(), (item.findtext("link") or "").strip()
+            if title and link and title.lower() not in seen and _in_scope(title):
+                seen.add(title.lower())
+                found.append(TrendSignal(source="science_feed", format="news", title=title, url=link, observed_at=observed, short_form_confidence=0.2,
+                                         notes=f"{name}: primary-source story; verify facts on the page before scripting."))
     return found
 
 
@@ -100,7 +158,7 @@ def analyze(settings: Settings) -> TrendReport:
     except Exception as error:  # noqa: BLE001 - no analytics must never masquerade as zero performance
         logger.warning("Channel analytics unavailable: %s", error)
         status["channel_analytics"] = f"unavailable: {type(error).__name__}"
-    for name, loader in (("youtube", _youtube_short_signals), ("news", _news_signals), ("reels", _reels_signals)):
+    for name, loader in (("youtube", _youtube_niche_signals), ("news", _science_feed_signals), ("reels", _reels_signals)):
         try:
             loaded = loader(settings)
             signals.extend(loaded)

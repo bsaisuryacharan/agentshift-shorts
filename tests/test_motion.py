@@ -616,3 +616,34 @@ def test_trending_is_filtered_to_the_channel_niche(tmp_path):
     (tmp_path / "latest_trend_report.json").write_text(json.dumps({"region": "IN", "signals": sigs}))
     d = insights.build(tmp_path)
     assert d["trending"][0].startswith("Why Black Holes") and len(d["trending"]) == 3 and d["trend_signals_total"] == 5 and d["trend_signals_on_niche"] == 3
+
+
+def test_niche_youtube_signal_ranks_by_velocity_and_skips_junk():
+    import httpx
+    from datetime import UTC, datetime, timedelta
+    from app import trends
+    now = datetime.now(UTC)
+    pub = lambda h: (now - timedelta(hours=h)).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    def handler(req):
+        if req.url.path.endswith("/search"):
+            q = req.url.params["q"]
+            return httpx.Response(200, json={"items": [{"id": {"videoId": f"{q[:2]}1"}}, {"id": {"videoId": "zz9"}}]})
+        return httpx.Response(200, json={"items": [
+            {"id": "sp1", "snippet": {"title": "Why black holes spin", "publishedAt": pub(20)}, "statistics": {"viewCount": "500000"}},
+            {"id": "sc1", "snippet": {"title": "Slow science fact", "publishedAt": pub(300)}, "statistics": {"viewCount": "600000"}},
+            {"id": "zz9", "snippet": {"title": "Buy this startup stock now", "publishedAt": pub(10)}, "statistics": {"viewCount": "900000"}},
+            {"id": "his", "snippet": {"title": "tiny", "publishedAt": pub(10)}, "statistics": {"viewCount": "500"}}]})
+
+    class S:
+        youtube_api_key = "k"
+    out = trends._youtube_niche_signals(S(), client=httpx.Client(transport=httpx.MockTransport(handler)))
+    assert [s.title for s in out] == ["Why black holes spin", "Slow science fact"] and "views/hour" in out[0].notes
+
+
+def test_science_feeds_parse_and_dedupe():
+    import httpx
+    from app import trends
+    rss = b"<rss><channel><item><title>Probe finds water</title><link>https://a/1</link></item><item><title>Probe finds water</title><link>https://a/2</link></item><item><title>Startup funding deal</title><link>https://a/3</link></item></channel></rss>"
+    out = trends._science_feed_signals(None, client=httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, content=rss))))
+    assert [s.title for s in out] == ["Probe finds water"] and out[0].source == "science_feed"

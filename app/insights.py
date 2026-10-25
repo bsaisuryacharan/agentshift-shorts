@@ -75,7 +75,9 @@ def build(data: Path = ROOT / "data") -> dict:
         out["trend_signals_total"] = len(t.get("signals", []))
         out["trend_signals_on_niche"] = sum(1 for s in rows if NICHE.search(s["title"]))
         rows = [s for s in rows if NICHE.search(s["title"])]                  # phone reviews and celebrity clips are popular but are not this channel
-        news = [s for s in t.get("signals", []) if s.get("source") in ("news", "nasa") and s.get("title") and _ascii_ratio(s["title"]) > 0.9]
+        news = [s for s in t.get("signals", []) if s.get("source") in ("news", "nasa", "science_feed") and s.get("title") and _ascii_ratio(s["title"]) > 0.9]
+        yt = [s for s in t.get("signals", []) if s.get("format") == "niche_short" and s.get("title")]
+        out["niche_winners"] = [{"title": s["title"][:90], "views": s.get("metric"), "url": s.get("url")} for s in yt[:8]]
         out["news"] = [re.sub(r"\s+[-|]\s+[^-|]{3,60}$", "", s["title"]).strip()[:110] for s in news[:12]]      # drop the " - Publisher" tail
         out["trending"] = [re.sub(r"#\w+", "", s["title"]).strip(" |-!") for s in rows[:12]]
     return out
@@ -111,7 +113,9 @@ def hint(max_chars: int = 1500) -> str:
         parts.append("Lessons from results so far: " + " | ".join(perf["lessons"]))
     if i.get("weakest_stage"):
         parts.append(f"Across recent Shorts the weakest stage is '{i['weakest_stage']}' (average {i['stage_averages'][i['weakest_stage']]}): put extra care there.")
-    if i.get("trending"):
+    if i.get("niche_winners"):
+        parts.append("Short videos winning in this niche in the last two weeks (study the hook, never copy): " + "; ".join(f"'{w['title'][:60]}' ({w['views']:,} views)" for w in i["niche_winners"][:4]))
+    if i.get("trending") and not i.get("niche_winners"):
         parts.append("Popular on YouTube now (inspiration only, do not copy titles): " + "; ".join(i["trending"][:6]))
     return " ".join(parts)[:max_chars]
 
