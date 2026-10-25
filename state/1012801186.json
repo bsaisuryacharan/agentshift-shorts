@@ -1,5 +1,5 @@
 {
- "current": "harvest-radiation-belts-a3",
+ "current": "tardigrade-radiation-vs-human-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -36,6 +36,25 @@
     "payoff": 7,
     "safe_zone": 10
    }
+  },
+  "tardigrade-radiation-vs-human-a2": {
+   "title": "Tardigrades vs. Humans: The Radiation Showdown",
+   "base": "tardigrade",
+   "status": "draft",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 7,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 6,
+    "hierarchy": 8,
+    "consistency": 9,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "40201339279"
   }
  }
 }

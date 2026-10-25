@@ -1,0 +1,226 @@
+{
+ "id": "tardigrade-radiation-vs-human-a2",
+ "title": "Tardigrades vs. Humans: The Radiation Showdown",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "VERSUS",
+ "format": "versus",
+ "theme": "cool",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Tardigrade",
+  "b1": "https://en.wikipedia.org/wiki/Tardigrade",
+  "b2": "https://en.wikipedia.org/wiki/Tardigrade",
+  "b3": "https://en.wikipedia.org/wiki/Tardigrade",
+  "b4": "https://en.wikipedia.org/wiki/Tardigrade",
+  "b5": "https://en.wikipedia.org/wiki/Tardigrade",
+  "b6": "https://en.wikipedia.org/wiki/Tardigrade",
+  "outro": "https://en.wikipedia.org/wiki/Tardigrade",
+  "wiki": "https://en.wikipedia.org/wiki/Tardigrade"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a microscopic tardigrade on a moss leaf, natural light, wide shot, no text, no logos, no people, documentary look, green and brown tones",
+   "focal": [
+    0.5,
+    0.6
+   ],
+   "say": "Humans versus the microscopic tardigrade: who survives a thousand times the radiation dose?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "vs",
+     "at": "versus"
+    },
+    {
+     "t": "title",
+     "html": "TARDIGRADES: RADIATION *KINGS*?",
+     "at": "tardigrade"
+    }
+   ],
+   "photo": "tardigrade moss"
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a single tardigrade claw, macro shot, gripping a tiny fiber, natural light, no text, no logos, no people, documentary look, detailed texture",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Most life, including us, quickly perishes under extreme radiation.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "Human Vulnerability",
+     "col": "am",
+     "at": "Most"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "prompt": "photoreal cinematic 9:16 image of an aerial view of a vibrant green moss cushion, with abstract microscopic life visible within its texture, natural light, no text, no logos, no people, documentary look",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Meet the 'water bear', a creature just 0.5 millimeters long, but incredibly tough.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Water Bear (0.5 mm)",
+     "at": "bear"
+    },
+    {
+     "t": "hf",
+     "name": "scramble-reveal",
+     "vars": {
+      "text": "Micro-Animal"
+     },
+     "at": "creature",
+     "dur": 2.5
+    }
+   ],
+   "photo": "tardigrade microscope"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a silhouette of a tardigrade against a dark, starry background, implying outer space, wide shot, natural light, no text, no logos, no people, documentary look",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "These 'slow walkers' survive extreme temperatures, pressures, dehydration, and even outer space.",
+   "hud": [
+    {
+     "t": "list",
+     "items": [
+      [
+       "🌡️",
+       "Extreme Temps",
+       "OK"
+      ],
+      [
+       "💧",
+       "Dehydration",
+       "OK"
+      ],
+      [
+       "🌌",
+       "Outer Space",
+       "OK"
+      ]
+     ],
+     "at": "outer"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a top-down view of a petri dish, with a magnified tardigrade visible, laboratory setting, natural light, no text, no logos, no people, documentary look",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "While exact human limits vary, tardigrades can withstand over a thousand times the radiation dose that would kill us.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "1,000x Radiation",
+     "col": "ir",
+     "at": "thousand"
+    },
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 1000,
+      "prefix": "x",
+      "suffix": " Radiation Resistance",
+      "glow": true
+     },
+     "at": "thousand",
+     "dur": 3.0
+    }
+   ],
+   "photo": "tardigrade petri dish"
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a macro shot of a fossil embedded in ancient rock, hinting at microscopic life, natural light, no text, no logos, no people, documentary look, earthy tones",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "With 1,500 known species and fossils dating back 500 million years, they've truly mastered resilience.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Species",
+       "1,500",
+       "",
+       "cy"
+      ],
+      [
+       "Fossil Record",
+       "500 million",
+       "years",
+       "cy"
+      ]
+     ],
+     "stagger": true,
+     "at": "500"
+    }
+   ],
+   "photo": "tardigrade fossil"
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a close-up of a tardigrade's head, showing its eyespots and mouthparts, macro shot, natural light, no text, no logos, no people, documentary look, detailed microscopy",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "So when it comes to surviving the harshest conditions, the tiny tardigrade is the undisputed champion.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "CHAMPION",
+     "col": "ok",
+     "at": "champion"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a clean, minimalist background with a subtle scientific diagram motif, no text, no logos, no people, documentary look, cool blue and grey tones",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Follow Agent Shift for more incredible science deep dives!",
+   "hud": []
+  }
+ ],
+ "_facts": {
+  "title": "Tardigrade",
+  "url": "https://en.wikipedia.org/wiki/Tardigrade",
+  "text": "Tardigrades ( ), also known as water bears or moss piglets, are a phylum of eight-legged segmented micro-animals. They were first described by the German zoologist Johann August Ephraim Goeze in 1773, who called them Kleiner Wasserbär 'little water bear'. In 1776, the Italian biologist Lazzaro Spallanzani named them Tardigrada, which means \"slow walkers\". Tardigrades live in diverse regions of Earth's biosphere: mountaintops, the deep sea, tropical rainforests, and the Antarctic. They are among the most resilient animals known, with individual species able to survive severe conditions – such as exposure to extreme temperatures, extreme pressures (both high and low), air deprivation, radiation, dehydration, and starvation – that would quickly kill most other forms of life. They have survived exposure to outer space. There are about 1,500 known species in the phylum Tardigrada, a part of the superphylum Ecdysozoa. The earliest known fossil is from the Cambrian, some 500 million years ago. They lack several of the Hox genes found in arthropods, and the middle region of the body corresponding to an arthropod's thorax and abdomen. Instead, most of their body is homologous to an arthropod's head. Tardigrades are usually about 0.5 mm (0.02 in) long when fully grown. They are short and plump, with four pairs of legs, each ending in claws (usually four to eight) or sticky pads. Tardigrades are prevalent in mosses and lichens and can readily be collected and viewed under a low-power microscope, making them accessible to students and amateur scientists. Their clumsy crawling and their well-known ability to survive extreme conditions have brought them into science fiction and popular culture including items of clothing, statues, soft toys and crochet patterns. == Description ==\n\n\n=== Body structure ===\n\nTardigrades have a short plump body with four pairs of hollow unjointed legs. Most range from 0.05 to 0.5 mm (0.002 to 0.02 in) in length, although the largest species may reach 1.3 mm (0.051 in). The body cavity is a haemocoel, an open circulatory system, filled with a colourless fluid. The body covering is a cuticle that is replaced when the animal moults; it contains hardened (sclerotised) proteins and chitin but is not calcified. Each leg ends in one or more claws according to the species; in some species, the claws are modified as sticky pads. In marine species, the legs are telescopic. There are no lungs, gills, or blood vessels, so tardigrades rely on diffusion through the cuticle and body cavity for gas exchange. Tardigrades have been suggested to be eutelic, with a fixed number of body cells at maturity, but there is evidence that they are not. === Nervous system and senses ===\nThe tardigrade nervous system has a pair of ventral nerve cords with a pair of ganglia serving each pair of legs. The nerve cords end near the mouth at a pair of subpharyngeal (or suboesophageal) ganglia. These are connected by paired commissures (either side of the tube from the mouth to the pharynx) to the dorsally located cerebral ganglion or 'brain'. Also in the head are two eyespots in the brain, and several sensory cirri and pairs of hollow antenna-like clavae which may be chemoreceptors. The tardigrade Dactylobiotus dispar can be trained by classical conditioning to curl up into the defensive 'tun' state in response to a blue light associated with a small electric shock, an aversive stimulus. This demonstrates that tardigrades are capable of learning. === Locomotion ===\nAlthough the body is flexible and fluid-filled, locomotion does not operate mainly hydrostatically. Instead, as in arthropods, the muscles (sometimes just one or a few cells) work in antagonistic pairs that make each leg step backwards and forwards; there are also some flexors that work against hydrostatic pressure of the haemocoel. The claws help to stop the legs sliding during walking, and are used for gripping. === Feeding and excretion ===\nTardigrades feed by sucking animal or plant cell fluids, or on detritus. A pair of stylets composed of the mineral aragonite pierce the prey; the pharynx muscles then pump the fluids from the prey into the gut. A pair of salivary glands secrete a digestive fluid into the mouth, and produce replacement stylets each time the animal moults. Non-marine species have excretory Malpighian tubules where the intestine joins the hindgut. Some species have excretory or other glands between or at the base of the legs. === Reproduction and life cycle ===\n\nSome species are hermaphroditic and self-fertilizing, but most tardigrade species have both male and female individuals, which copulate by a variety of methods. The females lay eggs; those of Austeruseus faeroensis are spherical, 80 μm in diameter, with a knobbled surface. In other species, the eggs can be ovoid, as in Hypsibius annulatus, or may be spherical with pyramidal or bottle-shaped surface ornamentation. Some species appear to have no males, suggesting that parthenogenesis is common."
+ },
+ "_writer": "gemini"
+}
