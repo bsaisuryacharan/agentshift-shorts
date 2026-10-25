@@ -28,7 +28,7 @@ async def _worker(browser, page: Path, frames: list[int], out: Path) -> dict[int
     mapping, prev_hash, prev_idx = {}, None, None
     for i in frames:
         h = await pg.evaluate("t=>{window.__timelines.main.seek(t,false);return document.body.innerHTML.length+':'+"
-                              "Array.from(document.querySelectorAll('[style]')).map(e=>e.getAttribute('style')).join('|')}", i / FPS)
+                              "Array.from(document.querySelectorAll('[style]')).map(e=>e.getAttribute('style')).join('|')+'|'+JSON.stringify(window.__hfT||{})}", i / FPS)
         if h == prev_hash and prev_idx is not None:
             mapping[i] = prev_idx
             continue

@@ -1,56 +1,319 @@
 {
  "id": "doomsday-1960",
  "title": "The 1960 doomsday prediction for this Friday the 13th",
- "voice": "en-US-AndrewNeural", "rate": "+10%",
- "brand": "AGENT SHIFT", "series_label": "WHAT IF · 13 NOV 2026",
- "subscribe": {"title": "SUBSCRIBE", "sub": "for daily what-ifs"},
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "WHAT IF · 13 NOV 2026",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for daily what-ifs"
+ },
  "beats": [
-  {"key": "hook", "img": "s0.jpg", "focal": [0.5, 0.6], "zoom": 1.3,
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "focal": [
+    0.5,
+    0.6
+   ],
+   "zoom": 1.3,
    "say": "In nineteen sixty, scientists predicted humanity would end on Friday, November thirteenth, twenty twenty-six.",
-   "sfx": [["Friday", "impact", 0.9]],
-   "hud": [{"t": "bubble", "text": "what if?", "at": "In"},
-           {"t": "title", "html": "a 1960 paper predicted *doomsday*", "col": "ir", "at": "scientists"},
-           {"t": "big", "text": "13 NOV", "col": "ir", "at": "Friday"}]},
-  {"key": "b1", "img": "s1.jpg", "focal": [0.45, 0.45],
+   "sfx": [
+    [
+     "Friday",
+     "impact",
+     0.9
+    ]
+   ],
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "what if?",
+     "at": "In"
+    },
+    {
+     "t": "title",
+     "html": "a 1960 paper predicted *doomsday*",
+     "col": "ir",
+     "at": "scientists"
+    },
+    {
+     "t": "big",
+     "text": "13 NOV",
+     "col": "ir",
+     "at": "Friday"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "focal": [
+    0.45,
+    0.45
+   ],
    "say": "It was a real paper in the journal Science, by Heinz von Foerster and two students.",
-   "hud": [{"t": "chip", "text": "JOURNAL · SCIENCE", "col": "cy", "at": "real"},
-           {"t": "big", "text": "1960", "col": "am", "at": "Science"},
-           {"t": "label", "text": "von Foerster, Mora, Amiot", "at": "Heinz"}]},
-  {"key": "b2", "img": "s2.jpg", "focal": [0.4, 0.45],
+   "hud": [
+    {
+     "t": "chip",
+     "text": "JOURNAL · SCIENCE",
+     "col": "cy",
+     "at": "real"
+    },
+    {
+     "t": "big",
+     "text": "1960",
+     "col": "am",
+     "at": "Science"
+    },
+    {
+     "t": "label",
+     "text": "von Foerster, Mora, Amiot",
+     "at": "Heinz"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "focal": [
+    0.4,
+    0.45
+   ],
    "say": "They fitted twenty-four population estimates, spanning about two thousand years.",
-   "hud": [{"t": "chip", "text": "THE DATA", "col": "cy", "at": "They"},
-           {"t": "big", "text": "24", "count": {"to": 24, "dec": 0}, "col": "am", "at": "twenty-four"},
-           {"t": "label", "text": "population estimates", "at": "population"},
-           {"t": "sub", "html": "spanning ≈ *2,000 years*", "at": "spanning"}]},
-  {"key": "b3", "img": "s4.jpg", "focal": [0.65, 0.35], "zoom": 1.35,
+   "hud": [
+    {
+     "t": "chip",
+     "text": "THE DATA",
+     "col": "cy",
+     "at": "They"
+    },
+    {
+     "t": "big",
+     "text": "24",
+     "count": {
+      "to": 24,
+      "dec": 0
+     },
+     "col": "am",
+     "at": "twenty-four"
+    },
+    {
+     "t": "label",
+     "text": "population estimates",
+     "at": "population"
+    },
+    {
+     "t": "sub",
+     "html": "spanning ≈ *2,000 years*",
+     "at": "spanning"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s4.jpg",
+   "focal": [
+    0.65,
+    0.35
+   ],
+   "zoom": 1.35,
    "say": "Their equation said growth would keep accelerating, until population reached infinity.",
-   "sfx": [["infinity", "impact", 1.0]],
-   "cuts": [{"at": "infinity", "img": "s3.jpg", "flash": 0.5, "focal": [0.5, 0.45], "zoom": 1.4}],
-   "hud": [{"t": "chip", "text": "THE MODEL", "col": "pk", "at": "equation"},
-           {"t": "title", "html": "growth *accelerates*", "col": "pk", "at": "accelerating"},
-           {"t": "big", "text": "∞", "col": "ir", "at": "infinity"},
-           {"t": "sub", "html": "population on *13 Nov 2026*", "at": "reached"}]},
-  {"key": "b4", "img": "s2.jpg", "focal": [0.75, 0.3], "zoom": 1.4,
+   "sfx": [
+    [
+     "infinity",
+     "impact",
+     1.0
+    ]
+   ],
+   "cuts": [
+    {
+     "at": "infinity",
+     "img": "s3.jpg",
+     "flash": 0.5,
+     "focal": [
+      0.5,
+      0.45
+     ],
+     "zoom": 1.4
+    }
+   ],
+   "hud": [
+    {
+     "t": "chip",
+     "text": "THE MODEL",
+     "col": "pk",
+     "at": "equation"
+    },
+    {
+     "t": "title",
+     "html": "growth *accelerates*",
+     "col": "pk",
+     "at": "accelerating"
+    },
+    {
+     "t": "big",
+     "text": "∞",
+     "col": "ir",
+     "at": "infinity"
+    },
+    {
+     "t": "sub",
+     "html": "population on *13 Nov 2026*",
+     "at": "reached"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s2.jpg",
+   "focal": [
+    0.75,
+    0.3
+   ],
+   "zoom": 1.4,
    "say": "For decades, it tracked reality better than most expert forecasts.",
-   "hud": [{"t": "chip", "text": "1960s – 1980s", "col": "ok", "at": "decades"},
-           {"t": "title", "html": "it *tracked reality*<br>better than experts", "col": "ok", "at": "tracked"}]},
-  {"key": "b5", "img": "s5.jpg", "focal": [0.5, 0.35],
+   "hud": [
+    {
+     "t": "chip",
+     "text": "1960s – 1980s",
+     "col": "ok",
+     "at": "decades"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "tracked reality better than experts",
+      "accent": "green"
+     },
+     "at": "tracked",
+     "dur": 3.0
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "focal": [
+    0.5,
+    0.35
+   ],
    "say": "Then, around nineteen ninety-three, the real curve started falling behind.",
-   "sfx": [["ninety-three", "ding", 0.7]],
-   "hud": [{"t": "chip", "text": "THEN", "col": "ir", "at": "Then"},
-           {"t": "big", "text": "1993", "col": "ir", "at": "ninety-three"},
-           {"t": "label", "text": "reality falls behind", "at": "falling"}]},
-  {"key": "b6", "img": "s6.jpg", "focal": [0.4, 0.35],
+   "sfx": [
+    [
+     "ninety-three",
+     "ding",
+     0.7
+    ]
+   ],
+   "hud": [
+    {
+     "t": "chip",
+     "text": "THEN",
+     "col": "ir",
+     "at": "Then"
+    },
+    {
+     "t": "big",
+     "text": "1993",
+     "col": "ir",
+     "at": "ninety-three"
+    },
+    {
+     "t": "label",
+     "text": "reality falls behind",
+     "at": "falling"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "focal": [
+    0.4,
+    0.35
+   ],
    "say": "Birth rates fell to less than half of their nineteen sixty level.",
-   "hud": [{"t": "chip", "text": "THE REASON", "col": "cy", "at": "Birth"},
-           {"t": "big", "text": "<50%", "col": "cy", "at": "half"},
-           {"t": "label", "text": "of the 1960 birth rate", "at": "sixty"}]},
-  {"key": "outro", "img": "s7.jpg", "focal": [0.5, 0.65], "dim": true,
+   "hud": [
+    {
+     "t": "chip",
+     "text": "THE REASON",
+     "col": "cy",
+     "at": "Birth"
+    },
+    {
+     "t": "big",
+     "text": "<50%",
+     "col": "cy",
+     "at": "half"
+    },
+    {
+     "t": "hf",
+     "name": "chart-story",
+     "vars": {
+      "type": "progress",
+      "data": "50",
+      "labels": "of the 1960 birth rate",
+      "unit": "%",
+      "accent": "blue"
+     },
+     "at": "sixty",
+     "dur": 3.0,
+     "h": 520
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "focal": [
+    0.5,
+    0.65
+   ],
+   "dim": true,
    "say": "So, no doomsday. Today there are about eight point three billion of us, not infinity. Follow for more what-ifs.",
-   "sfx": [["Follow", "pop", 0.7]],
-   "hud": [{"t": "stamp", "text": "NOT INFINITY", "col": "ok", "at": "no"},
-           {"t": "rows", "items": [["1960", "3.0 B", "people", "am"], ["2026", "8.3 B", "people", "ok"]], "at": "Today", "stagger": 0.5},
-           {"t": "sub", "html": "UN World Population Prospects 2024", "at": "eight"}]}
+   "sfx": [
+    [
+     "Follow",
+     "pop",
+     0.7
+    ]
+   ],
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "NOT INFINITY",
+     "col": "ok",
+     "at": "no"
+    },
+    {
+     "t": "rows",
+     "items": [
+      [
+       "1960",
+       "3.0 B",
+       "people",
+       "am"
+      ],
+      [
+       "2026",
+       "8.3 B",
+       "people",
+       "ok"
+      ]
+     ],
+     "at": "Today",
+     "stagger": 0.5
+    },
+    {
+     "t": "sub",
+     "html": "UN World Population Prospects 2024",
+     "at": "eight"
+    }
+   ]
+  }
  ],
  "sources": {
   "hook": "von Foerster, Mora & Amiot, 'Doomsday: Friday, 13 November, A.D. 2026', Science 132(3436):1291 (1960), doi:10.1126/science.132.3436.1291",

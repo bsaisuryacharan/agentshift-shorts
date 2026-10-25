@@ -22,7 +22,7 @@ import json
 import re
 from pathlib import Path
 
-from . import motion
+from . import gallery_hf, motion
 from .voice import word_time
 
 COL = {"cy": "#38e1ff", "am": "#ffb547", "ok": "#3dff9a", "ir": "#ff3b5c", "pk": "#ff4fd8", "vi": "#a78bfa"}
@@ -115,6 +115,8 @@ class Page:
         elif t == "stamp":
             h = f'<div class="stamp mono" id="{eid}" style="color:{col};border-color:{col}">{_h.escape(el["text"])}</div>'
             self.A(f'tl.from("{sel}",{{scale:2.4,opacity:0,rotation:-10,duration:.4,ease:"expo.out"}},{at});')
+        elif t == "hf":
+            h = gallery_hf.build(self, beat, el, eid, at)          # HyperFrames gallery component, driven by the master timeline
         else:
             h = motion.build(self, beat, el, eid, col, at, COL)
             if h is None:
@@ -235,7 +237,7 @@ function __fit(){
     b.style.cssText = prev;
   });
 }
-document.fonts.ready.then(() => { try { __fit(); } catch (e) {} window.__timelines = {main: tl}; });
+Promise.all([document.fonts.ready].concat(window.__hf || [])).then(() => { try { __fit(); } catch (e) {} window.__timelines = {main: tl}; });
 </script></body></html>"""
 
 

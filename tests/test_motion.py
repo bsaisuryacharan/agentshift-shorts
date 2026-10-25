@@ -513,3 +513,50 @@ def test_daily_run_is_silent_on_failure_but_a_requested_run_is_told(monkeypatch,
     monkeypatch.setattr(auto, "telegram", lambda text, video=None, chat=None: sent.append(text) or True)
     assert auto.run("t", None, tmp_path) == 2 and sent == []
     assert auto.run("t", None, tmp_path, chat="42") == 2 and len(sent) == 1
+
+
+def test_gallery_components_are_vendored_with_licence():
+    from app import gallery_hf
+    assert len(gallery_hf.names()) == 9
+    root = gallery_hf.LIB.parent
+    assert "Apache License" in (root / "LICENSE").read_text()[:200] and "89af290" in (root / "SOURCE.md").read_text()
+
+
+def test_gallery_check_validates_vars_against_registry():
+    from app import gallery_hf
+    ok = {"t": "hf", "name": "count-up", "vars": {"end": 87, "suffix": "%", "accent": "blue"}}
+    assert gallery_hf.check(ok) == []
+    assert gallery_hf.check({"name": "nope"})[0].startswith("hf: unknown component")
+    assert any("missing var end" in e for e in gallery_hf.check({"name": "count-up", "vars": {}}))
+    assert any("not one of" in e for e in gallery_hf.check({"name": "count-up", "vars": {"end": 1, "accent": "red"}}))
+    assert any("must be a number" in e for e in gallery_hf.check({"name": "count-up", "vars": {"end": "lots"}}))
+    assert any("unknown var exit" in e for e in gallery_hf.check({"name": "count-up", "vars": {"end": 1, "exit": "up"}}))
+
+
+def test_gallery_prompt_lists_every_component():
+    from app import gallery_hf
+    block = gallery_hf.prompt_block()
+    assert all(n in block for n in gallery_hf.names()) and "needs vars" in block
+
+
+def test_hud_mounts_gallery_component_with_duration_and_waits_for_it(tmp_path):
+    from app import hud
+    spec = {"title": "t", "beats": [{"key": "hook", "say": "a b c d", "hud": [
+        {"t": "hf", "name": "count-up", "vars": {"end": 24, "suffix": ""}, "at": "b", "dur": 2.0}]}]}
+    timing = {"segments": [{"key": "hook", "start": 0.0, "dur": 4.0, "words": [{"w": w, "s": 0.2 * i, "e": 0.2 * i + 0.15} for i, w in enumerate("a b c d".split())]}]}
+    html = hud.write(spec, timing, 5.0, tmp_path / "p.html").read_text()
+    assert 'f.srcdoc=' in html and "__hfT" in html and "window.__hf" in html and "<\\/script>" in html
+    assert '"end": 24' in html.replace('\\"', '"')
+    assert html.index("Promise.all([document.fonts.ready].concat(window.__hf") < html.index("window.__timelines = {main: tl}")
+
+
+def test_validate_requires_gallery_motion_graphics():
+    spec = {"id": "x", "title": "t", "sources": {"a": "b"}, "beats": [{"key": f"b{i}", "img": f"s{i}", "prompt": "an old brass watch", "say": " ".join(["word"] * 12),
+            "hud": [{"t": "bubble", "text": "what if?", "at": "word"}]} for i in range(7)]}
+    assert any("at least 2 gallery motion graphics" in e for e in auto.validate_spec(spec, "facts"))
+    spec["beats"][1]["hud"].append({"t": "hf", "name": "per-word-rise", "vars": {"text": "hello there"}, "at": "word"})
+    spec["beats"][2]["hud"].append({"t": "hf", "name": "per-word-rise", "vars": {"text": "again"}, "at": "word"})
+    assert any("only once per Short" in e for e in auto.validate_spec(spec, "facts"))
+    spec["beats"][2]["hud"][-1]["name"] = "scramble-reveal"
+    spec["beats"][2]["hud"][-1]["vars"] = {"text": "TERM"}
+    assert not any("gallery" in e or "hf" in e for e in auto.validate_spec(spec, "facts"))

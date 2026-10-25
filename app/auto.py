@@ -25,7 +25,7 @@ from pathlib import Path
 
 import httpx
 
-from . import insights
+from . import gallery_hf, insights
 
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
@@ -38,7 +38,7 @@ LIMITS = {"deliver_drafts": False, "attempts": 3, "similarity_reject": 0.62, "hi
 PASS = {"hook": 8, "visual_quality": 8, "accuracy": 9, "originality": 7, "policy": 10}   # the plan's judge table
 ROOT = Path(__file__).resolve().parents[1]
 HUD_TYPES = {"bubble", "title", "chip", "big", "label", "sub", "rows", "chain", "list", "stamp",
-             "bars", "line", "ring", "delta", "kinetic", "tape", "toast", "cursor"}
+             "bars", "line", "ring", "delta", "kinetic", "tape", "toast", "cursor", "hf"}
 
 
 # ---------------------------------------------------------------- LLM ladder (free tiers) ----------------------------------
@@ -232,6 +232,11 @@ def pick_topic(deliver_chat: str | None = None) -> tuple[str, str]:
 
 # ---------------------------------------------------------------- script -> spec -------------------------------------------
 try:
+    from . import gallery_hf as _gh
+    HF_BLOCK = _gh.prompt_block()
+except Exception:
+    HF_BLOCK = "(gallery unavailable)"
+try:
     from . import motionbank as _mb
     MOTION_CLIPS = ", ".join(c["name"] for c in _mb.manifest() if c.get("role", "ambient") != "object")
 except Exception:                                   # the bank is optional
@@ -246,6 +251,9 @@ hud element: {{"t": one of {sorted(HUD_TYPES)}, ...}}  bubble{{text}} title{{htm
 sub{{html}} rows{{items:[[label,value,unit,col]],stagger}} chain{{steps:[[a,b]]}} list{{items:[[emoji,a,b]]}} stamp{{text,col}}; col in cy|am|ir|ok.
 Motion graphics (use at least 2 per Short, vary them, prefer data ones when you have numbers): bars{{items:[[name,value,col]],unit}} line{{values:[numbers],labels:[first,last],col}}
 ring{{pct:0-100,label,col}} delta{{text:"+176%",dir:"up|down",col}} kinetic{{text:"words with *accent*"}} tape{{text,col}} toast{{title,sub,icon}} cursor{{text}}.
+GALLERY motion graphics (real open-source HyperFrames components rendered with YOUR text/numbers): {{"t":"hf","name":<one below>,"vars":{{...}},"at":"word","dur":2.5}}
+{HF_BLOCK}
+Use at least 2 hf elements per Short, a different name each time, one per beat, never next to another big element in the same beat; vars must hold real values from FACTS.
 Any element may add "fx":"shine".
 Moving-picture layers (optional, they make a still feel like video): beat "footage":"<2-3 concrete nouns, MOST SPECIFIC FIRST>" swaps that beat's picture for a real NASA clip
 (only for space/Earth/science beats, at most 2 per Short, e.g. "asteroid impact", "earth night lights"; a still is still required as fallback). Beat "motion":"<clip>" picks a light layer
@@ -318,9 +326,11 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
                     e["at"] = re.sub(r"[^A-Za-z0-9'-]", "", cand[0])
             if e.get("t") not in HUD_TYPES:
                 errs.append(f"{k}: bad hud type {e.get('t')}")
+            if e.get("t") == "hf":
+                errs += [f"{k}: {m}" for m in gallery_hf.check(e)]
             if re.sub(r"[^a-z0-9]", "", str(e.get("at", "")).lower()) not in sw:
                 errs.append(f"{k}: hud at={e.get('at')!r} is not a word in say")
-            blob = json.dumps({k: v for k, v in e.items() if k in ("text", "html", "items", "steps", "values", "pct", "title", "sub", "label")}, ensure_ascii=False)
+            blob = json.dumps({k: v for k, v in e.items() if k in ("text", "html", "items", "steps", "values", "pct", "title", "sub", "label", "vars")}, ensure_ascii=False)
             for num in re.findall(r"\d[\d,\.]*\d|\d", re.sub(r"<[^>]+>", " ", blob.replace('"at"', ""))):
                 if not _number_supported(num, facts_text):
                     errs.append(f"{k}: number {num} not in FACTS")
@@ -336,6 +346,14 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
                 b.pop("footage")
         if b.get("motion") not in (None, False) and b["motion"] not in MOTION_CLIPS.split(", "):
             b.pop("motion")
+    hfs = [e for b in beats for e in b.get("hud", []) if e.get("t") == "hf"]
+    if len(hfs) < 2:
+        errs.append("use at least 2 gallery motion graphics (hud element t=hf) in the Short")
+    if len({e.get("name") for e in hfs}) < len(hfs):
+        errs.append("each hf gallery component may be used only once per Short")
+    for b in beats:
+        if sum(1 for e in b.get("hud", []) if e.get("t") == "hf") > 1:
+            errs.append(f"{b.get('key')}: at most one hf element per beat")
     if spec.get("theme") not in ("cool", "warm", "mono", "earth"):
         spec["theme"] = "cool"
     if beats and not any(e.get("t") == "bubble" for e in beats[0].get("hud", [])):
