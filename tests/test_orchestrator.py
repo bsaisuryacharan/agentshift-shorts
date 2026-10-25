@@ -106,7 +106,7 @@ def test_approve_intent_and_publish_pack(env, tmp_path, monkeypatch):
     (d / "img").mkdir(parents=True)
     (d / "spec.json").write_text(json.dumps(spec))
     (d / "img" / "credits.json").write_text(json.dumps({"s1.jpg": {"file": "File:HvF 01.jpg", "license": "CC BY-SA 4.0", "artist": "U of I", "url": "https://commons.wikimedia.org/wiki/File:HvF_01.jpg"}}))
-    o._save("42", {"current": "demo-a1", "projects": {"demo-a1": {"title": spec["title"], "status": "draft"}}})
+    o._save("42", {"current": "demo-a1", "projects": {"demo-a1": {"title": spec["title"], "status": "delivered"}}})
     assert o.handle("42", "/approve") == 0
     assert o._state("42")["projects"]["demo-a1"]["status"] == "approved"
     assert "#shorts" in env[-1][1] and "CC BY-SA 4.0" in env[-1][1]
@@ -119,3 +119,10 @@ def test_hud_anchor_autorepair():
     auto.validate_spec(spec, FACTS["text"])
     sw = {w.strip(".,!?'").lower() for w in spec["beats"][1]["say"].split()}
     assert spec["beats"][1]["hud"][0]["at"].lower() in sw
+
+
+
+def test_a_draft_that_failed_review_cannot_be_approved(env, tmp_path):
+    o._save("42", {"current": "d1", "projects": {"d1": {"title": "t", "status": "draft"}}})
+    assert o.handle("42", "/approve") == 0
+    assert o._state("42")["projects"]["d1"]["status"] == "draft" and "quality review" in env[-1][1]

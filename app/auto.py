@@ -34,7 +34,7 @@ except ImportError:
     pass
 
 
-LIMITS = {"attempts": 3, "similarity_reject": 0.62, "history": Path("data/history.jsonl"), "max_mb": 48}
+LIMITS = {"deliver_drafts": False, "attempts": 3, "similarity_reject": 0.62, "history": Path("data/history.jsonl"), "max_mb": 48}
 PASS = {"hook": 8, "visual_quality": 8, "accuracy": 9, "originality": 7, "policy": 10}   # the plan's judge table
 ROOT = Path(__file__).resolve().parents[1]
 HUD_TYPES = {"bubble", "title", "chip", "big", "label", "sub", "rows", "chain", "list", "stamp",
@@ -531,7 +531,7 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
                    "Tomorrow's scheduled run will try again - nothing to do.")
             print(msg, flush=True)
             record_topic(topic, wiki_title, "parked")
-            if deliver:
+            if deliver and chat:                       # only someone who asked (/new) is told; the daily run stays silent
                 telegram(msg, chat=chat)
             return 4
         if ok:
@@ -543,12 +543,14 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
         _, spec, run_dir, j = best
         record_topic(topic, wiki_title, "draft", round(best[0], 1))
         (out / "_last.json").write_text(json.dumps({"id": spec["id"], "spec": str(out / f"{spec['id']}.spec.json"), "draft": True}))
-        if deliver:
+        if deliver and LIMITS["deliver_drafts"]:
             send_draft(spec, run_dir, j, chat)
-        print("DRAFT delivered", run_dir / "telegram.mp4")
+        else:                                      # kept for the owner's inspection (workflow artifact), never sent to Telegram
+            encode_for_telegram(run_dir / "final.mp4", run_dir / "telegram.mp4")
+        print("DRAFT held back (below the quality bar, not sent to Telegram):", run_dir / "telegram.mp4")
         return 3
     record_topic(topic, wiki_title, "parked")
-    if deliver:
+    if deliver and chat:
         why = "; ".join(notes)[:300] if notes else "no details"
         if "no free LLM provider" in why or "429" in why:
             why = "the free AI quota (Groq/Gemini) is used up for now"

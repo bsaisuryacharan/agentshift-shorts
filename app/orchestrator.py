@@ -112,8 +112,9 @@ def changed_pictures(old: dict, new: dict) -> set[str]:
 def do_new(chat: str, st: dict, topic: str) -> None:
     say(chat, f"On it: researching and writing a Short about “{topic}”. This takes ~10-15 min.")
     rc = auto.run(topic, None, OUT, deliver=True, chat=chat)
-    if not register_last(st, rc):
-        print("[bot] nothing to register (auto.run already told the owner why)")   # auto.run sends the one "Not today" message itself
+    register_last(st, rc)
+    if rc == 3:
+        say(chat, f"No Short about “{topic}” passed the quality review, so nothing was sent. Try another topic or angle with /new.")
 
 
 def register_last(st: dict, rc: int = 0, images: bool = True) -> bool:
@@ -210,6 +211,10 @@ def handle(chat: str, text: str) -> int:
             if not cur:
                 say(chat, "Nothing to approve yet. /new <topic>")
             else:
+                if st["projects"][cur].get("status") == "draft":
+                    say(chat, "The current Short never passed the quality review, so it was not sent and cannot be approved. Wait for the next one, or /new <topic>.")
+                    _save(chat, st)
+                    return 0
                 spec = json.loads((PROJ / cur / "spec.json").read_text())
                 st["projects"][cur]["status"] = "approved"
                 ledger = ROOT / auto.LIMITS["history"]

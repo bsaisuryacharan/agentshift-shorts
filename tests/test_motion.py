@@ -123,7 +123,7 @@ def test_write_spec_rotates_provider_and_run_survives_writer_failure(monkeypatch
     monkeypatch.setattr(auto, "facts_for", lambda *a, **k: {"url": "u", "text": "t"})
     sent = []
     monkeypatch.setattr(auto, "telegram", lambda text, video=None, chat=None: sent.append(text) or True)
-    assert auto.run("topic", None, tmp_path) == 2            # every attempt failed -> parked message, no crash
+    assert auto.run("topic", None, tmp_path, chat="42") == 2            # every attempt failed -> parked message, no crash
     assert any("Not today" in s for s in sent)
 
 
@@ -217,7 +217,7 @@ def test_run_parks_early_when_pictures_cannot_be_sourced(monkeypatch, tmp_path):
     monkeypatch.setattr(auto, "finish", fake_finish)
     sent = []
     monkeypatch.setattr(auto, "telegram", lambda text, video=None, chat=None: sent.append(text) or True)
-    assert auto.run("topic", None, tmp_path) == 4 and "quota" in sent[0]
+    assert auto.run("topic", None, tmp_path, chat="42") == 4 and "quota" in sent[0]
 
 
 def test_footage_requires_a_vision_yes(monkeypatch, tmp_path):
@@ -451,8 +451,9 @@ def test_earlier_good_draft_is_delivered_even_if_last_attempt_has_no_pictures(mo
     sent = []
     monkeypatch.setattr(auto, "finish", fake_finish)
     monkeypatch.setattr(auto, "send_draft", lambda s, rd, j, chat: sent.append("draft"))
+    monkeypatch.setattr(auto, "encode_for_telegram", lambda a, b: sent.append("encoded"))
     monkeypatch.setattr(auto, "telegram", lambda *a, **k: sent.append("msg") or True)
-    assert auto.run("topic", None, tmp_path) == 3 and sent == ["draft"]
+    assert auto.run("topic", None, tmp_path) == 3 and sent == ["encoded"]          # kept as an artifact, never sent to Telegram
 
 
 def test_text_detector_flags_labelled_diagrams_not_plain_photos():
@@ -501,3 +502,14 @@ def test_generation_prompts_get_the_documentary_look_once():
     from app import stills
     a = stills._styled("a glowing sphere over a lake")
     assert a.endswith("no digital art") and "no neon" in a and stills._styled(a) == a
+
+
+def test_daily_run_is_silent_on_failure_but_a_requested_run_is_told(monkeypatch, tmp_path):
+    monkeypatch.setattr(auto, "facts_for", lambda *a, **k: {"url": "u", "text": "t"})
+    monkeypatch.setattr(auto, "write_spec", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("bad")))
+    monkeypatch.setattr(auto, "TOPICS", Path("data/t.jsonl"))
+    monkeypatch.setattr(auto, "ROOT", tmp_path)
+    sent = []
+    monkeypatch.setattr(auto, "telegram", lambda text, video=None, chat=None: sent.append(text) or True)
+    assert auto.run("t", None, tmp_path) == 2 and sent == []
+    assert auto.run("t", None, tmp_path, chat="42") == 2 and len(sent) == 1
