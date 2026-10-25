@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-25T14:10:59+00:00",
+ "generated_at": "2026-10-25T14:13:30+00:00",
  "channel": {
-  "period": "2026-09-24..2026-10-23",
+  "period": "2026-09-25..2026-10-24",
   "shorts": 1,
-  "views": 5552.0,
+  "views": 5564.0,
   "avg_view_seconds": 23.0,
-  "avg_view_pct": 61.85,
+  "avg_view_pct": 61.62,
   "net_subscribers": 8.0,
   "likes": 82.0,
   "shares": 3.0,
@@ -14,21 +14,22 @@
  "trending": [
   "Old TV to New TV in 1 CLICK - AI MAGIC 🔥",
   "AI adoption by industry shows what other sectors can learn - MIT Technology Review",
-  "The Frontier Institute Of Technology - Inspired By African Innovation - Forbes",
+  "Gartner’s Top 10 Strategic Technology Trends For 2027 - Forbes",
+  "Why the United States Needs Europe in Order to Win the Technology Race - CSIS | Center for Strategic and International Studies",
   "ICAR-CIRCOT, Mumbai Signs MoU for Technology Transfer of Protective Gloves for Cotton Picking Workers - Indian Council Of Agricultural Research",
-  "NEC Develops AI Technology Using VLM to Detect Early Signs of Disasters from Live Camera Footage - NEC",
   "Faster to Science: A Letter to the Science Community - NASA Science (.gov)",
-  "Scientists who discovered a third form of magnetism win major physics prize - Science Daily",
+  "My mother donated her body to science. I really wasn’t prepared for what came next - The Guardian",
+  "Scientists win 2026 Nobel Prize for controlling brain cells with light - Science Daily",
   "America’s new era of private science - The Economist",
   "Curtain Raiser for ESTIC 2026 Space Science & Technologies Thematic Session held at ISRO Headquarters - ISRO",
-  "What is a neutrino anyway? A look at the science behind this year's Nobel Prize in Physics - Phys.org",
-  "KOHIMA SCIENCE COLLEGE JOTSOMA ORGANIZES ONE-DAY SEMINAR ON MENTAL HEALTH FOR TEACHING FACULTY - DIPR Nagaland",
+  "Advancing global science diplomacy: The EU framework for science diplomacy and how it can support UNESCO’s science diplomacy efforts - research-and-innovation.ec.europa.eu",
   "Why an expensive restaurant can feel uncomfortable even when you can afford it: Psychology explores how c - The Times of India"
  ],
  "region": "IN",
- "trend_signals_total": 72,
+ "trend_signals_total": 70,
  "trend_signals_on_niche": 36,
  "news": [
+  "APOD: 2026 October 25 – Dark Matter in a Simulated Universe",
   "APOD: 2026 October 24 – Rosetta’s Selfie",
   "NASA, Partners Accelerate Lander Development for 2028 Moon Missions",
   "NASA’s Artemis III Mission to Test Future Moon Lander Operations",
@@ -37,7 +38,6 @@
   "NASA, Virginia Launch Power Partnership for Energy Security",
   "APOD: 2026 October 23 – Andromeda in Southern Spring",
   "El Niño Then and Now",
-  "NASA Invites Media to 2026 von Braun Space Exploration Symposium",
-  "Spiral’s Edge"
+  "NASA Invites Media to 2026 von Braun Space Exploration Symposium"
  ]
 }
