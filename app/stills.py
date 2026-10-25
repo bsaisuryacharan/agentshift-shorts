@@ -352,12 +352,20 @@ _MISSES: dict[str, int] = {}
 _DEAD: set[str] = set()      # providers that told us their free quota is exhausted (reset per process)
 
 
+LOOK = ", candid documentary photograph, muted natural colours, soft overcast light, fine film grain, true-to-life materials, no glow, no neon, no lens flare, no digital art"
+
+
+def _styled(prompt: str) -> str:
+    """every generation request ends with the same documentary look: the model's default is a glowing, over-saturated 'AI' render that the judge scores 3-4"""
+    return prompt if "no neon" in prompt else prompt.rstrip(" .") + LOOK
+
+
 def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
     """free ladder: Cloudflare FLUX -> Pollinations -> Gemini image -> real photos (NASA, Wikimedia Commons, Openverse; each vision-verified) -> texture. Returns (file, provider)."""
     errs = []
     if os.environ.get("CLOUDFLARE_API_TOKEN") and os.environ.get("CLOUDFLARE_ACCOUNT_ID") and "cloudflare" not in _DEAD:
         try:
-            return flux(prompt, dest), "cloudflare-flux"
+            return flux(_styled(prompt), dest), "cloudflare-flux"
         except Exception as e:  # 429 / quota / network -> next provider
             errs.append(f"cloudflare: {e!r}")
             if "daily free allocation" in str(e):         # the quota is gone until the daily reset: no point waiting or retrying
@@ -366,7 +374,7 @@ def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
                 import time
                 time.sleep(20)
                 try:
-                    return flux(prompt, dest), "cloudflare-flux"
+                    return flux(_styled(prompt), dest), "cloudflare-flux"
                 except Exception as e2:
                     errs.append(f"cloudflare retry: {e2!r}")
                     _MISSES["cloudflare"] = _MISSES.get("cloudflare", 0) + 1
@@ -374,14 +382,14 @@ def generate(prompt: str, dest: Path, seed: int = 7) -> tuple[Path, str]:
                         _DEAD.add("cloudflare")
     if "pollinations" not in _DEAD:
         try:
-            return pollinations(prompt, dest, seed=seed), "pollinations"
+            return pollinations(_styled(prompt), dest, seed=seed), "pollinations"
         except Exception as e:
             errs.append(str(e))
             if "HTTP 402" in str(e):
                 _DEAD.add("pollinations")
     if os.environ.get("GEMINI_API_KEY") and "gemini" not in _DEAD:
         try:
-            return gemini_image(prompt, dest), "gemini-image"
+            return gemini_image(_styled(prompt), dest), "gemini-image"
         except Exception as e:
             errs.append(str(e))
             if "429" in str(e) or "403" in str(e):

@@ -495,3 +495,9 @@ def test_finish_retries_judge_before_giving_up(monkeypatch, tmp_path):
     monkeypatch.setattr(auto.time, "sleep", lambda s: sleeps.append(s))
     ok, notes, rd, j = auto.finish({"id": "x", "beats": []}, "groq", tmp_path, False, None)
     assert j is not None and len(calls) == 3 and sleeps == [90, 90]
+
+
+def test_generation_prompts_get_the_documentary_look_once():
+    from app import stills
+    a = stills._styled("a glowing sphere over a lake")
+    assert a.endswith("no digital art") and "no neon" in a and stills._styled(a) == a
