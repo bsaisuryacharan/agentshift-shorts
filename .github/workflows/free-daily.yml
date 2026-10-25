@@ -38,8 +38,8 @@ jobs:
           set +e
           if [ -n "$T" ]; then python -m app.auto --topic "$T" --out runs; else python -m app.auto --trend --out runs; fi
           rc=$?
-          # exit 3 = DRAFT delivered to Telegram (judge below the visual bar): that is a delivery, not a failure
-          if [ "$rc" -eq 3 ]; then echo "::notice::DRAFT delivered to Telegram"; exit 0; fi
+          # exit 3 = no Short passed the quality review; the best draft is kept as a run artifact only (never sent to Telegram): not a workflow failure
+          if [ "$rc" -eq 3 ]; then echo "::notice::No Short passed review; best draft kept as an artifact, nothing sent to Telegram"; exit 0; fi
           exit "$rc"
       - name: Register the Short for /status /list /approve
         if: always()
