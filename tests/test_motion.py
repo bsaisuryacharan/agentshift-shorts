@@ -517,7 +517,7 @@ def test_daily_run_is_silent_on_failure_but_a_requested_run_is_told(monkeypatch,
 
 def test_gallery_components_are_vendored_with_licence():
     from app import gallery_hf
-    assert len(gallery_hf.names()) == 9
+    assert len(gallery_hf.names()) == 7 and len(list(gallery_hf.LIB.glob('*/registry-item.json'))) == 9      # 9 vendored, 7 offered to the writer
     root = gallery_hf.LIB.parent
     assert "Apache License" in (root / "LICENSE").read_text()[:200] and "89af290" in (root / "SOURCE.md").read_text()
 

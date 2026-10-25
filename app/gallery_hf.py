@@ -37,8 +37,13 @@ USE = {"per-word-rise": "a headline that lands word by word with the narration",
 BLOCKED_VARS = {"exit", "cues"}      # the master timeline owns timing and exits
 
 
+# chart-story and grid-card-assemble stay vendored but are not offered to the writer: their axis/label text is ~12 px at 870 px width, unreadable on a phone
+# (the built-in bars/line/rows/list elements cover charts and lists at proper size)
+ENABLED = ["per-word-rise", "scramble-reveal", "kinetic-type-swap", "count-up", "titlecard-lockup", "vox-annotate", "native-notification-pop"]
+
+
 def names() -> list[str]:
-    return [n for n in HEIGHT if (LIB / n / f"{n}.html").exists()]
+    return [n for n in ENABLED if (LIB / n / f"{n}.html").exists()]
 
 
 def meta(name: str) -> dict:
@@ -102,7 +107,7 @@ def _doc(name: str, vars_: dict, dur: float, fonts: str) -> str:
     return ("<!doctype html><html><head><meta charset='utf-8'>"
             f"<link href='https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@500;700&family={fonts}&display=block' rel='stylesheet'>"
             "<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}"
-            "#host{position:absolute;inset:0;--fg:#fff;--brand:#5eead4;--accent:#61a8ff;--accent-2:#b895ff;"
+            "#host{position:absolute;inset:0;--bg:transparent;--fg:#fff;--brand:#5eead4;--accent:#61a8ff;--accent-2:#b895ff;"
             "--font-display:'Bricolage Grotesque',Inter,system-ui,sans-serif;--font-mono:'JetBrains Mono',ui-monospace,monospace}</style>"
             f"<script src='{GSAP.as_uri()}'></script></head><body><div id='host'></div>"
             f"<script>window.__hyperframes={{getVariables:function(){{return {json.dumps(vars_)}}}}};</script>"

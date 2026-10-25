@@ -53,21 +53,23 @@ def main(out: Path) -> int:
         return 2
     page = hud.write(spec, timing, total, out / "page.html")
     fps = overlay.FPS
-    want = [int((timing["segments"][i]["start"] + 3.0) * fps) for i in range(len(names))]
+    t0 = [timing["segments"][i]["start"] + 0.89 for i in range(len(names))]      # the component starts at the anchor word ("how")
+    want = [int((t + dt) * fps) for t in t0 for dt in (1.0, 2.6)]
     asyncio.run(overlay.render(page, total, out / "ovl", only=want, step=1, pages=1))
     tiles = []
-    for i, n in enumerate(names):
-        f = out / "ovl" / f"{want[i]:05d}.png"
+    for k, w in enumerate(want):
+        n = names[k // 2]
+        f = out / "ovl" / f"{w:05d}.png"
         im = cv2.imread(str(f), cv2.IMREAD_UNCHANGED) if f.exists() else None
         if im is None:
             tiles.append(np.zeros((480, 270, 3), np.uint8))
             continue
-        bg = np.full(im.shape[:2] + (3,), (40, 30, 24), np.uint8)
+        bg = np.full(im.shape[:2] + (3,), (110, 90, 70), np.uint8)       # mid-tone stand-in for a photo
         a = im[..., 3:4].astype(np.float32) / 255
         comp = (im[..., :3] * a + bg * (1 - a)).astype(np.uint8)
-        cv2.putText(comp, n, (60, 1860), cv2.FONT_HERSHEY_SIMPLEX, 1.6, (0, 255, 255), 3)
+        cv2.putText(comp, n if k % 2 == 0 else "+1.6s", (60, 1860), cv2.FONT_HERSHEY_SIMPLEX, 1.6, (0, 255, 255), 3)
         tiles.append(cv2.resize(comp, (270, 480)))
-    cols = 5
+    cols = 6
     while len(tiles) % cols:
         tiles.append(np.zeros_like(tiles[0]))
     rows = [np.hstack(tiles[r:r + cols]) for r in range(0, len(tiles), cols)]
