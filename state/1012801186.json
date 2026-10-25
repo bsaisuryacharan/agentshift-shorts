@@ -1,5 +1,5 @@
 {
- "current": "ball-lightning-energy-a1",
+ "current": "harvest-radiation-belts-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -16,6 +16,24 @@
     "hierarchy": 7,
     "consistency": 7,
     "payoff": 8,
+    "safe_zone": 10
+   }
+  },
+  "harvest-radiation-belts-a3": {
+   "title": "HARVESTING THE VAN ALLEN BELTS",
+   "base": "harvest",
+   "status": "draft",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 5,
+    "accuracy": 9,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 9,
+    "polish": 4,
+    "hierarchy": 6,
+    "consistency": 8,
+    "payoff": 7,
     "safe_zone": 10
    }
   }

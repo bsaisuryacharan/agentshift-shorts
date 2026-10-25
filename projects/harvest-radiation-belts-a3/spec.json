@@ -1,0 +1,221 @@
+{
+ "id": "harvest-radiation-belts-a3",
+ "title": "HARVESTING THE VAN ALLEN BELTS",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "WHAT IF",
+ "theme": "cool",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for daily what-ifs"
+ },
+ "sources": {
+  "hook": "Wikipedia: Van Allen radiation belt (https://en.wikipedia.org/wiki/Van_Allen_radiation_belt)",
+  "b5": "Project Argus (https://en.wikipedia.org/wiki/Project_Argus)",
+  "b6": "NIAC Antimatter Study (https://en.wikipedia.org/wiki/Van_Allen_radiation_belt#Research)",
+  "wiki": "https://en.wikipedia.org/wiki/Van_Allen_radiation_belt"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "photoreal cinematic 9:16 wide shot of Earth from space with glowing blue magnetic field lines wrapping around the planet, documentary look",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "What if we could harvest energy from the Van Allen radiation belts?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "what if?",
+     "at": "What"
+    },
+    {
+     "t": "title",
+     "html": "HARVESTING *RADIATION*",
+     "at": "harvest"
+    }
+   ],
+   "sfx": [
+    [
+     "harvest",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Explorer 1 satellite",
+   "prompt": "photoreal cinematic 9:16 shot of the Explorer 1 satellite in orbit, technical detail, natural space lighting",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "These zones of charged particles begin just 640 km above Earth.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 640,
+      "suffix": " km"
+     },
+     "at": "640"
+    }
+   ],
+   "footage": "earth night lights"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Van Allen Probes",
+   "prompt": "photoreal cinematic 9:16 shot of the NASA Van Allen Probes spacecraft, metallic textures, deep space background",
+   "focal": [
+    0.6,
+    0.5
+   ],
+   "say": "Discovered in 1958, they trap high-speed electrons and protons.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "1958 DISCOVERY",
+     "col": "ok",
+     "at": "1958"
+    }
+   ],
+   "footage": "solar flare"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "Earth magnetosphere diagram",
+   "prompt": "photoreal cinematic 9:16 diagram-like wide shot showing the two main radiation belts as shimmering plasma donuts around Earth",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The belts extend up to 58,000 km, acting as a natural magnetic shield.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Inner",
+       "1,000",
+       "km",
+       "cy"
+      ],
+      [
+       "Outer",
+       "58,000",
+       "km",
+       "cy"
+      ]
+     ],
+     "at": "58,000"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "prompt": "photoreal cinematic 9:16 silhouette of a rocket passing through a shimmering field of golden energy particles, wide shot",
+   "focal": [
+    0.5,
+    0.7
+   ],
+   "say": "In 1958, Project Argus detonated nuclear bombs at 300 miles to test their power.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "Project",
+      "options": "Argus"
+     },
+     "at": "Argus"
+    }
+   ],
+   "sfx": [
+    [
+     "Argus",
+     "pop",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "prompt": "photoreal cinematic 9:16 macro shot of a futuristic magnetic scoop device, glowing blue rings, technical detail, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "NASA studies proposed using magnetic scoops to collect antimatter from the belts.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "MAGNETIC SCOOP",
+     "at": "scoops"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "prompt": "photoreal cinematic 9:16 macro shot of a single glowing dust-sized particle inside a glass containment tube, laboratory lighting",
+   "focal": [
+    0.5,
+    0.3
+   ],
+   "say": "But only 10 micrograms of antiprotons exist in the entire region.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "10 micrograms of antiprotons",
+      "keyword": "10",
+      "note": "Total Supply"
+     },
+     "at": "micrograms"
+    }
+   ],
+   "sfx": [
+    [
+     "micrograms",
+     "ding",
+     0.5
+    ]
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "prompt": "photoreal cinematic 9:16 wide shot of Earth's magnetosphere shimmering like an aurora in deep space, aerial view",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Tapping this energy is the ultimate power move. Follow for more what-ifs.",
+   "hud": [
+    {
+     "t": "kinetic",
+     "text": "SUBSCRIBE for *daily what-ifs*",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Van Allen radiation belt",
+  "url": "https://en.wikipedia.org/wiki/Van_Allen_radiation_belt",
+  "text": "The Van Allen radiation belt is a zone of energetic charged particles, most of which originate from solar wind, that are captured and held around a planet by that planet's magnetosphere. Earth has two such belts, and sometimes others may be temporarily created. The belts are named after James Van Allen, who published an article describing the belts in 1958. Earth's two main belts extend from an altitude of about 640 to 58,000 km (400 to 36,040 mi) above the surface, in which region radiation levels vary. The belts are in the inner region of Earth's magnetic field. They trap energetic electrons and protons. Other nuclei, such as alpha particles, are less prevalent. Most of the particles that form the belts are thought to come from the solar wind while others arrive as cosmic rays. By trapping the solar wind, the magnetic field deflects those energetic particles and protects the atmosphere from destruction. The belts endanger satellites, which must have their sensitive components protected with adequate shielding if they spend significant time near that zone. Apollo astronauts going through the Van Allen belts received a very low and harmless dose of radiation. In 2013, the Van Allen Probes detected a transient, third radiation belt, which persisted for four weeks. == Discovery ==\nKristian Birkeland, Carl Størmer, Nicholas Christofilos, and Enrico Medi had investigated the possibility of trapped charged particles in 1895, forming a theoretical basis for the formation of radiation belts. The second Soviet satellite Sputnik 2 which had detectors designed by Sergei Vernov, followed by the US satellites Explorer 1 and Explorer 3, confirmed the existence of the belt in early 1958, later named after James Van Allen from the University of Iowa. The trapped radiation was first mapped by Explorer 4, Pioneer 3, and Luna 1. The term Van Allen belts refers specifically to the radiation belts surrounding Earth; however, similar radiation belts have been discovered around other planets. The Sun does not support long-term radiation belts, as it lacks a stable, global dipole field. The Earth's atmosphere limits the belts' particles to regions above 200–1,000 km (120–620 mi), while the belts do not extend past 8 Earth radii RE. The belts are confined to a volume which extends about 65° on either side of the celestial equator. === Project Argus ===\nIn 1958 the US detonated low yield nuclear bombs at an altitude of 300 miles, producing a temporary increase in the electron content of the radiation belts. The tests, dubbed Project Argus, were designed to test the Christofilos effect, the idea that nuclear explosions in space would release sufficient electrons trapped in the Earth's magnetic field to disable the warheads on intercontinental ballistic missiles. The project was discontinued due to the treaty banning atmospheric testing and the fear that additional radiation could prevent the Apollo moon mission. == Research ==\n\nThe NASA Van Allen Probes mission aims at understanding (to the point of predictability) how populations of relativistic electrons and ions in space form or change in response to changes in solar activity and the solar wind. NASA Institute for Advanced Concepts–funded studies have proposed magnetic scoops to collect antimatter that naturally occurs in the Van Allen belts of Earth, although only about 10 micrograms of antiprotons are estimated to exist in the entire belt. The Van Allen Probes mission successfully launched on August 30, 2012. The primary mission was scheduled to last two years with expendables expected to last four. The probes were deactivated in 2019 after running out of fuel, and the last one is expected to deorbit during the 2030s. NASA's Goddard Space Flight Center manages the Living With a Star program—of which the Van Allen Probes were a project, along with Solar Dynamics Observatory (SDO). The Applied Physics Laboratory was responsible for the implementation and instrument management for the Van Allen Probes. Radiation belts exist around other planets and moons in the Solar System that have magnetic fields powerful and stable enough to sustain them. Radiation belts have been detected at Jupiter, Saturn, Uranus and Neptune through in-situ observations, such as by the Galileo and Juno spacecraft at Jupiter, Cassini–Huygens at Saturn, and fly-bys from the Voyager program and Pioneer program. Observations of radio emissions from highly energetic particles that are trapped in a planets magnetic field have also been used to remotely detect radiation belts, including at Jupiter  and at the ultracool dwarf LSR J1835+3259. It is possible that Mercury may be able to trap charged particles in its magnetic field, although its highly dynamic magnetosphere (which varies on the order of minutes ) may not be able to sustain stable radiation belts. Venus and Mars do not have radiation belts, as their magnetospheric configurations do not trap energetic charged particles in orbit around the planet. Geomagnetic storms can cause electron density to increase or decrease relatively quickly (i.e., approximately one day or less). Longer-timescale processes determine the overall configuration of the belts. After electron injection increases electron density, electron density is often observed to decay exponentially. Those decay time constants are called \"lifetimes.\" Measurements from the Van Allen Probe B's Magnetic Electron Ion Spectrometer (MagEIS) show long electron lifetimes (i.e., longer than 100 days) in the inner belt; short electron lifetimes of around one or two days are observed in the \"slot\" between the belts; and energy-dependent electron lifetimes of roughly five to 20 days are found in the outer belt. == Inner belt ==\n\nThe inner Van Allen Belt extends typically from an altitude of 0.2 to 2 Earth radii (L values of 1.2 to 3) or 1,000 km (620 mi) to 12,000 km (7,500 mi) above the Earth. In certain cases, when solar activity is stronger or in geographical areas such as the South Atlantic Anomaly, the inner boundary may decline to roughly 200 km above the Earth's surface."
+ },
+ "_writer": "gemini"
+}

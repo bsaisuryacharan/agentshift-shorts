@@ -1,0 +1,26 @@
+{
+ "s1.jpg": {
+  "file": "Early Rockets",
+  "license": "NASA media (public domain)",
+  "artist": "MSFC",
+  "url": "https://images.nasa.gov/details/0401524"
+ },
+ "s2.jpg": {
+  "file": "File:Van Allen Probes spacecraft model.png",
+  "license": "Public domain",
+  "artist": "NASA",
+  "url": "https://commons.wikimedia.org/wiki/File:Van_Allen_Probes_spacecraft_model.png"
+ },
+ "s3.jpg": {
+  "file": "File:Erdmagnetfeld.jpg",
+  "license": "CC BY 4.0",
+  "artist": "Herbert Bolz",
+  "url": "https://commons.wikimedia.org/wiki/File:Erdmagnetfeld.jpg"
+ },
+ "s4.jpg": {
+  "file": "File:Van Allen Radiation Belt Model shown with 2 VA Probes.jpg",
+  "license": "Public domain",
+  "artist": "NASA",
+  "url": "https://commons.wikimedia.org/wiki/File:Van_Allen_Radiation_Belt_Model_shown_with_2_VA_Probes.jpg"
+ }
+}
