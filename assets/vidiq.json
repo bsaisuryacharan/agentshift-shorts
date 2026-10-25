@@ -1,0 +1,46 @@
+{
+ "fetched": "2026-10-25",
+ "credits_spent": 40,
+ "note": "Snapshot from the vidIQ connector (runs in the owner's Claude session, not on the GitHub runner). Refresh with a Claude session every 1-2 weeks; the pipeline only reads this file.",
+ "keywords": [
+  {"term": "facts about space", "monthly": 52601, "competition": 42, "growth_pct": 17.5},
+  {"term": "space facts shorts", "monthly": 49960, "competition": 44, "growth_pct": -0.8},
+  {"term": "facts space", "monthly": 11248, "competition": 47, "growth_pct": 162.4},
+  {"term": "space fun facts", "monthly": 14669, "competition": 45, "growth_pct": 25.8},
+  {"term": "interesting facts space", "monthly": 8811, "competition": 43, "growth_pct": 81.3},
+  {"term": "space facts you didn't know", "monthly": 6457, "competition": 43, "growth_pct": null},
+  {"term": "interesting space facts", "monthly": 16010, "competition": 44, "growth_pct": -1.9},
+  {"term": "how does retrograde work in space", "monthly": 5424, "competition": 38, "growth_pct": null}
+ ],
+ "outliers": [
+  {"title": "Not fake, it's pure physics! Light takes time to travel", "views": 1700000, "subs": 6200, "breakout": 289, "secs": 55, "niche": "space"},
+  {"title": "How a Mount Everest-Sized Asteroid Wiped Out the Dinosaurs?", "views": 1200000, "subs": 1900, "breakout": 38, "secs": 111, "niche": "space"},
+  {"title": "Why Every Starlink Satellite Is Slowly Falling", "views": 1600000, "subs": 24000, "breakout": 17, "secs": 126, "niche": "space"},
+  {"title": "Jupiter vs Earth vs Universe", "views": 284100, "subs": 1600, "breakout": 215, "secs": 61, "niche": "space"},
+  {"title": "An Alien World With 19 Moons", "views": 251400, "subs": 15900, "breakout": 16, "secs": 62, "niche": "space"},
+  {"title": "Why Does Pop Rocks Candy Feel Like It's Exploding?", "views": 2000000, "subs": 142000, "breakout": 70, "secs": 24, "niche": "science"},
+  {"title": "How Can The Flash Walk Through Solid Objects?", "views": 195300, "subs": 91200, "breakout": 779, "secs": 26, "niche": "science"},
+  {"title": "you've never actually touched anything", "views": 263900, "subs": 1600, "breakout": 115, "secs": 44, "niche": "science"},
+  {"title": "Why Can't an Ant Escape a Simple Circle", "views": 447300, "subs": 137000, "breakout": 17, "secs": 37, "niche": "science"},
+  {"title": "Dark Matter Mystery: Why Galaxies Spin Too Fast!", "views": 99800, "subs": 776, "breakout": 64, "secs": 139, "niche": "space"},
+  {"title": "Worlds Oldest Murder", "views": 851700, "subs": 690, "breakout": 2899, "secs": 59, "niche": "history"},
+  {"title": "History facts that will keep you awake at night", "views": 1100000, "subs": 9800, "breakout": 194, "secs": 60, "niche": "history"},
+  {"title": "The Rainy Day Flaw That Made Morton Salt a Billion Dollars", "views": 318000, "subs": 28400, "breakout": 32, "secs": 7, "niche": "history"},
+  {"title": "Why Hiding Together Could Be Deadly in WWI Trenches", "views": 996900, "subs": 1400, "breakout": 15, "secs": 7, "niche": "history"},
+  {"title": "10 Most Incredible Animal Moments Caught on Camera", "views": 6600000, "subs": 6300, "breakout": 69, "secs": 108, "niche": "nature"}
+ ],
+ "trending_space_shorts": [
+  {"title": "What will happen in the sky in 2027? (eclipses)", "vph": 66114, "secs": 25, "subs": 6830},
+  {"title": "He jumped from space... then started spinning", "vph": 27639, "secs": 50, "subs": 27800},
+  {"title": "What if you dropped 10kg of tungsten from space?", "vph": 23345, "secs": 68, "subs": 58},
+  {"title": "Moon vs Indonesia vs Pakistan vs Bangladesh (size comparison)", "vph": 13851, "secs": 23, "subs": 2070},
+  {"title": "The Moon doubled until it beat infinity", "vph": 12216, "secs": 48, "subs": 20400}
+ ],
+ "patterns": [
+  "Winning Shorts in this niche come from channels with 1K-30K subscribers: a sharp question or counter-intuitive claim beats channel size.",
+  "Title shapes that break out: 'Why <thing> <surprising verb>?', 'How can <impossible-sounding thing> happen?', 'X vs Y vs Z' size comparisons, 'You've never actually <everyday thing>', 'What if you dropped <object> from space?'.",
+  "Length: the biggest science/space hits run 24-60 seconds; history hits are very short (7-60 s). Never pad past 60 s.",
+  "Space search demand is steady and low-competition (about 40-45/100): 'facts about space', 'space fun facts', 'facts space' (+162% growth). Use those words naturally in title and description.",
+  "Dated hooks win now: upcoming eclipses/sky events of 2027, Starlink/satellite stories, asteroid and dinosaur extinction, dark matter, black holes (TON 618)."
+ ]
+}

@@ -25,7 +25,7 @@ from pathlib import Path
 
 import httpx
 
-from . import formats, gallery_hf, insights
+from . import formats, gallery_hf, insights, vidiq
 
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
@@ -231,7 +231,7 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
                      "medical advice). Prefer timeless science/tech/space/history ideas that connect to something people search for; items marked IN THE NEWS are current science/tech headlines: when one fits, choose the timeless topic that explains it (a news hook gets views) but never a tragedy or politics; use CHANNEL INSIGHTS to favour what has worked "
                      "and avoid what has scored badly. Prefer subjects that have REAL photographs or footage (actual spacecraft, telescopes, natural phenomena, places, historical events, animals) over purely hypothetical future technology, because real pictures make the better Short. It must have a real English Wikipedia article. "
                      'The FORMAT below decides the framing of the title (it is NOT always a what-if). Return ONLY JSON {"topic":"a title framing that fits the FORMAT","wiki":"exact Wikipedia article title","why":"..."}. Never pick or closely resemble anything in PAST TITLES or ALREADY USED.',
-                     f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}",
+                     f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}\nBREAKOUT TITLES (angle shapes that went viral for small channels; invent a new topic, never copy): {'; '.join(vidiq.topic_ideas()) or 'none'}",
                      prefer=["groq", "gemini", "openrouter"])
         w = wiki_facts(out["wiki"])["title"]         # proves the article exists and is fetchable; use its canonical title
         if _norm_topic(w) not in used and _norm_topic(out["wiki"]) not in used:
