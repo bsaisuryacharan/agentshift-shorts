@@ -25,7 +25,7 @@ from pathlib import Path
 
 import httpx
 
-from . import gallery_hf, insights
+from . import formats, gallery_hf, insights
 
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
@@ -154,6 +154,21 @@ def _norm_topic(t: str) -> str:
     return re.sub(r"[^a-z0-9]", "", re.sub(r"\(.*?\)", "", t.lower()))
 
 
+def recent_formats(n: int = 6) -> list[str]:
+    """formats of the most recent started/finished Shorts, oldest first (from the topic ledger)"""
+    path = ROOT / TOPICS
+    out: list[str] = []
+    if path.exists():
+        for line in path.read_text().splitlines():
+            try:
+                r = json.loads(line)
+            except ValueError:
+                continue
+            if r.get("format") and r.get("outcome") == "started":
+                out.append(r["format"])
+    return out[-n:]
+
+
 def used_topics(days_done: int = 60, days_parked: int = 3) -> set[str]:
     """normalised wiki titles / topics that must not be picked again: delivered or draft ones for `days_done`, parked or crashed ones for `days_parked`"""
     import datetime as dt
@@ -174,17 +189,17 @@ def used_topics(days_done: int = 60, days_parked: int = 3) -> set[str]:
     return out
 
 
-def record_topic(topic: str, wiki: str, outcome: str, score: float | None = None) -> None:
+def record_topic(topic: str, wiki: str, outcome: str, score: float | None = None, fmt: str | None = None) -> None:
     import datetime as dt
     path = ROOT / TOPICS
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "a") as f:
-        f.write(json.dumps({"date": dt.date.today().isoformat(), "topic": topic, "wiki": wiki, "outcome": outcome, "score": score}, ensure_ascii=False) + "\n")
+        f.write(json.dumps({"date": dt.date.today().isoformat(), "topic": topic, "wiki": wiki, "outcome": outcome, "score": score, "format": fmt}, ensure_ascii=False) + "\n")
 
 
-def pick_topic(deliver_chat: str | None = None) -> tuple[str, str]:
-    """no-input topic choice: Google Trends + Wikipedia most-read + evergreen ideas -> the LLM picks ONE explainer-friendly 'what if' topic
-    that has a real Wikipedia article (the research source), skipping anything similar to past Shorts. Returns (topic, wiki_title)."""
+def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple[str, str, str]:
+    """no-input topic choice: Google Trends + Wikipedia most-read + evergreen ideas -> the LLM picks ONE explainer-friendly topic for the chosen FORMAT
+    that has a real Wikipedia article (the research source), skipping anything similar to past Shorts. Returns (topic framing, wiki_title, format)."""
     import datetime as dt
     cands = []
     try:
@@ -208,14 +223,15 @@ def pick_topic(deliver_chat: str | None = None) -> tuple[str, str]:
     fresh = [e for e in EVERGREEN if _norm_topic(e) not in used]
     cands += random.sample(fresh, min(10, len(fresh)))
     tried = sorted(used)[:60]
+    fmt = fmt or formats.choose(recent_formats())
     out = {}
     for attempt in range(3):
-        out, _ = ask("You choose the next topic for 'Agent Shift', a YouTube Shorts channel of 35-45 s science/tech/history 'what if' explainers. "
+        out, _ = ask("You choose the next topic for 'Agent Shift', a YouTube Shorts channel of 35-45 s science/tech/history/nature explainers in rotating formats. "
                      "From the CANDIDATES pick ONE that is explainable in 40 s with a surprising angle, factual and policy-safe (no tragedies, politics, celebrities, sports results, "
                      "medical advice). Prefer timeless science/tech/space/history ideas that connect to something people search for; items marked IN THE NEWS are current science/tech headlines: when one fits, choose the timeless topic that explains it (a news hook gets views) but never a tragedy or politics; use CHANNEL INSIGHTS to favour what has worked "
                      "and avoid what has scored badly. Prefer subjects that have REAL photographs or footage (actual spacecraft, telescopes, natural phenomena, places, historical events, animals) over purely hypothetical future technology, because real pictures make the better Short. It must have a real English Wikipedia article. "
-                     'Return ONLY JSON {"topic":"a what-if framing","wiki":"exact Wikipedia article title","why":"..."}. Never pick or closely resemble anything in PAST TITLES or ALREADY USED.',
-                     f"CANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}",
+                     'The FORMAT below decides the framing of the title (it is NOT always a what-if). Return ONLY JSON {"topic":"a title framing that fits the FORMAT","wiki":"exact Wikipedia article title","why":"..."}. Never pick or closely resemble anything in PAST TITLES or ALREADY USED.',
+                     f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}",
                      prefer=["groq", "gemini", "openrouter"])
         w = wiki_facts(out["wiki"])["title"]         # proves the article exists and is fetchable; use its canonical title
         if _norm_topic(w) not in used and _norm_topic(out["wiki"]) not in used:
@@ -225,9 +241,9 @@ def pick_topic(deliver_chat: str | None = None) -> tuple[str, str]:
         cands = [c for c in cands if _norm_topic(c) != _norm_topic(out["wiki"])]
     else:                                             # the model keeps repeating itself: take an unused evergreen topic ourselves
         pick = random.choice(fresh or EVERGREEN)
-        out = {"topic": f"What if {pick} happened or mattered more than we think?", "wiki": pick, "why": "fallback: first unused evergreen topic"}
-    print("picked:", out)
-    return out["topic"], out["wiki"]
+        out = {"topic": formats.frame(fmt, pick), "wiki": pick, "why": "fallback: first unused evergreen topic"}
+    print("picked:", out, "format:", fmt)
+    return out["topic"], out["wiki"], fmt
 
 
 # ---------------------------------------------------------------- script -> spec -------------------------------------------
@@ -241,9 +257,9 @@ try:
     MOTION_CLIPS = ", ".join(c["name"] for c in _mb.manifest() if c.get("role", "ambient") != "object")
 except Exception:                                   # the bank is optional
     MOTION_CLIPS = "none"
-SYSTEM = f"""You write 35-45 second YouTube Shorts for the channel Agent Shift (brand AGENT SHIFT, 'what if' explainers). Output ONLY JSON.
+SYSTEM = f"""You write 35-45 second YouTube Shorts for the channel Agent Shift (brand AGENT SHIFT: science, tech, history and nature explainers in rotating formats). Output ONLY JSON.
 Spec schema (JSON object): id (slug), title, voice "en-US-AndrewNeural", rate "+10%", brand "AGENT SHIFT", series_label (short upper-case tag),
-Beats about something REAL that has been photographed (a named spacecraft, telescope, instrument, rocket, place, event, or an actual phenomenon such as a solar flare or an aurora) should add "photo":"<2-3 word search term for the subject, most specific first>" - a real free-licence photo (NASA / Wikimedia Commons) is used instead of generating one, which is free, credible and preferred; use it on at least 3 beats when the topic allows; keep the prompt as the fallback (the prompt must still describe the same subject with no people). Image prompts: no text/letters/numbers, NO people or faces at all (generated faces look uncanny and real people must never be generated: show an object, instrument, place, diagram-like scene or a silhouette from behind instead), documentary look with natural/practical light and real materials (no golden glow, no glowing orbs, no neon), and every beat a DIFFERENT shot type (macro, aerial, top-down, wide, silhouette). TOP-LEVEL key theme: one of "cool" (space/tech), "warm" (history/people/desert), "mono" (archival/serious), "earth" (nature/climate) - every picture is graded to it so the Short looks like one film. TOP-LEVEL key subscribe {{"title":"SUBSCRIBE","sub":"for daily what-ifs"}} (never a hud element), sources {{beat_key: "citation incl. URL"}}, beats[].
+Beats about something REAL that has been photographed (a named spacecraft, telescope, instrument, rocket, place, event, or an actual phenomenon such as a solar flare or an aurora) should add "photo":"<2-3 word search term for the subject, most specific first>" - a real free-licence photo (NASA / Wikimedia Commons) is used instead of generating one, which is free, credible and preferred; use it on at least 3 beats when the topic allows; keep the prompt as the fallback (the prompt must still describe the same subject with no people). Image prompts: no text/letters/numbers, NO people or faces at all (generated faces look uncanny and real people must never be generated: show an object, instrument, place, diagram-like scene or a silhouette from behind instead), documentary look with natural/practical light and real materials (no golden glow, no glowing orbs, no neon), and every beat a DIFFERENT shot type (macro, aerial, top-down, wide, silhouette). TOP-LEVEL key theme: one of "cool" (space/tech), "warm" (history/people/desert), "mono" (archival/serious), "earth" (nature/climate) - every picture is graded to it so the Short looks like one film. TOP-LEVEL key subscribe {{"title":"SUBSCRIBE","sub":"for more like this"}} (never a hud element), sources {{beat_key: "citation incl. URL"}}, beats[].
 beat: key ("hook","b1".."b6","outro"), img ("s0.jpg"... unique per picture; reuse a name only to show the SAME picture again),
 prompt (ONLY on the first beat that uses an img: photoreal cinematic 9:16 image prompt, no text, no logos, no real people's faces),
 focal [x,y] 0-1, say (one or two short spoken sentences; write numbers as DIGITS like 1960, 8.3 billion, 17% - the voice reads them and the captions show them, so never spell a number out), hud[] on-screen elements, sfx optional [[word,"impact|pop|ding|whoosh",vol]].
@@ -260,7 +276,7 @@ Moving-picture layers (optional, they make a still feel like video): beat "foota
 over the picture: {MOTION_CLIPS}; omit it and one is chosen from the mood. Do not stack two big elements in one beat (max ~1100px tall total).
 EVERY hud element needs "at": a word that appears in that beat's "say" (exact word) - the element appears when it is spoken.
 GOAL: every Short is built to earn: the channel's target is 1,000,000 views per Short and YouTube Partner Programme eligibility. Retention decides reach, so: a hook that promises something concrete in the first 2 seconds, a new fact or twist every beat, no filler, a last line that makes viewers replay or follow. Follow CHANNEL INSIGHTS (lessons, weakest stage, target progress) when they exist.
-Hook = first beat: a surprising promise in <=2 seconds, with a bubble "what if?" and a title. Last beat: payoff + 'Follow for more what-ifs'.
+Hook = first beat: a surprising promise in <=2 seconds, with a bubble (the text the FORMAT gives) and a title. Last beat: payoff + a short 'Follow for more' line.
 Facts: use ONLY the supplied FACTS. Every number you write (digits in hud text or numbers in say) must be present in FACTS. Never invent statistics.
 7-9 beats total, ~90-108 spoken words (hard max 112; the video must be under 45 s). Keep each hud text short (<=28 chars), written with digits not spelled numbers, as a complete short noun phrase (<=4 words, never a sentence fragment). No claims about real private individuals."""
 
@@ -374,8 +390,9 @@ def too_similar(spec: dict) -> float:
     return best
 
 
-def write_spec(topic: str, facts: dict, notes: list[str] | None = None) -> tuple[dict, str]:
-    user = f"TOPIC: {topic}\nFACTS (source {facts['url']}):\n{facts['text']}\n"
+def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str | None = None) -> tuple[dict, str]:
+    fmt = fmt if fmt in formats.FORMATS else formats.choose(recent_formats())
+    user = f"TOPIC: {topic}\n{formats.prompt_block(fmt)}\nFACTS (source {facts['url']}):\n{facts['text']}\n"
     if insights.hint():
         user += f"\nCHANNEL INSIGHTS (advisory, never a source of facts): {insights.hint()}\n"
     if notes:
@@ -386,6 +403,8 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None) -> tuple
         errs = validate_spec(spec, facts["text"])
         if not errs:
             spec.setdefault("sources", {})["wiki"] = facts["url"]
+            spec["format"] = fmt
+            spec["series_label"] = spec.get("series_label") or formats.FORMATS[fmt]["label"]
             return spec, prov
         user += "\nYour last JSON failed validation: " + "; ".join(errs) + "\nReturn corrected JSON."
     raise RuntimeError("script failed validation 5x: " + "; ".join(errs))
@@ -529,17 +548,19 @@ def facts_for(topic: str, wiki: str | None, facts_file: Path | None, deliver: bo
         raise SystemExit(f"research failed ({e!r}); pass --facts <file> (line 1 = source URL, then the text)")
 
 
-def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_file: Path | None = None, chat: str | None = None) -> int:
+def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_file: Path | None = None, chat: str | None = None, fmt: str | None = None) -> int:
     facts = facts_for(topic, wiki, facts_file, deliver, chat)
     (out / "_last.facts.json").parent.mkdir(parents=True, exist_ok=True)
     wiki_title = facts.get("title") or wiki or topic
-    record_topic(topic, wiki_title, "started")
+    fmt = fmt if fmt in formats.FORMATS else formats.choose(recent_formats())
+    print(f"   format: {fmt}", flush=True)
+    record_topic(topic, wiki_title, "started", fmt=fmt)
     notes: list[str] = []
     best = None                                   # best technically-clean attempt, delivered as a DRAFT if none is approved
     for attempt in range(1, LIMITS["attempts"] + 1):
         print(f"== attempt {attempt}/{LIMITS['attempts']}", flush=True)
         try:
-            spec, writer = write_spec(topic, facts, notes)
+            spec, writer = write_spec(topic, facts, notes, fmt)
         except RuntimeError as e:                       # the writer could not produce a valid script: retry the attempt, do not lose the run
             print("   writer failed:", str(e)[:300], flush=True)
             notes = [str(e)[:400]]
@@ -598,12 +619,13 @@ if __name__ == "__main__":
     a = sys.argv[1:]
     arg = lambda k: a[a.index(k) + 1] if k in a else None
     topic = arg("--topic")
+    fmt_arg = arg("--format")
     if "--trend" in a or "--auto" in a:
-        topic, wiki_pick = pick_topic()
+        topic, wiki_pick, fmt_arg = pick_topic(fmt=fmt_arg)
         a += ["--wiki", wiki_pick]
     if "--pick-only" in a:                       # evaluate the picker without making a Short
-        print(json.dumps({"topic": topic, "wiki": arg("--wiki"), "already_used": sorted(used_topics())[:40]}, ensure_ascii=False))
+        print(json.dumps({"topic": topic, "wiki": arg("--wiki"), "format": fmt_arg, "already_used": sorted(used_topics())[:40]}, ensure_ascii=False))
         raise SystemExit(0)
     if not topic:
         raise SystemExit(__doc__)
-    raise SystemExit(run(topic, arg("--wiki"), Path(arg("--out") or "runs"), "--no-deliver" not in a, Path(arg("--facts")) if arg("--facts") else None))
+    raise SystemExit(run(topic, arg("--wiki"), Path(arg("--out") or "runs"), "--no-deliver" not in a, Path(arg("--facts")) if arg("--facts") else None, None, fmt_arg))

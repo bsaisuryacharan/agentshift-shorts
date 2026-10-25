@@ -16,6 +16,11 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets" / "insights.json"
 
 
+NICHE = re.compile(r"\b(science|scientist|space|nasa|esa|planet|moon|mars|sun|solar|star|stars|galaxy|universe|black hole|telescope|rocket|satellite|orbit|astronaut|physics|quantum|"
+                   r"chemistry|biology|animal|animals|nature|ocean|sea|climate|earth|volcano|earthquake|dinosaur|fossil|species|brain|psychology|history|ancient|empire|archaeolog|"
+                   r"discover|discovery|experiment|engineering|energy|robot|ai|artificial intelligence|computer|chip|technology|invention|mystery|unsolved|explained|how .{2,30} works)\b", re.I)
+
+
 def _ascii_ratio(s: str) -> float:
     return sum(c.isascii() for c in s) / max(len(s), 1)
 
@@ -67,6 +72,9 @@ def build(data: Path = ROOT / "data") -> dict:
         rows = [s for s in t.get("signals", []) if s.get("title") and _ascii_ratio(s["title"]) > 0.9]
         rows.sort(key=lambda s: -(s.get("metric") or 0))
         out["region"] = t.get("region")
+        out["trend_signals_total"] = len(t.get("signals", []))
+        out["trend_signals_on_niche"] = sum(1 for s in rows if NICHE.search(s["title"]))
+        rows = [s for s in rows if NICHE.search(s["title"])]                  # phone reviews and celebrity clips are popular but are not this channel
         news = [s for s in t.get("signals", []) if s.get("source") in ("news", "nasa") and s.get("title") and _ascii_ratio(s["title"]) > 0.9]
         out["news"] = [re.sub(r"\s+[-|]\s+[^-|]{3,60}$", "", s["title"]).strip()[:110] for s in news[:12]]      # drop the " - Publisher" tail
         out["trending"] = [re.sub(r"#\w+", "", s["title"]).strip(" |-!") for s in rows[:12]]

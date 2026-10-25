@@ -383,8 +383,8 @@ def test_pick_topic_never_returns_a_used_topic(monkeypatch, tmp_path):
     answers = iter([{"topic": "t", "wiki": "Kessler syndrome"}, {"topic": "t", "wiki": "Kessler syndrome"}, {"topic": "t", "wiki": "Kessler syndrome"}])
     monkeypatch.setattr(auto, "ask", lambda *a, **k: (next(answers), "groq"))
     monkeypatch.setattr(auto, "wiki_facts", lambda q: {"title": q})
-    topic, wiki = auto.pick_topic()
-    assert auto._norm_topic(wiki) != auto._norm_topic("Kessler syndrome") and wiki in auto.EVERGREEN
+    topic, wiki, fmt = auto.pick_topic()
+    assert fmt in auto.formats.FORMATS and auto._norm_topic(wiki) != auto._norm_topic("Kessler syndrome") and wiki in auto.EVERGREEN
 
 
 def test_texture_beats_get_moving_clips_without_repeats():
@@ -573,3 +573,46 @@ def test_upload_pack_has_everything_for_youtube_studio(tmp_path):
     for needle in ("TITLE:", "#shorts", "https://en.wikipedia.org/wiki/Andromeda_Galaxy", "CC BY 4.0", "Earth at night", "TAGS:", "PINNED COMMENT:", "Altered or synthetic content: YES", "19:00 IST"):
         assert needle in text, needle
     assert "not a url" not in text and 3 <= len(pack.tags(spec)) <= 8
+
+
+def test_formats_rotate_and_never_repeat_back_to_back():
+    import random
+    from app import formats
+    rng, recent = random.Random(3), []
+    for _ in range(30):
+        recent.append(formats.choose(recent, rng))
+    assert all(a != b for a, b in zip(recent, recent[1:])) and all(recent[i] not in recent[max(0, i - 2):i] for i in range(len(recent)))
+    assert recent.count("what_if") <= 5 and len(set(recent)) == len(formats.FORMATS)
+    assert "how_it_works" not in formats.choose(["how_it_works", "ranked"], rng)
+
+
+def test_no_prompt_forces_what_if_any_more():
+    assert "what if?" not in auto.SYSTEM.lower().replace("the format gives", "") and "what-ifs" not in auto.SYSTEM
+    from app import formats
+    block = formats.prompt_block("myth_vs_fact")
+    assert '"true?"' in block and "NOT" not in block.split("Do NOT")[0] and "myth_vs_fact" in block and "unless this format is what_if" in block
+
+
+def test_write_spec_stamps_the_format_and_ledger_remembers_it(monkeypatch, tmp_path):
+    seen = {}
+    good = {"id": "x", "title": "T", "sources": {"a": "https://x"}, "beats": [{"key": f"b{i}", "img": f"s{i}", "prompt": "an old brass watch", "say": " ".join(["word"] * 14),
+            "hud": [{"t": "bubble", "text": "true?", "at": "word"}] + ([{"t": "hf", "name": "count-up", "vars": {"end": 3}, "at": "word"}] if i in (1, 2) else [])} for i in range(7)]}
+    good["beats"][2]["hud"][-1] = {"t": "hf", "name": "scramble-reveal", "vars": {"text": "TERM"}, "at": "word"}
+    monkeypatch.setattr(auto, "ask", lambda system, user, **k: seen.update(user=user) or (good, "groq"))
+    spec, _ = auto.write_spec("t", {"url": "u", "text": "3 facts"}, None, "myth_vs_fact")
+    assert spec["format"] == "myth_vs_fact" and spec["series_label"] == "MYTH VS FACT" and "FORMAT for this Short: myth_vs_fact" in seen["user"]
+    monkeypatch.setattr(auto, "ROOT", tmp_path)
+    (tmp_path / "data").mkdir()
+    for f in ("ranked", "scale"):
+        auto.record_topic("t", "w", "started", fmt=f)
+    auto.record_topic("t", "w", "parked", fmt="versus")
+    assert auto.recent_formats() == ["ranked", "scale"]
+
+
+def test_trending_is_filtered_to_the_channel_niche(tmp_path):
+    from app import insights
+    sigs = [{"title": t, "metric": m} for t, m in (("Unboxing iPhone 18 Pro review", 9000), ("Why Black Holes Spin Faster Than Light Clocks", 5000),
+                                                    ("Celebrity gossip you will not believe", 8000), ("NASA probe reaches asteroid: what scientists found", 100), ("How a jet engine works", 50))]
+    (tmp_path / "latest_trend_report.json").write_text(json.dumps({"region": "IN", "signals": sigs}))
+    d = insights.build(tmp_path)
+    assert d["trending"][0].startswith("Why Black Holes") and len(d["trending"]) == 3 and d["trend_signals_total"] == 5 and d["trend_signals_on_niche"] == 3

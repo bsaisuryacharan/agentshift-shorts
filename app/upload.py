@@ -87,3 +87,24 @@ def upload(video: Path, parts: dict, publish_at: datetime | None = None, mode: s
                           + ("The daily upload quota is used up; try tomorrow." if reason in ("quotaExceeded", "uploadLimitExceeded") else ""))
     st = res.get("status", {})
     return {"id": res["id"], "url": f"https://youtube.com/watch?v={res['id']}", "privacy": st.get("privacyStatus"), "wanted": status["privacyStatus"], "publish_at": st.get("publishAt") or status.get("publishAt")}
+
+
+def _test(run_id: str, title: str) -> None:
+    """python -m app.upload <run_id> "<title>": upload that run's video as PRIVATE and unscheduled, to verify the whole upload path"""
+    d = Path(tempfile.mkdtemp())
+    p = subprocess.run(["gh", "run", "download", str(run_id), "-n", "run", "-D", str(d)], capture_output=True, text=True)
+    if p.returncode != 0:
+        raise UploadError(f"download failed: {p.stderr.strip()[:200]}")
+    video = next(d.rglob("telegram.mp4"))
+    parts = {"title": title, "description": "Upload-path test from the Shorts pipeline. Private. Safe to delete.", "tags": ["test"]}
+    res = upload(video, parts, mode="private")
+    print(json.dumps(res))
+
+
+if __name__ == "__main__":
+    import sys
+    try:
+        _test(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else "[TEST] upload check")
+    except UploadError as e:
+        print("UPLOAD FAILED:", e)
+        sys.exit(1)

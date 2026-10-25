@@ -8,13 +8,14 @@ import json
 import re
 from pathlib import Path
 
+FORMAT_TAG = {"what_if": "what if", "how_it_works": "how it works", "myth_vs_fact": "myth vs fact", "unsolved": "mystery", "ranked": "top 5", "versus": "versus", "timeline": "history", "scale": "scale", "story": "story"}
 STOP = {"what", "if", "the", "a", "an", "of", "to", "in", "on", "and", "for", "with", "we", "could", "would", "how", "why", "is", "are", "was"}
 
 
 def tags(spec: dict) -> list[str]:
     words = [w.lower() for w in re.findall(r"[A-Za-z][A-Za-z'-]{2,}", spec["title"] + " " + str(spec.get("series_label", ""))) if w.lower() not in STOP]
     out = []
-    for w in words + ["shorts", "science", "explained", "what if", "space", "agent shift"]:
+    for w in words + ["shorts", "science", "explained", "agent shift"] + ([FORMAT_TAG.get(spec.get("format"), "")] if spec.get("format") else []):
         if w not in out:
             out.append(w)
     return out[:8]
@@ -36,7 +37,7 @@ def parts(spec: dict, credit_files: list[Path]) -> dict:
         except (OSError, ValueError):
             continue
     hook = spec["beats"][0]["say"]
-    desc = f"{hook}\n\nSources:\n{srcs}\n" + ("\nPictures and footage:\n" + "\n".join(cred) + "\n" if cred else "") + "\n#shorts #science #whatif #agentshift"
+    desc = f"{hook}\n\nSources:\n{srcs}\n" + ("\nPictures and footage:\n" + "\n".join(cred) + "\n" if cred else "") + f"\n#shorts #science #agentshift #{FORMAT_TAG.get(spec.get('format'), 'explained').replace(' ', '')}"
     topic = re.sub(r"(?i)^what if\s+", "", spec["title"]).rstrip("?. ")
     return {"title": title, "description": desc, "tags": tags(spec), "pinned": f"Which part of “{topic[:70]}” surprised you most? Tell us below."}
 
