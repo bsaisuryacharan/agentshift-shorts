@@ -36,3 +36,10 @@ Then: `gh workflow run weekly-insights.yml -R bsaisuryacharan/agentshift-shorts`
 - NASA covers space/Earth/aviation/science; Openverse and Commons cover most real objects; abstract "concept art" prompts have no real-photo match.
 - The judge's main complaint remains the AI-generated look of FLUX stills; real photos and footage reduce it but do not remove it.
 - The stale local file `.github/workflows/daily-production.yml` (legacy, not deployed) should be deleted by the owner.
+
+
+## Update 25 Oct 2026
+- Only Shorts that pass the judge reach Telegram; `/approve` approves AND uploads (public; if YouTube forces private for an unaudited API project the reply says so). `/upload` retries.
+- Target system (docs/TARGETS.md): hourly monitor, per-stage scorecards, guideline checks, playbook, `/target`.
+- Gallery motion graphics (6 HyperFrames components) are required in every Short.
+- Still unproven live: the first real upload (no Short has passed the judge yet) and the first hourly monitor run with real data.

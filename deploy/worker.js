@@ -12,7 +12,7 @@ export default {
     if (t === "/help" || t === "/start") {          // answered instantly, no pipeline needed
       await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: m.chat.id, text: "Commands:\n/new <topic> - make a Short (~15-20 min, arrives here)\n/status - current Short and scores\n/list - recent Shorts\n/use <id> - switch\n/approve - approve the Short: it is uploaded to YouTube automatically (private, scheduled 19:00 IST)\n/upload - retry that upload if it failed\nOr just describe a change: \"shorter hook\", \"re-roll image 3\".\nA daily Short is made automatically at 17:00 IST." }),
+        body: JSON.stringify({ chat_id: m.chat.id, text: "Commands:\n/new <topic> - make a Short (~15-20 min, arrives here)\n/status - current Short and scores\n/target - progress towards 1,000,000 views and monetisation\n/list - recent Shorts\n/use <id> - switch\n/approve - approve the Short: it is uploaded to YouTube automatically (public)\n/upload - retry that upload if it failed\nOr just describe a change: \"shorter hook\", \"re-roll image 3\".\nA daily Short is made automatically at 17:00 IST." }),
       });
       return new Response("ok");
     }

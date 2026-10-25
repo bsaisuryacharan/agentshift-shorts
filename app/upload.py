@@ -1,9 +1,9 @@
 """Opt-in YouTube upload, triggered only by the owner's /upload command in Telegram (never automatically).
 
-The approved Short's video is taken from the workflow artifact of the run that made it, uploaded as PRIVATE with a scheduled publish time
-(next 19:00 IST at least 45 minutes ahead), with the title/description/tags from the upload pack and the synthetic-media disclosure set.
-Needs the YOUTUBE_TOKEN_JSON secret (OAuth token that includes the youtube.upload scope). Unaudited API projects may force uploads to stay private:
-the result message says what YouTube reports.
+The approved Short's video is taken from the workflow artifact of the run that made it and uploaded PUBLIC (UPLOAD_VISIBILITY=public, the default) with the
+title/description/tags from the upload pack and the synthetic-media disclosure set. UPLOAD_VISIBILITY=scheduled uploads private with a publish time
+(next 19:00 IST at least 45 minutes ahead); =private stays private. Needs the YOUTUBE_TOKEN_JSON secret (OAuth token that includes the youtube.upload scope).
+Unaudited API projects are forced to private by YouTube regardless: the result then reports privacy != public so the owner can fix it in Studio / pass the audit.
 """
 from __future__ import annotations
 
@@ -60,14 +60,21 @@ def fetch_video(run_id: str, spec_id: str) -> Path:
     raise UploadError("the run's artifact has no telegram.mp4")
 
 
-def upload(video: Path, parts: dict, publish_at: datetime) -> dict:
+def visibility() -> str:
+    v = os.environ.get("UPLOAD_VISIBILITY", "public").lower()
+    return v if v in ("public", "scheduled", "private") else "public"
+
+
+def upload(video: Path, parts: dict, publish_at: datetime | None = None, mode: str | None = None) -> dict:
     from googleapiclient.discovery import build
     from googleapiclient.errors import HttpError
     from googleapiclient.http import MediaFileUpload
     youtube = build("youtube", "v3", credentials=credentials())
-    body = {"snippet": {"title": parts["title"][:100], "description": parts["description"][:4900], "tags": parts["tags"], "categoryId": "28"},
-            "status": {"privacyStatus": "private", "publishAt": publish_at.strftime("%Y-%m-%dT%H:%M:%SZ"),
-                       "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True}}
+    mode = mode or visibility()
+    status = {"privacyStatus": "public" if mode == "public" else "private", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True}
+    if mode == "scheduled":
+        status["publishAt"] = (publish_at or next_slot()).strftime("%Y-%m-%dT%H:%M:%SZ")
+    body = {"snippet": {"title": parts["title"][:100], "description": parts["description"][:4900], "tags": parts["tags"], "categoryId": "28"}, "status": status}
     try:
         res = youtube.videos().insert(part="snippet,status", body=body, media_body=MediaFileUpload(str(video), resumable=True, mimetype="video/mp4")).execute()
     except HttpError as e:
@@ -79,4 +86,4 @@ def upload(video: Path, parts: dict, publish_at: datetime) -> dict:
         raise UploadError(f"YouTube refused the upload ({e.resp.status} {reason or 'error'}). "
                           + ("The daily upload quota is used up; try tomorrow." if reason in ("quotaExceeded", "uploadLimitExceeded") else ""))
     st = res.get("status", {})
-    return {"id": res["id"], "url": f"https://youtube.com/watch?v={res['id']}", "privacy": st.get("privacyStatus"), "publish_at": st.get("publishAt") or body["status"]["publishAt"]}
+    return {"id": res["id"], "url": f"https://youtube.com/watch?v={res['id']}", "privacy": st.get("privacyStatus"), "wanted": status["privacyStatus"], "publish_at": st.get("publishAt") or status.get("publishAt")}

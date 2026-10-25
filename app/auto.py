@@ -259,6 +259,7 @@ Moving-picture layers (optional, they make a still feel like video): beat "foota
 (only for space/Earth/science beats, at most 2 per Short, e.g. "asteroid impact", "earth night lights"; a still is still required as fallback). Beat "motion":"<clip>" picks a light layer
 over the picture: {MOTION_CLIPS}; omit it and one is chosen from the mood. Do not stack two big elements in one beat (max ~1100px tall total).
 EVERY hud element needs "at": a word that appears in that beat's "say" (exact word) - the element appears when it is spoken.
+GOAL: every Short is built to earn: the channel's target is 1,000,000 views per Short and YouTube Partner Programme eligibility. Retention decides reach, so: a hook that promises something concrete in the first 2 seconds, a new fact or twist every beat, no filler, a last line that makes viewers replay or follow. Follow CHANNEL INSIGHTS (lessons, weakest stage, target progress) when they exist.
 Hook = first beat: a surprising promise in <=2 seconds, with a bubble "what if?" and a title. Last beat: payoff + 'Follow for more what-ifs'.
 Facts: use ONLY the supplied FACTS. Every number you write (digits in hud text or numbers in say) must be present in FACTS. Never invent statistics.
 7-9 beats total, ~90-108 spoken words (hard max 112; the video must be under 45 s). Keep each hud text short (<=28 chars), written with digits not spelled numbers, as a complete short noun phrase (<=4 words, never a sentence fragment). No claims about real private individuals."""
@@ -467,7 +468,18 @@ def finish(spec: dict, writer: str, out: Path, deliver: bool, chat: str | None) 
         return False, ["judge unavailable; keep the script and visuals as they are"], run_dir, None
     print("   judge:", j, flush=True)
     res = produce.regate(run_dir, run_dir / "vision.json")
-    if j["approved"] and res["passed"]:
+    from . import playbook, scorecard
+    card = scorecard.build(spec, run_dir, j["scores"])
+    print(f"   scorecard: {scorecard.summary_line(card)} | fix first: {card.get('fix_first')} | guidelines ok: {card['policy']['ok']}", flush=True)
+    try:
+        (run_dir / "scorecard.json").write_text(json.dumps(card, indent=1, ensure_ascii=False))
+        playbook.record_features(spec, run_dir, card["stages"])
+        with open(ROOT / "data" / "scorecards.jsonl", "a") as f:
+            f.write(json.dumps({"spec_id": spec["id"], "stages": card["stages"], "policy_ok": card["policy"]["ok"]}) + "\n")
+    except OSError:
+        pass
+    bad_policy = [c for c in card["policy"]["checks"] if c["hard"] and not c["ok"]]
+    if j["approved"] and res["passed"] and not bad_policy:
         final = encode_for_telegram(run_dir / "final.mp4", run_dir / "telegram.mp4")
         ledger = ROOT / LIMITS["history"]
         ledger.parent.mkdir(parents=True, exist_ok=True)
@@ -481,7 +493,8 @@ def finish(spec: dict, writer: str, out: Path, deliver: bool, chat: str | None) 
             telegram(caption(spec, j), final, chat)
             telegram(text, chat=chat)                        # second message: the full upload pack, ready to paste
         return True, [], run_dir, j
-    return False, j["fixes"] or ["raise visual quality and accuracy"], run_dir, j
+    fixes = ([card["fix_first"]] if card.get("fix_first") else []) + [f"guideline check failed: {c['check']} ({c['note']})" for c in bad_policy] + (j["fixes"] or [])
+    return False, fixes or ["raise visual quality and accuracy"], run_dir, j
 
 
 def send_draft(spec: dict, run_dir: Path, j: dict, chat: str | None) -> None:

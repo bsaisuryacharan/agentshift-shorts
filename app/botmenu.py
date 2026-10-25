@@ -12,9 +12,10 @@ import httpx
 COMMANDS = [
     ("new", "Make a Short about a topic: /new <topic>"),
     ("status", "Current Short and its scores"),
+    ("target", "Progress towards the 1M-view target and monetisation"),
     ("list", "Recent Shorts"),
     ("use", "Switch to a Short: /use <id>"),
-    ("approve", "Approve the Short: uploads it to YouTube (private, scheduled)"),
+    ("approve", "Approve the Short: it is uploaded to YouTube publicly"),
     ("upload", "Retry the YouTube upload of the approved Short"),
     ("help", "What the bot can do"),
 ]

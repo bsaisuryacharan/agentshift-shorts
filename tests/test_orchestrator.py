@@ -151,11 +151,11 @@ def test_upload_happy_path_is_private_scheduled_and_only_once(env, tmp_path, mon
     _prep_upload(tmp_path)
     seen = {}
     monkeypatch.setattr(upload, "fetch_video", lambda run_id, spec_id: seen.update(run=run_id, spec=spec_id) or tmp_path / "v.mp4")
-    monkeypatch.setattr(upload, "upload", lambda video, parts, when: seen.update(parts=parts, when=when) or
-                        {"id": "abc", "url": "https://youtube.com/watch?v=abc", "privacy": "private", "publish_at": "2026-10-26T13:30:00Z"})
+    monkeypatch.setattr(upload, "upload", lambda video, parts, *a, **k: seen.update(parts=parts) or
+                        {"id": "abc", "url": "https://youtube.com/watch?v=abc", "privacy": "public", "wanted": "public", "publish_at": None})
     assert o.handle("42", "/upload") == 0
-    assert seen["run"] == "777" and seen["spec"] == "demo-a1" and seen["parts"]["title"].endswith("#shorts") and seen["when"].tzinfo is not None
-    assert "https://youtube.com/watch?v=abc" in env[-1][1] and "private" in env[-1][1]
+    assert seen["run"] == "777" and seen["spec"] == "demo-a1" and seen["parts"]["title"].endswith("#shorts")
+    assert "https://youtube.com/watch?v=abc" in env[-1][1] and "public now" in env[-1][1]
     assert o._state("42")["projects"]["demo-a1"]["uploaded"]["id"] == "abc"
     assert o.handle("42", "/upload") == 0 and "Already uploaded" in env[-1][1]
 
@@ -200,8 +200,8 @@ def test_approve_triggers_the_upload_by_itself(env, tmp_path, monkeypatch):
     _prep_upload(tmp_path, status="delivered")
     calls = []
     monkeypatch.setattr(upload, "fetch_video", lambda run_id, spec_id: calls.append("fetch") or tmp_path / "v.mp4")
-    monkeypatch.setattr(upload, "upload", lambda video, parts, when: calls.append("upload") or
-                        {"id": "zz", "url": "https://youtube.com/watch?v=zz", "privacy": "private", "publish_at": "2026-10-26T13:30:00Z"})
+    monkeypatch.setattr(upload, "upload", lambda video, parts, *a, **k: calls.append("upload") or
+                        {"id": "zz", "url": "https://youtube.com/watch?v=zz", "privacy": "public", "wanted": "public", "publish_at": None})
     assert o.handle("42", "/approve") == 0
     assert calls == ["fetch", "upload"]
     texts = [m[1] for m in env]
@@ -217,3 +217,22 @@ def test_failed_auto_upload_keeps_the_approval_and_says_how_to_retry(env, tmp_pa
     monkeypatch.setattr(upload, "fetch_video", lambda *a: (_ for _ in ()).throw(upload.UploadError("no artifact")))
     assert o.handle("42", "/approve") == 0
     assert o._state("42")["projects"]["demo-a1"]["status"] == "approved" and "Upload did not happen" in env[-1][1]
+
+
+def test_audit_forced_private_is_reported_with_the_fix(env, tmp_path, monkeypatch):
+    from app import upload
+    _prep_upload(tmp_path)
+    monkeypatch.setattr(upload, "fetch_video", lambda *a: tmp_path / "v.mp4")
+    monkeypatch.setattr(upload, "upload", lambda *a, **k: {"id": "q", "url": "https://youtube.com/watch?v=q", "privacy": "private", "wanted": "public", "publish_at": None})
+    assert o.handle("42", "/upload") == 0
+    assert "kept it private" in env[-1][1] and "Public in YouTube Studio" in env[-1][1]
+
+
+def test_upload_modes(monkeypatch):
+    from app import upload
+    monkeypatch.delenv("UPLOAD_VISIBILITY", raising=False)
+    assert upload.visibility() == "public"
+    monkeypatch.setenv("UPLOAD_VISIBILITY", "scheduled")
+    assert upload.visibility() == "scheduled"
+    monkeypatch.setenv("UPLOAD_VISIBILITY", "nonsense")
+    assert upload.visibility() == "public"

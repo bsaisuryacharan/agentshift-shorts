@@ -41,6 +41,9 @@ def main() -> int:
             Path(tok_path).unlink(missing_ok=True)
     from . import insights
     out = insights.build()
+    old = insights.load()
+    if old.get("performance"):                                   # written hourly by app.monitor: keep it when the weekly rebuild replaces the file
+        out["performance"] = old["performance"]
     insights.OUT.parent.mkdir(parents=True, exist_ok=True)
     insights.OUT.write_text(json.dumps(out, indent=1, ensure_ascii=False))
     print(json.dumps({"status": status, "hint": insights.hint()}, indent=1, ensure_ascii=False))

@@ -1,0 +1,29 @@
+name: monitor
+# Hourly: read the real numbers of every uploaded Short, compare with the 1,000,000-view target, and update the insights the picker/writer read. Cloud only.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+concurrency: monitor
+permissions:
+  contents: write
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -q httpx
+      - name: Hourly check
+        run: python -m app.monitor
+      - name: Commit results
+        run: |
+          git config user.name "shorts-bot"; git config user.email "shorts-bot@users.noreply.github.com"
+          for f in data/performance.jsonl assets/insights.json; do git add "$f" 2>/dev/null || true; done
+          git commit -m "monitor: $(date -u +%FT%H:%MZ)" || true
+          git pull --rebase -q || true
+          git push || true

@@ -1,0 +1,125 @@
+"""Hourly performance monitor (cloud, .github/workflows/monitor.yml): how are the uploaded Shorts doing against the target?
+
+    python -m app.monitor
+
+Reads every uploaded Short from state/*.json, fetches its public statistics from the YouTube Data API (YOUTUBE_API_KEY secret), appends one row per video
+to data/performance.jsonl, and writes the summary (per-Short status vs the 1,000,000-view target, channel subscribers, YouTube Partner Programme progress,
+lessons from the playbook) into assets/insights.json["performance"], which the topic picker and script writer read. Private/unavailable videos are reported
+as such, never as zero.
+"""
+from __future__ import annotations
+
+import json
+import os
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+
+import httpx
+
+from . import targets
+
+ROOT = Path(__file__).resolve().parents[1]
+PERF = ROOT / "data" / "performance.jsonl"
+INSIGHTS = ROOT / "assets" / "insights.json"
+API = "https://www.googleapis.com/youtube/v3"
+
+
+def uploaded_shorts(state_dir: Path = ROOT / "state") -> list[dict]:
+    out = []
+    for f in sorted(state_dir.glob("*.json")):
+        try:
+            st = json.loads(f.read_text())
+        except ValueError:
+            continue
+        for sid, p in (st.get("projects") or {}).items():
+            if p.get("uploaded", {}).get("id"):
+                out.append({"spec_id": sid, "video_id": p["uploaded"]["id"], "title": p.get("title", ""), "url": p["uploaded"].get("url")})
+    return out
+
+
+def fetch(video_ids: list[str], key: str, client: httpx.Client | None = None) -> dict[str, dict]:
+    """statistics for public videos; ids YouTube does not return (private, deleted) are simply absent"""
+    c = client or httpx.Client(timeout=30)
+    out: dict[str, dict] = {}
+    for i in range(0, len(video_ids), 50):
+        r = c.get(f"{API}/videos", params={"part": "statistics,snippet", "id": ",".join(video_ids[i:i + 50]), "key": key})
+        r.raise_for_status()
+        for it in r.json().get("items", []):
+            s = it.get("statistics", {})
+            out[it["id"]] = {"views": int(s.get("viewCount", 0)), "likes": int(s.get("likeCount", 0)), "comments": int(s.get("commentCount", 0)),
+                             "published_at": it["snippet"]["publishedAt"], "channel_id": it["snippet"]["channelId"]}
+    return out
+
+
+def channel_subscribers(channel_id: str, key: str, client: httpx.Client | None = None) -> int | None:
+    c = client or httpx.Client(timeout=30)
+    r = c.get(f"{API}/channels", params={"part": "statistics", "id": channel_id, "key": key})
+    r.raise_for_status()
+    items = r.json().get("items", [])
+    if not items or items[0]["statistics"].get("hiddenSubscriberCount"):
+        return None
+    return int(items[0]["statistics"].get("subscriberCount", 0))
+
+
+def summarise(rows: list[dict], subscribers: int | None, now: datetime | None = None) -> dict:
+    """rows: latest stats per video (see run()); returns the structure stored under insights['performance']"""
+    now = now or datetime.now(UTC)
+    shorts = []
+    for r in rows:
+        age_h = max(0.0, (now - datetime.fromisoformat(r["published_at"].replace("Z", "+00:00"))).total_seconds() / 3600)
+        shorts.append({**{k: r[k] for k in ("spec_id", "video_id", "title", "views", "likes", "comments")}, **targets.status(r["views"], age_h)})
+    recent = [s for s in shorts if s["age_h"] <= 24 * 90]
+    views90 = sum(s["views"] for s in recent)
+    best = max(shorts, key=lambda s: s["views"], default=None)
+    return {"updated": now.isoformat(timespec="minutes"), "target_views_per_short": targets.TARGET["views_per_short"], "shorts": shorts[-12:],
+            "best": {"title": best["title"], "views": best["views"]} if best else None,
+            "ypp": targets.ypp_progress(subscribers or 0, views90, len(recent)) | {"subscribers_known": subscribers is not None},
+            "on_track": sum(1 for s in shorts if s["status"] == "on_track"), "behind": sum(1 for s in shorts if s["status"] in ("behind", "far_behind"))}
+
+
+def write_insights(perf: dict, path: Path = INSIGHTS) -> None:
+    try:
+        d = json.loads(path.read_text())
+    except (OSError, ValueError):
+        d = {}
+    d["performance"] = perf
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(d, indent=1, ensure_ascii=False))
+
+
+def run(state_dir: Path = ROOT / "state", perf_path: Path = PERF, insights_path: Path = INSIGHTS, key: str | None = None, client: httpx.Client | None = None) -> dict:
+    key = key or os.environ.get("YOUTUBE_API_KEY")
+    vids = uploaded_shorts(state_dir)
+    if not vids:
+        print("monitor: no uploaded Shorts yet")
+        return {"shorts": 0}
+    if not key:
+        print("monitor: YOUTUBE_API_KEY not set")
+        return {"shorts": len(vids), "error": "no api key"}
+    stats = fetch([v["video_id"] for v in vids], key, client)
+    now = datetime.now(UTC)
+    rows, missing = [], []
+    perf_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(perf_path, "a") as f:
+        for v in vids:
+            s = stats.get(v["video_id"])
+            if not s:
+                missing.append(v["video_id"])
+                continue
+            row = {**v, **s, "ts": now.isoformat(timespec="minutes")}
+            rows.append(row)
+            f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    subs = channel_subscribers(rows[0]["channel_id"], key, client) if rows else None
+    perf = summarise(rows, subs, now)
+    perf["not_public_or_missing"] = missing
+    from . import playbook
+    perf["lessons"] = playbook.lessons(perf_path)
+    write_insights(perf, insights_path)
+    print(json.dumps({"shorts": len(rows), "missing": missing, "on_track": perf["on_track"], "behind": perf["behind"], "subs": subs}))
+    return perf
+
+
+if __name__ == "__main__":
+    run()
+    sys.exit(0)

@@ -27,7 +27,7 @@ from . import auto
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE, PROJ, OUT = ROOT / "state", ROOT / "projects", ROOT / "runs"
-HELP = ("Commands:\n/new <topic> - make a Short\n/approve - approve the current Short and get its upload pack\n/upload - retry the YouTube upload of the approved Short (approving already does it)\n/status - current Short\n/list - recent Shorts\n/use <id> - switch\n"
+HELP = ("Commands:\n/new <topic> - make a Short\n/approve - approve the current Short and get its upload pack\n/upload - retry the YouTube upload of the approved Short (approving already does it)\n/status - current Short\n/target - progress towards the 1,000,000-view target and monetisation\n/list - recent Shorts\n/use <id> - switch\n"
         "Or just describe a change to the current Short: \"shorter hook\", \"re-roll image 3\", \"change 8.3 to 8.2 billion\".")
 
 REVISE_SYSTEM = auto.SYSTEM + """
@@ -67,6 +67,8 @@ def classify(text: str, st: dict) -> dict:
         return {"intent": "approve"}
     if low == "/upload" or low.startswith("/upload "):
         return {"intent": "upload"}
+    if low == "/target" or low.startswith("/target "):
+        return {"intent": "target"}
     if low.startswith("/use "):
         return {"intent": "use", "id": t[5:].strip()}
     if not st.get("current"):                      # nothing to revise yet -> a bare message is a topic, unless it is chit-chat
@@ -183,8 +185,31 @@ def publish_pack(spec: dict, proj: Path) -> str:
     return text
 
 
+def target_report(insights_path: Path | None = None) -> str:
+    """the owner's progress card: target, how each Short is doing, monetisation thresholds, weakest stage, lessons"""
+    from . import insights as ins
+    d = json.loads(insights_path.read_text()) if insights_path else ins.load()
+    perf = d.get("performance") or {}
+    lines = ["🎯 Target: 1,000,000 views per Short, then YouTube Partner Programme (1,000 subscribers + 10M Shorts views in 90 days, or 4,000 watch hours)."]
+    if not perf.get("shorts"):
+        lines.append("No uploaded Shorts to measure yet. Once the first Short is approved and uploaded, the hourly check starts and this card fills in.")
+    else:
+        lines.append(f"Tracked: {len(perf['shorts'])} Short(s): {perf['on_track']} on track, {perf['behind']} behind. Updated {perf['updated']}.")
+        for sh in perf["shorts"][-3:]:
+            lines.append(f"- {sh['title'][:45]}: {sh['views']:,} views after {sh['age_h']}h ({sh['status']}, projected {sh['projected_30d']:,} in 30 days)" if sh.get("projected_30d")
+                         else f"- {sh['title'][:45]}: {sh['views']:,} views after {sh['age_h']}h ({sh['status']})")
+        y = perf["ypp"]
+        lines.append(f"Monetisation: {y['subscribers']:,} subscribers ({y['tier2_ads']['subs_pct']}% of 1,000), {y['shorts_views_90d']:,} Shorts views in 90 days ({y['tier2_ads']['views_pct']}% of 10M).")
+    if d.get("weakest_stage"):
+        lines.append(f"Quality: weakest stage lately is '{d['weakest_stage']}' (avg {d['stage_averages'][d['weakest_stage']]}); every stage is graded on every Short and fixed first.")
+    if perf.get("lessons"):
+        lines.append("Learned so far:\n" + "\n".join(f"- {x}" for x in perf["lessons"]))
+    lines.append("Checked every hour; the next Shorts are adjusted from these numbers.")
+    return "\n".join(lines)
+
+
 def do_upload(chat: str, st: dict) -> None:
-    """/upload: only for the current Short, only after /approve, once. Private + scheduled; the owner stays in control of making it public."""
+    """upload the current Short: only after /approve, once. Public by default (UPLOAD_VISIBILITY); /approve calls this by itself, /upload retries it."""
     from . import pack, upload
     cur = st.get("current")
     p = st["projects"].get(cur) if cur else None
@@ -200,17 +225,22 @@ def do_upload(chat: str, st: dict) -> None:
         spec = json.loads((PROJ / cur / "spec.json").read_text())
         parts = pack.parts(spec, [PROJ / cur / "img" / "credits.json", PROJ / cur / "vid" / "credits.json"])
         try:
-            say(chat, "Uploading to YouTube (private, scheduled)...")
+            say(chat, "Uploading to YouTube (public)...")
             video = upload.fetch_video(p["run_id"], cur)
-            slot = upload.next_slot()
-            res = upload.upload(video, parts, slot)
+            res = upload.upload(video, parts)
         except upload.UploadError as e:
             say(chat, f"Upload did not happen: {e}")
             return
         p["uploaded"] = res
-        priv = res.get("privacy") or "private"
-        say(chat, f"Uploaded: {res['url']}\nVisibility now: {priv}; scheduled to go public {res['publish_at']}.\n"
-                  "Open YouTube Studio to check the copyright/audit result before it goes live. Pinned comment to add:\n" + parts["pinned"])
+        priv = res.get("privacy") or "unknown"
+        if res.get("wanted") == "public" and priv != "public":
+            note = (f"YouTube kept it {priv} (this happens for API projects that have not passed Google's audit). Set it to Public in YouTube Studio now: "
+                    "https://studio.youtube.com, or apply for the audit so uploads can be public automatically.")
+        elif priv == "public":
+            note = "It is public now."
+        else:
+            note = f"Visibility: {priv}" + (f", goes public {res['publish_at']}." if res.get("publish_at") else ".")
+        say(chat, f"Uploaded: {res['url']}\n{note}\nPinned comment to add:\n" + parts["pinned"])
 
 
 def handle(chat: str, text: str) -> int:
@@ -253,6 +283,8 @@ def handle(chat: str, text: str) -> int:
                 say(chat, "Approved. Publish pack:\n\n" + publish_pack(spec, PROJ / cur))
                 _save(chat, st)
                 do_upload(chat, st)                       # approving is the only step: the upload (private, scheduled) follows by itself
+        elif it == "target":
+            say(chat, target_report())
         elif it == "upload":
             do_upload(chat, st)
         elif it == "new":

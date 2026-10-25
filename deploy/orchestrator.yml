@@ -31,7 +31,7 @@ jobs:
       - name: Light command? (no render needed)
         id: kind
         run: |
-          if [[ "$TEXT" =~ ^/(status|list|use|approve|upload|help|start)([[:space:]]|$) ]]; then echo "light=true" >> "$GITHUB_OUTPUT"; fi
+          if [[ "$TEXT" =~ ^/(status|target|list|use|approve|upload|help|start)([[:space:]]|$) ]]; then echo "light=true" >> "$GITHUB_OUTPUT"; fi
       - name: Handle (light, ~20 s)
         if: steps.kind.outputs.light == 'true'
         run: |
@@ -60,7 +60,7 @@ jobs:
         if: always()
         run: |
           git config user.name "shorts-bot"; git config user.email "shorts-bot@users.noreply.github.com"
-          for f in state projects data/history.jsonl data/topics.jsonl; do git add "$f" 2>/dev/null || true; done
+          for f in state projects data/history.jsonl data/topics.jsonl data/features.jsonl data/scorecards.jsonl; do git add "$f" 2>/dev/null || true; done
           git commit -m "state: $(date -u +%FT%TZ)" || true
           git pull --rebase -q || true
           git push || true

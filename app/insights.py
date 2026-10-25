@@ -48,6 +48,19 @@ def build(data: Path = ROOT / "data") -> dict:
             weak = collections.Counter(r["weakest"] for r in rows).most_common(3)
             out["learned"] = {"shorts_scored": len(rows), "best": rows[:3], "worst": rows[-3:][::-1] if len(rows) > 3 else [],
                               "weakest_dimensions": [w for w, _ in weak]}
+    sc = data / "scorecards.jsonl"                    # per-stage grades of every Short the pipeline has judged
+    if sc.exists():
+        stage_scores: dict[str, list[float]] = {}
+        for line in sc.read_text().splitlines()[-40:]:
+            try:
+                for k, v in json.loads(line).get("stages", {}).items():
+                    stage_scores.setdefault(k, []).append(v["score"])
+            except (ValueError, KeyError):
+                continue
+        if stage_scores:
+            avg = {k: round(sum(v) / len(v), 1) for k, v in stage_scores.items()}
+            out["stage_averages"] = avg
+            out["weakest_stage"] = min(avg, key=avg.get)
     tr = data / "latest_trend_report.json"
     if tr.exists():
         t = json.loads(tr.read_text())
@@ -67,7 +80,7 @@ def load() -> dict:
         return {}
 
 
-def hint(max_chars: int = 900) -> str:
+def hint(max_chars: int = 1500) -> str:
     """one advisory paragraph for the LLM prompts ('' when there is nothing)"""
     i = load()
     parts = []
@@ -80,6 +93,16 @@ def hint(max_chars: int = 900) -> str:
         parts.append(f"Judge history over {l['shorts_scored']} Shorts: strongest were " + "; ".join(f"'{r['title']}' ({r['avg']})" for r in l["best"]) +
                      (". Weakest were " + "; ".join(f"'{r['title']}' ({r['avg']})" for r in l["worst"]) if l.get("worst") else "") +
                      f". Dimensions that fail most: {', '.join(l['weakest_dimensions'])} - choose topics and angles that avoid those weaknesses.")
+    perf = i.get("performance") or {}
+    if perf.get("shorts"):
+        y = perf.get("ypp", {}).get("tier2_ads", {})
+        parts.append(f"TARGET {perf['target_views_per_short']:,} views per Short. {len(perf['shorts'])} Short(s) tracked: {perf['on_track']} on track, {perf['behind']} behind"
+                     + (f", best '{perf['best']['title'][:50]}' with {perf['best']['views']:,} views" if perf.get("best") else "")
+                     + f". Monetisation progress: {y.get('subs_pct', 0)}% of 1,000 subscribers, {y.get('views_pct', 0)}% of 10M Shorts views in 90 days.")
+    if perf.get("lessons"):
+        parts.append("Lessons from results so far: " + " | ".join(perf["lessons"]))
+    if i.get("weakest_stage"):
+        parts.append(f"Across recent Shorts the weakest stage is '{i['weakest_stage']}' (average {i['stage_averages'][i['weakest_stage']]}): put extra care there.")
     if i.get("trending"):
         parts.append("Popular on YouTube now (inspiration only, do not copy titles): " + "; ".join(i["trending"][:6]))
     return " ".join(parts)[:max_chars]
