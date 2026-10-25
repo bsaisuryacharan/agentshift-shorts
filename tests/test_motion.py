@@ -91,6 +91,7 @@ def test_insights_hint_is_advisory_and_bounded(tmp_path, monkeypatch):
     assert d["trending"] == ["Black holes"] and d["channel"]["caveat"] == "tiny sample"
     monkeypatch.setattr(insights, "OUT", tmp_path / "i.json")
     (tmp_path / "i.json").write_text(json.dumps(d))
+    monkeypatch.setattr("app.vidiq.hint", lambda *a, **k: "")          # the vidIQ snapshot has its own budget and test
     assert "tiny sample" in insights.hint() and len(insights.hint()) <= 600
     monkeypatch.setattr(insights, "OUT", tmp_path / "missing.json")
     assert insights.hint() == ""
