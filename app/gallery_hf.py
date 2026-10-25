@@ -39,7 +39,7 @@ BLOCKED_VARS = {"exit", "cues"}      # the master timeline owns timing and exits
 
 # chart-story and grid-card-assemble stay vendored but are not offered to the writer: their axis/label text is ~12 px at 870 px width, unreadable on a phone
 # (the built-in bars/line/rows/list elements cover charts and lists at proper size)
-ENABLED = ["per-word-rise", "scramble-reveal", "kinetic-type-swap", "count-up", "titlecard-lockup", "vox-annotate", "native-notification-pop"]
+ENABLED = ["per-word-rise", "scramble-reveal", "kinetic-type-swap", "count-up", "titlecard-lockup", "vox-annotate"]            # native-notification-pop ships an opaque demo backdrop and renders blank as an overlay
 
 
 def names() -> list[str]:

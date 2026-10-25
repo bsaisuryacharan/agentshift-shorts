@@ -86,6 +86,9 @@ def _persist(st: dict, spec: dict, run_dir: Path, j: dict | None, status: str, i
         elif (run_dir / "img" / "credits.json").exists():        # the daily Short keeps only its credits in the repo (pictures would bloat it)
             (d / "img").mkdir(exist_ok=True)
             shutil.copy(run_dir / "img" / "credits.json", d / "img" / "credits.json")
+    if (run_dir / "vid" / "credits.json").exists():
+        (d / "vid").mkdir(exist_ok=True)
+        shutil.copy(run_dir / "vid" / "credits.json", d / "vid" / "credits.json")
     scores = (j or {}).get("scores")
     if scores is None and (run_dir / "vision.json").exists():          # DRAFTs carry the judge's scores in vision.json
         try:
@@ -172,16 +175,10 @@ def do_revise(chat: str, st: dict, instruction: str) -> None:
 
 def publish_pack(spec: dict, proj: Path) -> str:
     """title / description / tags / credits for the owner to paste into YouTube Studio (uploading stays a human step: private-until-audit rule)."""
-    title = spec["title"].strip()
-    title = (title if len(title) <= 88 else title[:87].rstrip() + "…") + " #shorts"
-    srcs = "\n".join(f"- {v}" for v in (spec.get("sources") or {}).values() if str(v).startswith("http"))
-    cj = proj / "img" / "credits.json"
-    cred = "\n".join(f"- {v['file']} - {v['artist'][:50]}, {v['license']} ({v['url']})" for v in json.loads(cj.read_text()).values()) if cj.exists() else ""
-    hook = spec["beats"][0]["say"]
-    desc = f"{hook}\n\nSources:\n{srcs}\n" + (f"\nPhotos:\n{cred}\n" if cred else "") + "\n#shorts #ai #agentshift"
-    pack = f"TITLE:\n{title}\n\nDESCRIPTION:\n{desc}\n\nPost around 19:00 IST. Upload privately first and check the audit."
-    (proj / "publish.md").write_text(pack)
-    return pack
+    from . import pack
+    text = pack.build(spec, [proj / "img" / "credits.json", proj / "vid" / "credits.json"])
+    (proj / "publish.md").write_text(text)
+    return text
 
 
 def handle(chat: str, text: str) -> int:

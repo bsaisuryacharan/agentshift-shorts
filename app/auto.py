@@ -439,7 +439,7 @@ def telegram(text: str, video: Path | None = None, chat: str | None = None) -> b
 
 def caption(spec: dict, j: dict) -> str:
     return (f"{spec['title'][:60]} #shorts\n\nJudge {j['judge']}: {j['scores']}\nSources: {json.dumps(spec['sources'], ensure_ascii=False)[:600]}\n"
-            "Review, then publish from your phone (private-until-audit rule).")
+            "Approved by the automatic review. The upload pack follows; upload it yourself (private first).")
 
 
 # ---------------------------------------------------------------- the loop -------------------------------------------------
@@ -474,8 +474,12 @@ def finish(spec: dict, writer: str, out: Path, deliver: bool, chat: str | None) 
         with open(ledger, "a") as f:
             f.write(json.dumps({"id": spec["id"], "title": spec["title"], "scores": j["scores"],
                                 "blob": spec["title"].lower() + " " + " ".join(b["say"].lower() for b in spec["beats"])}) + "\n")
+        from . import pack
+        text = pack.build(spec, [run_dir / "img" / "credits.json", run_dir / "vid" / "credits.json"])
+        (run_dir / "publish.md").write_text(text)
         if deliver:
-            telegram(caption(spec, j) + credits_line(run_dir), final, chat)
+            telegram(caption(spec, j), final, chat)
+            telegram(text, chat=chat)                        # second message: the full upload pack, ready to paste
         return True, [], run_dir, j
     return False, j["fixes"] or ["raise visual quality and accuracy"], run_dir, j
 

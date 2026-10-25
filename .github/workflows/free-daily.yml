@@ -58,6 +58,7 @@ jobs:
           name: run
           path: |
             runs/**/telegram.mp4
+            runs/**/publish.md
             runs/**/qa.json
             runs/**/vision.json
             runs/**/sheet.jpg

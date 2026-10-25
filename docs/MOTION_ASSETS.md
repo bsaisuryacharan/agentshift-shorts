@@ -52,3 +52,14 @@ Vidsplay asks for a credit link. NASA images.nasa.gov for space footage. None of
 ## Known limits
 Ambient clips are only 4; washes are subtle. More ambient fields (smoke, dust, embers, film grain, bokeh) would raise variety most. Footage relevance depends on NASA's
 catalogue (good for space/Earth, none for finance/biology), so the judge's frame review is the safety net.
+
+
+## Motion-graphics gallery (open source): HyperFrames components in every Short
+`assets/gallery/hyperframes/` vendors nine components from https://github.com/heygen-com/hyperframes (Apache-2.0, commit pinned in SOURCE.md).
+`app/gallery_hf.py` mounts them in the overlay as `{"t":"hf","name":...,"vars":{...}}` elements: each runs in an iframe whose own paused GSAP timeline is
+driven by the Short's master timeline, so the frame-by-frame overlay renderer reproduces it exactly. Six are offered to the script writer (per-word-rise,
+scramble-reveal, kinetic-type-swap, count-up, titlecard-lockup, vox-annotate); chart-story and grid-card-assemble are vendored but their labels are too small
+for a phone, native-notification-pop ships an opaque demo backdrop. The validator checks every variable against the component's own registry definition,
+requires >= 2 different components per Short and puts their numbers through the same "must appear in FACTS" check as every other number.
+`python -m app.hudtest` / the `hud-test` workflow renders each component with sample values into a contact sheet (no LLM or picture quota).
+The 33-clip Make-tab feed from the HyperFrames desktop app is other creators' finished videos: it is NOT reused as footage, only studied for style.
