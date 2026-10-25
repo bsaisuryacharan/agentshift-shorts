@@ -1,0 +1,23 @@
+{
+ "current": "ball-lightning-energy-a1",
+ "projects": {
+  "ball-lightning-energy-a1": {
+   "title": "What if we harnessed Ball Lightning?",
+   "base": "ball-lightning-energy-a1",
+   "status": "draft",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 3,
+    "accuracy": 9,
+    "originality": 4,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 3,
+    "hierarchy": 7,
+    "consistency": 7,
+    "payoff": 8,
+    "safe_zone": 10
+   }
+  }
+ }
+}

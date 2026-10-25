@@ -1,0 +1,190 @@
+{
+ "id": "ball-lightning-energy-a1",
+ "title": "What if we harnessed Ball Lightning?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "ENERGY MYSTERIES",
+ "theme": "cool",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for daily what-ifs"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Ball_lightning",
+  "b1": "https://en.wikipedia.org/wiki/Ball_lightning",
+  "b2": "https://en.wikipedia.org/wiki/Ball_lightning",
+  "b3": "https://en.wikipedia.org/wiki/Ball_lightning",
+  "b4": "https://en.wikipedia.org/wiki/Ball_lightning",
+  "b5": "https://en.wikipedia.org/wiki/Ball_lightning",
+  "outro": "https://en.wikipedia.org/wiki/Ball_lightning",
+  "wiki": "https://en.wikipedia.org/wiki/Ball_lightning"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "cinematic photoreal 9:16 wide shot of a glowing spherical plasma ball hovering in a dark, stormy environment, no people, natural light, high contrast, mysterious atmosphere, documentary style",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "What if mysterious, glowing spheres, often mistaken for ghosts, held the key to limitless clean energy?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "what if?",
+     "at": "What"
+    },
+    {
+     "t": "title",
+     "html": "Ball Lightning: *Untapped* Power?",
+     "at": "energy"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "prompt": "cinematic photoreal 9:16 macro shot of a scientific diagram showing varying sizes of glowing spherical plasma, from small to large, against a dark, technical background, no text, no people, natural light, clean lines, infographic style",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Ball lightning: a rare, luminous sphere, from pea-sized to meters wide, lasting over a minute.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "1-100 cm Diameter",
+     "at": "meters",
+     "fx": "shine"
+    },
+    {
+     "t": "line",
+     "values": [
+      1,
+      60
+     ],
+     "labels": [
+      "1 sec",
+      "1 min+"
+     ],
+     "col": "cy",
+     "at": "minute"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "thunderstorm lightning",
+   "focal": [
+    0.5,
+    0.3
+   ],
+   "say": "First recorded in 1195 by Gervase of Canterbury: a fiery globe near London.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "1195 AD",
+     "col": "ok",
+     "at": "1195"
+    }
+   ],
+   "prompt": "documentary photograph of thunderstorm lightning, natural light, no text, no people"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "church interior",
+   "focal": [
+    0.5,
+    0.6
+   ],
+   "say": "In 1638, an 8-foot ball of fire reportedly destroyed parts of a church in Widecombe.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "8-foot",
+     "col": "ir",
+     "at": "8-foot"
+    }
+   ],
+   "prompt": "documentary photograph of church interior, natural light, no text, no people"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "prompt": "cinematic photoreal 9:16 top-down shot of a glowing plasma experiment in a modern, dark laboratory, scientific equipment visible, no people, blue and white light, high tech, documentary style",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Even with 2014 video evidence, scientific data is scarce; lab effects are only visually similar.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Video Year",
+       "2014",
+       "",
+       "cy"
+      ],
+      [
+       "Lab Data",
+       "Scarce",
+       "",
+       "am"
+      ]
+     ],
+     "stagger": true,
+     "at": "2014",
+     "fx": "shine"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "prompt": "cinematic photoreal 9:16 silhouette shot of a futuristic energy containment facility, with glowing energy cores visible through translucent walls, no people, industrial, clean energy concept, documentary style",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Imagine capturing this intense, long-lasting energy. A single ball could power homes or even cities.",
+   "hud": [
+    {
+     "t": "kinetic",
+     "text": "*Untapped* Energy Potential",
+     "at": "cities"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s6.jpg",
+   "prompt": "cinematic photoreal 9:16 wide shot of a vibrant, abstract energy field, swirling light and color, no people, futuristic, conceptual, documentary style",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Harnessing ball lightning could transform our energy landscape. What other mysteries await discovery?",
+   "hud": [
+    {
+     "t": "toast",
+     "title": "UNLEASH POWER",
+     "sub": "Follow for more what-ifs",
+     "icon": "⚡️",
+     "at": "Harnessing"
+    }
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Ball lightning",
+  "url": "https://en.wikipedia.org/wiki/Ball_lightning",
+  "text": "Ball lightning is a rare and unexplained phenomenon described as luminescent spherical objects that vary from pea-sized to several meters (yards) in diameter. Though usually associated with thunderstorms, the observed phenomenon is reported to last considerably longer than the split-second flash of a lightning bolt and is distinct from St. Elmo's fire and will-o'-the-wisp. Some 20th-century reports describe balls that eventually explode and leave behind an odor of sulfur. Descriptions of ball lightning appear in a variety of accounts over the centuries and have received attention from scientists. An optical spectrum of what appears to have been a ball lightning event was published in January 2014 and included a video at high frame rate. Nevertheless, scientific data on ball lightning remain scarce. Although laboratory experiments have produced effects that are visually similar to reports of ball lightning, how these relate to the phenomenon remains unclear. == Characteristics ==\nDescriptions of ball lightning vary widely. It has been described as moving up and down, sideways or in unpredictable trajectories, hovering and moving with or against the wind; attracted to, unaffected by, or repelled from buildings, people, cars and other objects. Some accounts describe it as moving through solid masses of wood or metal without effect, while others describe it as destructive and melting or burning those substances. Its appearance has also been linked to power lines, altitudes of 300 m (1,000 feet) and higher, and during thunderstorms and calm weather. Ball lightning has been described as transparent, translucent, multicolored, evenly lit, radiating flames, filaments or sparks, with shapes that vary between spheres, ovals, tear-drops, rods, or disks. Although they are separate and distinct phenomena, ball lightning is often erroneously identified as St. Elmo's fire. The balls have been reported to disperse in many different ways, such as suddenly vanishing, gradually dissipating, being absorbed into an object, \"popping\", exploding loudly, or even exploding with force, which is sometimes reported as damaging. Accounts also vary on their alleged danger to humans, from lethal to harmless. A review of the available literature published in 1972 identified the properties of a \"typical\" ball lightning, whilst cautioning against overreliance on eye-witness accounts:\n\nThey frequently appear almost simultaneously with cloud-to-ground lightning discharge\nThey are generally spherical or pear-shaped with fuzzy edges\nTheir diameters range from 1–100 cm (0.4–40 inches), most commonly 10–20 cm (4–8 inches)\nTheir brightness corresponds to roughly that of a domestic lamp, so they can be seen clearly in daylight\nA wide range of colors has been observed, with red, orange, and yellow being the most common\nThe lifetime of each event is from one second to over a minute with the brightness remaining fairly constant during that time\nThey tend to move at a few meters per second, most often in a horizontal direction, but may also move vertically, remain stationary, or wander erratically\nMany are described as having rotational motion\nIt is rare that observers report the sensation of heat, although in some cases the disappearance of the ball is accompanied by the liberation of heat\nSome display an affinity for metal objects and may move along conductors such as wires, metal fences, or railroad tracks\nSome appear within buildings passing through closed doors and windows\nSome have appeared within metal aircraft and have entered and left without causing damage\nThe disappearance of a ball is generally rapid and may be either silent or explosive\nOdors resembling ozone, burning sulphur, or nitrogen oxides are often reported\n\n\n== Historical accounts ==\nBall lightning is a possible source of legends that describe luminous balls, such as the mythological Anchimayen from Argentinean and Chilean Mapuche culture. According to a statistical investigation carried out in 1960, of 1,962 Oak Ridge National Laboratory monthly role personnel, and of all 15,923 Union Carbide Nuclear Company personnel in Oak Ridge, found 5.6% and 3.1% respectively reported seeing ball lightning. A Scientific American article summarized the study as having found that ball lightning had been seen by 5% of the population of the Earth. Another study analyzed reports of more than 2,000 cases. === Gervase of Canterbury ===\nThe chronicle of Gervase of Canterbury, an English monk, contains what is possibly the earliest known reference to ball lightning, dated 7 June 1195. He states, \"A marvellous sign descended near London\", consisting of a dense and dark cloud, emitting a white substance that grew into a spherical shape under the cloud, from which a fiery globe fell towards the river. Physicist Emeritus Professor Brian Tanner and historian Giles Gasper of Durham University identified the chronicle entry as probably describing ball lightning, and noted its similarity to other accounts:\n\nGervase's description of a white substance coming out of the dark cloud, falling as a spinning fiery sphere and then having some horizontal motion is very similar to historic and contemporary descriptions of ball lightning ... It is fascinating to see how closely Gervase's 12th century description matches modern reports of ball lightning. === Great Thunderstorm of Widecombe-in-the-Moor ===\n\nOne early account reports on the Great Thunderstorm at a church in Widecombe-in-the-Moor, Devon, in England, on 21 October 1638. Four people died and approximately 60 suffered injuries during a severe storm. Witnesses described an 8-foot (2.4 m) ball of fire striking and entering the church, nearly destroying it. Large stones from the church walls were hurled onto the ground and through large wooden beams. The ball of fire allegedly smashed the pews and many windows, and filled the church with a foul sulfurous odor and dark, thick smoke. The ball of fire reportedly divided into two segments, one exiting through a window by smashing it open, the other disappearing somewhere inside the church. Because of the fire and sulphur smell, contemporaries explained the ball of fire as \"the devil\" or as the \"flames of hell\". Later, some blamed the entire incident on two people who had been playing cards in the pews during the sermon, thereby incurring God's wrath. === The sloop Catherine and Mary ===\nIn December 1726, a number of British newspapers printed an extract of a letter from John Howell of the sloop Catherine and Mary:\n\nAs we were coming thro' the Gulf of Florida on 29th of August, a large ball of fire fell from the Element and split our mast in Ten Thousand Pieces, if it were possible; split our Main Beam, also Three Planks of the Side, Under Water, and Three of the Deck; killed one man, another had his Hand carried of  [sic], and had it not been for the violent rains, our Sails would have been of a Blast of Fire. === HMS Montague ===\nOne particularly large example was reported \"on the authority of Dr. Gregory\" in 1749:\n\nAdmiral Chambers on board the HMS Montague, 4 November 1749, was taking an observation just before noon ... he observed a large ball of blue fire about three miles [5 km] distant from them. They immediately lowered their topsails, but it came up so fast upon them, that, before they could raise the main tack, they observed the ball rise almost perpendicularly, and not above forty or fifty yards [35 or 45 m] from the main chains when it went off with an explosion, as great as if a hundred cannons had been discharged at the same time, leaving behind it a strong sulfurous smell. By this explosion the main top-mast was shattered into pieces and the main mast went down to the keel. Five men were knocked down and one of them very bruised."
+ },
+ "_writer": "gemini"
+}
