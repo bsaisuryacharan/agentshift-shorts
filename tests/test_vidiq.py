@@ -37,3 +37,16 @@ def test_insights_hint_includes_vidiq(monkeypatch, tmp_path):
     monkeypatch.setattr(vidiq, "PATH", snap(tmp_path))
     monkeypatch.setattr(vidiq, "hint", lambda *a, **k: "VIDIQ-LINE")
     assert insights.hint().endswith("VIDIQ-LINE")
+
+
+def test_hint_leads_with_channel_results(tmp_path):
+    p = snap(tmp_path)
+    d = json.loads(p.read_text())
+    d["channel"] = {"findings": ["Space beats AI tutorials."], "direction": "Space Shorts.", "visual_level": "Cinematic."}
+    p.write_text(json.dumps(d))
+    assert vidiq.hint(path=p).startswith("vidIQ market data".replace("vidIQ market data", "This channel's own results"))
+
+
+def test_committed_snapshot_has_channel_direction():
+    ch = vidiq.load()["channel"]
+    assert ch["findings"] and ch["direction"] and ch["visual_level"]

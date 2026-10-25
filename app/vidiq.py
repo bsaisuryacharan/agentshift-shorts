@@ -2,6 +2,8 @@
 
 The vidIQ connector only exists inside the owner's Claude session (it is not reachable from the GitHub runner), so the snapshot is refreshed
 there (about 40 credits per refresh: breakout Shorts per niche, matching keywords, trending Shorts by views per hour) and committed.
+Source order: this committed snapshot is the primary source (always available in the cloud); live vidIQ queries are secondary and only used to refresh it.
+It also carries the owner's own channel analytics (per-Short views, what pattern works, direction, visual level).
 The pipeline reads it through hint(); like insights it is advisory text for the LLM, never a source of facts for a script.
 """
 from __future__ import annotations
@@ -29,13 +31,16 @@ def age_days(d: dict, today: date | None = None) -> int | None:
         return None
 
 
-def hint(max_chars: int = 900, path: Path = PATH) -> str:
+def hint(max_chars: int = 1800, path: Path = PATH) -> str:
     """advisory paragraph: proven title shapes, low-competition search terms, what is breaking out now ('' without a snapshot or when stale)"""
     d = load(path)
     age = age_days(d)
     if not d or age is None or age > STALE_DAYS:
         return ""
     parts = []
+    ch = d.get("channel") or {}
+    if ch.get("findings"):
+        parts.append("This channel's own results: " + " ".join(ch["findings"][:3]) + f" Direction: {ch.get('direction', '')} Visuals: {ch.get('visual_level', '')}")
     if d.get("patterns"):
         parts.append("vidIQ market data: " + " ".join(d["patterns"][:4]))
     kws = [k for k in d.get("keywords", []) if (k.get("competition") or 100) <= 50]
