@@ -18,7 +18,7 @@ OUT = ROOT / "assets" / "insights.json"
 
 NICHE = re.compile(r"\b(?:scien|space|nasa|esa\b|planet|moon|mars\b|solar|star\b|stars\b|galax|universe|black hole|telescope|rocket|satellite|orbit|astronaut|physic|quantum|chemi|biolog|"
                    r"animal|nature|ocean|climate|earth\b|volcan|earthquake|dinosaur|fossil|species|brain|psycholog|histor|ancient|empire|archaeolog|discover|experiment|"
-                   r"energy|robot|\bai\b|artificial intelligence|computer|technolog|invention|mystery|unsolved|explained|how .{2,30} works)", re.I)
+                   r"robot|artificial intelligence|computer science|invention|mystery|unsolved|explained|how .{2,30} works)", re.I)
 
 
 def _ascii_ratio(s: str) -> float:
