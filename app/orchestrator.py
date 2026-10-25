@@ -27,7 +27,7 @@ from . import auto
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE, PROJ, OUT = ROOT / "state", ROOT / "projects", ROOT / "runs"
-HELP = ("Commands:\n/new <topic> - make a Short\n/approve - approve the current Short and get its upload pack\n/upload - upload the approved Short to YouTube (private, scheduled 19:00 IST)\n/status - current Short\n/list - recent Shorts\n/use <id> - switch\n"
+HELP = ("Commands:\n/new <topic> - make a Short\n/approve - approve the current Short and get its upload pack\n/upload - retry the YouTube upload of the approved Short (approving already does it)\n/status - current Short\n/list - recent Shorts\n/use <id> - switch\n"
         "Or just describe a change to the current Short: \"shorter hook\", \"re-roll image 3\", \"change 8.3 to 8.2 billion\".")
 
 REVISE_SYSTEM = auto.SYSTEM + """
@@ -251,6 +251,8 @@ def handle(chat: str, text: str) -> int:
                 with open(ledger, "a") as f:
                     f.write(json.dumps({"id": cur, "title": spec["title"], "blob": spec["title"].lower() + " " + " ".join(b["say"].lower() for b in spec["beats"])}) + "\n")
                 say(chat, "Approved. Publish pack:\n\n" + publish_pack(spec, PROJ / cur))
+                _save(chat, st)
+                do_upload(chat, st)                       # approving is the only step: the upload (private, scheduled) follows by itself
         elif it == "upload":
             do_upload(chat, st)
         elif it == "new":

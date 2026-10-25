@@ -109,7 +109,8 @@ def test_approve_intent_and_publish_pack(env, tmp_path, monkeypatch):
     o._save("42", {"current": "demo-a1", "projects": {"demo-a1": {"title": spec["title"], "status": "delivered"}}})
     assert o.handle("42", "/approve") == 0
     assert o._state("42")["projects"]["demo-a1"]["status"] == "approved"
-    assert "#shorts" in env[-1][1] and "CC BY-SA 4.0" in env[-1][1]
+    pack_msg = next(m[1] for m in env if "Approved. Publish pack" in m[1])
+    assert "#shorts" in pack_msg and "CC BY-SA 4.0" in pack_msg
     assert (tmp_path / "hist.jsonl").exists()
 
 
@@ -191,3 +192,28 @@ def test_upload_without_secret_or_scope_explains_what_to_do(monkeypatch):
         raise AssertionError("expected UploadError")
     except upload.UploadError as e:
         assert "permission to upload" in str(e) and "authorize-youtube" in str(e)
+
+
+def test_approve_triggers_the_upload_by_itself(env, tmp_path, monkeypatch):
+    from app import upload
+    monkeypatch.setattr(auto, "LIMITS", {**auto.LIMITS, "history": tmp_path / "hist.jsonl"})
+    _prep_upload(tmp_path, status="delivered")
+    calls = []
+    monkeypatch.setattr(upload, "fetch_video", lambda run_id, spec_id: calls.append("fetch") or tmp_path / "v.mp4")
+    monkeypatch.setattr(upload, "upload", lambda video, parts, when: calls.append("upload") or
+                        {"id": "zz", "url": "https://youtube.com/watch?v=zz", "privacy": "private", "publish_at": "2026-10-26T13:30:00Z"})
+    assert o.handle("42", "/approve") == 0
+    assert calls == ["fetch", "upload"]
+    texts = [m[1] for m in env]
+    assert any("Approved. Publish pack" in x for x in texts) and any("https://youtube.com/watch?v=zz" in x for x in texts)
+    assert o._state("42")["projects"]["demo-a1"]["status"] == "approved" and o._state("42")["projects"]["demo-a1"]["uploaded"]["id"] == "zz"
+    assert o.handle("42", "/approve") == 0 and calls == ["fetch", "upload"]          # approving twice never uploads twice
+
+
+def test_failed_auto_upload_keeps_the_approval_and_says_how_to_retry(env, tmp_path, monkeypatch):
+    from app import upload
+    monkeypatch.setattr(auto, "LIMITS", {**auto.LIMITS, "history": tmp_path / "hist.jsonl"})
+    _prep_upload(tmp_path, status="delivered")
+    monkeypatch.setattr(upload, "fetch_video", lambda *a: (_ for _ in ()).throw(upload.UploadError("no artifact")))
+    assert o.handle("42", "/approve") == 0
+    assert o._state("42")["projects"]["demo-a1"]["status"] == "approved" and "Upload did not happen" in env[-1][1]

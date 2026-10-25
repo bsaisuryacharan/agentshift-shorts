@@ -46,4 +46,4 @@ def build(spec: dict, credit_files: list[Path]) -> str:
     return (f"UPLOAD PACK\n\nTITLE:\n{p['title']}\n\nDESCRIPTION:\n{p['description']}\n\nTAGS:\n{', '.join(p['tags'])}\n\nPINNED COMMENT:\n{p['pinned']}\n\n"
             "SETTINGS:\n- Audience: not made for kids\n- Altered or synthetic content: YES (AI-generated narration and some generated pictures)\n"
             "- Visibility: upload as Private first, check the copyright/audit result, then schedule\n- Suggested time: 19:00 IST\n\n"
-            "Want me to upload it for you (private, scheduled 19:00 IST)? Send /upload")
+            "Send /approve to approve it: it is then uploaded to YouTube automatically (private, scheduled 19:00 IST).")

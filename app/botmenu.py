@@ -14,8 +14,8 @@ COMMANDS = [
     ("status", "Current Short and its scores"),
     ("list", "Recent Shorts"),
     ("use", "Switch to a Short: /use <id>"),
-    ("approve", "Approve the current Short and get its upload pack"),
-    ("upload", "Upload the approved Short to YouTube (private, scheduled)"),
+    ("approve", "Approve the Short: uploads it to YouTube (private, scheduled)"),
+    ("upload", "Retry the YouTube upload of the approved Short"),
     ("help", "What the bot can do"),
 ]
 
