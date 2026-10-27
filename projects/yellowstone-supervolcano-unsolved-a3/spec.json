@@ -1,0 +1,228 @@
+{
+ "id": "yellowstone-supervolcano-unsolved-a3",
+ "title": "Why Yellowstone's Supervolcano Is *Still* a Mystery?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "UNSOLVED",
+ "theme": "earth",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Yellowstone_Caldera",
+  "b1": "https://en.wikipedia.org/wiki/Yellowstone_Caldera",
+  "b2": "https://en.wikipedia.org/wiki/Yellowstone_Caldera",
+  "b3": "https://en.wikipedia.org/wiki/Yellowstone_Caldera",
+  "b4": "https://en.wikipedia.org/wiki/Yellowstone_Caldera",
+  "b5": "https://en.wikipedia.org/wiki/Yellowstone_Caldera",
+  "b6": "https://en.wikipedia.org/wiki/Yellowstone_Caldera",
+  "outro": "https://en.wikipedia.org/wiki/Yellowstone_Caldera",
+  "wiki": "https://en.wikipedia.org/wiki/Yellowstone_Caldera"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Yellowstone caldera aerial",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Yellowstone National Park hides a supervolcano scientists cannot fully predict.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "why?",
+     "at": "supervolcano"
+    },
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "Yellowstone",
+      "kicker": "Unsolved Mystery",
+      "rule": "show"
+     },
+     "at": "supervolcano",
+     "dur": 2.5,
+     "accent": "blue"
+    }
+   ],
+   "prompt": "documentary photograph of Yellowstone caldera aerial, natural light, no text, no people"
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Yellowstone caldera map",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Its last supereruption was 631,000 years ago, forming the vast Lava Creek Tuff.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "631,000 years",
+     "col": "am",
+     "at": "ago"
+    },
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 631000,
+      "prefix": "Last Eruption: ",
+      "suffix": " years ago",
+      "glow": false
+     },
+     "at": "ago",
+     "dur": 2.5,
+     "accent": "blue"
+    }
+   ],
+   "prompt": "documentary photograph of Yellowstone caldera map, natural light, no text, no people"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Grand Prismatic Spring",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "It's a vast volcanic field with multiple calderas and active hydrothermal features.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Volcanic Field",
+     "col": "cy",
+     "at": "field"
+    }
+   ],
+   "prompt": "documentary photograph of Grand Prismatic Spring, natural light, no text, no people"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a geological diagram showing Earth's crust moving over a stationary mantle plume, cross-section, no labels, wide shot, natural light",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Driven by a deep Yellowstone hotspot, the North American Plate moves over it.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "North American Plate",
+     "col": "ok",
+     "at": "Plate"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "prompt": "photoreal cinematic 9:16 image of ancient volcanic rock formations, close-up macro shot, weathered textures, natural light",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Volcanism began 2.15 million years ago, with three cycles of immense eruptions.",
+   "hud": [
+    {
+     "t": "delta",
+     "text": "+3 cycles",
+     "dir": "up",
+     "col": "ir",
+     "at": "cycles"
+    },
+    {
+     "t": "hf",
+     "name": "scramble-reveal",
+     "vars": {
+      "text": "Immense Eruptions",
+      "style": "terminal"
+     },
+     "at": "eruptions",
+     "dur": 2.5,
+     "accent": "green"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "Old Faithful eruption",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Yellowstone remains active with constant earthquakes and significant ground deformation.",
+   "hud": [
+    {
+     "t": "list",
+     "items": [
+      [
+       " tremors",
+       "Earthquakes",
+       "Frequent"
+      ],
+      [
+       " ⛰️",
+       "Ground Lift",
+       "Active"
+      ]
+     ],
+     "stagger": true,
+     "at": "active"
+    }
+   ],
+   "prompt": "documentary photograph of Old Faithful eruption, natural light, no text, no people"
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "prompt": "photoreal cinematic 9:16 image of seismic monitoring equipment in a remote, rugged landscape, long shot, focused on instruments, natural light",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The Yellowstone Volcano Observatory monitors it, but can't predict the next eruption.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "Unpredictable",
+     "col": "am",
+     "at": "eruption"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "photo": "Yellowstone landscape wide",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The timing of Yellowstone's next major event remains one of Earth's greatest puzzles.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "Follow for more *unsolved* mysteries",
+     "at": "puzzles"
+    }
+   ],
+   "prompt": "documentary photograph of Yellowstone landscape wide, natural light, no text, no people"
+  }
+ ],
+ "format": "unsolved",
+ "_facts": {
+  "title": "Yellowstone Caldera",
+  "url": "https://en.wikipedia.org/wiki/Yellowstone_Caldera",
+  "text": "The Yellowstone Caldera, also known as the Yellowstone Plateau Volcanic Field, is a Quaternary volcanic field, caldera complex, and volcanic plateau spanning parts of Wyoming, Idaho, and Montana. It is driven by the Yellowstone hotspot and lies largely within Yellowstone National Park. The field comprises several overlapping caldera structures, multiple lava domes and resurgent domes, and numerous bimodal lavas and tuffs of basaltic and rhyolitic composition, originally covering about 17,000 km2 (6,600 mi2). Volcanism began 2.15 million years ago and proceeded through three major volcanic cycles. Each cycle involved a large ignimbrite eruption, widespread pyroclastic flows and ash fall, and caldera collapse, preceded and followed by smaller lava flows and tuffs. The climactic eruption of the first and largest cycle produced the Huckleberry Ridge Tuff about 2.08 million years ago and formed the first-cycle caldera complex. The second cycle culminated in eruption of the Mesa Falls Tuff and formation of the Henry's Fork Caldera about 1.3 million years ago. The most recent supereruption, about 631,000 years ago, produced the Lava Creek Tuff and created the present Yellowstone Caldera. Post-caldera eruptions included basalt flows, rhyolite domes and flows, and minor explosive deposits, with the last known magmatic eruption about 70,000 years ago. Large hydrothermal explosions also occurred during the Holocene. The volcanic field remains active, with continuing earthquakes, ground deformation, and extensive hydrothermal activity driven by heat from the underlying magmatic system. The Yellowstone Volcano Observatory monitors the region and does not consider an eruption imminent. Imaging of the magmatic system indicates a substantial volume of partial melt beneath Yellowstone, although it is not presently considered eruptible. == Geologic setting ==\nThe Yellowstone Plateau Volcanic Field lies at the eastern end of the Snake River Plain and disrupts the continuity of the Laramide orogenic belt, which formed during the Late Cretaceous. From about 53 to 43 million years ago, this area experienced significant andesitic volcanism exceeding 29,000 km3 (7,000 mi3) in total volume, forming the Absaroka Volcanic\nSupergroup. Prominent peaks such as Mount Washburn and Eagle Peak are eroded remnants of these earlier stratovolcanoes. Before the formation of the Yellowstone Plateau, the Teton Range and Madison Range were likely structurally continuous, as were the Red Mountains and Gallatin Range. Current Yellowstone volcanism is not a continuation of Laramide tectonism or the Absaroka volcanic province. Instead, it is the youngest part of a northeastward age progression of rhyolitic volcanic complexes along the Snake River Plain, extending at least 16 million years to the McDermitt caldera complex. Large rhyolitic tuff eruptions occurred at several of these older eruptive centers. The age progression is generally attributed to southwestward motion of the North American Plate relative to the Yellowstone hotspot. The Yellowstone Plateau also lies along the northeastern margin of the extensional Basin and Range Province. Regional extension has accompanied the migration of volcanism toward Yellowstone and contributes to the active fault systems surrounding the plateau, including major normal faults north and south of the caldera. Regional extension persists across the volcanic field. Lidar mapping identified more than 1,000 extensional fault scarps across the Yellowstone Caldera and interpreted a north–south zone as kinematically linking the Teton Fault and East Gallatin fault systems. The ultimate origin of the Yellowstone hotspot remains debated. Proposed explanations include upper-mantle processes related to the subducted Farallon plate, including slab rollback, rifting, and small-scale mantle convection, as well as deeper-mantle mechanisms. An alternative model invokes a long-lived mantle plume, potentially also related to emplacement of the Columbia River Basalt Group. Seismic tomography has imaged a broad thermal anomaly extending through the mantle beneath Yellowstone, which has been interpreted as supporting a deep-mantle origin. == Volcanic landforms ==\nThe present landscape of the Yellowstone Plateau reflects overlapping caldera structures, resurgent uplift, thick lava flows, and subsequent modification by faulting, hydrothermal activity, glaciation, and erosion. === Caldera structures ===\nThe first-cycle caldera complex probably consisted of three partly overlapping collapse areas, termed the Big Bend Ridge, Snake River, and Red Mountains caldera segments. Its northern and eastern extent is uncertain because of burial by younger volcanic rocks, although it probably extended into the area of the third-cycle caldera, perhaps east of the Central Plateau. The Huckleberry Ridge Tuff in the Red Mountains is interpreted as thick intracaldera fill, and Big Bend Ridge at the southwestern edge of the volcanic plateau is inferred to be part of the first-cycle caldera wall. A fault along the Snake River and Glade Creek, bounding the northern end of the Teton Range and Huckleberry Ridge, is also interpreted as part of the first-cycle ring-fault system. It is not known whether any of the first-cycle caldera segments underwent resurgence. The second-cycle collapse structure is the Henry's Fork Caldera. Thurmon Ridge at the northwestern edge of the volcanic plateau is inferred to be its northern caldera wall. The fault along Big Bend Ridge was reactivated during second-cycle collapse. Although basalt flows bury the southern and eastern boundary, a positive gravity anomaly indicates a nearly circular caldera about 19 km (12 mi) in diameter, with its southern boundary beneath the central Island Park basin. Robert L."
+ },
+ "_writer": "gemini"
+}

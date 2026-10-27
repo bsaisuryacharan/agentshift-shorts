@@ -1,5 +1,5 @@
 {
- "current": "tardigrade-radiation-vs-human-a2",
+ "current": "yellowstone-supervolcano-unsolved-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -55,6 +55,25 @@
     "safe_zone": 10
    },
    "run_id": "40201339279"
+  },
+  "yellowstone-supervolcano-unsolved-a3": {
+   "title": "Why Yellowstone's Supervolcano Is *Still* a Mystery?",
+   "base": "yellowstone-supervolcano-unsolved-a3",
+   "status": "draft",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 5,
+    "accuracy": 9,
+    "originality": 5,
+    "policy": 10,
+    "visual_variety": 8,
+    "polish": 4,
+    "hierarchy": 8,
+    "consistency": 6,
+    "payoff": 6,
+    "safe_zone": 10
+   },
+   "run_id": "40544018957"
   }
  }
 }
