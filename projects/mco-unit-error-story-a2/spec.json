@@ -1,0 +1,209 @@
+{
+ "id": "mco-unit-error-story-a2",
+ "title": "The Math Error that Killed a Mission",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "THE STORY",
+ "theme": "cool",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "NASA Mars Climate Orbiter Mission Profile",
+  "b4": "Wikipedia: Mars Climate Orbiter measurement mismatch",
+  "wiki": "https://en.wikipedia.org/wiki/Mars_Climate_Orbiter"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Mars Climate Orbiter",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "NASA sent a 125 million dollar probe to Mars, but it never called home.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "story",
+     "at": "NASA"
+    },
+    {
+     "t": "title",
+     "html": "The *Math* Error",
+     "at": "called"
+    }
+   ],
+   "prompt": "documentary photograph of Mars Climate Orbiter, natural light, no text, no people"
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Mars Climate Orbiter space",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 1998, the Mars Climate Orbiter launched to study the Red Planet’s weather.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "MISSION START",
+      "label": "1998",
+      "kicker": "NASA SURVEYOR"
+     },
+     "at": "1998"
+    }
+   ],
+   "prompt": "documentary photograph of Mars Climate Orbiter space, natural light, no text, no people"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "footage": "Mars planet orbit",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "On September 23, 1999, it reached orbit, but the trajectory was dangerously low.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 1999,
+      "prefix": "YEAR ",
+      "glow": true
+     },
+     "at": "1999"
+    }
+   ],
+   "prompt": "documentary photograph of Mars planet orbit, natural light, no text, no people"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "NASA Deep Space Network antenna",
+   "focal": [
+    0.5,
+    0.3
+   ],
+   "say": "Communication was permanently lost as the probe vanished into the Martian atmosphere.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "SIGNAL LOST",
+     "col": "ir",
+     "at": "lost"
+    }
+   ],
+   "prompt": "documentary photograph of NASA Deep Space Network antenna, natural light, no text, no people"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "prompt": "Photoreal cinematic 9:16 image of a technical blueprint with precise engineering markings, no text, no numbers, realistic paper texture, top-down view.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The cause? A simple measurement mismatch between two engineering teams.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "scramble-reveal",
+     "vars": {
+      "text": "UNIT MISMATCH",
+      "accent": "blue"
+     },
+     "at": "mismatch"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "prompt": "Photoreal cinematic 9:16 macro shot of a computer screen showing complex green orbital code, no faces, technical glow, low angle.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "NASA used SI metric units, but Lockheed Martin used US customary units for the thruster software.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "NASA",
+       "Metric",
+       "SI",
+       "cy"
+      ],
+      [
+       "Lockheed",
+       "US Customary",
+       "LBF",
+       "am"
+      ]
+     ],
+     "at": "units"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "Mars atmosphere",
+   "motion": "plasma",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "That tiny error sent the 638 kg probe directly into the atmosphere, where it was destroyed.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "638 KG",
+     "col": "ok",
+     "at": "638"
+    }
+   ],
+   "prompt": "documentary photograph of Mars atmosphere, natural light, no text, no people"
+  },
+  {
+   "key": "b7",
+   "img": "s7.jpg",
+   "photo": "Mars surface horizon",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "One unit error killed a 125 million dollar mission. Follow for more space stories.",
+   "hud": [
+    {
+     "t": "kinetic",
+     "text": "CRITICAL *ERROR*",
+     "at": "error"
+    },
+    {
+     "t": "sub",
+     "html": "Follow for *more*",
+     "at": "Follow"
+    }
+   ],
+   "prompt": "documentary photograph of Mars surface horizon, natural light, no text, no people"
+  }
+ ],
+ "format": "story",
+ "_facts": {
+  "title": "Mars Climate Orbiter",
+  "url": "https://en.wikipedia.org/wiki/Mars_Climate_Orbiter",
+  "text": "The Mars Climate Orbiter (formerly the Mars Surveyor '98 Orbiter) was a robotic space probe launched by NASA on December 11, 1998, to study the Martian climate, Martian atmosphere, and surface changes and to act as the communications relay in the Mars Surveyor '98 program for Mars Polar Lander. However, on September 23, 1999, communication with the spacecraft was permanently lost as it went into orbital insertion. The spacecraft encountered Mars on a trajectory that brought it too close to the planet, and it was destroyed in the atmosphere. An investigation attributed the failure to a measurement mismatch between two measurement systems: SI units (metric) by NASA and US customary units by spacecraft builder Lockheed Martin. == Mission background ==\n\n\n=== History ===\nAfter the loss of Mars Observer and the onset of the rising costs associated with the future International Space Station, NASA began seeking less expensive, smaller probes for scientific interplanetary missions. In 1994, the Panel on Small Spacecraft Technology was established to set guidelines for future miniature spacecraft. The panel determined that the new line of miniature spacecraft should be under 1,000 kg (2,200 lb) with highly focused instrumentation. In 1995, a new Mars Surveyor program began as a set of missions designed with limited objectives, low costs, and frequent launches. The first mission in the new program was Mars Global Surveyor, launched in 1996 to map Mars and provide geologic data using instruments intended for Mars Observer. Following Mars Global Surveyor, Mars Climate Orbiter carried two instruments, one originally intended for Mars Observer, to study the climate and weather of Mars. The primary science objectives of the mission included:\n\nDetermine the distribution of water on Mars\nMonitor the daily weather and atmospheric conditions\nRecord changes on the Martian surface due to wind and other atmospheric effects\nDetermine temperature profiles of the atmosphere\nMonitor the water vapor and dust content of the atmosphere\nLook for evidence of past climate change. === Spacecraft design ===\nThe Mars Climate Orbiter bus measured 2.1 m (6 ft 11 in) tall, 1.6 m (5 ft 3 in) wide and 2.0 m (6 ft 7 in) deep. The internal structure was largely constructed with graphite composite/aluminum honeycomb supports, a design found in many commercial airplanes. With the exception of the scientific instruments, battery and main engine, the spacecraft included dual redundancy on the most important systems. The spacecraft weighed 638 kg (1,407 lb). The spacecraft was three-axis stabilized and included eight hydrazine monopropellant thrusters: four 22 N (4.9 lbf) thrusters to perform trajectory corrections and four 0.9 N (3.2 ozf) thrusters to control attitude. Orientation of the spacecraft was determined by a star tracker, two Sun sensors and two inertial measurement units. Orientation was controlled by firing the thrusters or using three reaction wheels. To perform the Mars orbital insertion maneuver, the spacecraft also included a LEROS 1B main engine rocket, providing 640 N (140 lbf) of thrust by burning hydrazine fuel with nitrogen tetroxide (NTO) oxidizer. The spacecraft included a 1.3 m (4 ft 3 in) high-gain antenna to transceive data with the Deep Space Network over the x band. The radio transponder designed for the Cassini–Huygens mission was used as a cost-saving measure. It also included a two-way UHF radio frequency system to relay communications with Mars Polar Lander upon an expected landing on December 3, 1999. The space probe was powered with a three-panel solar array, providing an average of 500 W at Mars. Deployed, the solar array measured 5.5 m (18 ft 1 in) in length. Power was stored in 12-cell, 16-amp-hour nickel-hydrogen batteries. The batteries were intended to be recharged when the solar array received sunlight and power the spacecraft as it passed into the shadow of Mars. When entering into orbit around Mars, the solar array was to be utilized in the aerobraking maneuver, to slow the spacecraft until a circular orbit was achieved. The design was largely adapted from guidelines from the Small Spacecraft Technology Initiative outlined in the book, Technology for Small Spacecraft. In an effort to simplify previous implementations of computers on spacecraft, Mars Climate Orbiter featured a single computer using an IBM RAD6000 processor implementing the POWER1 ISA, capable of 5, 10 or 20 MHz operation. Data storage was to be maintained on 128 MB of random-access memory (RAM) and 18 MB of flash memory. The flash memory was intended to be used for highly important data, including triplicate copies of the flight system software. == Scientific instruments ==\n\n\n=== Pressure Modulated Infrared Radiometer (PMIRR) ===\n\nThe Pressure Modulated Infrared Radiometer (PMIRR) uses narrow-band radiometric channels and two pressure modulation cells to measure atmospheric and surface emissions in the thermal infrared and a visible channel to measure dust particles and condensates in the atmosphere and on the surface at varying longitudes and seasons. Its principal investigator was Daniel McCleese at JPL/CALTECH. Similar objectives were later achieved with Mars Climate Sounder on board Mars Reconnaissance Orbiter. Its objectives:\n\nMap the three-dimensional and time-varying thermal structure of the atmosphere from the surface to 80 km altitude. Map the atmospheric dust loading and its global, vertical and temporal variation. Map the seasonal and spatial variation of the vertical distribution of atmospheric water vapor to an altitude of at least 35 km. Distinguish between atmospheric condensates and map their spatial and temporal variation. Map the seasonal and spatial variability of atmospheric pressure. Monitor the polar radiation balance."
+ },
+ "_writer": "gemini"
+}

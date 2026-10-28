@@ -1,0 +1,32 @@
+{
+ "s0.jpg": {
+  "file": "File:Mars Climate Orbiter 2.jpg",
+  "license": "Public domain",
+  "artist": "NASA/JPL/Corby Waste",
+  "url": "https://commons.wikimedia.org/wiki/File:Mars_Climate_Orbiter_2.jpg"
+ },
+ "s1.jpg": {
+  "file": "File:Mars Climate Orbiter - artist depiction - climate-orbiter-browse.jpg",
+  "license": "Public domain",
+  "artist": "NASA/JPL",
+  "url": "https://commons.wikimedia.org/wiki/File:Mars_Climate_Orbiter_-_artist_depiction_-_climate-orbiter-browse.jpg"
+ },
+ "s3.jpg": {
+  "file": "File:NASA's Deep Space Antenna Upgrade to Affect Voyager.jpg",
+  "license": "Public domain",
+  "artist": "NASA/Canberra Deep Space Communication Complex",
+  "url": "https://commons.wikimedia.org/wiki/File:NASA%27s_Deep_Space_Antenna_Upgrade_to_Affect_Voyager.jpg"
+ },
+ "s6.jpg": {
+  "file": "File:OSIRIS Mars true color.jpg",
+  "license": "CC BY-SA 3.0 igo",
+  "artist": "ESA &amp; MPS for OSIRIS Team MPS/UPD/LAM/IAA/RSSD/INTA/UPM/DASP/IDA, CC BY-SA 3.0 IGO",
+  "url": "https://commons.wikimedia.org/wiki/File:OSIRIS_Mars_true_color.jpg"
+ },
+ "s7.jpg": {
+  "file": "File:Mars from horizon to horizon ESA394793.jpg",
+  "license": "CC BY-SA 3.0 igo",
+  "artist": "European Space Agency",
+  "url": "https://commons.wikimedia.org/wiki/File:Mars_from_horizon_to_horizon_ESA394793.jpg"
+ }
+}

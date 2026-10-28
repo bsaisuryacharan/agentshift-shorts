@@ -1,5 +1,5 @@
 {
- "current": "how-samsung-buds-on-works-a2",
+ "current": "mco-unit-error-story-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -112,6 +112,25 @@
     "safe_zone": 10
    },
    "run_id": "40677935830"
+  },
+  "mco-unit-error-story-a2": {
+   "title": "The Math Error that Killed a Mission",
+   "base": "mco-unit-error-story-a2",
+   "status": "draft",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 7,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 6,
+    "hierarchy": 7,
+    "consistency": 9,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "40733726110"
   }
  }
 }
