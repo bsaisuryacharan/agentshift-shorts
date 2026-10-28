@@ -1,5 +1,5 @@
 {
- "current": "yellowstone-supervolcano-unsolved-a3",
+ "current": "moores-law-timeline-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -74,6 +74,25 @@
     "safe_zone": 10
    },
    "run_id": "40544018957"
+  },
+  "moores-law-timeline-a3": {
+   "title": "Moore's Law: How it Shrank Computers & Why it's Slowing",
+   "base": "moores-law-timeline-a3",
+   "status": "draft",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 6,
+    "accuracy": 10,
+    "originality": 4,
+    "policy": 10,
+    "visual_variety": 5,
+    "polish": 6,
+    "hierarchy": 7,
+    "consistency": 6,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "40668014902"
   }
  }
 }
