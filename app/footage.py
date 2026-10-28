@@ -8,6 +8,7 @@ if nothing relevant is found the beat keeps its generated still, so footage is a
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 from pathlib import Path
@@ -152,6 +153,66 @@ def _relevant(path: Path, query: str) -> bool | None:
         return None
 
 
+UA = {"User-Agent": "AgentShiftShorts/1.0 (https://youtube.com/@agentshiftai)"}
+
+
+def stock_candidates(query: str, client=httpx) -> list[dict]:
+    """portrait stock clips from Pexels / Pixabay (free keys PEXELS_API_KEY / PIXABAY_API_KEY as secrets); [] without a key. Each: url, id, title, license, source"""
+    out: list[dict] = []
+    key = os.environ.get("PEXELS_API_KEY")
+    if key:
+        try:
+            r = client.get("https://api.pexels.com/videos/search", params={"query": query, "orientation": "portrait", "size": "medium", "per_page": 8},
+                           headers={**UA, "Authorization": key}, timeout=30)
+            r.raise_for_status()
+            for v in r.json().get("videos", []):
+                files = [f for f in v.get("video_files", []) if f.get("file_type") == "video/mp4" and (f.get("height") or 0) >= (f.get("width") or 0)]
+                files.sort(key=lambda f: abs((f.get("height") or 0) - 1280))
+                if files and (v.get("duration") or 0) >= SEG_S + 1:
+                    out.append({"url": files[0]["link"], "id": f"pexels-{v['id']}", "title": (v.get("user") or {}).get("name", "Pexels"),
+                                "license": "Pexels licence (free to use)", "source": v.get("url", "https://www.pexels.com")})
+        except (httpx.HTTPError, ValueError, KeyError) as e:
+            print(f"  pexels {query!r}: {e!r}", flush=True)
+    key = os.environ.get("PIXABAY_API_KEY")
+    if key:
+        try:
+            r = client.get("https://pixabay.com/api/videos/", params={"key": key, "q": query, "per_page": 8, "safesearch": "true"}, headers=UA, timeout=30)
+            r.raise_for_status()
+            for h in r.json().get("hits", []):
+                m = (h.get("videos") or {}).get("medium") or (h.get("videos") or {}).get("small") or {}
+                if m.get("url") and (h.get("duration") or 0) >= SEG_S + 1:
+                    out.append({"url": m["url"], "id": f"pixabay-{h['id']}", "title": h.get("user", "Pixabay"),
+                                "license": "Pixabay licence (free to use)", "source": h.get("pageURL", "https://pixabay.com")})
+        except (httpx.HTTPError, ValueError, KeyError) as e:
+            print(f"  pixabay {query!r}: {e!r}", flush=True)
+    return out
+
+
+def _cut(url: str, dest: Path, start: float) -> bool:
+    try:
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.2f}", "-t", str(SEG_S), "-i", url, "-an",
+                        "-vf", "scale=-2:1120,crop=540:960:(iw-540)/2:0,fps=24", "-c:v", "libx264", "-crf", "24", "-pix_fmt", "yuv420p", str(dest)],
+                       check=True, timeout=180)
+        return dest.exists()
+    except (subprocess.SubprocessError, OSError):
+        return False
+
+
+def fetch_stock(query: str, dest: Path) -> dict | None:
+    """first stock clip that decodes, moves, is bright enough and that the vision check confirms (no person, no text, right subject)"""
+    for item in stock_candidates(query)[:5]:
+        dur = _duration(item["url"])
+        if dur < SEG_S + 1 or not _cut(item["url"], dest, max(0.0, min(dur * 0.25, dur - SEG_S - 0.5))):
+            continue
+        verdict = _relevant(dest, query) if _usable(dest) else False
+        if verdict is None:                           # no vision answer: stock is keyword-searched, so a clip with no person/text is accepted
+            verdict = True
+        if verdict:
+            return {"file": dest.name, "id": item["id"], "title": item["title"][:80], "center": "stock", "license": item["license"], "source": item["source"]}
+        dest.unlink(missing_ok=True)
+    return None
+
+
 def fetch(query: str, dest: Path) -> dict | None:
     """first relevant NASA clip that decodes, is bright enough and moves -> dest (9:16, 540x960, 24 fps, no audio)."""
     weak = 2 if len(_terms(query)) >= 2 else 1               # a multi-word request must match on at least two words
@@ -180,7 +241,7 @@ def fetch(query: str, dest: Path) -> dict | None:
             return {"file": dest.name, "id": item["id"], "title": item["title"][:80], "center": item["center"], "license": "NASA media (public domain)",
                     "source": f"https://images.nasa.gov/details/{item['id']}"}
         dest.unlink(missing_ok=True)
-    return None
+    return fetch_stock(query, dest)
 
 
 def ensure(spec: dict, run_dir: Path, need_pictures: dict[str, str] | None = None) -> dict[str, str]:
@@ -194,7 +255,7 @@ def ensure(spec: dict, run_dir: Path, need_pictures: dict[str, str] | None = Non
     need_pictures = need_pictures or {}
     for b in spec["beats"]:
         q = b.get("footage") or need_pictures.get(b["key"])
-        if not q or len(got) >= (4 if need_pictures else 2):
+        if not q or len(got) >= (4 if need_pictures else 3 if (os.environ.get("PEXELS_API_KEY") or os.environ.get("PIXABAY_API_KEY")) else 2):
             continue
         vid.mkdir(parents=True, exist_ok=True)
         dest = vid / f"{b['key']}.mp4"

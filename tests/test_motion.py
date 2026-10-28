@@ -677,3 +677,27 @@ def test_review_bar_accepts_good_not_broken():
     assert not auto.review_bar({**good, "polish": 4})
     assert not auto.review_bar({**good, "accuracy": 8})
     assert not auto.review_bar({})
+
+
+def test_stock_candidates_need_keys_and_parse(monkeypatch):
+    from app import footage
+    monkeypatch.delenv("PEXELS_API_KEY", raising=False)
+    monkeypatch.delenv("PIXABAY_API_KEY", raising=False)
+    assert footage.stock_candidates("volcano") == []
+
+    class R:
+        def __init__(self, data): self.data = data
+        def raise_for_status(self): pass
+        def json(self): return self.data
+
+    class C:
+        def get(self, url, **k):
+            if "pexels" in url:
+                return R({"videos": [{"id": 7, "duration": 12, "url": "https://pexels.com/v/7", "user": {"name": "Ann"},
+                                      "video_files": [{"file_type": "video/mp4", "width": 720, "height": 1280, "link": "https://x/a.mp4"},
+                                                      {"file_type": "video/mp4", "width": 1920, "height": 1080, "link": "https://x/wide.mp4"}]}]})
+            return R({"hits": [{"id": 9, "duration": 10, "user": "Bob", "pageURL": "https://pixabay.com/v/9", "videos": {"medium": {"url": "https://x/b.mp4"}}}]})
+    monkeypatch.setenv("PEXELS_API_KEY", "k")
+    monkeypatch.setenv("PIXABAY_API_KEY", "k")
+    got = footage.stock_candidates("volcano", client=C())
+    assert [g["id"] for g in got] == ["pexels-7", "pixabay-9"] and got[0]["url"] == "https://x/a.mp4"
