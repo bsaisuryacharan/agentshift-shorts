@@ -1,5 +1,5 @@
 {
- "current": "moores-law-timeline-a3",
+ "current": "how-samsung-buds-on-works-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -93,6 +93,25 @@
     "safe_zone": 10
    },
    "run_id": "40668014902"
+  },
+  "how-samsung-buds-on-works-a2": {
+   "title": "How Galaxy Buds On Work",
+   "base": "how-samsung-buds-on-works-a2",
+   "status": "draft",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 5,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 9,
+    "polish": 4,
+    "hierarchy": 6,
+    "consistency": 8,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "40677935830"
   }
  }
 }

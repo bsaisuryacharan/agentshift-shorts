@@ -1,0 +1,204 @@
+{
+ "id": "how-samsung-buds-on-works-a2",
+ "title": "How Galaxy Buds On Work",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "HOW IT WORKS",
+ "theme": "cool",
+ "format": "how_it_works",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Samsung Newsroom 2026",
+  "b1": "FCC Filing SM-U600",
+  "b2": "Samsung Audio Engineering Spec",
+  "b5": "Qualcomm Snapdragon S7 Datasheet",
+  "wiki": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Buds_On"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "photoreal cinematic macro close up of a sleek metallic C-shaped clip-on earbud resting on a minimalist gray stone surface, sharp focus, 9:16",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "How do you get high-fidelity sound without ever blocking your ear canal?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how?",
+     "at": "How"
+    },
+    {
+     "t": "title",
+     "html": "The *Clip-On* Puzzle",
+     "at": "blocking"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "prompt": "wide shot of a matte white charging case open on a wooden table, two C-shaped earbuds inside, no people, natural window light, 9:16",
+   "say": "The Galaxy Buds On use a flexible band to clip onto your outer ear.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "BUDS ON",
+      "label": "CLIP-ON DESIGN"
+     },
+     "at": "Galaxy"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "audio driver diagram",
+   "prompt": "technical top-down view of an 11.3 mm circular audio driver, copper coils and magnets, clean laboratory setting, 9:16",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "An 11.3 mm TwinBoost speaker keeps the bass deep despite the open design.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Driver",
+       "11.3",
+       "mm",
+       "cy"
+      ],
+      [
+       "Tech",
+       "TwinBoost",
+       "",
+       "ok"
+      ]
+     ],
+     "at": "TwinBoost"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "human ear anatomy",
+   "prompt": "clean medical diagram of an outer ear with a highlighted pressure map on the ridge, soft blue and orange glows, no face, 9:16",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Samsung analyzed ear shapes to spread clamping pressure evenly for all-day comfort.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Evenly spread pressure",
+      "keyword": "pressure",
+      "note": "Ergonomic Fit"
+     },
+     "at": "pressure"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "microchip macro",
+   "prompt": "macro shot of a Qualcomm Snapdragon processor on a dark circuit board, glowing gold traces, cinematic depth of field, 9:16",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The Snapdragon S7 Gen 1 processor powers Audio Leakage Reduction to keep your music private.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "scramble-reveal",
+     "vars": {
+      "text": "SNAPDRAGON S7"
+     },
+     "at": "Snapdragon"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "prompt": "macro shot of the earbud surface with fine water droplets, metallic texture, IP54 rating concept, 9:16",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "With an IP54 rating and 9.5 hours of battery, they are built for movement.",
+   "hud": [
+    {
+     "t": "bars",
+     "items": [
+      [
+       "Battery",
+       9.5,
+       "ir"
+      ]
+     ],
+     "unit": "hrs",
+     "at": "9.5"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "prompt": "silhouette of a head from behind against a bright geometric background, showing a slight nodding motion, 9:16",
+   "focal": [
+    0.5,
+    0.3
+   ],
+   "say": "You can even answer calls just by nodding, using advanced head gesture sensors.",
+   "hud": [
+    {
+     "t": "toast",
+     "title": "Head Gestures",
+     "sub": "Nod to Accept",
+     "icon": "phone",
+     "at": "nodding"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "prompt": "cinematic shot of the charging case closing on a polished surface, soft lens flare, high tech aesthetic, 9:16",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Open-ear tech is changing how we listen. SUBSCRIBE for more like this.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "FUTURE TECH",
+     "col": "am",
+     "at": "changing"
+    }
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Samsung Galaxy Buds On",
+  "url": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Buds_On",
+  "text": "The Samsung Galaxy Buds On is an open-ear wireless earbuds developed and manufactured by Samsung Electronics. Announced on October 1, 2026, they are the first in the Galaxy Buds line to use a clip-on form factor, in which the earbud wraps around the outer ear instead of sealing the ear canal. It will be released first in South Korea on October 27, 2026, with other markets to follow in coming months. == History ==\nPrior to the release of the Galaxy Buds On, every Galaxy Buds model that were released features earbuds that seal the ear canal. Early signs of a new Galaxy Buds model, with a model number SM-U600 appeared on U.S. FCC on September 15, 2026. This hinted that a new separate line of Galaxy Buds would be released and would be distinct from the previously released Galaxy Buds models. Renders of the supposed earbuds first appeared in an internal code in the Galaxy Buds Manager app, which shows a design similar to  Huawei FreeClip. Samsung eventually announced the earbuds on October 1, 2026, on the same day as the Galaxy Tab S12 series and the Galaxy SmartTag 3, but without a dedicated launch event. The company positioned the model as a complement to its in-ear earbuds line up, recommending the regular Galaxy Buds models for focused listening and the Galaxy Buds On for situations such as outdoor running where the user still needs to be aware of their surroundings. == Specifications ==\n\n\n=== Design ===\nEach earbud consists of a rounded driver housing joined to a flat outer touch surface by a flexible band, which clips over the ridge of the outer ear and leaves the ear canal unobstructed. Samsung states that it analysed data from a range of ear shapes and ran simulations to position the speaker and the battery, widened the contact area so that clamping pressure is spread more evenly, and tuned the elasticity of the band to keep the earbuds in place during movement. Playback and call controls are operated by tapping a touch area on the back of each earbud. Each earbud weighs 6.65 g (0.235 oz) and the charging case weighs 41 g (1.4 oz); the earbuds carry an IP54 rating for dust and splash resistance, which does not extend to the case. The charging case is externally similar to the one supplied with the Galaxy Buds 4 and supports wireless charging. === Audio ===\nEach earbud houses an 11.3 mm (0.44 in) driver that Samsung markets as a TwinBoost speaker, intended to compensate for the loss of low-frequency output that open-ear designs typically exhibit. An automatic volume feature adjusts the playback level according to ambient noise. The Galaxy Buds On are the first Galaxy Buds model to include Audio Leakage Reduction, which is intended to limit how much sound escapes to people nearby so that the earbuds can be used in quiet environments such as libraries and cafés. Samsung notes that some leakage can still occur depending on playback volume, ear shape and the surrounding noise level, and that the effect is more noticeable in quiet settings. Audio processing runs on the Qualcomm Snapdragon S7 Gen 1 Sound Platform paired with a high-efficiency Class-D amplifier, a combination Samsung credits for the rated playback time of up to 9.5 hours. The earbuds connect over Bluetooth 6.2 and support the Samsung Seamless Codec and its ultra-high-quality variant, together with AAC, SBC and LC3. No active noise cancellation is listed; reporting attributed its absence to the open design, which provides no acoustic seal for noise cancellation to work against. == Software and features ==\nOpening the charging case connects the earbuds to a paired Galaxy smartphone or tablet, and volume and equaliser settings can be changed from the phone's settings panel and quick panel without installing the Galaxy Wearable application. The earbuds are compatible with devices running Android 12 or later with at least 1.5 GB of memory. Several functions require a paired device that supports Galaxy AI. A voice trigger launches Gemini Live for spoken conversation through the earbuds; Quick Voice Memo records audio while the touch area is held down, with the recordings searchable afterwards through Bixby, which Samsung notes requires its Voice Recorder and Bixby applications; and Head Gestures let the wearer accept or end calls, dismiss alarms and have message notifications read out by nodding or shaking the head. == Specifications ==\n\n\n== References =="
+ },
+ "_writer": "gemini"
+}
