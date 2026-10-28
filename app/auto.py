@@ -25,7 +25,7 @@ from pathlib import Path
 
 import httpx
 
-from . import formats, gallery_hf, insights, vidiq
+from . import formats, gallery_hf, insights, picker, vidiq
 
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
@@ -206,6 +206,7 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
         cands += trend_topics()[:10]
     except Exception as e:
         print("trends unavailable:", type(e).__name__)
+    n_trend_only = len(cands)
     try:
         d = dt.date.today() - dt.timedelta(days=2)
         r = httpx.get(f"https://api.wikimedia.org/feed/v1/wikipedia/en/featured/{d:%Y/%m/%d}", timeout=30,
@@ -217,11 +218,12 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
     past = [json.loads(x)["title"] for x in hist.read_text().splitlines()[-40:]] if hist.exists() else []
     import random
     used = used_topics()
-    cands = [c for c in cands if _norm_topic(c) not in used]
-    news = (insights.load().get("news") or [])[:8]                       # science/tech headlines collected by the weekly job
-    cands += [f"IN THE NEWS: {n}" for n in news]
+    items = [(c, "trend" if i < n_trend_only else "wiki") for i, c in enumerate(cands) if _norm_topic(c) not in used]
+    news = (insights.load().get("news") or [])[:12]                      # science/tech headlines collected by the weekly job
+    items += [(f"IN THE NEWS: {n}", "news") for n in news]
     fresh = [e for e in EVERGREEN if _norm_topic(e) not in used]
-    cands += random.sample(fresh, min(10, len(fresh)))
+    items += [(e, "evergreen") for e in random.sample(fresh, min(14, len(fresh)))]
+    cands = picker.rank(items)                                           # on-niche first: channel results + vidIQ + news, celebrities/sports dropped
     tried = sorted(used)[:60]
     fmt = fmt or formats.choose(recent_formats())
     out = {}
