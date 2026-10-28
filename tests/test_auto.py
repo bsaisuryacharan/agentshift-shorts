@@ -63,7 +63,7 @@ def test_judge_uses_other_provider_and_gates(tmp_path, monkeypatch):
     assert seen["exclude"] == "groq" and j["approved"]
     v = json.loads((tmp_path / "vision.json").read_text())
     assert v["verdict"] == "approve" and "safe_zone" in v["scores"]
-    scores["visual_quality"] = 6
+    scores["polish"] = 4
     assert not auto.judge(tmp_path, SPEC, writer="groq")["approved"]
 
 

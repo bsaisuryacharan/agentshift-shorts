@@ -37,7 +37,10 @@ def shotlist(spec: dict, timing: dict, total: float, vids: dict | None = None) -
         for c in b.get("cuts", []):
             items.append((voice.word_time(timing, b["key"], c["at"], c.get("nth", 0)) - 0.05, c))
         for t, s in items:
-            shots.append({"img": f"img/{s['img']}", "start": round(t, 3), "focal": s.get("focal", [0.5, 0.52]),
+            img = s.get("img") or b.get("img") or next((x["img"].split("/", 1)[-1] for x in reversed(shots)), None)      # a cut or beat with no picture reuses the nearest one
+            if img is None:
+                raise ValueError(f"beat {b['key']} has no picture and there is none to reuse")
+            shots.append({"img": f"img/{img}", "start": round(t, 3), "focal": s.get("focal", [0.5, 0.52]),
                           "zoom": s.get("zoom", 1.32), "rot": s.get("rot", 0.7 * flip), "flash": s.get("flash", 0.12), "fx": fx}
                          | ({"video": vids[b["key"]], "zoom": 1.08, "pingpong": vids[b["key"]].startswith("/")} if vids and s is b and b["key"] in vids else {}))
             flip = -flip

@@ -660,3 +660,20 @@ def test_validate_repairs_gallery_name_used_as_element_type():
     assert e1["t"] == "hf" and e1["name"] == "titlecard-lockup" and e1["vars"] == {"wordmark": "Tardigrade", "kicker": "VS HUMANS"} and e1["at"] == "word"
     assert e2["t"] == "hf" and e2["vars"] == {"text": "Built to survive"} and e2["dur"] == 2
     assert not any("bad hud type" in e or "unknown component" in e for e in errs)
+
+
+def test_shotlist_reuses_picture_when_a_cut_has_none():
+    from app import produce
+    spec = {"beats": [{"key": "b1", "img": "a.jpg", "cuts": [{"at": "x"}]}], "theme": None}
+    timing = {"segments": [{"key": "b1", "start": 0.0, "dur": 3.0, "words": [{"w": "x", "s": 1.0, "e": 1.2}]}]}
+    sl = produce.shotlist(spec, timing, 3.0)
+    assert [s["img"] for s in sl["shots"]] == ["img/a.jpg", "img/a.jpg"]
+
+
+def test_review_bar_accepts_good_not_broken():
+    from app import auto
+    good = {"hook": 9, "visual_quality": 6, "accuracy": 9, "originality": 6, "policy": 10, "visual_variety": 7, "polish": 6, "hierarchy": 7, "consistency": 6, "payoff": 7}
+    assert auto.review_bar(good)
+    assert not auto.review_bar({**good, "polish": 4})
+    assert not auto.review_bar({**good, "accuracy": 8})
+    assert not auto.review_bar({})
