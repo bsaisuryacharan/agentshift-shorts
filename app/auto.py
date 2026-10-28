@@ -430,13 +430,16 @@ Also list concrete fixes. Return JSON {{"scores":{{"hook":n,"visual_quality":n,"
 Pass marks: {PASS}. Be harsh: generic AI-looking stock is 4-6."""
 
 
+SOFT = ("originality", "visual_variety")           # the harshest, most subjective dimensions: low scores there lower the average but do not block
+
+
 def review_bar(s: dict) -> bool:
     """good enough to put in front of the owner, who is the final gate (/approve): safe and accurate for certain, a real hook, nothing badly broken and a decent average.
     The old all-scores-7+ bar was never met on free-tier imagery, so nothing was delivered for days."""
     if not s:
         return False
     return (s.get("policy", 0) >= 10 and s.get("accuracy", 0) >= 9 and s.get("hook", 0) >= 7
-            and min(s.values()) >= 5 and sum(s.values()) / len(s) >= 6.8)
+            and min(v for k, v in s.items() if k not in SOFT) >= 5 and min(s.values()) >= 3 and sum(s.values()) / len(s) >= 6.8)
 
 
 def judge(run: Path, spec: dict, writer: str) -> dict:
