@@ -533,6 +533,7 @@ def telegram(text: str, video: Path | None = None, chat: str | None = None) -> b
             r = httpx.post(base + "sendVideo", data={"chat_id": chat, "caption": text[:1000], "supports_streaming": "true"}, files={"video": f}, timeout=300)
     else:
         r = httpx.post(base + "sendMessage", data={"chat_id": chat, "text": text[:4000]}, timeout=60)
+    print(f"[telegram] {'video' if video else 'message'} sent" if r.status_code == 200 else f"[telegram] FAILED HTTP {r.status_code}: {r.text[:200]}", flush=True)
     return r.status_code == 200
 
 

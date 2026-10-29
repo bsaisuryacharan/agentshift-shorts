@@ -154,6 +154,7 @@ def _relevant(path: Path, query: str) -> bool | None:
 
 
 UA = {"User-Agent": "AgentShiftShorts/1.0 (https://youtube.com/@agentshiftai)"}
+USED: set[str] = set()          # stock clip ids already in this Short: the same clip never shows on two beats
 
 
 def stock_candidates(query: str, client=httpx) -> list[dict]:
@@ -201,7 +202,7 @@ def _cut(url: str, dest: Path, start: float) -> bool:
 
 def fetch_stock(query: str, dest: Path) -> dict | None:
     """first stock clip that decodes, moves, is bright enough and that the vision check confirms (no person, no text, right subject)"""
-    for item in stock_candidates(query)[:5]:
+    for item in [c for c in stock_candidates(query) if c["id"] not in USED][:5]:
         dur = _duration(item["url"])
         if dur < SEG_S + 1 or not _cut(item["url"], dest, max(0.0, min(dur * 0.25, dur - SEG_S - 0.5))):
             continue
@@ -209,6 +210,7 @@ def fetch_stock(query: str, dest: Path) -> dict | None:
         if verdict is None:                           # no vision answer: stock is keyword-searched, so a clip with no person/text is accepted
             verdict = True
         if verdict:
+            USED.add(item["id"])
             return {"file": dest.name, "id": item["id"], "title": item["title"][:80], "center": "stock", "license": item["license"], "source": item["source"]}
         dest.unlink(missing_ok=True)
     return None
@@ -250,6 +252,7 @@ def ensure(spec: dict, run_dir: Path, need_pictures: dict[str, str] | None = Non
     sourced (then real footage is the picture, up to 4 in total). Never raises: no footage -> the still is used."""
     vid = run_dir / "vid"
     got, credits = {}, {}
+    USED.clear()
     cj = vid / "credits.json"
     if cj.exists():
         credits = json.loads(cj.read_text())
