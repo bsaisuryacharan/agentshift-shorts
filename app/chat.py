@@ -335,15 +335,45 @@ def describe(tool: str, inp: dict) -> str:
     return f"Using {tool}"
 
 
-class Progress:
-    """one Telegram message that is edited as Claude works: the query, the steps so far (done ✓, current …), elapsed time"""
+def summarize_result(tool: str, cmd: str, content, is_error: bool = False) -> str:
+    """a few words on what a tool call found ('182 passed', '6 matches', '120 lines'), shown after its step"""
+    text = content if isinstance(content, str) else " ".join(str(c.get("text", "")) for c in content or [] if isinstance(c, dict))
+    text = text.strip()
+    if is_error:
+        return "⚠ " + (text.splitlines()[0][:70] if text else "error")
+    if "pytest" in cmd:
+        m = re.search(r"(\d+ failed)?[, ]*(\d+ passed)", text)
+        return ", ".join(x for x in (m.group(1), m.group(2)) if x) if m else (text.splitlines()[-1][:60] if text else "done")
+    lines = [x for x in text.splitlines() if x.strip()]
+    if tool == "Grep" or cmd.startswith("grep"):
+        return f"{len(lines)} match{'es' if len(lines) != 1 else ''}" if lines else "no matches"
+    if tool == "Read":
+        return f"{len(lines)} lines"
+    if tool == "Glob":
+        return f"{len(lines)} files"
+    if "gh run list" in cmd:
+        return f"{len(lines)} runs"
+    if "gh pr create" in cmd:
+        m = re.search(r"https://\S+/pull/\d+", text)
+        return m.group(0) if m else "opened"
+    if tool in ("Edit", "Write", "MultiEdit"):
+        return "saved"
+    return (lines[0][:60] + ("…" if len(lines[0]) > 60 else "")) if lines else "done"
 
-    def __init__(self, query: str, header: str, chat: str | None = None, min_gap: float = 2.5):
+
+class Progress:
+    """one Telegram message, edited as Claude works: its thinking (live), each step with what it found, and a live preview of the answer"""
+
+    def __init__(self, query: str, header: str, chat: str | None = None, min_gap: float = 2.0):
         self.chat, self.min_gap, self.t0, self.last = chat or _chat(), min_gap, time.time(), 0.0
-        self.head = f"{header}\nYour message: {query[:160]}"
-        self.steps: list[str] = []
-        self.note = ""
-        status = os.environ.get("STATUS", "").strip()            # the Worker already posted "reading your message…": take it over
+        self.head = f"{header}\n❓ {query[:200]}"
+        self.steps: list[str] = []                      # step text
+        self.found: dict[int, str] = {}                 # step index -> what it found
+        self.ids: dict[str, int] = {}                   # tool_use_id -> step index
+        self.tools: dict[str, tuple[str, str]] = {}     # tool_use_id -> (tool, command)
+        self.note = ""                                   # latest thinking / narration
+        self.draft = ""                                  # the answer being written
+        status = os.environ.get("STATUS", "").strip()   # the Worker already posted "reading your message…": take it over
         self.mid = int(status) if status.isdigit() else None
         if self.mid:
             self._edit(force=True)
@@ -351,9 +381,24 @@ class Progress:
             self.mid = self._post()
 
     def _text(self, done: bool = False) -> str:
-        lines = [f"✓ {x}" for x in self.steps[:-1][-10:]] + ([("✓ " if done else "… ") + self.steps[-1]] if self.steps else [])
-        tail = f"\n💭 {self.note}" if self.note and not done else ""
-        return f"{self.head}\n\n" + ("\n".join(lines) or "… starting") + tail + f"\n\n⏱ {int(time.time() - self.t0)} s"
+        out = [self.head]
+        if self.note and not done:
+            out.append("🧠 " + self.note)
+        if self.steps:
+            shown = list(enumerate(self.steps))[-10:]
+            rows = []
+            for i, st in shown:
+                mark = "✓" if (done or i < len(self.steps) - 1 or i in self.found) else "…"
+                rows.append(f"{mark} {st}" + (f" → {self.found[i]}" if i in self.found else ""))
+            more = f"(+{len(self.steps) - 10} earlier steps)\n" if len(self.steps) > 10 else ""
+            out.append("🔧 Steps\n" + more + "\n".join(rows))
+        if self.draft and not done:
+            out.append("✍️ Writing the answer…\n" + ("…" if len(self.draft) > 300 else "") + self.draft[-300:])
+        if not self.steps and not self.note and not self.draft:
+            out.append("… starting")
+        n = len(self.steps)
+        out.append(f"⏱ {int(time.time() - self.t0)} s · {n} step{'s' if n != 1 else ''}")
+        return "\n\n".join(out)
 
     def _post(self) -> int | None:
         return (_tg("sendMessage", chat_id=self.chat, text=self._text()).get("result") or {}).get("message_id")
@@ -367,16 +412,28 @@ class Progress:
             return
         _tg("editMessageText", chat_id=self.chat, message_id=self.mid, text=self._text(done)[:4000])
 
-    def step(self, line: str) -> None:
-        if not self.steps or self.steps[-1] != line:
-            self.steps.append(line)
+    def step(self, line: str, tool_id: str = "", tool: str = "", cmd: str = "") -> None:
+        self.draft = ""                                  # text before a tool call was narration, not the answer
+        self.steps.append(line)
+        if tool_id:
+            self.ids[tool_id], self.tools[tool_id] = len(self.steps) - 1, (tool, cmd)
+        self._edit()
+
+    def result(self, tool_id: str, content, is_error: bool = False) -> None:
+        if tool_id in self.ids:
+            tool, cmd = self.tools[tool_id]
+            self.found[self.ids[tool_id]] = summarize_result(tool, cmd, content, is_error)
             self._edit()
 
     def thought(self, text: str) -> None:
         t = " ".join(text.split())
         if t:
-            self.note = t[:220] + ("…" if len(t) > 220 else "")
+            self.note = ("…" if len(t) > 400 else "") + t[-400:]
             self._edit()
+
+    def writing(self, delta: str) -> None:
+        self.draft += delta
+        self._edit()
 
     def done(self, summary: str) -> None:
         self.head += f"\n{summary}"
@@ -384,18 +441,35 @@ class Progress:
 
 
 def handle_event(ev: dict, prog: Progress) -> dict | None:
-    """feed one stream-json event to the progress message; returns the final result event"""
-    if ev.get("type") == "assistant":
+    """feed one stream-json event to the progress message; returns the final result event.
+    Whole messages: thinking, narration, tool calls (assistant) and tool results (user). Partial messages (stream_event): live thinking and answer text."""
+    t = ev.get("type")
+    if t == "stream_event":
+        e = ev.get("event") or {}
+        d = e.get("delta") or {}
+        if e.get("type") == "content_block_delta":
+            if d.get("type") == "thinking_delta":
+                prog.thought(prog.note.lstrip("…") + d.get("thinking", ""))
+            elif d.get("type") == "text_delta":
+                prog.writing(d.get("text", ""))
+    elif t == "assistant":
         for c in (ev.get("message") or {}).get("content") or []:
             if c.get("type") == "tool_use":
-                line = describe(c.get("name", ""), c.get("input") or {})
-                prog.step(line)
-                cmd = str((c.get("input") or {}).get("command", ""))
+                inp = c.get("input") or {}
+                line = describe(c.get("name", ""), inp)
+                cmd = str(inp.get("command", ""))
+                prog.step(line, c.get("id", ""), c.get("name", ""), cmd)
                 if c.get("name") == "Bash" and any(k in cmd for k in SYSTEM_ACTIONS):
                     log_action(line, cmd)
-            elif c.get("type") == "text":
+            elif c.get("type") == "thinking" and c.get("thinking"):
+                prog.thought(c["thinking"])
+            elif c.get("type") == "text" and not prog.draft:
                 prog.thought(c.get("text", ""))
-    elif ev.get("type") == "result":
+    elif t == "user":
+        for c in (ev.get("message") or {}).get("content") or []:
+            if isinstance(c, dict) and c.get("type") == "tool_result":
+                prog.result(c.get("tool_use_id", ""), c.get("content"), bool(c.get("is_error")))
+    elif t == "result":
         return ev
     return None
 
@@ -417,7 +491,7 @@ def stream(text: str) -> int:
     prompt = build_prompt(text)
     prog = Progress(text, f"🤖 Claude is on it ({s['model']}, effort {s['effort']})")
     cmd = ["claude", "-p", prompt, "--model", MODELS[s["model"]], "--effort", s["effort"], "--append-system-prompt-file", str(ROOT / "docs" / "AGENT.md"),
-           "--output-format", "stream-json", "--verbose", "--max-turns", "60", "--allowedTools", *ALLOWED, "--disallowedTools", *DISALLOWED]
+           "--output-format", "stream-json", "--verbose", "--include-partial-messages", "--max-turns", "60", "--allowedTools", *ALLOWED, "--disallowedTools", *DISALLOWED]
     result = None
     for auth in auth_order():                       # the subscription token first (no extra cost); the pay-per-use API key only if the token is refused
         env = {k: v for k, v in os.environ.items() if k not in ("CLAUDE_CODE_OAUTH_TOKEN", "ANTHROPIC_API_KEY")} | auth

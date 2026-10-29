@@ -121,3 +121,28 @@ def test_memory_is_capped(monkeypatch, tmp_path):
     (tmp_path / "chat" / "memory.md").write_text("x" * 20000 + "LATEST")
     m = chat.memory()
     assert len(m) < 8200 and m.endswith("LATEST")
+
+
+def test_stream_shows_thinking_results_and_answer_preview(monkeypatch, tmp_path):
+    setup(monkeypatch, tmp_path)
+    monkeypatch.delenv("TELEGRAM_BOT_TOKEN", raising=False)
+    prog = chat.Progress("is the bar too strict?", "Claude", min_gap=0)
+    for d in ("The owner asks about the bar. ", "I should read review_bar."):
+        chat.handle_event({"type": "stream_event", "event": {"type": "content_block_delta", "delta": {"type": "thinking_delta", "thinking": d}}}, prog)
+    assert "read review_bar" in prog.note
+    chat.handle_event({"type": "assistant", "message": {"content": [{"type": "tool_use", "id": "t1", "name": "Grep", "input": {"pattern": "review_bar"}}]}}, prog)
+    chat.handle_event({"type": "user", "message": {"content": [{"type": "tool_result", "tool_use_id": "t1", "content": "a.py:1\nb.py:2\nc.py:3"}]}}, prog)
+    chat.handle_event({"type": "assistant", "message": {"content": [{"type": "tool_use", "id": "t2", "name": "Bash", "input": {"command": "python -m pytest -q"}}]}}, prog)
+    chat.handle_event({"type": "user", "message": {"content": [{"type": "tool_result", "tool_use_id": "t2", "content": "...\n182 passed in 12s"}]}}, prog)
+    for d in ("No, the bar ", "is fine because…"):
+        chat.handle_event({"type": "stream_event", "event": {"type": "content_block_delta", "delta": {"type": "text_delta", "text": d}}}, prog)
+    text = prog._text()
+    assert "✓ Searching the code for 'review_bar' → 3 matches" in text and "Running the tests → 182 passed" in text
+    assert "✍️ Writing the answer…" in text and "the bar is fine" in text
+    assert "Writing the answer" not in prog._text(done=True)
+
+
+def test_summaries_of_failures():
+    assert chat.summarize_result("Bash", "python -m pytest -q", "2 failed, 180 passed in 9s") == "2 failed, 180 passed"
+    assert chat.summarize_result("Bash", "ls", "no such file", is_error=True).startswith("⚠")
+    assert chat.summarize_result("Grep", "", "") == "no matches"
