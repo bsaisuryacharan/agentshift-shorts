@@ -1,0 +1,32 @@
+{
+ "s0.jpg": {
+  "file": "File:Black hole - Messier 87.jpg",
+  "license": "CC BY 4.0",
+  "artist": "Event Horizon Telescope",
+  "url": "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87.jpg"
+ },
+ "s1.jpg": {
+  "file": "File:A view of the Milky Way supermassive black hole Sagittarius A* in polarised light (eso2406a).jpg",
+  "license": "CC BY 4.0",
+  "artist": "EHT Collaboration",
+  "url": "https://commons.wikimedia.org/wiki/File:A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A*_in_polarised_light_(eso2406a).jpg"
+ },
+ "s2.jpg": {
+  "file": "File:Event Horizon Telescope Collaboration (testing-general-relativity-with-the-event-horizon).jpg",
+  "license": "CC BY 4.0",
+  "artist": "D. Marrone/UofA",
+  "url": "https://commons.wikimedia.org/wiki/File:Event_Horizon_Telescope_Collaboration_(testing-general-relativity-with-the-event-horizon).jpg"
+ },
+ "s4.jpg": {
+  "file": "File:Webb's Diffraction Spikes (2) (cropped).png",
+  "license": "CC BY 2.0",
+  "artist": "NASA's James Webb Space Telescope",
+  "url": "https://commons.wikimedia.org/wiki/File:Webb%27s_Diffraction_Spikes_(2)_(cropped).png"
+ },
+ "s5.jpg": {
+  "file": "Behemoth Black Hole Found in an Unlikely Place",
+  "license": "NASA media (public domain)",
+  "artist": "GSFC",
+  "url": "https://images.nasa.gov/details/behemoth-black-hole-found-in-an-unlikely-place_26209716511_o"
+ }
+}

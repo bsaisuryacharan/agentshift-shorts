@@ -1,0 +1,224 @@
+{
+ "id": "event-horizon-telescope-sharpness-a2",
+ "title": "How Sharp is the Event Horizon Telescope?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "SCALE",
+ "theme": "cool",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b1": "https://en.wikipedia.org/wiki/Event_Horizon_Telescope#cite_note-17",
+  "b2": "https://en.wikipedia.org/wiki/Event_Horizon_Telescope#cite_note-17",
+  "b3": "https://en.wikipedia.org/wiki/Event_Horizon_Telescope#cite_note-17",
+  "b4": "https://en.wikipedia.org/wiki/Event_Horizon_Telescope#cite_note-17",
+  "b5": "https://en.wikipedia.org/wiki/Event_Horizon_Telescope#cite_note-17",
+  "wiki": "https://en.wikipedia.org/wiki/Event_Horizon_Telescope"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a vast, dark expanse of space, with a single, impossibly distant galaxy visible as a tiny point of light. Documentary style, natural lighting. No text, no logos, no people.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The Event Horizon Telescope sees something tiny, 40 billion kilometers wide.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how big?",
+     "at": "tiny"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "impact",
+     0.5
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "prompt": "An abstract representation of a minuscule point in space, rendered with a documentary style and practical lighting. Focus on scale and precision. No text, no logos, no people.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "That's 25 microarcseconds. So small, it’s like seeing a donut on the moon.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 25,
+      "suffix": "μas",
+      "glow": false
+     },
+     "at": "25",
+     "fx": "shine"
+    }
+   ],
+   "sfx": [
+    [
+     "ding",
+     "pop",
+     0.3
+    ]
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "prompt": "A wide shot comparing the angular size of a black hole's event horizon to the moon as seen from Earth. Documentary style, practical lighting. No text, no logos, no people.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "To grasp that, imagine seeing a single donut, from here, on the Moon.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "Seeing a",
+      "options": "donut, coin, grain of sand",
+      "suffix": "on the moon"
+     },
+     "at": "donut",
+     "fx": "shine"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "whoosh",
+     0.4
+    ]
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "prompt": "A visual representation of Earth with radio telescopes spread across its surface, connected by lines to form a virtual telescope. Documentary style, practical lighting. No text, no logos, no people.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The EHT array uses telescopes worldwide, acting as one planet-sized dish.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "Virtual Telescope",
+      "label": "Earth-Sized"
+     },
+     "at": "planet-sized",
+     "fx": "shine"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "ding",
+     0.3
+    ]
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "prompt": "A diagram-like illustration showing how light bends around a black hole, creating a shadow. Documentary style, practical lighting. No text, no logos, no people.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "This incredible sharpness lets us see the shadow of a black hole’s event horizon.",
+   "hud": [
+    {
+     "t": "kinetic",
+     "text": "seeing the *shadow*",
+     "at": "shadow",
+     "fx": "shine"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "impact",
+     0.5
+    ]
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "prompt": "The actual image of the black hole M87* captured by the Event Horizon Telescope. NASA/EHT. Documentary style, practical lighting. No text, no logos, no people.",
+   "photo": "M87 black hole",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The first image of M87* was published in 2019, proving Einstein right.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Einstein Right",
+      "split": "word"
+     },
+     "at": "Einstein",
+     "fx": "shine"
+    }
+   ],
+   "sfx": [
+    [
+     "ding",
+     "pop",
+     0.3
+    ]
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s6.jpg",
+   "prompt": "A stylized graphic of radio waves emanating from Earth, symbolizing global connectivity. Documentary style, practical lighting. No text, no logos, no people.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "It’s the sharpest view ever achieved for a cosmic object.",
+   "hud": [
+    {
+     "t": "toast",
+     "title": "SHARPEST VIEW",
+     "sub": "of a cosmic object",
+     "icon": "star",
+     "at": "sharpest"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "impact",
+     0.5
+    ]
+   ]
+  }
+ ],
+ "format": "scale",
+ "_facts": {
+  "title": "Event Horizon Telescope",
+  "url": "https://en.wikipedia.org/wiki/Event_Horizon_Telescope",
+  "text": "The Event Horizon Telescope (EHT) is a telescope array consisting of a global network of radio telescopes. The EHT project combines data from several very-long-baseline interferometry (VLBI) stations around Earth, which form a combined array with an angular resolution sufficient to observe objects the size of a supermassive black hole's event horizon. The project's observational targets include the two black holes with the largest angular diameter as observed from Earth: the black hole at the center of the supergiant elliptical galaxy Messier 87, and Sagittarius A*, at the center of the Milky Way. The Event Horizon Telescope project is an international collaboration that was launched in 2009 after a long period of theoretical and technical developments. On the theory side, work on the photon orbit and first simulations of what a black hole would look like progressed to predictions of VLBI imaging for the Galactic Center black hole, Sgr A*. Technical advances in radio observing moved from the first detection of Sgr A*, through VLBI at progressively shorter wavelengths, ultimately leading to detection of horizon scale structure in both Sgr A* and M87. The collaboration now comprises over 300 members, and 60 institutions, working in over 20 countries and regions. The first image of a black hole, at the center of galaxy Messier 87, was published by the EHT Collaboration on April 10, 2019, in a series of six scientific publications. The array made this observation at a wavelength of 1.3 mm and with a theoretical diffraction-limited resolution of 25 microarcseconds. In March 2021, the Collaboration presented, for the first time, a polarized-based image of the black hole which may help better reveal the forces giving rise to quasars. Future plans involve improving the array's resolution by adding new telescopes and by taking shorter-wavelength observations. On 12 May 2022, astronomers unveiled the first image of the supermassive black hole at the center of the Milky Way, Sagittarius A*. Since 2018 the EHT has been capable of imaging at a wavelength of 870 μm (345 GHz), giving an angular resolution of 19 μas, the best resolution of any ground-based telescope. == Telescope array ==\n\nThe EHT is composed of many radio observatories or radio-telescope facilities around the world, working together to produce a high-sensitivity, high-angular-resolution telescope. Through the technique of very-long-baseline interferometry (VLBI), many independent radio antennas separated by hundreds or thousands of kilometres can act as a phased array, a virtual telescope which can be pointed electronically, with an effective aperture which is the diameter of the entire planet, substantially improving its angular resolution. The effort includes development and deployment of submillimeter dual polarization receivers, highly stable frequency standards to enable very-long-baseline interferometry at 230–450 GHz, higher-bandwidth VLBI backends and recorders, as well as commissioning of new submillimeter VLBI sites. Each year since its first data capture in 2006, the EHT array has moved to add more observatories to its global network of radio telescopes. The first image of the Milky Way's supermassive black hole, Sagittarius A*, was expected to be produced from data taken in April 2017, but because there are no flights in or out of the South Pole during austral winter (April to October), the full data set could not be processed until December 2017, when the shipment of data from the South Pole Telescope arrived. Data collected on hard drives are transported by commercial freight airplanes (a so-called sneakernet) from the various telescopes to the MIT Haystack Observatory and the Max Planck Institute for Radio Astronomy, where the data are cross-correlated and analyzed on a grid computer made from about 800 CPUs all connected through a 40 Gbit/s network. Because of the COVID-19 pandemic, weather patterns, and celestial mechanics, the 2020 observational campaign was postponed to March 2021. === VLBI mechanism ===\n\nEach antenna, spread out over vast distances, has an extremely precise atomic clock. Analogue signals collected by the antenna are converted to digital signals and stored on hard drives together with the time signals provided by the atomic clock. The hard drives are then shipped to a central location to be synchronized. An astronomical observation image is obtained by processing the data gathered from multiple locations. == Published images ==\n\n\n=== Messier 87* ===\n\nThe Event Horizon Telescope Collaboration announced its first results in six simultaneous press conferences worldwide on April 10, 2019. The announcement featured the first direct image of a black hole, which showed the supermassive black hole at the center of Messier 87, designated M87*. The scientific results were presented in a series of six papers published in The Astrophysical Journal Letters. A clockwise rotating black hole was observed in the 6σ region. The image provided a test for Albert Einstein's general theory of relativity under extreme conditions. Studies have previously tested general relativity by looking at the motions of stars and gas clouds near the edge of a black hole. However, an image of a black hole brings observations even closer to the event horizon. Relativity predicts a dark shadow-like region, caused by gravitational bending and capture of light, which matches the observed image. The published paper states: \"Overall, the observed image is consistent with expectations for the shadow of a spinning Kerr black hole as predicted by general relativity.\" Paul T. P. Ho, EHT Board member, said: \"Once we were sure we had imaged the shadow, we could compare our observations to extensive computer models that include the physics of warped space, superheated matter, and strong magnetic fields. Many of the features of the observed image match our theoretical understanding surprisingly well.\"\nThe image also provided new measurements for the mass and diameter of M87*. EHT measured the black hole's mass to be 6.5±0.7 billion solar masses and measured the diameter of its event horizon to be approximately 40 billion kilometres (270 AU; 0.0013 pc; 0.0042 ly), roughly 2.5 times smaller than the shadow that it casts, seen at the center of the image. Previous observations of M87 showed that the large-scale jet is inclined at an angle of 17° relative to the observer's line of sight and oriented on the plane of the sky at a position angle of −72°. From the enhanced brightness of the southern part of the ring due to relativistic beaming of approaching funnel wall jet emission, EHT concluded the black hole, which anchors the jet, spins clockwise, as seen from Earth. EHT simulations allow for both prograde and retrograde inner disk rotation with respect to the black hole, while excluding zero black hole spin using a conservative minimum jet power of 1042 erg/s via the Blandford–Znajek process."
+ },
+ "_writer": "gemini"
+}

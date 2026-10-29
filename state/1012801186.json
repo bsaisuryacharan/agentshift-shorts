@@ -1,5 +1,5 @@
 {
- "current": "mco-unit-error-story-a2",
+ "current": "event-horizon-telescope-sharpness-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -131,6 +131,25 @@
     "safe_zone": 10
    },
    "run_id": "40733726110"
+  },
+  "event-horizon-telescope-sharpness-a2": {
+   "title": "How Sharp is the Event Horizon Telescope?",
+   "base": "event-horizon-telescope-sharpness-a2",
+   "status": "draft",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 7,
+    "accuracy": 9,
+    "originality": 8,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 9,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "40842249117"
   }
  }
 }
