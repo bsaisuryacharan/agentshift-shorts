@@ -11,6 +11,7 @@
 - 2026-10-28 Stay on free tiers; first paid upgrade, if ever needed, would be the Gemini API for script + judge (about Rs 100-150/month). Pexels keys are paused for new signups; Pixabay is used.
 - 2026-10-29 One Short a day, posted automatically when the judge approves (AUTO_POST, repo variable; set it to false to go back to /approve).
 - 2026-10-29 Claude (this chat) is the first layer for every Telegram message; code changes only as pull requests that go live on the owner's /merge.
+- 2026-10-30 North star: 1,000,000 channel views in one month (2026-10-30 to 2026-11-29). app/strategy.py writes today's plan daily (assets/strategy.json); 2 Shorts a day while behind; daily growth report in Telegram
 
 ## Owner's rules and preferences
 - Target: 1,000,000 views per Short and the YouTube Partner Programme.
