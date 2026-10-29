@@ -2,6 +2,8 @@ from app import auto, research
 
 
 class R:
+    status_code = 200
+
     def __init__(self, d): self.d = d
     def raise_for_status(self): pass
     def json(self): return self.d

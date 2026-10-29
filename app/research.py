@@ -28,8 +28,12 @@ def _clean(text: str) -> str:
 
 
 def search(query: str, key: str, client=httpx) -> list[dict]:
-    r = client.post("https://api.tavily.com/search", headers={"Authorization": f"Bearer {key}"}, timeout=40,
-                    json={"query": query, "search_depth": "basic", "max_results": 8, "include_domains": TRUSTED, "include_raw_content": True})
+    body = {"query": query, "search_depth": "basic", "max_results": 8, "include_domains": TRUSTED, "include_raw_content": True}
+    r = client.post("https://api.tavily.com/search", headers={"Authorization": f"Bearer {key}"}, timeout=40, json=body)
+    if r.status_code in (401, 403):                     # older keys authenticate in the body
+        r = client.post("https://api.tavily.com/search", timeout=40, json={**body, "api_key": key})
+    if r.status_code >= 400:
+        print(f"   research: Tavily HTTP {r.status_code}: {r.text[:160]}", flush=True)
     r.raise_for_status()
     return r.json().get("results", [])
 
