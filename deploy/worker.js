@@ -2,7 +2,7 @@
 // Secrets/vars to set on the Worker: TG_SECRET, TG_TOKEN, ALLOWED_CHAT, GH_TOKEN, GH_REPO ("owner/repo")
 // Claude is the first layer: every message goes to the chat job (chat.yml). The Worker posts Claude's progress message at once (the job edits it
 // live) and turns button taps (inline keyboards) into the same kind of job.
-const CONTROLS = /^\/(model|effort|settings|claude|reset|changes|merge|discard)(@\w+)?(\s|$)/i;
+const CONTROLS = /^\/(model|effort|settings|claude|reset|changes|merge|discard|memory|actions)(@\w+)?(\s|$)/i;
 
 async function tg(env, method, body) {
   return fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/${method}`, {

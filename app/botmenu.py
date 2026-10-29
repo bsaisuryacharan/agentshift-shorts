@@ -23,6 +23,8 @@ COMMANDS = [
     ("merge", "Make Claude's newest change live"),
     ("discard", "Drop Claude's newest change"),
     ("settings", "Claude chat settings"),
+    ("memory", "What Claude remembers long-term"),
+    ("actions", "What Claude actually did recently"),
     ("reset", "Clear the conversation with Claude"),
     ("help", "What the bot can do"),
 ]

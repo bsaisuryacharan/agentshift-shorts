@@ -98,3 +98,26 @@ def test_buttons_for_controls_and_claude_choices(monkeypatch, tmp_path):
     assert body == "Post the Mariana Short now?" and buttons == [[("Yes, post it", "say:Yes, post it"), ("Not now", "say:Not now")]]
     assert chat.split_buttons("plain answer") == ("plain answer", None)
     assert all(len(b["callback_data"].encode()) <= 64 for row in chat.keyboard([[("x" * 90, "say:" + "y" * 90)]])["inline_keyboard"] for b in row)
+
+
+def test_memory_and_action_log_reach_the_prompt(monkeypatch, tmp_path):
+    setup(monkeypatch, tmp_path)
+    (tmp_path / "chat").mkdir(parents=True, exist_ok=True)
+    (tmp_path / "chat" / "memory.md").write_text("## Decisions\n- 2026-10-29 auto-post approved Shorts\n")
+    prog = chat.Progress("post it", "Claude", min_gap=0)
+    chat.handle_event({"type": "assistant", "message": {"content": [{"type": "tool_use", "name": "Bash",
+                       "input": {"command": 'python -m app.orchestrator handle --chat "$CHAT" --text "/upload"'}}]}}, prog)
+    chat.handle_event({"type": "assistant", "message": {"content": [{"type": "tool_use", "name": "Read", "input": {"file_path": "x"}}]}}, prog)
+    acts = chat.actions()
+    assert len(acts) == 1 and acts[0]["what"] == "Asking the orchestrator: /upload"         # reads are not system actions
+    p = chat.build_prompt("what did we decide?")
+    assert "auto-post approved Shorts" in p and "Asking the orchestrator: /upload" in p
+    assert "auto-post" in chat.control("/memory") and "/upload" in chat.control("/actions")
+
+
+def test_memory_is_capped(monkeypatch, tmp_path):
+    setup(monkeypatch, tmp_path)
+    (tmp_path / "chat").mkdir(parents=True, exist_ok=True)
+    (tmp_path / "chat" / "memory.md").write_text("x" * 20000 + "LATEST")
+    m = chat.memory()
+    assert len(m) < 8200 and m.endswith("LATEST")

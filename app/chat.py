@@ -118,7 +118,9 @@ def control_buttons(text: str) -> list | None:
     if cmd == "/effort":
         return efforts
     if cmd in ("/settings", "/claude"):
-        return models + efforts + [[("Forget the conversation", "cmd:/reset")]]
+        return models + efforts + [[("Show memory", "cmd:/memory"), ("Recent actions", "cmd:/actions")], [("Forget the conversation", "cmd:/reset")]]
+    if cmd == "/memory":
+        return [[("Recent actions", "cmd:/actions"), ("Settings", "cmd:/settings")]]
     if cmd == "/changes":
         try:
             prs = [p for p in json.loads(_gh("pr", "list", "--state", "open", "--json", "number,title,headRefName") or "[]") if p["headRefName"].startswith("chat/")]
@@ -161,6 +163,10 @@ def control(text: str) -> str | None:
     if cmd in ("/settings", "/claude"):
         return (f"Claude chat: model {s['model']}, effort {s['effort']}, {len(history())} recent turns remembered. Change with /model, /effort; "
                 "/reset forgets the conversation; /changes lists Claude's proposed code changes, /merge makes one live, /discard drops it.")
+    if cmd == "/memory":
+        return "What I remember long-term:\n\n" + (memory() or "(nothing yet)") + "\n\nTell me \"forget …\" or \"remember …\" to change it."
+    if cmd == "/actions":
+        return "Recent actions (automatic log):\n" + ("\n".join(f"{a['ts'][5:16]} {a['what']}" for a in actions(20)) or "(none yet)")
     if cmd in ("/merge", "/discard", "/changes"):
         return pr_control(cmd, arg)
     if cmd == "/reset":
@@ -189,8 +195,10 @@ def pr_control(cmd: str, arg: str) -> str:
     pick = next((p for p in prs if arg.lstrip("#") == str(p["number"])), prs[0])
     if cmd == "/merge":
         out = _gh("pr", "merge", str(pick["number"]), "--squash", "--delete-branch")
+        log_action(f"Owner merged #{pick['number']}", pick["title"])
         return f"Merged #{pick['number']} ({pick['title']}): it is live from the next run. {out[:200]}"
     out = _gh("pr", "close", str(pick["number"]), "--delete-branch")
+    log_action(f"Owner discarded #{pick['number']}", pick["title"])
     return f"Discarded #{pick['number']} ({pick['title']}). {out[:200]}"
 
 
@@ -225,9 +233,45 @@ def status_block() -> str:
     return "\n".join(out)
 
 
+MEMORY = "memory.md"              # long-term memory: decisions, owner's rules, changes made, open items (Claude keeps it current)
+ACTIONS = "actions.jsonl"         # what was actually done (written by code, not by Claude): commands run, runs started, PRs opened/merged
+SYSTEM_ACTIONS = ("app.orchestrator handle", "gh workflow run", "dispatches", "gh pr create", "git push -u origin chat/")
+MEMORY_MAX = 8000
+
+
+def memory() -> str:
+    try:
+        t = (DIR / MEMORY).read_text()
+    except OSError:
+        return ""
+    return t if len(t) <= MEMORY_MAX else "…(older part trimmed; keep the file short)\n" + t[-MEMORY_MAX:]
+
+
+def log_action(what: str, detail: str = "") -> None:
+    DIR.mkdir(parents=True, exist_ok=True)
+    with open(DIR / ACTIONS, "a") as f:
+        f.write(json.dumps({"ts": datetime.now(UTC).isoformat(timespec="seconds"), "what": what, "detail": detail[:300]}, ensure_ascii=False) + "\n")
+
+
+def actions(n: int = 15) -> list[dict]:
+    p = DIR / ACTIONS
+    if not p.exists():
+        return []
+    out = []
+    for line in p.read_text().splitlines()[-n:]:
+        try:
+            out.append(json.loads(line))
+        except ValueError:
+            continue
+    return out
+
+
 def build_prompt(text: str) -> str:
     convo = "\n".join(f"OWNER: {h['user']}\nYOU: {h['reply'][:1500]}" for h in history())
-    return (f"LIVE SYSTEM STATUS (read from the repo just now):\n{status_block()}\n\n"
+    acts = "\n".join(f"{a['ts'][:16]} {a['what']}" + (f" - {a['detail']}" if a.get("detail") else "") for a in actions())
+    return (f"YOUR LONG-TERM MEMORY (state/chat/{MEMORY}; update it as docs/AGENT.md says):\n{memory() or '(empty)'}\n\n"
+            f"WHAT WAS ACTUALLY DONE RECENTLY (automatic log, newest last):\n{acts or '(nothing yet)'}\n\n"
+            f"LIVE SYSTEM STATUS (read from the repo just now):\n{status_block()}\n\n"
             f"RECENT CONVERSATION WITH THE OWNER (oldest first):\n{convo or '(none yet)'}\n\n"
             f"NEW MESSAGE FROM THE OWNER (Telegram):\n{text}\n\n"
             "Answer the owner. Your final message is sent to Telegram as-is: plain text, short, no markdown tables.")
@@ -344,7 +388,11 @@ def handle_event(ev: dict, prog: Progress) -> dict | None:
     if ev.get("type") == "assistant":
         for c in (ev.get("message") or {}).get("content") or []:
             if c.get("type") == "tool_use":
-                prog.step(describe(c.get("name", ""), c.get("input") or {}))
+                line = describe(c.get("name", ""), c.get("input") or {})
+                prog.step(line)
+                cmd = str((c.get("input") or {}).get("command", ""))
+                if c.get("name") == "Bash" and any(k in cmd for k in SYSTEM_ACTIONS):
+                    log_action(line, cmd)
             elif c.get("type") == "text":
                 prog.thought(c.get("text", ""))
     elif ev.get("type") == "result":

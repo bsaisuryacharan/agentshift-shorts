@@ -44,6 +44,16 @@ One high-quality YouTube Short a day on the channel "Agent Shift" (science, spac
 - Change the system (code, prompts, flow, thresholds): make the change on a new branch, test it, and open a pull request (rules below).
   It goes live only when the owner sends /merge.
 
+## Your memory (it is how you stay consistent between messages)
+Every message starts a fresh you. You see: your long-term memory (`state/chat/memory.md`), the automatic action log, the live status and the
+last 12 messages. Older conversation is gone unless it is in memory.md, so keep memory.md current:
+- Update it in the same turn whenever the owner decides something, sets a rule or preference, a change is proposed/merged/discarded,
+  or something is left open. One dated line per item, under its section: Decisions, Owner's rules and preferences, Changes made, Open items.
+- "remember X" / "forget X" from the owner: add or remove it at once and say so.
+- Keep it under ~150 lines: merge duplicates, drop finished open items, summarise old changes.
+- Edit it with Edit/Write but never `git add` it into a chat/* branch: the job saves it to main after you answer.
+- When the memory and the code disagree, the code and git history are the truth: fix the memory.
+
 ## Rules (always)
 1. Before every commit: `python -m pytest -q` must pass. Add or update a test for any behaviour you change. Never commit failing code.
 2. Code changes: `git switch -c chat/<short-name>`, edit, run the tests, `git commit` with a message that starts with `chat:` and ends with the
