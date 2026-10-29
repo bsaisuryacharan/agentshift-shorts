@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T18:45+00:00",
+ "updated": "2026-10-29T18:47+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
@@ -17,10 +17,57 @@
   "on_track": false
  },
  "shorts_per_day": 2,
- "focus_words": [],
- "avoid_words": [],
- "winners": [],
- "flops": [],
+ "focus_words": [
+  "brain",
+  "facts",
+  "money",
+  "never",
+  "school",
+  "space",
+  "taught",
+  "they",
+  "trick"
+ ],
+ "avoid_words": [
+  "calls",
+  "could",
+  "free",
+  "grandma",
+  "interview",
+  "just",
+  "know",
+  "more",
+  "people",
+  "phone"
+ ],
+ "winners": [
+  {
+   "title": "Space Is Too Big For Your Brain 🤯 #shorts",
+   "views": 1689
+  },
+  {
+   "title": "These 4 Brain Facts Sound Fake (But They're True) 🧠 #shorts",
+   "views": 1111
+  },
+  {
+   "title": "The Money Trick School Never Taught You 💰 #shorts",
+   "views": 440
+  }
+ ],
+ "flops": [
+  {
+   "title": "5 AI Prompts 99% of People Don't Know 🤯 (Save This) #shorts",
+   "views": 21
+  },
+  {
+   "title": "What If Grandma Could Just ASK Her Phone? 📱 Free AI Tool #shorts",
+   "views": 27
+  },
+  {
+   "title": "3 FREE AI Tricks to Get More Interview Calls 🎯 (Save This) #shorts",
+   "views": 30
+  }
+ ],
  "best_formats": [
   "unsolved",
   "how_it_works",
@@ -28,6 +75,8 @@
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
+  "Double down on what already wins on this channel: 'Space Is Too Big For Your Brain 🤯 #shorts' (1,689 views); 'These 4 Brain Facts Sound Fake (But They're True) ' (1,111 views); 'The Money Trick School Never Taught You 💰 #shorts' (440 views).",
+  "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (21); 'What If Grandma Could Just ASK Her Phone' (27); '3 FREE AI Tricks to Get More Interview C' (30).",
   "Prefer the formats the judge scores best: unsolved, how_it_works.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."
