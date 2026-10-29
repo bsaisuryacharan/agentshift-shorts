@@ -1,8 +1,10 @@
 name: free-daily-short
 # Zero-cost autonomous Short (see docs/FREE_SYSTEM.md). Public repo = unlimited minutes. PUBLISH stays manual: the video goes to Telegram.
 on:
-  schedule:
-    - cron: "30 11 * * *"      # 17:00 IST
+  schedule:                    # GitHub starts scheduled runs late and sometimes drops them: three slots, and a slot is skipped once today's Short exists
+    - cron: "17 4 * * *"       # 09:47 IST
+    - cron: "47 8 * * *"       # 14:17 IST
+    - cron: "37 12 * * *"      # 18:07 IST
   workflow_dispatch:
     inputs:
       topic:
@@ -37,6 +39,7 @@ jobs:
       - name: Make one Short
         run: |
           T="${{ github.event.inputs.topic }}"
+          if [ "${{ github.event_name }}" = "schedule" ] && python -m app.auto --delivered-today; then echo "::notice::Today's Short was already delivered; this slot is skipped"; exit 0; fi
           set +e
           if [ -n "$T" ]; then python -m app.auto --topic "$T" --out runs; else python -m app.auto --trend --out runs; fi
           rc=$?

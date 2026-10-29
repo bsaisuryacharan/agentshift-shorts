@@ -190,6 +190,14 @@ def used_topics(days_done: int = 60, days_parked: int = 3) -> set[str]:
     return out
 
 
+def delivered_today() -> bool:
+    """a Short already passed review today (UTC): the later schedule slots skip, so the channel gets one Short a day"""
+    import datetime as dt
+    path = ROOT / TOPICS
+    today = dt.date.today().isoformat()
+    return path.exists() and any(f'"date": "{today}"' in line and '"outcome": "delivered"' in line for line in path.read_text().splitlines())
+
+
 def record_topic(topic: str, wiki: str, outcome: str, score: float | None = None, fmt: str | None = None) -> None:
     import datetime as dt
     path = ROOT / TOPICS
@@ -740,6 +748,8 @@ def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_fil
 
 if __name__ == "__main__":
     a = sys.argv[1:]
+    if "--delivered-today" in a:                  # exit 0 = yes (the workflow then skips this schedule slot)
+        raise SystemExit(0 if delivered_today() else 1)
     arg = lambda k: a[a.index(k) + 1] if k in a else None
     topic = arg("--topic")
     fmt_arg = arg("--format")

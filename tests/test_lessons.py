@@ -75,3 +75,14 @@ def test_caption_groups_never_end_on_a_dangling_word():
     ws = [{"w": x} for x in "At 10.6 kilometers deep we found life on every square inch.".split()]
     groups = [" ".join(w["w"] for w in g) for g in caption_groups(ws)]
     assert not any(g.split()[-1].lower() in ("we", "on", "every", "the", "and") for g in groups), groups
+
+
+def test_delivered_today_reads_the_ledger(tmp_path, monkeypatch):
+    import datetime as dt
+    monkeypatch.setattr(auto, "ROOT", tmp_path)
+    (tmp_path / "data").mkdir()
+    assert not auto.delivered_today()
+    auto.record_topic("t", "w", "started")
+    assert not auto.delivered_today()
+    auto.record_topic("t", "w", "delivered", 7.5)
+    assert auto.delivered_today()

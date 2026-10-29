@@ -44,7 +44,13 @@ def credentials():
         raise UploadError("The stored YouTube login does not include permission to upload. Re-authorize once on your Mac "
                           "(python3 -m app.main authorize-youtube, which asks for upload + analytics) and update the YOUTUBE_TOKEN_JSON secret.")
     if creds.expired and creds.refresh_token:
-        creds.refresh(Request())
+        from google.auth.exceptions import RefreshError
+        try:
+            creds.refresh(Request())
+        except RefreshError as e:
+            raise UploadError("YouTube rejected the stored login (expired or revoked - Google expires it after 7 days while the Google Cloud app is in "
+                              "'Testing'). Set the OAuth consent screen to 'In production', run  python3 -m app.main authorize-youtube  on your Mac, then "
+                              "update the YOUTUBE_TOKEN_JSON secret and send /upload.") from e
     return creds
 
 
