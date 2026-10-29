@@ -171,6 +171,9 @@ def finish(result_path: Path, text: str) -> int:
     try:
         r = json.loads(result_path.read_text())
         reply = (r.get("result") or "").strip() or "(Claude returned no answer.)"
+        if "401" in reply or "authenticate" in reply.lower():
+            reply = ("Claude could not log in (the stored token was refused). Create a new one with `claude setup-token` on the Mac, copy it as ONE line, "
+                     "and save it with: pbpaste | gh secret set CLAUDE_CODE_OAUTH_TOKEN -R bsaisuryacharan/agentshift-shorts")
         meta = {"model": settings()["model"], "effort": settings()["effort"], "turns": r.get("num_turns"), "cost_usd": r.get("total_cost_usd"),
                 "error": r.get("is_error")}
     except (OSError, ValueError):

@@ -49,6 +49,7 @@ jobs:
           if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ] && [ -z "$ANTHROPIC_API_KEY" ]; then
             python -c "from app import chat; chat.send('Claude is not connected yet: add the CLAUDE_CODE_OAUTH_TOKEN secret (claude setup-token) or ANTHROPIC_API_KEY.')"; exit 0
           fi
+          export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"   # a token copied from a wrapped terminal line carries line breaks
           python -m app.chat stream "$TEXT"      # live progress in Telegram, then the answer (tool allow-list in app/chat.py ALLOWED)
       - name: Save the conversation (memory only; code changes stay on their chat/* branch)
         if: always()
