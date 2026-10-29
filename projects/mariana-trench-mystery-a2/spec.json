@@ -1,0 +1,231 @@
+{
+ "id": "mariana-trench-mystery-a2",
+ "title": "The Mariana Trench Mystery",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "UNSOLVED",
+ "theme": "earth",
+ "format": "unsolved",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Wikipedia: Mariana Trench",
+  "b3": "Scripps Institution of Oceanography",
+  "b7": "Guinness World Records: Descents",
+  "wiki": "https://en.wikipedia.org/wiki/Mariana_Trench"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Mariana Trench depth",
+   "prompt": "photoreal cinematic 9:16 image of the dark, deep ocean floor with jagged rocks and silt, no people, high contrast, underwater documentary style",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "10,935 meters down, the pressure is 1,086 bar.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "why?",
+     "at": "pressure"
+    },
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 1086,
+      "suffix": "BAR"
+     },
+     "at": "pressure",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "footage": "underwater ocean bubbles",
+   "prompt": "photoreal cinematic 9:16 image of dark blue water with tiny bubbles rising, deep sea atmosphere, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "That is 8 tons of weight on every square inch of your body.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "8 TONS",
+     "col": "am",
+     "at": "weight"
+    }
+   ],
+   "sfx": [
+    [
+     "weight",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "deep sea trench",
+   "prompt": "photoreal cinematic 9:16 image of a vast underwater canyon, dark and mysterious, rock walls disappearing into the abyss",
+   "focal": [
+    0.5,
+    0.6
+   ],
+   "say": "Yet, at 10.6 kilometers deep, we found life thriving.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "10.6 KM DEEP",
+     "at": "kilometers"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "monothalamea xenophyophore",
+   "prompt": "photoreal cinematic 9:16 image of a microscopic single-celled organism with a complex, branching structure, deep sea biology, dark background",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "These single-celled monothalamea survive 1,071 times sea-level pressure.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "scramble-reveal",
+     "vars": {
+      "text": "MONOTHALAMEA",
+      "accent": "blue"
+     },
+     "at": "monothalamea",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "footage": "deep sea hydrothermal",
+   "prompt": "photoreal cinematic 9:16 image of dark water with heat distortion, volcanic vent on the ocean floor, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The water is a freezing 1 to 4 degrees Celsius.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "TEMP",
+       "1-4",
+       "°C",
+       "cy"
+      ]
+     ],
+     "at": "Celsius"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "oceanic crust geology",
+   "prompt": "photoreal cinematic 9:16 image of ancient, dark basaltic rock on the seafloor, textured and old, no people",
+   "focal": [
+    0.5,
+    0.3
+   ],
+   "say": "They live on crust that is 170 million years old.",
+   "hud": [
+    {
+     "t": "ring",
+     "pct": 100,
+     "label": "170M YEARS",
+     "col": "ok",
+     "at": "million"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "bathyscaphe Trieste",
+   "prompt": "photoreal cinematic 9:16 image of a deep-sea submersible silhouette against the dark blue abyss, tiny lights illuminating the water, no faces",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Only 22 people have ever reached these crushing depths.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "22 HUMANS",
+     "col": "ir",
+     "at": "people"
+    }
+   ]
+  },
+  {
+   "key": "b7",
+   "img": "s7.jpg",
+   "photo": "Mariana Islands map",
+   "prompt": "photoreal cinematic 9:16 image of a technical bathymetric map showing a long crescent trench in the Pacific Ocean, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The trench spans 2,550 kilometers, and it is mostly a mystery.",
+   "hud": [
+    {
+     "t": "tape",
+     "text": "2,550 KM LONG",
+     "col": "cy",
+     "at": "kilometers"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s8.jpg",
+   "footage": "dark ocean abyss",
+   "prompt": "photoreal cinematic 9:16 image of the endless dark ocean void, small particles of marine snow drifting, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "What else is hiding in the dark? Follow for more.",
+   "hud": [
+    {
+     "t": "kinetic",
+     "text": "THE *UNKNOWN*",
+     "at": "dark"
+    }
+   ],
+   "sfx": [
+    [
+     "dark",
+     "whoosh",
+     0.5
+    ]
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Mariana Trench",
+  "url": "https://en.wikipedia.org/wiki/Mariana_Trench",
+  "text": "The Mariana Trench is the deepest oceanic trench on Earth, located in the western Pacific Ocean, about 200 kilometers (124 mi) east of the Mariana Islands. It is crescent-shaped and measures about 2,550 km (1,580 mi) in length and 69 km (43 mi) in width. The maximum known depth is 10,935 ± 6 meters (35,876 ± 20 ft; 5,979.3 ± 3.3 fathoms; 6.7947 ± 0.0037 mi) at the southern end of a small slot-shaped valley in its floor known as the Challenger Deep. This makes the deepest point of the trench more than 2 km (1.2 mi) farther from sea level than the peak of Mount Everest. At the bottom of the trench the water column above exerts a pressure of 1,086 bar (15,750 psi), approximately 1,071.8 times the standard atmospheric pressure at sea level or eight tons per square inch. The temperature at the bottom is 1 to 4 °C (34 to 39 °F). In 2009, the United States established the Mariana Trench Marine National Monument as national monument from the parts of the Mariana Trench that are inside the exclusive economic zone (EEZ) of the United States. This does not include the Challenger Deep, which lies inside the EEZ of the Federated States of Micronesia. Single-celled organisms called monothalamea have been found in the trench at a record depth of 10.6 km (35,000 ft; 6.6 mi) below the sea surface by researchers from the Scripps Institution of Oceanography. Data has also suggested that microbial life forms thrive within the trench. == Etymology ==\nThe Mariana Trench is named after the nearby Mariana Islands, which are named Las Marianas in honor of Spanish Queen Mariana of Austria. The islands are part of the island arc that is formed on an over-riding plate, called the Mariana plate (also named for the islands), on the western side of the trench. == Geology ==\n\nThe Mariana Trench is part of the Izu–Bonin–Mariana subduction system that forms the boundary between two tectonic plates. In this system, the western edge of one plate, the Pacific plate, is subducted (i.e., thrust) beneath the smaller Mariana plate that lies to the west. Crustal material at the western edge of the Pacific plate is some of the oldest oceanic crust on Earth (up to 170 million years old), and is, cooler and denser; hence its great height difference relative to the higher-riding (and younger) Mariana plate. The deepest area at the plate boundary is the Mariana Trench proper. The movement of the Pacific and Mariana plates is also indirectly responsible for the formation of the Mariana Islands. These volcanic islands are caused by flux melting of the upper mantle due to the release of water that is trapped in minerals of the subducted portion of the Pacific plate. == Research history ==\n\nThe trench was first discovered during routine depth sounding of the region during the Challenger expedition in 1875 using a weighted rope, which recorded a depth of 4,475 fathoms (8,184 meters; 26,850 feet). In 1877, a map was published called Tiefenkarte des Grossen Ozeans (\"Depth map of the Great Ocean\") by Petermann, which showed a Challenger Tief (\"Challenger deep\") at the location of that sounding. In 1899, USS Nero, a converted collier, recorded a depth of 5,269 fathoms (9,636 meters; 31,614 feet). In 1951, under Chief Scientist Thomas Gaskell, Challenger II surveyed the trench using echo sounding, a much more precise and vastly easier way to measure depth than the sounding equipment and drag lines used in the original expedition. During this survey, the deepest part of the trench was recorded when the Challenger II measured a depth of 5,960 fathoms (10,900 meters; 35,760 feet) at 11°19′N 142°15′E, known as the Challenger Deep. In 1957, the Soviet vessel Vityaz reported a depth of 11,034 m (36,201 ft; 6,033 fathoms) at a location dubbed the Mariana Hollow. In 1984, the Japanese survey vessel Takuyō (拓洋) collected data from the Mariana Trench using a narrow, multi-beam echo sounder; it reported a maximum depth of 10,924 meters (35,840 ft), also reported as 10,920 ± 10 m (35,827 ± 33 ft; 5,971.1 ± 5.5 fathoms). Remotely Operated Vehicle KAIKO reached the deepest area of the Mariana Trench and made the deepest diving record of 10,911 m (35,797 ft; 5,966 fathoms) on 24 March 1995. During surveys carried out between 1997 and 2001, a spot was found along the Mariana Trench that had a depth similar to the Challenger Deep, possibly even deeper. It was discovered while scientists from the Hawaii Institute of Geophysics and Planetology were completing a survey around Guam; they used a sonar mapping system towed behind the research ship to conduct the survey. This new spot was named the HMRG (Hawaii Mapping Research Group) Deep, after the group of scientists who discovered it. On 1 June 2009, mapping aboard the RV Kilo Moana (mothership of the Nereus vehicle), indicated a spot with a depth of 10,971 m (35,994 ft; 5,999 fathoms). The sonar mapping of the Challenger Deep was possible by its Simrad EM120 sonar multibeam bathymetry system for deep water. The sonar system uses phase and amplitude bottom detection, with an accuracy of better than 0.2% of water depth across the entire swath (implying that the depth figure is accurate to ± 22 meters (72 ft; 12 fathoms)). In 2011, it was announced at the American Geophysical Union Fall Meeting that a US Navy hydrographic ship equipped with a multibeam echosounder conducted a survey which mapped the entire trench to 100 m (330 ft; 55 fathoms) resolution. The mapping revealed the existence of four rocky outcrops thought to be former seamounts. The Mariana Trench was a site chosen by researchers at Washington University in St. Louis and the Woods Hole Oceanographic Institution in 2012 for a seismic survey to investigate the subsurface water cycle. Using both ocean-bottom seismometers and hydrophones, the scientists were able to map structures as deep as 97 kilometers (318,000 ft; 53,000 fathoms; 60 miles) beneath the surface. === Descents ===\n\nAs of 2022, 22 crewed descents and seven uncrewed descents have been achieved. The first was the crewed descent by Swiss-designed, Italian-built, United States Navy-owned bathyscaphe Trieste, which reached the bottom at 1:06 pm on 23 January 1960, with Don Walsh and Jacques Piccard on board. Iron shot was used for ballast, with gasoline for buoyancy."
+ },
+ "_writer": "gemini"
+}

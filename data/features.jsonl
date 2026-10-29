@@ -16,3 +16,4 @@
 {"spec_id": "voyager-1-extreme-facts-a2", "mood": "space", "theme": "cool", "hook_words": "12+", "beats": 7, "words": 112, "hf": 3, "real_pictures": 0.67, "grades": {"hook": "C", "story": "D", "visuals": "D", "polish": "D", "policy": "A"}}
 {"spec_id": "voyager-1-top-5-extreme-facts-a3", "mood": "space", "theme": "cool", "hook_words": "12+", "beats": 8, "words": 109, "hf": 3, "real_pictures": 1.0, "grades": {"hook": "D", "story": "D", "visuals": "D", "polish": "D", "policy": "A"}}
 {"spec_id": "event-horizon-telescope-sharpness-a2", "mood": "space", "theme": "cool", "hook_words": "8-11", "beats": 7, "words": 84, "hf": 4, "real_pictures": 1.29, "grades": {"hook": "A", "story": "B", "visuals": "C", "polish": "C", "policy": "A"}}
+{"spec_id": "mariana-trench-mystery-a2", "mood": "data", "theme": "earth", "hook_words": "8-11", "beats": 9, "words": 88, "hf": 2, "real_pictures": 0.89, "grades": {"hook": "A", "story": "B", "visuals": "C", "polish": "C", "policy": "A"}}

@@ -1,5 +1,5 @@
 {
- "current": "event-horizon-telescope-sharpness-a2",
+ "current": "mariana-trench-mystery-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -150,6 +150,25 @@
     "safe_zone": 10
    },
    "run_id": "40842249117"
+  },
+  "mariana-trench-mystery-a2": {
+   "title": "The Mariana Trench Mystery",
+   "base": "mariana-trench-mystery-a2",
+   "status": "delivered",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 8,
+    "accuracy": 9,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 9,
+    "polish": 7,
+    "hierarchy": 7,
+    "consistency": 6,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "40867896059"
   }
  }
 }
