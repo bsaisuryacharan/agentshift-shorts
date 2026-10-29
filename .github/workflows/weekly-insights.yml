@@ -23,7 +23,7 @@ jobs:
       - run: pip install -q -e .
       - name: Refresh insights
         run: python -m app.weekly
-      - name: Growth plan for today + report to Telegram (goal: 1,000,000 channel views in a month)
+      - name: "Growth plan for today + report to Telegram (goal 1,000,000 channel views in a month)"
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
