@@ -39,3 +39,8 @@ def test_screen_number_must_match_narration():
     b["hud"].append({"t": "chip", "text": "987654 km", "at": "away"})
     errs = auto.validate_spec(spec, "987654 4321")
     assert any("987654 is never spoken" in e for e in errs)
+
+
+def test_scaled_numbers_count_as_spoken():
+    sp = auto._values("It spins 100 million times and weighs 2.5 billion tonnes, about 1,400 km wide.")
+    assert auto._said("100000000", sp) and auto._said("2,500,000,000", sp) and auto._said("1400", sp) and not auto._said("21", sp)

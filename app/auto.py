@@ -304,6 +304,31 @@ PEOPLE = re.compile(r"\b(portrait|face|faces|man|men|woman|women|person|scientis
 BEHIND = re.compile(r"silhouette|from behind|back view|backs? turned|no faces?|faceless", re.I)
 
 
+SCALE = {"thousand": 1e3, "million": 1e6, "billion": 1e9, "trillion": 1e12}
+
+
+def _values(text: str) -> set[float]:
+    """every number in a text as a value, with 'million'/'billion' etc. applied: '100 million' -> 1e8 (and 100)"""
+    out: set[float] = set()
+    for m in re.finditer(r"(\d[\d,]*(?:\.\d+)?)\s*(thousand|million|billion|trillion)?", text, re.I):
+        try:
+            v = float(m.group(1).replace(",", ""))
+        except ValueError:
+            continue
+        out.add(v)
+        if m.group(2):
+            out.add(v * SCALE[m.group(2).lower()])
+    return out
+
+
+def _said(num: str, spoken: set[float]) -> bool:
+    try:
+        v = float(num.replace(",", "").rstrip("."))
+    except ValueError:
+        return True
+    return any(abs(v - s) <= 0.01 * max(abs(s), 1) for s in spoken)
+
+
 SHOWN_FIELDS = ("text", "html", "title", "sub", "label", "end", "prefix", "wordmark", "kicker", "body", "keyword", "note")   # text a viewer reads (chart data is exempt)
 
 
@@ -319,7 +344,7 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
             errs.append(f"missing {k}")
     if not re.fullmatch(r"[a-z0-9-]+", str(spec.get("id", ""))):
         errs.append("id must be a lowercase slug")
-    spoken = {n.replace(",", "").rstrip(".") for b in beats for n in re.findall(r"\d[\d,\.]*\d|\d", str(b.get("say", "")))}   # the judge rejects screen/narration mismatches
+    spoken = _values(" ".join(str(b.get("say", "")) for b in beats))     # the judge rejects screen/narration mismatches
     words = 0
     for b in beats:                       # the subscribe card is added by the pipeline; drop any the writer put in hud
         if isinstance(b.get("hud"), list):
@@ -374,7 +399,7 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
             shown = " ".join(str(v) for kk, v in {**e, **(e.get("vars") if isinstance(e.get("vars"), dict) else {})}.items() if kk in SHOWN_FIELDS)
             for num in re.findall(r"\d[\d,\.]*\d|\d", re.sub(r"<[^>]+>", " ", shown)):
                 said_here = re.findall(r"\d[\d,\.]*\d|\d", b["say"])                      # only a beat that speaks numbers can contradict its screen
-                if said_here and num.replace(",", "").rstrip(".") not in spoken and num not in ("1", "2", "3", "4", "5"):
+                if said_here and not _said(num, spoken) and num not in ("1", "2", "3", "4", "5"):
                     errs.append(f"{k}: on-screen number {num} is never spoken - say exactly that number or remove it from the screen")
     if not 70 <= words <= 128:
         errs.append(f"spoken words {words} outside 70-128")
