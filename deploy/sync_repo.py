@@ -27,17 +27,19 @@ if pending and "--force" not in sys.argv:
     print("\n".join("  - " + p for p in pending))
     print("Bring those changes to this Mac first:  python3 deploy/pull_cloud.py   (then sync again; or add --force to discard them)")
     sys.exit(1)
-keep_insights = wd / "assets" / "insights.json"       # written by the weekly cloud job: the repo copy is newer than anything on the Mac
-saved = keep_insights.read_bytes() if keep_insights.exists() else None
+CLOUD_FILES = ["assets/insights.json", "assets/performance.json", "assets/strategy.json"]     # written by cloud jobs: never replaced by the Mac copy
+saved_cloud = {f: (wd / f).read_bytes() for f in CLOUD_FILES if (wd / f).exists()}
+keep_insights = wd / "assets" / "insights.json"
+saved = None
 keep_bank = wd / "assets" / "idea_bank.json"         # its 'recent' part is refreshed in the cloud; the Mac copy only adds channels/formats
 bank_cloud = keep_bank.read_text() if keep_bank.exists() else None
 for item in list(wd.iterdir()):                      # replace code, keep state/ projects/ data/ .git
     if item.name in provision.ALLOW or item.name == ".github":
         subprocess.run(["rm", "-rf", str(item)], check=True)
 provision.stage(wd)
-if saved is not None:
-    keep_insights.parent.mkdir(parents=True, exist_ok=True)
-    keep_insights.write_bytes(saved)
+for f, data in saved_cloud.items():
+    (wd / f).parent.mkdir(parents=True, exist_ok=True)
+    (wd / f).write_bytes(data)
 if bank_cloud:
     import json as _json
     try:
