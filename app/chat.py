@@ -171,7 +171,7 @@ def finish(result_path: Path, text: str) -> int:
     try:
         r = json.loads(result_path.read_text())
         reply = (r.get("result") or "").strip() or "(Claude returned no answer.)"
-        if "401" in reply or "authenticate" in reply.lower():
+        if auth_refused(reply):
             reply = ("Claude could not log in (the stored token was refused). Create a new one with `claude setup-token` on the Mac, copy it as ONE line, "
                      "and save it with: pbpaste | gh secret set CLAUDE_CODE_OAUTH_TOKEN -R bsaisuryacharan/agentshift-shorts")
         meta = {"model": settings()["model"], "effort": settings()["effort"], "turns": r.get("num_turns"), "cost_usd": r.get("total_cost_usd"),
@@ -284,6 +284,16 @@ def handle_event(ev: dict, prog: Progress) -> dict | None:
     return None
 
 
+def auth_order() -> list[dict]:
+    tok = "".join(os.environ.get("CLAUDE_CODE_OAUTH_TOKEN", "").split())
+    key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    return [a for a in ({"CLAUDE_CODE_OAUTH_TOKEN": tok} if tok else None, {"ANTHROPIC_API_KEY": key} if key else None) if a] or [{}]
+
+
+def auth_refused(text: str) -> bool:
+    return "401" in text or "authenticat" in text.lower() or "invalid bearer" in text.lower() or "invalid x-api-key" in text.lower()
+
+
 def stream(text: str) -> int:
     """run Claude Code with live progress in Telegram, then send the answer and remember the turn"""
     import subprocess
@@ -293,17 +303,23 @@ def stream(text: str) -> int:
     cmd = ["claude", "-p", prompt, "--model", MODELS[s["model"]], "--effort", s["effort"], "--append-system-prompt-file", str(ROOT / "docs" / "AGENT.md"),
            "--output-format", "stream-json", "--verbose", "--max-turns", "60", "--allowedTools", *ALLOWED, "--disallowedTools", *DISALLOWED]
     result = None
-    try:
-        p = subprocess.Popen(cmd, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-        for line in p.stdout:
-            try:
-                ev = json.loads(line)
-            except ValueError:
-                continue
-            result = handle_event(ev, prog) or result
-        p.wait(timeout=60)
-    except (OSError, subprocess.SubprocessError) as e:
-        print("[chat] claude failed:", e)
+    for auth in auth_order():                       # the subscription token first (no extra cost); the pay-per-use API key only if the token is refused
+        env = {k: v for k, v in os.environ.items() if k not in ("CLAUDE_CODE_OAUTH_TOKEN", "ANTHROPIC_API_KEY")} | auth
+        result = None
+        try:
+            p = subprocess.Popen(cmd, cwd=ROOT, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+            for line in p.stdout:
+                try:
+                    ev = json.loads(line)
+                except ValueError:
+                    continue
+                result = handle_event(ev, prog) or result
+            p.wait(timeout=60)
+        except (OSError, subprocess.SubprocessError) as e:
+            print("[chat] claude failed:", e)
+        if not (result and auth_refused(str(result.get("result", "")))):
+            break
+        prog.step("Subscription login refused; trying the API key")
     (ROOT / "chat_result.json").write_text(json.dumps(result or {}))
     n = len(prog.steps)
     prog.done(f"Finished: {n} step{'s' if n != 1 else ''}" + (f", {result.get('num_turns')} turns" if result else " (no answer)"))

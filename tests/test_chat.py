@@ -76,3 +76,12 @@ def test_progress_lines_from_stream_events(monkeypatch, tmp_path):
 def test_describe_never_leaks_long_commands():
     assert chat.describe("Bash", {"command": "gh run view 123 --log | grep judge"}) == "Reading a run's log"
     assert len(chat.describe("Bash", {"command": "x" * 500})) < 80
+
+
+def test_subscription_token_is_tried_before_the_api_key(monkeypatch):
+    monkeypatch.setenv("CLAUDE_CODE_OAUTH_TOKEN", "tok\nen ")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "key")
+    assert chat.auth_order() == [{"CLAUDE_CODE_OAUTH_TOKEN": "token"}, {"ANTHROPIC_API_KEY": "key"}]
+    monkeypatch.delenv("CLAUDE_CODE_OAUTH_TOKEN")
+    assert chat.auth_order() == [{"ANTHROPIC_API_KEY": "key"}]
+    assert chat.auth_refused("Failed to authenticate. API Error: 401 Invalid bearer token") and not chat.auth_refused("All good")
