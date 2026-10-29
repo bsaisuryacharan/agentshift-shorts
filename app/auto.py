@@ -273,8 +273,8 @@ GALLERY motion graphics (real open-source HyperFrames components rendered with Y
 {HF_BLOCK}
 Use at least 2 hf elements per Short, a different name each time, one per beat, never next to another big element in the same beat; vars must hold real values from FACTS.
 Any element may add "fx":"shine".
-Moving-picture layers (optional, they make a still feel like video): beat "footage":"<2-3 concrete nouns, MOST SPECIFIC FIRST>" swaps that beat's picture for a real NASA clip
-(only for space/Earth/science beats, at most 2 per Short, e.g. "asteroid impact", "earth night lights"; a still is still required as fallback). Beat "motion":"<clip>" picks a light layer
+Moving-picture layers (optional, they make a still feel like video): beat "footage":"<2-3 concrete nouns, MOST SPECIFIC FIRST>" swaps that beat's picture for a real moving clip (NASA, or free stock video for any real, filmable subject: lava, ocean waves, clouds, cells, city lights)
+(at most 3 per Short, never people or text, e.g. "asteroid impact", "volcano eruption", "ocean waves aerial"; a still is still required as fallback). Use real footage on 3 beats whenever the subject can be filmed. Beat "motion":"<clip>" picks a light layer
 over the picture: {MOTION_CLIPS}; omit it and one is chosen from the mood. Do not stack two big elements in one beat (max ~1100px tall total).
 EVERY hud element needs "at": a word that appears in that beat's "say" (exact word) - the element appears when it is spoken.
 GOAL: every Short is built to earn: the channel's target is 1,000,000 views per Short and YouTube Partner Programme eligibility. Retention decides reach, so: a hook that promises something concrete in the first 2 seconds, a new fact or twist every beat, no filler, a last line that makes viewers replay or follow. Follow CHANNEL INSIGHTS (lessons, weakest stage, target progress) when they exist.
@@ -368,7 +368,7 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
     for b in beats:                                   # optional moving layers: sanitise instead of failing the script
         if b.get("footage"):
             nfoot += 1
-            if nfoot > 2 or not isinstance(b["footage"], str) or len(b["footage"]) > 60:
+            if nfoot > 3 or not isinstance(b["footage"], str) or len(b["footage"]) > 60:
                 b.pop("footage")
         if b.get("motion") not in (None, False) and b["motion"] not in MOTION_CLIPS.split(", "):
             b.pop("motion")
