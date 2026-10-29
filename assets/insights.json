@@ -1,283 +1,108 @@
 {
- "generated_at": "2026-10-26T08:39:48+00:00",
+ "generated_at": "2026-10-29T18:20:32+00:00",
  "channel": {
-  "period": "2026-09-26..2026-10-25",
-  "shorts": 1,
-  "views": 5587.0,
+  "period": "2026-09-29..2026-10-28",
+  "views": 5667.0,
   "avg_view_seconds": 23.0,
-  "avg_view_pct": 61.45,
+  "avg_view_pct": 60.42,
   "net_subscribers": 8.0,
-  "likes": 83.0,
-  "shares": 4.0,
-  "caveat": "tiny sample"
+  "likes": 84.0,
+  "shares": 6.0,
+  "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
-  "Most Incredible Animal Moments | Ep 15",
-  "ANIMALS that left humans speechless (Ep.2)",
-  "How Small Is the Planck Length? 💀🔬",
-  "Most Shocking Animal Moments | Ep 16",
+  "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained",
+  "The 3 Most Unbelievable Dangerous Places on Earth!🙄",
+  "What if you dropped 10kg of tungsten from space?",
   "IKAN LELE SAMA BELUT",
-  "The Most Unbelievable Animal Moments Ever Recorded",
+  "Bird & Animal Mutualism | Amazing Symbiotic Relationship in Nature 🏞️",
   "How Big is the Universe, Really? 🌌💀",
-  "Flying Car ?",
+  "🚨EXPLAINING FLASH DRIVE ‼️Are you having a tech problem? We accept mail ins! We have a Mail-In Link",
+  "Hannah Fry on The Nun Study",
   "Missing Bedroom Mystery in a 200year old house",
-  "Three giant black holes discovered in a galaxy from the dawn of time",
-  "Scientists discover how pancreatic cancer rewrites its DNA to escape treatment",
-  "A hidden bias in human language challenges 70 years of science"
+  "Animales Que Fueron Encontrados Dentro de la Comida 🤢😱 | PARTE 3",
+  "Colonoscopy Explained | How Doctors Examine the Colon 🩺 @Sapbiology11",
+  "Six popular sugar substitutes linked to faster brain aging"
  ],
+ "learned": {
+  "shorts_scored": 1,
+  "best": [
+   {
+    "title": "The Mariana Trench Mystery",
+    "avg": 8.0,
+    "weakest": "originality"
+   }
+  ],
+  "worst": [],
+  "weakest_dimensions": [
+   "originality"
+  ]
+ },
  "stage_averages": {
-  "hook": 7.5,
-  "story": 6.9,
-  "visuals": 6.7,
-  "polish": 5.5,
-  "policy": 10.0
+  "hook": 7.6,
+  "story": 6.6,
+  "visuals": 6.2,
+  "polish": 5.6,
+  "policy": 8.9
  },
  "weakest_stage": "polish",
  "region": "IN",
- "trend_signals_total": 53,
- "trend_signals_on_niche": 34,
+ "trend_signals_total": 69,
+ "trend_signals_on_niche": 54,
  "niche_winners": [
   {
-   "title": "IKAN LELE SAMA BELUT #facts #animals #nature #ngeshortsdulu",
-   "views": 3349907,
-   "url": "https://www.youtube.com/watch?v=C_nXqPmMxhc"
+   "title": "The 3 Most Unbelievable Dangerous Places on Earth!🙄#city #facts #new #shorts #place #ytsho",
+   "views": 6185776,
+   "url": "https://www.youtube.com/watch?v=IQNLS4q2ZXQ"
   },
   {
-   "title": "Most Incredible Animal Moments | Ep 15 #hindi #animals #wildliferescue",
-   "views": 12175013,
-   "url": "https://www.youtube.com/watch?v=stHz5Y9hQ_A"
+   "title": "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained #shorts",
+   "views": 6910273,
+   "url": "https://www.youtube.com/watch?v=K2we_H33tlU"
   },
   {
-   "title": "ANIMALS that left humans speechless (Ep.2)",
-   "views": 10057651,
-   "url": "https://www.youtube.com/watch?v=-ZsnuSJSuIU"
+   "title": "Hannah Fry on The Nun Study #dementia #dataset #scienceexplained #hannahfry #thenunstudy #",
+   "views": 2976842,
+   "url": "https://www.youtube.com/watch?v=zj0b2RAJq1g"
   },
   {
-   "title": "Why Nothing Can Survive Venus",
-   "views": 1612403,
-   "url": "https://www.youtube.com/watch?v=tKikZXrcZCQ"
+   "title": "What if you dropped 10kg of tungsten from space?",
+   "views": 4947400,
+   "url": "https://www.youtube.com/watch?v=uj4plcsfc6k"
   },
   {
-   "title": "How Small Is the Planck Length? 💀🔬 #Shorts #Space #Astronomy #Science #QuantumPhysics #Phy",
-   "views": 6156104,
-   "url": "https://www.youtube.com/watch?v=Buh0gX_-5lY"
+   "title": "Animales Que Fueron Encontrados Dentro de la Comida 🤢😱 | PARTE 3 | #facts #animals #curios",
+   "views": 2505715,
+   "url": "https://www.youtube.com/watch?v=zdb-_423ARY"
   },
   {
    "title": "The Weirdest Bird Nests You’ve Ever Seen!🙄#facts #shorts #birds #new #tending #shortvideo",
-   "views": 4553132,
+   "views": 5132506,
    "url": "https://www.youtube.com/watch?v=BneG3bVSJ54"
   },
   {
-   "title": "We Are So TINY! 💀🤏",
-   "views": 5884297,
-   "url": "https://www.youtube.com/watch?v=axIUhBsuSBk"
+   "title": "Why Nothing Can Survive Venus",
+   "views": 2116407,
+   "url": "https://www.youtube.com/watch?v=tKikZXrcZCQ"
   },
   {
    "title": "Is Machhli Ne Apne Hi Bachhon Ke Qatil Ko Paala! 😱",
-   "views": 3498018,
+   "views": 3605677,
    "url": "https://www.youtube.com/watch?v=4iBlF3hxGNo"
   }
  ],
  "news": [
-  "Low-dose aspirin linked to 70% lower dementia risk, but there's a catch",
-  "This mysterious mushroom makes people see hundreds of tiny humans",
-  "Three giant black holes discovered in a galaxy from the dawn of time",
-  "New evidence suggests spinosaurus spent most of its life underwater",
-  "Scientists discover how pancreatic cancer rewrites its DNA to escape treatment",
-  "A hidden bias in human language challenges 70 years of science",
-  "Astronomers may have discovered the first moon beyond our Solar System",
-  "NASA’s asteroid Bennu samples reveal a 4.5-billion-year-old secret",
-  "2026 October 26 – M42: The Great Nebula in Orion",
-  "Hunting Red Leaves with Satellites",
-  "APOD: 2026 October 25 – Dark Matter in a Simulated Universe",
-  "APOD: 2026 October 24 – Rosetta’s Selfie"
- ],
- "performance": {
-  "updated": "2026-10-29T18:17+00:00",
-  "target_views_per_short": 1000000,
-  "shorts": [
-   {
-    "spec_id": null,
-    "video_id": "31eBBO_cKPw",
-    "title": "Space Is Too Big For Your Brain 🤯 #shorts",
-    "views": 1689,
-    "likes": 25,
-    "comments": 0,
-    "age_h": 312.6,
-    "expected": 852408,
-    "ratio": 0.002,
-    "status": "far_behind",
-    "projected_30d": 1981
-   },
-   {
-    "spec_id": null,
-    "video_id": "EqCn1e3z8RM",
-    "title": "The Money Trick School Never Taught You 💰 #shorts",
-    "views": 440,
-    "likes": 7,
-    "comments": 0,
-    "age_h": 314.2,
-    "expected": 852986,
-    "ratio": 0.001,
-    "status": "far_behind",
-    "projected_30d": 515
-   },
-   {
-    "spec_id": null,
-    "video_id": "gUdstVaCcR8",
-    "title": "These 4 Brain Facts Sound Fake (But They're True) 🧠 #shorts",
-    "views": 1111,
-    "likes": 16,
-    "comments": 0,
-    "age_h": 314.3,
-    "expected": 853008,
-    "ratio": 0.001,
-    "status": "far_behind",
-    "projected_30d": 1302
-   },
-   {
-    "spec_id": null,
-    "video_id": "7DogoYseLBs",
-    "title": "3 FREE AI Tricks to Get More Interview Calls 🎯 (Save This) #shorts",
-    "views": 30,
-    "likes": 2,
-    "comments": 0,
-    "age_h": 386.1,
-    "expected": 879028,
-    "ratio": 0.0,
-    "status": "far_behind",
-    "projected_30d": 34
-   },
-   {
-    "spec_id": null,
-    "video_id": "OGeI24Up7T8",
-    "title": "Your iPhone Fires 30,000 Invisible Dots at Your Face 🤯 #shorts",
-    "views": 139,
-    "likes": 5,
-    "comments": 0,
-    "age_h": 388.8,
-    "expected": 879996,
-    "ratio": 0.0,
-    "status": "far_behind",
-    "projected_30d": 157
-   },
-   {
-    "spec_id": null,
-    "video_id": "ADdUiY4j0V0",
-    "title": "Is Your Phone Always Listening? What \"Hey Google\" Really Does 🎙 #shorts",
-    "views": 170,
-    "likes": 2,
-    "comments": 0,
-    "age_h": 396.8,
-    "expected": 882895,
-    "ratio": 0.0,
-    "status": "far_behind",
-    "projected_30d": 192
-   },
-   {
-    "spec_id": null,
-    "video_id": "5WlKLkPY08Y",
-    "title": "5 AI Prompts 99% of People Don't Know 🤯 (Save This) #shorts",
-    "views": 21,
-    "likes": 1,
-    "comments": 0,
-    "age_h": 412.8,
-    "expected": 888690,
-    "ratio": 0.0,
-    "status": "far_behind",
-    "projected_30d": 23
-   },
-   {
-    "spec_id": null,
-    "video_id": "cYuyitq8RWk",
-    "title": "What If Grandma Could Just ASK Her Phone? 📱 Free AI Tool #shorts",
-    "views": 27,
-    "likes": 1,
-    "comments": 0,
-    "age_h": 418.8,
-    "expected": 890867,
-    "ratio": 0.0,
-    "status": "far_behind",
-    "projected_30d": 30
-   },
-   {
-    "spec_id": null,
-    "video_id": "JxVRPTgq1yY",
-    "title": "95% of People Don't Know Their Phone Can Do This 🤯 #shorts",
-    "views": 183,
-    "likes": 2,
-    "comments": 0,
-    "age_h": 434.7,
-    "expected": 896636,
-    "ratio": 0.0,
-    "status": "far_behind",
-    "projected_30d": 204
-   },
-   {
-    "spec_id": null,
-    "video_id": "SPi3O0zh_wY",
-    "title": "Spot the AI 2 🤖 Only 1% Get All 3 Right #shorts",
-    "views": 238,
-    "likes": 5,
-    "comments": 1,
-    "age_h": 439.9,
-    "expected": 898525,
-    "ratio": 0.0,
-    "status": "far_behind",
-    "projected_30d": 264
-   },
-   {
-    "spec_id": null,
-    "video_id": "NiwKid3S2f0",
-    "title": "5 AI Stories This Week That Sound FAKE 🤯 (#1 is scary) #shorts",
-    "views": 122,
-    "likes": 2,
-    "comments": 1,
-    "age_h": 455.9,
-    "expected": 904294,
-    "ratio": 0.0,
-    "status": "far_behind",
-    "projected_30d": 134
-   },
-   {
-    "spec_id": null,
-    "video_id": "uU6JXROm7rI",
-    "title": "Claude Code on Android for FREE — No Cloud Server Needed",
-    "views": 532,
-    "likes": 8,
-    "comments": 0,
-    "age_h": 457.0,
-    "expected": 904726,
-    "ratio": 0.001,
-    "status": "far_behind",
-    "projected_30d": 588
-   }
-  ],
-  "best": {
-   "title": "Space Is Too Big For Your Brain 🤯 #shorts",
-   "views": 1689
-  },
-  "ypp": {
-   "subscribers": 8,
-   "shorts_views_90d": 5736,
-   "public_uploads_90d": 17,
-   "tier1_fan_funding": {
-    "subs_ok": false,
-    "uploads_ok": true,
-    "views_ok": false,
-    "views_pct": 0.2
-   },
-   "tier2_ads": {
-    "subs_ok": false,
-    "views_ok": false,
-    "subs_pct": 0.8,
-    "views_pct": 0.1
-   },
-   "subscribers_known": true
-  },
-  "on_track": 0,
-  "behind": 17,
-  "not_public_or_missing": [],
-  "lessons": []
- }
+  "Six popular sugar substitutes linked to faster brain aging",
+  "Einstein's equations may explain the universe without dark energy",
+  "NASA discovers Jupiter’s invisible shield is more complex than Earth’s",
+  "128,000-year-old ice in Tibet could rewrite climate history",
+  "A 700,000-year-old elephant tooth reveals a lost world where early humans lived",
+  "A single brain signal may explain schizophrenia's most puzzling symptoms",
+  "The autistic brain processes faces differently than scientists thought",
+  "NASA Names Troy Asher Armstrong Flight Research Center Director",
+  "NIH–NASA QuSAFE Challenge",
+  "Envía tu nombre a Titán a bordo de la misión Dragonfly de la NASA",
+  "Send Your Name to Titan Aboard NASA’s Dragonfly Mission",
+  "NASA’s ISAM State of Play: The Industry Standard for Space Servicing, Assembly, and Manufacturing"
+ ]
 }

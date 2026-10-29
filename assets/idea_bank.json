@@ -2,22 +2,78 @@
  "updated": "2026-10-29",
  "note": "Reference data for the topic picker and the script writer: formats, hooks and ideas that work for other Shorts channels. Learn the shape, never copy titles, scripts or footage. 'recent' is refreshed in the cloud (app/ideabank.py) from the reference channels; the rest was built from vidIQ (titles, view counts, two transcripts).",
  "reference_channels": [
-  {"name": "Higgsfield AI", "id": "UCh13OyDSm-Kb8ij3yZArtFg", "why": "500K subs, ~75 Shorts/month; format and hook teacher (AI-video topics themselves flop on this channel)"},
-  {"name": "Tangent", "id": "UCDT2MKaTYcvXjxXGAWtIEIw", "why": "2.2K subs, 'How submarines make their own air' 275K views: engineering how-it-works"},
-  {"name": "Oddity Jar", "id": "UCQQn2gf6Nlw4Ay-KvB2lIJA", "why": "1.1K subs, 2.4M views on a tech-news 'here's the trick' explainer"},
-  {"name": "Binaryhood", "id": "UC5R0o2pwlSV3hCozAYp-tWg", "why": "4.5K subs, 'How GTA 6 reaches millions of consoles at once' 315K views: tech news explained"},
-  {"name": "Sofia Science", "id": "UCMqpw2TIRYGostU6RR21_9A", "why": "physics-of-fiction questions, 779x breakout"},
-  {"name": "Cosmos Updates", "id": "UCBobedYWckPUH6tNA8DQVvA", "why": "space discoveries, steady 100K-250K"},
-  {"name": "PrismTrend", "id": "UC1zqfI5E75KkNDinkgWGbGw", "why": "nature 'why can't X' puzzles, 447K"}
+  {
+   "name": "Higgsfield AI",
+   "id": "UCh13OyDSm-Kb8ij3yZArtFg",
+   "why": "500K subs, ~75 Shorts/month; format and hook teacher (AI-video topics themselves flop on this channel)"
+  },
+  {
+   "name": "Tangent",
+   "id": "UCDT2MKaTYcvXjxXGAWtIEIw",
+   "why": "2.2K subs, 'How submarines make their own air' 275K views: engineering how-it-works"
+  },
+  {
+   "name": "Oddity Jar",
+   "id": "UCQQn2gf6Nlw4Ay-KvB2lIJA",
+   "why": "1.1K subs, 2.4M views on a tech-news 'here's the trick' explainer"
+  },
+  {
+   "name": "Binaryhood",
+   "id": "UC5R0o2pwlSV3hCozAYp-tWg",
+   "why": "4.5K subs, 'How GTA 6 reaches millions of consoles at once' 315K views: tech news explained"
+  },
+  {
+   "name": "Sofia Science",
+   "id": "UCMqpw2TIRYGostU6RR21_9A",
+   "why": "physics-of-fiction questions, 779x breakout"
+  },
+  {
+   "name": "Cosmos Updates",
+   "id": "UCBobedYWckPUH6tNA8DQVvA",
+   "why": "space discoveries, steady 100K-250K"
+  },
+  {
+   "name": "PrismTrend",
+   "id": "UC1zqfI5E75KkNDinkgWGbGw",
+   "why": "nature 'why can't X' puzzles, 447K"
+  }
  ],
  "formats": [
-  {"name": "the N parts / rules", "shape": "Claim 'Every X is built on N parts. Here they are.' then one beat per part, end on the payoff.", "example": "The 4 parts every viral short drama is built on (Higgsfield)"},
-  {"name": "it's not what it looks like", "shape": "Show the impossible-looking thing, then 'here's the trick' with the real mechanism.", "example": "Tesla's flying Roadster isn't really flying. Here's the trick (2.4M views)"},
-  {"name": "how it really works", "shape": "Everyday or famous machine, one surprising mechanism, one number, one image of the inside.", "example": "How submarines make their own air and fresh water (275K)"},
-  {"name": "tech news, explained", "shape": "This week's tech headline, what it actually does, the one number that matters, why it matters to you.", "example": "How GTA 6 reaches millions of consoles at once (315K)"},
-  {"name": "X vs Y", "shape": "Two things side by side, one measurable difference, a winner.", "example": "AI vs VFX: who does it better? / 1080p vs 4K"},
-  {"name": "stop doing / myth", "shape": "'Stop believing X' or '\"X can't happen\" - wrong.' then the evidence.", "example": "\"AI can't do cinema\" - WRONG (Higgsfield)"},
-  {"name": "peak first", "shape": "Open on the most dramatic moment, then rewind to explain how it got there.", "example": "Higgsfield's hook rule: 'start with the peak of the scene'"}
+  {
+   "name": "the N parts / rules",
+   "shape": "Claim 'Every X is built on N parts. Here they are.' then one beat per part, end on the payoff.",
+   "example": "The 4 parts every viral short drama is built on (Higgsfield)"
+  },
+  {
+   "name": "it's not what it looks like",
+   "shape": "Show the impossible-looking thing, then 'here's the trick' with the real mechanism.",
+   "example": "Tesla's flying Roadster isn't really flying. Here's the trick (2.4M views)"
+  },
+  {
+   "name": "how it really works",
+   "shape": "Everyday or famous machine, one surprising mechanism, one number, one image of the inside.",
+   "example": "How submarines make their own air and fresh water (275K)"
+  },
+  {
+   "name": "tech news, explained",
+   "shape": "This week's tech headline, what it actually does, the one number that matters, why it matters to you.",
+   "example": "How GTA 6 reaches millions of consoles at once (315K)"
+  },
+  {
+   "name": "X vs Y",
+   "shape": "Two things side by side, one measurable difference, a winner.",
+   "example": "AI vs VFX: who does it better? / 1080p vs 4K"
+  },
+  {
+   "name": "stop doing / myth",
+   "shape": "'Stop believing X' or '\"X can't happen\" - wrong.' then the evidence.",
+   "example": "\"AI can't do cinema\" - WRONG (Higgsfield)"
+  },
+  {
+   "name": "peak first",
+   "shape": "Open on the most dramatic moment, then rewind to explain how it got there.",
+   "example": "Higgsfield's hook rule: 'start with the peak of the scene'"
+  }
  ],
  "hooks": [
   "State the result in the first 2 seconds, then 'here's how' (Higgsfield: 'Motion design is now easier than ever. What you're seeing was not made by a human.').",
@@ -27,18 +83,260 @@
   "End with a one-word-answer question to the viewer ('Do you think AI will replace motion designers too?') - it brings comments."
  ],
  "ideas": [
-  {"title": "Tesla's flying Roadster isn't really flying. Here's the trick", "views": 2400000, "subs": 1100, "niche": "tech news"},
-  {"title": "Elon Musk explains how SpaceX catches 250-ton rockets mid-air", "views": 445500, "subs": 6400, "niche": "space tech"},
-  {"title": "How submarines make their own air and fresh water", "views": 274800, "subs": 2200, "niche": "engineering"},
-  {"title": "How GTA 6 reaches millions of consoles at once", "views": 314800, "subs": 4500, "niche": "tech explained"},
-  {"title": "Not fake, it's pure physics! Light takes time to travel", "views": 1700000, "subs": 6200, "niche": "physics"},
-  {"title": "Why every Starlink satellite is slowly falling", "views": 1600000, "subs": 24000, "niche": "space"},
-  {"title": "How a Mount Everest-sized asteroid wiped out the dinosaurs", "views": 1200000, "subs": 1900, "niche": "space/history"},
-  {"title": "Why can't an ant escape a simple circle", "views": 447300, "subs": 137000, "niche": "nature"},
-  {"title": "You've never actually touched anything", "views": 263900, "subs": 1600, "niche": "physics"},
-  {"title": "Worlds oldest murder", "views": 851700, "subs": 690, "niche": "history"},
-  {"title": "Motion design is now easier than ever", "views": 133678, "subs": 500000, "niche": "AI tools (format only)"},
-  {"title": "How I run ads with ChatGPT", "views": 278093, "subs": 500000, "niche": "AI tools (format only)"}
+  {
+   "title": "Tesla's flying Roadster isn't really flying. Here's the trick",
+   "views": 2400000,
+   "subs": 1100,
+   "niche": "tech news"
+  },
+  {
+   "title": "Elon Musk explains how SpaceX catches 250-ton rockets mid-air",
+   "views": 445500,
+   "subs": 6400,
+   "niche": "space tech"
+  },
+  {
+   "title": "How submarines make their own air and fresh water",
+   "views": 274800,
+   "subs": 2200,
+   "niche": "engineering"
+  },
+  {
+   "title": "How GTA 6 reaches millions of consoles at once",
+   "views": 314800,
+   "subs": 4500,
+   "niche": "tech explained"
+  },
+  {
+   "title": "Not fake, it's pure physics! Light takes time to travel",
+   "views": 1700000,
+   "subs": 6200,
+   "niche": "physics"
+  },
+  {
+   "title": "Why every Starlink satellite is slowly falling",
+   "views": 1600000,
+   "subs": 24000,
+   "niche": "space"
+  },
+  {
+   "title": "How a Mount Everest-sized asteroid wiped out the dinosaurs",
+   "views": 1200000,
+   "subs": 1900,
+   "niche": "space/history"
+  },
+  {
+   "title": "Why can't an ant escape a simple circle",
+   "views": 447300,
+   "subs": 137000,
+   "niche": "nature"
+  },
+  {
+   "title": "You've never actually touched anything",
+   "views": 263900,
+   "subs": 1600,
+   "niche": "physics"
+  },
+  {
+   "title": "Worlds oldest murder",
+   "views": 851700,
+   "subs": 690,
+   "niche": "history"
+  },
+  {
+   "title": "Motion design is now easier than ever",
+   "views": 133678,
+   "subs": 500000,
+   "niche": "AI tools (format only)"
+  },
+  {
+   "title": "How I run ads with ChatGPT",
+   "views": 278093,
+   "subs": 500000,
+   "niche": "AI tools (format only)"
+  }
  ],
- "recent": []
+ "recent": [
+  {
+   "channel": "Oddity Jar",
+   "title": "Tesla&#39;s Flying Roadster Isn&#39;t Really Flying. Here&#39;s the Trick",
+   "views": 2363592,
+   "url": "https://youtube.com/shorts/741vnnsr9XI"
+  },
+  {
+   "channel": "Binaryhood",
+   "title": "How London Underground Gates Manage Millions of Taps a Day",
+   "views": 1542661,
+   "url": "https://youtube.com/shorts/sQON_GW4-3o"
+  },
+  {
+   "channel": "Tangent",
+   "title": "Never Pour Fresh Concrete Directly Over Old Concrete!",
+   "views": 456707,
+   "url": "https://youtube.com/shorts/xs7qVVjvEiU"
+  },
+  {
+   "channel": "Tangent",
+   "title": "This Is How Ships Make Their Own Water 🚢💨 #engineering #shorts",
+   "views": 452011,
+   "url": "https://youtube.com/shorts/n6DzOI8ExYo"
+  },
+  {
+   "channel": "PrismTrend",
+   "title": "Why Can&#39;t an Ant Escape a Simple Circle 🐜😱",
+   "views": 449423,
+   "url": "https://youtube.com/shorts/lUzAxe_uJPo"
+  },
+  {
+   "channel": "Tangent",
+   "title": "The $5,000 Driveway Mistake Contractors Won’t Tell You About",
+   "views": 370673,
+   "url": "https://youtube.com/shorts/Az671BpB5Sc"
+  },
+  {
+   "channel": "Cosmos Updates",
+   "title": "Watch the frozen hell .. a ringed world just 57°C above absolute zero #universe",
+   "views": 334214,
+   "url": "https://youtube.com/shorts/DbB5nO5lS00"
+  },
+  {
+   "channel": "Binaryhood",
+   "title": "How GTA 6 Reaches Millions of Consoles at Once #gta6",
+   "views": 318245,
+   "url": "https://youtube.com/shorts/_FCowgjQ-ec"
+  },
+  {
+   "channel": "Cosmos Updates",
+   "title": "TRAPPIST-1g: An Alien World Under a Salmon Sun #universe #alien",
+   "views": 291549,
+   "url": "https://youtube.com/shorts/ReSiGCHcU14"
+  },
+  {
+   "channel": "Higgsfield AI",
+   "title": "How I run ads with ChatGPT",
+   "views": 279112,
+   "url": "https://youtube.com/shorts/zMg6uWJv_f8"
+  },
+  {
+   "channel": "Tangent",
+   "title": "How Submarines Make Their Own Air and Fresh Water",
+   "views": 274921,
+   "url": "https://youtube.com/shorts/n4nRTDPnhq4"
+  },
+  {
+   "channel": "Cosmos Updates",
+   "title": "An Alien World With 19 Moons #space #alien",
+   "views": 257713,
+   "url": "https://youtube.com/shorts/_MZ68FKB4hA"
+  },
+  {
+   "channel": "Higgsfield AI",
+   "title": "Introducing Higgsfield Katana | Claude Motion",
+   "views": 233365,
+   "url": "https://youtube.com/shorts/-LNDXx__ZT0"
+  },
+  {
+   "channel": "Sofia Science",
+   "title": "How Can The Flash Walk Through Solid Objects? ⚡🧱",
+   "views": 196451,
+   "url": "https://youtube.com/shorts/gxQOn3XcR70"
+  },
+  {
+   "channel": "Cosmos Updates",
+   "title": "Watch this alien world .. an 84% Earth-like planet same temperature as Earth #amazingworlds",
+   "views": 187420,
+   "url": "https://youtube.com/shorts/oYjLpSFOcLc"
+  },
+  {
+   "channel": "Cosmos Updates",
+   "title": "K2-229b: The 2,000°C Hell World #hell #sun",
+   "views": 171500,
+   "url": "https://youtube.com/shorts/dp-i_VVkAx8"
+  },
+  {
+   "channel": "Oddity Jar",
+   "title": "What Happens If You Stand Behind Tesla&#39;s Roadster Thrusters?",
+   "views": 125074,
+   "url": "https://youtube.com/shorts/XO3B9EQreWM"
+  },
+  {
+   "channel": "PrismTrend",
+   "title": "Trapped in a Subway Tunnel NEVER Run From an Incoming Train! 🚇😱",
+   "views": 104629,
+   "url": "https://youtube.com/shorts/4VencA8P4ZE"
+  },
+  {
+   "channel": "Higgsfield AI",
+   "title": "How to make an AI influencer from scratch #tutorial #ai #shorts",
+   "views": 55818,
+   "url": "https://youtube.com/shorts/utm1F5csc7k"
+  },
+  {
+   "channel": "Higgsfield AI",
+   "title": "How To Change Anything in Your Videos with AI #ai #higgsfield #editinghacks",
+   "views": 55299,
+   "url": "https://youtube.com/shorts/l5BvSCfu7jQ"
+  },
+  {
+   "channel": "Higgsfield AI",
+   "title": "Higgsfield AI Influencer | Bring Your Character Into Any Trend",
+   "views": 53381,
+   "url": "https://youtube.com/shorts/9WdMp2riPX0"
+  },
+  {
+   "channel": "Sofia Science",
+   "title": "Why Does VR Make Your Stomach Drop? 🥽🎢",
+   "views": 44220,
+   "url": "https://youtube.com/shorts/cvb0qBaguh8"
+  },
+  {
+   "channel": "Binaryhood",
+   "title": "How Google Maps Predicts Traffic Before It Happens",
+   "views": 38160,
+   "url": "https://youtube.com/shorts/FyRsW8Cqjtk"
+  },
+  {
+   "channel": "PrismTrend",
+   "title": "What If Iron Man’s Armor Could Heal You 🤯",
+   "views": 37400,
+   "url": "https://youtube.com/shorts/eC9wgcK4YKE"
+  },
+  {
+   "channel": "Binaryhood",
+   "title": "How Airports Get Millions of Bags on the Right Plane",
+   "views": 36915,
+   "url": "https://youtube.com/shorts/NHImdDIO5Mc"
+  },
+  {
+   "channel": "PrismTrend",
+   "title": "😱 What Does This Weird Thing in Your Throat Actually Do",
+   "views": 34573,
+   "url": "https://youtube.com/shorts/PioOkFlm1dg"
+  },
+  {
+   "channel": "PrismTrend",
+   "title": "Buried Alive? 😨 Here&#39;s How to Survive!",
+   "views": 32323,
+   "url": "https://youtube.com/shorts/s_f59vOKQDI"
+  },
+  {
+   "channel": "Sofia Science",
+   "title": "Why You Can Never Smell Your Own House 🏠😳",
+   "views": 27770,
+   "url": "https://youtube.com/shorts/HQveRJAHWL8"
+  },
+  {
+   "channel": "Tangent",
+   "title": "Holes Up or Down? How French Drains Actually Work",
+   "views": 16198,
+   "url": "https://youtube.com/shorts/RLBGEFwqCL4"
+  },
+  {
+   "channel": "Oddity Jar",
+   "title": "Why Do Fighter Jets Land on Carriers at Full Power?",
+   "views": 13566,
+   "url": "https://youtube.com/shorts/Qe3_nVRLaJ4"
+  }
+ ],
+ "recent_updated": "2026-10-29T18:20+00:00"
 }

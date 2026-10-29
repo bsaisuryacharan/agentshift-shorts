@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-10-26T08:39:43.869737+00:00",
+  "generated_at": "2026-10-29T18:20:23.457733+00:00",
   "status": "ok",
   "date_basis": "YouTube Analytics reports use Pacific calendar days; current day excluded.",
   "current_period": {
-    "start": "2026-09-26",
-    "end": "2026-10-25",
+    "start": "2026-09-29",
+    "end": "2026-10-28",
     "short_rows": 1,
     "summary": {
-      "views": 5587.0,
-      "engagedViews": 2247.0,
-      "estimatedMinutesWatched": 954.0,
-      "likes": 83.0,
+      "views": 5667.0,
+      "engagedViews": 2281.0,
+      "estimatedMinutesWatched": 978.0,
+      "likes": 84.0,
       "comments": 2.0,
-      "shares": 4.0,
+      "shares": 6.0,
       "subscribersGained": 8.0,
       "subscribersLost": 0.0,
       "averageViewDuration": 23.0,
-      "averageViewPercentage": 61.45,
+      "averageViewPercentage": 60.42,
       "netSubscribers": 8.0
     }
   },
   "previous_period": {
-    "start": "2026-08-27",
-    "end": "2026-09-25",
+    "start": "2026-08-30",
+    "end": "2026-09-28",
     "short_rows": 1,
     "summary": {
       "views": 3.0,
