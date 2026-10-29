@@ -13,6 +13,7 @@ Settings and memory live in the repo (state/chat/), so they survive between runs
 from __future__ import annotations
 
 import json
+import re
 import os
 import sys
 import time
@@ -65,13 +66,78 @@ def remember(user: str, reply: str, meta: dict | None = None, chat: str | None =
                            ensure_ascii=False) + "\n")
 
 
-def send(text: str, chat: str | None = None) -> None:
+def _tg(method: str, **data) -> dict:
     tok = os.environ.get("TELEGRAM_BOT_TOKEN")
     if not tok:
-        print("[chat] no TELEGRAM_BOT_TOKEN; reply:\n" + text)
-        return
-    for i in range(0, max(len(text), 1), 3900):                        # Telegram's limit is 4096 characters per message
-        httpx.post(f"https://api.telegram.org/bot{tok}/sendMessage", data={"chat_id": chat or _chat(), "text": text[i:i + 3900] or "(empty)"}, timeout=60)
+        print(f"[chat] {method}:", str(data.get("text", ""))[:300])
+        return {}
+    try:
+        r = httpx.post(f"https://api.telegram.org/bot{tok}/{method}", json=data, timeout=60)
+        out = r.json()
+    except (httpx.HTTPError, ValueError) as e:
+        print(f"[chat] {method} failed: {e!r}", flush=True)
+        return {}
+    if not out.get("ok"):
+        print(f"[chat] {method} refused: {str(out.get('description'))[:200]}", flush=True)
+    return out
+
+
+def keyboard(rows: list[list[tuple[str, str]]] | None) -> dict | None:
+    """[[(label, callback_data), ...], ...] -> Telegram inline keyboard (callback_data is cut to Telegram's 64 bytes)"""
+    if not rows:
+        return None
+    return {"inline_keyboard": [[{"text": lab[:40], "callback_data": data.encode()[:64].decode(errors="ignore")} for lab, data in row] for row in rows]}
+
+
+def send(text: str, chat: str | None = None, buttons: list | None = None, edit: str | None = None) -> int | None:
+    """send (or, with edit=message id, replace) a message; long text is split; buttons go on the last part. Returns the message id."""
+    chat = chat or _chat()
+    parts = [text[i:i + 3900] for i in range(0, max(len(text), 1), 3900)] or ["(empty)"]
+    mid = None
+    for n, part in enumerate(parts):
+        extra = {"reply_markup": keyboard(buttons)} if buttons and n == len(parts) - 1 else {}
+        if edit and n == 0:
+            out = _tg("editMessageText", chat_id=chat, message_id=int(edit), text=part or "(empty)", **extra)
+            if out.get("ok"):
+                mid = int(edit)
+                continue
+        out = _tg("sendMessage", chat_id=chat, text=part or "(empty)", **extra)
+        mid = (out.get("result") or {}).get("message_id", mid)
+    return mid
+
+
+def control_buttons(text: str) -> list | None:
+    """the tap-to-choose keyboards for the owner's controls (current choice marked ✓)"""
+    cmd = text.strip().split(" ")[0].lower().split("@")[0]
+    s = settings()
+    mark = lambda cur, v: ("✓ " if cur == v else "") + v
+    models = [[(mark(s["model"], m), f"cmd:/model {m}") for m in MODELS]]
+    efforts = [[(mark(s["effort"], e), f"cmd:/effort {e}") for e in EFFORTS[:3]], [(mark(s["effort"], e), f"cmd:/effort {e}") for e in EFFORTS[3:]]]
+    if cmd == "/model":
+        return models
+    if cmd == "/effort":
+        return efforts
+    if cmd in ("/settings", "/claude"):
+        return models + efforts + [[("Forget the conversation", "cmd:/reset")]]
+    if cmd == "/changes":
+        try:
+            prs = [p for p in json.loads(_gh("pr", "list", "--state", "open", "--json", "number,title,headRefName") or "[]") if p["headRefName"].startswith("chat/")]
+        except ValueError:
+            return None
+        return [[(f"Merge #{p['number']}", f"cmd:/merge {p['number']}"), (f"Discard #{p['number']}", f"cmd:/discard {p['number']}")] for p in prs[:6]] or None
+    return None
+
+
+BUTTON_LINE = re.compile(r"^\s*BUTTONS:\s*(.+)$", re.M)
+
+
+def split_buttons(reply: str) -> tuple[str, list | None]:
+    """Claude may end a reply with  BUTTONS: Yes, post it | Not now  -> the owner taps one instead of typing (the tap comes back as their message)"""
+    m = BUTTON_LINE.search(reply)
+    if not m:
+        return reply, None
+    opts = [o.strip() for o in m.group(1).split("|") if o.strip()][:4]
+    return BUTTON_LINE.sub("", reply).strip(), [[(o, f"say:{o}") for o in opts]] if opts else None
 
 
 def control(text: str) -> str | None:
@@ -178,8 +244,9 @@ def finish(result_path: Path, text: str) -> int:
                 "error": r.get("is_error")}
     except (OSError, ValueError):
         reply, meta = "Claude did not finish (no result). Try again, or a lower effort for a quick answer.", {"error": True}
-    send(reply)
-    remember(text, reply, meta)
+    body, buttons = split_buttons(reply)
+    send(body, buttons=buttons)
+    remember(text, body, meta)
     return 0
 
 
@@ -232,7 +299,12 @@ class Progress:
         self.head = f"{header}\nYour message: {query[:160]}"
         self.steps: list[str] = []
         self.note = ""
-        self.mid = self._post()
+        status = os.environ.get("STATUS", "").strip()            # the Worker already posted "reading your message…": take it over
+        self.mid = int(status) if status.isdigit() else None
+        if self.mid:
+            self._edit(force=True)
+        else:
+            self.mid = self._post()
 
     def _text(self, done: bool = False) -> str:
         lines = [f"✓ {x}" for x in self.steps[:-1][-10:]] + ([("✓ " if done else "… ") + self.steps[-1]] if self.steps else [])
@@ -240,28 +312,16 @@ class Progress:
         return f"{self.head}\n\n" + ("\n".join(lines) or "… starting") + tail + f"\n\n⏱ {int(time.time() - self.t0)} s"
 
     def _post(self) -> int | None:
-        tok = os.environ.get("TELEGRAM_BOT_TOKEN")
-        if not tok:
-            print("[progress]", self.head)
-            return None
-        try:
-            r = httpx.post(f"https://api.telegram.org/bot{tok}/sendMessage", data={"chat_id": self.chat, "text": self._text()}, timeout=30)
-            return r.json().get("result", {}).get("message_id")
-        except (httpx.HTTPError, ValueError):
-            return None
+        return (_tg("sendMessage", chat_id=self.chat, text=self._text()).get("result") or {}).get("message_id")
 
     def _edit(self, done: bool = False, force: bool = False) -> None:
         if not force and time.time() - self.last < self.min_gap:
             return
         self.last = time.time()
-        tok = os.environ.get("TELEGRAM_BOT_TOKEN")
-        if not tok or not self.mid:
+        if not self.mid:
             print("[progress]", self._text(done).splitlines()[-3:])
             return
-        try:
-            httpx.post(f"https://api.telegram.org/bot{tok}/editMessageText", data={"chat_id": self.chat, "message_id": self.mid, "text": self._text(done)[:4000]}, timeout=30)
-        except httpx.HTTPError:
-            pass
+        _tg("editMessageText", chat_id=self.chat, message_id=self.mid, text=self._text(done)[:4000])
 
     def step(self, line: str) -> None:
         if not self.steps or self.steps[-1] != line:
@@ -337,10 +397,11 @@ def stream(text: str) -> int:
 if __name__ == "__main__":
     a = sys.argv[1:]
     if a and a[0] == "control":
-        msg = control(a[1] if len(a) > 1 else "")
+        t = a[1] if len(a) > 1 else ""
+        msg = control(t)
         if msg is None:
             raise SystemExit(1)
-        send(msg)
+        send(msg, buttons=control_buttons(t), edit=os.environ.get("EDIT") if os.environ.get("TAP") == "cmd" else None)
         raise SystemExit(0)
     if a and a[0] == "prompt":
         s = settings()
@@ -349,6 +410,8 @@ if __name__ == "__main__":
         send(f"Thinking ({s['model']}, effort {s['effort']})...")
         raise SystemExit(0)
     if a and a[0] == "stream":
+        if os.environ.get("TAP") == "say" and os.environ.get("EDIT", "").isdigit():      # a tapped answer: take the buttons off that message
+            _tg("editMessageReplyMarkup", chat_id=_chat(), message_id=int(os.environ["EDIT"]), reply_markup={"inline_keyboard": []})
         raise SystemExit(stream(a[1] if len(a) > 1 else ""))
     if a and a[0] == "finish":
         raise SystemExit(finish(Path(a[1]), a[2] if len(a) > 2 else ""))

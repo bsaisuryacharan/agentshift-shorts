@@ -8,7 +8,7 @@ def setup(monkeypatch, tmp_path):
     monkeypatch.setattr(chat, "ROOT", tmp_path)
     monkeypatch.setenv("CHAT", "42")
     sent = []
-    monkeypatch.setattr(chat, "send", lambda text, chat=None: sent.append(text))
+    monkeypatch.setattr(chat, "send", lambda text, chat=None, **kw: sent.append(text))
     return sent
 
 
@@ -85,3 +85,16 @@ def test_subscription_token_is_tried_before_the_api_key(monkeypatch):
     monkeypatch.delenv("CLAUDE_CODE_OAUTH_TOKEN")
     assert chat.auth_order() == [{"ANTHROPIC_API_KEY": "key"}]
     assert chat.auth_refused("Failed to authenticate. API Error: 401 Invalid bearer token") and not chat.auth_refused("All good")
+
+
+def test_buttons_for_controls_and_claude_choices(monkeypatch, tmp_path):
+    setup(monkeypatch, tmp_path)
+    rows = chat.control_buttons("/model")
+    assert [b[0] for b in rows[0]] == ["opus", "✓ sonnet", "haiku"] and rows[0][0][1] == "cmd:/model opus"
+    assert any("✓ medium" == b[0] for row in chat.control_buttons("/effort") for b in row)
+    kb = chat.keyboard(chat.control_buttons("/settings"))
+    assert kb["inline_keyboard"][-1][0]["callback_data"] == "cmd:/reset"
+    body, buttons = chat.split_buttons("Post the Mariana Short now?\nBUTTONS: Yes, post it | Not now")
+    assert body == "Post the Mariana Short now?" and buttons == [[("Yes, post it", "say:Yes, post it"), ("Not now", "say:Not now")]]
+    assert chat.split_buttons("plain answer") == ("plain answer", None)
+    assert all(len(b["callback_data"].encode()) <= 64 for row in chat.keyboard([[("x" * 90, "say:" + "y" * 90)]])["inline_keyboard"] for b in row)

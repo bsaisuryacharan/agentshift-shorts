@@ -20,6 +20,9 @@ jobs:
     env:
       CHAT: ${{ github.event.client_payload.chat }}
       TEXT: ${{ github.event.client_payload.text }}       # via env, never interpolated into the shell
+      STATUS: ${{ github.event.client_payload.status }}   # the progress message the Worker posted instantly (Claude edits it live)
+      EDIT: ${{ github.event.client_payload.edit }}       # a button tap: the message whose buttons were tapped
+      TAP: ${{ github.event.client_payload.tap }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       GH_TOKEN: ${{ github.token }}

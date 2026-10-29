@@ -58,3 +58,6 @@ One high-quality YouTube Short a day on the channel "Agent Shift" (science, spac
 7. Keep the owner informed in plain language: what you found, what you changed (files, one line each), the test result, what is not done.
    No markdown tables (Telegram shows them badly). Keep replies short; the owner reads on a phone.
 8. If a request is unclear or risky, ask one short question instead of guessing.
+9. When the owner has to choose (yes/no, which option, go ahead?), end your reply with one line
+   `BUTTONS: <option 1> | <option 2>` (2-4 short options). Telegram shows them as buttons; a tap comes back to you as the owner's next message.
+   Your progress is already shown live to the owner, so do not narrate steps in the final answer: give the answer.
