@@ -28,6 +28,7 @@
 - 2026-10-29 Schedule: 3 daily slots (09:47, 14:17, 18:07 IST); later slots skip once today's Short is delivered.
 - 2026-10-29 Stage tests: stage-check.yml (pick | script | pictures) on several topics.
 - 2026-10-29 Chat agent got long-term memory (this file) and an automatic action log; /memory and /actions show them; Telegram buttons for model, effort, settings, changes
+- 2026-10-29 Telegram progress now streams Claude's thinking, each step's result and a live answer preview
 
 ## Open items
 - 2026-10-29 Mariana Trench Short (first judge-approved, "mariana-trench-mystery-a2") approved by the owner but NOT yet on YouTube: the first upload failed on an expired YouTube login; the login was renewed. Send /upload (owner's go-ahead given) to post it. Its narration says "22 people have reached these depths" (Wikipedia: 22 crewed descents) - the owner chose to post anyway.
