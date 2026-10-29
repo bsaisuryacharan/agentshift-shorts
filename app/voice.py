@@ -128,4 +128,19 @@ def mix(spec: dict, timing: dict, out: Path, total: float, bed: Path | None = No
                 "loudnorm=I=-14:TP=-1.5:LRA=11[out]")
     dest = out / "mix.wav"
     _ff(*inputs, "-filter_complex", ";".join(filt), "-map", "[out]", "-ac", "2", "-ar", "44100", str(dest))
+    _correct_loudness(dest)
     return dest
+
+
+def _correct_loudness(wav: Path, target: float = -14.0) -> None:
+    """single-pass loudnorm can land 3-4 dB off on short clips (a run measured -18 LUFS and failed the gate): measure and apply the missing gain"""
+    import re
+    import subprocess
+    e = subprocess.run(["ffmpeg", "-nostats", "-i", str(wav), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
+    m = re.findall(r"I:\s+(-?\d+\.?\d*) LUFS", e)
+    if not m or abs(float(m[-1]) - target) <= 1.0:
+        return
+    gain = target - float(m[-1])
+    tmp = wav.with_suffix(".tmp.wav")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(wav), "-af", f"volume={gain:.2f}dB,alimiter=limit=0.84", str(tmp)], check=True)
+    tmp.replace(wav)

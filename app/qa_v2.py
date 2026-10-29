@@ -140,7 +140,7 @@ Score 1-10 each: hook_frame (is frame 1 arresting without sound?), visual_variet
 polish (lighting, resolution, no AI artefacts, no tofu boxes, no clipped text), hierarchy (one focal point, legible type),
 safe_zone (text not under bottom 500px / right 140px), consistency (one visual language), payoff (does the last frame close the loop).
 Return JSON {"scores":{...},"verdict":"approve|revise|reject","fixes":["frame N: concrete change"]}.
-Approve only if every score >= 7 and visual_variety >= 8. Be harsh: generic stock/template looks are 4-5."""
+Score honestly. Be harsh: generic stock/template looks are 4-5."""
 
 
 def evaluate(video: Path, overlay: Path | None = None, onscreen_text: str = "", font: str | None = None,
@@ -172,7 +172,7 @@ def evaluate(video: Path, overlay: Path | None = None, onscreen_text: str = "", 
         checks["vision"] = "fail: no frame-based review (run contact_sheet + VISION_RUBRIC)"
     else:
         s = vision.get("scores", {})
-        ok = vision.get("verdict") == "approve" and s and min(s.values()) >= 7 and s.get("visual_variety", 0) >= 8
+        ok = vision.get("verdict") == "approve" and bool(s)       # the bar itself lives in one place: auto.review_bar (it wrote the verdict)
         checks["vision"] = "pass" if ok else f"fail: {vision.get('verdict')} {vision.get('fixes', [])[:3]}"
     return {"passed": all(c == "pass" for c in checks.values()), "checks": checks,
             "metrics": {"duration": dur, **vm, **am}}
