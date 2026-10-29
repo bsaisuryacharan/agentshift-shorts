@@ -1,6 +1,6 @@
 {
  "performance": {
-  "updated": "2026-10-29T18:46+00:00",
+  "updated": "2026-10-29T21:48+00:00",
   "target_views_per_short": 1000000,
   "shorts": [
    {
@@ -10,11 +10,11 @@
     "views": 1689,
     "likes": 25,
     "comments": 0,
-    "age_h": 313.1,
-    "expected": 852584,
+    "age_h": 316.2,
+    "expected": 853683,
     "ratio": 0.002,
     "status": "far_behind",
-    "projected_30d": 1981
+    "projected_30d": 1978
    },
    {
     "spec_id": null,
@@ -23,8 +23,8 @@
     "views": 440,
     "likes": 7,
     "comments": 0,
-    "age_h": 314.7,
-    "expected": 853161,
+    "age_h": 317.8,
+    "expected": 854261,
     "ratio": 0.001,
     "status": "far_behind",
     "projected_30d": 515
@@ -36,11 +36,11 @@
     "views": 1111,
     "likes": 16,
     "comments": 0,
-    "age_h": 314.8,
-    "expected": 853184,
+    "age_h": 317.8,
+    "expected": 854283,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 1302
+    "projected_30d": 1300
    },
    {
     "spec_id": null,
@@ -49,8 +49,8 @@
     "views": 30,
     "likes": 2,
     "comments": 0,
-    "age_h": 386.6,
-    "expected": 879203,
+    "age_h": 389.6,
+    "expected": 880303,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 34
@@ -62,8 +62,8 @@
     "views": 139,
     "likes": 5,
     "comments": 0,
-    "age_h": 389.3,
-    "expected": 880172,
+    "age_h": 392.3,
+    "expected": 881271,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 157
@@ -75,8 +75,8 @@
     "views": 170,
     "likes": 2,
     "comments": 0,
-    "age_h": 397.3,
-    "expected": 883071,
+    "age_h": 400.3,
+    "expected": 884170,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 192
@@ -88,8 +88,8 @@
     "views": 21,
     "likes": 1,
     "comments": 0,
-    "age_h": 413.3,
-    "expected": 888866,
+    "age_h": 416.3,
+    "expected": 889965,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 23
@@ -101,8 +101,8 @@
     "views": 27,
     "likes": 1,
     "comments": 0,
-    "age_h": 419.3,
-    "expected": 891042,
+    "age_h": 422.3,
+    "expected": 892142,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 30
@@ -114,21 +114,21 @@
     "views": 183,
     "likes": 2,
     "comments": 0,
-    "age_h": 435.2,
-    "expected": 896811,
+    "age_h": 438.2,
+    "expected": 897911,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 204
+    "projected_30d": 203
    },
    {
     "spec_id": null,
     "video_id": "SPi3O0zh_wY",
     "title": "Spot the AI 2 🤖 Only 1% Get All 3 Right #shorts",
     "views": 238,
-    "likes": 5,
+    "likes": 6,
     "comments": 1,
-    "age_h": 440.4,
-    "expected": 898701,
+    "age_h": 443.4,
+    "expected": 899800,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 264
@@ -140,8 +140,8 @@
     "views": 122,
     "likes": 2,
     "comments": 1,
-    "age_h": 456.3,
-    "expected": 904469,
+    "age_h": 459.4,
+    "expected": 905569,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 134
@@ -150,14 +150,14 @@
     "spec_id": null,
     "video_id": "uU6JXROm7rI",
     "title": "Claude Code on Android for FREE — No Cloud Server Needed",
-    "views": 532,
+    "views": 539,
     "likes": 8,
     "comments": 0,
-    "age_h": 457.5,
-    "expected": 904902,
+    "age_h": 460.6,
+    "expected": 906001,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 587
+    "projected_30d": 594
    }
   ],
   "best": {
@@ -166,7 +166,7 @@
   },
   "ypp": {
    "subscribers": 8,
-   "shorts_views_90d": 5736,
+   "shorts_views_90d": 5878,
    "public_uploads_90d": 17,
    "tier1_fan_funding": {
     "subs_ok": false,
