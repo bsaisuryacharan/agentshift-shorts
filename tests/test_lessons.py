@@ -44,3 +44,16 @@ def test_screen_number_must_match_narration():
 def test_scaled_numbers_count_as_spoken():
     sp = auto._values("It spins 100 million times and weighs 2.5 billion tonnes, about 1,400 km wide.")
     assert auto._said("100000000", sp) and auto._said("2,500,000,000", sp) and auto._said("1400", sp) and not auto._said("21", sp)
+
+
+def test_hf_repair_and_duplicates_and_long_script():
+    from app import gallery_hf
+    el = {"t": "hf", "name": "kinetic-type-swap", "vars": {"prefix": "Orbit becomes", "options": ["crowded"] * 20, "accent": "blue", "junk": 1}, "at": "x"}
+    gallery_hf.repair(el)
+    assert gallery_hf.check(el) == [] and len(el["vars"]["options"]) <= 90
+
+
+def test_low_coverage_options_are_refused(monkeypatch):
+    monkeypatch.setattr(picker, "visual_coverage", lambda subs: 0.33)
+    assert picker.best_option([{"topic": "Boltzmann brain", "wiki": "Boltzmann brain", "subjects": ["x"]}], set(), auto._norm_topic) is None
+    assert picker.best_option([{"topic": "Boltzmann brain", "wiki": "Boltzmann brain", "subjects": ["x"]}], set(), auto._norm_topic, min_coverage=0) is not None

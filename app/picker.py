@@ -90,7 +90,7 @@ def visual_coverage(subjects: list[str]) -> float:
     return hit / len(subjects)
 
 
-def best_option(options: list[dict], used: set[str], norm, fmt_scores: dict[str, float] | None = None) -> dict | None:
+def best_option(options: list[dict], used: set[str], norm, min_coverage: float = 0.5) -> dict | None:
     """options from the LLM, each {topic, wiki, why, subjects}: drop used ones, score by real-picture coverage (and the candidate's niche fit), keep the best"""
     scored = []
     for o in options:
@@ -101,4 +101,8 @@ def best_option(options: list[dict], used: set[str], norm, fmt_scores: dict[str,
         o["coverage"], o["score"] = round(cov, 2), round(3 * cov + niche, 2)
         print(f"   option: {o['topic']!r} coverage {cov:.2f} score {o['score']}", flush=True)
         scored.append(o)
-    return max(scored, key=lambda o: o["score"]) if scored else None
+    best = max(scored, key=lambda o: o["score"]) if scored else None
+    if best and best["coverage"] < min_coverage:
+        print(f"   best option has too few real pictures ({best['coverage']:.0%}); asking for more filmable topics", flush=True)
+        return None
+    return best

@@ -65,6 +65,36 @@ def prompt_block() -> str:
     return "\n".join(out)
 
 
+def repair(el: dict) -> None:
+    """fix the slips writers make most (lists for strings, long strings, numbers as text, unknown extra vars) in place, so a good script is not thrown away"""
+    name, given = el.get("name"), el.get("vars")
+    if name not in names() or not isinstance(given, dict):
+        return
+    vs = _vars(name)
+    for k in list(given):
+        d, v = vs.get(k), given[k]
+        if d is None or k in BLOCKED_VARS:
+            if k not in MUST[name]:
+                given.pop(k)
+            continue
+        t = d.get("type")
+        if t == "string":
+            if isinstance(v, list):
+                v = ", ".join(map(str, v))
+            v = str(v)
+            if len(v) > 90:
+                cut = v[:90]
+                v = cut[:cut.rfind(",")] if "," in cut else cut[:cut.rfind(" ")] if " " in cut else cut
+            given[k] = v.strip(" ,")
+        elif t == "number" and isinstance(v, str):
+            try:
+                given[k] = float(v.replace(",", "")) if "." in v else int(v.replace(",", ""))
+            except ValueError:
+                pass
+        elif t == "boolean" and isinstance(v, str):
+            given[k] = v.strip().lower() in ("true", "yes", "1")
+
+
 def check(el: dict) -> list[str]:
     name = el.get("name")
     if name not in names():

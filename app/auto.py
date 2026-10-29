@@ -236,7 +236,7 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
                      f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}\nBREAKOUT TITLES (angle shapes that went viral for small channels; invent a new topic, never copy): {'; '.join(vidiq.topic_ideas()) or 'none'}",
                      prefer=["groq", "gemini", "openrouter"])
         opts = out.get("options") if isinstance(out.get("options"), list) else [out]
-        best = picker.best_option(opts, used, _norm_topic)         # best of three: the one with the most real pictures available wins
+        best = picker.best_option(opts, used, _norm_topic, min_coverage=0.5 if attempt < 2 else 0.0)   # best of three: the one with the most real pictures available wins
         if best:
             try:
                 w = wiki_facts(best["wiki"])["title"]   # proves the article exists and is fetchable; use its canonical title
@@ -389,6 +389,7 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
             if e.get("t") not in HUD_TYPES:
                 errs.append(f"{k}: bad hud type {e.get('t')}")
             if e.get("t") == "hf":
+                gallery_hf.repair(e)
                 errs += [f"{k}: {m}" for m in gallery_hf.check(e)]
             if re.sub(r"[^a-z0-9]", "", str(e.get("at", "")).lower()) not in sw:
                 errs.append(f"{k}: hud at={e.get('at')!r} is not a word in say")
@@ -401,7 +402,9 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
                 said_here = re.findall(r"\d[\d,\.]*\d|\d", b["say"])                      # only a beat that speaks numbers can contradict its screen
                 if said_here and not _said(num, spoken) and num not in ("1", "2", "3", "4", "5"):
                     errs.append(f"{k}: on-screen number {num} is never spoken - say exactly that number or remove it from the screen")
-    if not 70 <= words <= 128:
+    if 128 < words <= 140 and not errs:
+        spec["rate"] = "+28%"                      # slightly long script: speak faster instead of throwing it away (still under 50 s)
+    elif not 70 <= words <= 128:
         errs.append(f"spoken words {words} outside 70-128")
     elif words > 100 and not errs:
         spec["rate"] = "+20%"                      # long script: speak faster so the Short stays <= ~45 s
@@ -413,6 +416,17 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
                 b.pop("footage")
         if b.get("motion") not in (None, False) and b["motion"] not in MOTION_CLIPS.split(", "):
             b.pop("motion")
+    names_seen: set = set()
+    for b in beats:                                   # repair: one gallery graphic per beat and each component once; extras are dropped while 2+ remain
+        kept = []
+        for e in b.get("hud", []):
+            if e.get("t") == "hf" and (e.get("name") in names_seen or any(x.get("t") == "hf" for x in kept)):
+                if sum(1 for bb in beats for x in bb.get("hud", []) if x.get("t") == "hf") > 2:
+                    continue
+            if e.get("t") == "hf":
+                names_seen.add(e.get("name"))
+            kept.append(e)
+        b["hud"] = kept
     hfs = [e for b in beats for e in b.get("hud", []) if e.get("t") == "hf"]
     if len(hfs) < 2:
         errs.append("use at least 2 gallery motion graphics (hud element t=hf) in the Short")
