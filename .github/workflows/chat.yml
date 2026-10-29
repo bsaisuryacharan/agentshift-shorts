@@ -32,6 +32,7 @@ jobs:
         id: ctl
         run: |
           pip install -q httpx
+          python -m app.botmenu || true          # keeps the Telegram "/" menu current (model, effort, merge...)
           if python -m app.chat control "$TEXT"; then echo "done=true" >> "$GITHUB_OUTPUT"; fi
       - name: Install the project and Claude Code
         if: steps.ctl.outputs.done != 'true'
