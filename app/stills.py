@@ -263,6 +263,37 @@ def openverse(query: str, dest: Path, min_w: int = 900) -> tuple[Path, dict]:
     raise RuntimeError(f"no Openverse photo for {query!r}")
 
 
+def pixabay(query: str, dest: Path, client=None) -> tuple[Path, dict]:
+    """real photo from Pixabay (free key PIXABAY_API_KEY; Pixabay licence, free for commercial use, credited anyway). Vertical first. Returns (file, credit)."""
+    import httpx
+    key = os.environ.get("PIXABAY_API_KEY")
+    if not key:
+        raise RuntimeError("no PIXABAY_API_KEY")
+    r = (client or httpx).get("https://pixabay.com/api/", params={"key": key, "q": query, "image_type": "photo", "orientation": "vertical", "min_width": 720,
+                                                                "per_page": 12, "safesearch": "true"},
+                              headers={"User-Agent": "AgentShiftShorts/1.0 (educational explainer Shorts)"}, timeout=30)
+    r.raise_for_status()
+    used = _used_titles(dest)
+    for it in r.json().get("hits", []):
+        label = (it.get("tags") or query)[:80]
+        if label in used or BAD_TITLE.search(label) or not it.get("largeImageURL"):
+            continue
+        try:
+            img = httpx.get(it["largeImageURL"], timeout=60, follow_redirects=True, headers={"User-Agent": "Mozilla/5.0"})
+        except httpx.HTTPError:
+            continue
+        if img.status_code != 200 or not img.headers.get("content-type", "").startswith("image"):
+            continue
+        out = _blur_fit(img.content, dest)
+        credit = {"file": label, "license": "Pixabay licence", "artist": (it.get("user") or "")[:60], "url": it.get("pageURL")}
+        cj = Path(dest).parent / "credits.json"
+        allc = json.loads(cj.read_text()) if cj.exists() else {}
+        allc[out.name] = credit
+        cj.write_text(json.dumps(allc, indent=1))
+        return out, credit
+    raise RuntimeError(f"no Pixabay photo for {query!r}")
+
+
 def _verified(fn, subject: str, dest: Path):
     """run a photo fetcher, keep the result only if it passes the vision check (and drop its credit entry otherwise)"""
     got = fn()
@@ -473,7 +504,8 @@ def ensure(spec: dict, run: Path) -> list[Path]:
                 done = False
                 for name, fn in (("commons", lambda: _verified(lambda: commons(shot["photo"], p), shot["photo"], p)),
                                  ("nasa", lambda: _verified(lambda: nasa_still(shot["photo"], p), shot["photo"], p)),
-                                 ("openverse", lambda: _verified(lambda: openverse(shot["photo"], p), shot["photo"], p))):
+                                 ("openverse", lambda: _verified(lambda: openverse(shot["photo"], p), shot["photo"], p)),
+                                 ("pixabay", lambda: _verified(lambda: pixabay(shot["photo"], p), shot["photo"], p))):
                     try:
                         fn()
                         done = True

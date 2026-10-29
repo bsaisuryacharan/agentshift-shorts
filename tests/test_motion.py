@@ -701,3 +701,30 @@ def test_stock_candidates_need_keys_and_parse(monkeypatch):
     monkeypatch.setenv("PIXABAY_API_KEY", "k")
     got = footage.stock_candidates("volcano", client=C())
     assert [g["id"] for g in got] == ["pexels-7", "pixabay-9"] and got[0]["url"] == "https://x/a.mp4"
+
+
+def test_pixabay_photo_needs_key_and_saves_credit(tmp_path, monkeypatch):
+    import io
+    import cv2
+    import numpy as np
+    from app import stills
+    monkeypatch.delenv("PIXABAY_API_KEY", raising=False)
+    import pytest
+    with pytest.raises(RuntimeError):
+        stills.pixabay("rocket", tmp_path / "a.jpg")
+    jpg = cv2.imencode(".jpg", np.full((1280, 720, 3), 120, np.uint8))[1].tobytes()
+
+    class R:
+        def raise_for_status(self): pass
+        def json(self): return {"hits": [{"tags": "rocket, launch", "largeImageURL": "https://x/p.jpg", "user": "Zed", "pageURL": "https://pixabay.com/p/1"}]}
+
+    class C:
+        def get(self, *a, **k): return R()
+    class Img:
+        status_code = 200
+        headers = {"content-type": "image/jpeg"}
+        content = jpg
+    monkeypatch.setenv("PIXABAY_API_KEY", "k")
+    monkeypatch.setattr("httpx.get", lambda *a, **k: Img())
+    out, credit = stills.pixabay("rocket", tmp_path / "a.jpg", client=C())
+    assert out.exists() and credit["license"] == "Pixabay licence" and credit["artist"] == "Zed"
