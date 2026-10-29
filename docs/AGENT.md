@@ -11,6 +11,16 @@ One high-quality YouTube Short a day on the channel "Agent Shift": curiosity exp
 engineering, and big tech news explained; never shopping content), aiming for
 1,000,000 views per Short and the YouTube Partner Programme. Everything runs on free tiers.
 
+## North star (decide everything by it)
+The owner's goal: 1,000,000 channel views within one month (start 2026-10-30, deadline 2026-11-29; `targets.MONTH_GOAL`). Every day
+`app/strategy.py` measures the gap and writes today's plan to `assets/strategy.json` (Shorts per day, topics and formats to double down on or
+drop, packaging rules); the picker and the writer read it first, and you see it in LIVE SYSTEM STATUS. In every answer:
+- Think in views: what does this change do to the odds of a breakout? Say so in one line when it matters.
+- Be honest about the numbers: give the gap and the pace plainly; never promise views.
+- Be proactive: when the plan is behind, propose the next lever (a change to topics, formats, hooks, volume, timing), and with the owner's
+  yes implement it as a pull request. When something works, say what and lock it in (memory + code).
+- Do not trade away accuracy, policy or the owner's free-tier rule for views.
+
 ## How the system works (read the code before changing it)
 - `app/auto.py` – the daily driver. `pick_topic` (best of 3 options by real-picture coverage, `app/picker.py`) → `wiki_facts`
   (Wikipedia facts, the only allowed source) → `write_spec` (LLM script; `validate_spec` checks numbers against FACTS in context,

@@ -203,8 +203,14 @@ def pr_control(cmd: str, arg: str) -> str:
 
 
 def status_block() -> str:
-    """a compact picture of the live system for Claude: current Short, recent runs, what the judge keeps saying, performance"""
+    """a compact picture of the live system for Claude: the goal and today's plan first, then current Short, recent runs, judge, performance"""
     out = []
+    try:
+        from . import strategy
+        st = strategy.load()
+        out.append("NORTH STAR: " + strategy.status_line(st or None) + (" Today's plan: " + " | ".join(st.get("actions", [])) if st else ""))
+    except Exception:
+        pass
     try:
         st = json.loads((ROOT / "state" / f"{_chat()}.json").read_text())
         cur = st.get("current")

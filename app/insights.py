@@ -143,8 +143,8 @@ def hint(max_chars: int = 1500) -> str:
         parts.append("Short videos winning in this niche in the last two weeks (study the hook, never copy): " + "; ".join(f"'{w['title'][:60]}' ({w['views']:,} views)" for w in i["niche_winners"][:4]))
     if i.get("trending") and not i.get("niche_winners"):
         parts.append("Popular on YouTube now (inspiration only, do not copy titles): " + "; ".join(i["trending"][:6]))
-    from . import ideabank, vidiq                         # vidIQ snapshot and the idea bank: own budgets so they never crowd out the channel's own results
-    return " ".join([" ".join(parts)[:max_chars], vidiq.hint(), ideabank.hint()]).strip()
+    from . import ideabank, strategy, vidiq               # the growth plan comes first; vidIQ and the idea bank have their own budgets
+    return " ".join([strategy.hint(), " ".join(parts)[:max_chars], vidiq.hint(), ideabank.hint()]).strip()
 
 
 if __name__ == "__main__":

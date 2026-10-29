@@ -190,12 +190,14 @@ def used_topics(days_done: int = 60, days_parked: int = 3) -> set[str]:
     return out
 
 
-def delivered_today() -> bool:
-    """a Short already passed review today (UTC): the later schedule slots skip, so the channel gets one Short a day"""
+def delivered_today(per_day: int | None = None) -> bool:
+    """today's quota of Shorts is already made (UTC): later schedule slots skip. The quota comes from the growth plan (1, or 2 when behind the goal)."""
     import datetime as dt
+    from . import strategy
     path = ROOT / TOPICS
     today = dt.date.today().isoformat()
-    return path.exists() and any(f'"date": "{today}"' in line and '"outcome": "delivered"' in line for line in path.read_text().splitlines())
+    done = sum(1 for line in path.read_text().splitlines() if f'"date": "{today}"' in line and '"outcome": "delivered"' in line) if path.exists() else 0
+    return done >= (per_day or strategy.shorts_per_day())
 
 
 def record_topic(topic: str, wiki: str, outcome: str, score: float | None = None, fmt: str | None = None) -> None:

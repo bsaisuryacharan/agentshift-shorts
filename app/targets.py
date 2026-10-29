@@ -9,6 +9,8 @@ behind / far behind" early, before the final number exists; real data from data/
 from __future__ import annotations
 
 TARGET = {"views_per_short": 1_000_000}
+# the owner's monthly goal (set 2026-10-30): 1,000,000 channel views within one month. app/strategy.py turns it into a daily plan.
+MONTH_GOAL = {"views": 1_000_000, "start": "2026-10-30", "deadline": "2026-11-29"}
 
 # YouTube Partner Programme (as published by YouTube, 2025): both tiers need these public-upload/subscriber levels
 YPP = {

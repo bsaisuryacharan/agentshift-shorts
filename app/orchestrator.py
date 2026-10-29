@@ -190,7 +190,12 @@ def target_report(insights_path: Path | None = None) -> str:
     from . import insights as ins
     d = json.loads(insights_path.read_text()) if insights_path else ins.load()
     perf = d.get("performance") or {}
-    lines = ["🎯 Target: 1,000,000 views per Short, then YouTube Partner Programme (1,000 subscribers + 10M Shorts views in 90 days, or 4,000 watch hours)."]
+    from . import strategy
+    st = strategy.load()
+    lines = ["🎯 " + strategy.status_line(st or None)]
+    if st.get("actions"):
+        lines.append("Today's plan:\n" + "\n".join(f"• {a}" for a in st["actions"]))
+    lines.append("Per Short: aiming for 1,000,000 views each, then YouTube Partner Programme (1,000 subscribers + 10M Shorts views in 90 days, or 4,000 watch hours).")
     if not perf.get("shorts"):
         lines.append("No uploaded Shorts to measure yet. Once the first Short is approved and uploaded, the hourly check starts and this card fills in.")
     else:

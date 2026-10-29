@@ -82,14 +82,33 @@ def fetch(video_ids: list[str], key: str, client: httpx.Client | None = None) ->
     return out
 
 
-def channel_subscribers(channel_id: str, key: str, client: httpx.Client | None = None) -> int | None:
+def channel_stats(channel_id: str, key: str, client: httpx.Client | None = None) -> tuple[int | None, int | None]:
+    """(subscribers, total channel views); None where YouTube hides or lacks the number"""
     c = client or httpx.Client(timeout=30)
     r = c.get(f"{API}/channels", params={"part": "statistics", "id": channel_id, "key": key})
     r.raise_for_status()
     items = r.json().get("items", [])
-    if not items or items[0]["statistics"].get("hiddenSubscriberCount"):
-        return None
-    return int(items[0]["statistics"].get("subscriberCount", 0))
+    if not items:
+        return None, None
+    st = items[0]["statistics"]
+    subs = None if st.get("hiddenSubscriberCount") else int(st.get("subscriberCount", 0))
+    return subs, int(st["viewCount"]) if "viewCount" in st else None
+
+
+def channel_subscribers(channel_id: str, key: str, client: httpx.Client | None = None) -> int | None:
+    return channel_stats(channel_id, key, client)[0]
+
+
+SNAP = ROOT / "data" / "channel_views.jsonl"
+
+
+def snapshot(views: int | None, subs: int | None, path: Path = SNAP, now: datetime | None = None) -> None:
+    """one row per run: the monthly goal is measured on total channel views (app/strategy.py)"""
+    if views is None:
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "a") as f:
+        f.write(json.dumps({"ts": (now or datetime.now(UTC)).isoformat(timespec="minutes"), "views": views, "subs": subs}) + "\n")
 
 
 def summarise(rows: list[dict], subscribers: int | None, now: datetime | None = None) -> dict:
@@ -118,7 +137,8 @@ def write_insights(perf: dict, path: Path = INSIGHTS) -> None:
     path.write_text(json.dumps(d, indent=1, ensure_ascii=False))
 
 
-def run(state_dir: Path = ROOT / "state", perf_path: Path = PERF, insights_path: Path = INSIGHTS, key: str | None = None, client: httpx.Client | None = None) -> dict:
+def run(state_dir: Path = ROOT / "state", perf_path: Path = PERF, insights_path: Path = INSIGHTS, key: str | None = None, client: httpx.Client | None = None,
+        snap_path: Path | None = SNAP) -> dict:
     key = key or os.environ.get("YOUTUBE_API_KEY")
     vids = uploaded_shorts(state_dir)
     if not key:
@@ -145,8 +165,11 @@ def run(state_dir: Path = ROOT / "state", perf_path: Path = PERF, insights_path:
             row = {**v, **s, "ts": now.isoformat(timespec="minutes")}
             rows.append(row)
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
-    subs = channel_subscribers(rows[0]["channel_id"], key, client) if rows else None
+    subs, ch_views = channel_stats(rows[0]["channel_id"] if rows else CHANNEL_ID, key, client)
+    if snap_path is not None:
+        snapshot(ch_views, subs, snap_path, now)
     perf = summarise(rows, subs, now)
+    perf["channel_views"] = ch_views
     perf["not_public_or_missing"] = missing
     from . import learning
     perf["lessons"] = learning.lessons(perf_path)
