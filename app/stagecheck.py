@@ -3,6 +3,7 @@
     python -m app.stagecheck pick 4                    # 4 topic picks: topic, format, real-picture coverage, niche/product checks
     python -m app.stagecheck script 4                  # pick 4 topics, write a script for each: validation, words, beats, real-picture terms
     python -m app.stagecheck pictures 2                # script + stills + footage for 2 topics: where every picture came from (no voice/render/judge)
+    python -m app.stagecheck research 3                # the web researcher alone: trusted sources found per topic (no LLM)
 
 Every check prints PASS/WARN/FAIL lines and writes out/report.json (uploaded by .github/workflows/stage-check.yml). Nothing is recorded in the
 topic ledger and nothing is sent to Telegram.
@@ -114,11 +115,28 @@ def check_pictures(n: int, work: Path) -> list[dict]:
     return out
 
 
+def check_research(n: int) -> list[dict]:
+    """the web researcher alone (no LLM): which trusted sources it adds to Wikipedia for a few different topics"""
+    from . import research
+    out = []
+    for topic in ["Mariana Trench", "Voyager 1", "James Webb Space Telescope", "Large Hadron Collider", "Starlink"][:n]:
+        facts = auto.wiki_facts(topic)
+        more = research.enrich(facts, topic, topic)
+        srcs = more.get("extra_sources") or []
+        print(f"research {topic!r}: wikipedia {len(facts['text'])} chars + {len(srcs)} sources -> {len(more['text'])} chars", flush=True)
+        for u in srcs:
+            print("    ", u, flush=True)
+        out.append({"topic": topic, "sources": srcs, "chars": len(more["text"]),
+                    "checks": [_line(len(srcs) >= 2, f"{len(srcs)} trusted sources added")]})
+    return out
+
+
 def main(argv: list[str]) -> int:
     stage, n = argv[0], int(argv[1]) if len(argv) > 1 else 4
     out = Path(argv[2]) if len(argv) > 2 else Path("stagecheck_out")
     out.mkdir(parents=True, exist_ok=True)
-    rows = {"pick": lambda: check_pick(n), "script": lambda: check_script(n), "pictures": lambda: check_pictures(n, out)}[stage]()
+    rows = {"pick": lambda: check_pick(n), "script": lambda: check_script(n), "pictures": lambda: check_pictures(n, out),
+            "research": lambda: check_research(n)}[stage]()
     tags = [t for r in rows for t in r.get("checks", [])] + ["FAIL" for r in rows if "error" in r]
     summary = {"stage": stage, "runs": len(rows), "pass": tags.count("PASS"), "warn": tags.count("WARN"), "fail": tags.count("FAIL"), "rows": rows}
     (out / "report.json").write_text(json.dumps(summary, indent=1, ensure_ascii=False))
