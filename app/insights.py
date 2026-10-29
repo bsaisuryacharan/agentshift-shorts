@@ -24,7 +24,7 @@ NICHE = re.compile(r"\b(?:scien|space|nasa|esa\b|planet|moon|mars\b|solar|star\b
 # Shopping content (reviews, deals, unboxings, tutorials for products) is never in scope; the channel's own results decide the weighting (app/picker.py).
 OFF_NEWS = re.compile(r"\b(?:dementia|cancer|diabet|vaccin|drug|overdose|psychedelic|mushroom|cannabis|aspirin|disease|clinical|alzheimer|schizophreni|"
                       r"autis|depress|anxiety|obes|ageing|therap|appoint|murder|shooting|lawsuit|senat|congress)"       # stems: any word starting with these
-                      r"|\b(?:dose|patients?|aging|sugar|diet|weight|mental|killed|dead|deaths?|died|war|attack|crash|election|president|trump|biden|sued|"
+                      r"|\b(?:welcomes|dose|patients?|aging|sugar|diet|weight|mental|killed|dead|deaths?|died|war|attack|crash|election|president|trump|biden|sued|"
                       r"challenge|award|budget|grant|webinar|que|del|para|envía)\b"                                      # whole words
                       r"|\bnames\b.{0,80}\b(?:director|chief|head)\b|\bde la\b|\btu nombre\b", re.I)   # medical, tragedy, politics, admin notices, Spanish feed items
 JUNK_WINNER = re.compile(r"(?:\bep\.?\s*\d|episode|part\s*\d|compilation|moments|#hindi|#tamil|#telugu|\bbhai\b|\bkya\b|\baur\b|nges|lele|belut|"
