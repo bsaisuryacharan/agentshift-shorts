@@ -25,7 +25,7 @@ from pathlib import Path
 
 import httpx
 
-from . import formats, gallery_hf, insights, picker, vidiq
+from . import formats, gallery_hf, insights, lessons, picker, vidiq
 
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
@@ -225,22 +225,29 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
     items += [(e, "evergreen") for e in random.sample(fresh, min(14, len(fresh)))]
     cands = picker.rank(items)                                           # on-niche first: channel results + vidIQ + news, celebrities/sports dropped
     tried = sorted(used)[:60]
-    fmt = fmt or formats.choose(recent_formats())
+    fmt = fmt or formats.choose(recent_formats(), boost=lessons.format_boost())   # ties go to the format the judge has scored best
     out = {}
     for attempt in range(3):
         out, _ = ask("You choose the next topic for 'Agent Shift', a YouTube Shorts channel of 35-45 s science/tech/history/nature explainers in rotating formats. "
                      "From the CANDIDATES pick ONE that is explainable in 40 s with a surprising angle, factual and policy-safe (no tragedies, politics, celebrities, sports results, "
                      "medical advice). Never pick a consumer product, brand or gadget (phones, earbuds, AI chatbots) - only science, space, nature, physics, the brain, history and engineering ideas. Prefer timeless science/space/history ideas that connect to something people search for; items marked IN THE NEWS are current science/tech headlines: when one fits, choose the timeless topic that explains it (a news hook gets views) but never a tragedy or politics; use CHANNEL INSIGHTS to favour what has worked "
                      "and avoid what has scored badly. Prefer subjects that have REAL photographs or footage (actual spacecraft, telescopes, natural phenomena, places, historical events, animals) over purely hypothetical future technology, because real pictures make the better Short. It must have a real English Wikipedia article. "
-                     'The FORMAT below decides the framing of the title (it is NOT always a what-if). Return ONLY JSON {"topic":"a title framing that fits the FORMAT","wiki":"exact Wikipedia article title","why":"..."}. Never pick or closely resemble anything in PAST TITLES or ALREADY USED.',
+                     'The FORMAT below decides the framing of the title (it is NOT always a what-if). Return ONLY JSON {"options":[{"topic":"a title framing that fits the FORMAT","wiki":"exact Wikipedia article title","why":"...","subjects":["3-4 concrete filmable things the Short would show, 1-3 words each, e.g. lava flow, Voyager probe, aurora"]}, ...three different options, best first]}. Never pick or closely resemble anything in PAST TITLES or ALREADY USED.',
                      f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}\nBREAKOUT TITLES (angle shapes that went viral for small channels; invent a new topic, never copy): {'; '.join(vidiq.topic_ideas()) or 'none'}",
                      prefer=["groq", "gemini", "openrouter"])
-        w = wiki_facts(out["wiki"])["title"]         # proves the article exists and is fetchable; use its canonical title
-        if _norm_topic(w) not in used and _norm_topic(out["wiki"]) not in used:
-            out["wiki"] = w
-            break
-        print(f"   picker chose an already-used topic ({out['wiki']}); asking again", flush=True)
-        cands = [c for c in cands if _norm_topic(c) != _norm_topic(out["wiki"])]
+        opts = out.get("options") if isinstance(out.get("options"), list) else [out]
+        best = picker.best_option(opts, used, _norm_topic)         # best of three: the one with the most real pictures available wins
+        if best:
+            try:
+                w = wiki_facts(best["wiki"])["title"]   # proves the article exists and is fetchable; use its canonical title
+            except Exception as e:
+                print(f"   wikipedia lookup failed for {best['wiki']!r}: {type(e).__name__}", flush=True)
+                w = None
+            if w and _norm_topic(w) not in used:
+                out = {**best, "wiki": w}
+                break
+        print(f"   picker options unusable ({[o.get('wiki') for o in opts if isinstance(o, dict)]}); asking again", flush=True)
+        cands = [c for c in cands if all(_norm_topic(c) != _norm_topic(str(o.get("wiki", ""))) for o in opts if isinstance(o, dict))]
     else:                                             # the model keeps repeating itself: take an unused evergreen topic ourselves
         pick = random.choice(fresh or EVERGREEN)
         out = {"topic": formats.frame(fmt, pick), "wiki": pick, "why": "fallback: first unused evergreen topic"}
@@ -297,6 +304,9 @@ PEOPLE = re.compile(r"\b(portrait|face|faces|man|men|woman|women|person|scientis
 BEHIND = re.compile(r"silhouette|from behind|back view|backs? turned|no faces?|faceless", re.I)
 
 
+SHOWN_FIELDS = ("text", "html", "title", "sub", "label", "end", "prefix", "wordmark", "kicker", "body", "keyword", "note")   # text a viewer reads (chart data is exempt)
+
+
 def validate_spec(spec: dict, facts_text: str) -> list[str]:
     errs, keys, seen = [], set(), set()
     if not isinstance(spec, dict) or not isinstance(spec.get("beats"), list) or not all(isinstance(b, dict) for b in spec["beats"]):
@@ -309,6 +319,7 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
             errs.append(f"missing {k}")
     if not re.fullmatch(r"[a-z0-9-]+", str(spec.get("id", ""))):
         errs.append("id must be a lowercase slug")
+    spoken = {n.replace(",", "").rstrip(".") for b in beats for n in re.findall(r"\d[\d,\.]*\d|\d", str(b.get("say", "")))}   # the judge rejects screen/narration mismatches
     words = 0
     for b in beats:                       # the subscribe card is added by the pipeline; drop any the writer put in hud
         if isinstance(b.get("hud"), list):
@@ -360,6 +371,11 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
             for num in re.findall(r"\d[\d,\.]*\d|\d", re.sub(r"<[^>]+>", " ", blob.replace('"at"', ""))):
                 if not _number_supported(num, facts_text):
                     errs.append(f"{k}: number {num} not in FACTS")
+            shown = " ".join(str(v) for kk, v in {**e, **(e.get("vars") if isinstance(e.get("vars"), dict) else {})}.items() if kk in SHOWN_FIELDS)
+            for num in re.findall(r"\d[\d,\.]*\d|\d", re.sub(r"<[^>]+>", " ", shown)):
+                said_here = re.findall(r"\d[\d,\.]*\d|\d", b["say"])                      # only a beat that speaks numbers can contradict its screen
+                if said_here and num.replace(",", "").rstrip(".") not in spoken and num not in ("1", "2", "3", "4", "5"):
+                    errs.append(f"{k}: on-screen number {num} is never spoken - say exactly that number or remove it from the screen")
     if not 70 <= words <= 128:
         errs.append(f"spoken words {words} outside 70-128")
     elif words > 100 and not errs:
@@ -404,6 +420,9 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
     user = f"TOPIC: {topic}\n{formats.prompt_block(fmt)}\nFACTS (source {facts['url']}):\n{facts['text']}\n"
     if insights.hint():
         user += f"\nCHANNEL INSIGHTS (advisory, never a source of facts): {insights.hint()}\n"
+    learned = lessons.rules()
+    if learned:                                          # complaints that keep coming back are avoided from the first attempt
+        user += "\nSTANDING RULES LEARNED FROM PAST JUDGE REJECTIONS (follow them):\n- " + "\n- ".join(learned)
     if notes:
         user += "\nFIX THESE PROBLEMS FROM THE LAST ATTEMPT:\n- " + "\n- ".join(notes)
     order = [["groq", "gemini", "openrouter"], ["gemini", "groq", "openrouter"], ["openrouter", "gemini", "groq"]]
@@ -507,6 +526,7 @@ def finish(spec: dict, writer: str, out: Path, deliver: bool, chat: str | None) 
     if j is None:                                # still no judge: this attempt cannot be scored, the next one may be
         return False, ["judge unavailable; keep the script and visuals as they are"], run_dir, None
     print("   judge:", j, flush=True)
+    lessons.record(spec, j["scores"], j.get("fixes") or [])
     res = produce.regate(run_dir, run_dir / "vision.json")
     from . import learning, scorecard
     card = scorecard.build(spec, run_dir, j["scores"])

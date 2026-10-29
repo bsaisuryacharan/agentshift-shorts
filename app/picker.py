@@ -68,3 +68,34 @@ def rank(items: list[tuple[str, str]], limit: int = 24, snapshot: dict | None = 
             seen.add(k)
             out.append(t)
     return out[:limit]
+
+
+def visual_coverage(subjects: list[str]) -> float:
+    """share of a topic's subjects that have real moving pictures available (NASA clip index, then Pixabay/Pexels stock), 0-1.
+    Cheap: the NASA index is a local file and stock is one search per subject. AI images of real objects are what the judge rejects most."""
+    from . import footage
+    subjects = [s for s in subjects if isinstance(s, str) and s.strip()][:4]
+    if not subjects:
+        return 0.0
+    hit = 0
+    for s in subjects:
+        try:
+            if any(i["hits"] >= min(2, len(footage._terms(s))) for i in footage.search_index(s, limit=6)) or footage.stock_candidates(s):
+                hit += 1
+        except Exception as e:                       # a probe failure must not stop the pick
+            print(f"   coverage probe {s!r}: {type(e).__name__}", flush=True)
+    return hit / len(subjects)
+
+
+def best_option(options: list[dict], used: set[str], norm, fmt_scores: dict[str, float] | None = None) -> dict | None:
+    """options from the LLM, each {topic, wiki, why, subjects}: drop used ones, score by real-picture coverage (and the candidate's niche fit), keep the best"""
+    scored = []
+    for o in options:
+        if not isinstance(o, dict) or not o.get("wiki") or not o.get("topic") or norm(o["wiki"]) in used or PRODUCT.search(o["topic"] + " " + o["wiki"]):
+            continue
+        cov = visual_coverage(o.get("subjects") or [])
+        niche = 1.0 if insights.NICHE.search(o["topic"] + " " + o["wiki"]) else 0.0
+        o["coverage"], o["score"] = round(cov, 2), round(3 * cov + niche, 2)
+        print(f"   option: {o['topic']!r} coverage {cov:.2f} score {o['score']}", flush=True)
+        scored.append(o)
+    return max(scored, key=lambda o: o["score"]) if scored else None
