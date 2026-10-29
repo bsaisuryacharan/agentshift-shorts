@@ -34,7 +34,7 @@
 - 2026-10-30 Web researcher is live (TAVILY_API_KEY): each Short gets Wikipedia + 3-5 trusted sources (NASA, ESA, JPL, Smithsonian, Britannica, Live Science, Science News...)
 
 ## Open items
-- 2026-10-29 Mariana Trench Short (first judge-approved, "mariana-trench-mystery-a2") approved by the owner but NOT yet on YouTube: the first upload failed on an expired YouTube login; the login was renewed. Send /upload (owner's go-ahead given) to post it. Its narration says "22 people have reached these depths" (Wikipedia: 22 crewed descents) - the owner chose to post anyway.
+- 2026-10-29 Mariana Trench Short (first judge-approved, "mariana-trench-mystery-a2") is UPLOADED and public: https://youtube.com/watch?v=fvfM8rEDHDM (checked 2026-10-29). Its narration says "22 people have reached these depths" (Wikipedia: 22 crewed descents) - the owner chose to post anyway.
 - 2026-10-29 Owner should set the Google Cloud OAuth consent screen to "In production", or the YouTube login expires every 7 days.
 - Free AI quota (Gemini/Groq) runs out after ~2 full runs a day; avoid extra test runs.
 - Pronunciation of the voice is not checked automatically.
