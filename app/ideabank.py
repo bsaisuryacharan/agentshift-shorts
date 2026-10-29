@@ -7,6 +7,7 @@ Learn the shape, never copy: titles, scripts and footage of other channels are n
 """
 from __future__ import annotations
 
+import html
 import json
 import os
 import sys
@@ -71,7 +72,7 @@ def refresh(key: str | None = None, path: Path = PATH, client=httpx, days: int =
                                                      "publishedAfter": since, "maxResults": 5, "key": key}, timeout=25)
             r.raise_for_status()
             for it in r.json().get("items", []):
-                found[it["id"]["videoId"]] = {"channel": ch["name"], "title": it["snippet"]["title"]}
+                found[it["id"]["videoId"]] = {"channel": ch["name"], "title": html.unescape(it["snippet"]["title"])}
         except (httpx.HTTPError, KeyError, ValueError) as e:
             print(f"ideabank {ch['name']}: {type(e).__name__}")
     if found:

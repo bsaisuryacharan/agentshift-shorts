@@ -22,14 +22,18 @@ NICHE = re.compile(r"\b(?:scien|space|nasa|esa\b|planet|moon|mars\b|solar|star\b
                    r"aircraft|jet\b|train|bridge|skyscraper|mystery|unsolved|explained|how .{2,30} works?)", re.I)
 # channel direction (owner, 2026-10-29): curiosity explainers - science, space, nature, history, tech and engineering - plus big tech news explained.
 # Shopping content (reviews, deals, unboxings, tutorials for products) is never in scope; the channel's own results decide the weighting (app/picker.py).
-OFF_NEWS = re.compile(r"\b(?:dementia|cancer|diabet|vaccin|drug|overdose|psychedelic|mushroom|cannabis|aspirin|dose|disease|patients?|clinical|"
-                      r"killed|dead|deaths?|died|shooting|war\b|attack|crash|murder|election|president|trump|biden|congress|senat|lawsuit|sued)\b", re.I)
-JUNK_WINNER = re.compile(r"(?:\bep\.?\s*\d|episode|part\s*\d|compilation|moments|#hindi|#tamil|#telugu|\bbhai\b|\bkya\b|\baur\b|nges|lele|belut)", re.I)
+OFF_NEWS = re.compile(r"\b(?:dementia|cancer|diabet|vaccin|drug|overdose|psychedelic|mushroom|cannabis|aspirin|disease|clinical|alzheimer|schizophreni|"
+                      r"autis|depress|anxiety|obes|ageing|therap|appoint|murder|shooting|lawsuit|senat|congress)"       # stems: any word starting with these
+                      r"|\b(?:dose|patients?|aging|sugar|diet|weight|mental|killed|dead|deaths?|died|war|attack|crash|election|president|trump|biden|sued|"
+                      r"challenge|award|budget|grant|webinar|que|del|para|envía)\b"                                      # whole words
+                      r"|\bnames\b.{0,80}\b(?:director|chief|head)\b|\bde la\b|\btu nombre\b", re.I)   # medical, tragedy, politics, admin notices, Spanish feed items
+JUNK_WINNER = re.compile(r"(?:\bep\.?\s*\d|episode|part\s*\d|compilation|moments|#hindi|#tamil|#telugu|\bbhai\b|\bkya\b|\baur\b|nges|lele|belut|"
+                         r"\b(?:que|de|la|los|las|el|del|dentro|comida|ke|ne|ko|hai|apne|ka|ki|se|hi|bachhon|qatil)\b)", re.I)   # non-English titles
 
 
 def good_winner(title: str) -> bool:
     """a niche 'winner' worth learning from: English, a single idea (not a compilation or an episode series)"""
-    return _ascii_ratio(title) > 0.9 and not JUNK_WINNER.search(title) and bool(re.search(r"[a-z]{3,}", title.lower()))
+    return _ascii_ratio(title) > 0.9 and not JUNK_WINNER.search(title) and not OFF_NEWS.search(title) and bool(re.search(r"[a-z]{3,}", title.lower()))
 
 
 def _ascii_ratio(s: str) -> float:

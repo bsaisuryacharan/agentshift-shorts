@@ -42,3 +42,15 @@ def test_winner_and_news_filters():
     assert not insights.good_winner("Most Incredible Animal Moments | Ep 15 #hindi")
     assert insights.OFF_NEWS.search("Low-dose aspirin linked to 70% lower dementia risk")
     assert not insights.OFF_NEWS.search("Three giant black holes discovered in a galaxy from the dawn of time")
+
+
+def test_filters_catch_foreign_medical_and_admin_items():
+    from app import insights
+    for t in ("Animales Que Fueron Encontrados Dentro de la Comida", "Is Machhli Ne Apne Hi Bachhon Ke Qatil Ko Paala!", "Hannah Fry on The Nun Study #dementia"):
+        assert not insights.good_winner(t), t
+    for n in ("Six popular sugar substitutes linked to faster brain aging", "NASA Names Troy Asher Armstrong Flight Research Center Director",
+              "Envía tu nombre a Titán a bordo de la misión Dragonfly", "The autistic brain processes faces differently"):
+        assert insights.OFF_NEWS.search(n), n
+    for keep in ("NASA discovers Jupiter's invisible shield is more complex than thought", "128,000-year-old ice in Tibet could rewrite climate history"):
+        assert not insights.OFF_NEWS.search(keep), keep
+    assert insights.good_winner("Why Must You Take Steps on a Spinning Ride? Physics Explained")

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import html
 import re
 import xml.etree.ElementTree as ET
 from datetime import UTC, datetime, timedelta
@@ -81,7 +82,7 @@ def _youtube_niche_signals(settings: Settings, client=httpx, days: int = 14) -> 
         views = int(st.get("viewCount", 0))
         if views < 20000 or not _in_scope(sn["title"]):
             continue
-        found.append(TrendSignal(source="youtube", format="niche_short", title=sn["title"], url=f"https://www.youtube.com/watch?v={v['id']}", observed_at=now,
+        found.append(TrendSignal(source="youtube", format="niche_short", title=html.unescape(sn["title"]), url=f"https://www.youtube.com/watch?v={v['id']}", observed_at=now,
                                  published_at=published, metric=views, short_form_confidence=0.8,
                                  notes=f"niche search '{ids[v['id']]}': {views:,} views in {age_h / 24:.1f} days = {views / age_h:,.0f} views/hour; study the hook and format, never copy."))
     found.sort(key=lambda s: -(s.metric or 0) / max(1.0, (now - s.published_at).total_seconds() / 3600))
