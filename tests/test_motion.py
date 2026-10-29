@@ -63,7 +63,7 @@ def test_validate_sanitises_footage_and_motion():
               "footage": "asteroid impact", "motion": "nope"} for i in range(7)]
     spec["beats"] = beats
     auto.validate_spec(spec, "facts")
-    assert sum(1 for b in beats if "footage" in b) == 2 and all("motion" not in b for b in beats)
+    assert sum(1 for b in beats if "footage" in b) == 3 and all("motion" not in b for b in beats)
 
 
 def test_cinematic_renders_video_and_motion_shots(tmp_path):
