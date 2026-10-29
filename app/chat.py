@@ -5,6 +5,7 @@ flow, thresholds), always under the rules in docs/AGENT.md (tests before every c
 
     python -m app.chat control "<text>"     # /model, /effort, /reset, /settings: answered without calling Claude; exit 0 = handled, 1 = not a control
     python -m app.chat prompt "<text>"      # writes chat_prompt.txt (recent conversation + live system status + the new message) and chat_args.txt
+    python -m app.chat stream "<text>"      # runs Claude with live progress (one Telegram message edited step by step), then the answer
     python -m app.chat finish result.json   # sends Claude's answer to Telegram and stores the turn in state/chat/<chat>.jsonl
 
 Settings and memory live in the repo (state/chat/), so they survive between runs. Model and effort are the owner's choice per chat.
@@ -14,6 +15,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -178,6 +180,133 @@ def finish(result_path: Path, text: str) -> int:
     return 0
 
 
+ALLOWED = ["Read", "Grep", "Glob", "Edit", "Write",
+           "Bash(python -m pytest:*)", "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git switch -c chat/:*)",
+           "Bash(git add:*)", "Bash(git commit:*)", "Bash(git push -u origin chat/:*)", "Bash(gh pr create:*)",
+           "Bash(gh run list:*)", "Bash(gh run view:*)", "Bash(grep:*)", "Bash(ls:*)"]
+DISALLOWED = ["Bash(git push origin main:*)", "Bash(git push --force:*)", "WebFetch"]
+
+
+def describe(tool: str, inp: dict) -> str:
+    """one plain-language progress line for a tool call ('Reading app/auto.py', 'Running the tests')"""
+    f = lambda k: str(inp.get(k, "")).replace(str(ROOT) + "/", "")
+    if tool == "Read":
+        return f"Reading {f('file_path')}"
+    if tool in ("Edit", "MultiEdit"):
+        return f"Editing {f('file_path')}"
+    if tool == "Write":
+        return f"Writing {f('file_path')}"
+    if tool == "Grep":
+        return f"Searching the code for '{f('pattern')[:40]}'"
+    if tool == "Glob":
+        return f"Listing files {f('pattern')[:40]}"
+    if tool == "Bash":
+        c = f("command")
+        for key, text in (("pytest", "Running the tests"), ("gh run view", "Reading a run's log"), ("gh run list", "Checking recent runs"),
+                          ("git switch", "Starting a change branch"), ("git commit", "Committing the change"), ("git push", "Pushing the change"),
+                          ("gh pr create", "Opening the pull request"), ("git diff", "Reviewing the diff"), ("git log", "Reading the history")):
+            if key in c:
+                return text
+        return f"Running: {c[:60]}"
+    if tool in ("TodoWrite", "Task"):
+        return "Planning the steps"
+    return f"Using {tool}"
+
+
+class Progress:
+    """one Telegram message that is edited as Claude works: the query, the steps so far (done ✓, current …), elapsed time"""
+
+    def __init__(self, query: str, header: str, chat: str | None = None, min_gap: float = 2.5):
+        self.chat, self.min_gap, self.t0, self.last = chat or _chat(), min_gap, time.time(), 0.0
+        self.head = f"{header}\nYour message: {query[:160]}"
+        self.steps: list[str] = []
+        self.note = ""
+        self.mid = self._post()
+
+    def _text(self, done: bool = False) -> str:
+        lines = [f"✓ {x}" for x in self.steps[:-1][-10:]] + ([("✓ " if done else "… ") + self.steps[-1]] if self.steps else [])
+        tail = f"\n💭 {self.note}" if self.note and not done else ""
+        return f"{self.head}\n\n" + ("\n".join(lines) or "… starting") + tail + f"\n\n⏱ {int(time.time() - self.t0)} s"
+
+    def _post(self) -> int | None:
+        tok = os.environ.get("TELEGRAM_BOT_TOKEN")
+        if not tok:
+            print("[progress]", self.head)
+            return None
+        try:
+            r = httpx.post(f"https://api.telegram.org/bot{tok}/sendMessage", data={"chat_id": self.chat, "text": self._text()}, timeout=30)
+            return r.json().get("result", {}).get("message_id")
+        except (httpx.HTTPError, ValueError):
+            return None
+
+    def _edit(self, done: bool = False, force: bool = False) -> None:
+        if not force and time.time() - self.last < self.min_gap:
+            return
+        self.last = time.time()
+        tok = os.environ.get("TELEGRAM_BOT_TOKEN")
+        if not tok or not self.mid:
+            print("[progress]", self._text(done).splitlines()[-3:])
+            return
+        try:
+            httpx.post(f"https://api.telegram.org/bot{tok}/editMessageText", data={"chat_id": self.chat, "message_id": self.mid, "text": self._text(done)[:4000]}, timeout=30)
+        except httpx.HTTPError:
+            pass
+
+    def step(self, line: str) -> None:
+        if not self.steps or self.steps[-1] != line:
+            self.steps.append(line)
+            self._edit()
+
+    def thought(self, text: str) -> None:
+        t = " ".join(text.split())
+        if t:
+            self.note = t[:220] + ("…" if len(t) > 220 else "")
+            self._edit()
+
+    def done(self, summary: str) -> None:
+        self.head += f"\n{summary}"
+        self._edit(done=True, force=True)
+
+
+def handle_event(ev: dict, prog: Progress) -> dict | None:
+    """feed one stream-json event to the progress message; returns the final result event"""
+    if ev.get("type") == "assistant":
+        for c in (ev.get("message") or {}).get("content") or []:
+            if c.get("type") == "tool_use":
+                prog.step(describe(c.get("name", ""), c.get("input") or {}))
+            elif c.get("type") == "text":
+                prog.thought(c.get("text", ""))
+    elif ev.get("type") == "result":
+        return ev
+    return None
+
+
+def stream(text: str) -> int:
+    """run Claude Code with live progress in Telegram, then send the answer and remember the turn"""
+    import subprocess
+    s = settings()
+    prompt = build_prompt(text)
+    prog = Progress(text, f"🤖 Claude is on it ({s['model']}, effort {s['effort']})")
+    cmd = ["claude", "-p", prompt, "--model", MODELS[s["model"]], "--effort", s["effort"], "--append-system-prompt-file", str(ROOT / "docs" / "AGENT.md"),
+           "--output-format", "stream-json", "--verbose", "--max-turns", "60", "--allowedTools", *ALLOWED, "--disallowedTools", *DISALLOWED]
+    result = None
+    try:
+        p = subprocess.Popen(cmd, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        for line in p.stdout:
+            try:
+                ev = json.loads(line)
+            except ValueError:
+                continue
+            result = handle_event(ev, prog) or result
+        p.wait(timeout=60)
+    except (OSError, subprocess.SubprocessError) as e:
+        print("[chat] claude failed:", e)
+    (ROOT / "chat_result.json").write_text(json.dumps(result or {}))
+    n = len(prog.steps)
+    prog.done(f"Finished: {n} step{'s' if n != 1 else ''}" + (f", {result.get('num_turns')} turns" if result else " (no answer)"))
+    return finish(ROOT / "chat_result.json", text)
+
+
 if __name__ == "__main__":
     a = sys.argv[1:]
     if a and a[0] == "control":
@@ -192,6 +321,8 @@ if __name__ == "__main__":
         (ROOT / "chat_args.txt").write_text(f"{MODELS[s['model']]} {s['effort']}")
         send(f"Thinking ({s['model']}, effort {s['effort']})...")
         raise SystemExit(0)
+    if a and a[0] == "stream":
+        raise SystemExit(stream(a[1] if len(a) > 1 else ""))
     if a and a[0] == "finish":
         raise SystemExit(finish(Path(a[1]), a[2] if len(a) > 2 else ""))
     raise SystemExit(__doc__)

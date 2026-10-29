@@ -54,3 +54,25 @@ def test_merge_gate_uses_only_chat_branches(monkeypatch, tmp_path):
     assert "#5" in chat.control("/changes") and "#6" not in chat.control("/changes")
     assert "Merged #5" in chat.control("/merge")
     assert ("pr", "merge", "5", "--squash", "--delete-branch") in calls
+
+
+def test_progress_lines_from_stream_events(monkeypatch, tmp_path):
+    setup(monkeypatch, tmp_path)
+    monkeypatch.delenv("TELEGRAM_BOT_TOKEN", raising=False)
+    prog = chat.Progress("why rejected?", "Claude is on it", min_gap=0)
+    events = [
+        {"type": "assistant", "message": {"content": [{"type": "text", "text": "Let me look at the judge notes first."}]}},
+        {"type": "assistant", "message": {"content": [{"type": "tool_use", "name": "Read", "input": {"file_path": str(chat.ROOT / "data/judge_notes.jsonl")}}]}},
+        {"type": "assistant", "message": {"content": [{"type": "tool_use", "name": "Bash", "input": {"command": "python -m pytest -q"}}]}},
+        {"type": "result", "result": "Because of AI renders.", "num_turns": 3},
+    ]
+    results = [chat.handle_event(e, prog) for e in events]
+    assert prog.steps == ["Reading data/judge_notes.jsonl", "Running the tests"]
+    assert "judge notes" in prog.note and results[-1]["result"] == "Because of AI renders."
+    text = prog._text()
+    assert "✓ Reading data/judge_notes.jsonl" in text and "… Running the tests" in text
+
+
+def test_describe_never_leaks_long_commands():
+    assert chat.describe("Bash", {"command": "gh run view 123 --log | grep judge"}) == "Reading a run's log"
+    assert len(chat.describe("Bash", {"command": "x" * 500})) < 80
