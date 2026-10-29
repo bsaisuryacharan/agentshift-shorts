@@ -88,11 +88,12 @@ def test_insights_hint_is_advisory_and_bounded(tmp_path, monkeypatch):
         "summary": {"views": 10, "averageViewDuration": 20, "averageViewPercentage": 61.0, "netSubscribers": 2}}}))
     (tmp_path / "latest_trend_report.json").write_text(json.dumps({"region": "US", "signals": [{"title": "Black holes #shorts", "metric": 5}, {"title": "பிளாக்", "metric": 9}]}))
     d = insights.build(tmp_path)
-    assert d["trending"] == ["Black holes"] and d["channel"]["caveat"] == "tiny sample"
+    assert d["trending"] == ["Black holes"] and d["channel"]["caveat"].startswith("all Shorts")
     monkeypatch.setattr(insights, "OUT", tmp_path / "i.json")
     (tmp_path / "i.json").write_text(json.dumps(d))
     monkeypatch.setattr("app.vidiq.hint", lambda *a, **k: "")          # the vidIQ snapshot has its own budget and test
-    assert "tiny sample" in insights.hint() and len(insights.hint()) <= 600
+    monkeypatch.setattr("app.ideabank.hint", lambda *a, **k: "")       # so does the idea bank
+    assert "Channel Shorts" in insights.hint() and len(insights.hint()) <= 600
     monkeypatch.setattr(insights, "OUT", tmp_path / "missing.json")
     assert insights.hint() == ""
 

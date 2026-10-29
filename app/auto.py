@@ -26,7 +26,7 @@ from pathlib import Path
 
 import httpx
 
-from . import formats, gallery_hf, insights, lessons, picker, vidiq
+from . import formats, gallery_hf, ideabank, insights, lessons, picker, vidiq
 
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
@@ -239,10 +239,10 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
     for attempt in range(3):
         out, _ = ask("You choose the next topic for 'Agent Shift', a YouTube Shorts channel of 35-45 s science/tech/history/nature explainers in rotating formats. "
                      "From the CANDIDATES pick ONE that is explainable in 40 s with a surprising angle, factual and policy-safe (no tragedies, politics, celebrities, sports results, "
-                     "medical advice). Never pick a consumer product, brand or gadget (phones, earbuds, AI chatbots) - only science, space, nature, physics, the brain, history and engineering ideas. Prefer timeless science/space/history ideas that connect to something people search for; items marked IN THE NEWS are current science/tech headlines: when one fits, choose the timeless topic that explains it (a news hook gets views) but never a tragedy or politics; use CHANNEL INSIGHTS to favour what has worked "
+                     "medical advice). The channel makes curiosity explainers: science, space, nature, the brain, history, tech and engineering (how things work), and big tech news explained (what it is, how it works, why it matters). Never shopping content: product reviews, deals, unboxings or how-to-use tutorials. Prefer timeless science/space/history ideas that connect to something people search for; items marked IN THE NEWS are current science/tech headlines: when one fits, choose the timeless topic that explains it (a news hook gets views) but never a tragedy or politics; use CHANNEL INSIGHTS to favour what has worked "
                      "and avoid what has scored badly. Prefer subjects that have REAL photographs or footage (actual spacecraft, telescopes, natural phenomena, places, historical events, animals) over purely hypothetical future technology, because real pictures make the better Short. It must have a real English Wikipedia article. "
                      'The FORMAT below decides the framing of the title (it is NOT always a what-if). Return ONLY JSON {"options":[{"topic":"a title framing that fits the FORMAT","wiki":"exact Wikipedia article title","why":"...","subjects":["3-4 concrete filmable things the Short would show, 1-3 words each, e.g. lava flow, Voyager probe, aurora"]}, ...three different options, best first]}. Never pick or closely resemble anything in PAST TITLES or ALREADY USED.',
-                     f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}\nBREAKOUT TITLES (angle shapes that went viral for small channels; invent a new topic, never copy): {'; '.join(vidiq.topic_ideas()) or 'none'}",
+                     f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}\nBREAKOUT TITLES (angle shapes that went viral for small channels; invent a new topic, never copy): {'; '.join(vidiq.topic_ideas() + ideabank.ideas()) or 'none'}",
                      prefer=["groq", "gemini", "openrouter"])
         opts = out.get("options") if isinstance(out.get("options"), list) else [out]
         best = picker.best_option(opts, used, _norm_topic, min_coverage=0.5 if attempt < 2 else 0.0)   # best of three: the one with the most real pictures available wins
@@ -518,6 +518,8 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
         errs = validate_spec(spec, facts["text"])
         if not errs:
             spec.setdefault("sources", {})["wiki"] = facts["url"]
+            for i, u in enumerate(facts.get("extra_sources") or [], 1):
+                spec["sources"][f"ref{i}"] = u
             spec["format"] = fmt
             spec["series_label"] = spec.get("series_label") or formats.FORMATS[fmt]["label"]
             return spec, prov
@@ -551,7 +553,7 @@ def review_bar(s: dict) -> bool:
 def judge(run: Path, spec: dict, writer: str) -> dict:
     sheet = (run / "sheet.jpg").read_bytes()
     narr = " ".join(b["say"] for b in spec["beats"])
-    facts = (spec.get("_facts") or {}).get("text", "")[:5000]          # the judge can only check accuracy if it sees what the Short is based on
+    facts = (spec.get("_facts") or {}).get("text", "")[:12000]          # the judge can only check accuracy if it sees what the Short is based on
     out, prov = ask(JUDGE, f"NARRATION: {narr}\nSOURCES: {json.dumps(spec['sources'])[:600]}\nFACTS (the only allowed source; any number or claim on screen or in the "
                            f"narration that these FACTS do not say, or say about something else, is an accuracy error):\n{facts}", image=sheet, exclude=writer)
     s = out.get("scores", {})
@@ -681,6 +683,8 @@ def facts_for(topic: str, wiki: str | None, facts_file: Path | None, deliver: bo
 
 def run(topic: str, wiki: str | None, out: Path, deliver: bool = True, facts_file: Path | None = None, chat: str | None = None, fmt: str | None = None) -> int:
     facts = facts_for(topic, wiki, facts_file, deliver, chat)
+    from . import research
+    facts = research.enrich(facts, topic, facts.get("title") or wiki)        # + trusted web sources when a TAVILY_API_KEY is set
     (out / "_last.facts.json").parent.mkdir(parents=True, exist_ok=True)
     wiki_title = facts.get("title") or wiki or topic
     fmt = fmt if fmt in formats.FORMATS else formats.choose(recent_formats())

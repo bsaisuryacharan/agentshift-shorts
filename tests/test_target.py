@@ -93,3 +93,16 @@ def test_target_card_before_and_after_data(tmp_path):
     card = o.target_report(full)
     for needle in ("1,000,000 views", "5,000 views after 30h", "behind", "0.8% of 1,000", "weakest stage lately is 'visuals'", "Learned so far", "Checked every hour"):
         assert needle in card, needle
+
+
+def test_monitor_tracks_every_short_on_the_channel():
+    def handler(req: httpx.Request) -> httpx.Response:
+        p = req.url.path
+        if p.endswith("/channels"):
+            return httpx.Response(200, json={"items": [{"contentDetails": {"relatedPlaylists": {"uploads": "UU1"}}}]})
+        if p.endswith("/playlistItems"):
+            return httpx.Response(200, json={"items": [{"contentDetails": {"videoId": "a"}}, {"contentDetails": {"videoId": "b"}}]})
+        return httpx.Response(200, json={"items": [{"id": "a", "contentDetails": {"duration": "PT41S"}, "snippet": {"title": "Space Is Too Big"}},
+                                                   {"id": "b", "contentDetails": {"duration": "PT8M20S"}, "snippet": {"title": "How LLMs work"}}]})
+    got = monitor.channel_shorts("K", "UC1", client=httpx.Client(transport=httpx.MockTransport(handler)))
+    assert [g["video_id"] for g in got] == ["a"]                       # the 8-minute video is not a Short

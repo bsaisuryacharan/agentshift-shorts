@@ -29,6 +29,8 @@ if pending and "--force" not in sys.argv:
     sys.exit(1)
 keep_insights = wd / "assets" / "insights.json"       # written by the weekly cloud job: the repo copy is newer than anything on the Mac
 saved = keep_insights.read_bytes() if keep_insights.exists() else None
+keep_bank = wd / "assets" / "idea_bank.json"         # its 'recent' part is refreshed in the cloud; the Mac copy only adds channels/formats
+bank_cloud = keep_bank.read_text() if keep_bank.exists() else None
 for item in list(wd.iterdir()):                      # replace code, keep state/ projects/ data/ .git
     if item.name in provision.ALLOW or item.name == ".github":
         subprocess.run(["rm", "-rf", str(item)], check=True)
@@ -36,6 +38,15 @@ provision.stage(wd)
 if saved is not None:
     keep_insights.parent.mkdir(parents=True, exist_ok=True)
     keep_insights.write_bytes(saved)
+if bank_cloud:
+    import json as _json
+    try:
+        mac, cloud = _json.loads(keep_bank.read_text()), _json.loads(bank_cloud)
+        if cloud.get("recent"):
+            mac["recent"], mac["recent_updated"] = cloud["recent"], cloud.get("recent_updated")
+            keep_bank.write_text(_json.dumps(mac, indent=1, ensure_ascii=False))
+    except (OSError, ValueError):
+        pass
 subprocess.run(["git", "add", "-A"], cwd=wd, check=True)
 subprocess.run(["git", "-c", "user.name=shorts-bot", "-c", "user.email=shorts-bot@users.noreply.github.com", "commit", "-qm", "sync code"], cwd=wd)
 subprocess.run(["git", "pull", "--rebase", "-q"], cwd=wd)

@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PERF = ROOT / "data" / "performance.jsonl"
 INSIGHTS = ROOT / "assets" / "insights.json"
 API = "https://www.googleapis.com/youtube/v3"
+CHANNEL_ID = os.environ.get("CHANNEL_ID", "UCLlxxuBKbt7CFUXUuTh9MOg")      # Agent Shift
 
 
 def uploaded_shorts(state_dir: Path = ROOT / "state") -> list[dict]:
@@ -36,6 +37,35 @@ def uploaded_shorts(state_dir: Path = ROOT / "state") -> list[dict]:
             if p.get("uploaded", {}).get("id"):
                 out.append({"spec_id": sid, "video_id": p["uploaded"]["id"], "title": p.get("title", ""), "url": p["uploaded"].get("url")})
     return out
+
+
+def _secs(iso: str) -> int:
+    import re
+    m = re.fullmatch(r"P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", iso or "")
+    if not m:
+        return 0
+    d, h, mi, se = (int(x or 0) for x in m.groups())
+    return d * 86400 + h * 3600 + mi * 60 + se
+
+
+def channel_shorts(key: str, channel_id: str = CHANNEL_ID, client: httpx.Client | None = None, limit: int = 50) -> list[dict]:
+    """every public Short on the channel (<= 3 min), not only the ones this pipeline uploaded: the channel's real results are the learning signal"""
+    c = client or httpx.Client(timeout=30)
+    r = c.get(f"{API}/channels", params={"part": "contentDetails", "id": channel_id, "key": key})
+    r.raise_for_status()
+    items = r.json().get("items", [])
+    if not items:
+        return []
+    uploads = items[0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    r = c.get(f"{API}/playlistItems", params={"part": "contentDetails", "playlistId": uploads, "maxResults": limit, "key": key})
+    r.raise_for_status()
+    ids = [it["contentDetails"]["videoId"] for it in r.json().get("items", [])]
+    if not ids:
+        return []
+    r = c.get(f"{API}/videos", params={"part": "contentDetails,snippet", "id": ",".join(ids), "key": key})
+    r.raise_for_status()
+    return [{"spec_id": None, "video_id": v["id"], "title": v["snippet"]["title"], "url": f"https://youtube.com/shorts/{v['id']}"}
+            for v in r.json().get("items", []) if 0 < _secs(v["contentDetails"].get("duration", "")) <= 180]
 
 
 def fetch(video_ids: list[str], key: str, client: httpx.Client | None = None) -> dict[str, dict]:
@@ -91,12 +121,17 @@ def write_insights(perf: dict, path: Path = INSIGHTS) -> None:
 def run(state_dir: Path = ROOT / "state", perf_path: Path = PERF, insights_path: Path = INSIGHTS, key: str | None = None, client: httpx.Client | None = None) -> dict:
     key = key or os.environ.get("YOUTUBE_API_KEY")
     vids = uploaded_shorts(state_dir)
-    if not vids:
-        print("monitor: no uploaded Shorts yet")
-        return {"shorts": 0}
     if not key:
         print("monitor: YOUTUBE_API_KEY not set")
         return {"shorts": len(vids), "error": "no api key"}
+    try:
+        known = {v["video_id"] for v in vids}
+        vids += [v for v in channel_shorts(key, client=client) if v["video_id"] not in known]
+    except (httpx.HTTPError, KeyError, ValueError) as e:
+        print("monitor: channel uploads unavailable:", type(e).__name__)
+    if not vids:
+        print("monitor: no Shorts yet")
+        return {"shorts": 0}
     stats = fetch([v["video_id"] for v in vids], key, client)
     now = datetime.now(UTC)
     rows, missing = [], []

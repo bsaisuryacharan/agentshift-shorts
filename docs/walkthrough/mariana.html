@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mariana Short Walkthrough</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#1d1d1f;--mute:#5f6368;--line:#e3e3df;--ok:#1e7d3c;--warn:#a15c00;--bad:#b3261e;--accent:#2a5bd7;--chip:#eef2fb}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121314;--card:#1c1d1f;--ink:#ececec;--mute:#a4a7ab;--line:#2e3033;--ok:#5cc47e;--warn:#e0a24a;--bad:#ff7b72;--accent:#8ab0ff;--chip:#24293a}}
+:root[data-theme="dark"]{--bg:#121314;--card:#1c1d1f;--ink:#ececec;--mute:#a4a7ab;--line:#2e3033;--ok:#5cc47e;--warn:#e0a24a;--bad:#ff7b72;--accent:#8ab0ff;--chip:#24293a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:880px;margin:0 auto;padding:28px 16px 60px}
+h1{font-size:26px;margin:0 0 4px}
+h2{font-size:18px;margin:0}
+.sub{color:var(--mute);margin:0 0 22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.stage{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
+.num{background:var(--accent);color:#fff;border-radius:999px;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex:none}
+.time{color:var(--mute);font-size:13px;margin-left:auto}
+.io{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.io{grid-template-columns:1fr}}
+.io div{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.io b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+.verdict{margin-top:10px;font-size:14px}
+.ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+code{background:var(--chip);border-radius:4px;padding:1px 5px;font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td,th{border-bottom:1px solid var(--line);padding:6px 6px;text-align:left;vertical-align:top}
+th{color:var(--mute);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.scroll{overflow-x:auto}
+img{max-width:100%;border-radius:8px;border:1px solid var(--line)}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13.5px}
+.flow span{background:var(--chip);border-radius:6px;padding:4px 8px}
+ul{margin:6px 0 0 18px;padding:0}
+</style>
+</head>
+<body>
+<main>
+<h1>How one Short was made: the Mariana Trench</h1>
+<p class="sub">Cloud run 40867896059, 29 Oct 2026, 11:46–12:06 UTC. Every input and output below is taken from that run's log and saved files.</p>
+
+<div class="card">
+<h2>Where everything runs (including Claude in Telegram)</h2>
+<div class="flow" style="margin-top:10px">
+<span>You, in Telegram</span>→<span>Cloudflare Worker (relay, ~1 s)</span>→<span>GitHub Actions: a fresh Ubuntu machine</span>→<span>back to Telegram</span>
+</div>
+<ul>
+<li><b>Telegram is only the chat window.</b> Nothing runs there.</li>
+<li><b>Claude's commands</b> (reading code, tests, <code>gh</code>, the orchestrator) run on a temporary GitHub Actions machine started by the <code>chat</code> workflow for each message. It checks out the repository, runs Claude Code, then is deleted. Only memory, conversation and Claude's pull requests are kept in the repository.</li>
+<li><b>Making a Short</b> runs the same way, on its own machine (<code>free-daily</code> or <code>orchestrator</code> workflow). Nothing runs on your Mac.</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="stage"><span class="num">1</span><h2>Topic picker</h2><span class="time">≈ 1 min</span></div>
+<div class="io">
+<div><b>Input</b>Ranked candidates (science news, evergreen list, Wikipedia most-read with gadgets/celebrities removed), your channel's results and vidIQ notes, format chosen by rotation: <code>unsolved</code>.</div>
+<div><b>Output</b>3 options, scored by how many of their subjects have real footage:
+<ul><li>Library of Alexandria: 50%, score 1.5</li><li>Roman concrete: 25%, score 0.75</li><li><b>Mariana Trench: 75%, score 2.25 ← picked</b></li></ul></div>
+</div>
+<p class="verdict ok">✓ Good pick: on-niche, filmable, the highest real-picture coverage.</p>
+</div>
+
+<div class="card">
+<div class="stage"><span class="num">2</span><h2>Wikipedia facts</h2><span class="time">seconds</span></div>
+<div class="io">
+<div><b>Input</b>Article title <code>Mariana Trench</code>.</div>
+<div><b>Output</b>6,278 characters of facts, for example: 2,550 km long; deepest point 10,935 m; pressure 1,086 bar (1,071.8 × sea level, "eight tons per square inch"); bottom 1–4 °C; crust up to 170 million years old; single-celled monothalamea found at 10.6 km; "22 crewed descents".</div>
+</div>
+<p class="verdict ok">✓ Correct, and the only source the script may use.</p>
+</div>
+
+<div class="card">
+<div class="stage"><span class="num">3</span><h2>Script writer</h2><span class="time">attempt 1 failed (6 min of quota waits); attempt 2 ≈ 2 min</span></div>
+<div class="io">
+<div><b>Input</b>Topic, format rules, the facts, channel insights, the judge's recurring complaints (as rules).</div>
+<div><b>Output</b>Title <b>"The Mariana Trench Mystery"</b>, written by Gemini, 9 beats, ~95 words, colour theme <code>earth</code>.</div>
+</div>
+<div class="scroll" style="margin-top:10px"><table>
+<tr><th>Beat</th><th>Narration</th><th>On screen</th><th>Picture asked for</th></tr>
+<tr><td>hook</td><td>10,935 meters down, the pressure is 1,086 bar.</td><td>"why?" bubble, count-up to 1,086 BAR</td><td>photo: Mariana Trench depth</td></tr>
+<tr><td>b1</td><td>That is 8 tons of weight on every square inch of your body.</td><td>8 TONS</td><td>footage: underwater ocean bubbles</td></tr>
+<tr><td>b2</td><td>Yet, at 10.6 kilometers deep, we found life thriving.</td><td>10.6 KM DEEP</td><td>photo: deep sea trench</td></tr>
+<tr><td>b3</td><td>These single-celled monothalamea survive 1,071 times sea-level pressure.</td><td>MONOTHALAMEA (scramble graphic)</td><td>photo: monothalamea xenophyophore</td></tr>
+<tr><td>b4</td><td>The water is a freezing 1 to 4 degrees Celsius.</td><td>TEMP 1-4 °C</td><td>footage: deep sea hydrothermal</td></tr>
+<tr><td>b5</td><td>They live on crust that is 170 million years old.</td><td>ring "170M YEARS" (filled to 100%)</td><td>photo: oceanic crust geology</td></tr>
+<tr><td>b6</td><td class="bad">Only 22 people have ever reached these crushing depths.</td><td class="bad">22 HUMANS</td><td>photo: bathyscaphe Trieste</td></tr>
+<tr><td>b7</td><td>The trench spans 2,550 kilometers, and it is mostly a mystery.</td><td>2,550 KM LONG</td><td>photo: Mariana Islands map</td></tr>
+<tr><td>outro</td><td>What else is hiding in the dark? Follow for more.</td><td>THE UNKNOWN</td><td>footage: dark ocean abyss</td></tr>
+</table></div>
+<p class="verdict warn">⚠ One error: "22 people" (Wikipedia says 22 crewed <i>descents</i>). The new context-aware fact check would now reject it. Correction to my earlier note: the "92%" in the preview was the 100% ring caught mid-animation, not an invented number; the ring itself still says nothing useful.</p>
+</div>
+
+<div class="card">
+<div class="stage"><span class="num">4</span><h2>Pictures (stills)</h2><span class="time">315 s</span></div>
+<div class="io">
+<div><b>Input</b>Each beat's photo term; sources tried in order: Wikimedia Commons → NASA → Openverse → Pixabay → AI image (Cloudflare FLUX).</div>
+<div><b>Output</b>1 real photo (bathyscaphe Trieste, Commons, public domain); 5 AI images (hook rocks, trench canyon, monothalamea, crust rock, trench map).</div>
+</div>
+<ul>
+<li>Real photos were rejected for good reasons: a deep-sea creature labelled "Mariana Trench depth", a person in a trench coat, a map with text.</li>
+<li class="warn">Openverse timed out 5 times at 30 s each, wasting 2.5 minutes.</li>
+<li class="warn">The vision check ran out of free quota midway, so later photos were judged on title only.</li>
+</ul>
+<p class="verdict warn">⚠ Mostly AI images: the main reason the visual scores were not higher.</p>
+</div>
+
+<div class="card">
+<div class="stage"><span class="num">5</span><h2>Footage (moving pictures)</h2><span class="time">32 s</span></div>
+<div class="io">
+<div><b>Input</b>Footage terms for b1, b4 and the outro.</div>
+<div><b>Output</b>Pixabay clip 37712 (bubbles) used for b1 <i>and</i> b4; clip 16160 for the outro. One clip rejected for on-screen text.</div>
+</div>
+<p class="verdict warn">⚠ The same clip on two beats; fixed since (a clip is never reused in one Short).</p>
+</div>
+
+<div class="card">
+<div class="stage"><span class="num">6</span><h2>Voice and sound</h2><span class="time">voice 29 s · mix 2 s</span></div>
+<div class="io">
+<div><b>Input</b>The narration, voice en-US-AndrewNeural (edge-tts, free).</div>
+<div><b>Output</b>A 39.7 s voice track with word timings (used for captions and graphic timing), mixed with music and whooshes at -14.3 LUFS (YouTube's level), no silences.</div>
+</div>
+<p class="verdict ok">✓ Technically clean. Pronunciation (e.g. "monothalamea") is not checked automatically.</p>
+</div>
+
+<div class="card">
+<div class="stage"><span class="num">7</span><h2>Graphics, captions and compositing</h2><span class="time">overlay 43 s · composite 92 s</span></div>
+<div class="io">
+<div><b>Input</b>On-screen elements per beat, word timings, the pictures and clips, the colour theme.</div>
+<div><b>Output</b><code>final.mp4</code>: 1080×1920, 40 s, 37 distinct shots; captions in groups of three words; gallery motion graphics (count-up, scramble).</div>
+</div>
+<p class="verdict warn">⚠ Captions split mid-phrase ("KILOMETERS DEEP WE"), and the scramble graphic looks garbled mid-animation. Both fixed since.</p>
+</div>
+
+<div class="card">
+<div class="stage"><span class="num">8</span><h2>Hard gates (code checks)</h2><span class="time">17 s</span></div>
+<div class="io">
+<div><b>Input</b>The finished video.</div>
+<div><b>Output</b>All passed: duration, resolution, audio, cadence, distinct shots, motion, no freeze, no black frames, loudness -14.3 LUFS, no silence, safe zone.</div>
+</div>
+</div>
+
+<div class="card">
+<div class="stage"><span class="num">9</span><h2>Judge (independent AI reviewer)</h2><span class="time">≈ 1 min</span></div>
+<div class="io">
+<div><b>Input</b>The contact sheet below, the narration and the source link. It did <i>not</i> see the facts (fixed since: it now gets them).</div>
+<div><b>Output</b>Approved, by Gemini. Hook 9 · visual quality 8 · accuracy 9 · originality 6 · policy 10 · visual variety 9 · polish 7 · hierarchy 7 · consistency 6 · payoff 9.<br>Scorecard: hook A, story B, visuals C, polish C, policy A.</div>
+</div>
+<ul>
+<li>Fixes it asked for: drop the unexplained ring graphic; one consistent font style; bigger small text; show the "1,071×" number visually.</li>
+</ul>
+<p class="verdict warn">⚠ It missed the "22 humans" error, because it never saw the facts.</p>
+<img src="mariana_sheet.jpg" alt="Contact sheet: 12 frames of the Short, from the deep-sea floor to the subscribe card" style="margin-top:10px">
+</div>
+
+<div class="card">
+<div class="stage"><span class="num">10</span><h2>Upload pack and delivery</h2><span class="time">≈ 1.5 min</span></div>
+<div class="io">
+<div><b>Input</b>The approved video, the script, the picture credits.</div>
+<div><b>Output</b>Telegram: the video (21 MB) and the upload pack (title "The Mariana Trench Mystery #shorts", description with source and credits, tags, pinned comment).</div>
+</div>
+<p class="verdict warn">⚠ The credits listed 4 rejected photos (a couple, jellyfish, pizza, airplane window). Corrected in the saved project before upload, and fixed in code. YouTube upload waits on your <code>/upload</code> after the login renewal.</p>
+</div>
+
+<div class="card">
+<h2>Total</h2>
+<p style="margin:6px 0 0">20 minutes on the cloud machine, including 6 minutes lost to free AI quota limits and 2.5 minutes to Openverse timeouts. The video itself took 528 s to make (attempt 2).</p>
+</div>
+</main>
+</body>
+</html>

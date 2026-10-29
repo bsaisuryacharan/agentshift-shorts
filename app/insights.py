@@ -18,7 +18,18 @@ OUT = ROOT / "assets" / "insights.json"
 
 NICHE = re.compile(r"\b(?:scien|space|nasa|esa\b|planet|moon|mars\b|solar|star\b|stars\b|galax|universe|black hole|telescope|rocket|satellite|orbit|astronaut|physic|quantum|chemi|biolog|"
                    r"animal|nature|ocean|climate|earth\b|volcan|earthquake|dinosaur|fossil|species|brain|psycholog|histor|ancient|empire|archaeolog|discover|experiment|"
-                   r"robot|artificial intelligence|computer science|invention|mystery|unsolved|explained|how .{2,30} works)", re.I)
+                   r"robot|artificial intelligence|\bai\b|computer|chip|semiconductor|internet|engineer|invent|technolog|\btech\b|nuclear|energy|battery|laser|submarine|"
+                   r"aircraft|jet\b|train|bridge|skyscraper|mystery|unsolved|explained|how .{2,30} works?)", re.I)
+# channel direction (owner, 2026-10-29): curiosity explainers - science, space, nature, history, tech and engineering - plus big tech news explained.
+# Shopping content (reviews, deals, unboxings, tutorials for products) is never in scope; the channel's own results decide the weighting (app/picker.py).
+OFF_NEWS = re.compile(r"\b(?:dementia|cancer|diabet|vaccin|drug|overdose|psychedelic|mushroom|cannabis|aspirin|dose|disease|patients?|clinical|"
+                      r"killed|dead|deaths?|died|shooting|war\b|attack|crash|murder|election|president|trump|biden|congress|senat|lawsuit|sued)\b", re.I)
+JUNK_WINNER = re.compile(r"(?:\bep\.?\s*\d|episode|part\s*\d|compilation|moments|#hindi|#tamil|#telugu|\bbhai\b|\bkya\b|\baur\b|nges|lele|belut)", re.I)
+
+
+def good_winner(title: str) -> bool:
+    """a niche 'winner' worth learning from: English, a single idea (not a compilation or an episode series)"""
+    return _ascii_ratio(title) > 0.9 and not JUNK_WINNER.search(title) and bool(re.search(r"[a-z]{3,}", title.lower()))
 
 
 def _ascii_ratio(s: str) -> float:
@@ -32,10 +43,10 @@ def build(data: Path = ROOT / "data") -> dict:
         c = json.loads(ca.read_text())
         cur = (c.get("current_period") or {}).get("summary") or {}
         if c.get("status") == "ok" and cur:
-            out["channel"] = {"period": f"{c['current_period']['start']}..{c['current_period']['end']}", "shorts": c["current_period"].get("short_rows"),
+            out["channel"] = {"period": f"{c['current_period']['start']}..{c['current_period']['end']}",
                               "views": cur.get("views"), "avg_view_seconds": cur.get("averageViewDuration"), "avg_view_pct": cur.get("averageViewPercentage"),
                               "net_subscribers": cur.get("netSubscribers"), "likes": cur.get("likes"), "shares": cur.get("shares"),
-                              "caveat": "tiny sample" if (c["current_period"].get("short_rows") or 0) < 5 else "ok"}
+                              "caveat": "all Shorts on the channel, last 30 days"}
     # what the pipeline itself has learned: every delivered Short's judge scores live in the ledger the cloud commits daily
     hist = data / "history.jsonl"
     if hist.exists():
@@ -75,8 +86,9 @@ def build(data: Path = ROOT / "data") -> dict:
         out["trend_signals_total"] = len(t.get("signals", []))
         out["trend_signals_on_niche"] = sum(1 for s in rows if NICHE.search(s["title"]))
         rows = [s for s in rows if NICHE.search(s["title"])]                  # phone reviews and celebrity clips are popular but are not this channel
-        news = [s for s in t.get("signals", []) if s.get("source") in ("news", "nasa", "science_feed") and s.get("title") and _ascii_ratio(s["title"]) > 0.9]
-        yt = [s for s in t.get("signals", []) if s.get("format") == "niche_short" and s.get("title")]
+        news = [s for s in t.get("signals", []) if s.get("source") in ("news", "nasa", "science_feed") and s.get("title") and _ascii_ratio(s["title"]) > 0.9
+                and not OFF_NEWS.search(s["title"])]                       # medical, drug, tragedy and political headlines are never Shorts for this channel
+        yt = [s for s in t.get("signals", []) if s.get("format") == "niche_short" and s.get("title") and good_winner(s["title"])]
         out["niche_winners"] = [{"title": s["title"][:90], "views": s.get("metric"), "url": s.get("url")} for s in yt[:8]]
         out["news"] = [re.sub(r"\s+[-|]\s+[^-|]{3,60}$", "", s["title"]).strip()[:110] for s in news[:12]]      # drop the " - Publisher" tail
         out["trending"] = [re.sub(r"#\w+", "", s["title"]).strip(" |-!") for s in rows[:12]]
@@ -96,7 +108,7 @@ def hint(max_chars: int = 1500) -> str:
     parts = []
     c = i.get("channel") or {}
     if c.get("avg_view_pct") is not None:
-        parts.append(f"Channel so far ({c['period']}, {c['caveat']}): {c['views']:.0f} views on {c['shorts']} Short(s), average viewed {c['avg_view_pct']:.0f}% "
+        parts.append(f"Channel Shorts ({c['period']}, {c['caveat']}): {c['views']:.0f} views, average viewed {c['avg_view_pct']:.0f}% "
                      f"({c['avg_view_seconds']:.0f}s), {c['net_subscribers']:.0f} net subs. Keep hooks fast and Shorts tight.")
     l = i.get("learned") or {}
     if l.get("shorts_scored"):
@@ -117,8 +129,8 @@ def hint(max_chars: int = 1500) -> str:
         parts.append("Short videos winning in this niche in the last two weeks (study the hook, never copy): " + "; ".join(f"'{w['title'][:60]}' ({w['views']:,} views)" for w in i["niche_winners"][:4]))
     if i.get("trending") and not i.get("niche_winners"):
         parts.append("Popular on YouTube now (inspiration only, do not copy titles): " + "; ".join(i["trending"][:6]))
-    from . import vidiq                                   # committed vidIQ snapshot (own budget so it never crowds out the channel's own results)
-    return " ".join([" ".join(parts)[:max_chars], vidiq.hint()]).strip()
+    from . import ideabank, vidiq                         # vidIQ snapshot and the idea bank: own budgets so they never crowd out the channel's own results
+    return " ".join([" ".join(parts)[:max_chars], vidiq.hint(), ideabank.hint()]).strip()
 
 
 if __name__ == "__main__":

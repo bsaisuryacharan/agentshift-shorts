@@ -17,8 +17,8 @@ STOP = {"the", "a", "an", "of", "to", "and", "in", "is", "are", "your", "you", "
 SOURCE_BONUS = {"news": 2.0, "evergreen": 1.0, "trend": 0.0, "wiki": 0.0}
 
 
-PRODUCT = re.compile(r"\b(?:samsung|galaxy (?:buds|watch|s\d|z|tab|note|fold|flip)|iphone|ipad|airpods|macbook|pixel \d|oneplus|xiaomi|redmi|tecno|realme|huawei|playstation|xbox|nintendo|"
-                     r"review|unboxing|vs\.? (?:apple|samsung|android)|price|discount|deal|sale|buds|earbuds|smartwatch|chatgpt|openai|gpt-?\d|gemini|claude|grok)\b", re.I)
+PRODUCT = re.compile(r"\b(?:review|unboxing|hands[- ]on|price|prices|discount|deals?|sale|coupon|buy|buying|best .{0,20} under|vs\.? (?:apple|samsung|android|iphone)|"
+                     r"earbuds|buds|smartwatch|case|charger|tutorial|prompts?|how to use|tips and tricks|hacks?)\b", re.I)   # shopping and how-to-use content, not tech news
 
 
 def _words(s: str) -> set[str]:

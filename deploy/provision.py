@@ -23,7 +23,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ALLOW = ["app", "tests", "examples", "docs", "skills", "templates", "assets", "deploy", "pyproject.toml", "README.md", "INTEGRATION.md"]
 SECRET_FILES = {".env", "token.json", "oauth_client.json"}
-ACTION_SECRETS = ["PEXELS_API_KEY", "PIXABAY_API_KEY", "GEMINI_API_KEY", "GROQ_API_KEY", "OPENROUTER_API_KEY", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN",
+ACTION_SECRETS = ["TAVILY_API_KEY", "PEXELS_API_KEY", "PIXABAY_API_KEY", "GEMINI_API_KEY", "GROQ_API_KEY", "OPENROUTER_API_KEY", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN",
                   "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"]
 DRY = "--dry-run" in sys.argv
 

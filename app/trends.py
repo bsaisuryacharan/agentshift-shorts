@@ -48,9 +48,11 @@ def _youtube_short_signals(settings: Settings) -> list[TrendSignal]:
     return found
 
 
-NICHE_SEARCHES = ["space facts", "science explained", "history mystery", "how it works science", "nature facts animals", "physics explained"]
+NICHE_SEARCHES = ["space facts", "science explained", "history mystery", "how it works engineering", "nature facts animals", "physics explained",
+                  "tech explained", "tech news explained"]
 SCIENCE_FEEDS = {"ScienceDaily": "https://www.sciencedaily.com/rss/top/science.xml", "NASA": "https://www.nasa.gov/news-release/feed/",
-                 "ESA": "https://www.esa.int/rssfeed/Our_Activities/Space_Science", "Quanta": "https://www.quantamagazine.org/feed/"}
+                 "ESA": "https://www.esa.int/rssfeed/Our_Activities/Space_Science", "Quanta": "https://www.quantamagazine.org/feed/",
+                 "IEEE Spectrum": "https://spectrum.ieee.org/feeds/feed.rss", "MIT Technology Review": "https://www.technologyreview.com/feed/"}
 
 
 def _youtube_niche_signals(settings: Settings, client=httpx, days: int = 14) -> list[TrendSignal]:

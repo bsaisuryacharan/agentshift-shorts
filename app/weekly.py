@@ -39,6 +39,11 @@ def main() -> int:
     finally:
         if tok_path:
             Path(tok_path).unlink(missing_ok=True)
+    try:
+        from . import ideabank
+        status["ideabank"] = str(ideabank.refresh())                  # fresh breakouts from the reference channels
+    except Exception as e:  # noqa: BLE001
+        status["ideabank"] = f"failed: {type(e).__name__}"
     from . import insights
     out = insights.build()
     old = insights.load()

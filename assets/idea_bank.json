@@ -1,0 +1,44 @@
+{
+ "updated": "2026-10-29",
+ "note": "Reference data for the topic picker and the script writer: formats, hooks and ideas that work for other Shorts channels. Learn the shape, never copy titles, scripts or footage. 'recent' is refreshed in the cloud (app/ideabank.py) from the reference channels; the rest was built from vidIQ (titles, view counts, two transcripts).",
+ "reference_channels": [
+  {"name": "Higgsfield AI", "id": "UCh13OyDSm-Kb8ij3yZArtFg", "why": "500K subs, ~75 Shorts/month; format and hook teacher (AI-video topics themselves flop on this channel)"},
+  {"name": "Tangent", "id": "UCDT2MKaTYcvXjxXGAWtIEIw", "why": "2.2K subs, 'How submarines make their own air' 275K views: engineering how-it-works"},
+  {"name": "Oddity Jar", "id": "UCQQn2gf6Nlw4Ay-KvB2lIJA", "why": "1.1K subs, 2.4M views on a tech-news 'here's the trick' explainer"},
+  {"name": "Binaryhood", "id": "UC5R0o2pwlSV3hCozAYp-tWg", "why": "4.5K subs, 'How GTA 6 reaches millions of consoles at once' 315K views: tech news explained"},
+  {"name": "Sofia Science", "id": "UCMqpw2TIRYGostU6RR21_9A", "why": "physics-of-fiction questions, 779x breakout"},
+  {"name": "Cosmos Updates", "id": "UCBobedYWckPUH6tNA8DQVvA", "why": "space discoveries, steady 100K-250K"},
+  {"name": "PrismTrend", "id": "UC1zqfI5E75KkNDinkgWGbGw", "why": "nature 'why can't X' puzzles, 447K"}
+ ],
+ "formats": [
+  {"name": "the N parts / rules", "shape": "Claim 'Every X is built on N parts. Here they are.' then one beat per part, end on the payoff.", "example": "The 4 parts every viral short drama is built on (Higgsfield)"},
+  {"name": "it's not what it looks like", "shape": "Show the impossible-looking thing, then 'here's the trick' with the real mechanism.", "example": "Tesla's flying Roadster isn't really flying. Here's the trick (2.4M views)"},
+  {"name": "how it really works", "shape": "Everyday or famous machine, one surprising mechanism, one number, one image of the inside.", "example": "How submarines make their own air and fresh water (275K)"},
+  {"name": "tech news, explained", "shape": "This week's tech headline, what it actually does, the one number that matters, why it matters to you.", "example": "How GTA 6 reaches millions of consoles at once (315K)"},
+  {"name": "X vs Y", "shape": "Two things side by side, one measurable difference, a winner.", "example": "AI vs VFX: who does it better? / 1080p vs 4K"},
+  {"name": "stop doing / myth", "shape": "'Stop believing X' or '\"X can't happen\" - wrong.' then the evidence.", "example": "\"AI can't do cinema\" - WRONG (Higgsfield)"},
+  {"name": "peak first", "shape": "Open on the most dramatic moment, then rewind to explain how it got there.", "example": "Higgsfield's hook rule: 'start with the peak of the scene'"}
+ ],
+ "hooks": [
+  "State the result in the first 2 seconds, then 'here's how' (Higgsfield: 'Motion design is now easier than ever. What you're seeing was not made by a human.').",
+  "A number that sounds impossible, said plainly ('250-ton rockets caught mid-air').",
+  "A question the viewer cannot answer yet ('Why can't an ant escape a simple circle?').",
+  "Contradict a belief ('You've never actually touched anything').",
+  "End with a one-word-answer question to the viewer ('Do you think AI will replace motion designers too?') - it brings comments."
+ ],
+ "ideas": [
+  {"title": "Tesla's flying Roadster isn't really flying. Here's the trick", "views": 2400000, "subs": 1100, "niche": "tech news"},
+  {"title": "Elon Musk explains how SpaceX catches 250-ton rockets mid-air", "views": 445500, "subs": 6400, "niche": "space tech"},
+  {"title": "How submarines make their own air and fresh water", "views": 274800, "subs": 2200, "niche": "engineering"},
+  {"title": "How GTA 6 reaches millions of consoles at once", "views": 314800, "subs": 4500, "niche": "tech explained"},
+  {"title": "Not fake, it's pure physics! Light takes time to travel", "views": 1700000, "subs": 6200, "niche": "physics"},
+  {"title": "Why every Starlink satellite is slowly falling", "views": 1600000, "subs": 24000, "niche": "space"},
+  {"title": "How a Mount Everest-sized asteroid wiped out the dinosaurs", "views": 1200000, "subs": 1900, "niche": "space/history"},
+  {"title": "Why can't an ant escape a simple circle", "views": 447300, "subs": 137000, "niche": "nature"},
+  {"title": "You've never actually touched anything", "views": 263900, "subs": 1600, "niche": "physics"},
+  {"title": "Worlds oldest murder", "views": 851700, "subs": 690, "niche": "history"},
+  {"title": "Motion design is now easier than ever", "views": 133678, "subs": 500000, "niche": "AI tools (format only)"},
+  {"title": "How I run ads with ChatGPT", "views": 278093, "subs": 500000, "niche": "AI tools (format only)"}
+ ],
+ "recent": []
+}

@@ -28,6 +28,17 @@ def test_no_snapshot_still_works():
 
 
 def test_consumer_products_are_never_ranked_even_if_regex_matches():
-    items = [("Samsung Galaxy Buds On", "wiki"), ("Galaxy cluster", "evergreen"), ("ChatGPT news", "news"), ("Black hole", "evergreen")]
+    items = [("Samsung Galaxy Buds On", "wiki"), ("Galaxy cluster", "evergreen"), ("5 ChatGPT prompts tutorial", "news"), ("Black hole", "evergreen"),
+             ("IN THE NEWS: OpenAI's new chip explained", "news"), ("iPhone 18 review and price", "trend")]
     out = picker.rank(items, snapshot={})
-    assert "Samsung Galaxy Buds On" not in out and "ChatGPT news" not in out and "Galaxy cluster" in out
+    assert "Samsung Galaxy Buds On" not in out and "5 ChatGPT prompts tutorial" not in out and "iPhone 18 review and price" not in out
+    assert "Galaxy cluster" in out and "IN THE NEWS: OpenAI's new chip explained" in out          # tech news explained is in scope
+
+
+def test_winner_and_news_filters():
+    from app import insights
+    assert insights.good_winner("How Submarines Make Their Own Air and Fresh Water")
+    assert not insights.good_winner("IKAN LELE SAMA BELUT #facts #animals")
+    assert not insights.good_winner("Most Incredible Animal Moments | Ep 15 #hindi")
+    assert insights.OFF_NEWS.search("Low-dose aspirin linked to 70% lower dementia risk")
+    assert not insights.OFF_NEWS.search("Three giant black holes discovered in a galaxy from the dawn of time")
