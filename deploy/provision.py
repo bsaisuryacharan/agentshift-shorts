@@ -49,9 +49,9 @@ def stage(dest: Path) -> list[str]:
         else:
             shutil.copy2(src, dest / name)
         copied.append(name)
-    (dest / ".gitignore").write_text(".env\n.env.*\ntoken.json\noauth_client.json\nruns/\noutput/\nvideos/\nlogs/\n__pycache__/\n*.mp4\n!assets/motion/*.mp4\n*.egg-info/\n")
+    (dest / ".gitignore").write_text(".env\n.env.*\ntoken.json\noauth_client.json\nruns/\noutput/\nvideos/\nlogs/\n__pycache__/\n*.mp4\n!assets/motion/*.mp4\n*.egg-info/\nchat_prompt.txt\nchat_args.txt\nchat_result.json\n")
     (dest / ".github" / "workflows").mkdir(parents=True, exist_ok=True)
-    for wf in ("orchestrator.yml", "free-daily.yml", "weekly-insights.yml", "picker-eval.yml", "hud-test.yml", "stock-test.yml", "stage-check.yml", "monitor.yml", "upload-test.yml"):
+    for wf in ("orchestrator.yml", "free-daily.yml", "weekly-insights.yml", "picker-eval.yml", "hud-test.yml", "stock-test.yml", "stage-check.yml", "chat.yml", "monitor.yml", "upload-test.yml"):
         for cand in (ROOT / "deploy" / wf, ROOT / "scripts" / wf):
             if cand.exists():
                 shutil.copy2(cand, dest / ".github" / "workflows" / wf)

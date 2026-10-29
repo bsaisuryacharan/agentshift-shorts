@@ -17,6 +17,13 @@ COMMANDS = [
     ("use", "Switch to a Short: /use <id>"),
     ("approve", "Approve the Short: it is uploaded to YouTube publicly"),
     ("upload", "Retry the YouTube upload of the approved Short"),
+    ("model", "Claude model: /model opus | sonnet | haiku"),
+    ("effort", "Claude effort: /effort low | medium | high | xhigh | max"),
+    ("changes", "Claude's proposed code changes"),
+    ("merge", "Make Claude's newest change live"),
+    ("discard", "Drop Claude's newest change"),
+    ("settings", "Claude chat settings"),
+    ("reset", "Clear the conversation with Claude"),
     ("help", "What the bot can do"),
 ]
 

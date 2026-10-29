@@ -10,3 +10,6 @@ __pycache__/
 *.mp4
 !assets/motion/*.mp4
 *.egg-info/
+chat_prompt.txt
+chat_args.txt
+chat_result.json

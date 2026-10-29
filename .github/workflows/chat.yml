@@ -1,0 +1,70 @@
+name: chat
+# Plain-language Telegram messages -> Claude (Claude Code) with the repo checked out. See docs/AGENT.md and app/chat.py.
+# Safety: Claude gets an explicit tool allow-list (no permission bypass); code changes go to a chat/* branch as a pull request and only reach
+# the live system when the owner sends /merge (handled by plain code below, not by Claude). Only the owner's chat reaches this job (Worker filter).
+# Needs ONE of the secrets: CLAUDE_CODE_OAUTH_TOKEN (your Claude subscription: run `claude setup-token`) or ANTHROPIC_API_KEY (pay per use).
+on:
+  repository_dispatch:
+    types: [chat]
+concurrency:
+  group: chat
+  cancel-in-progress: false
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+jobs:
+  talk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CHAT: ${{ github.event.client_payload.chat }}
+      TEXT: ${{ github.event.client_payload.text }}       # via env, never interpolated into the shell
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - name: Owner controls (/model /effort /reset /settings /merge /discard) - plain code, no Claude
+        id: ctl
+        run: |
+          pip install -q httpx
+          if python -m app.chat control "$TEXT"; then echo "done=true" >> "$GITHUB_OUTPUT"; fi
+      - name: Install the project and Claude Code
+        if: steps.ctl.outputs.done != 'true'
+        run: |
+          pip install -e . pytest
+          npm install -g @anthropic-ai/claude-code
+      - name: Ask Claude
+        if: steps.ctl.outputs.done != 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          git config user.name "agentshift-chat"; git config user.email "agentshift-chat@users.noreply.github.com"
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ] && [ -z "$ANTHROPIC_API_KEY" ]; then
+            python -c "from app import chat; chat.send('Claude is not connected yet: add the CLAUDE_CODE_OAUTH_TOKEN secret (claude setup-token) or ANTHROPIC_API_KEY.')"; exit 0
+          fi
+          python -m app.chat prompt "$TEXT"
+          read MODEL EFFORT < chat_args.txt
+          set +e
+          claude -p "$(cat chat_prompt.txt)" --model "$MODEL" --effort "$EFFORT" --append-system-prompt-file docs/AGENT.md \
+            --output-format json --max-turns 60 \
+            --allowedTools "Read" "Grep" "Glob" "Edit" "Write" \
+              "Bash(python -m pytest:*)" "Bash(git status:*)" "Bash(git diff:*)" "Bash(git log:*)" "Bash(git switch -c chat/:*)" \
+              "Bash(git add:*)" "Bash(git commit:*)" "Bash(git push -u origin chat/:*)" "Bash(gh pr create:*)" \
+              "Bash(gh run list:*)" "Bash(gh run view:*)" "Bash(grep:*)" "Bash(ls:*)" \
+            --disallowedTools "Bash(git push origin main:*)" "Bash(git push --force:*)" "WebFetch" > chat_result.json
+          python -m app.chat finish chat_result.json "$TEXT"
+      - name: Save the conversation (memory only; code changes stay on their chat/* branch)
+        if: always()
+        run: |
+          git config user.name "agentshift-chat"; git config user.email "agentshift-chat@users.noreply.github.com"
+          git switch main 2>/dev/null || true
+          git add state/chat 2>/dev/null || true
+          git commit -qm "chat: conversation memory" || true
+          git pull --rebase -q || true
+          git push origin main || true

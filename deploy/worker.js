@@ -12,16 +12,18 @@ export default {
     if (t === "/help" || t === "/start") {          // answered instantly, no pipeline needed
       await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: m.chat.id, text: "Commands:\n/new <topic> - make a Short (~15-20 min, arrives here)\n/status - current Short and scores\n/target - progress towards 1,000,000 views and monetisation\n/list - recent Shorts\n/use <id> - switch\n/approve - approve the Short: it is uploaded to YouTube automatically (public)\n/upload - retry that upload if it failed\nOr just describe a change: \"shorter hook\", \"re-roll image 3\".\nA daily Short is made automatically at 17:00 IST." }),
+        body: JSON.stringify({ chat_id: m.chat.id, text: "Commands:\n/new <topic> - make a Short (~15-20 min, arrives here)\n/status - current Short and scores\n/target - progress towards 1,000,000 views and monetisation\n/list - recent Shorts\n/use <id> - switch\n/approve - approve the Short: it is uploaded to YouTube automatically (public)\n/upload - retry that upload if it failed\n\nTalk to Claude: just write a message (questions, ideas, changes to the system).\n/model opus|sonnet|haiku, /effort low|medium|high|xhigh|max, /settings, /reset\n/changes - Claude's proposed code changes, /merge - make one live, /discard - drop it\n\nOne Short a day is made and posted automatically." }),
       });
       return new Response("ok");
     }
+    // pipeline commands go to the orchestrator; plain messages and the chat controls go to Claude (chat.yml)
+    const pipeline = /^\/(new|status|target|list|use|approve|upload)(@\w+)?(\s|$)/i.test(m.text.trim());
     const r = await fetch(`https://api.github.com/repos/${env.GH_REPO}/dispatches`, {
       method: "POST",
       headers: { Authorization: `Bearer ${env.GH_TOKEN}`, Accept: "application/vnd.github+json", "User-Agent": "shorts-orchestrator" },
-      body: JSON.stringify({ event_type: "telegram", client_payload: { chat: String(m.chat.id), text: m.text.slice(0, 2000), id: m.message_id } }),
+      body: JSON.stringify({ event_type: pipeline ? "telegram" : "chat", client_payload: { chat: String(m.chat.id), text: m.text.slice(0, 3500), id: m.message_id } }),
     });
-    const ack = r.status === 204 ? "Received - queued." : `Could not start the pipeline (GitHub ${r.status}).`;
+    const ack = r.status === 204 ? (pipeline ? "Received - queued." : "Got it - passing it to Claude.") : `Could not start (GitHub ${r.status}).`;
     await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`, {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ chat_id: m.chat.id, text: ack }),
