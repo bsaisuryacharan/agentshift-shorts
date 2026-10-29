@@ -25,3 +25,9 @@ def test_news_gets_a_bonus_and_limit_applies():
 
 def test_no_snapshot_still_works():
     assert picker.rank([("Volcano", "evergreen")], snapshot={}) == ["Volcano"]
+
+
+def test_consumer_products_are_never_ranked_even_if_regex_matches():
+    items = [("Samsung Galaxy Buds On", "wiki"), ("Galaxy cluster", "evergreen"), ("ChatGPT news", "news"), ("Black hole", "evergreen")]
+    out = picker.rank(items, snapshot={})
+    assert "Samsung Galaxy Buds On" not in out and "ChatGPT news" not in out and "Galaxy cluster" in out

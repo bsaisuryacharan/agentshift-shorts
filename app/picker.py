@@ -17,6 +17,10 @@ STOP = {"the", "a", "an", "of", "to", "and", "in", "is", "are", "your", "you", "
 SOURCE_BONUS = {"news": 2.0, "evergreen": 1.0, "trend": 0.0, "wiki": 0.0}
 
 
+PRODUCT = re.compile(r"\b(?:samsung|galaxy (?:buds|watch|s\d|z|tab|note|fold|flip)|iphone|ipad|airpods|macbook|pixel \d|oneplus|xiaomi|redmi|tecno|realme|huawei|playstation|xbox|nintendo|"
+                     r"review|unboxing|vs\.? (?:apple|samsung|android)|price|discount|deal|sale|buds|earbuds|smartwatch|chatgpt|openai|gpt-?\d|gemini|claude|grok)\b", re.I)
+
+
 def _words(s: str) -> set[str]:
     return {w for w in re.findall(r"[a-z]{4,}", s.lower()) if w not in STOP}
 
@@ -41,6 +45,8 @@ def winner_words(snapshot: dict | None = None) -> dict[str, float]:
 
 
 def score(text: str, source: str, ww: dict[str, float]) -> float:
+    if PRODUCT.search(text):
+        return -99.0                                   # consumer products and AI-brand news: not this channel, whatever the source
     niche = bool(insights.NICHE.search(text))
     if source in ("trend", "wiki") and not niche:
         return -99.0                                   # popular is not the same as on-niche
