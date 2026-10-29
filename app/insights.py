@@ -95,11 +95,21 @@ def build(data: Path = ROOT / "data") -> dict:
     return out
 
 
+PERF = ROOT / "assets" / "performance.json"          # written hourly by app.monitor (a separate file, so the two jobs never collide)
+
+
 def load() -> dict:
     try:
-        return json.loads(OUT.read_text())
+        d = json.loads(OUT.read_text())
     except (OSError, ValueError):
-        return {}
+        d = {}
+    try:
+        perf = json.loads(PERF.read_text()).get("performance")
+        if perf:
+            d["performance"] = perf
+    except (OSError, ValueError):
+        pass
+    return d
 
 
 def hint(max_chars: int = 1500) -> str:

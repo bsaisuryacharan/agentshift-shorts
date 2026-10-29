@@ -4,7 +4,7 @@
 
 Reads every uploaded Short from state/*.json, fetches its public statistics from the YouTube Data API (YOUTUBE_API_KEY secret), appends one row per video
 to data/performance.jsonl, and writes the summary (per-Short status vs the 1,000,000-view target, channel subscribers, YouTube Partner Programme progress,
-lessons from the playbook) into assets/insights.json["performance"], which the topic picker and script writer read. Private/unavailable videos are reported
+lessons from the playbook) into assets/performance.json (read through insights.load()["performance"]), which the topic picker and script writer read. Private/unavailable videos are reported
 as such, never as zero.
 """
 from __future__ import annotations
@@ -21,7 +21,7 @@ from . import targets
 
 ROOT = Path(__file__).resolve().parents[1]
 PERF = ROOT / "data" / "performance.jsonl"
-INSIGHTS = ROOT / "assets" / "insights.json"
+INSIGHTS = ROOT / "assets" / "performance.json"      # its own file: the daily insights job writes insights.json, and two writers to one file collided
 API = "https://www.googleapis.com/youtube/v3"
 CHANNEL_ID = os.environ.get("CHANNEL_ID", "UCLlxxuBKbt7CFUXUuTh9MOg")      # Agent Shift
 

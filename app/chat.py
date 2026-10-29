@@ -225,7 +225,8 @@ def status_block() -> str:
     except Exception:
         pass
     try:
-        perf = json.loads((ROOT / "assets" / "insights.json").read_text()).get("performance") or {}
+        from . import insights
+        perf = insights.load().get("performance") or {}
         if perf.get("shorts"):
             out.append(f"Performance: {len(perf['shorts'])} uploaded Shorts, best {perf.get('best')}")
     except (OSError, ValueError):
