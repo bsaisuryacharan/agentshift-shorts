@@ -57,3 +57,21 @@ def test_low_coverage_options_are_refused(monkeypatch):
     monkeypatch.setattr(picker, "visual_coverage", lambda subs: 0.33)
     assert picker.best_option([{"topic": "Boltzmann brain", "wiki": "Boltzmann brain", "subjects": ["x"]}], set(), auto._norm_topic) is None
     assert picker.best_option([{"topic": "Boltzmann brain", "wiki": "Boltzmann brain", "subjects": ["x"]}], set(), auto._norm_topic, min_coverage=0) is not None
+
+
+def test_numbers_need_matching_context_in_facts():
+    facts = ("The depth figure is accurate to ± 22 meters. The bottom pressure is 1,086 bar, or eight tons per square inch. "
+             "It is about 2,550 km long. As of 2022, 22 crewed descents have been achieved.")
+    assert auto._number_supported("1,086", facts, "pressure 1,086 bar")
+    assert auto._number_supported("8", facts, "8 tons on every square inch")
+    assert auto._number_supported("2,550", facts, "2,550 kilometers long")          # distinctive numbers need no shared word
+    assert auto._number_supported("22", facts, "22 crewed descents")
+    assert not auto._number_supported("22", facts, "22 humans walked there")
+    assert not auto._number_supported("92", facts, "92% of the crust")
+
+
+def test_caption_groups_never_end_on_a_dangling_word():
+    from app.hud import caption_groups
+    ws = [{"w": x} for x in "At 10.6 kilometers deep we found life on every square inch.".split()]
+    groups = [" ".join(w["w"] for w in g) for g in caption_groups(ws)]
+    assert not any(g.split()[-1].lower() in ("we", "on", "every", "the", "and") for g in groups), groups

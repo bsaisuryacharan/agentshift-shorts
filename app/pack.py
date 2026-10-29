@@ -26,14 +26,21 @@ def parts(spec: dict, credit_files: list[Path]) -> dict:
     title = spec["title"].strip()
     title = (title if len(title) <= 88 else title[:87].rstrip() + "…") + " #shorts"
     srcs = "\n".join(f"- {v}" for v in (spec.get("sources") or {}).values() if str(v).startswith("http"))
-    cred = []
+    cred: list[str] = []
+    used = {Path(str(x.get("img", ""))).stem for b in spec["beats"] for x in [b] + b.get("cuts", [])} - {""}
     for f in credit_files:
         try:
-            for v in json.loads(Path(f).read_text()).values():
+            for name, v in json.loads(Path(f).read_text()).items():
+                if Path(f).parent.name == "img" and Path(name).stem not in used:      # only pictures that are in the video
+                    continue
                 if "artist" in v:
-                    cred.append(f"- {v['file']} - {str(v['artist'])[:50]}, {v['license']} ({v['url']})")
+                    what = "Pixabay photo" if "Pixabay" in v.get("license", "") else v["file"]
+                    line = f"- {what} by {str(v['artist'])[:50]}, {v['license']} ({v['url']})"
                 else:
-                    cred.append(f"- {v.get('title', v.get('file'))} - {v.get('center', 'NASA')}, {v.get('license', '')} ({v.get('source', '')})")
+                    who = v.get("title", v.get("file")) if v.get("center") != "stock" else f"video by {v.get('title')}"
+                    line = f"- {who} - {v.get('center', 'NASA') if v.get('center') != 'stock' else 'Pixabay'}, {v.get('license', '')} ({v.get('source', '')})"
+                if line not in cred:
+                    cred.append(line)
         except (OSError, ValueError):
             continue
     hook = spec["beats"][0]["say"]

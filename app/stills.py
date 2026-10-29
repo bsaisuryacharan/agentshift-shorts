@@ -304,6 +304,11 @@ def _verified(fn, subject: str, dest: Path):
     if ok:
         return got
     Path(out).unlink(missing_ok=True)
+    cj = Path(out).parent / "credits.json"                    # a rejected photo must not stay in the credits (it was listed in a published description)
+    if cj.exists():
+        allc = json.loads(cj.read_text())
+        if allc.pop(Path(out).name, None) is not None:
+            cj.write_text(json.dumps(allc, indent=1))
     raise RuntimeError(f"photo for {subject!r} did not match")
 
 

@@ -33,6 +33,28 @@ def _accent(s: str) -> str:
     return re.sub(r"\*(.+?)\*", r"<b>\1</b>", s)
 
 
+
+FUNC = {"a", "an", "the", "and", "or", "but", "of", "to", "in", "on", "at", "for", "by", "with", "from", "we", "you", "it", "is", "are", "was",
+        "that", "this", "every", "its", "their", "our", "your", "as", "than", "into", "per", "so", "if", "has", "have", "had", "be", "can"}
+
+
+def caption_groups(ws: list[dict], size: int = 3) -> list[list[dict]]:
+    """split words into caption groups of ~3 that never end on a dangling word ('ON EVERY SQUARE', 'KILOMETERS DEEP WE'):
+    a group closes at punctuation, or at `size` words unless its last word is a function word (then it carries on, max size+2)"""
+    groups, cur = [], []
+    for w in ws:
+        cur.append(w)
+        last = re.sub(r"[^a-z]", "", w["w"].lower())
+        if re.search(r"[.,!?;:]$", w["w"]) or (len(cur) >= size and last not in FUNC) or len(cur) >= size + 2:
+            groups.append(cur)
+            cur = []
+    if cur:
+        if groups and len(cur) == 1 and len(groups[-1]) < size + 2:
+            groups[-1] += cur
+        else:
+            groups.append(cur)
+    return groups
+
 class Page:
     def __init__(self, spec: dict, timing: dict, total: float):
         self.spec, self.tm, self.total = spec, timing, total
@@ -155,14 +177,7 @@ class Page:
         hl = {re.sub(r"[^a-z0-9]", "", w.lower()) for w in self.spec.get("highlight", [])}
         for seg in self.tm["segments"]:
             ws = seg["words"]
-            groups, cur = [], []
-            for w in ws:
-                cur.append(w)
-                if len(cur) >= 3 or re.search(r"[.,!?;:]$", w["w"]):
-                    groups.append(cur); cur = []
-            if cur:
-                groups.append(cur)
-            for g in groups:
+            for g in caption_groups(ws):
                 a, b = g[0]["s"], max(x["e"] for x in g) + 0.12
                 spans = "".join(f'<span id="w{gi}_{k}" class="{"hl" if re.sub(r"[^a-z0-9]", "", x["w"].lower()) in hl else ""}">{_h.escape(x["w"])}</span> '
                                 for k, x in enumerate(g))

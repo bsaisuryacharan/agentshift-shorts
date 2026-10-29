@@ -518,7 +518,7 @@ def test_daily_run_is_silent_on_failure_but_a_requested_run_is_told(monkeypatch,
 
 def test_gallery_components_are_vendored_with_licence():
     from app import gallery_hf
-    assert len(gallery_hf.names()) == 6 and len(list(gallery_hf.LIB.glob('*/registry-item.json'))) == 9      # 9 vendored, 6 offered to the writer
+    assert len(gallery_hf.names()) == 5 and len(list(gallery_hf.LIB.glob('*/registry-item.json'))) == 9      # 9 vendored, 5 offered to the writer
     root = gallery_hf.LIB.parent
     assert "Apache License" in (root / "LICENSE").read_text()[:200] and "89af290" in (root / "SOURCE.md").read_text()
 
@@ -558,22 +558,23 @@ def test_validate_requires_gallery_motion_graphics():
     spec["beats"][1]["hud"].append({"t": "hf", "name": "per-word-rise", "vars": {"text": "hello there"}, "at": "word"})
     spec["beats"][2]["hud"].append({"t": "hf", "name": "per-word-rise", "vars": {"text": "again"}, "at": "word"})
     assert any("only once per Short" in e for e in auto.validate_spec(spec, "facts"))
-    spec["beats"][2]["hud"][-1]["name"] = "scramble-reveal"
-    spec["beats"][2]["hud"][-1]["vars"] = {"text": "TERM"}
+    spec["beats"][2]["hud"][-1]["name"] = "titlecard-lockup"
+    spec["beats"][2]["hud"][-1]["vars"] = {"wordmark": "TERM"}
     assert not any("gallery" in e or "hf" in e for e in auto.validate_spec(spec, "facts"))
 
 
 def test_upload_pack_has_everything_for_youtube_studio(tmp_path):
     from app import pack
     (tmp_path / "img").mkdir()
-    (tmp_path / "img" / "credits.json").write_text(json.dumps({"s1.jpg": {"file": "Andromeda", "license": "CC BY 4.0", "artist": "NASA/ESA", "url": "https://x/1"}}))
+    (tmp_path / "img" / "credits.json").write_text(json.dumps({"s1.jpg": {"file": "Andromeda", "license": "CC BY 4.0", "artist": "NASA/ESA", "url": "https://x/1"},
+                                                                  "s9.jpg": {"file": "pizza, cooking", "license": "Pixabay licence", "artist": "x", "url": "https://x/9"}}))
     (tmp_path / "vid").mkdir()
     (tmp_path / "vid" / "credits.json").write_text(json.dumps({"b3.mp4": {"title": "Earth at night", "center": "GSFC", "license": "NASA media (public domain)", "source": "https://images.nasa.gov/details/x"}}))
-    spec = {"title": "What if Andromeda hit us?", "series_label": "SPACE", "beats": [{"say": "Andromeda is coming."}], "sources": {"hook": "https://en.wikipedia.org/wiki/Andromeda_Galaxy", "b1": "not a url"}}
+    spec = {"title": "What if Andromeda hit us?", "series_label": "SPACE", "beats": [{"say": "Andromeda is coming.", "img": "s1.jpg"}], "sources": {"hook": "https://en.wikipedia.org/wiki/Andromeda_Galaxy", "b1": "not a url"}}
     text = pack.build(spec, [tmp_path / "img" / "credits.json", tmp_path / "vid" / "credits.json", tmp_path / "missing.json"])
     for needle in ("TITLE:", "#shorts", "https://en.wikipedia.org/wiki/Andromeda_Galaxy", "CC BY 4.0", "Earth at night", "TAGS:", "PINNED COMMENT:", "Altered or synthetic content: YES", "19:00 IST"):
         assert needle in text, needle
-    assert "not a url" not in text and 3 <= len(pack.tags(spec)) <= 8
+    assert "not a url" not in text and "pizza" not in text and 3 <= len(pack.tags(spec)) <= 8      # credits only for pictures in the video
 
 
 def test_formats_rotate_and_never_repeat_back_to_back():
@@ -598,7 +599,7 @@ def test_write_spec_stamps_the_format_and_ledger_remembers_it(monkeypatch, tmp_p
     seen = {}
     good = {"id": "x", "title": "T", "sources": {"a": "https://x"}, "beats": [{"key": f"b{i}", "img": f"s{i}", "prompt": "an old brass watch", "say": " ".join(["word"] * 14),
             "hud": [{"t": "bubble", "text": "true?", "at": "word"}] + ([{"t": "hf", "name": "count-up", "vars": {"end": 3}, "at": "word"}] if i in (1, 2) else [])} for i in range(7)]}
-    good["beats"][2]["hud"][-1] = {"t": "hf", "name": "scramble-reveal", "vars": {"text": "TERM"}, "at": "word"}
+    good["beats"][2]["hud"][-1] = {"t": "hf", "name": "titlecard-lockup", "vars": {"wordmark": "TERM"}, "at": "word"}
     monkeypatch.setattr(auto, "ask", lambda system, user, **k: seen.update(user=user) or (good, "groq"))
     spec, _ = auto.write_spec("t", {"url": "u", "text": "3 facts"}, None, "myth_vs_fact")
     assert spec["format"] == "myth_vs_fact" and spec["series_label"] == "MYTH VS FACT" and "FORMAT for this Short: myth_vs_fact" in seen["user"]

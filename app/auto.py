@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import base64
 import difflib
+import functools
 import json
 import os
 import re
@@ -290,14 +291,48 @@ Facts: use ONLY the supplied FACTS. Every number you write (digits in hud text o
 7-9 beats total, ~90-108 spoken words (hard max 112; the video must be under 45 s). Keep each hud text short (<=28 chars), written with digits not spelled numbers, as a complete short noun phrase (<=4 words, never a sentence fragment). No claims about real private individuals."""
 
 
-def _number_supported(num: str, facts_text: str) -> bool:
-    """a number is supported if it appears in FACTS, is a rounding/prefix of one (3.0 -> 3,015,470,894), or is a plausible year or 1-3.
-    Heuristic only: the judge's accuracy score is the second check."""
-    d = re.sub(r"\D", "", num)
-    if len(d) == 4 and 1800 <= int(d) <= 2100 or d in ("1", "2", "3") or num.replace(",", "") in facts_text.replace(",", ""):
+WORDNUM = {w: i for i, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen "
+                                         "seventeen eighteen nineteen twenty".split())}
+CLAIM_STOP = {"about", "around", "nearly", "almost", "more", "less", "than", "over", "under", "every", "only", "just", "with", "that", "this", "there",
+              "their", "which", "would", "could", "have", "been", "were", "they", "from", "into", "what", "when", "where", "while", "times", "some"}
+
+
+MONTHS = "jan feb mar apr may jun jul aug sep oct nov dec".split()
+
+
+def _stems(text: str) -> set[str]:
+    """5-letter word stems (4+ letter words) plus month names, so '13 Nov' and '13 November' share context"""
+    words = re.findall(r"[a-z]+", text.lower())
+    return {w[:5] for w in words if len(w) >= 4 and w not in CLAIM_STOP} | {"month:" + w[:3] for w in words if w[:3] in MONTHS and len(w) >= 3}
+
+
+@functools.lru_cache(maxsize=8)
+def _fact_sentences(facts_text: str) -> list[tuple[set, set]]:
+    """per FACTS sentence: (number values in it, 5-letter stems of its words)"""
+    out = []
+    for sent in re.split(r"(?<=[.!?])\s+", facts_text):
+        vals = _values(sent) | {float(WORDNUM[w]) for w in re.findall(r"[a-z]+", sent.lower()) if w in WORDNUM}
+        out.append((vals, _stems(sent)))
+    return out
+
+
+def _number_supported(num: str, facts_text: str, context: str = "") -> bool:
+    """a number is supported only if a FACTS sentence holds the same value (1% rounding allowed) AND shares a word with the claim's context
+    ('22 humans' is not supported by '± 22 meters'). Ranks 1-3 are free; a year only needs to be in FACTS."""
+    try:
+        v = float(num.replace(",", "").rstrip("."))
+    except ValueError:
         return True
-    toks = [re.sub(r"\D", "", t) for t in re.findall(r"\d[\d,\.]*", facts_text)]
-    return any(t.startswith(d.rstrip("0") or d) for t in toks if t)
+    if v in (1, 2, 3):
+        return True
+    ctx = _stems(context)
+    year = v.is_integer() and 1000 <= v <= 2100 and "." not in num and "," not in num
+    distinctive = len(re.sub(r"\D", "", num).strip("0")) >= 3 or year       # 2,550 or 10,935 cannot collide by chance; 22 or 92 easily can
+    for vals, stems in _fact_sentences(facts_text):
+        scaled = [v * m for m in (1, 1e3, 1e6, 1e9, 1e12)]             # '8.3' on screen for 8,300,678,395 (8.3B)
+        if any(abs(sv - x) <= 0.01 * max(abs(x), 1) for x in vals for sv in scaled) and (distinctive or v * 10 % 10 or not ctx or ctx & stems):
+            return True
+    return False
 
 
 PEOPLE = re.compile(r"\b(portrait|face|faces|man|men|woman|women|person|scientist|physicist|child|children|boy|girl|elderly|selfie|headshot)\b", re.I)   # close-up people: generated faces look uncanny
@@ -371,6 +406,10 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
             errs.append(f"{k}: no say")
             continue
         words += len(b["say"].split())
+        for sent in re.split(r"(?<=[.!?])\s+", b["say"]):
+            for num in re.findall(r"\d[\d,\.]*\d|\d", sent):
+                if not _number_supported(num, facts_text, sent):
+                    errs.append(f"{k}: spoken number {num} ('{sent[:60]}') is not in FACTS in that context - use a number FACTS gives for this exact thing, or drop it")
         if b.get("img") not in seen:
             seen.add(b.get("img"))
             if not b.get("prompt") and (b.get("photo") or b.get("footage")):       # the writer gave a real-photo/footage term: that is also the fallback prompt
@@ -393,10 +432,11 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
                 errs += [f"{k}: {m}" for m in gallery_hf.check(e)]
             if re.sub(r"[^a-z0-9]", "", str(e.get("at", "")).lower()) not in sw:
                 errs.append(f"{k}: hud at={e.get('at')!r} is not a word in say")
-            blob = json.dumps({k: v for k, v in e.items() if k in ("text", "html", "items", "steps", "values", "pct", "title", "sub", "label", "vars")}, ensure_ascii=False)
+            shown_vars = {kk: vv for kk, vv in (e.get("vars") or {}).items() if kk not in ("start", "dur", "duration", "emphasize")} if isinstance(e.get("vars"), dict) else {}
+            blob = json.dumps({k: v for k, v in {**e, "vars": shown_vars}.items() if k in ("text", "html", "items", "steps", "values", "pct", "title", "sub", "label", "vars")}, ensure_ascii=False)
             for num in re.findall(r"\d[\d,\.]*\d|\d", re.sub(r"<[^>]+>", " ", blob.replace('"at"', ""))):
-                if not _number_supported(num, facts_text):
-                    errs.append(f"{k}: number {num} not in FACTS")
+                if not _number_supported(num, facts_text, re.sub(r"<[^>]+>|[{}\[\]\"]", " ", blob) + " " + b["say"]):
+                    errs.append(f"{k}: on-screen number {num} is not in FACTS in that context - use a number FACTS gives for this exact thing, or drop it")
             shown = " ".join(str(v) for kk, v in {**e, **(e.get("vars") if isinstance(e.get("vars"), dict) else {})}.items() if kk in SHOWN_FIELDS)
             for num in re.findall(r"\d[\d,\.]*\d|\d", re.sub(r"<[^>]+>", " ", shown)):
                 said_here = re.findall(r"\d[\d,\.]*\d|\d", b["say"])                      # only a beat that speaks numbers can contradict its screen
@@ -480,7 +520,7 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
 # ---------------------------------------------------------------- judge (different model than the writer) ------------------
 JUDGE = f"""You are a strict YouTube Shorts reviewer. You see a time-ordered contact sheet of REAL frames plus the narration and the fact sources.
 Score 1-10: hook (do the first frames make a clear, surprising promise), visual_quality (real-looking imagery; penalise garbled text, warped objects,
-extra fingers, soft/blurry pictures), accuracy (on-screen claims match the narration and the sources), originality (new angle, not a re-cut),
+extra fingers, soft/blurry pictures), accuracy (every claim and number on screen and in the narration is stated by the FACTS for that same thing - e.g. '22 crewed descents' does not support '22 humans'; score 5 or less for any such error), originality (new angle, not a re-cut),
 policy (nothing misleading or against YouTube rules), visual_variety (different picture/camera every ~3-5 s), polish (lighting, no AI artefacts,
 no clipped text), hierarchy (one focal point, legible type), consistency (one visual language), payoff (last frame closes the loop).
 Also list concrete fixes. Return JSON {{"scores":{{"hook":n,"visual_quality":n,"accuracy":n,"originality":n,"policy":n,"visual_variety":n,
@@ -503,7 +543,9 @@ def review_bar(s: dict) -> bool:
 def judge(run: Path, spec: dict, writer: str) -> dict:
     sheet = (run / "sheet.jpg").read_bytes()
     narr = " ".join(b["say"] for b in spec["beats"])
-    out, prov = ask(JUDGE, f"NARRATION: {narr}\nSOURCES: {json.dumps(spec['sources'])[:1500]}", image=sheet, exclude=writer)
+    facts = (spec.get("_facts") or {}).get("text", "")[:5000]          # the judge can only check accuracy if it sees what the Short is based on
+    out, prov = ask(JUDGE, f"NARRATION: {narr}\nSOURCES: {json.dumps(spec['sources'])[:600]}\nFACTS (the only allowed source; any number or claim on screen or in the "
+                           f"narration that these FACTS do not say, or say about something else, is an accuracy error):\n{facts}", image=sheet, exclude=writer)
     s = out.get("scores", {})
     ok = review_bar(s)
     # safe_zone is measured by code (qa_v2.safe_zone_overlay), not opinion: it is only recorded here as passing because the hard gate passed first
