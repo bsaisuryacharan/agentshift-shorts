@@ -30,6 +30,7 @@
 - 2026-10-29 Chat agent got long-term memory (this file) and an automatic action log; /memory and /actions show them; Telegram buttons for model, effort, settings, changes
 - 2026-10-29 Telegram progress now streams Claude's thinking, each step's result and a live answer preview
 - 2026-10-29 Niche widened to curiosity explainers incl. tech/engineering and tech news (no shopping); idea bank (assets/idea_bank.json) from Higgsfield + niche channels, refreshed daily; trends daily with clean winners/news; monitor tracks every channel Short; researcher adds trusted web sources when TAVILY_API_KEY is set
+- 2026-10-30 Web researcher is live (TAVILY_API_KEY): each Short gets Wikipedia + 3-5 trusted sources (NASA, ESA, JPL, Smithsonian, Britannica, Live Science, Science News...)
 
 ## Open items
 - 2026-10-29 Mariana Trench Short (first judge-approved, "mariana-trench-mystery-a2") approved by the owner but NOT yet on YouTube: the first upload failed on an expired YouTube login; the login was renewed. Send /upload (owner's go-ahead given) to post it. Its narration says "22 people have reached these depths" (Wikipedia: 22 crewed descents) - the owner chose to post anyway.
