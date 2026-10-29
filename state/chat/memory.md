@@ -32,6 +32,7 @@
 - 2026-10-29 Telegram progress now streams Claude's thinking, each step's result and a live answer preview
 - 2026-10-29 Niche widened to curiosity explainers incl. tech/engineering and tech news (no shopping); idea bank (assets/idea_bank.json) from Higgsfield + niche channels, refreshed daily; trends daily with clean winners/news; monitor tracks every channel Short; researcher adds trusted web sources when TAVILY_API_KEY is set
 - 2026-10-30 Web researcher is live (TAVILY_API_KEY): each Short gets Wikipedia + 3-5 trusted sources (NASA, ESA, JPL, Smithsonian, Britannica, Live Science, Science News...)
+- 2026-10-30 Motion-graphics looks: each Short picks one of 8 looks from Claude Video 2.0 (assets/styles/claude-video-2, MIT): poster-pop, swiss-grid, blueprint, midnight-grid, editorial-paper, explainer-diagram, graphite-ui, risograph. Graphic beats (2-4 per Short) use the look's designed ground instead of AI pictures. References: 4 Claude-made motion-graphics Shorts the owner shared (poster burst, doodle explainer, whiteboard, glass UI card).
 
 ## Open items
 - 2026-10-29 Mariana Trench Short (first judge-approved, "mariana-trench-mystery-a2") is UPLOADED and public: https://youtube.com/watch?v=fvfM8rEDHDM (checked 2026-10-29). Its narration says "22 people have reached these depths" (Wikipedia: 22 crewed descents) - the owner chose to post anyway.
