@@ -168,7 +168,14 @@
     "payoff": 9,
     "safe_zone": 10
    },
-   "run_id": "40867896059"
+   "run_id": "40867896059",
+   "uploaded": {
+    "id": "fvfM8rEDHDM",
+    "url": "https://youtube.com/watch?v=fvfM8rEDHDM",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
   }
  }
 }
