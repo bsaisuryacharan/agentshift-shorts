@@ -26,7 +26,7 @@ from pathlib import Path
 
 import httpx
 
-from . import formats, gallery_hf, ideabank, insights, lessons, picker, vidiq
+from . import formats, gallery_hf, ideabank, insights, lessons, looks, picker, vidiq
 
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
@@ -291,6 +291,10 @@ GALLERY motion graphics (real open-source HyperFrames components rendered with Y
 {HF_BLOCK}
 Use at least 2 hf elements per Short, a different name each time, one per beat, never next to another big element in the same beat; vars must hold real values from FACTS.
 Any element may add "fx":"shine".
+LOOK (required, top-level "look"): one visual language for the whole Short, from a professional motion-graphics style library: {looks.prompt_block()}.
+Choose the one that fits the topic. GRAPHIC BEATS: a beat about an idea, a number, a scale or a comparison that has no real filmable subject sets "graphic": true
+(no photo, footage or prompt needed): the look's designed ground with big type, the number and a gallery graphic carries it - clean, like a studio motion graphic.
+Use 2-4 graphic beats per Short (never an AI picture of a real named object); real photos or footage for real subjects.
 Moving-picture layers (optional, they make a still feel like video): beat "footage":"<2-3 concrete nouns, MOST SPECIFIC FIRST>" swaps that beat's picture for a real moving clip (NASA, or free stock video for any real, filmable subject: lava, ocean waves, clouds, cells, city lights)
 (at most 3 per Short, never people or text, e.g. "asteroid impact", "volcano eruption", "ocean waves aerial"; a still is still required as fallback). Use real footage on 3 beats whenever the subject can be filmed. Beat "motion":"<clip>" picks a light layer
 over the picture: {MOTION_CLIPS}; omit it and one is chosen from the mood. Do not stack two big elements in one beat (max ~1100px tall total).
@@ -420,6 +424,10 @@ def validate_spec(spec: dict, facts_text: str) -> list[str]:
             for num in re.findall(r"\d[\d,\.]*\d|\d", sent):
                 if not _number_supported(num, facts_text, sent):
                     errs.append(f"{k}: spoken number {num} ('{sent[:60]}') is not in FACTS in that context - use a number FACTS gives for this exact thing, or drop it")
+        if b.get("graphic"):                          # pure motion graphics: the look's designed ground, so no picture terms are needed
+            for k2 in ("photo", "footage"):
+                b.pop(k2, None)
+            b.setdefault("prompt", "graphic ground")
         if b.get("img") not in seen:
             seen.add(b.get("img"))
             if not b.get("prompt") and (b.get("photo") or b.get("footage")):       # the writer gave a real-photo/footage term: that is also the fallback prompt
@@ -523,6 +531,7 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
             for i, u in enumerate(facts.get("extra_sources") or [], 1):
                 spec["sources"][f"ref{i}"] = u
             spec["format"] = fmt
+            spec["look"] = looks.pick(spec.get("look"), fmt)        # one visual language for the whole Short
             spec["series_label"] = spec.get("series_label") or formats.FORMATS[fmt]["label"]
             return spec, prov
         user += "\nYour last JSON failed validation: " + "; ".join(errs) + "\nReturn corrected JSON."

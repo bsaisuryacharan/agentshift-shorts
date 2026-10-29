@@ -225,10 +225,12 @@ class Cinematic:
         if len(self.parts) and self.parts[0, 0] <= t:
             bg = self.particles(bg.astype(np.float32), t)
         f = np.clip(bg, 0, 255).astype(np.uint8)
-        if self.lut is not None:
-            f = cv2.LUT(f, self.lut)
-        f = self.motion(f, t)
         i = self._shot_at(t)
+        graphic = bool(self.shots[i].get("graphic"))              # a designed ground keeps its exact colours: no grade, no light layer
+        if self.lut is not None and not graphic:
+            f = cv2.LUT(f, self.lut)
+        if not graphic:
+            f = self.motion(f, t)
         if i in self.vids and self.shots[i].get("pingpong"):
             f = self.drift(f, t)
         f = cv2.multiply(f, self.vig8, scale=1 / 255)

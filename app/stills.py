@@ -505,6 +505,10 @@ def ensure(spec: dict, run: Path) -> list[Path]:
             p = img / shot["img"]
             if p.exists() or p.with_suffix(".jpg").exists():
                 continue
+            if b.get("graphic"):                         # a pure motion-graphics beat: the look's designed ground, no picture to find or generate
+                from . import looks
+                looks.write_background(spec.get("look"), p, seed=len(missing))
+                continue
             if shot.get("photo"):                      # real photo first: free, unlimited, credible, and it saves the daily image-generation quota
                 done = False
                 for name, fn in (("commons", lambda: _verified(lambda: commons(shot["photo"], p), shot["photo"], p)),

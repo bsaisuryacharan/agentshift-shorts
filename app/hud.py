@@ -22,7 +22,7 @@ import json
 import re
 from pathlib import Path
 
-from . import gallery_hf, motion
+from . import gallery_hf, looks, motion
 from .voice import word_time
 
 COL = {"cy": "#38e1ff", "am": "#ffb547", "ok": "#3dff9a", "ir": "#ff3b5c", "pk": "#ff4fd8", "vi": "#a78bfa"}
@@ -158,7 +158,8 @@ class Page:
             end = self.tm["segments"][bi + 1]["start"] if bi + 1 < len(self.tm["segments"]) else sub_t
             inner = "".join(self.safe_element(beat, el, i) for i, el in enumerate(beat.get("hud", [])))
             dim = '<div class="dim"></div>' if beat.get("dim") else '<div class="scrim"></div>'
-            self.html.append(f'<div class="beat" id="b{bi}">{dim}<div class="cnt">{inner}</div></div>')   # .cnt clips content to the 870px stage: nothing can reach YouTube\'s right-hand buttons
+            cls = "beat graphic" if beat.get("graphic") else "beat"
+            self.html.append(f'<div class="{cls}" id="b{bi}">{dim}<div class="cnt">{inner}</div></div>')   # .cnt clips content to the 870px stage: nothing can reach YouTube\'s right-hand buttons
             self.A(f'tl.set("#b{bi}",{{display:"flex"}},{seg["start"]});tl.set("#b{bi}",{{display:"none"}},{round(end, 3)});')
         caps = self.captions()
         card = (f'<div id="card"><div class="logo">A</div><div class="nm">@agentshiftai</div><div class="btn"><span>🔔</span>{_h.escape(sub["title"])}</div>'
@@ -169,7 +170,7 @@ class Page:
         return TEMPLATE.replace("@@BRAND@@", brand).replace("@@TAG@@", tag).replace("@@BEATS@@", "".join(self.html)) \
             .replace("@@CAPS@@", caps).replace("@@CARD@@", card).replace("@@JS@@", "\n".join(self.js)) \
             .replace("@@FONTS@@", self.spec.get("gfonts", "Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800")) \
-            .replace("@@GSAP@@", (ASSETS / "gsap.min.js").as_uri()).replace("</style>", motion.CSS + "</style>", 1)
+            .replace("@@GSAP@@", (ASSETS / "gsap.min.js").as_uri()).replace("</style>", motion.CSS + looks.css(self.spec.get("look")) + "</style>", 1)
 
     def captions(self) -> str:
         """3-word kinetic caption groups, active word highlighted; pinned bottom:540px (inside the safe zone)."""
