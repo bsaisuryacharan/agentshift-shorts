@@ -16,17 +16,16 @@ export default {
       });
       return new Response("ok");
     }
-    // pipeline commands go to the orchestrator; plain messages and the chat controls go to Claude (chat.yml)
-    const pipeline = /^\/(new|status|target|list|use|approve|upload)(@\w+)?(\s|$)/i.test(m.text.trim());
+    // Claude is the first layer: every message goes to the chat job (chat.yml), which answers and runs the system's commands itself.
     const r = await fetch(`https://api.github.com/repos/${env.GH_REPO}/dispatches`, {
       method: "POST",
       headers: { Authorization: `Bearer ${env.GH_TOKEN}`, Accept: "application/vnd.github+json", "User-Agent": "shorts-orchestrator" },
-      body: JSON.stringify({ event_type: pipeline ? "telegram" : "chat", client_payload: { chat: String(m.chat.id), text: m.text.slice(0, 3500), id: m.message_id } }),
+      body: JSON.stringify({ event_type: "chat", client_payload: { chat: String(m.chat.id), text: m.text.slice(0, 3500), id: m.message_id } }),
     });
-    const ack = r.status === 204 ? (pipeline ? "Received - queued." : "Got it - passing it to Claude.") : `Could not start (GitHub ${r.status}).`;
-    await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`, {
+    // no canned text: a "typing..." indicator until Claude's own progress message arrives; a text only if GitHub refused the job
+    await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/` + (r.status === 204 ? "sendChatAction" : "sendMessage"), {
       method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: m.chat.id, text: ack }),
+      body: JSON.stringify(r.status === 204 ? { chat_id: m.chat.id, action: "typing" } : { chat_id: m.chat.id, text: `Could not reach Claude (GitHub ${r.status}).` }),
     });
     return new Response("ok");
   },

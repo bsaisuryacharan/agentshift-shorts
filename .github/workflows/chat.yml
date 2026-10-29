@@ -1,5 +1,5 @@
 name: chat
-# Plain-language Telegram messages -> Claude (Claude Code) with the repo checked out. See docs/AGENT.md and app/chat.py.
+# Every Telegram message -> Claude (Claude Code) first, with the repo checked out; Claude answers and runs the system's commands. See docs/AGENT.md and app/chat.py.
 # Safety: Claude gets an explicit tool allow-list (no permission bypass); code changes go to a chat/* branch as a pull request and only reach
 # the live system when the owner sends /merge (handled by plain code below, not by Claude). Only the owner's chat reaches this job (Worker filter).
 # Needs ONE of the secrets: CLAUDE_CODE_OAUTH_TOKEN (your Claude subscription: run `claude setup-token`) or ANTHROPIC_API_KEY (pay per use).
@@ -12,7 +12,7 @@ concurrency:
 permissions:
   contents: write
   pull-requests: write
-  actions: read
+  actions: write             # Claude starts runs (free-daily, stage-check) and hands /new or revisions to the orchestrator
 jobs:
   talk:
     runs-on: ubuntu-latest
@@ -23,6 +23,9 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       GH_TOKEN: ${{ github.token }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}            # the orchestrator's light commands (/status, /approve, /upload) run inside this job
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }

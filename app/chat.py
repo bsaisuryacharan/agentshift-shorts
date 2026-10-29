@@ -186,7 +186,10 @@ def finish(result_path: Path, text: str) -> int:
 ALLOWED = ["Read", "Grep", "Glob", "Edit", "Write",
            "Bash(python -m pytest:*)", "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git switch -c chat/:*)",
            "Bash(git add:*)", "Bash(git commit:*)", "Bash(git push -u origin chat/:*)", "Bash(gh pr create:*)",
-           "Bash(gh run list:*)", "Bash(gh run view:*)", "Bash(grep:*)", "Bash(ls:*)"]
+           "Bash(gh run list:*)", "Bash(gh run view:*)", "Bash(grep:*)", "Bash(ls:*)",
+           "Bash(python -m app.orchestrator handle:*)",                                   # /status /list /target /use /approve /upload, answered in Telegram
+           "Bash(gh workflow run free-daily.yml:*)", "Bash(gh workflow run stage-check.yml:*)", "Bash(gh workflow run weekly-insights.yml:*)",
+           "Bash(gh api repos/bsaisuryacharan/agentshift-shorts/dispatches:*)"]          # /new <topic> or a revision -> the orchestrator job (render)
 DISALLOWED = ["Bash(git push origin main:*)", "Bash(git push --force:*)", "WebFetch"]
 
 
@@ -205,7 +208,12 @@ def describe(tool: str, inp: dict) -> str:
         return f"Listing files {f('pattern')[:40]}"
     if tool == "Bash":
         c = f("command")
-        for key, text in (("pytest", "Running the tests"), ("gh run view", "Reading a run's log"), ("gh run list", "Checking recent runs"),
+        if "app.orchestrator handle" in c:
+            import re as _re
+            m = _re.search(r'--text\s+["\']?(/?\w+)', c)
+            return f"Asking the orchestrator: {m.group(1) if m else 'command'}"
+        for key, text in (("pytest", "Running the tests"), ("gh workflow run free-daily", "Starting a new Short (full pipeline)"),
+                          ("gh workflow run stage-check", "Starting a step test"), ("dispatches", "Handing the job to the orchestrator"), ("gh run view", "Reading a run's log"), ("gh run list", "Checking recent runs"),
                           ("git switch", "Starting a change branch"), ("git commit", "Committing the change"), ("git push", "Pushing the change"),
                           ("gh pr create", "Opening the pull request"), ("git diff", "Reviewing the diff"), ("git log", "Reading the history")):
             if key in c:
