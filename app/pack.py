@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 from pathlib import Path
 
@@ -54,4 +55,5 @@ def build(spec: dict, credit_files: list[Path]) -> str:
     return (f"UPLOAD PACK\n\nTITLE:\n{p['title']}\n\nDESCRIPTION:\n{p['description']}\n\nTAGS:\n{', '.join(p['tags'])}\n\nPINNED COMMENT:\n{p['pinned']}\n\n"
             "SETTINGS:\n- Audience: not made for kids\n- Altered or synthetic content: YES (AI-generated narration and some generated pictures)\n"
             "- Visibility: Public (if YouTube forces Private because the API project is not audited, set it to Public in Studio)\n- Best posting time: 19:00 IST\n\n"
-            "Send /approve to approve it: it is then uploaded to YouTube automatically (public).")
+            + ("It is being posted to YouTube automatically now; the link follows in a moment." if os.environ.get("AUTO_POST", "true").lower() != "false"
+               else "Send /approve to approve it: it is then uploaded to YouTube automatically (public)."))

@@ -208,7 +208,7 @@ def target_report(insights_path: Path | None = None) -> str:
     return "\n".join(lines)
 
 
-def do_upload(chat: str, st: dict) -> None:
+def do_upload(chat: str, st: dict, video: Path | None = None) -> None:
     """upload the current Short: only after /approve, once. Public by default (UPLOAD_VISIBILITY); /approve calls this by itself, /upload retries it."""
     from . import pack, upload
     cur = st.get("current")
@@ -226,7 +226,7 @@ def do_upload(chat: str, st: dict) -> None:
         parts = pack.parts(spec, [PROJ / cur / "img" / "credits.json", PROJ / cur / "vid" / "credits.json"])
         try:
             say(chat, "Uploading to YouTube (public)...")
-            video = upload.fetch_video(p["run_id"], cur)
+            video = video if video and video.exists() else upload.fetch_video(p["run_id"], cur)
             res = upload.upload(video, parts)
         except upload.UploadError as e:
             say(chat, f"Upload did not happen: {e}")
@@ -348,6 +348,26 @@ def listen() -> int:
             handle(chat, text)
 
 
+def autopost_cli() -> int:
+    """after the daily cloud run: a Short the judge approved (status 'delivered', never a draft) is uploaded at once, with the file this run made.
+    On by default; set the repo variable AUTO_POST=false to go back to approving each Short with /approve."""
+    chat = os.environ.get("TELEGRAM_CHAT_ID")
+    if not chat or os.environ.get("AUTO_POST", "true").lower() == "false":
+        print("auto-post off")
+        return 0
+    st = _state(chat)
+    cur = st.get("current")
+    p = st["projects"].get(cur) if cur else None
+    if not p or p.get("status") != "delivered" or p.get("uploaded"):
+        print("nothing to auto-post:", cur, p and p.get("status"))
+        return 0
+    p["status"] = "approved"
+    do_upload(chat, st, OUT / cur / "telegram.mp4")
+    _save(chat, st)
+    print("auto-posted" if p.get("uploaded") else "auto-post failed (see Telegram)")
+    return 0
+
+
 def register_cli() -> int:
     """after the daily cloud run: register runs/_last.json for the owner's chat (TELEGRAM_CHAT_ID) and save state"""
     chat = os.environ.get("TELEGRAM_CHAT_ID")
@@ -366,6 +386,8 @@ if __name__ == "__main__":
     a = sys.argv[1:]
     if a and a[0] == "register":
         raise SystemExit(register_cli())
+    if a and a[0] == "autopost":
+        raise SystemExit(autopost_cli())
     if a and a[0] == "listen":
         raise SystemExit(listen())
     if a and a[0] == "handle":

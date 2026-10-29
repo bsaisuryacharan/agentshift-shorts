@@ -236,3 +236,25 @@ def test_upload_modes(monkeypatch):
     assert upload.visibility() == "scheduled"
     monkeypatch.setenv("UPLOAD_VISIBILITY", "nonsense")
     assert upload.visibility() == "public"
+
+
+def test_autopost_uploads_a_delivered_short_once(monkeypatch, tmp_path):
+    from app import orchestrator as o
+    calls = []
+    st = {"current": "s1", "projects": {"s1": {"status": "delivered", "title": "t", "run_id": "9"}}}
+    monkeypatch.setenv("TELEGRAM_CHAT_ID", "42")
+    monkeypatch.delenv("AUTO_POST", raising=False)
+    monkeypatch.setattr(o, "_state", lambda chat: st)
+    monkeypatch.setattr(o, "_save", lambda chat, s: calls.append("saved"))
+    monkeypatch.setattr(o, "do_upload", lambda chat, s, video=None: (calls.append(("upload", s["projects"]["s1"]["status"])), s["projects"]["s1"].update(uploaded={"url": "u"})))
+    assert o.autopost_cli() == 0 and ("upload", "approved") in calls
+    calls.clear()
+    o.autopost_cli()                                   # already uploaded: nothing happens
+    assert calls == []
+    st["projects"]["s1"] = {"status": "draft"}
+    o.autopost_cli()
+    assert calls == []                                 # drafts are never posted
+    st["projects"]["s1"] = {"status": "delivered"}
+    monkeypatch.setenv("AUTO_POST", "false")
+    o.autopost_cli()
+    assert calls == []
