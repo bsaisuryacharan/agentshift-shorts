@@ -80,7 +80,10 @@ def visual_coverage(subjects: list[str]) -> float:
     hit = 0
     for s in subjects:
         try:
-            if any(i["hits"] >= min(2, len(footage._terms(s))) for i in footage.search_index(s, limit=6)) or footage.stock_candidates(s):
+            words = footage._terms(s)
+            nasa = any(i["hits"] >= max(1, len(words) - 1) for i in footage.search_index(s, limit=6))   # NASA media is all real science: the distinctive word is enough
+            stock = any(words and all(w in c.get("tags", "") for w in words) for c in footage.stock_candidates(s)) if not nasa else False
+            if nasa or stock:                        # every word of the subject must be in the clip's title or tags: "brain" alone is not a Boltzmann brain
                 hit += 1
         except Exception as e:                       # a probe failure must not stop the pick
             print(f"   coverage probe {s!r}: {type(e).__name__}", flush=True)

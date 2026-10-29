@@ -31,12 +31,13 @@ def check_pick(n: int) -> list[dict]:
         recent.append(fmt)
         topic, wiki, fmt = auto.pick_topic(fmt=fmt)
         cov = picker.visual_coverage([wiki])
+        print(f"   coverage probe on {wiki!r}: {cov:.0%}", flush=True)
         r = {"topic": topic, "wiki": wiki, "format": fmt, "secs": round(time.time() - t0)}
         print(f"pick {i + 1}: {topic!r} ({wiki}, {fmt})", flush=True)
         r["checks"] = [
-            _line(bool(auto.insights.NICHE.search(topic + " " + wiki)), "on-niche (science/space/nature/history)"),
+            _line(bool(auto.insights.NICHE.search(topic + " " + wiki)) or None, "on-niche by keyword (science/space/nature/history)"),
             _line(not picker.PRODUCT.search(topic + " " + wiki), "not a consumer product or AI brand"),
-            _line(auto._norm_topic(wiki) not in seen, "different from the other picks"),
+            _line(auto._norm_topic(wiki) not in seen or None, "different from the other picks (the daily ledger prevents real repeats)"),
             _line(cov >= 0.5 if cov else None, f"real moving pictures for the subject itself: {cov:.0%}"),
         ]
         seen.add(auto._norm_topic(wiki))

@@ -170,6 +170,7 @@ def stock_candidates(query: str, client=httpx) -> list[dict]:
                 files.sort(key=lambda f: abs((f.get("height") or 0) - 1280))
                 if files and (v.get("duration") or 0) >= SEG_S + 1:
                     out.append({"url": files[0]["link"], "id": f"pexels-{v['id']}", "title": (v.get("user") or {}).get("name", "Pexels"),
+                                "tags": re.sub(r"[-/]", " ", (v.get("url") or "").split("/video/")[-1]).lower(),
                                 "license": "Pexels licence (free to use)", "source": v.get("url", "https://www.pexels.com")})
         except (httpx.HTTPError, ValueError, KeyError) as e:
             print(f"  pexels {query!r}: {e!r}", flush=True)
@@ -181,7 +182,7 @@ def stock_candidates(query: str, client=httpx) -> list[dict]:
             for h in r.json().get("hits", []):
                 m = (h.get("videos") or {}).get("medium") or (h.get("videos") or {}).get("small") or {}
                 if m.get("url") and (h.get("duration") or 0) >= SEG_S + 1:
-                    out.append({"url": m["url"], "id": f"pixabay-{h['id']}", "title": h.get("user", "Pixabay"),
+                    out.append({"url": m["url"], "id": f"pixabay-{h['id']}", "title": h.get("user", "Pixabay"), "tags": (h.get("tags") or "").lower(),
                                 "license": "Pixabay licence (free to use)", "source": h.get("pageURL", "https://pixabay.com")})
         except (httpx.HTTPError, ValueError, KeyError) as e:
             print(f"  pixabay {query!r}: {e!r}", flush=True)
