@@ -1,18 +1,18 @@
 {
- "updated": "2026-10-29T18:47+00:00",
+ "updated": "2026-10-30T10:14+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 31,
+  "days_left": 30,
   "measured": true,
   "baseline_views": 5781,
   "channel_views": 5781,
   "gained": 0,
   "pct": 0.0,
   "pace_per_day": null,
-  "needed_per_day": 32258,
+  "needed_per_day": 33333,
   "projected": 0,
   "on_track": false
  },
@@ -43,29 +43,29 @@
  "winners": [
   {
    "title": "Space Is Too Big For Your Brain 🤯 #shorts",
-   "views": 1689
+   "views": 1690
   },
   {
    "title": "These 4 Brain Facts Sound Fake (But They're True) 🧠 #shorts",
-   "views": 1111
+   "views": 1113
   },
   {
    "title": "The Money Trick School Never Taught You 💰 #shorts",
-   "views": 440
+   "views": 441
   }
  ],
  "flops": [
   {
    "title": "5 AI Prompts 99% of People Don't Know 🤯 (Save This) #shorts",
-   "views": 21
+   "views": 22
   },
   {
    "title": "What If Grandma Could Just ASK Her Phone? 📱 Free AI Tool #shorts",
-   "views": 27
+   "views": 28
   },
   {
    "title": "3 FREE AI Tricks to Get More Interview Calls 🎯 (Save This) #shorts",
-   "views": 30
+   "views": 31
   }
  ],
  "best_formats": [
@@ -75,8 +75,8 @@
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Double down on what already wins on this channel: 'Space Is Too Big For Your Brain 🤯 #shorts' (1,689 views); 'These 4 Brain Facts Sound Fake (But They're True) ' (1,111 views); 'The Money Trick School Never Taught You 💰 #shorts' (440 views).",
-  "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (21); 'What If Grandma Could Just ASK Her Phone' (27); '3 FREE AI Tricks to Get More Interview C' (30).",
+  "Double down on what already wins on this channel: 'Space Is Too Big For Your Brain 🤯 #shorts' (1,690 views); 'These 4 Brain Facts Sound Fake (But They're True) ' (1,113 views); 'The Money Trick School Never Taught You 💰 #shorts' (441 views).",
+  "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (22); 'What If Grandma Could Just ASK Her Phone' (28); '3 FREE AI Tricks to Get More Interview C' (31).",
   "Prefer the formats the judge scores best: unsolved, how_it_works.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."

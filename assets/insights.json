@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-29T18:47:49+00:00",
+ "generated_at": "2026-10-30T10:14:44+00:00",
  "channel": {
-  "period": "2026-09-29..2026-10-28",
-  "views": 5667.0,
+  "period": "2026-09-30..2026-10-29",
+  "views": 5692.0,
   "avg_view_seconds": 23.0,
-  "avg_view_pct": 60.42,
+  "avg_view_pct": 60.13,
   "net_subscribers": 8.0,
   "likes": 84.0,
   "shares": 6.0,
@@ -15,14 +15,14 @@
   "The 3 Most Unbelievable Dangerous Places on Earth!🙄",
   "What if you dropped 10kg of tungsten from space?",
   "IKAN LELE SAMA BELUT",
-  "Bird & Animal Mutualism | Amazing Symbiotic Relationship in Nature 🏞️",
   "( This Is Ravan’s Lanka )",
-  "How Big is the Universe, Really? 🌌💀",
-  "🚨EXPLAINING FLASH DRIVE ‼️Are you having a tech problem? We accept mail ins! We have a Mail-In Link",
   "Hannah Fry on The Nun Study",
-  "Missing Bedroom Mystery in a 200year old house",
+  "🚨EXPLAINING FLASH DRIVE ‼️Are you having a tech problem? We accept mail ins! We have a Mail-In Link",
   "Animales Que Fueron Encontrados Dentro de la Comida 🤢😱 | PARTE 3",
-  "Six popular sugar substitutes linked to faster brain aging"
+  "Missing Bedroom Mystery in a 200year old house",
+  "Colonoscopy Explained | How Doctors Examine the Colon 🩺 @Sapbiology11",
+  "Six popular sugar substitutes linked to faster brain aging",
+  "Einstein's equations may explain the universe without dark energy"
  ],
  "learned": {
   "shorts_scored": 1,
@@ -40,55 +40,55 @@
  },
  "stage_averages": {
   "hook": 7.6,
-  "story": 6.6,
-  "visuals": 6.2,
-  "polish": 5.6,
+  "story": 6.4,
+  "visuals": 6.1,
+  "polish": 5.7,
   "policy": 8.9
  },
  "weakest_stage": "polish",
  "region": "IN",
  "trend_signals_total": 69,
- "trend_signals_on_niche": 53,
+ "trend_signals_on_niche": 46,
  "niche_winners": [
   {
    "title": "The 3 Most Unbelievable Dangerous Places on Earth!🙄#city #facts #new #shorts #place #ytsho",
-   "views": 6191452,
+   "views": 6883141,
    "url": "https://www.youtube.com/watch?v=IQNLS4q2ZXQ"
   },
   {
    "title": "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained #shorts",
-   "views": 6945457,
+   "views": 7317856,
    "url": "https://www.youtube.com/watch?v=K2we_H33tlU"
   },
   {
    "title": "What if you dropped 10kg of tungsten from space?",
-   "views": 4959188,
+   "views": 5267409,
    "url": "https://www.youtube.com/watch?v=uj4plcsfc6k"
   },
   {
    "title": "The Weirdest Bird Nests You’ve Ever Seen!🙄#facts #shorts #birds #new #tending #shortvideo",
-   "views": 5134243,
+   "views": 5210381,
    "url": "https://www.youtube.com/watch?v=BneG3bVSJ54"
   },
   {
    "title": "( This Is Ravan’s Lanka ) #devendragour #ytshorts #mindset #bhajan #ravan #srilanka #myste",
-   "views": 3605104,
+   "views": 3733009,
    "url": "https://www.youtube.com/watch?v=FdMAZbnSPw0"
   },
   {
    "title": "Why Nothing Can Survive Venus",
-   "views": 2119742,
+   "views": 2148731,
    "url": "https://www.youtube.com/watch?v=tKikZXrcZCQ"
   },
   {
-   "title": "Bird & Animal Mutualism | Amazing Symbiotic Relationship in Nature 🏞️  #shorts #Biology #m",
-   "views": 3809031,
-   "url": "https://www.youtube.com/watch?v=PcfANlf83DE"
+   "title": "Missing Bedroom Mystery in a 200year old house",
+   "views": 2549118,
+   "url": "https://www.youtube.com/watch?v=Jz_IepdSed8"
   },
   {
-   "title": "Missing Bedroom Mystery in a 200year old house",
-   "views": 2515602,
-   "url": "https://www.youtube.com/watch?v=Jz_IepdSed8"
+   "title": "🚨EXPLAINING FLASH DRIVE ‼️Are you having a tech problem? We accept mail ins! We have a Mai",
+   "views": 3169745,
+   "url": "https://www.youtube.com/watch?v=POwJpytgStA"
   }
  ],
  "news": [
@@ -96,13 +96,13 @@
   "NASA discovers Jupiter’s invisible shield is more complex than Earth’s",
   "128,000-year-old ice in Tibet could rewrite climate history",
   "A 700,000-year-old elephant tooth reveals a lost world where early humans lived",
-  "Send Your Name to Titan Aboard NASA’s Dragonfly Mission",
-  "NASA’s ISAM State of Play: The Industry Standard for Space Servicing, Assembly, and Manufacturing",
-  "NASA’s Hubble Marks Way for Roman Space Telescope",
-  "Ghostly Cat’s Head Nebula Lurks Within Sight of NASA’s Hubble, Webb",
+  "APOD: 2026 October 30 – Haunting the Cepheus Flare",
+  "Vega Island Frozen in Fright",
+  "Map Showing Potential Origins of Martian Meteorite Teghaza 001",
+  "Slice of Martian Meteorite Teghaza 001",
+  "Halloween Aboard the International Space Station",
+  "NASA-funded Study Details One of Oldest Mars Meteorites Ever Found",
   "Ghostly Cat’s Head Nebula lurks within sight of Hubble and Webb",
-  "Stars brewing in a nebulous cauldron",
-  "MMX lifts off to Mars’s moon Phobos",
-  "Celebrating BepiColombo, three words at a time"
+  "Stars brewing in a nebulous cauldron"
  ]
 }
