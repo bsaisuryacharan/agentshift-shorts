@@ -513,6 +513,36 @@ def too_similar(spec: dict) -> float:
     return best
 
 
+SCREEN_FIELDS = ("text", "html", "title", "sub", "label", "wordmark", "kicker", "prefix", "options", "keyword", "note", "body", "end", "suffix")
+
+
+def screen_text(spec: dict) -> str:
+    """every word a viewer reads on screen, per beat (graphics included)"""
+    out = []
+    for b in spec.get("beats", []):
+        bits = []
+        for e in b.get("hud", []):
+            bits += [str(e.get(k)) for k in SCREEN_FIELDS if e.get(k)] + [str(v) for k, v in (e.get("vars") or {}).items() if k in SCREEN_FIELDS and v]
+            bits += [" ".join(map(str, row)) for row in (e.get("items") or []) if isinstance(row, (list, tuple))]
+        out.append(f"[{b.get('key')}] SAYS: {b.get('say', '')} | SCREEN: {' / '.join(bits)}")
+    return "\n".join(out)
+
+
+def audit_claims(spec: dict, facts_text: str) -> list[str]:
+    """before a render is spent: every claim the script makes (spoken or on screen) must be stated or directly implied by FACTS. The judge fails the Short
+    for accuracy otherwise (the writer adds materials, causes and quantities from its own knowledge). One cheap text call; skipped if the free LLMs are busy."""
+    try:
+        out, _ = ask("You are a strict fact auditor for a science Short. Compare the SCRIPT with FACTS (the only allowed source). List every factual claim in the script "
+                     "(spoken or on screen) that FACTS do not state or directly imply: materials, causes, mechanisms, dates, quantities, superlatives and softeners like "
+                     "'nearly all' or 'much'. Ignore opinions and rhetorical questions. Return ONLY JSON {\"unsupported\":[{\"beat\":\"key\",\"claim\":\"...\",\"fix\":\"say only what FACTS state\"}]}.",
+                     f"FACTS:\n{facts_text[:9000]}\n\nSCRIPT:\n{screen_text(spec)}", prefer=["gemini", "groq", "openrouter"], wait=False)
+    except Exception as e:  # noqa: BLE001 - the audit is an extra check, never a reason to lose a script
+        print(f"   claims audit skipped ({str(e)[:80]})", flush=True)
+        return []
+    bad = out.get("unsupported") if isinstance(out, dict) else None
+    return [f"{x.get('beat', '?')}: unsupported claim '{str(x.get('claim', ''))[:90]}' - {str(x.get('fix', 'say only what FACTS state'))[:80]}" for x in (bad or []) if isinstance(x, dict)][:6]
+
+
 def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str | None = None) -> tuple[dict, str]:
     fmt = fmt if fmt in formats.FORMATS else formats.choose(recent_formats())
     user = f"TOPIC: {topic}\n{formats.prompt_block(fmt)}\nFACTS (source {facts['url']}):\n{facts['text']}\n"
@@ -527,6 +557,10 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
     for n in range(5):
         spec, prov = ask(SYSTEM, user, prefer=order[n // 2 % 3])      # a model that keeps failing the schema is swapped out
         errs = validate_spec(spec, facts["text"])
+        if not errs:
+            errs = audit_claims(spec, facts["text"])             # unsupported claims are fixed before any render is spent
+            if errs:
+                print("   claims audit:", "; ".join(errs)[:300], flush=True)
         if not errs:
             spec.setdefault("sources", {})["wiki"] = facts["url"]
             for i, u in enumerate(facts.get("extra_sources") or [], 1):
@@ -658,6 +692,10 @@ def finish(spec: dict, writer: str, out: Path, deliver: bool, chat: str | None) 
             telegram(text, chat=chat)                        # second message: the full upload pack, ready to paste
         return True, [], run_dir, j
     fixes = ([card["fix_first"]] if card.get("fix_first") else []) + [f"guideline check failed: {c['check']} ({c['note']})" for c in bad_policy] + (j["fixes"] or [])
+    sc = j["scores"]
+    if min(sc.get("visual_quality", 0), sc.get("polish", 0), sc.get("consistency", 0)) >= 8:       # the look works: change the claims, not the visuals
+        fixes = ["KEEP exactly the same look, graphic beats, layout and visual style; they scored 8+ for visuals, polish and consistency. Change ONLY the wording that FACTS do not support."] + \
+                [f for f in fixes if not re.search(r"visual|image|picture|photo|footage|render|variety|text size|legib|font", f, re.I)]
     return False, fixes or ["raise visual quality and accuracy"], run_dir, j
 
 

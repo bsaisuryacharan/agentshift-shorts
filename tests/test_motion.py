@@ -601,7 +601,7 @@ def test_write_spec_stamps_the_format_and_ledger_remembers_it(monkeypatch, tmp_p
     good = {"id": "x", "title": "T", "sources": {"a": "https://x"}, "beats": [{"key": f"b{i}", "img": f"s{i}", "prompt": "an old brass watch", "say": " ".join(["word"] * 14),
             "hud": [{"t": "bubble", "text": "true?", "at": "word"}] + ([{"t": "hf", "name": "count-up", "vars": {"end": 3}, "at": "word"}] if i in (1, 2) else [])} for i in range(7)]}
     good["beats"][2]["hud"][-1] = {"t": "hf", "name": "titlecard-lockup", "vars": {"wordmark": "TERM"}, "at": "word"}
-    monkeypatch.setattr(auto, "ask", lambda system, user, **k: seen.update(user=user) or (good, "groq"))
+    monkeypatch.setattr(auto, "ask", lambda system, user, **k: ({"unsupported": []}, "groq") if "fact auditor" in system else (seen.update(user=user) or (good, "groq")))
     spec, _ = auto.write_spec("t", {"url": "u", "text": "3 facts"}, None, "myth_vs_fact")
     assert spec["format"] == "myth_vs_fact" and spec["series_label"] == "MYTH VS FACT" and "FORMAT for this Short: myth_vs_fact" in seen["user"]
     monkeypatch.setattr(auto, "ROOT", tmp_path)

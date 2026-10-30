@@ -90,31 +90,33 @@ def background(look: str, w: int = 1080, h: int = 1920, seed: int = 0) -> np.nda
     img[:] = _rgb(t["ground"])
     kind, _, col = t["pattern"].partition(":")
     rng = np.random.default_rng(seed)
-    if kind == "rays":                                              # poster burst: alternating wedges from the upper centre
-        cx, cy = w // 2, int(h * 0.38)
+    off = (seed * 23) % 60                                          # every graphic beat gets a visibly different ground (same look, shifted pattern)
+    if kind == "rays":                                              # poster burst: alternating wedges, rotated and moved per beat
+        cx, cy = w // 2 + ((seed * 97) % 400) - 200, int(h * 0.30) + (seed * 131) % 500
         darker = tuple(max(0, c - 34) for c in _rgb(t["ground"]))
+        rot = seed * 0.21
         for i in range(0, 24, 2):
-            a0, a1 = i * math.pi / 12, (i + 1) * math.pi / 12
+            a0, a1 = i * math.pi / 12 + rot, (i + 1) * math.pi / 12 + rot
             pts = np.array([[cx, cy], [cx + 3000 * math.cos(a0), cy + 3000 * math.sin(a0)], [cx + 3000 * math.cos(a1), cy + 3000 * math.sin(a1)]], np.int32)
             cv2.fillPoly(img, [pts], darker)
     elif kind == "grid":
         th = 2 if t["dark"] else 1
-        for x in range(0, w, 60):
+        for x in range(off, w, 60):
             cv2.line(img, (x, 0), (x, h), _rgb(col), th)
-        for y in range(0, h, 60):
+        for y in range(off, h, 60):
             cv2.line(img, (0, y), (w, y), _rgb(col), th)
     elif kind == "dots":
-        for x in range(20, w, 40):
-            for y in range(20, h, 40):
+        for x in range(20 + off % 40, w, 40):
+            for y in range(20 + (off * 2) % 40, h, 40):
                 cv2.circle(img, (x, y), 3, _rgb(col), -1)
     elif kind == "halftone":
         for y in range(0, h, 28):
             for x in range(0, w, 28):
-                r = int(6 * max(0.0, 1 - math.hypot(x - w * 0.8, y - h * 0.15) / 900))
+                r = int(6 * max(0.0, 1 - math.hypot(x - (w * 0.8 if seed % 2 == 0 else w * 0.2), y - (h * 0.15 + (seed * 160) % 1200)) / 900))
                 if r:
                     cv2.circle(img, (x, y), r, _rgb(col), -1)
     elif kind == "paper":
-        for y in range(0, h, 64):
+        for y in range(off, h, 64):
             cv2.line(img, (0, y), (w, y), _rgb(col), 1)
     if kind in ("paper", "rays", "halftone") or not t["dark"]:          # fine grain so flat grounds do not band after compression
         img = np.clip(img.astype(np.int16) + rng.normal(0, 3, img.shape[:2])[..., None].astype(np.int16), 0, 255).astype(np.uint8)

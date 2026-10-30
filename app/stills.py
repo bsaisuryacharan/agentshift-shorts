@@ -507,7 +507,7 @@ def ensure(spec: dict, run: Path) -> list[Path]:
                 continue
             if b.get("graphic"):                         # a pure motion-graphics beat: the look's designed ground, no picture to find or generate
                 from . import looks
-                looks.write_background(spec.get("look"), p, seed=len(missing))
+                looks.write_background(spec.get("look"), p, seed=spec["beats"].index(b))
                 continue
             if shot.get("photo"):                      # real photo first: free, unlimited, credible, and it saves the daily image-generation quota
                 done = False
