@@ -1,5 +1,5 @@
 {
- "current": "what-if-jupiter-shield-protected-earth-a3",
+ "current": "solar-sails-not-flimsy-curtains-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -198,6 +198,32 @@
    "uploaded": {
     "id": "VUxm-xTuVLI",
     "url": "https://youtube.com/watch?v=VUxm-xTuVLI",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
+  },
+  "solar-sails-not-flimsy-curtains-a3": {
+   "title": "Solar Sails: Not Flimsy Curtains",
+   "base": "solar-sails-not-flimsy-curtains-a3",
+   "status": "approved",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 6,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 8,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 9,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "41080028173",
+   "uploaded": {
+    "id": "lKK6xftJlVU",
+    "url": "https://youtube.com/watch?v=lKK6xftJlVU",
     "privacy": "public",
     "wanted": "public",
     "publish_at": null

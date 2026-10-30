@@ -1,0 +1,208 @@
+{
+ "id": "solar-sails-not-flimsy-curtains-a3",
+ "title": "Solar Sails: Not Flimsy Curtains",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "MYTH VS FACT",
+ "format": "myth_vs_fact",
+ "theme": "cool",
+ "look": "midnight-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b1": "https://en.wikipedia.org/wiki/Solar_sail",
+  "b2": "https://en.wikipedia.org/wiki/Solar_sail",
+  "b3": "https://en.wikipedia.org/wiki/Solar_sail",
+  "b4": "https://en.wikipedia.org/wiki/Solar_sail",
+  "b5": "https://en.wikipedia.org/wiki/Solar_sail",
+  "b6": "https://en.wikipedia.org/wiki/Solar_sail",
+  "wiki": "https://en.wikipedia.org/wiki/Solar_sail",
+  "ref1": "https://ntrs.nasa.gov/api/citations/20160012435/downloads/20160012435_Redacted.pdf",
+  "ref2": "http://collections.nlm.nih.gov/ext/dw/0123200X12/PDF/0123200X12.pdf",
+  "ref3": "https://www.sciencenews.org/wp-content/uploads/sites/2/2025/03/SN_April_2025_lo.pdf",
+  "ref4": "https://www.nasa.gov/wp-content/uploads/2023/04/sp-4231.pdf?emrc=9c46bc",
+  "ref5": "https://insider.si.edu/category/science-nature/astronomy/feed"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "Photoreal cinematic 9:16 image of a stylized, translucent solar sail reflecting distant starlight, with subtle light particles, dark space background, wide shot, no text, no logos, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Many think solar sails are flimsy, too weak to propel a spacecraft.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "true?",
+     "at": "flimsy"
+    },
+    {
+     "t": "title",
+     "html": "Solar Sails: *Myth* vs. Fact",
+     "at": "Solar"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Sunlight's force is subtle: 5 Newtons for an 800-meter sail at Earth's distance.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 5,
+      "prefix": "Force:",
+      "suffix": "N",
+      "glow": true
+     },
+     "at": "5"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "img": "s1.jpg",
+   "photo": "comet tail",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Ancient idea: Kepler noted comet tails in 1610, suggesting 'heavenly breezes'.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Kepler, 1610",
+     "at": "1610",
+     "col": "cy"
+    }
+   ],
+   "prompt": "documentary photograph of comet tail, natural light, no text, no people"
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Maxwell's 1864 work proved light has momentum, establishing the physics.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "Maxwell's Equations",
+      "kicker": "1864"
+     },
+     "at": "1864"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s2.jpg",
+   "photo": "IKAROS spacecraft",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "It's proven: IKAROS 2010 and LightSail-2 2019 successfully used solar pressure.",
+   "hud": [
+    {
+     "t": "list",
+     "items": [
+      [
+       "🚀",
+       "IKAROS",
+       "2010"
+      ],
+      [
+       "🛰️",
+       "LightSail-2",
+       "2019"
+      ]
+     ],
+     "at": "IKAROS"
+    }
+   ],
+   "prompt": "documentary photograph of IKAROS spacecraft, natural light, no text, no people"
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Low thrust, but continuous. Propellant-free, this force builds speed over time.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Continuous force builds speed",
+      "accent": "blue"
+     },
+     "at": "Continuous"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "img": "s3.jpg",
+   "photo": "Mars orbiter",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Solar pressure displaces Mars spacecraft thousands of kilometers, impacting trajectories.",
+   "hud": [
+    {
+     "t": "delta",
+     "text": "Thousands of KM",
+     "dir": "up",
+     "col": "cy",
+     "at": "thousands"
+    }
+   ],
+   "prompt": "documentary photograph of Mars orbiter, natural light, no text, no people"
+  },
+  {
+   "key": "outro",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Solar sails aren't flimsy. They're a proven path to high speeds and long missions.",
+   "hud": []
+  }
+ ],
+ "_facts": {
+  "title": "Solar sail",
+  "url": "https://en.wikipedia.org/wiki/Solar_sail",
+  "text": "Solar sails (also known as lightsails, light sails, and photon sails) are a method of spacecraft propulsion using radiation pressure exerted by sunlight on large surfaces. A number of spaceflight missions to test solar propulsion and navigation have been proposed since the 1980s. The two spacecraft to successfully use the technology for propulsion were IKAROS, launched in 2010, and LightSail-2, launched in 2019. A further demonstrator, Advanced Composite Solar Sail System (ACS3), was launched in 2024, and deployed successfully but is not being actively controlled due to a fault. A useful analogy to solar sailing may be a sailing boat; the light exerting a force on the large surface is akin to a sail being blown by the wind. High-energy laser beams could be used as an alternative light source to exert much greater force than would be possible using sunlight, a concept known as beam sailing. Solar sail craft offer the possibility of low-cost operations combined with high speeds (relative to chemical rockets) and long operating lifetimes. Since they have few moving parts and use no propellant, they could potentially be used numerous times for the delivery of payloads. Solar sails use a phenomenon that has a proven, measured effect on astrodynamics. Solar pressure affects all spacecraft, whether in interplanetary space or in orbit around a planet or small body. A typical spacecraft going to Mars, for example, will be displaced thousands of kilometers by solar pressure, so the effects must be accounted for in trajectory planning, which has been done since the time of the earliest interplanetary spacecraft of the 1960s. Solar pressure also affects the orientation of a spacecraft, a factor that must be included in spacecraft design. The total force exerted on an 800 by 800 metres (2,600 by 2,600 ft) solar sail, for example, is about 5 N (1.1 lbf) at Earth's distance from the Sun,, and existing technology is limited to much smaller sizes (such as 9 by 9 metres (30 by 30 ft) for ACS 3, resulting in approximately 0.0007 N (0.00016 lbf)), making it a low-thrust propulsion system, similar to spacecraft propelled by electric engines. However, since it uses no propellant, that force can be exerted indefinitely (as long as the Sun or another star is sufficiently close) and the collective effect over time is great enough to be considered a potential manner of propelling spacecraft. == History of concept ==\nJohannes Kepler observed that comet tails point away from the Sun and suggested that the Sun caused the effect. In a letter to Galileo in 1610, he wrote, \"Provide ships or sails adapted to the heavenly breezes, and there will be some who will brave even that void.\" He might have had the comet tail phenomenon in mind when he wrote those words, although his publications on comet tails came several years later. The theory of electromagnetic fields and radiation, first published by James Clerk Maxwell in 1861–1864, shows that light has momentum and thus can exert pressure on objects. Maxwell's equations provide the theoretical foundation for sailing with light pressure. So by 1864, the physics community and beyond knew sunlight carried momentum that would exert a pressure on objects. Jules Verne, in From the Earth to the Moon, published in 1865, wrote \"there will some day appear velocities far greater than these [of the planets and the projectile], of which light or electricity will probably be the mechanical agent ... we shall one day travel to the moon, the planets, and the stars.\" This is possibly the first published recognition that light could move ships through space. Pyotr Lebedev was first to successfully demonstrate light pressure, which he did in 1899 with a torsional balance; Ernest Nichols and Gordon Hull conducted a similar independent experiment in 1901 using a Nichols radiometer. Svante Arrhenius predicted in 1908 the possibility of solar radiation pressure distributing life spores across interstellar distances, providing one means to explain the concept of panspermia. He was apparently the first scientist to state that light could move objects between stars. Konstantin Tsiolkovsky first proposed using the pressure of sunlight to propel spacecraft through space in 1921 and suggested \"using tremendous mirrors of very thin sheets to utilize the pressure of sunlight to attain cosmic velocities\". Friedrich Zander (Tsander) published a technical paper in 1925 that included technical analysis of solar sailing. Zander wrote of \"applying small forces\" using \"light pressure or transmission of light energy to distances by means of very thin mirrors\". JBS Haldane speculated in 1927 about the invention of tubular spaceships that would take humanity to space and how \"wings of metallic foil of a square kilometre or more in area are spread out to catch the Sun's radiation pressure\". J. D. Bernal wrote in 1929, \"A form of space sailing might be developed which used the repulsive effect of the Sun's rays instead of wind. A space vessel spreading its large, metallic wings, acres in extent, to the full, might be blown to the limit of Neptune's orbit. Then, to increase its speed, it would tack, close-hauled, down the gravitational field, spreading full sail again as it rushed past the Sun.\"\nScience fiction authors used the solar sail in their writing, such as Russell Saunders's 1951 article Clipper Ships of Space in Astounding Science Fiction, and the short story Sunjammer by Arthur C. Clarke, originally published in the March 1964 issue of Boys' Life  depicting a yacht race between solar sail spacecraft. Carl Sagan, in the 1970s, popularized the idea of sailing on light using a giant structure which would reflect photons in one direction, creating momentum. He brought up his ideas in college lectures, books, and television shows. He was fixated on quickly launching this spacecraft in time to perform a rendezvous with Halley's Comet. Unfortunately, the mission didn't take place in time and he would never live to finally see it through. The first formal technology and design effort for a solar sail began in 1976 at Jet Propulsion Laboratory for a proposed mission to rendezvous with Halley's Comet. == Types ==\n\n\n=== Reflective ===\nMost solar sails are based on reflection.\n\nSOURCE ntrs.nasa.gov (https://ntrs.nasa.gov/api/citations/20160012435/downloads/20160012435_Redacted.pdf):\nSKYLAB 1/4 TECHNICAL CREW DEBRIEFING ~EBRUARY 22, 197 4 PART I PREPARED BY TRAINING OFFICE JSC-08809 • CREW TRAINING AND PROCEDURES DIVISION National Aeronaulics and Space Administration • LYNDON B. JOHNSON SPACE CENTER Houston, Texaa CONTENTS Section 1.0 SUITING AND INGRESS .2.Q STATUS CHECKS AND COUNTDOWN 3.0 POWERED FLIGHT 4.0 RENDEZVOUS AND DOCKING 5.0 WORKSEOP ACTIVATION AND .CSM POWERDOWN. 6.0 TYPICAL ON-ORBIT DAY 7,0 ANOMALIES AND UNUSUAL ACTIVITIES 8.0 CSM POWERUP AND WORKSHOP DEACTIVATION~ 9,0 SEPARATION AND ENTRY 10.Q LANDJ;NG AND RECOVERY 11,0 COMM.AND MODULE SYSTEMS OPERATIONS. 11.1 11.2 11.3 11.4 11.5 11.6 11.7 11.8 Guidance and Navigation .. Stabilization and Control System Service Propulsion System. Reaction Control System .. . Electrical Power System .. . Environmental Control Syst~m Telecommunications .. Mechanical .... 12.0 SATURN WORKSHOP SYSTEMS OPERATIONS. . . . 12.1 12.2 12.3 12.4 12.5 12.6 12.7 12.8 Communications Systems. . . . . . .. Thruster Attitude Control System {TACS) . Environmental Control System. Crew Systems. . . . . . . . . . . . Instrumentation System ..... . Digital Command System (DCS) .. . Caution and Warning System { C&W). . Electrical Power System ..... . 13,0 PREFLIGHT AND POSTFLIGHT EXPERIMENTS . . ii Page 1-1 2-1 3-1 4-1 5-1 6-1 7-1 8-1 9-1 10-1 11-1 11-1 11-2 11-3 11-4 11-6 11-10 11-16 11-21 12-1 12-1 12-14 12-19 12-31 12-83 12-86 12-88 12-91 13-1 Section Pa,ge 14.o INFLIGHT EXPERIMENTS. . . 14-1 14.1 Medical Experiments . 14-1 14.2 ATM Experiments . . . . . . 14-15 14.3 EREP Experiments. . 14-106 14.4 Individual Experiments. . • . . 14-131 14.5 Educational Experiments . 14-176 15. o TRAINING, . . . 15-1 16.0 EMU SYSTEMS . . . 16 ... 1 17.0 ~VA . 17-1 17.1 EVA Operations . . . . . 17-1 17.2 EVA Prep Procedures 17-6 17.3 EVA Post Procedures . . 17-9 18.0 FLIGHT EQUIPMENT . . . 18-1 18.1 CSM . . . 18-1 18.2 sws . . . 18-5 19.0 FLIGHT DATA FILE 19-1 19.1 CSM, . . . 19 ... 1 19.2 sws . . . . . 19-1 19.3 Charts and Maps • • . 19-6 19.4 Flight Planning/FDF . . . . . . . 19-7 19.5 Preflight Support . . • .,, . 19-9 20.0 VISUAL SIGHTINGS . . . . . . . ;?0-1 21.0 PREMISSION PLANNING . . . 21-1 22.0 MISSION CONTROL. 22-1 23.0 H\n\nSOURCE collections.nlm.nih.gov (http://collections.nlm.nih.gov/ext/dw/0123200X12/PDF/0123200X12.pdf):\nTHE WORKS OF OLIVER WENDELL HOLMES ILLUSTRATED WITH STEEL PORTRAITS AND PHOTOGRAVURES ^tanbarb Hibrarp tuition IN THIRTEEN VOLUMES VOLUME XII SET 4C Dr. Holmes in 184Q THE POETICAL WORKS OF OLIVER WENDELL HOLMES EARLIER POEMS, SONGS IN MANY KEYS POEMS OF THE CLASS OF '2Q, ETC. BOSTON AND NEW YORK HOUGHTON, MIFFLIN AND COMPANY W tliWi&e (Caminboe IN TWO VOLUMES VOLUME I. Copyright, 1850, 1858, 1859,1861,1862, 1865,1874,1875,1877,1878,1880,1881, 1882, 1886, 1887, 1888, 1889, 1890, and 1891, By OLIVER WENDELL HOLMES; TICKNOR, REED & FIELDS; JAMES R. OSGOOD & CO. and HOUGHTON, MIFFLIN & CO. The Riverside Press, Cambridge, Mass., U. S. A. Electrotyped and Printed by H. O. Houghton & Company. Copyright, 1892, By HOUGHTON, MIFFLIN & CO. All rights reserved. Pagb TO MY READERS xiii EARLIER POEMS (1830-1836). Old Ironsides 1 The Last Leaf 3 The Cambridge Churchyard 5 To an Insect 9 The Dilemma 11 My Aunt 12 Reflections of a Proud Pedestrian ... 14 Daily Trials, by a Sensitive Man ... 15 Evening, by a Tailor 17 The Dorchester Giant 19 To the Portrait of “ A Lady ” . . .21 The Comet 22 The Music-Grinders 25 The Treadmill Song . ' 28 The September Gale 29 The Height of the Ridiculous .... 32 The Last Reader 33 Poetry : A Metrical Essay 35 ADDITIONAL POEMS (1837-1848). The Pilgrim’s Vision 60 The Steamboat 65 Lexington 67 On Lending a Punch-Bowl 69 CONTENTS VI CONTENTS A Song for the Centennial Celebration of Har-vard College, 1836 73 The Island Hunting-Song 75 Departed Days 77 The Only Daughter 78 Song written for the Dinner given to Charles Dickens, by the Young Men of Boston, Feb-ruary 1, 1842 81 Lines recited at the Berkshire Jubilee . 82 Nux POSTCCENATICA . . . . . . . 84 Verses for After-Dinner 89 A Modest Request, complied with after the Dinner at President Everett’s Inauguration . 93 The Parting Word 101 A Song of Other Days 103 Song for a Temperance Dinner to which Ladies WERE INVITED (NEW YORK MERCANTILE LIBRARY Association, November, 1842) .... 105 A Sentiment 106 A Rhymed Lesson (Urania) 107 An After-Dinner Poem (Terpsichore) . . 134 MEDICAL POEMS. The Morning Visit 143 The Two Armies 147 The Stethoscope Song 148 Extracts from a Medical Poem .... 152 A Poem for t\n\nSOURCE sciencenews.org (https://www.sciencenews.org/wp-content/uploads/sites/2/2025/03/SN_April_2025_lo.pdf):\nS C I E N C E N E W S . O R G V O L . 2 0 7 N O . 4 A P R I L 2 0 2 5 Why weapons testing is back in the global spotlight A NUCLEAR REVIVAL? © 2025 Hennion & Walsh. Securities of ered through Hennion & Walsh Inc. Member of FINRA, SIPC. Investing in bonds involves risk including possible loss of principal. Income may be subject to state, local or federal alternative minimum tax. When interest rates rise, bond prices fall, and when interest rates fall, bond prices rise. If sold or called prior to maturity the amount received may be less than the amount paid, and the yield received may be less than the yield calculated at purchase. Past performance is not a guarantee of future results. *Investment grade municipal bonds had a cumulative 10-year default rate of 0.09% between 1970 and 2021 according to Moody’s Investor Service, April 21, 2022 “US Municipal Bond Defaults and Recoveries”, 1970–2021. About Hennion & Walsh Since 1990 Hennion & Walsh has specialized in investment grade tax-free municipal bonds. The company supervises over $3 billion in assets in over 16,000 accounts, providing individual investors with institutional quality service and personal attention. CALL (800) 804-6931 to get your copy of the Hennion & Walsh Bond Guide. There’s no obligation and it’s COMPLETELY FREE Municipal bonds have historically been a low-risk way to invest.* Particularly if you’re after the potential for tax-free and regular investment income. Investment-grade, rated Municipal bonds from Hennion & Walsh? Well, that might be even better. We’ve studied them from every angle, for more than 30 years. So we know how to use them to help you reach your ﬁ nancial goals. The beneﬁ ts and risks of municipal bonds. How municipal bonds provide federally tax-free income. Why municipal bonds of er the potential for regular income. Strategies for smart bond investing. Municipal bond facts every investor should know. HERE’S WHAT YOU’LL LEARN: AND HERE’S WHAT IT COSTS: $0 OUR FREE BOND GUIDE IS SO SENSIBLE, IT WOULD BE SILLY NOT TO READ IT. S C I E N C E N E W S . O R G V O L . 2 0 7 N O . 4 A P R I L 2 0 2 5 Why weapons testing is back in the global spotlight A NUCLEAR REVIVAL? cover.indd 1 co\n\nSOURCE nasa.gov (https://www.nasa.gov/wp-content/uploads/2023/04/sp-4231.pdf?emrc=9c46bc):\nMISSION TO JUPITER: A History of the Galileo Project by Michael Meltzer National Aeronautics and Space Administration NASA History Division Washington, DC 2007 NASA SP-2007-4231 Library of Congress Cataloging-in-Publication Data Meltzer, Michael, 1946­ A Mission to Jupiter: A History of the Galileo Project / by Michael Meltzer. p. cm. 1. Galileo Project. 2. Jupiter (Planet)—Exploration. 3. Jupiter probes. 4. Space fight to Jupiter. I. Title. QB661.M48 2005 629.43’545—dc22 2005027890 (SP-2007-4231) LIST of TABLES .................................................................................. xiii InTroDuCTIon Contents LIST of fIGurES .................................................................................. v PrEfACE ................................................................................... xv forEworD xvii .................................................................................. ACknowLEDGMEnTS .................................................................................. xix xxi .................................................................................. 1 the Importance of the Galileo Project................... 1 2 From Conception to Congressional Approval....................................... 9 3 the struggle to Launch Galileo: technical Diffculties and Political opposition.......................... 37 4 the Challenger Accident and Its Impact on the Galileo Mission...................................................... 71 5 the Galileo spacecraft..................................................... 107 6 Galileo Deployment, the Inner solar 7 the High-Gain Antenna Failure: system tour, and the Asteroid Belt.................................... 149 A Disappointment and a Challenge.......................................... 171 8 Jupiter Approach and Arrival............................................................ 187 9 the orbiter tour...................................................................................... 223 10 Profles of selected People Important to the Mission .................................... 283 11 Conclusion............................................................................................\n\nSOURCE insider.si.edu (https://insider.si.edu/category/science-nature/astronomy/feed):\nSpace – Smithsonian Insider https://insider.si.edu Bringing you everything under the sun Thu, 24 Mar 2022 20:57:36 +0000 en-US hourly 1 https://wordpress.org/?v=7.1.2 A solar probe is on its way to touch the sun. The Smithsonian built the tool that will measure the sun without melting https://insider.si.edu/2018/08/a-solar-probe-is-on-its-way-to-touch-the-sun-the-smithsonian-built-the-tool-that-will-measure-the-sun-without-melting/ Mon, 20 Aug 2018 15:59:47 +0000 https://insider.si.edu/?p=55288 The Parker Solar Probe was launched at the Kennedy Space Center early in the morning on Sunday, August 12. It was carried aloft aboard the United Launch Alliances’ Delta IV Heavy rocket. Smithsonian scientists have joined NASA and other organizations this summer to do something incredible: launch a spacecraft, the Parker Solar Probe, into space and have it enter the sun’s atmosphere without melting. Not only that, but it will communicate with scientists on Earth, recording and sharing vital information about our star. Scientists hope this data will solve mysteries and answer questions that, up until now, have left us, well…in the dark. This will be the first man made object to touch the sun. Tony Case, an astrophysicist at the Smithsonian Astrophysical Observatory in Cambridge, Mass., answered some questions to shine light on the Parker Solar Probe and the Smithsonian’s contribution to the project. Case and his team have been working on the Parker Solar Probe for the past nine years. ## Q: This spacecraft is going to touch the Sun. How is that possible without it melting? An artistic rendering of the Parker Solar Probe in the sun’s corona. (Image courtesy NASA / Johns Hopkins) **Case:** The spacecraft is very carefully designed to keep each individual component below its melting temperature. Primarily, this is accomplished through the use of the spacecraft’s Thermal Protection System that provides a large shadowed area for the bulk of the spacecraft. Instruments and subsystems are kept in this shadow at relatively benign temperatures (say, less than 100 degrees Celsius [212 degrees Fahrenheit]). There are a couple instruments that peek out from around the Thermal Protecti",
+  "extra_sources": [
+   "https://ntrs.nasa.gov/api/citations/20160012435/downloads/20160012435_Redacted.pdf",
+   "http://collections.nlm.nih.gov/ext/dw/0123200X12/PDF/0123200X12.pdf",
+   "https://www.sciencenews.org/wp-content/uploads/sites/2/2025/03/SN_April_2025_lo.pdf",
+   "https://www.nasa.gov/wp-content/uploads/2023/04/sp-4231.pdf?emrc=9c46bc",
+   "https://insider.si.edu/category/science-nature/astronomy/feed"
+  ]
+ },
+ "_writer": "gemini"
+}
