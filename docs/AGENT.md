@@ -32,6 +32,8 @@ drop, packaging rules); the picker and the writer read it first, and you see it 
 - `app/research.py` – researcher: Wikipedia plus up to 5 trusted web sources (Tavily, allow-listed domains) when TAVILY_API_KEY is set.
 - `app/ideabank.py`, `assets/idea_bank.json` – formats, hooks and ideas from reference channels (Higgsfield and niche channels); the owner may add
   channels to `reference_channels`; `recent` is refreshed daily in the cloud. Learn the shape, never copy.
+- `app/tracker.py` – topic tracker: never a Short about a subject already covered (matched by subject, not exact title; delivered forever, drafts 90 days,
+  failed tries retried after 3 days). Ledger: `data/topics.jsonl`; `/topics` lists it. Applies to the picker, the options and the evergreen fallback.
 - `app/lessons.py` – self-learning: judge complaints become standing writer rules; `data/judge_notes.jsonl`.
 - `app/orchestrator.py` – Telegram slash commands (/new /status /list /use /approve /upload /target) and revisions of the current Short;
   `autopost` uploads a judge-approved Short (`app/upload.py`, `app/pack.py`).
@@ -51,6 +53,9 @@ drop, packaging rules); the picker and the writer read it first, and you see it 
   - heavy ones that render a video (`/new <topic>`, or a change to the current Short such as "shorter hook"): hand them to the orchestrator job:
     `gh api repos/bsaisuryacharan/agentshift-shorts/dispatches -f event_type=telegram -f "client_payload[chat]=$CHAT" -f "client_payload[text]=/new black holes"`.
     Tell the owner it takes 15-25 minutes and arrives in Telegram.
+  - before starting a full Short, check none is running: `gh run list --workflow free-daily.yml --status in_progress` (and `--status queued`); if one is,
+    tell the owner and do not start another (two at once waste the free AI quota). A tapped button can arrive twice: do the action once.
+  - to cancel a run the owner asked you to cancel: `gh run cancel <id>`; say which run (id, started when) you cancelled.
   - a full daily Short: `gh workflow run free-daily.yml`; a step test: `gh workflow run stage-check.yml -f stage=script -f n=3`. These use the day's
     free AI quota: confirm with the owner first unless they asked for exactly that.
 - Act as or with the judge: read `data/judge_notes.jsonl`, run logs and the judge prompt (`JUDGE` in `app/auto.py`); explain scores and

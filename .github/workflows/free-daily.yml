@@ -5,6 +5,8 @@ on:
     - cron: "17 4 * * *"       # 09:47 IST
     - cron: "47 8 * * *"       # 14:17 IST
     - cron: "37 12 * * *"      # 18:07 IST
+  repository_dispatch:         # Cloudflare's cron (reliable to the minute) sends type "daily"; GitHub's own schedule above is the backup
+    types: [daily]
   workflow_dispatch:
     inputs:
       topic:
@@ -13,6 +15,7 @@ on:
 concurrency: free-daily
 permissions:
   contents: write
+  actions: read
 jobs:
   make:
     runs-on: ubuntu-latest
@@ -38,9 +41,12 @@ jobs:
       - name: Telegram command menu (typing / lists the commands)
         run: python -m app.botmenu || true
       - name: Make one Short
+        env:
+          TOPIC: ${{ github.event.inputs.topic }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           T="${{ github.event.inputs.topic }}"
-          if [ "${{ github.event_name }}" = "schedule" ] && python -m app.auto --delivered-today; then echo "::notice::Today's Short was already delivered; this slot is skipped"; exit 0; fi
+          if python -m app.dailyguard; then echo "::notice::Skipped: today's Short(s) are done or another run is already underway"; exit 0; fi
           set +e
           if [ -n "$T" ]; then python -m app.auto --topic "$T" --out runs; else python -m app.auto --trend --out runs; fi
           rc=$?

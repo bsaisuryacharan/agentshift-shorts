@@ -26,7 +26,7 @@ from pathlib import Path
 
 import httpx
 
-from . import formats, gallery_hf, ideabank, insights, lessons, looks, picker, vidiq
+from . import formats, gallery_hf, ideabank, insights, lessons, looks, picker, tracker, vidiq
 
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
@@ -229,13 +229,13 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
     past = [json.loads(x)["title"] for x in hist.read_text().splitlines()[-40:]] if hist.exists() else []
     import random
     used = used_topics()
-    items = [(c, "trend" if i < n_trend_only else "wiki") for i, c in enumerate(cands) if _norm_topic(c) not in used]
+    items = [(c, "trend" if i < n_trend_only else "wiki") for i, c in enumerate(cands) if _norm_topic(c) not in used and not tracker.repeat_of(c)]
     news = (insights.load().get("news") or [])[:12]                      # science/tech headlines collected by the weekly job
     items += [(f"IN THE NEWS: {n}", "news") for n in news]
-    fresh = [e for e in EVERGREEN if _norm_topic(e) not in used]
+    fresh = [e for e in EVERGREEN if _norm_topic(e) not in used and not tracker.repeat_of(e)]
     items += [(e, "evergreen") for e in random.sample(fresh, min(14, len(fresh)))]
     cands = picker.rank(items)                                           # on-niche first: channel results + vidIQ + news, celebrities/sports dropped
-    tried = sorted(used)[:60]
+    tried = tracker.covered()                                              # readable subjects already covered (newest first)
     fmt = fmt or formats.choose(recent_formats(), boost=lessons.format_boost())   # ties go to the format the judge has scored best
     out = {}
     for attempt in range(3):
@@ -247,6 +247,7 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
                      f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}\nBREAKOUT TITLES (angle shapes that went viral for small channels; invent a new topic, never copy): {'; '.join(vidiq.topic_ideas() + ideabank.ideas()) or 'none'}",
                      prefer=["groq", "gemini", "openrouter"])
         opts = out.get("options") if isinstance(out.get("options"), list) else [out]
+        opts = [o for o in opts if not (isinstance(o, dict) and tracker.repeat_of(str(o.get("wiki", "")), str(o.get("topic", ""))))]      # never a covered subject
         best = picker.best_option(opts, used, _norm_topic, min_coverage=0.5 if attempt < 2 else 0.0)   # best of three: the one with the most real pictures available wins
         if best:
             try:
@@ -260,7 +261,7 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
         print(f"   picker options unusable ({[o.get('wiki') for o in opts if isinstance(o, dict)]}); asking again", flush=True)
         cands = [c for c in cands if all(_norm_topic(c) != _norm_topic(str(o.get("wiki", ""))) for o in opts if isinstance(o, dict))]
     else:                                             # the model keeps repeating itself: take an unused evergreen topic ourselves
-        pick = random.choice(fresh or EVERGREEN)
+        pick = random.choice(fresh or [e for e in EVERGREEN if not tracker.repeat_of(e)] or EVERGREEN)
         out = {"topic": formats.frame(fmt, pick), "wiki": pick, "why": "fallback: first unused evergreen topic"}
     print("picked:", out, "format:", fmt)
     return out["topic"], out["wiki"], fmt

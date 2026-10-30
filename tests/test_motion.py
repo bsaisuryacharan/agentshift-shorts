@@ -282,7 +282,7 @@ def test_botmenu_registers_commands(monkeypatch):
 
     monkeypatch.setattr(httpx, "post", lambda url, json, timeout: sent.update(json) or R())
     assert botmenu.register("t") is True
-    assert [c["command"] for c in sent["commands"]] == ["new", "status", "target", "list", "use", "approve", "upload", "model", "effort", "changes", "merge", "discard", "settings", "memory", "actions", "reset", "help"]
+    assert [c["command"] for c in sent["commands"]] == ["new", "status", "target", "list", "use", "approve", "upload", "model", "effort", "changes", "merge", "discard", "settings", "topics", "memory", "actions", "reset", "help"]
     assert botmenu.register(None) is False or True   # no token: returns False without raising (env may or may not be set)
 
 

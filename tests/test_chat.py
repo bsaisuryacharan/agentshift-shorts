@@ -146,3 +146,14 @@ def test_summaries_of_failures():
     assert chat.summarize_result("Bash", "python -m pytest -q", "2 failed, 180 passed in 9s") == "2 failed, 180 passed"
     assert chat.summarize_result("Bash", "ls", "no such file", is_error=True).startswith("⚠")
     assert chat.summarize_result("Grep", "", "") == "no matches"
+
+
+def test_topics_control_lists_covered_subjects(monkeypatch, tmp_path):
+    setup(monkeypatch, tmp_path)
+    import datetime as dt
+    from app import tracker
+    p = tmp_path / "t.jsonl"
+    p.write_text(json.dumps({"date": dt.date.today().isoformat(), "wiki": "Mariana Trench", "topic": "t", "outcome": "delivered"}))
+    monkeypatch.setattr(tracker, "TOPICS", p)
+    monkeypatch.setattr(tracker, "rows", lambda path=p: tracker.rows.__wrapped__(path) if hasattr(tracker.rows, "__wrapped__") else [json.loads(p.read_text())])
+    assert "Mariana Trench" in chat.control("/topics")

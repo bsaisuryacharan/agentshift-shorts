@@ -23,6 +23,7 @@ jobs:
       STATUS: ${{ github.event.client_payload.status }}   # the progress message the Worker posted instantly (Claude edits it live)
       EDIT: ${{ github.event.client_payload.edit }}       # a button tap: the message whose buttons were tapped
       TAP: ${{ github.event.client_payload.tap }}
+      ORIG: ${{ github.event.client_payload.orig }}       # the text of the message whose button was tapped
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       GH_TOKEN: ${{ github.token }}
@@ -64,5 +65,4 @@ jobs:
           git switch main 2>/dev/null || true
           git add state/chat 2>/dev/null || true
           git commit -qm "chat: conversation memory" || true
-          git pull --rebase -q || true
-          git push origin main || true
+          for i in 1 2 3 4; do git pull --rebase -q && git push origin main && break; git rebase --abort 2>/dev/null; sleep $((i * 3)); done || true

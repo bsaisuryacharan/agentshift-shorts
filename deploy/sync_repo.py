@@ -56,6 +56,7 @@ subprocess.run(["git", "push"], cwd=wd, check=True)
 print("synced to", repo)
 wk = Path(tempfile.mkdtemp())                         # redeploy the Worker (its secrets persist)
 (wk / "worker.js").write_text((Path(__file__).parent / "worker.js").read_text())
-(wk / "wrangler.toml").write_text('name = "shorts-orchestrator"\nmain = "worker.js"\ncompatibility_date = "2025-01-01"\n')
+(wk / "wrangler.toml").write_text('name = "shorts-orchestrator"\nmain = "worker.js"\ncompatibility_date = "2025-01-01"\n'
+                                  '[triggers]\ncrons = ["17 4 * * *", "47 8 * * *", "37 12 * * *"]   # 09:47, 14:17, 18:07 IST\n')
 subprocess.run(["npx", "--yes", "wrangler", "deploy"], cwd=wk, check=True)
 print("worker redeployed")

@@ -133,6 +133,14 @@ def control_buttons(text: str) -> list | None:
 BUTTON_LINE = re.compile(r"^\s*BUTTONS:\s*(.+)$", re.M)
 
 
+def mark_chosen(message_id: int, orig: str, choice: str) -> None:
+    """a tapped answer button: the message keeps its text, adds '✓ You chose: …' and loses its buttons, so the tap visibly did something"""
+    text = (orig.strip() + "\n\n" if orig.strip() else "") + f"✓ You chose: {choice[:80]}"
+    out = _tg("editMessageText", chat_id=_chat(), message_id=message_id, text=text[:4000], reply_markup={"inline_keyboard": []})
+    if not out.get("ok"):
+        _tg("editMessageReplyMarkup", chat_id=_chat(), message_id=message_id, reply_markup={"inline_keyboard": []})
+
+
 def split_buttons(reply: str) -> tuple[str, list | None]:
     """Claude may end a reply with  BUTTONS: Yes, post it | Not now  -> the owner taps one instead of typing (the tap comes back as their message)"""
     m = BUTTON_LINE.search(reply)
@@ -163,6 +171,10 @@ def control(text: str) -> str | None:
     if cmd in ("/settings", "/claude"):
         return (f"Claude chat: model {s['model']}, effort {s['effort']}, {len(history())} recent turns remembered. Change with /model, /effort; "
                 "/reset forgets the conversation; /changes lists Claude's proposed code changes, /merge makes one live, /discard drops it.")
+    if cmd == "/topics":
+        from . import tracker
+        cov = tracker.covered(limit=30)
+        return ("Subjects already covered (never repeated):\n" + "\n".join(f"• {c}" for c in cov)) if cov else "No subjects covered yet."
     if cmd == "/memory":
         return "What I remember long-term:\n\n" + (memory() or "(nothing yet)") + "\n\nTell me \"forget …\" or \"remember …\" to change it."
     if cmd == "/actions":
@@ -218,6 +230,11 @@ def status_block() -> str:
         out.append(f"Current Short: {cur} - '{p.get('title', '')}' status={p.get('status')} uploaded={bool(p.get('uploaded'))}")
     except (OSError, ValueError):
         out.append("Current Short: none")
+    try:
+        from . import tracker
+        out.append("Subjects already covered (never repeat): " + "; ".join(tracker.covered(limit=25)))
+    except Exception:
+        pass
     try:
         rows = (ROOT / "data" / "topics.jsonl").read_text().splitlines()[-6:]
         out.append("Recent topic ledger: " + " | ".join(f"{r.get('date')} {r.get('outcome')} {r.get('wiki')}" for r in map(json.loads, rows)))
@@ -304,7 +321,7 @@ def finish(result_path: Path, text: str) -> int:
 ALLOWED = ["Read", "Grep", "Glob", "Edit", "Write",
            "Bash(python -m pytest:*)", "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git switch -c chat/:*)",
            "Bash(git add:*)", "Bash(git commit:*)", "Bash(git push -u origin chat/:*)", "Bash(gh pr create:*)",
-           "Bash(gh run list:*)", "Bash(gh run view:*)", "Bash(grep:*)", "Bash(ls:*)",
+           "Bash(gh run list:*)", "Bash(gh run view:*)", "Bash(gh run cancel:*)", "Bash(grep:*)", "Bash(ls:*)",
            "Bash(python -m app.orchestrator handle:*)",                                   # /status /list /target /use /approve /upload, answered in Telegram
            "Bash(gh workflow run free-daily.yml:*)", "Bash(gh workflow run stage-check.yml:*)", "Bash(gh workflow run weekly-insights.yml:*)",
            "Bash(gh api repos/bsaisuryacharan/agentshift-shorts/dispatches:*)"]          # /new <topic> or a revision -> the orchestrator job (render)
@@ -331,7 +348,7 @@ def describe(tool: str, inp: dict) -> str:
             m = _re.search(r'--text\s+["\']?(/?\w+)', c)
             return f"Asking the orchestrator: {m.group(1) if m else 'command'}"
         for key, text in (("pytest", "Running the tests"), ("gh workflow run free-daily", "Starting a new Short (full pipeline)"),
-                          ("gh workflow run stage-check", "Starting a step test"), ("dispatches", "Handing the job to the orchestrator"), ("gh run view", "Reading a run's log"), ("gh run list", "Checking recent runs"),
+                          ("gh workflow run stage-check", "Starting a step test"), ("dispatches", "Handing the job to the orchestrator"), ("gh run cancel", "Cancelling a run"), ("gh run view", "Reading a run's log"), ("gh run list", "Checking recent runs"),
                           ("git switch", "Starting a change branch"), ("git commit", "Committing the change"), ("git push", "Pushing the change"),
                           ("gh pr create", "Opening the pull request"), ("git diff", "Reviewing the diff"), ("git log", "Reading the history")):
             if key in c:
@@ -539,8 +556,9 @@ if __name__ == "__main__":
         send(f"Thinking ({s['model']}, effort {s['effort']})...")
         raise SystemExit(0)
     if a and a[0] == "stream":
-        if os.environ.get("TAP") == "say" and os.environ.get("EDIT", "").isdigit():      # a tapped answer: take the buttons off that message
-            _tg("editMessageReplyMarkup", chat_id=_chat(), message_id=int(os.environ["EDIT"]), reply_markup={"inline_keyboard": []})
+        if os.environ.get("TAP") == "say" and os.environ.get("EDIT", "").isdigit():      # a tapped answer: the message shows the choice, the buttons go
+            if not os.environ.get("STATUS", "").strip():         # the Worker already showed the choice; only older taps get it from here
+                mark_chosen(int(os.environ["EDIT"]), os.environ.get("ORIG", ""), a[1] if len(a) > 1 else "")
         raise SystemExit(stream(a[1] if len(a) > 1 else ""))
     if a and a[0] == "finish":
         raise SystemExit(finish(Path(a[1]), a[2] if len(a) > 2 else ""))
