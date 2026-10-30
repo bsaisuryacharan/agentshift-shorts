@@ -41,3 +41,4 @@
 - 2026-10-29 Owner should set the Google Cloud OAuth consent screen to "In production", or the YouTube login expires every 7 days.
 - Free AI quota (Gemini/Groq) runs out after ~2 full runs a day; avoid extra test runs.
 - Pronunciation of the voice is not checked automatically.
+- 2026-10-30 Owner reported (a) a caption issue (details not given) and (b) Shorts feel like a slideshow (wants animation/gallery motion graphics). Proposed PR (more motion, 3-4 gallery graphics, hold flag, test Short). Owner said "Leave it for now": nothing started; ask again later.
