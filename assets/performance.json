@@ -1,6 +1,6 @@
 {
  "performance": {
-  "updated": "2026-10-31T18:34+00:00",
+  "updated": "2026-10-31T22:29+00:00",
   "target_views_per_short": 1000000,
   "shorts": [
    {
@@ -10,11 +10,11 @@
     "views": 1690,
     "likes": 25,
     "comments": 0,
-    "age_h": 360.9,
-    "expected": 869903,
+    "age_h": 364.8,
+    "expected": 871321,
     "ratio": 0.002,
     "status": "far_behind",
-    "projected_30d": 1942
+    "projected_30d": 1939
    },
    {
     "spec_id": null,
@@ -23,11 +23,11 @@
     "views": 441,
     "likes": 7,
     "comments": 0,
-    "age_h": 362.5,
-    "expected": 870480,
+    "age_h": 366.4,
+    "expected": 871899,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 506
+    "projected_30d": 505
    },
    {
     "spec_id": null,
@@ -36,11 +36,11 @@
     "views": 1113,
     "likes": 16,
     "comments": 0,
-    "age_h": 362.6,
-    "expected": 870502,
+    "age_h": 366.5,
+    "expected": 871921,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 1278
+    "projected_30d": 1276
    },
    {
     "spec_id": null,
@@ -49,8 +49,8 @@
     "views": 31,
     "likes": 2,
     "comments": 0,
-    "age_h": 434.4,
-    "expected": 896522,
+    "age_h": 438.3,
+    "expected": 897941,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 34
@@ -62,11 +62,11 @@
     "views": 141,
     "likes": 5,
     "comments": 0,
-    "age_h": 437.1,
-    "expected": 897491,
+    "age_h": 441.0,
+    "expected": 898909,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 157
+    "projected_30d": 156
    },
    {
     "spec_id": null,
@@ -75,11 +75,11 @@
     "views": 174,
     "likes": 2,
     "comments": 0,
-    "age_h": 445.1,
-    "expected": 900389,
+    "age_h": 449.0,
+    "expected": 901808,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 193
+    "projected_30d": 192
    },
    {
     "spec_id": null,
@@ -88,8 +88,8 @@
     "views": 22,
     "likes": 1,
     "comments": 0,
-    "age_h": 461.1,
-    "expected": 906185,
+    "age_h": 465.0,
+    "expected": 907603,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 24
@@ -101,8 +101,8 @@
     "views": 28,
     "likes": 1,
     "comments": 0,
-    "age_h": 467.1,
-    "expected": 908361,
+    "age_h": 471.0,
+    "expected": 909780,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 30
@@ -114,11 +114,11 @@
     "views": 184,
     "likes": 2,
     "comments": 0,
-    "age_h": 483.0,
-    "expected": 914130,
+    "age_h": 486.9,
+    "expected": 915549,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 201
+    "projected_30d": 200
    },
    {
     "spec_id": null,
@@ -127,11 +127,11 @@
     "views": 240,
     "likes": 6,
     "comments": 1,
-    "age_h": 488.2,
-    "expected": 916019,
+    "age_h": 492.1,
+    "expected": 917438,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 262
+    "projected_30d": 261
    },
    {
     "spec_id": null,
@@ -140,8 +140,8 @@
     "views": 123,
     "likes": 2,
     "comments": 1,
-    "age_h": 504.1,
-    "expected": 921788,
+    "age_h": 508.1,
+    "expected": 923207,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 133
@@ -150,14 +150,14 @@
     "spec_id": null,
     "video_id": "uU6JXROm7rI",
     "title": "Claude Code on Android for FREE — No Cloud Server Needed",
-    "views": 563,
+    "views": 565,
     "likes": 8,
     "comments": 0,
-    "age_h": 505.3,
-    "expected": 922220,
+    "age_h": 509.2,
+    "expected": 923639,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 610
+    "projected_30d": 611
    }
   ],
   "best": {
@@ -166,7 +166,7 @@
   },
   "ypp": {
    "subscribers": 9,
-   "shorts_views_90d": 6878,
+   "shorts_views_90d": 6900,
    "public_uploads_90d": 19,
    "tier1_fan_funding": {
     "subs_ok": false,
