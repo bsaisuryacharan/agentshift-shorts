@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-30T10:14:44+00:00",
+ "generated_at": "2026-10-31T09:49:08+00:00",
  "channel": {
-  "period": "2026-09-30..2026-10-29",
-  "views": 5692.0,
+  "period": "2026-10-01..2026-10-30",
+  "views": 5718.0,
   "avg_view_seconds": 23.0,
-  "avg_view_pct": 60.13,
+  "avg_view_pct": 59.87,
   "net_subscribers": 8.0,
   "likes": 84.0,
   "shares": 6.0,
@@ -14,95 +14,107 @@
   "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained",
   "The 3 Most Unbelievable Dangerous Places on Earth!🙄",
   "What if you dropped 10kg of tungsten from space?",
+  "iPHONE INDICATOR DOTS EXPLAINED! 🍎🔍",
   "IKAN LELE SAMA BELUT",
   "( This Is Ravan’s Lanka )",
   "Hannah Fry on The Nun Study",
-  "🚨EXPLAINING FLASH DRIVE ‼️Are you having a tech problem? We accept mail ins! We have a Mail-In Link",
-  "Animales Que Fueron Encontrados Dentro de la Comida 🤢😱 | PARTE 3",
-  "Missing Bedroom Mystery in a 200year old house",
-  "Colonoscopy Explained | How Doctors Examine the Colon 🩺 @Sapbiology11",
-  "Six popular sugar substitutes linked to faster brain aging",
-  "Einstein's equations may explain the universe without dark energy"
+  "How Big is the Universe, Really? 🌌💀",
+  "Stop Using Sunscreen",
+  "5 Animals That Sleep in the STRANGEST Ways",
+  "November 2026 Space Events 🤩",
+  "Astronauts just gave the International Space Station a powerful upgrade"
  ],
  "learned": {
-  "shorts_scored": 1,
+  "shorts_scored": 3,
   "best": [
    {
     "title": "The Mariana Trench Mystery",
     "avg": 8.0,
     "weakest": "originality"
+   },
+   {
+    "title": "Solar Sails: Not Flimsy Curtains",
+    "avg": 8.0,
+    "weakest": "visual_quality"
+   },
+   {
+    "title": "What If Jupiter's Magnetic Shield Protected Earth?",
+    "avg": 7.7,
+    "weakest": "polish"
    }
   ],
   "worst": [],
   "weakest_dimensions": [
-   "originality"
+   "originality",
+   "visual_quality",
+   "polish"
   ]
  },
  "stage_averages": {
-  "hook": 7.6,
-  "story": 6.4,
+  "hook": 7.5,
+  "story": 6.5,
   "visuals": 6.1,
-  "polish": 5.7,
-  "policy": 8.9
+  "polish": 5.9,
+  "policy": 9.0
  },
  "weakest_stage": "polish",
  "region": "IN",
- "trend_signals_total": 69,
- "trend_signals_on_niche": 46,
+ "trend_signals_total": 70,
+ "trend_signals_on_niche": 50,
  "niche_winners": [
   {
+   "title": "iPHONE INDICATOR DOTS EXPLAINED! 🍎🔍#iPhoneTips #AppleTips #iOSTips #TechFacts#shorts#trend",
+   "views": 5227748,
+   "url": "https://www.youtube.com/watch?v=wP41tEruLkM"
+  },
+  {
    "title": "The 3 Most Unbelievable Dangerous Places on Earth!🙄#city #facts #new #shorts #place #ytsho",
-   "views": 6883141,
+   "views": 7596244,
    "url": "https://www.youtube.com/watch?v=IQNLS4q2ZXQ"
   },
   {
    "title": "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained #shorts",
-   "views": 7317856,
+   "views": 8025468,
    "url": "https://www.youtube.com/watch?v=K2we_H33tlU"
   },
   {
    "title": "What if you dropped 10kg of tungsten from space?",
-   "views": 5267409,
+   "views": 5662358,
    "url": "https://www.youtube.com/watch?v=uj4plcsfc6k"
   },
   {
+   "title": "November 2026 Space Events 🤩 #space #earth #shorts",
+   "views": 1394668,
+   "url": "https://www.youtube.com/watch?v=IGmBjaG6qC0"
+  },
+  {
+   "title": "Stop Using Sunscreen #gyrussulcus #dharmendrasir #science #sunscreen",
+   "views": 3296117,
+   "url": "https://www.youtube.com/watch?v=FHByFcOlECA"
+  },
+  {
    "title": "The Weirdest Bird Nests You’ve Ever Seen!🙄#facts #shorts #birds #new #tending #shortvideo",
-   "views": 5210381,
+   "views": 5354739,
    "url": "https://www.youtube.com/watch?v=BneG3bVSJ54"
   },
   {
    "title": "( This Is Ravan’s Lanka ) #devendragour #ytshorts #mindset #bhajan #ravan #srilanka #myste",
-   "views": 3733009,
+   "views": 4054178,
    "url": "https://www.youtube.com/watch?v=FdMAZbnSPw0"
-  },
-  {
-   "title": "Why Nothing Can Survive Venus",
-   "views": 2148731,
-   "url": "https://www.youtube.com/watch?v=tKikZXrcZCQ"
-  },
-  {
-   "title": "Missing Bedroom Mystery in a 200year old house",
-   "views": 2549118,
-   "url": "https://www.youtube.com/watch?v=Jz_IepdSed8"
-  },
-  {
-   "title": "🚨EXPLAINING FLASH DRIVE ‼️Are you having a tech problem? We accept mail ins! We have a Mai",
-   "views": 3169745,
-   "url": "https://www.youtube.com/watch?v=POwJpytgStA"
   }
  ],
  "news": [
+  "Astronauts just gave the International Space Station a powerful upgrade",
+  "Scientists discover mysterious seahorse lookalikes that no one has ever seen alive",
+  "Scientists reveal a hidden snakebite crisis killing up to 513,000 people a year",
+  "Hubble reveals a stunning twist in how the universe emerged from darkness",
+  "Physicists created a tiny universe and watched time emerge without a clock",
   "Einstein's equations may explain the universe without dark energy",
-  "NASA discovers Jupiter’s invisible shield is more complex than Earth’s",
-  "128,000-year-old ice in Tibet could rewrite climate history",
-  "A 700,000-year-old elephant tooth reveals a lost world where early humans lived",
-  "APOD: 2026 October 30 – Haunting the Cepheus Flare",
-  "Vega Island Frozen in Fright",
-  "Map Showing Potential Origins of Martian Meteorite Teghaza 001",
-  "Slice of Martian Meteorite Teghaza 001",
-  "Halloween Aboard the International Space Station",
-  "NASA-funded Study Details One of Oldest Mars Meteorites Ever Found",
-  "Ghostly Cat’s Head Nebula lurks within sight of Hubble and Webb",
-  "Stars brewing in a nebulous cauldron"
+  "APOD: 2026 October 31 – Night on a Spooky Planet",
+  "NASA Releases MAX POWER Key Events for Media, Participants",
+  "NASA’s James Webb Space Telescope Captures Eerie Cat’s Head",
+  "NASA Explores Potential Commercial Servicing for Hubble Telescope",
+  "November’s Night Sky Notes: Light-Day Away",
+  "APOD: 2026 October 30 – Haunting the Cepheus Flare"
  ]
 }
