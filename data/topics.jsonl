@@ -37,3 +37,5 @@
 {"date": "2026-10-30", "topic": "5 extreme facts about the International Space Station", "wiki": "International Space Station", "outcome": "parked", "score": null, "format": null}
 {"date": "2026-10-30", "topic": "The truth about solar sails: they’re not just flimsy curtains", "wiki": "Solar sail", "outcome": "started", "score": null, "format": "myth_vs_fact"}
 {"date": "2026-10-30", "topic": "The truth about solar sails: they’re not just flimsy curtains", "wiki": "Solar sail", "outcome": "delivered", "score": 8.0, "format": null}
+{"date": "2026-10-31", "topic": "How hot is St. Elmo's fire, really?", "wiki": "St. Elmo's fire", "outcome": "started", "score": null, "format": "scale"}
+{"date": "2026-10-31", "topic": "How hot is St. Elmo's fire, really?", "wiki": "St. Elmo's fire", "outcome": "parked", "score": null, "format": null}
