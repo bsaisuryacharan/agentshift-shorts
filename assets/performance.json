@@ -1,6 +1,6 @@
 {
  "performance": {
-  "updated": "2026-10-31T00:48+00:00",
+  "updated": "2026-10-31T07:00+00:00",
   "target_views_per_short": 1000000,
   "shorts": [
    {
@@ -10,11 +10,11 @@
     "views": 1690,
     "likes": 25,
     "comments": 0,
-    "age_h": 343.2,
-    "expected": 863464,
+    "age_h": 349.4,
+    "expected": 865708,
     "ratio": 0.002,
     "status": "far_behind",
-    "projected_30d": 1957
+    "projected_30d": 1952
    },
    {
     "spec_id": null,
@@ -23,11 +23,11 @@
     "views": 441,
     "likes": 7,
     "comments": 0,
-    "age_h": 344.8,
-    "expected": 864042,
+    "age_h": 350.9,
+    "expected": 866285,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 510
+    "projected_30d": 509
    },
    {
     "spec_id": null,
@@ -36,11 +36,11 @@
     "views": 1113,
     "likes": 16,
     "comments": 0,
-    "age_h": 344.8,
-    "expected": 864064,
+    "age_h": 351.0,
+    "expected": 866307,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 1288
+    "projected_30d": 1284
    },
    {
     "spec_id": null,
@@ -49,8 +49,8 @@
     "views": 31,
     "likes": 2,
     "comments": 0,
-    "age_h": 416.6,
-    "expected": 890084,
+    "age_h": 422.8,
+    "expected": 892327,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 34
@@ -62,11 +62,11 @@
     "views": 141,
     "likes": 5,
     "comments": 0,
-    "age_h": 419.3,
-    "expected": 891052,
+    "age_h": 425.5,
+    "expected": 893296,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 158
+    "projected_30d": 157
    },
    {
     "spec_id": null,
@@ -75,8 +75,8 @@
     "views": 174,
     "likes": 2,
     "comments": 0,
-    "age_h": 427.3,
-    "expected": 893951,
+    "age_h": 433.5,
+    "expected": 896194,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 194
@@ -88,8 +88,8 @@
     "views": 22,
     "likes": 1,
     "comments": 0,
-    "age_h": 443.3,
-    "expected": 899746,
+    "age_h": 449.5,
+    "expected": 901990,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 24
@@ -101,11 +101,11 @@
     "views": 28,
     "likes": 1,
     "comments": 0,
-    "age_h": 449.3,
-    "expected": 901923,
+    "age_h": 455.5,
+    "expected": 904166,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 31
+    "projected_30d": 30
    },
    {
     "spec_id": null,
@@ -114,8 +114,8 @@
     "views": 184,
     "likes": 2,
     "comments": 0,
-    "age_h": 465.2,
-    "expected": 907692,
+    "age_h": 471.4,
+    "expected": 909935,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 202
@@ -127,8 +127,8 @@
     "views": 240,
     "likes": 6,
     "comments": 1,
-    "age_h": 470.4,
-    "expected": 909581,
+    "age_h": 476.6,
+    "expected": 911824,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 263
@@ -140,8 +140,8 @@
     "views": 123,
     "likes": 2,
     "comments": 1,
-    "age_h": 486.4,
-    "expected": 915350,
+    "age_h": 492.6,
+    "expected": 917593,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 134
@@ -150,14 +150,14 @@
     "spec_id": null,
     "video_id": "uU6JXROm7rI",
     "title": "Claude Code on Android for FREE — No Cloud Server Needed",
-    "views": 552,
+    "views": 554,
     "likes": 8,
     "comments": 0,
-    "age_h": 487.6,
-    "expected": 915782,
+    "age_h": 493.8,
+    "expected": 918025,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 602
+    "projected_30d": 603
    }
   ],
   "best": {
@@ -165,8 +165,8 @@
    "views": 1690
   },
   "ypp": {
-   "subscribers": 8,
-   "shorts_views_90d": 6457,
+   "subscribers": 9,
+   "shorts_views_90d": 6621,
    "public_uploads_90d": 19,
    "tier1_fan_funding": {
     "subs_ok": false,
@@ -177,14 +177,14 @@
    "tier2_ads": {
     "subs_ok": false,
     "views_ok": false,
-    "subs_pct": 0.8,
+    "subs_pct": 0.9,
     "views_pct": 0.1
    },
    "subscribers_known": true
   },
   "on_track": 0,
   "behind": 19,
-  "channel_views": 6053,
+  "channel_views": 6474,
   "not_public_or_missing": [],
   "lessons": []
  }
