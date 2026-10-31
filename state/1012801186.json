@@ -1,5 +1,5 @@
 {
- "current": "solar-sails-not-flimsy-curtains-a3",
+ "current": "boltzmann-brain-paradox-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -228,6 +228,25 @@
     "wanted": "public",
     "publish_at": null
    }
+  },
+  "boltzmann-brain-paradox-a3": {
+   "title": "Why Nobody Can Explain The Boltzmann Brain Paradox",
+   "base": "boltzmann-brain-paradox-a3",
+   "status": "draft",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 5,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 5,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 3,
+    "payoff": 5,
+    "safe_zone": 10
+   },
+   "run_id": "41186054749"
   }
  }
 }

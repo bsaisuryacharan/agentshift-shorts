@@ -39,3 +39,5 @@
 {"date": "2026-10-30", "topic": "The truth about solar sails: they’re not just flimsy curtains", "wiki": "Solar sail", "outcome": "delivered", "score": 8.0, "format": null}
 {"date": "2026-10-31", "topic": "How hot is St. Elmo's fire, really?", "wiki": "St. Elmo's fire", "outcome": "started", "score": null, "format": "scale"}
 {"date": "2026-10-31", "topic": "How hot is St. Elmo's fire, really?", "wiki": "St. Elmo's fire", "outcome": "parked", "score": null, "format": null}
+{"date": "2026-10-31", "topic": "Nobody can fully explain the Boltzmann brain paradox", "wiki": "Boltzmann brain", "outcome": "started", "score": null, "format": "unsolved"}
+{"date": "2026-10-31", "topic": "Nobody can fully explain the Boltzmann brain paradox", "wiki": "Boltzmann brain", "outcome": "draft", "score": 6.8, "format": null}
