@@ -18,6 +18,7 @@
 - Channel results (vidIQ, 2026-10-25): space/brain/Earth-scale curiosity wins (1,689 and 1,110 views); AI tools/prompts/phone tips flop (21-183). Best length 27-32 s.
 - Visual direction: real photos and NASA/stock footage with 1-2 big animated numbers or comparisons; AI images only for abstract ideas, never for a named real object.
 - Replies short, plain language, phone-friendly. Never print secrets.
+- 2026-11-01 Saves Shorts as inspiration: send Claude a link and say why it is useful; it runs app.refs add (analysis only, nothing copied). First: Rahul Iyer 'Anatomy' interactive-machine Short (tnzcWTxhR9c) -> new 'anatomy' format (Inside X, part by part, blueprint look) and 5 planned topics (jet engine, nuclear reactor, LHC, mechanical watch, submarine). Planned topics rank first in the picker, subject to the no-repeat tracker.
 
 ## Changes made (outside the chat, by Claude Code on the Mac)
 - 2026-10-25 vidIQ snapshot (assets/vidiq.json) incl. channel analytics feeds picker and writer; cache is primary, live vidIQ only refreshes it.
