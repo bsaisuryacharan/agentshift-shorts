@@ -550,11 +550,35 @@ def audit_claims(spec: dict, facts_text: str) -> list[str]:
     return [f"{x.get('beat', '?')}: unsupported claim '{str(x.get('claim', ''))[:90]}' - {str(x.get('fix', 'say only what FACTS state'))[:80]}" for x in (bad or []) if isinstance(x, dict)][:6]
 
 
+WRITER_FACTS = 7000          # characters of FACTS the writer sees (validation still checks against all of it); keeps the prompt under Groq's free request limit
+WRITER_HINT = 2200
+
+
+def allowed_numbers(facts_text: str, limit: int = 28) -> str:
+    """the numbers FACTS really state, each with a few words of context: the writer may use these and no others (it kept inventing ratios and round-ups)"""
+    out, seen = [], set()
+    for sent in re.split(r"(?<=[.!?])\s+", facts_text):
+        for m in re.finditer(r"\d[\d,]*(?:\.\d+)?(?:\s*(?:thousand|million|billion|trillion|%|percent|km|kg|m|kN|kW|hp|tonnes?|years?|days?))?", sent):
+            tok = m.group(0).strip().rstrip(",.")
+            if tok in seen or tok in ("1", "2", "3"):
+                continue
+            seen.add(tok)
+            w = re.sub(r"\s+", " ", sent[max(0, m.start() - 40):m.end() + 30]).strip()
+            out.append(f"{tok}  ({w})")
+            if len(out) >= limit:
+                return "\n".join(out)
+    return "\n".join(out)
+
+
 def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str | None = None) -> tuple[dict, str]:
     fmt = fmt if fmt in formats.FORMATS else formats.choose(recent_formats())
-    user = f"TOPIC: {topic}\n{formats.prompt_block(fmt)}\nFACTS (source {facts['url']}):\n{facts['text']}\n"
-    if insights.hint():
-        user += f"\nCHANNEL INSIGHTS (advisory, never a source of facts): {insights.hint()}\n"
+    user = f"TOPIC: {topic}\n{formats.prompt_block(fmt)}\nFACTS (source {facts['url']}):\n{facts['text'][:WRITER_FACTS]}\n"
+    nums = allowed_numbers(facts["text"])
+    user += ("\nALLOWED NUMBERS (the only numbers FACTS state). Use a number on screen or in narration ONLY if it is in this list AND means the same thing there. "
+             "Never compute, round up, convert or compare ('52 cars', '23 times more', 'a small town'): if no listed number fits a beat, use none in that beat.\n" + nums + "\n")
+    hint = insights.hint()
+    if hint:
+        user += f"\nCHANNEL INSIGHTS (advisory, never a source of facts): {hint[:WRITER_HINT]}\n"
     learned = lessons.rules()
     if learned:                                          # complaints that keep coming back are avoided from the first attempt
         user += "\nSTANDING RULES LEARNED FROM PAST JUDGE REJECTIONS (follow them):\n- " + "\n- ".join(learned)

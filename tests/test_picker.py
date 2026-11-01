@@ -54,3 +54,10 @@ def test_filters_catch_foreign_medical_and_admin_items():
     for keep in ("NASA discovers Jupiter's invisible shield is more complex than thought", "128,000-year-old ice in Tibet could rewrite climate history"):
         assert not insights.OFF_NEWS.search(keep), keep
     assert insights.good_winner("Why Must You Take Steps on a Spinning Ride? Physics Explained")
+
+
+def test_writer_gets_only_numbers_facts_state():
+    from app import auto
+    facts = "Thrust rose from 5,000 lbf (22 kN) in the 1950s to 115,000 lbf (510 kN) in the 1990s. The patent was granted in 1791."
+    nums = auto.allowed_numbers(facts)
+    assert "510 kN" in nums and "1791" in nums and "52" not in nums

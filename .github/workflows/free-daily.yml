@@ -68,7 +68,7 @@ jobs:
           git config user.name "shorts-bot"; git config user.email "shorts-bot@users.noreply.github.com"
           for f in data/history.jsonl data/judge_notes.jsonl data/topics.jsonl data/features.jsonl data/scorecards.jsonl state projects; do git add "$f" 2>/dev/null || true; done
           git commit -m "ledger: $(date -u +%F)" || true
-          git pull --rebase -q || true
+          git pull --rebase --autostash -q || true
           git push || true
       - uses: actions/upload-artifact@v4
         if: always()
