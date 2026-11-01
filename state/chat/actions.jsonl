@@ -1,1 +1,2 @@
 {"ts": "2026-10-30T09:12:21+00:00", "what": "Starting a new Short (full pipeline)", "detail": "gh workflow run free-daily.yml && sleep 5 && gh run list --workflow free-daily.yml -L 2"}
+{"ts": "2026-11-01T10:29:44+00:00", "what": "Cancelling a run", "detail": "echo \"- 2026-11-01 Owner said yes to the writer fix (use only FACTS numbers, say on-screen numbers aloud, feed validator errors into retries, shrink prompt for Groq 413). Blocked: git switch -c needs approval in the chat job, so no branch/PR yet. Needs chat.yml permission change on the Mac (allow gi"}
