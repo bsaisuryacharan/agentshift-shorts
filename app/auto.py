@@ -540,8 +540,9 @@ def audit_claims(spec: dict, facts_text: str) -> list[str]:
     for accuracy otherwise (the writer adds materials, causes and quantities from its own knowledge). One cheap text call; skipped if the free LLMs are busy."""
     try:
         out, _ = ask("You are a strict fact auditor for a science Short. Compare the SCRIPT with FACTS (the only allowed source). List every factual claim in the script "
-                     "(spoken or on screen) that FACTS do not state or directly imply: materials, causes, mechanisms, dates, quantities, superlatives and softeners like "
-                     "'nearly all' or 'much'. Ignore opinions and rhetorical questions. Return ONLY JSON {\"unsupported\":[{\"beat\":\"key\",\"claim\":\"...\",\"fix\":\"say only what FACTS state\"}]}.",
+                     "(spoken or on screen) that FACTS contradict or go beyond: named things, materials, causes, mechanisms, dates and quantities. Do NOT flag "
+                     "adjectives or hype words (huge, colossal, amazing), common-knowledge definitions, rhetorical questions, opinions, framing, or lists of style words "
+                     "on screen; only a concrete claim a viewer could check and find unsupported or wrong. Return ONLY JSON {\"unsupported\":[{\"beat\":\"key\",\"claim\":\"...\",\"fix\":\"say only what FACTS state\"}]}.",
                      f"FACTS:\n{facts_text[:9000]}\n\nSCRIPT:\n{screen_text(spec)}", prefer=["gemini", "groq", "openrouter"], wait=False)
     except Exception as e:  # noqa: BLE001 - the audit is an extra check, never a reason to lose a script
         print(f"   claims audit skipped ({str(e)[:80]})", flush=True)
@@ -575,7 +576,7 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
     user = f"TOPIC: {topic}\n{formats.prompt_block(fmt)}\nFACTS (source {facts['url']}):\n{facts['text'][:WRITER_FACTS]}\n"
     nums = allowed_numbers(facts["text"])
     user += ("\nALLOWED NUMBERS (the only numbers FACTS state). Use a number on screen or in narration ONLY if it is in this list AND means the same thing there. "
-             "Never compute, round up, convert or compare ('52 cars', '23 times more', 'a small town'): if no listed number fits a beat, use none in that beat.\n" + nums + "\n")
+             "Never compute, round up, convert, count or compare ('52 cars', '23 times more', '5 parts', 'a small town'): if no listed number fits a beat, use none in that beat.\n" + nums + "\n")
     hint = insights.hint()
     if hint:
         user += f"\nCHANNEL INSIGHTS (advisory, never a source of facts): {hint[:WRITER_HINT]}\n"
@@ -588,8 +589,8 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
     for n in range(5):
         spec, prov = ask(SYSTEM, user, prefer=order[n // 2 % 3])      # a model that keeps failing the schema is swapped out
         errs = validate_spec(spec, facts["text"])
-        if not errs:
-            errs = audit_claims(spec, facts["text"])             # unsupported claims are fixed before any render is spent
+        if not errs and n < 3:
+            errs = audit_claims(spec, facts["text"])             # unsupported claims are fixed before any render is spent; later attempts skip it (the judge still gates accuracy)
             if errs:
                 print("   claims audit:", "; ".join(errs)[:300], flush=True)
         if not errs:
