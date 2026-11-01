@@ -37,6 +37,7 @@
 - 2026-10-30 First look-based test (JWST sunshield, 30 Oct): visuals, polish, hierarchy, consistency and hook all scored 9; failed only on accuracy (writer added claims not in FACTS). Added a pre-render claims audit; when visuals score 8+, retries keep the look and change only the claims; graphic beats now get varied grounds (visual_variety was 4).
 
 ## Open items
+- 2026-11-01 Owner shared a reference Short to learn from in future Shorts: https://youtube.com/shorts/tnzcWTxhR9c (title/format not yet read; could not fetch it from the chat job). Wants it saved and used by the system when planning. Plan: PR adding `owner_references` to assets/idea_bank.json + app/ideabank.py hint(), refreshed with title/views via YouTube API. Branch creation was blocked (needs approval) so no PR yet; ask the owner what they liked about it.
 - 2026-10-29 Mariana Trench Short (first judge-approved, "mariana-trench-mystery-a2") is UPLOADED and public: https://youtube.com/watch?v=fvfM8rEDHDM (checked 2026-10-29). Its narration says "22 people have reached these depths" (Wikipedia: 22 crewed descents) - the owner chose to post anyway.
 - 2026-10-29 Owner should set the Google Cloud OAuth consent screen to "In production", or the YouTube login expires every 7 days.
 - Free AI quota (Gemini/Groq) runs out after ~2 full runs a day; avoid extra test runs.
