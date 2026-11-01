@@ -234,6 +234,8 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
     items += [(f"IN THE NEWS: {n}", "news") for n in news]
     fresh = [e for e in EVERGREEN if _norm_topic(e) not in used and not tracker.repeat_of(e)]
     items += [(e, "evergreen") for e in random.sample(fresh, min(14, len(fresh)))]
+    from . import refs
+    items += [(f"OWNER'S IDEA: {i}", "owner") for i in refs.ideas() if not tracker.repeat_of(i)]        # planned from the Shorts the owner saved
     cands = picker.rank(items)                                           # on-niche first: channel results + vidIQ + news, celebrities/sports dropped
     tried = tracker.covered()                                              # readable subjects already covered (newest first)
     fmt = fmt or formats.choose(recent_formats(), boost=lessons.format_boost())   # ties go to the format the judge has scored best
@@ -241,7 +243,7 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
     for attempt in range(3):
         out, _ = ask("You choose the next topic for 'Agent Shift', a YouTube Shorts channel of 35-45 s science/tech/history/nature explainers in rotating formats. "
                      "From the CANDIDATES pick ONE that is explainable in 40 s with a surprising angle, factual and policy-safe (no tragedies, politics, celebrities, sports results, "
-                     "medical advice). The channel makes curiosity explainers: science, space, nature, the brain, history, tech and engineering (how things work), and big tech news explained (what it is, how it works, why it matters). Never shopping content: product reviews, deals, unboxings or how-to-use tutorials. Prefer timeless science/space/history ideas that connect to something people search for; items marked IN THE NEWS are current science/tech headlines: when one fits, choose the timeless topic that explains it (a news hook gets views) but never a tragedy or politics; use CHANNEL INSIGHTS to favour what has worked "
+                     "medical advice). The channel makes curiosity explainers: science, space, nature, the brain, history, tech and engineering (how things work), and big tech news explained (what it is, how it works, why it matters). Never shopping content: product reviews, deals, unboxings or how-to-use tutorials. Items marked OWNER'S IDEA come from Shorts the owner saved as inspiration: prefer one when its subject is real and filmable (the idea is the shape, e.g. taking a machine apart part by part). Prefer timeless science/space/history ideas that connect to something people search for; items marked IN THE NEWS are current science/tech headlines: when one fits, choose the timeless topic that explains it (a news hook gets views) but never a tragedy or politics; use CHANNEL INSIGHTS to favour what has worked "
                      "and avoid what has scored badly. Prefer subjects that have REAL photographs or footage (actual spacecraft, telescopes, natural phenomena, places, historical events, animals) over purely hypothetical future technology, because real pictures make the better Short. It must have a real English Wikipedia article. "
                      'The FORMAT below decides the framing of the title (it is NOT always a what-if). Return ONLY JSON {"options":[{"topic":"a title framing that fits the FORMAT","wiki":"exact Wikipedia article title","why":"...","subjects":["3-4 concrete filmable things the Short would show, 1-3 words each, e.g. lava flow, Voyager probe, aurora"]}, ...three different options, best first]}. Never pick or closely resemble anything in PAST TITLES or ALREADY USED.',
                      f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}\nBREAKOUT TITLES (angle shapes that went viral for small channels; invent a new topic, never copy): {'; '.join(vidiq.topic_ideas() + ideabank.ideas()) or 'none'}",
@@ -263,6 +265,11 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
     else:                                             # the model keeps repeating itself: take an unused evergreen topic ourselves
         pick = random.choice(fresh or [e for e in EVERGREEN if not tracker.repeat_of(e)] or EVERGREEN)
         out = {"topic": formats.frame(fmt, pick), "wiki": pick, "why": "fallback: first unused evergreen topic"}
+    try:
+        from . import refs as _refs
+        _refs.mark_used(out.get("wiki", "") + " " + out.get("topic", ""))       # the owner's saved idea behind this pick is crossed off
+    except Exception:  # noqa: BLE001
+        pass
     print("picked:", out, "format:", fmt)
     return out["topic"], out["wiki"], fmt
 

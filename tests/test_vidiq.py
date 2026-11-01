@@ -37,6 +37,7 @@ def test_insights_hint_includes_vidiq(monkeypatch, tmp_path):
     monkeypatch.setattr(vidiq, "PATH", snap(tmp_path))
     monkeypatch.setattr(vidiq, "hint", lambda *a, **k: "VIDIQ-LINE")
     monkeypatch.setattr("app.ideabank.hint", lambda *a, **k: "")
+    monkeypatch.setattr("app.refs.hint", lambda *a, **k: "")
     assert insights.hint().endswith("VIDIQ-LINE")
 
 

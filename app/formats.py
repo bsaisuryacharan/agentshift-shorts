@@ -24,6 +24,9 @@ FORMATS: dict[str, dict] = {
                  "hook": "the shortest honest version of how something went from A to B", "shape": "3-5 dated milestones (use chain or list), the turning point, where it stands now"},
     "scale": {"label": "SCALE", "bubble": "how big?", "tag": "scale", "frame": "How big is {s}, really?",
               "hook": "a number too big or small to feel, then a human-sized comparison", "shape": "the raw number, three comparisons that climb, the one that makes it land"},
+    "anatomy": {"label": "ANATOMY", "bubble": "inside?", "tag": "anatomy", "frame": "Inside {s}, part by part",
+                "hook": "name a machine everyone has heard of and promise to take it apart, with the number of parts",
+                "shape": "the machine, then one assembly per beat with its one job and one real number (use chain, rows or a gallery graphic), the part that surprises, the whole thing running"},
     "story": {"label": "THE STORY", "bubble": "story", "tag": "story", "frame": "The story behind {s}",
               "hook": "one real photo or event and the detail nobody mentions", "shape": "the scene, who/what was involved, what happened next, why it still matters"},
 }

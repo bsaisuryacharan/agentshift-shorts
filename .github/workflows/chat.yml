@@ -30,6 +30,7 @@ jobs:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}            # the orchestrator's light commands (/status, /approve, /upload) run inside this job
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}          # references: views, likes, duration of a saved Short
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
@@ -58,11 +59,11 @@ jobs:
           fi
           export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"   # a token copied from a wrapped terminal line carries line breaks
           python -m app.chat stream "$TEXT"      # live progress in Telegram, then the answer (tool allow-list in app/chat.py ALLOWED)
-      - name: Save the conversation (memory only; code changes stay on their chat/* branch)
+      - name: Save the conversation (memory and saved references; code changes stay on their chat/* branch)
         if: always()
         run: |
           git config user.name "agentshift-chat"; git config user.email "agentshift-chat@users.noreply.github.com"
           git switch main 2>/dev/null || true
-          git add state/chat 2>/dev/null || true
+          git add state/chat assets/references 2>/dev/null || true          # memory and saved references are data, they go straight to main (code goes through a PR)
           git commit -qm "chat: conversation memory" || true
           for i in 1 2 3 4; do git pull --rebase -q && git push origin main && break; git rebase --abort 2>/dev/null; sleep $((i * 3)); done || true

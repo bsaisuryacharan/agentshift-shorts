@@ -171,6 +171,9 @@ def control(text: str) -> str | None:
     if cmd in ("/settings", "/claude"):
         return (f"Claude chat: model {s['model']}, effort {s['effort']}, {len(history())} recent turns remembered. Change with /model, /effort; "
                 "/reset forgets the conversation; /changes lists Claude's proposed code changes, /merge makes one live, /discard drops it.")
+    if cmd == "/refs":
+        from . import refs
+        return refs.summary()
     if cmd == "/topics":
         from . import tracker
         cov = tracker.covered(limit=30)
@@ -259,7 +262,7 @@ def status_block() -> str:
 
 MEMORY = "memory.md"              # long-term memory: decisions, owner's rules, changes made, open items (Claude keeps it current)
 ACTIONS = "actions.jsonl"         # what was actually done (written by code, not by Claude): commands run, runs started, PRs opened/merged
-SYSTEM_ACTIONS = ("app.orchestrator handle", "gh workflow run", "dispatches", "gh pr create", "git push -u origin chat/")
+SYSTEM_ACTIONS = ("app.refs add", "app.orchestrator handle", "gh workflow run", "dispatches", "gh pr create", "git push -u origin chat/")
 MEMORY_MAX = 8000
 
 
@@ -322,6 +325,7 @@ ALLOWED = ["Read", "Grep", "Glob", "Edit", "Write",
            "Bash(python -m pytest:*)", "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git switch -c chat/:*)",
            "Bash(git add:*)", "Bash(git commit:*)", "Bash(git push -u origin chat/:*)", "Bash(gh pr create:*)",
            "Bash(gh run list:*)", "Bash(gh run view:*)", "Bash(gh run cancel:*)", "Bash(grep:*)", "Bash(ls:*)",
+           "Bash(python -m app.refs add:*)", "Bash(python -m app.refs list:*)",                # save a Short the owner shares as a reference (analysis, ideas)
            "Bash(python -m app.orchestrator handle:*)",                                   # /status /list /target /use /approve /upload, answered in Telegram
            "Bash(gh workflow run free-daily.yml:*)", "Bash(gh workflow run stage-check.yml:*)", "Bash(gh workflow run weekly-insights.yml:*)",
            "Bash(gh api repos/bsaisuryacharan/agentshift-shorts/dispatches:*)"]          # /new <topic> or a revision -> the orchestrator job (render)
@@ -343,6 +347,10 @@ def describe(tool: str, inp: dict) -> str:
         return f"Listing files {f('pattern')[:40]}"
     if tool == "Bash":
         c = f("command")
+        if "app.refs add" in c:
+            return "Saving the Short as a reference and analysing it"
+        if "app.refs list" in c:
+            return "Listing the saved references"
         if "app.orchestrator handle" in c:
             import re as _re
             m = _re.search(r'--text\s+["\']?(/?\w+)', c)

@@ -29,6 +29,10 @@ if pending and "--force" not in sys.argv:
     sys.exit(1)
 CLOUD_FILES = ["assets/insights.json", "assets/performance.json", "assets/strategy.json"]     # written by cloud jobs: never replaced by the Mac copy
 saved_cloud = {f: (wd / f).read_bytes() for f in CLOUD_FILES if (wd / f).exists()}
+CLOUD_DIRS = ["assets/references"]                    # saved by Claude in Telegram: the cloud copy wins (it also tracks which ideas are used)
+for d in CLOUD_DIRS:
+    for f in (wd / d).glob("*") if (wd / d).exists() else []:
+        saved_cloud[str(f.relative_to(wd))] = f.read_bytes()
 keep_insights = wd / "assets" / "insights.json"
 saved = None
 keep_bank = wd / "assets" / "idea_bank.json"         # its 'recent' part is refreshed in the cloud; the Mac copy only adds channels/formats

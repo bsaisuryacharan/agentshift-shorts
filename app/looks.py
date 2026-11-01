@@ -48,7 +48,7 @@ LOOKS = {
                   "best": "playful nature and culture topics, bold announcements"},
 }
 DEFAULT_BY_FORMAT = {"ranked": "poster-pop", "scale": "midnight-grid", "versus": "explainer-diagram", "how_it_works": "blueprint",
-                     "timeline": "editorial-paper", "unsolved": "graphite-ui", "myth_vs_fact": "swiss-grid", "what_if": "midnight-grid"}
+                     "timeline": "editorial-paper", "unsolved": "graphite-ui", "myth_vs_fact": "swiss-grid", "what_if": "midnight-grid", "anatomy": "blueprint"}
 
 
 def pick(look: str | None, fmt: str | None = None) -> str:

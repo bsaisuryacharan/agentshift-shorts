@@ -14,7 +14,7 @@ import re
 from . import insights, vidiq
 
 STOP = {"the", "a", "an", "of", "to", "and", "in", "is", "are", "your", "you", "why", "how", "what", "that", "for", "on", "it", "do", "does", "can", "with"}
-SOURCE_BONUS = {"news": 2.0, "evergreen": 1.0, "trend": 0.0, "wiki": 0.0}
+SOURCE_BONUS = {"owner": 4.0, "news": 2.0, "evergreen": 1.0, "trend": 0.0, "wiki": 0.0}      # "owner": ideas planned from the references the owner saved
 
 
 PRODUCT = re.compile(r"\b(?:review|unboxing|hands[- ]on|price|prices|discount|deals?|sale|coupon|buy|buying|best .{0,20} under|vs\.? (?:apple|samsung|android|iphone)|"

@@ -93,6 +93,7 @@ def test_insights_hint_is_advisory_and_bounded(tmp_path, monkeypatch):
     (tmp_path / "i.json").write_text(json.dumps(d))
     monkeypatch.setattr("app.vidiq.hint", lambda *a, **k: "")          # the vidIQ snapshot has its own budget and test
     monkeypatch.setattr("app.ideabank.hint", lambda *a, **k: "")       # so does the idea bank
+    monkeypatch.setattr("app.refs.hint", lambda *a, **k: "")           # and the saved references
     assert "Channel Shorts" in insights.hint() and len(insights.hint()) <= 600
     monkeypatch.setattr(insights, "OUT", tmp_path / "missing.json")
     assert insights.hint() == ""
@@ -282,7 +283,7 @@ def test_botmenu_registers_commands(monkeypatch):
 
     monkeypatch.setattr(httpx, "post", lambda url, json, timeout: sent.update(json) or R())
     assert botmenu.register("t") is True
-    assert [c["command"] for c in sent["commands"]] == ["new", "status", "target", "list", "use", "approve", "upload", "model", "effort", "changes", "merge", "discard", "settings", "topics", "memory", "actions", "reset", "help"]
+    assert [c["command"] for c in sent["commands"]] == ["new", "status", "target", "list", "use", "approve", "upload", "model", "effort", "changes", "merge", "discard", "settings", "topics", "refs", "memory", "actions", "reset", "help"]
     assert botmenu.register(None) is False or True   # no token: returns False without raising (env may or may not be set)
 
 

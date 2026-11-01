@@ -24,6 +24,7 @@ COMMANDS = [
     ("discard", "Drop Claude's newest change"),
     ("settings", "Claude chat settings"),
     ("topics", "Subjects already covered (never repeated)"),
+    ("refs", "Shorts saved as inspiration"),
     ("memory", "What Claude remembers long-term"),
     ("actions", "What Claude actually did recently"),
     ("reset", "Clear the conversation with Claude"),

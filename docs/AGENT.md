@@ -32,6 +32,8 @@ drop, packaging rules); the picker and the writer read it first, and you see it 
 - `app/research.py` – researcher: Wikipedia plus up to 5 trusted web sources (Tavily, allow-listed domains) when TAVILY_API_KEY is set.
 - `app/ideabank.py`, `assets/idea_bank.json` – formats, hooks and ideas from reference channels (Higgsfield and niche channels); the owner may add
   channels to `reference_channels`; `recent` is refreshed daily in the cloud. Learn the shape, never copy.
+- `app/refs.py`, `assets/references/` – Shorts the owner saved as inspiration: analysis, the transferable idea, 5 planned topics each (picked first, crossed off
+  when a Short on that subject exists). The new `anatomy` format ("Inside X, part by part": a machine taken apart, one assembly per beat, blueprint look) came from one.
 - `app/tracker.py` – topic tracker: never a Short about a subject already covered (matched by subject, not exact title; delivered forever, drafts 90 days,
   failed tries retried after 3 days). Ledger: `data/topics.jsonl`; `/topics` lists it. Applies to the picker, the options and the evergreen fallback.
 - `app/lessons.py` – self-learning: judge complaints become standing writer rules; `data/judge_notes.jsonl`.
@@ -58,6 +60,11 @@ drop, packaging rules); the picker and the writer read it first, and you see it 
   - to cancel a run the owner asked you to cancel: `gh run cancel <id>`; say which run (id, started when) you cancelled.
   - a full daily Short: `gh workflow run free-daily.yml`; a step test: `gh workflow run stage-check.yml -f stage=script -f n=3`. These use the day's
     free AI quota: confirm with the owner first unless they asked for exactly that.
+- Save inspiration: when the owner sends a YouTube link (Short or video) and says it is useful, or asks you to remember/plan from it, run
+  `python -m app.refs add "<url>" --note "<why the owner saved it, in their words>"` (one free-AI call; fetches title, channel, stats and captions, saves only the
+  analysis and metadata, never the video, frames or transcript). Then tell the owner in 3 lines: the idea you took from it, how it will be reused, and the
+  planned topics it created (they rank first in the topic picker, subject to the no-repeat tracker). `python -m app.refs list` shows them (`/refs`).
+  If the link cannot be fetched, say so and ask for the title and what is good about it, then save with `--note`.
 - Act as or with the judge: read `data/judge_notes.jsonl`, run logs and the judge prompt (`JUDGE` in `app/auto.py`); explain scores and
   propose changes to the judge or the bar (`review_bar`).
 - Change the system (code, prompts, flow, thresholds): make the change on a new branch, test it, and open a pull request (rules below).

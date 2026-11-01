@@ -1,0 +1,39 @@
+{
+ "id": "tnzcWTxhR9c",
+ "url": "https://www.youtube.com/shorts/tnzcWTxhR9c",
+ "title": "Complex systems are much easier to understand when you can interact with them instead of a diagram.",
+ "channel": "Rahul Iyer | AI Universe",
+ "channel_url": "https://www.youtube.com/@RahulIyerAI",
+ "saved": "2026-11-01",
+ "note": "Owner saved it as a model for interactive 'how a complicated machine works' visuals and for how to plan future Shorts.",
+ "thumbs": false,
+ "analysis": {
+  "topic": "Anatomy, a free open-source Claude Code skill that builds interactive machines (SVG, WebGL) to show how complicated things work; 'Hidden GitHub Gems' series, part of a series",
+  "format": "talking head cut with screen demo of an interactive diagram",
+  "hook": "Names the payoff in one sentence: 'This new GitHub repo can take almost any complicated machine and show you exactly how it works with an interactive visual.' Then a fast cut to the person and a bold on-screen word per beat.",
+  "structure": [
+   "0-5 s: the promise (any complicated machine, shown interactively) + who it is for",
+   "5-12 s: the pain it removes (hours of videos or confusing diagrams) and the example prompt: 'Show me how SpaceX's rocket engine works'",
+   "12-22 s: the demo: hover the model, the engine separates into 11 assemblies, an animated version",
+   "22-30 s: the twist: not AI images, real code (SVG, WebGL, 3D), so parts move and respond",
+   "30-38 s: uses (engines, how a computer processes information, software systems), export, free and open source, series tag"
+  ],
+  "visual_style": "creator on camera in a clean room with a studio microphone, alternating with a light-background screen demo of orange, black and green gears; large white captions, one or two words at a time; moody b-roll for the opening line",
+  "why_it_works": [
+   "A concrete example subject everyone is curious about (a rocket engine) instead of an abstract tool pitch",
+   "Shows the result moving in the first seconds: 'interactive instead of a diagram' is understood without explanation",
+   "One idea, one escalation (11 assemblies, then animated, then 'not AI images, real code'), then an easy ask",
+   "Series framing ('Hidden GitHub Gems, part N') brings viewers back"
+  ],
+  "reuse": "Explain how a complex machine works by pulling it apart: an exploded, animated diagram where each assembly appears with its one job and a real number - the 'anatomy of a machine' Short.",
+  "adaptations": [
+   "How a jet engine works, taken apart part by part",
+   "How a nuclear reactor makes electricity, taken apart part by part",
+   "How the Large Hadron Collider works, step by step through its parts",
+   "How a mechanical watch works: the escapement and the gear train, taken apart",
+   "How a submarine makes its own air and water, system by system"
+  ],
+  "avoid": "Do not copy the title, script, series tag or the creator's footage; do not make tutorials or tool demos (AI tools flop on this channel). Use the idea of an animated exploded diagram with our own subjects and facts."
+ },
+ "adaptations_used": []
+}
