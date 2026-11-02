@@ -340,12 +340,12 @@ def _fact_sentences(facts_text: str) -> list[tuple[set, set]]:
 
 def _number_supported(num: str, facts_text: str, context: str = "") -> bool:
     """a number is supported only if a FACTS sentence holds the same value (1% rounding allowed) AND shares a word with the claim's context
-    ('22 humans' is not supported by '± 22 meters'). Ranks 1-3 are free; a year only needs to be in FACTS."""
+    ('22 humans' is not supported by '± 22 meters'). Whole numbers 1-5 are free (counts and ranks); a year only needs to be in FACTS."""
     try:
         v = float(num.replace(",", "").rstrip("."))
     except ValueError:
         return True
-    if v in (1, 2, 3):
+    if v in (1, 2, 3, 4, 5) and "." not in num:      # list counts and ranks ('5 facts', step 4)
         return True
     ctx = _stems(context)
     year = v.is_integer() and 1000 <= v <= 2100 and "." not in num and "," not in num
