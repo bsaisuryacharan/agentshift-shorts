@@ -1,6 +1,6 @@
 {
  "performance": {
-  "updated": "2026-11-01T21:11+00:00",
+  "updated": "2026-11-02T00:46+00:00",
   "target_views_per_short": 1000000,
   "shorts": [
    {
@@ -10,11 +10,11 @@
     "views": 1690,
     "likes": 25,
     "comments": 0,
-    "age_h": 387.5,
-    "expected": 879546,
+    "age_h": 391.1,
+    "expected": 880840,
     "ratio": 0.002,
     "status": "far_behind",
-    "projected_30d": 1921
+    "projected_30d": 1918
    },
    {
     "spec_id": null,
@@ -23,11 +23,11 @@
     "views": 441,
     "likes": 7,
     "comments": 0,
-    "age_h": 389.1,
-    "expected": 880123,
+    "age_h": 392.7,
+    "expected": 881417,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 501
+    "projected_30d": 500
    },
    {
     "spec_id": null,
@@ -36,11 +36,11 @@
     "views": 1113,
     "likes": 16,
     "comments": 0,
-    "age_h": 389.2,
-    "expected": 880145,
+    "age_h": 392.8,
+    "expected": 881439,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 1264
+    "projected_30d": 1262
    },
    {
     "spec_id": null,
@@ -49,8 +49,8 @@
     "views": 31,
     "likes": 2,
     "comments": 0,
-    "age_h": 461.0,
-    "expected": 906165,
+    "age_h": 464.6,
+    "expected": 907459,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 34
@@ -62,8 +62,8 @@
     "views": 141,
     "likes": 5,
     "comments": 0,
-    "age_h": 463.7,
-    "expected": 907133,
+    "age_h": 467.3,
+    "expected": 908428,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 155
@@ -75,11 +75,11 @@
     "views": 174,
     "likes": 2,
     "comments": 0,
-    "age_h": 471.7,
-    "expected": 910032,
+    "age_h": 475.3,
+    "expected": 911326,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 191
+    "projected_30d": 190
    },
    {
     "spec_id": null,
@@ -88,11 +88,11 @@
     "views": 22,
     "likes": 1,
     "comments": 0,
-    "age_h": 487.7,
-    "expected": 915828,
+    "age_h": 491.3,
+    "expected": 917122,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 24
+    "projected_30d": 23
    },
    {
     "spec_id": null,
@@ -101,8 +101,8 @@
     "views": 28,
     "likes": 1,
     "comments": 0,
-    "age_h": 493.7,
-    "expected": 918004,
+    "age_h": 497.3,
+    "expected": 919298,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 30
@@ -114,11 +114,11 @@
     "views": 184,
     "likes": 2,
     "comments": 0,
-    "age_h": 509.6,
-    "expected": 923773,
+    "age_h": 513.2,
+    "expected": 925067,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 199
+    "projected_30d": 198
    },
    {
     "spec_id": null,
@@ -127,11 +127,11 @@
     "views": 240,
     "likes": 6,
     "comments": 1,
-    "age_h": 514.8,
-    "expected": 925662,
+    "age_h": 518.4,
+    "expected": 926956,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 259
+    "projected_30d": 258
    },
    {
     "spec_id": null,
@@ -140,11 +140,11 @@
     "views": 123,
     "likes": 2,
     "comments": 1,
-    "age_h": 530.8,
-    "expected": 931431,
+    "age_h": 534.3,
+    "expected": 932725,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 132
+    "projected_30d": 131
    },
    {
     "spec_id": null,
@@ -153,11 +153,11 @@
     "views": 607,
     "likes": 9,
     "comments": 0,
-    "age_h": 531.9,
-    "expected": 931863,
+    "age_h": 535.5,
+    "expected": 933157,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 651
+    "projected_30d": 650
    }
   ],
   "best": {
