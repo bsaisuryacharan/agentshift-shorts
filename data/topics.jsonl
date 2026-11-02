@@ -63,3 +63,5 @@
 {"date": "2026-11-01", "topic": "What if every arm of an octopus had its own brain?", "wiki": "Octopus", "outcome": "parked", "score": null, "format": null}
 {"date": "2026-11-02", "topic": "5 extreme facts about the Large Hadron Collider", "wiki": "Large Hadron Collider", "outcome": "started", "score": null, "format": "ranked"}
 {"date": "2026-11-02", "topic": "5 extreme facts about the Large Hadron Collider", "wiki": "Large Hadron Collider", "outcome": "parked", "score": null, "format": null}
+{"date": "2026-11-02", "topic": "The truth about nuclear reactors: they don’t melt down like in the movies", "wiki": "Nuclear power plant", "outcome": "started", "score": null, "format": "myth_vs_fact"}
+{"date": "2026-11-02", "topic": "The truth about nuclear reactors: they don’t melt down like in the movies", "wiki": "Nuclear power plant", "outcome": "draft", "score": 7.3, "format": null}

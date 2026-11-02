@@ -1,0 +1,226 @@
+{
+ "id": "nuclear-meltdown-myth-a2",
+ "title": "Nuclear Meltdowns: Myth vs. Fact",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "MYTH VS FACT",
+ "format": "myth_vs_fact",
+ "theme": "cool",
+ "look": "midnight-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b2": "bbc.com: Why big tech's nuclear plans could blow up",
+  "b3": "bbc.com: Why big tech's nuclear plans could blow up",
+  "b6": "International Atomic Energy Agency via en.wikipedia.org/wiki/Nuclear_power_plant",
+  "wiki": "https://en.wikipedia.org/wiki/Nuclear_power_plant",
+  "ref1": "https://www.bbc.com/worklife/article/20251008-why-big-tech-is-going-nuclear",
+  "ref2": "https://www.history.com/articles/three-mile-island",
+  "ref3": "https://ntrs.nasa.gov/api/citations/19660020158/downloads/19660020158.pdf",
+  "ref4": "https://www.nasa.gov/wp-content/uploads/2023/04/sp-4317.pdf?emrc=8d8d23"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a stylized, futuristic nuclear power plant, glowing softly, seen from a wide angle with a dark, moody sky. No text or logos.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "You think nuclear reactors melt down like in movies? The truth is far safer and more complex.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "true?",
+     "at": "movies"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "REACTOR MELTDOWNS",
+      "accent": "blue"
+     },
+     "at": "reactors",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "photo": "three mile island",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 1979, the Three Mile Island accident fueled fears, amplified by a film released just before.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "1979 EVENT",
+     "at": "1979"
+    },
+    {
+     "t": "chip",
+     "text": "THE CHINA SYNDROME",
+     "col": "cy",
+     "at": "film"
+    }
+   ],
+   "prompt": "documentary photograph of three mile island, natural light, no text, no people"
+  },
+  {
+   "key": "b3",
+   "photo": "nuclear power plant control room",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Three Mile Island was a partial meltdown with no fatalities, unlike film portrayals.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "NO FATALITIES",
+     "col": "ok",
+     "at": "fatalities"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "say": "A reactor core heats coolant, generating steam for electricity, a controlled process.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "HOW IT WORKS",
+      "label": "Nuclear Power",
+      "accent": "blue"
+     },
+     "at": "reactor",
+     "dur": 2.5
+    },
+    {
+     "t": "rows",
+     "items": [
+      [
+       "CORE",
+       "HEAT",
+       "energy",
+       "cy"
+      ],
+      [
+       "COOLANT",
+       "STEAM",
+       "pressure",
+       "ir"
+      ],
+      [
+       "TURBINE",
+       "ELECTRICITY",
+       "power",
+       "ok"
+      ]
+     ],
+     "stagger": true,
+     "at": "reactor"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "say": "Fuel is removed after three years, then cooled in pools before storage.",
+   "hud": [
+    {
+     "t": "list",
+     "items": [
+      [
+       "🔄",
+       "FUEL REMOVAL",
+       "3 years"
+      ],
+      [
+       "🧊",
+       "COOLING POOLS",
+       ""
+      ],
+      [
+       "📦",
+       "LONG-TERM STORAGE",
+       ""
+      ]
+     ],
+     "at": "removed"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "photo": "nuclear power plant cooling towers",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "As of 2025, 416 reactors operate in 31 countries, making nuclear power one of the safest energy sources.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 416,
+      "suffix": "REACTORS",
+      "glow": true,
+      "accent": "blue"
+     },
+     "at": "416",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "31 COUNTRIES",
+     "col": "ir",
+     "at": "countries"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s1.jpg",
+   "prompt": "photoreal cinematic 9:16 image of a clean, abstract energy symbol or diagram, minimalist design, with subtle light rays, no specific objects, no text or logos, silhouette from behind.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Nuclear power is far from big screen drama. It's a precise, safe way to power our world. Follow Agent Shift.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "SAFE POWER",
+     "col": "am",
+     "at": "safe"
+    }
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Nuclear power plant",
+  "url": "https://en.wikipedia.org/wiki/Nuclear_power_plant",
+  "text": "A nuclear power plant (NPP), also known as a nuclear power station (NPS), nuclear generating station (NGS) or atomic power station (APS) is a thermal power station in which the heat source is a nuclear reactor. As is typical of thermal power stations, heat is used to generate steam that drives a steam turbine connected to a generator that produces electricity. As of October 2025, the International Atomic Energy Agency reported that there were 416 nuclear power reactors in operation in 31 countries around the world, and 62 nuclear power reactors under construction. Most nuclear power plants use thermal reactors with enriched uranium in a once-through fuel cycle. Fuel is removed when the percentage of neutron absorbing atoms becomes so large that a chain reaction can no longer be sustained, typically three years. It is then cooled for several years in on-site spent fuel pools before being transferred to long-term storage. The spent fuel, though low in volume, is high-level radioactive waste. While its radioactivity decreases exponentially, it must be isolated from the biosphere for hundreds of thousands of years, though newer technologies (like fast reactors) have the potential to significantly reduce this. Because the spent fuel is still mostly fissionable material, some countries (e.g. France and Russia) reprocess their spent fuel by extracting fissile and fertile elements for fabrication into new fuel, although this process is more expensive than producing new fuel from mined uranium. All reactors breed some plutonium-239, which is found in the spent fuel, and because Pu-239 is the preferred material for nuclear weapons, reprocessing is seen as a weapon proliferation risk. Building a nuclear power plant often spans five to ten years, which can accrue significant financial costs, depending on how the initial investments are financed. Because of this high construction cost and lower operations, maintenance, and fuel costs, nuclear plants are usually used for base load generation, because this maximizes the hours over which the fixed cost of construction can be amortized. Nuclear power plants have a carbon footprint comparable to that of renewable energy such as solar farms and wind farms, and much lower than fossil fuels such as natural gas and coal. Nuclear power plants are among the safest modes of electricity generation, comparable to solar and wind power plants in terms of deaths from accidents and air pollution per terawatt-hour of electricity. == History ==\n\nThe first time that heat from a nuclear reactor was used to generate electricity was on 21 December 1951, at the Experimental Breeder Reactor I, powering four light bulbs. On 27 June 1954, the world's first nuclear power station to generate electricity for a power grid, the Obninsk Nuclear Power Plant, commenced operations in Obninsk, in the Soviet Union. The world's first full scale power station, Calder Hall in the United Kingdom, opened on 17 October 1956 and was also meant to produce plutonium. The world's first full scale power station solely devoted to electricity production was the Shippingport Atomic Power Station in Pennsylvania, United States, which was connected to the grid on 18 December 1957. == Basic components ==\n\n\n=== Systems ===\n\nThe conversion to electrical energy takes place indirectly, as in conventional thermal power stations. The fission in a nuclear reactor heats the reactor coolant. The coolant may be water or gas, or even liquid metal, depending on the type of reactor. The reactor coolant then goes to a steam generator and heats water to produce steam (in the case of pressurized water reactors, PWRs), or may be converted to steam directly in the reactor (in the case of boiling water reactors, BWRs). The pressurized steam is then usually fed to a multi-stage steam turbine. After the steam turbine has expanded and partially condensed the steam, the remaining vapor is condensed in a condenser. The condenser is a heat exchanger which is connected to a secondary side such as a river or a cooling tower. The water is then pumped back into the steam generator and the cycle begins again. The water-steam cycle corresponds to the Rankine cycle. The nuclear reactor is the heart of the station. In its central part, the reactor's core produces heat due to nuclear fission. With this heat, a coolant is heated as it is pumped through the reactor and thereby removes the energy from the reactor. The heat from nuclear fission is used to raise steam, which runs through turbines, which in turn power the electrical generators. Nuclear reactors usually rely on uranium to fuel the chain reaction. Uranium is a very heavy metal that is abundant on Earth and is found in sea water as well as most rocks. Naturally occurring uranium is found in two different isotopes: uranium-238 (U-238), accounting for 99.3% and uranium-235 (U-235) accounting for about 0.7%. U-238 has 146 neutrons and U-235 has 143 neutrons. Different isotopes have different behaviors. For instance, U-235 is fissile which means that it is easily split and gives off a lot of energy making it ideal for nuclear energy. On the other hand, U-238 does not have that property despite it being the same element. Different isotopes also have different half-lives.\n\nSOURCE bbc.com (https://www.bbc.com/worklife/article/20251008-why-big-tech-is-going-nuclear):\n# Why big tech's nuclear plans could blow up **Eager to find new energy sources to power artificial intelligence, big tech companies are betting on nuclear – even though there are still huge questions over public perception, cost and, perhaps most importantly, the time it will take for a potential new nuclear technology to become viable.** For many Americans, dropping \"Three Mile Island\" into conversation is like mentioning \"Fukushima\" or \"Chernobyl\" – places that have become synonymous with nuclear disaster, no explanation needed. The actual history is more complicated. In March 1979, one of two reactors at the Three Mile Island plant in central Pennsylvania partially melted down, in what is to this day the most serious nuclear accident in US history. But it resulted in just a small fraction of the damage caused by those disasters in Japan and the Soviet Union. There were no fatalities and few if any long-term health effects (scientific studies have drawn slightly different conclusions on that point). The whole thing would likely have been a much smaller news story had it not been for a film released only a few days before. The China Syndrome was a thriller starring Jane Fonda as an intrepid reporter investigating safety problems at a nuclear plant. It was a work of fiction, not a documentary, but the parallels with Three Mile Island damaged the reputation of US nuclear power for years. The plant was recently in the news again – not for an accident or a hit movie, but by a deal signed by tech giant Microsoft to buy energy from Three Mile Island’s remaining functioning reactor. And it's just part of a larger trend. Silicon Valley is on the hunt for new sources of power to drive enormous data centres and in particular, the high-power chips that have become the backbone of the artificial intelligence (AI) industry. Nuclear could help meet that challenge in two respects – it's a potential source of \"always on\" energy, and unlike fossil fuels, it's carbon-free. Big tech is making a big bet on nuclear – Microsoft has even recently joined the industry's lobbying group, the World Nuclear Association. The maker of the Xbox is not alone. Google, Amazon and others are als\n\nSOURCE history.com (https://www.history.com/articles/three-mile-island):\nBy: HISTORY.com Editors 1970s # Three Mile Island HISTORY.com Editors Leif Skoogfors/Getty Images Published: December 18, 2009Last Updated: July 14, 2026 Table of contents 1 The China Syndrome2 Three Mile Island Accident3 TMI Impact4 Three Mile Island Cleanup5 Anti-Nuclear Movement6 Three Mile Island Today7 Sources Three Mile Island is the site of a nuclear power plant in south central Pennsylvania. In March 1979, a series of mechanical and human errors at the plant caused the worst commercial nuclear accident in U.S. history, resulting in a partial meltdown that released dangerous radioactive gasses into the atmosphere. Three Mile Island stoked public fears about nuclear power—since the accident, construction has not begun at any new nuclear power plant sites in the United States. ## The China Syndrome Construction of the Three Mile Island nuclear plant began in 1968, in Londonderry Township, Pennsylvania, on a small island in the Susquehanna River just south of the state capital in Harrisburg. Construction ended in 1978 when the second of two nuclear reactors at the site came online to produce electricity. A thriller film, called *The China Syndrome*, hit theaters in March of 1979. The film, starring Jane Fonda, Jack Lemmon and Michael Douglas, dealt with the aftermath of a fictional nuclear meltdown at a reactor outside of Los Angeles. The nuclear industry, at the time, dismissed *The China Syndrome* plot as far-fetched. Many experts said nuclear meltdowns—where a nuclear reactor overheats causing radioactive fuel to melt—were almost impossible, calling them “black swan” events. ## Three Mile Island Accident In the early morning hours of March 28, 1979, a mechanical or electric failure set off an unlikely series of events that led to a partial meltdown at the Unit 2 reactor. Water pumps that helped to cool the radioactive fuel in the reactor core malfunctioned. Plant staff didn’t realize the reactor was experiencing a loss of coolant and took a series of actions that made the problem worse. These further starved the reactor core of water flow and caused it to overheat. The nuclear fuel began to melt through its metal container—about half the reactor core melt\n\nSOURCE ntrs.nasa.gov (https://ntrs.nasa.gov/api/citations/19660020158/downloads/19660020158.pdf):\n, Presented at 8th Annual Missile GPO PRICE s and Space Technology Institute Univ. of Connecticut, Aug. 4-5, 1965 CFSTI PRICEW s .. NON-CHEMICAL PROPULSION Hard copy (HC) 3 1 0-d Microfiche (MF) by John C. Eward ff 653 Julr 65 L e w i s Research Center , National Aeronautics and Space Cleveland, Ohio I. INTRODUCTORY PRINCIPLES First, consider a rocket in gravity free space. To obtain propellant m u s t be ejected from the rocket. The reaction force on the rocket is calculated from Newton's laws as where u is the constant ejection velocity of the propellant and dm/dt is the rate of propellant consumption. Now, l e t us assume that the pro- pellant is ejected as a gas which has a t o t a l energy per unit weight of CpT, where Cp and T exhaust nozzle. Now, as the gas passes through its exhaust nozzle, this internal energy w i l l be converted t o velocity. any point along the way then says that the thermal energy of the gaseous propellant plus the kinetic energy is equal t o the original energy. is the specific head at constant pressure per =it weight represents the temperature of the gas before it passes through the Conservation of energy at cpt + $ u2 = C ~ T , a constant ( 2 ) Thus, as the propellant of a rocket expands through the exhaust nozzle, the kinetic energy, $ u2, increases a t the expense of the thermal energy term, Cpt. The m a x i m u m j e t velocity for complete expansion is therefore where is the r a t i o of specific heats at constant pressure and constant volume, W is the molecular weight, and R is the universal gas constant. The t h i r d member of equation (3) results from appl4-finn nf the thermo- (ACCESSION NUMB€# . . -- - u 8, a 8 Sd7s-3 - ' I U S 1 CR OR TMX OR AD NUMBER) 2 (3) and (1) w e see that the thrust of a f u l l y ex- dt nce is achieved with low molecular weight propellants at the Let m e define the term “specific impulse“ as the force i n weight units (F/g) exerted when one weight unit per second of propellant flows. Hence : 2 RT I = (4) Jet velocity and specific impulse are essentially the same except f o r the gravitational constant “g. ‘I From Newton’s laws, the acceleration of the rocket i n space i s thus m dv dm F = - - - \n\nSOURCE nasa.gov (https://www.nasa.gov/wp-content/uploads/2023/04/sp-4317.pdf?emrc=8d8d23):\nScience in lux f Science in lux f by Mark D. Bowles The NASA History Series National Aeronautics and Space Administration NASA History Division Office of External Relations Washington, DC June 2006 NASA SP-2006-4317 NASA’s Nuclear Program at Plum Brook Station 1955 – 2005 Library of Congress Cataloging-in-Publication Data Bowles, Mark D. Science in flux : NASA’s nuclear program at Plum Brook Station, 1955-2005 / by Mark D. Bowles. p. cm. -- (NASA SP-2006-4317) 1. NASA Glenn Research Center. Plum Brook Station--History. 2. Nuclear energy--Research--United States--History. 3. Nuclear rockets--Research--United States--History. 4. Nuclear reactors--Ohio--Sandusky--History. I. Title: NASA’s nuclear program at Plum Brook Station. II. Title. III. NASA SP-2006-4317. TK9230.B69 2006 621.48072’073--dc22 2006005497 Table of Contents Preface vii Introduction xv Chapter 1: Removing the Farmers 1 Chapter 2: Building for a Nuclear Airplane 35 Chapter 3: Going Critical with NERVA 79 Chapter 4: Experimenting with the Reactor 117 Chapter 5: Living with Radiation 167 Chapter 6: Halting Nuclear Momentum 215 Chapter 7: Restoring the Garden 245 Conclusion-- Disappearing in the Night 273 Appendices 281 A. A History of Atomic and Nuclear Experimentation B. The Fission Process and How a Test Reactor Works C. How a Test Reactor is Designed D. Other Research Facilities at Plum Brook E. Interviews Conducted for this Book About the Author 304 Index 305 NASA History Series 325 For Nancy and Isabelle Preface In June 2001 I was part of a group of historians and archivists visiting NASA’s idyllic-sounding Plum Brook Station, located in the rural countryside outside San-dusky, Ohio. I had been to this place before when I was writing a book on the his-tory of the Centaur rocket and knew that the scientific community considered it one of the leading rocket-testing facilities in the world, where experiments on the Arianne rocket, Mars Pathfinder, and the International Space Station had been per-formed.\u0004 But the reason for my visit that day was the two nuclear reactors housed at Plum Brook, the only such facilities NASA had ever built. I was going to write the history of these reactors and tell the ",
+  "extra_sources": [
+   "https://www.bbc.com/worklife/article/20251008-why-big-tech-is-going-nuclear",
+   "https://www.history.com/articles/three-mile-island",
+   "https://ntrs.nasa.gov/api/citations/19660020158/downloads/19660020158.pdf",
+   "https://www.nasa.gov/wp-content/uploads/2023/04/sp-4317.pdf?emrc=8d8d23"
+  ]
+ },
+ "_writer": "gemini"
+}

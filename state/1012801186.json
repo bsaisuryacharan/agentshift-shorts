@@ -1,5 +1,5 @@
 {
- "current": "boltzmann-brain-paradox-a3",
+ "current": "nuclear-meltdown-myth-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -247,6 +247,25 @@
     "safe_zone": 10
    },
    "run_id": "41186054749"
+  },
+  "nuclear-meltdown-myth-a2": {
+   "title": "Nuclear Meltdowns: Myth vs. Fact",
+   "base": "nuclear-meltdown-myth-a2",
+   "status": "draft",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 6,
+    "accuracy": 10,
+    "originality": 5,
+    "policy": 10,
+    "visual_variety": 2,
+    "polish": 8,
+    "hierarchy": 8,
+    "consistency": 9,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "41415682076"
   }
  }
 }
