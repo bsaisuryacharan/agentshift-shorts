@@ -31,3 +31,4 @@
 {"spec_id": "nuclear-meltdown-myth-a2", "mood": "warm", "theme": "cool", "hook_words": "12+", "beats": 7, "words": 108, "hf": 3, "real_pictures": 0.0, "grades": {"hook": "B", "story": "C", "visuals": "D", "polish": "B", "policy": "A"}}
 {"spec_id": "nuclear-reactor-myth-a3", "mood": "warm", "theme": "cool", "hook_words": "12+", "beats": 7, "words": 99, "hf": 2, "real_pictures": 0.43, "grades": {"hook": "B", "story": "D", "visuals": "D", "polish": "D", "policy": "D"}}
 {"spec_id": "inside-a-submarine-anatomy-a2", "mood": "warm", "theme": "cool", "hook_words": "12+", "beats": 8, "words": 105, "hf": 3, "real_pictures": 0.25, "grades": {"hook": "B", "story": "B", "visuals": "B", "polish": "A", "policy": "A"}}
+{"spec_id": "mars-giant-cloud-mystery-a2", "mood": "space", "theme": "cool", "hook_words": "8-11", "beats": 7, "words": 88, "hf": 5, "real_pictures": 0.29, "grades": {"hook": "B", "story": "D", "visuals": "D", "polish": "D", "policy": "A"}}
