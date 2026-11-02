@@ -345,7 +345,7 @@ def _number_supported(num: str, facts_text: str, context: str = "") -> bool:
         v = float(num.replace(",", "").rstrip("."))
     except ValueError:
         return True
-    if v in (1, 2, 3, 4, 5) and "." not in num:      # list counts and ranks ('5 facts', step 4)
+    if v in (1, 2, 3, 4, 5):      # list counts and ranks ('5 facts', step 4)
         return True
     ctx = _stems(context)
     year = v.is_integer() and 1000 <= v <= 2100 and "." not in num and "," not in num
