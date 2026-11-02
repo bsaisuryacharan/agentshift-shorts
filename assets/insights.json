@@ -1,32 +1,37 @@
 {
- "generated_at": "2026-11-01T10:38:56+00:00",
+ "generated_at": "2026-11-02T11:27:05+00:00",
  "channel": {
-  "period": "2026-10-02..2026-10-31",
-  "views": 5989.0,
+  "period": "2026-10-03..2026-11-01",
+  "views": 6671.0,
   "avg_view_seconds": 24.0,
-  "avg_view_pct": 61.76,
-  "net_subscribers": 8.0,
-  "likes": 90.0,
+  "avg_view_pct": 61.99,
+  "net_subscribers": 10.0,
+  "likes": 103.0,
   "shares": 6.0,
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
-  "The Most Incredible Animal Moments Ever Caught on Camera",
+  "The 3 Most Unbelievable Dangerous Places on Earth!🙄",
   "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained",
-  "Most Unpredictable Animal Reactions",
-  "5 Wild Animals That Have Been Enemies for Millions of Years🤯",
   "What if you dropped 10kg of tungsten from space?",
+  "WORLD’S FASTEST ANIMAL! 💀⚡",
   "IKAN LELE SAMA BELUT",
   "( This Is Ravan’s Lanka )",
   "Hannah Fry on The Nun Study",
-  "Most Shocking Wildlife moments",
-  "Stop Using Sunscreen",
+  "SIZE OF SOLAR SYSTEM! 💀",
   "Astronomical events in November 2026😲",
-  "5 Animals That Sleep in the STRANGEST Ways"
+  "Stop Using Sunscreen",
+  "5 Animals That Sleep in the STRANGEST Ways",
+  "10 Astonishing Animal Encounters You Won’t Believe 😱"
  ],
  "learned": {
-  "shorts_scored": 3,
+  "shorts_scored": 4,
   "best": [
+   {
+    "title": "Inside a Submarine: 5 Systems",
+    "avg": 8.5,
+    "weakest": "originality"
+   },
    {
     "title": "The Mariana Trench Mystery",
     "avg": 8.0,
@@ -36,14 +41,25 @@
     "title": "Solar Sails: Not Flimsy Curtains",
     "avg": 8.0,
     "weakest": "visual_quality"
-   },
+   }
+  ],
+  "worst": [
    {
     "title": "What If Jupiter's Magnetic Shield Protected Earth?",
     "avg": 7.7,
     "weakest": "polish"
+   },
+   {
+    "title": "Solar Sails: Not Flimsy Curtains",
+    "avg": 8.0,
+    "weakest": "visual_quality"
+   },
+   {
+    "title": "The Mariana Trench Mystery",
+    "avg": 8.0,
+    "weakest": "originality"
    }
   ],
-  "worst": [],
   "weakest_dimensions": [
    "originality",
    "visual_quality",
@@ -51,70 +67,70 @@
   ]
  },
  "stage_averages": {
-  "hook": 7.5,
-  "story": 6.5,
+  "hook": 7.6,
+  "story": 6.6,
   "visuals": 6.1,
-  "polish": 5.9,
-  "policy": 9.0
+  "polish": 6.1,
+  "policy": 8.9
  },
- "weakest_stage": "polish",
+ "weakest_stage": "visuals",
  "region": "IN",
  "trend_signals_total": 70,
- "trend_signals_on_niche": 52,
+ "trend_signals_on_niche": 53,
  "niche_winners": [
   {
    "title": "Astronomical events in November 2026😲 #shorts #astronomicalevents #space #helpyn",
-   "views": 3258974,
+   "views": 3796585,
    "url": "https://www.youtube.com/watch?v=_fw3vnQconI"
   },
   {
+   "title": "The 3 Most Unbelievable Dangerous Places on Earth!🙄#city #facts #new #shorts #place #ytsho",
+   "views": 8304595,
+   "url": "https://www.youtube.com/watch?v=IQNLS4q2ZXQ"
+  },
+  {
    "title": "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained #shorts",
-   "views": 8103771,
+   "views": 8193716,
    "url": "https://www.youtube.com/watch?v=K2we_H33tlU"
   },
   {
+   "title": "WORLD’S FASTEST ANIMAL! 💀⚡#shorts #animals #speed #earth",
+   "views": 5130503,
+   "url": "https://www.youtube.com/watch?v=D1IOZS6E55U"
+  },
+  {
    "title": "Scientists Found Something INSANE Inside This Worm!🤯",
-   "views": 675155,
+   "views": 1352440,
    "url": "https://www.youtube.com/watch?v=ttYCiXhTa6U"
   },
   {
    "title": "What if you dropped 10kg of tungsten from space?",
-   "views": 6036065,
+   "views": 6501959,
    "url": "https://www.youtube.com/watch?v=uj4plcsfc6k"
   },
   {
-   "title": "5 Wild Animals That Have Been Enemies for Millions of Years🤯",
-   "views": 6417535,
-   "url": "https://www.youtube.com/watch?v=x_L7PJrqE_g"
+   "title": "SIZE OF SOLAR SYSTEM! 💀",
+   "views": 3854407,
+   "url": "https://www.youtube.com/watch?v=dv-Czhabars"
   },
   {
-   "title": "November 2026 Space Events 🤩 #space #earth #shorts",
-   "views": 1417721,
-   "url": "https://www.youtube.com/watch?v=IGmBjaG6qC0"
-  },
-  {
-   "title": "Stop Using Sunscreen #gyrussulcus #dharmendrasir #science #sunscreen",
-   "views": 3389142,
-   "url": "https://www.youtube.com/watch?v=FHByFcOlECA"
-  },
-  {
-   "title": "( This Is Ravan’s Lanka ) #devendragour #ytshorts #mindset #bhajan #ravan #srilanka #myste",
-   "views": 4427812,
-   "url": "https://www.youtube.com/watch?v=FdMAZbnSPw0"
+   "title": "3 Birds That Build Nests in the Most Incredible Ways! 🤯 #facts #animals #wildlife",
+   "views": 1995719,
+   "url": "https://www.youtube.com/watch?v=T3wxJlPDlUc"
   }
  ],
  "news": [
   "Scientists say a forgotten particle may explain why the universe exists",
+  "Ancient ape fossil in Egypt could rewrite the story of human origins",
   "A mysterious 4,000-year-old wall is rewriting North Africa’s history",
   "Scientists discover the hidden “muscles” trees use to straighten themselves",
+  "Scientists shrink Archimedes’ screw to the size of a single molecule",
   "Scientists smash oxygen nuclei to recreate matter from the Big Bang",
-  "Astronauts just gave the International Space Station a powerful upgrade",
-  "Scientists discover metals that defy the deep freeze at -424°F",
+  "APOD: 2026 November 2 – A Long Cloud on Mars",
+  "Pennsylvania’s Grand Canyon",
   "APOD: 2026 November 1 – Colors of the Moon",
   "APOD: 2026 October 31 – Night on a Spooky Planet",
   "NASA Releases MAX POWER Key Events for Media, Participants",
-  "NASA’s James Webb Space Telescope Captures Eerie Cat’s Head",
-  "NASA Explores Potential Commercial Servicing for Hubble Telescope",
-  "November’s Night Sky Notes: Light-Day Away"
+  "NASA’s James Webb Space Telescope Captures Eerie Cat’s Head"
  ]
 }
