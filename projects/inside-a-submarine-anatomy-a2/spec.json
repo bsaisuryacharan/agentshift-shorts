@@ -1,0 +1,214 @@
+{
+ "id": "inside-a-submarine-anatomy-a2",
+ "title": "Inside a Submarine: 5 Systems",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "ANATOMY",
+ "theme": "cool",
+ "look": "blueprint",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b2": "Wikipedia (https://en.wikipedia.org/wiki/Submarine)",
+  "b5": "Smithsonian Magazine (https://www.smithsonianmag.com/travel/Step-inside-a-famous-submarine-180955042)",
+  "o": "Wikipedia (https://en.wikipedia.org/wiki/Submarine)",
+  "wiki": "https://en.wikipedia.org/wiki/Submarine",
+  "ref1": "https://www.smithsonianmag.com/travel/Step-inside-a-famous-submarine-180955042",
+  "ref2": "https://www.nature.com/scitable/knowledge/library/submarine-fans-and-canyon-channel-systems-a-24178428",
+  "ref3": "https://spectrum.ieee.org/submarine-stealth",
+  "ref4": "https://www.bbc.com/news/articles/c6ly7ydp5v1no",
+  "ref5": "https://www.britannica.com/technology/submarine-naval-vessel"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "submarine exterior",
+   "prompt": "photoreal cinematic 9:16 image of a massive black submarine docked in a harbor, wide shot, industrial maritime environment",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Can you fit a crew inside a 574 foot steel tube? Let's strip down the submarine.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "inside?",
+     "at": "inside"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "graphic": true,
+   "say": "Most large subs use a cylindrical body to survive crushing pressure.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "SUBMARINE",
+      "label": "ANATOMY"
+     },
+     "at": "subs",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "subs",
+     "whoosh",
+     0.8
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "graphic": true,
+   "say": "To dive, they use ballast tanks. In 1747, early designs used leather bags.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "In 1747 leather bags were used",
+      "keyword": "1747",
+      "note": "Ballast System"
+     },
+     "at": "1747",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "1747",
+     "ding",
+     0.5
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "submarine propeller",
+   "prompt": "photoreal cinematic 9:16 image of a large bronze submarine propeller underwater, macro shot, bubbles and light rays",
+   "focal": [
+    0.5,
+    0.6
+   ],
+   "say": "At the rear, a propeller or pump jet pushes the boat through the deep.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "propeller",
+     "col": "ir",
+     "at": "propeller"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "footage": "submarine periscope",
+   "focal": [
+    0.5,
+    0.3
+   ],
+   "say": "The vertical structure on top is the sail. It houses periscopes and sensors.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "the sail",
+     "col": "am",
+     "at": "sail"
+    }
+   ],
+   "prompt": "documentary photograph of submarine periscope, natural light, no text, no people"
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "Typhoon class submarine",
+   "prompt": "photoreal cinematic 9:16 image of the massive Typhoon class submarine on the surface, wide shot, arctic waters",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The Russian Typhoon class is the biggest ever built, stretching 574 feet long.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 574,
+      "suffix": "FT"
+     },
+     "at": "574",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "574",
+     "impact",
+     1.0
+    ]
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "footage": "submarine underwater",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "These massive boats can stay submerged for 6 months without seeing the sun.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "6 MONTHS",
+     "col": "cy",
+     "at": "6"
+    }
+   ],
+   "prompt": "documentary photograph of submarine underwater, natural light, no text, no people"
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "graphic": true,
+   "say": "From 19th century designs to nuclear giants, subs rule the deep. Subscribe.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "19TH CENTURY",
+     "col": "ok",
+     "at": "19th"
+    }
+   ],
+   "prompt": "graphic ground"
+  }
+ ],
+ "format": "anatomy",
+ "_facts": {
+  "title": "Submarine",
+  "url": "https://en.wikipedia.org/wiki/Submarine",
+  "text": "A submarine (often shortened to sub) is a watercraft capable of independent operation underwater. (It differs from a submersible, which has more limited underwater capability.) The term \"submarine\" is also sometimes used historically or informally to refer to remotely operated vehicles and robots, or to medium-sized or smaller vessels (such as the midget submarine and the wet sub). Submarines are referred to as boats rather than ships regardless of their size. Although experimental submarines had been built earlier, submarine design took off during the 19th century, and submarines were adopted by several navies. They were first used widely during World War I (1914–1918), and are now used in many navies, large and small. Their military uses include: attacking enemy surface ships (merchant and military) or other submarines; aircraft carrier protection; blockade running; nuclear deterrence; stealth operations in denied areas when gathering intelligence and doing reconnaissance; denying or influencing enemy movements; conventional land attacks (for example, launching a cruise missile); and covert insertion of frogmen or special forces. Their civilian uses include: marine science; salvage; exploration; and facility inspection and maintenance. Submarines can be modified for specialized functions such as search-and-rescue missions and undersea cable repair. They are also used in the tourism industry and in undersea archaeology. Modern deep-diving submarines derive from the bathyscaphe, which evolved from the diving bell. Most large submarines consist of a cylindrical body with hemispherical (or conical) ends and a vertical structure, usually located amidships, which houses communications and sensing devices as well as periscopes. In modern submarines, this structure is called the \"sail\" in American usage and \"fin\" in European usage. A feature of earlier designs was the \"conning tower\": a separate pressure hull above the main body of the boat that enabled the use of shorter periscopes. There is a propeller (or pump jet) at the rear, and various hydrodynamic control fins. Smaller, deep-diving, and specialty submarines may deviate significantly from this traditional design. Submarines dive and resurface by using diving planes and by changing the amount of water and air in ballast tanks to affect their buoyancy. Submarines encompass a wide range of types and capabilities. They range from small, autonomous examples, such as one- or two-person subs that operate for a few hours, to vessels that can remain submerged for six months, such as the Russian Typhoon class (the biggest submarines ever built). Submarines can work at depths that are greater than what is practicable (or even survivable) for human divers. More countries are building and operating submarines today than ever before in modern history, and China is leading the construction surge. == History ==\n\n\n=== Etymology ===\nThe word submarine means 'underwater' or 'under-sea' (as in submarine canyon, submarine pipeline) though as a noun it generally refers to a vessel that can travel underwater. The term is a contraction of submarine boat and occurs as such in several languages, e.g. French (sous-marin), and Spanish (submarino), although others retain the original term, such as Dutch (Onderzeeboot), German (Unterseeboot), Swedish (Undervattensbåt), and Russian (подводная лодка: podvodnaya lodka), all of which mean 'submarine boat'. By naval tradition, submarines are usually referred to as boats rather than as ships, regardless of their size. Although referred to informally as boats, U.S. submarines employ the designation USS (United States Ship) at the beginning of their names, such as USS Alabama. In the Royal Navy, the designation HMS can refer to \"His Majesty's Ship\" or \"His Majesty's Submarine\", though the latter is sometimes rendered \"HMS/m\". === Early human-powered submersibles ===\n\n\n==== 16th and 17th centuries ====\nAccording to a report in Opusculum Taisnieri published in 1562:\n\nTwo Greeks submerged and surfaced in the river Tagus near the City of Toledo several times in the presence of The Holy Roman Emperor Charles V, without getting wet and with the flame they carried in their hands still alight. In 1578, the English mathematician William Bourne recorded in his book Inventions or Devises one of the first plans for an underwater navigation vehicle. A few years later the Scottish mathematician and theologian John Napier wrote in his Secret Inventions (1596) that \"These inventions besides devises of sayling under water with divers other devises and strategems for harming of the enemyes by the Grace of God and worke of expert Craftsmen I hope to perform.\" It is unclear whether he carried out his idea. Jerónimo de Ayanz y Beaumont (1553–1613) created detailed designs for two types of air-renovated submersible vehicles. They were equipped with oars, autonomous floating snorkels worked by inner pumps, portholes and gloves used for the crew to manipulate underwater objects. Ayanaz planned to use them for warfare, using them to approach enemy ships undetected and set up timed gunpowder charges on their hulls. The first submersible of whose construction there exists reliable information was designed and built in 1620 by Cornelis Drebbel, a Dutchman in the service of James I of England. It was propelled by means of oars. ==== 18th century ====\n\nBy the mid-18th century, over a dozen patents for submarines/submersible boats had been granted in England. In 1747, Nathaniel Symons patented and built the first known working example of the use of a ballast tank for submersion. His design used leather bags that could fill with water to submerge the craft. A mechanism was used to twist the water out of the bags and cause the boat to resurface. In 1749, the Gentlemen's Magazine reported that a similar design had initially been proposed by Giovanni Borelli in 1680.\n\nSOURCE smithsonianmag.com (https://www.smithsonianmag.com/travel/Step-inside-a-famous-submarine-180955042):\n![Smithsonian Magazine white logo](/) Search Shop Newsletters Renew Give a Gift Subscribe Membership Subscribe to Smithsonian magazine and get a FREE tote. Urban Explorations A *Smithsonian* magazine special report # Step Inside a Famous Submarine ## Where to visit historic subs this summer—or ride in a modern one /https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/accounts/headshot/michele-lent-hirsch.jpg) Michele Lent Hirsch Share EmailSMSFacebookXRedditLinkedInBlueskyPrint A rendering of the USS *Nautilus*, the world's first atomic submarine. The real *Nautilus* is now open to the public, docked in Connecticut so that visitors can walk around inside and explore the torpedoes and living quarters. Blue Lantern Studio/Corbis The idea of a ship that can travel underwater has been around far longer than the technology to make it possible. Famed inventor Leonardo da Vinci, who died in 1519, had an idea for a submersible vessel but kept his sketches a secret. He wouldn’t share them, he said, “because of the evil nature of men who practice assassination at the bottom of the sea.” Da Vinci never constructed his machine, as far as we know, and it wasn’t until about 1723 that a submersible came to life. This craft worked 15 feet below the surface of the Thames River, and according to Tom Parrish, author of *The Submarine**,* even King James I visited onboard, despite the risk of drowning. Other inventors continued to make rudimentary submersibles until finally, in 1775, a man named David Bushnell created a machine that fits Parrish’s definition of a submarine: a vessel that can propel itself on water but also underneath it, and that can sink and rise again at will. Still, only one person could squeeze into Bushnell’s ship, which Parrish writes looked like two bathtubs clamped together, or like the shell of a strange oyster. Today, submarines can be hulking—such as the 574-foot-long Soviet *Typhoon*—or sleek and miniature, like this two-person sub that looks and moves remarkably like a killer whale. According to the company that sells it, the orca-styled submersible can be yours for $90,000. For those who don’t want to join the Navy—or don’t have $90,000 lying around\n\nSOURCE nature.com (https://www.nature.com/scitable/knowledge/library/submarine-fans-and-canyon-channel-systems-a-24178428):\nThis page has been archived and is no longer updated # Submarine Fans and Canyon-Channel Systems: A Review of Processes, Products, and Models By:Jacob A. Covault(U. S. Geological Survey Eastern Energy Resources Science Center, Reston, USA)©2011 Nature Education ![Image 1](javascript:show_inform(\"Terms of Use\", \"You may reproduce this material, without modifications, in print or electronic form for your personal, non-commercial purposes or for non-commercial use in an educational environment.\")) Citation:Covault,J.A.(2011)Submarine Fans and Canyon-Channel Systems: A Review of Processes, Products, and Models.Nature Education Knowledge 3(10):4 ![Image 2: Share Using Reddit](http://www.reddit.com/submit?url=) ![Image 3: StumbleUpon](https://www.nature.com/scitable/knowledge/library/submarine-fans-and-canyon-channel-systems-a-24178428/#) ![Image 4: Google Plus+](https://plus.google.com/share?url=) ![Image 5: Share with Twitter](http://twitter.com/share?url=) ![Image 6: Share with Facebook](http://www.facebook.com/share.php?u=) ![Image 7: Email](https://www.nature.com/scitable/knowledge/library/submarine-fans-and-canyon-channel-systems-a-24178428/#) ![Image 8: Print](javascript:printReadingPage()) ![Image 9: Bookmark](https://www.nature.com/scitable/knowledge/library/submarine-fans-and-canyon-channel-systems-a-24178428/#) Submarine fans receive sediment through canyon-channel systems and are the largest detrital accumulations on Earth. Their general characteristics and developmental models are reviewed. Aa)Aa)Aa) Submarine fans are accumulations of sediment deposited at the termini of land-to-deep-sea sediment-routing systems (Menard 1955) (Figure 1). At a given moment in time, sediment-routing systems comprise sediment source areas dominated by denudation, a zone of sediment transfer, and a terminal region of deposition, such as a submarine fan (Allen 1997). The sediment-transfer zone between terrestrial source area and deep-sea depositional sink can include submarine canyon-channel systems, which generally pass from erosional V-shaped canyons indenting the continental shelf and uppermost slope, to U-shaped channels with overbank deposits across the lower slope and r\n\nSOURCE spectrum.ieee.org (https://spectrum.ieee.org/submarine-stealth):\n# Will Even the Most Advanced Subs Have Nowhere to Hide? The scramble to preserve submarine stealth in an age of AI and all-seeing sensors The USS Hyman G. Rickover, shown here under construction in Groton, Conn., is a Virginia-class nuclear attack submarine. The modern race to build undetectable submarines dates from the 1960s. In that decade, the United States and the Soviet Union began a game of maritime hide-and-seek, deploying ever-quieter submarines as well as more advanced tracking and detection capabilities to spot their adversary’s vessels. That game continues to this day but with a wider field of players. In the coming months, the U.S. Navy plans to homeport the USS Minnesota on Guam. This Virginia-class nuclear-powered attack submarine is among the quietest subs ever made. Advanced nuclear propulsion like the Minnesota’s gives the vessel a superior ability to operate covertly. More of its kind will be deployed by the United States, the United Kingdom, and Australia to compete with China for influence and military dominance, especially over the Indo-Pacific region. This article is a collaboration between Foreign Policy, the global magazine of politics and ideas, and IEEE Spectrum, the flagship magazine of the IEEE. As part of the landmark deal known as AUKUS (for the initials of its partner states), Australia will acquire, operate, and maintain three to five U.S. Virginia-class subs, each of which will cost about US $4.3 billion; an additional five subs will be a special AUKUS-class built in the U.K. and Australia using U.S. nuclear propulsion technology. In exchange for access to this technological edge, Australia has agreed to make substantial multibillion-dollar investments in the U.S. and U.K. naval shipbuilding industries. The deal could last until at least the 2050s and cost up to $368 billion. These submarines are expected to assume a nuclear deterrence mission against China, whose nuclear modernization plans include the deployment of submarine-launched ballistic missiles capable of targeting the United States. The People’s Liberation Army Navy is the largest navy in the world, but it currently operates only 12 nuclear-powered submarines, a rath\n\nSOURCE bbc.com (https://www.bbc.com/news/articles/c6ly7ydp5v1no):\n# Town marks 125 years of Navy submarine building A town is commemorating more than a century of building submarines for the Royal Navy. It is 125 years since submarine construction began in the UK, with the first commissioned for the navy, the HMS Holland 1, built in Barrow-in-Furness in Cumbria in 1901. Heritage advisor at BAE Systems, John Bulmer, said technology had \"come on massively\" at the ship yard. Commemorative events are taking place in the town organised by the Royal British Legion, Royal Navy Submarine Service and Barrow Submariners Association. Barrow was granted Royal Charter status last year, becoming the Royal Port of Barrow in recognition of its \"unique and critical contribution\" to national security. Last month, the nuclear-powered submarine HMS Agamemnon departed the port for its first sea trials, marking another historic moment for the shipyard. Bulmer said: \"Barrow is the place where submarine building in the UK started. \"It's a huge centre of industrial capability and all of that has carried on evolving into what we make today. \"There aren't many countries that design and build their own nuclear submarines, the UK is one of them, and Barrow is at the heart of it.\" Barrow's shipyard was founded in 1871 by the Barrow Shipbuilding Company, and while the Holland 1 was the first submarine to be officially commissioned, Bulmer said a number of trial vessels were built in the 1880s. He also said there were a number of \"differences in the design\" and they were not representative of the Holland 1 or the \"way submarine design went from thereon in\". Holland 1 was built in secret in one of the shipyard's yacht sheds and was regarded as an experiment. \"Submarines were being billed as a threat to battleships, so the early experiments were done in reasonable secrecy,\" Bulmer said. The 63ft (19m) vessel now resides at the Royal Navy Submarine Museum in Portsmouth, where visitors can go inside the preserved submarine. Bulmer added: \"It's this tiny little thing - if you've got claustrophobia, don't go in it.\" As well as designing and building naval and merchant ships and their machinery, the shipyard has also been involved in the construction of electric lo\n\nSOURCE britannica.com (https://www.britannica.com/technology/submarine-naval-vessel):\n![Image 1: Encyclopedia Britannica](https://www.britannica.com/) Search Britannica Click here to search ![Image 2: Encyclopedia Britannica](https://www.britannica.com/) Search Britannica Click here to search SUBSCRIBE SUBSCRIBE Login Subscribe to Britannica Premium SUBSCRIBE TO PREMIUM Ask the ChatbotGames & QuizzesHistory & SocietyScience & TechBiographiesAnimals & NatureGeography & TravelArts & CultureProConMoneyVideos submarine * Introduction & Top Questions * Early hand-powered submersibles * First use in war * American Civil War and after * Toward diesel-electric power * World War I * World War II * Postwar developments * Nuclear propulsion * Nuclear power plants * Reactors * Adoption by navies * The nuclear navies * Strategic submarines * Attack submarines * Design principles * Speed * Depth * Silencing References & Edit HistoryQuick Facts & Related Topics Images ![Image 3: USS Nautilus](https://cdn.britannica.com/03/117703-050-FC60CE73/USS-Nautilus-museum-Groton-Connecticut-May-1985.jpg)![Image 4: Bushnell's submarine torpedo boat](https://cdn.britannica.com/85/4985-050-6037BC04/Bushnell-submarine-torpedo-boat-cutaway-view-Drawing-1885.jpg)![Image 5: USS Seawolf](https://cdn.britannica.com/10/134710-050-CEEAC69E/coast-USS-Seawolf-Key-West-Fla-1958.jpg)![Image 6: Nuclear submarine](https://cdn.britannica.com/86/4986-050-3C2AF666/USS-Ohio-row-launch-tubes-missiles-US-1981.jpg)![Image 7: USS Albacore](https://cdn.britannica.com/11/134711-050-D4912846/USS-Albacore.jpg)![Image 8: U-218](https://cdn.britannica.com/11/60711-050-068E6F3F/U-218-Kiel-Germany-1941.jpg)![Image 9: USS Nautilus](https://cdn.britannica.com/58/9858-004-C0B32AD0/USS-Nautilus.jpg)![Image 10: submarine](https://cdn.britannica.com/47/188447-050-EDB45800/Los-Angeles-attack-submarine-USS-Topeka-San.jpg)![Image 11: dock](https://cdn.britannica.com/92/130692-050-46FDF06E/US-Navy-trident-submarine-USS-Michigan-2002.jpg) At a Glance ![Image 12: dock](https://www.britannica.com/summary/submarine-naval-vessel) submarine summary Quizzes ![Image 13: Thumbnail for 'Which Came First' Quiz. Composite image. Left is Glass bottle of ketchup, right is a Glass bottle containing white sauce. Sauce, food, cond",
+  "extra_sources": [
+   "https://www.smithsonianmag.com/travel/Step-inside-a-famous-submarine-180955042",
+   "https://www.nature.com/scitable/knowledge/library/submarine-fans-and-canyon-channel-systems-a-24178428",
+   "https://spectrum.ieee.org/submarine-stealth",
+   "https://www.bbc.com/news/articles/c6ly7ydp5v1no",
+   "https://www.britannica.com/technology/submarine-naval-vessel"
+  ]
+ },
+ "_writer": "gemini"
+}

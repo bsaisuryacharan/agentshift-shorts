@@ -1,5 +1,5 @@
 {
- "current": "nuclear-meltdown-myth-a2",
+ "current": "inside-a-submarine-anatomy-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -266,6 +266,32 @@
     "safe_zone": 10
    },
    "run_id": "41415682076"
+  },
+  "inside-a-submarine-anatomy-a2": {
+   "title": "Inside a Submarine: 5 Systems",
+   "base": "inside-a-submarine-anatomy-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 8,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 9,
+    "hierarchy": 9,
+    "consistency": 9,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "41422184807",
+   "uploaded": {
+    "id": "dMkrl_TTbRw",
+    "url": "https://youtube.com/watch?v=dMkrl_TTbRw",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
   }
  }
 }
