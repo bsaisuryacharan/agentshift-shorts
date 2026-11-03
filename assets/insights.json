@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-11-02T11:27:05+00:00",
+ "generated_at": "2026-11-03T11:03:28+00:00",
  "channel": {
-  "period": "2026-10-03..2026-11-01",
-  "views": 6671.0,
+  "period": "2026-10-04..2026-11-02",
+  "views": 7006.0,
   "avg_view_seconds": 24.0,
-  "avg_view_pct": 61.99,
+  "avg_view_pct": 60.41,
   "net_subscribers": 10.0,
-  "likes": 103.0,
+  "likes": 105.0,
   "shares": 6.0,
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
-  "The 3 Most Unbelievable Dangerous Places on Earth!🙄",
   "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained",
+  "Most Unpredictable Animal Reactions",
   "What if you dropped 10kg of tungsten from space?",
   "WORLD’S FASTEST ANIMAL! 💀⚡",
   "IKAN LELE SAMA BELUT",
-  "( This Is Ravan’s Lanka )",
   "Hannah Fry on The Nun Study",
   "SIZE OF SOLAR SYSTEM! 💀",
   "Astronomical events in November 2026😲",
-  "Stop Using Sunscreen",
-  "5 Animals That Sleep in the STRANGEST Ways",
-  "10 Astonishing Animal Encounters You Won’t Believe 😱"
+  "Most Shocking Wildlife moments",
+  "This is nature’s most miraculous sight: a flood saves the lives of thousands of animals.",
+  "3 Birds That Build Nests in the Most Incredible Ways! 🤯",
+  "HOW BIG IS THE SOLAR SYSTEM!💀☝️"
  ],
  "learned": {
   "shorts_scored": 4,
@@ -67,70 +67,70 @@
   ]
  },
  "stage_averages": {
-  "hook": 7.6,
+  "hook": 7.7,
   "story": 6.6,
-  "visuals": 6.1,
-  "polish": 6.1,
-  "policy": 8.9
+  "visuals": 6.2,
+  "polish": 6.2,
+  "policy": 9.0
  },
  "weakest_stage": "visuals",
  "region": "IN",
  "trend_signals_total": 70,
- "trend_signals_on_niche": 53,
+ "trend_signals_on_niche": 47,
  "niche_winners": [
   {
    "title": "Astronomical events in November 2026😲 #shorts #astronomicalevents #space #helpyn",
-   "views": 3796585,
+   "views": 3928494,
    "url": "https://www.youtube.com/watch?v=_fw3vnQconI"
   },
   {
-   "title": "The 3 Most Unbelievable Dangerous Places on Earth!🙄#city #facts #new #shorts #place #ytsho",
-   "views": 8304595,
-   "url": "https://www.youtube.com/watch?v=IQNLS4q2ZXQ"
-  },
-  {
    "title": "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained #shorts",
-   "views": 8193716,
+   "views": 8383711,
    "url": "https://www.youtube.com/watch?v=K2we_H33tlU"
   },
   {
    "title": "WORLD’S FASTEST ANIMAL! 💀⚡#shorts #animals #speed #earth",
-   "views": 5130503,
+   "views": 5568665,
    "url": "https://www.youtube.com/watch?v=D1IOZS6E55U"
   },
   {
-   "title": "Scientists Found Something INSANE Inside This Worm!🤯",
-   "views": 1352440,
-   "url": "https://www.youtube.com/watch?v=ttYCiXhTa6U"
-  },
-  {
    "title": "What if you dropped 10kg of tungsten from space?",
-   "views": 6501959,
+   "views": 7140138,
    "url": "https://www.youtube.com/watch?v=uj4plcsfc6k"
   },
   {
+   "title": "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
+   "views": 2165603,
+   "url": "https://www.youtube.com/watch?v=zMt9YzQ_hf4"
+  },
+  {
    "title": "SIZE OF SOLAR SYSTEM! 💀",
-   "views": 3854407,
+   "views": 4014088,
    "url": "https://www.youtube.com/watch?v=dv-Czhabars"
   },
   {
+   "title": "Scientists Found Something INSANE Inside This Worm!🤯",
+   "views": 1434827,
+   "url": "https://www.youtube.com/watch?v=ttYCiXhTa6U"
+  },
+  {
    "title": "3 Birds That Build Nests in the Most Incredible Ways! 🤯 #facts #animals #wildlife",
-   "views": 1995719,
+   "views": 2547926,
    "url": "https://www.youtube.com/watch?v=T3wxJlPDlUc"
   }
  ],
  "news": [
+  "NASA reveals a haunting skull hidden in Antarctica’s ice",
+  "IceCube detects ghost particles with 10 billion times the energy of solar neutrinos",
+  "Scientists just found a loophole that could let black holes split in two",
+  "Large Hadron Collider reveals evidence of Big Bang matter in surprisingly small collisions",
+  "NASA's Hubble and Webb discover ancient worlds that remember their past",
   "Scientists say a forgotten particle may explain why the universe exists",
-  "Ancient ape fossil in Egypt could rewrite the story of human origins",
-  "A mysterious 4,000-year-old wall is rewriting North Africa’s history",
-  "Scientists discover the hidden “muscles” trees use to straighten themselves",
-  "Scientists shrink Archimedes’ screw to the size of a single molecule",
-  "Scientists smash oxygen nuclei to recreate matter from the Big Bang",
-  "APOD: 2026 November 2 – A Long Cloud on Mars",
-  "Pennsylvania’s Grand Canyon",
-  "APOD: 2026 November 1 – Colors of the Moon",
-  "APOD: 2026 October 31 – Night on a Spooky Planet",
-  "NASA Releases MAX POWER Key Events for Media, Participants",
-  "NASA’s James Webb Space Telescope Captures Eerie Cat’s Head"
+  "APOD: 2026 November 3 – Comet PanSTARRs and Rainbow Meteor",
+  "The Pacific’s Busy Storm Season",
+  "Happy 65 Years: NASA’s Johnson Space Center Then and Now",
+  "TB 26-09 Measured Hammer-Tap Inputs",
+  "NASA’s CHAPEA Crew “Returns” to Earth",
+  "What’s Up: November 2026 Skywatching Tips from NASA"
  ]
 }

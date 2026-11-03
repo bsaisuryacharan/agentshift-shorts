@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-02T11:27+00:00",
+ "updated": "2026-11-03T11:03+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 27,
+  "days_left": 26,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 7132,
-  "gained": 1351,
-  "pct": 0.14,
-  "pace_per_day": 456,
-  "needed_per_day": 36987,
-  "projected": 13678,
+  "channel_views": 8256,
+  "gained": 2475,
+  "pct": 0.25,
+  "pace_per_day": 629,
+  "needed_per_day": 38366,
+  "projected": 18847,
   "on_track": false
  },
  "shorts_per_day": 2,
@@ -52,7 +52,7 @@
   },
   {
    "title": "Claude Code on Android for FREE — No Cloud Server Needed",
-   "views": 615
+   "views": 638
   }
  ],
  "flops": [
@@ -70,15 +70,15 @@
   }
  ],
  "best_formats": [
+  "timeline",
   "unsolved",
-  "myth_vs_fact",
-  "what_if"
+  "myth_vs_fact"
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Double down on what already wins on this channel: 'Space Is Too Big For Your Brain 🤯 #shorts' (1,690 views); 'These 4 Brain Facts Sound Fake (But They're True) ' (1,113 views); 'Claude Code on Android for FREE — No Cloud Server ' (615 views).",
+  "Double down on what already wins on this channel: 'Space Is Too Big For Your Brain 🤯 #shorts' (1,690 views); 'These 4 Brain Facts Sound Fake (But They're True) ' (1,113 views); 'Claude Code on Android for FREE — No Cloud Server ' (638 views).",
   "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (22); 'What If Grandma Could Just ASK Her Phone' (28); '3 FREE AI Tricks to Get More Interview C' (31).",
-  "Prefer the formats the judge scores best: unsolved, myth_vs_fact.",
+  "Prefer the formats the judge scores best: timeline, unsolved.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."
  ]
