@@ -14,8 +14,8 @@ def setup(monkeypatch, tmp_path):
 
 def test_model_and_effort_controls_persist(monkeypatch, tmp_path):
     setup(monkeypatch, tmp_path)
-    assert "sonnet" in chat.control("/model")
-    assert "opus" in chat.control("/model opus") and chat.settings()["model"] == "opus"
+    assert "groq" in chat.control("/model")
+    assert "groq" in chat.control("/model groq") and chat.settings()["model"] == "groq"
     assert chat.control("/effort high").startswith("Effort set to high") and chat.settings()["effort"] == "high"
     assert "Choose one" in chat.control("/effort turbo") and chat.settings()["effort"] == "high"
     assert chat.control("what is going on?") is None              # plain text is for Claude
@@ -27,7 +27,7 @@ def test_memory_reset_and_prompt(monkeypatch, tmp_path):
     p = chat.build_prompt("and now?")
     assert "why was it rejected?" in p and "and now?" in p and "LIVE SYSTEM STATUS" in p
     chat.control("/reset")
-    assert chat.history() == [] and chat.settings()["model"] == "sonnet"
+    assert chat.history() == [] and chat.settings()["model"] == "groq"
 
 
 def test_finish_sends_answer_and_remembers(monkeypatch, tmp_path):
@@ -90,7 +90,7 @@ def test_subscription_token_is_tried_before_the_api_key(monkeypatch):
 def test_buttons_for_controls_and_claude_choices(monkeypatch, tmp_path):
     setup(monkeypatch, tmp_path)
     rows = chat.control_buttons("/model")
-    assert [b[0] for b in rows[0]] == ["opus", "✓ sonnet", "haiku"] and rows[0][0][1] == "cmd:/model opus"
+    assert [b[0] for b in rows[0]] == ["✓ groq"] and rows[0][0][1] == "cmd:/model groq"
     assert any("✓ medium" == b[0] for row in chat.control_buttons("/effort") for b in row)
     kb = chat.keyboard(chat.control_buttons("/settings"))
     assert kb["inline_keyboard"][-1][0]["callback_data"] == "cmd:/reset"

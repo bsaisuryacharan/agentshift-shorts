@@ -24,9 +24,9 @@ import httpx
 
 ROOT = Path(__file__).resolve().parents[1]
 DIR = ROOT / "state" / "chat"
-MODELS = {"opus": "opus", "sonnet": "sonnet", "haiku": "haiku"}            # Claude Code aliases: always the latest model of each family
+MODELS = {"groq": "openai/gpt-oss-120b"}            # Claude Code aliases: always the latest model of each family
 EFFORTS = ("low", "medium", "high", "xhigh", "max")
-DEFAULT = {"model": "sonnet", "effort": "medium"}
+DEFAULT = {"model": "groq", "effort": "medium"}
 KEEP_TURNS = 12
 
 
@@ -36,7 +36,10 @@ def _chat() -> str:
 
 def settings(chat: str | None = None) -> dict:
     try:
-        return {**DEFAULT, **json.loads((DIR / f"{chat or _chat()}.settings.json").read_text())}
+        s = {**DEFAULT, **json.loads((DIR / f"{chat or _chat()}.settings.json").read_text())}
+        if s["model"] not in MODELS:
+            s["model"] = "groq"
+        return s
     except (OSError, ValueError):
         return dict(DEFAULT)
 
@@ -158,7 +161,7 @@ def control(text: str) -> str | None:
     s = settings()
     if cmd == "/model":
         if arg not in MODELS:
-            return f"Model now: {s['model']}. Choose one: /model opus (best, slowest), /model sonnet (balanced), /model haiku (fastest)."
+            return f"Model now: {s['model']}. Choose one: /model groq (GPT OSS 120B)."
         s["model"] = arg
         save_settings(s)
         return f"Model set to {arg}. Effort: {s['effort']}."
@@ -169,8 +172,8 @@ def control(text: str) -> str | None:
         save_settings(s)
         return f"Effort set to {arg}. Model: {s['model']}."
     if cmd in ("/settings", "/claude"):
-        return (f"Claude chat: model {s['model']}, effort {s['effort']}, {len(history())} recent turns remembered. Change with /model, /effort; "
-                "/reset forgets the conversation; /changes lists Claude's proposed code changes, /merge makes one live, /discard drops it.")
+        return (f"Groq chat: model {s['model']}, effort {s['effort']}, {len(history())} recent turns remembered. Change with /model, /effort; "
+                "/reset forgets the conversation; /changes lists the agent's proposed code changes, /merge makes one live, /discard drops it.")
     if cmd == "/refs":
         from . import refs
         return refs.summary()
@@ -516,7 +519,7 @@ def auth_refused(text: str) -> bool:
     return "401" in text or "authenticat" in text.lower() or "invalid bearer" in text.lower() or "invalid x-api-key" in text.lower()
 
 
-def stream(text: str) -> int:
+def claude_stream(text: str) -> int:
     """run Claude Code with live progress in Telegram, then send the answer and remember the turn"""
     import subprocess
     s = settings()
@@ -546,6 +549,11 @@ def stream(text: str) -> int:
     n = len(prog.steps)
     prog.done(f"Finished: {n} step{'s' if n != 1 else ''}" + (f", {result.get('num_turns')} turns" if result else " (no answer)"))
     return finish(ROOT / "chat_result.json", text)
+
+
+def stream(text: str) -> int:
+    from .groq_chat import run
+    return run(text)
 
 
 if __name__ == "__main__":
