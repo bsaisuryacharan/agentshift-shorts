@@ -73,13 +73,20 @@ def run(text):
     system += '\nYou use Groq, not Claude. Use the repository tool for actions and observation. Never claim an action succeeded without a successful tool result. Effort is ' + chat.settings()['effort'] + '. Keep answers short.'
     messages = [{'role': 'system', 'content': system}, {'role': 'user', 'content': chat.build_prompt(text)[-6000:]}]
     reply, error = '', False
+    active_model = MODEL
     try:
         with httpx.Client(timeout=90) as client:
             for turn in range(20):
-                r = client.post('https://api.groq.com/openai/v1/chat/completions', headers={'Authorization': 'Bearer ' + os.environ['GROQ_API_KEY']}, json={
-                    'model': MODEL, 'messages': messages, 'tools': TOOLS, 'max_completion_tokens': 2048, 'temperature': 0.3})
+                for candidate in dict.fromkeys([active_model, 'openai/gpt-oss-20b', 'llama-3.3-70b-versatile']):
+                    r = client.post('https://api.groq.com/openai/v1/chat/completions', headers={'Authorization': 'Bearer ' + os.environ['GROQ_API_KEY']}, json={
+                        'model': candidate, 'messages': messages, 'tools': TOOLS, 'max_completion_tokens': 2048, 'temperature': 0.3})
+                    if r.status_code == 200:
+                        active_model = candidate
+                        break
+                    if r.status_code not in (429, 404):
+                        break
+                    print('[groq-chat] model unavailable:', candidate, 'HTTP', r.status_code)
                 if r.status_code != 200:
-                    print('[groq-chat] rate limits:', {k: v for k, v in r.headers.items() if k.startswith('x-ratelimit') or k == 'retry-after'})
                     raise RuntimeError(f'Groq HTTP {r.status_code}')
                 msg = r.json()['choices'][0]['message']
                 messages.append({k: v for k, v in msg.items() if k in ('role', 'content', 'tool_calls')})
@@ -102,11 +109,11 @@ def run(text):
                 raise RuntimeError('Tool step limit reached')
     except Exception as exc:
         error = True
-        reply = f'Groq could not finish ({type(exc).__name__}). Please try again shortly.'
+        reply = 'Groq is temporarily rate-limited. Please try again later.' if '429' in str(exc) else f'Groq could not finish ({type(exc).__name__}). Please try again shortly.'
         print('[groq-chat]', type(exc).__name__, str(exc)[:80] if isinstance(exc, RuntimeError) else '')
     prog.done('Finished' if not error else 'Failed')
     body, buttons = chat.split_buttons(reply)
     mid = chat.send(body, buttons=buttons)
-    chat.remember(text, body, {'model': MODEL, 'provider': 'groq', 'error': error})
-    print('[groq-chat] reply delivered:', bool(mid), 'model:', MODEL, 'error:', error)
+    chat.remember(text, body, {'model': active_model, 'provider': 'groq', 'error': error})
+    print('[groq-chat] reply delivered:', bool(mid), 'model:', active_model, 'error:', error)
     return int(error or not mid)
