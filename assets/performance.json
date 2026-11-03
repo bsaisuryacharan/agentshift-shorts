@@ -1,6 +1,6 @@
 {
  "performance": {
-  "updated": "2026-11-03T09:34+00:00",
+  "updated": "2026-11-03T17:52+00:00",
   "target_views_per_short": 1000000,
   "shorts": [
    {
@@ -10,11 +10,11 @@
     "views": 1690,
     "likes": 25,
     "comments": 0,
-    "age_h": 423.9,
-    "expected": 892726,
+    "age_h": 432.2,
+    "expected": 895731,
     "ratio": 0.002,
     "status": "far_behind",
-    "projected_30d": 1893
+    "projected_30d": 1886
    },
    {
     "spec_id": null,
@@ -23,11 +23,11 @@
     "views": 441,
     "likes": 7,
     "comments": 0,
-    "age_h": 425.5,
-    "expected": 893304,
+    "age_h": 433.8,
+    "expected": 896309,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 493
+    "projected_30d": 492
    },
    {
     "spec_id": null,
@@ -36,11 +36,11 @@
     "views": 1113,
     "likes": 16,
     "comments": 0,
-    "age_h": 425.6,
-    "expected": 893326,
+    "age_h": 433.9,
+    "expected": 896331,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 1245
+    "projected_30d": 1241
    },
    {
     "spec_id": null,
@@ -49,8 +49,8 @@
     "views": 31,
     "likes": 2,
     "comments": 0,
-    "age_h": 497.4,
-    "expected": 919346,
+    "age_h": 505.7,
+    "expected": 922351,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 33
@@ -62,11 +62,11 @@
     "views": 141,
     "likes": 5,
     "comments": 0,
-    "age_h": 500.1,
-    "expected": 920314,
+    "age_h": 508.4,
+    "expected": 923319,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 153
+    "projected_30d": 152
    },
    {
     "spec_id": null,
@@ -75,11 +75,11 @@
     "views": 174,
     "likes": 2,
     "comments": 0,
-    "age_h": 508.1,
-    "expected": 923213,
+    "age_h": 516.4,
+    "expected": 926218,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 188
+    "projected_30d": 187
    },
    {
     "spec_id": null,
@@ -88,8 +88,8 @@
     "views": 22,
     "likes": 1,
     "comments": 0,
-    "age_h": 524.1,
-    "expected": 929008,
+    "age_h": 532.4,
+    "expected": 932013,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 23
@@ -101,11 +101,11 @@
     "views": 28,
     "likes": 1,
     "comments": 0,
-    "age_h": 530.1,
-    "expected": 931185,
+    "age_h": 538.4,
+    "expected": 934190,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 30
+    "projected_30d": 29
    },
    {
     "spec_id": null,
@@ -114,11 +114,11 @@
     "views": 184,
     "likes": 2,
     "comments": 0,
-    "age_h": 546.0,
-    "expected": 936954,
+    "age_h": 554.3,
+    "expected": 939959,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 196
+    "projected_30d": 195
    },
    {
     "spec_id": null,
@@ -127,11 +127,11 @@
     "views": 240,
     "likes": 6,
     "comments": 1,
-    "age_h": 551.2,
-    "expected": 938843,
+    "age_h": 559.5,
+    "expected": 941848,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 255
+    "projected_30d": 254
    },
    {
     "spec_id": null,
@@ -140,24 +140,24 @@
     "views": 123,
     "likes": 2,
     "comments": 1,
-    "age_h": 567.1,
-    "expected": 944612,
+    "age_h": 575.4,
+    "expected": 947617,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 130
+    "projected_30d": 129
    },
    {
     "spec_id": null,
     "video_id": "uU6JXROm7rI",
     "title": "Claude Code on Android for FREE — No Cloud Server Needed",
-    "views": 638,
-    "likes": 9,
+    "views": 648,
+    "likes": 10,
     "comments": 0,
-    "age_h": 568.3,
-    "expected": 945044,
+    "age_h": 576.6,
+    "expected": 948049,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 675
+    "projected_30d": 683
    }
   ],
   "best": {
@@ -165,9 +165,9 @@
    "views": 1690
   },
   "ypp": {
-   "subscribers": 11,
-   "shorts_views_90d": 8201,
-   "public_uploads_90d": 20,
+   "subscribers": 12,
+   "shorts_views_90d": 8954,
+   "public_uploads_90d": 21,
    "tier1_fan_funding": {
     "subs_ok": false,
     "uploads_ok": true,
@@ -177,13 +177,13 @@
    "tier2_ads": {
     "subs_ok": false,
     "views_ok": false,
-    "subs_pct": 1.1,
+    "subs_pct": 1.2,
     "views_pct": 0.1
    },
    "subscribers_known": true
   },
   "on_track": 0,
-  "behind": 20,
+  "behind": 21,
   "channel_views": 8256,
   "not_public_or_missing": [],
   "lessons": []
