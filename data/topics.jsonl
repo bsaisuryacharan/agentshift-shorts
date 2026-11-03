@@ -77,3 +77,5 @@
 {"date": "2026-11-03", "topic": "What if the Gulf Stream stopped flowing?", "wiki": "Gulf Stream", "outcome": "parked", "score": null, "format": null}
 {"date": "2026-11-03", "topic": "5 extreme facts about magnetars", "wiki": "Magnetar", "outcome": "started", "score": null, "format": "ranked"}
 {"date": "2026-11-03", "topic": "5 extreme facts about magnetars", "wiki": "Magnetar", "outcome": "parked", "score": null, "format": null}
+{"date": "2026-11-03", "topic": "The truth about the Antarctic ozone hole", "wiki": "Ozone depletion", "outcome": "started", "score": null, "format": "myth_vs_fact"}
+{"date": "2026-11-03", "topic": "The truth about the Antarctic ozone hole", "wiki": "Ozone depletion", "outcome": "delivered", "score": 7.9, "format": null}

@@ -1,5 +1,5 @@
 {
- "current": "inside-a-submarine-anatomy-a2",
+ "current": "antarctic-ozone-hole-truth-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -288,6 +288,32 @@
    "uploaded": {
     "id": "dMkrl_TTbRw",
     "url": "https://youtube.com/watch?v=dMkrl_TTbRw",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
+  },
+  "antarctic-ozone-hole-truth-a3": {
+   "title": "The Antarctic Ozone Hole: Myth vs. Fact",
+   "base": "antarctic-ozone-hole-truth-a3",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 7,
+    "accuracy": 9,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 8,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "41631826003",
+   "uploaded": {
+    "id": "qxxbjiiZFAQ",
+    "url": "https://youtube.com/watch?v=qxxbjiiZFAQ",
     "privacy": "public",
     "wanted": "public",
     "publish_at": null

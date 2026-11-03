@@ -1,0 +1,256 @@
+{
+ "id": "antarctic-ozone-hole-truth-a3",
+ "title": "The Antarctic Ozone Hole: Myth vs. Fact",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "MYTH VS FACT",
+ "format": "myth_vs_fact",
+ "look": "swiss-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Ozone_depletion",
+  "b1": "https://en.wikipedia.org/wiki/Ozone_depletion",
+  "b2": "https://en.wikipedia.org/wiki/Ozone_depletion",
+  "b3": "https://ozonewatch.gsfc.nasa.gov/facts/hole_SH.html",
+  "b4": "https://en.wikipedia.org/wiki/Ozone_depletion",
+  "b5": "https://en.wikipedia.org/wiki/Ozone_depletion",
+  "b6": "https://en.wikipedia.org/wiki/Ozone_depletion",
+  "outro": "https://en.wikipedia.org/wiki/Ozone_depletion",
+  "wiki": "https://en.wikipedia.org/wiki/Ozone_depletion",
+  "ref1": "https://ozonewatch.gsfc.nasa.gov/facts/hole_SH.html",
+  "ref2": "https://csl.noaa.gov/assessments/ozone/2018/downloads/twentyquestions/Q9.pdf",
+  "ref3": "https://www.nature.com/articles/s41598-017-00722-7",
+  "ref4": "https://science.nasa.gov/earth/earth-observatory/world-of-change/ozone-hole",
+  "ref5": "https://www.livescience.com/planet-earth/antarctica/the-ozone-layer-was-supposed-to-be-healing-so-why-is-this-years-antarctic-ozone-hole-so-big"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "Photorealistic cinematic 9:16 image of a swirling blue and purple area over Antarctica, seen from space. Documentary style, natural light.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The Antarctic ozone hole is completely gone, right?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "true?",
+     "at": "Antarctic"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "whoosh",
+     0.3
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "prompt": "Diagram showing the Earth's stratosphere with a thinning layer of ozone above Antarctica. Scientific illustration style, clear labels.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Actually, that's only half the story.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "Ozone Hole",
+      "label": "Myth vs. Fact"
+     },
+     "at": "Actually"
+    }
+   ],
+   "sfx": [
+    [
+     "ding",
+     "ding",
+     0.2
+    ]
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "prompt": "Close-up view of CFC molecules breaking down in the upper atmosphere, releasing chlorine atoms. Scientific animation style, dark background.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "For decades, chemicals like CFCs ate away at the ozone layer.",
+   "hud": [
+    {
+     "t": "kinetic",
+     "text": "CFCs *destroy* ozone",
+     "at": "decades"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "pop",
+     0.2
+    ]
+   ]
+  },
+  {
+   "key": "b3",
+   "photo": "ozone hole map",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "This created a massive 'hole' over the South Pole, especially in spring.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Exceptionally depleted ozone",
+      "keyword": "depleted",
+      "note": "Not a literal hole"
+     },
+     "at": "This"
+    }
+   ],
+   "sfx": [
+    [
+     "impact",
+     "impact",
+     0.3
+    ]
+   ],
+   "prompt": "documentary photograph of ozone hole map, natural light, no text, no people"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "prompt": "Satellite image showing the ozone hole over Antarctica in 2019, depicted as a small, contained blue area. NASA visualization style.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "But thanks to the Montreal Protocol, the hole is shrinking.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 2019,
+      "glow": false
+     },
+     "at": "thanks"
+    }
+   ],
+   "sfx": [
+    [
+     "ding",
+     "ding",
+     0.2
+    ]
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "prompt": "Stylized graph showing ozone layer recovery from the 1990s to the 2000s, with an upward trend. Data visualization style.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Ozone levels stabilized by the mid-1990s and began recovering in the 2000s.",
+   "hud": [
+    {
+     "t": "line",
+     "values": [
+      1990,
+      2000,
+      2010,
+      2020,
+      2030,
+      2040,
+      2050,
+      2060,
+      2070,
+      2075
+     ],
+     "labels": [
+      "1990s",
+      "2075"
+     ],
+     "col": "cy",
+     "at": "Ozone"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "whoosh",
+     0.3
+    ]
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "prompt": "A graphic representation of the Earth with a healthy, vibrant ozone layer surrounding it. Clean, futuristic illustration.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Scientists project the ozone layer will fully regenerate by 2045.",
+   "hud": [],
+   "sfx": [
+    [
+     "ding",
+     "ding",
+     0.2
+    ]
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "prompt": "A wide shot of the Antarctic landscape with a clear, bright sky. Serene and hopeful atmosphere.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "So, is the ozone hole gone? Not yet, but it's healing.",
+   "hud": [
+    {
+     "t": "toast",
+     "title": "Healing?",
+     "sub": "Subscribe for more!",
+     "icon": "earth",
+     "at": "Healing"
+    }
+   ]
+  }
+ ],
+ "theme": "cool",
+ "_facts": {
+  "title": "Ozone depletion",
+  "url": "https://en.wikipedia.org/wiki/Ozone_depletion",
+  "text": "Ozone depletion in the stratosphere (the ozone layer) consists of two related phenomena observed since the late 1970s: a lowered total amount of ozone in Earth's upper stratosphere, and a much larger springtime decrease in around Earth's polar regions. The latter phenomenon over the south pole is referred to as the ozone hole. There are also springtime polar tropospheric ozone depletion events in addition to these stratospheric events. The main causes of ozone depletion and the ozone hole are manufactured chemicals, especially manufactured halocarbon refrigerants, solvents, propellants, and foam-blowing agents (chlorofluorocarbons (CFCs), HCFCs, halons), referred to as ozone-depleting substances (ODS). These compounds are transported into the stratosphere by turbulent mixing after being emitted from the surface, mixing much faster than the molecules can settle. Once in the stratosphere, they release atoms from the halogen group through photodissociation, which catalyze the breakdown of ozone (O3) into oxygen (O2). Ozone depletion in both the upper and lower stratosphere were observed to increase as emissions of halocarbons increased. Ozone depletion and the ozone hole have generated worldwide concern over increased cancer risks and other negative effects. The ozone layer prevents harmful wavelengths of ultraviolet (UVB) light from passing through the Earth's atmosphere. These wavelengths cause skin cancer, sunburn, permanent blindness, and cataracts, which were projected to increase dramatically as a result of thinning ozone, as well as harming plants and animals. These concerns led to the adoption of the Montreal Protocol in 1987, which bans the production of CFCs, halons, and other ozone-depleting chemicals. Over time, scientists have developed new refrigerants with lower global warming potential (GWP) to replace older ones. For example, in new automobiles, R-1234yf systems are now common, being chosen over refrigerants with much higher GWP such as R-134a and R-12. The controls on ozone-depleting substances came into effect in 1989. Ozone levels stabilized by the mid-1990s and began to recover in the 2000s, as the shifting of the jet stream in the Southern Hemisphere towards the South Pole has stopped and might even be reversing. Recovery was projected to continue over the next century, with the ozone hole expected to reach pre-1980 levels by around 2075. In 2019, NASA reported that the ozone hole was the smallest ever since it was first discovered in 1982. The UN now projects that under the current regulations the ozone layer will completely regenerate by 2045. The Montreal Protocol is considered the most successful international environmental agreement to date. == Ozone cycle overview ==\n\nThree forms (or allotropes) of oxygen are involved in the ozone-oxygen cycle: oxygen atoms (O or atomic oxygen), oxygen gas (O2 or diatomic oxygen), and ozone gas (O3 or triatomic oxygen). Ozone is formed in the stratosphere when oxygen gas molecules photodissociate after absorbing UVC photons. This converts a single O2 into two atomic oxygen radicals. The atomic oxygen radicals then combine with separate O2 molecules to create two O3 molecules. These ozone molecules absorb UVB light, following which ozone splits into a molecule of O2 and an oxygen atom. The oxygen atom then joins up with an oxygen molecule to regenerate ozone. This is a continuing process that terminates when an oxygen atom recombines with an ozone molecule to make two O2 molecules. It is worth noting that ozone is the only atmospheric gas that absorbs UVB light. O + O3 → 2 O2\n\nThe total amount of ozone in the stratosphere is determined by a balance between photochemical production and recombination. Ozone can be destroyed by a number of free radical catalysts; the most important are the hydroxyl radical (OH·), nitric oxide radical (NO·), chlorine radical (Cl·) and bromine radical (Br·). The dot is a notation to indicate that each species has an unpaired electron and is thus extremely reactive. The effectiveness of different halogens and pseudohalogens as catalysts for ozone destruction varies, in part due to differing routes to regenerate the original radical after reacting with ozone or dioxygen. While all of the relevant radicals have both natural and man-made sources, human activity has impacted some more than others. As of 2020, most of the OH· and NO· in the stratosphere is naturally occurring, but human activity has drastically increased the levels of chlorine and bromine. These elements are found in stable organic compounds, especially chlorofluorocarbons, which can travel to the stratosphere without being destroyed in the troposphere due to their low reactivity. Once in the stratosphere, the Cl and Br atoms are released from the parent compounds by the action of ultraviolet light, e.g. CFCl3 + electromagnetic radiation → Cl· + ·CFCl2\nOzone is a highly reactive molecule that easily reduces to the more stable oxygen form with the assistance of a catalyst. Cl and Br atoms destroy ozone molecules through a variety of catalytic cycles. In the simplest example of such a cycle, a chlorine atom reacts with an ozone molecule (O3), taking an oxygen atom to form chlorine monoxide (ClO) and leaving an oxygen molecule (O2). The ClO can react with a second molecule of ozone, releasing the chlorine atom and yielding two molecules of oxygen. The chemical shorthand for these gas-phase reactions is:\n\nCl· + O3 → ClO + O2 A chlorine atom removes an oxygen atom from an ozone molecule to make a ClO molecule\nClO + O → Cl· +  O2 This ClO can react with an oxygen atom to form an oxygen molecule; the chlorine is free to repeat this two-step cycle.\n\nSOURCE ozonewatch.gsfc.nasa.gov (https://ozonewatch.gsfc.nasa.gov/facts/hole_SH.html):\nBypass Navigation? ![NASA Logo, National Aeronautics and Space Administration](https://www.nasa.gov) National Aeronautics and Space Administration Goddard Space Flight Center NASA Ozone Watch Images, data, and information for atmospheric ozone Ozone Maps Meteorology Ozone Facts Multimedia Education Northern Hemisphere ### Topics * What is Ozone? * What is a Dobson Unit? * What is the Ozone Hole? * History of the Ozone Hole * What is EESC? # What is the Ozone Hole? The ozone hole is not technically a “hole” where no ozone is present, but is actually a region of exceptionally depleted ozone in the stratosphere over the Antarctic that happens at the beginning of Southern Hemisphere spring (August–October). Satellite instruments provide us with daily images of ozone over the Antarctic region. The ozone hole image below shows the very low values (blue and purple colored area) centered over Antarctica on 4 October 2004. From the historical record we know that total column ozone values of less than 220 Dobson Units were not observed prior to 1979. From an aircraft field mission over Antarctica we also know that a total column ozone level of less than 220 Dobson Units is a result of catalyzed ozone loss from chlorine and bromine compounds. For these reasons, we use 220 Dobson Units as the boundary of the region representing ozone loss. Using the daily snapshots of total column ozone, we can calculate the area on the Earth that is enclosed by a line with values of 220 Dobson Units (the white line in the figure below). The ozone hole is the region over Antarctica with total ozone of 220 Dobson Units or lower. This map shows the ozone hole on October 4, 2004. The data were acquired by the Ozone Monitoring Instrument on NASA’s Aura satellite. ## Chlorofluorocarbons and ozone Many people have heard that the ozone hole is caused by chemicals called CFCs, short for chlorofluorocarbons. CFCs escape into the atmosphere from refrigeration and propellant devices and processes. In the lower atmosphere, they are so stable that they persist for years, even decades. This long lifetime allows some of the CFCs to eventually reach the stratosphere. In the stratosphere, ultraviolet light \n\nSOURCE csl.noaa.gov (https://csl.noaa.gov/assessments/ozone/2018/downloads/twentyquestions/Q9.pdf):\n32 Section II: The ozone depletion process Why has an “ozone hole” appeared over Antarctica when ozone-depleting substances are present throughout the stratosphere? Q9 The severe depletion of stratospheric ozone in late winter and early spring in the Antarctic is known as the “ozone hole” (see Q10). The ozone hole appears over Antarctica because meteo-rological and chemical conditions unique to this region increase the effectiveness of ozone destruction by reactive halogen gases (see Q7 and Q8). In addition to a large abundance of these reactive gases, the formation of the Antarctic ozone hole requires temperatures low enough to form polar stratospheric clouds (PSCs), isolation from air in other stratospheric regions, and sunlight (see Q8). Ozone-depleting substances are present throughout the stratospheric ozone layer because they are transported great distances by atmospheric air motions. The severe depletion of the Antarctic ozone layer known as the “ozone hole” occurs because of the special meteorological and chemical conditions that exist there and nowhere else on the globe. The very low winter temperatures in the Antarctic stratosphere cause polar stratospheric clouds (PSCs) to form. Special reactions that occur on PSCs, combined with the isolation of polar stratospheric air in the polar vortex, allow chlorine and bromine reactions to produce the ozone hole in Antarctic springtime. Figure Q9-1. Arctic and Antarctic tem-peratures. Air temperatures in both polar regions reach minimum values in the lower stratosphere in the winter season. Average daily minimum values over Antarctica are as low as −92°C in July and August in a typical year. Over the Arctic, average mini-mum values are near −80°C in late Decem-ber and January. Polar stratospheric clouds (PSCs) are formed in the ozone layer when winter minimum temperatures fall below their formation threshold of about −78°C. This occurs on average for 1 to 2 months over the Arctic and about 5 months over Antarctica each year (see heavy red and blue lines). Reactions on liquid and solid PSC particles cause the highly reactive chlorine gas ClO to be formed, which catalytically destroys ozone (see Q8). The range of\n\nSOURCE nature.com (https://www.nature.com/articles/s41598-017-00722-7):\nThank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain the best experience, we recommend you use a more up to date browser (or turn off compatibility mode in Internet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles and JavaScript. Advertisement # The signs of Antarctic ozone hole recovery You have full access to this open access article 15k Accesses 117 Citations 60 Altmetric 5 Mentions Explore all metrics ## Abstract Absorption of solar radiation by stratospheric ozone affects atmospheric dynamics and chemistry, and sustains life on Earth by preventing harmful radiation from reaching the surface. Significant ozone losses due to increases in the abundances of ozone depleting substances (ODSs) were first observed in Antarctica in the 1980s. Losses deepened in following years but became nearly flat by around 2000, reflecting changes in global ODS emissions. Here we show robust evidence that Antarctic ozone has started to recover in both spring and summer, with a recovery signal identified in springtime ozone profile and total column measurements at 99% confidence for the first time. Continuing recovery is expected to impact the future climate of that region. Our results demonstrate that the Montreal Protocol has indeed begun to save the Antarctic ozone layer. ### Similar content being viewed by others ### Potential drivers of the recent large Antarctic ozone holes ### Fingerprinting the recovery of Antarctic ozone ### Recent sea surface temperature trends hinder Antarctic stratospheric ozone recovery ### Explore related subjects ## Introduction Since the discovery of the Antarctic ozone hole in the mid-1980s, a great deal of scientific attention has focussed on understanding the causes and evolution of the ozone loss in both Polar Regions1.\"),2.\"),3.\"), as the ozone layer is essential to support life on the Earth by preventing harmful solar ultraviolet radiation from reaching the surface. The ozone loss in the Antarctic has been particularly severe owing to the special meteorological condition and springtime chemistry there4.\"), 5.\"). Antarctic spring ozone losse\n\nSOURCE science.nasa.gov (https://science.nasa.gov/earth/earth-observatory/world-of-change/ozone-hole):\n![NASA Logo](https://www.nasa.gov) ![NASA Logo](https://www.nasa.gov) ## Suggested Searches * Artemis * ISS * Roman * Webb * Quesst * Moon Base * View All Topics A-Z * Home * Missions * Humans in Space * Earth * The Solar System * The Universe * Science * Aeronautics * Technology * Learning Resources * About NASA * Español --- * News & Events * Multimedia * NASA+ ### Highlights ![Pedal to the Metal: NASA’s Psyche Heads Toward Asteroid Belt 5 min read ### Pedal to the Metal: NASA’s Psyche Heads Toward Asteroid Belt article2 days ago](https://science.nasa.gov/blogs/psyche/2026/10/22/pedal-to-the-metal-nasas-psyche-heads-toward-asteroid-belt/)![NASA’s Roman Space Telescope Enters Final Commissioning Phase 3 min read ### NASA’s Roman Space Telescope Enters Final Commissioning Phase article2 days ago](https://science.nasa.gov/blogs/roman/2026/10/22/nasas-roman-space-telescope-enters-final-commissioning-phase/)![What’s Up: October 2026 Skywatching Tips from NASA 3 min read ### What’s Up: October 2026 Skywatching Tips from NASA article3 weeks ago](https://science.nasa.gov/solar-system/skywatching/whats-up-october-2026-skywatching-tips-from-nasa/) ### Missions * Search All NASA Missions * A to Z List of Missions * Upcoming Launches and Landings * Spaceships and Rockets * Communicating with Missions * Artemis * James Webb Space Telescope * Hubble Space Telescope * International Space Station * OSIRIS-REx ### Humans in Space * Why Go to Space * Astronauts * Commercial Space * Destinations * Spaceships and Rockets * Living in Space ### Earth * Explore Earth Science * Climate Change * Earth, Our Planet * Earth Science in Action * Earth Multimedia * Earth Data * Earth Science Researchers ### The Solar System * The Sun * Mercury * Venus * Earth * The Moon * Mars * Jupiter * Saturn * Uranus * Neptune * Pluto & Dwarf Planets * Asteroids, Comets & Meteors * The Kuiper Belt * The Oort Cloud * Skywatching ### The Universe * Exoplanets * The Search for Life in the Universe * Stars * Galaxies * Black Holes * The Big Bang * Dark Matter * Dark Energy ### Science * Earth Science * Planetary Science * Astrophysics & Space Science * The Sun & Heliophysics * Biological & Physical Sciences\n\nSOURCE livescience.com (https://www.livescience.com/planet-earth/antarctica/the-ozone-layer-was-supposed-to-be-healing-so-why-is-this-years-antarctic-ozone-hole-so-big):\nGet more from Live Science Explore Explore Choose your Live Science experience Live Science plus Get started to get free access to selected news stories, receive our daily newsletter, post comments, play games and earn badges. JOIN FREE Live Science pro Unlimited access to our exclusive features, expert analysis and in-depth interviews, all ad-free No ads, ever Exclusive, original reporting Scientist interviews and video Member-only features Join live science pro Go beyond the headlines with Live Science Pro Rigorously fact-checked science, expert commentary and an ad-free experience built for those who want to go beyond the headlines Join live science pro Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. Scientist interviews and video The latest science direct from the most respected people in their fields. Members-only features Exclusive newsletter. Members-only area. Early access to content. of Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. 1 of 4 Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. 2 of 4 Scientist interviews and video The latest science direct from the most respected people in their fields. 3 of 4 Members-only features Exclusive newsletter. Members-only area. Early access to content. 4 of 4 Join live science pro - Welcome to Live Science club! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Complete any activity to unlock your first badge. Keep earning badges Explore ways to get more involved as a member. Live Science Quizzes Play quick, fun science games Explore Animal facts Learn about the natural world Explore Latest space news Read about discoveries from beyond Earth Explore --- See what you’ve unlocked. Explore your membership benefits. Explore Go beyond the headlines Cancel anytime Start Browsing --- Sign Out - Hi , Keep exploring with your premium access. START BROWSING --- Content * ![Science Spotlight Science ",
+  "extra_sources": [
+   "https://ozonewatch.gsfc.nasa.gov/facts/hole_SH.html",
+   "https://csl.noaa.gov/assessments/ozone/2018/downloads/twentyquestions/Q9.pdf",
+   "https://www.nature.com/articles/s41598-017-00722-7",
+   "https://science.nasa.gov/earth/earth-observatory/world-of-change/ozone-hole",
+   "https://www.livescience.com/planet-earth/antarctica/the-ozone-layer-was-supposed-to-be-healing-so-why-is-this-years-antarctic-ozone-hole-so-big"
+  ]
+ },
+ "_writer": "gemini"
+}
