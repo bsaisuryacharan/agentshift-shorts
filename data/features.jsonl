@@ -40,3 +40,4 @@
 {"spec_id": "ozone-hole-myth-fact-a1", "mood": "warm", "theme": "cool", "hook_words": "12+", "beats": 8, "words": 116, "hf": 3, "real_pictures": 0.14, "grades": {"hook": "A", "story": "D", "visuals": "D", "polish": "D", "policy": "A"}}
 {"spec_id": "antarctic-ozone-truth-a2", "mood": "space", "theme": "cool", "hook_words": "8-11", "beats": 8, "words": 101, "hf": 3, "real_pictures": 0.5, "grades": {"hook": "D", "story": "D", "visuals": "D", "polish": "D", "policy": "C"}}
 {"spec_id": "antarctic-ozone-hole-truth-a3", "mood": "tech", "theme": "cool", "hook_words": "8-11", "beats": 8, "words": 80, "hf": 3, "real_pictures": 0.0, "grades": {"hook": "B", "story": "B", "visuals": "C", "polish": "C", "policy": "A"}}
+{"spec_id": "jsc-growth-timeline-a1", "mood": "space", "theme": "cool", "hook_words": "8-11", "beats": 8, "words": 97, "hf": 2, "real_pictures": 0.38, "grades": {"hook": "D", "story": "C", "visuals": "C", "polish": "D", "policy": "A"}}

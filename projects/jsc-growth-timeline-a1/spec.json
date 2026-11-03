@@ -1,0 +1,232 @@
+{
+ "id": "jsc-growth-timeline-a1",
+ "title": "From 45 People to Space City",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "TIMELINE",
+ "format": "timeline",
+ "theme": "cool",
+ "look": "midnight-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "NASA History (nasa.gov)",
+  "b3": "Wikipedia: Johnson Space Center",
+  "b6": "NASA History (nasa.gov)",
+  "wiki": "https://en.wikipedia.org/wiki/Johnson_Space_Center",
+  "ref1": "https://www.nasa.gov/history/history-of-johnson-space-center",
+  "ref2": "https://www.space.com/17216-nasa-johnson-space-center.html"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Langley Research Center 1958",
+   "prompt": "Cinematic wide shot of the Langley Research Center in 1958, brick buildings and classic cars, documentary style.",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "NASA's human spaceflight began with just 45 people in 1958.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "when?",
+     "at": "45"
+    },
+    {
+     "t": "title",
+     "html": "NASA *Origins*",
+     "at": "45"
+    }
+   ],
+   "sfx": [
+    [
+     "45",
+     "pop",
+     0.8
+    ]
+   ],
+   "motion": "mesh-gradient"
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "NASA engineers 1959",
+   "prompt": "Group of engineers in white shirts and ties working in a 1950s office, silhouette from behind, natural light.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "By 1959, the small group added 32 engineers to handle the growing mission.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 32
+     },
+     "at": "engineers"
+    }
+   ],
+   "motion": "swirl"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "graphic": true,
+   "say": "In 1961, a 60 million dollar budget was set to build a permanent home.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "60 million",
+     "col": "cy",
+     "at": "budget",
+     "fx": "shine"
+    },
+    {
+     "t": "chip",
+     "text": "BUDGET",
+     "col": "ok",
+     "at": "budget"
+    }
+   ],
+   "sfx": [
+    [
+     "budget",
+     "ding",
+     0.7
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "Houston Clear Lake 1961",
+   "prompt": "Aerial view of the undeveloped Clear Lake area in Texas, 1961, vast fields and water, vintage film look.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The selection team scouted 23 sites before picking 1,620 acres in Houston.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "Sites",
+       "23"
+      ],
+      [
+       "Acres",
+       "1,620"
+      ]
+     ],
+     "at": "sites"
+    }
+   ],
+   "motion": "lens-flare"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "footage": "Johnson Space Center aerial",
+   "prompt": "Aerial cinematic view of the Johnson Space Center campus with modern buildings and green lawns.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Construction finished in 1963, creating the facility known today as Mission Control.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "MISSION CONTROL",
+      "label": "HOUSTON"
+     },
+     "at": "Control"
+    }
+   ],
+   "sfx": [
+    [
+     "Control",
+     "whoosh",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "NASA Mission Control Apollo",
+   "prompt": "The Apollo-era Mission Control room with green computer consoles and large status screens, cinematic lighting.",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Since Gemini 4, this room has guided every NASA human mission into the stars.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Gemini 4",
+     "at": "human"
+    }
+   ],
+   "motion": "plasma"
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "footage": "NASA astronaut training",
+   "prompt": "An astronaut in a white spacesuit training inside a large underwater tank, cinematic lighting.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Renamed in 1973, it now spans 100 buildings for training the astronaut corps.",
+   "hud": [
+    {
+     "t": "ring",
+     "pct": 100,
+     "label": "Buildings",
+     "col": "cy",
+     "at": "buildings"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "photo": "Johnson Space Center sign",
+   "prompt": "The iconic Johnson Space Center entrance sign with the NASA logo, modern glass buildings in the background.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Houston remains the official Space City. Follow for more.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "*Space City*",
+     "at": "City"
+    }
+   ],
+   "motion": "swirl"
+  }
+ ],
+ "_facts": {
+  "title": "Johnson Space Center",
+  "url": "https://en.wikipedia.org/wiki/Johnson_Space_Center",
+  "text": "The Lyndon B. Johnson Space Center (JSC) is NASA's center for human spaceflight in Houston, Texas (originally named the Manned Spacecraft Center), where human spaceflight training, research, and flight control are conducted. It was renamed in honor of the late U.S. president and Texas native, Lyndon B. Johnson, by an act of the United States Senate on February 19, 1973. JSC consists of a complex of 100 buildings constructed on 1,620 acres (660 ha) in Clear Lake. The center is home to NASA's astronaut corps, and is responsible for training astronauts from both the U.S. and its international partners. It also houses the Christopher C. Kraft Jr. Mission Control Center, which has provided the flight control function for every NASA human spaceflight since Gemini 4 (including Apollo, Skylab, Apollo–Soyuz, Space Shuttle and Artemis). It is popularly known by its radio call signs \"Mission Control\" and \"Houston\". The original Manned Spacecraft Center grew out of the Space Task Group (STG) headed by Robert R. Gilruth that was formed to coordinate the U.S. crewed spaceflight program. The STG was based at the Langley Research Center in Hampton, Virginia, but reported organizationally to the Goddard Space Flight Center just outside Washington, D.C. To meet the growing needs of the US human spaceflight program, plans began in 1961 to expand its staff to its own organization, and move it to a new facility. This was constructed in 1962 and 1963 on land donated by the Humble Oil company through Rice University, and officially opened its doors in September 1963. Today, JSC is one of ten major NASA field centers and the city of Houston's primary cultural footprint, earning it the official nickname \"Space City\" in 1967. == History ==\n\nJohnson Space Center has its origins in NASA's Space Task Group (STG). Starting on November 5, 1958, Langley Research Center engineers under Robert R. Gilruth directed Project Mercury and follow-on crewed space programs. The STG originally reported to the Goddard Space Flight Center organization, with a total staff of 45, including 37 engineers, and eight secretaries and human \"computers\" (women who ran calculations on mechanical adding machines). In 1959, the center added 32 Canadian engineers put out of work by the cancellation of the Avro Canada CF-105 Arrow project. NASA's first administrator, T. Keith Glennan, realized that the growth of the U.S. space program would cause the STG to outgrow the Langley and Goddard centers and require its own location. On January 1, 1961, he wrote a memo to his yet-unnamed successor (who turned out to be James E. Webb), recommending a new site be chosen. Later that year, when President John F. Kennedy set the goal to put a person on the Moon by the end of the decade, it became clear Gilruth would need a larger organization to lead the Apollo Program, with new test facilities and research laboratories. === Site selection ===\nIn 1961, Congress held hearings and passed a $1.7 billion 1962 NASA appropriations bill which included $60 million for the new crewed spaceflight laboratory. A set of requirements for the new site was drawn up and released to the Congress and general public. These included: access to water transport by large barges, a moderate climate, availability of all-weather commercial jet service, a well-established industrial complex with supporting technical facilities and labor, close proximity to a culturally attractive community in the vicinity of an institution of higher education, a strong electric utility and water supply, at least 1,000 acres (400 ha) of land, and certain specified cost parameters. In August 1961, Webb asked associate director of the Ames Research Center John F. Parsons to head a site-selection team, which included Philip Miller, Wesley Hjornevik, and I. Edward Campagna, the construction\nengineer for the STG. The team initially came up with a list of 22 cities based on the climate and water criteria, then cut this to a short list of nine with nearby federal facilities:\n\nJacksonville, Florida (Green Cove Springs Naval Air Station)\nTampa, Florida (MacDill Air Force Base)\nBaton Rouge, Louisiana\nShreveport, Louisiana (Barksdale Air Force Base)\nHouston, Texas (San Jacinto Ordnance Depot)\nVictoria, Texas (FAA Airport; former Foster Air Force Base)\nCorpus Christi, Texas (Naval Air Station Corpus Christi)\nSan Diego, California (Camp Elliott)\nSan Francisco, California (Benicia Arsenal)\nAnother 14 sites were then added, including two additional Houston sites chosen because of proximity to Rice University. The team visited all 23 sites between August 21 and September 7, 1961. During these visits, Massachusetts Governor John A.\n\nSOURCE nasa.gov (https://www.nasa.gov/history/history-of-johnson-space-center):\n![NASA Logo](https://www.nasa.gov/) ![NASA Logo](https://www.nasa.gov/) ## Suggested Searches * Artemis * ISS * Roman * Webb * Quesst * Moon Base * View All Topics A-Z * Home * Missions * Humans in Space * Earth * The Solar System * The Universe * Science * Aeronautics * Technology * Learning Resources * About NASA * Español --- * News & Events * Multimedia * NASA+ ### Featured ![NASA Explores Potential Commercial Servicing for Hubble Telescope 3 min read ### NASA Explores Potential Commercial Servicing for Hubble Telescope article3 days ago](https://science.nasa.gov/missions/hubble/nasa-explores-potential-commercial-servicing-for-hubble-telescope/)![A rose-colored rock on a white background. 5 min read ### NASA-funded Study Details One of Oldest Mars Meteorites Ever Found article4 days ago](https://www.nasa.gov/solar-system/planets/mars/nasa-funded-study-details-one-of-oldest-mars-meteorites-ever-found/)![A panoramic view of a barren, rocky landscape with distant hills, framed by parts of a robotic rover visible on the left and right edges. 6 min read ### NASA’s Perseverance Offers Clues to Protect Crews From Mars Dust article1 week ago](https://www.nasa.gov/missions/mars-2020-perseverance/nasas-perseverance-offers-clues-to-protect-crews-from-mars-dust/) ### Missions * Search All NASA Missions * A to Z List of Missions * Upcoming Launches and Landings * Spaceships and Rockets * Communicating with Missions * Artemis * James Webb Space Telescope * Hubble Space Telescope * International Space Station * OSIRIS-Rex ### Humans in Space * Why Go to Space * Astronauts * Commercial Space * Destinations * Spaceships and Rockets * Living in Space ### Earth * Explore Earth Science * Climate Change * Earth, Our Planet * Earth Science in Action * Earth Multimedia * Earth Data * Earth Science Researchers ### The Solar System * The Sun * Mercury * Venus * Earth * The Moon * Mars * Jupiter * Saturn * Uranus * Neptune * Pluto & Dwarf Planets * Asteroids, Comets & Meteors * The Kuiper Belt * The Oort Cloud * Skywatching ### The Universe * Exoplanets * The Search for Life in the Universe * Stars * Galaxies * Black Holes * The Big Bang * Dark Energy * Dark Matter ### Science * Eart\n\nSOURCE space.com (https://www.space.com/17216-nasa-johnson-space-center.html):\nJoin - Join our community Expert insights In-depth guides and features Curated newsletters Handpicked inspiration Early Access Preview new releases first Earn badges as you explore Join the conversation Comment and connect Tailored for you Personalised recommendations Get Space+ Access Quick For the quickest way to join, enter your email below. We’ll send a confirmation email and sign you up to Space.com newsletters with the latest inspiration, expert advice and exclusive offers. By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. FIND OUT ABOUT OUR MAGAZINE Want to subscribe to the magazine? Click the button below to find out more information. Find out more Get Space+ Access Quick Join The Club for quick access. Enter your email below and we'll send confirmation, and sign you up to our newsletter. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions. Geographical rules apply. Welcome to Space+ ! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Start reading to unlock your first badge Keep earning badges Explore ways to get more involved as a member. Space Exploration Latest space missions, discoveries and exploration updates. Explore Astronomy Stargazing tips, cosmic events and expert insights on the universe Explore --- Your membership perks Start exploring exclusive deals, expert advice and more Explore now Never Miss a Discovery Space news, cosmic updates and expert insights straight to your inbox. Choose your newsletters --- Sign Out Get the Space.com Newsletter Breaking space news, the latest updates on rocket launches, skywatching events and more! --- By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. You are now subscribed Your newsletter sign-up was successful --- Want to add more newsletters? --- Join the club Get full access to premium articles, exclusive features and a growing list of member rewards. --- An account already exists for this email address, please log in. 1. Space Exp",
+  "extra_sources": [
+   "https://www.nasa.gov/history/history-of-johnson-space-center",
+   "https://www.space.com/17216-nasa-johnson-space-center.html"
+  ]
+ },
+ "_writer": "gemini"
+}

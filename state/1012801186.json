@@ -1,5 +1,5 @@
 {
- "current": "antarctic-ozone-hole-truth-a3",
+ "current": "jsc-growth-timeline-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -318,6 +318,25 @@
     "wanted": "public",
     "publish_at": null
    }
+  },
+  "jsc-growth-timeline-a1": {
+   "title": "From 45 People to Space City",
+   "base": "jsc-growth-timeline-a1",
+   "status": "draft",
+   "scores": {
+    "hook": 6,
+    "visual_quality": 5,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 8,
+    "polish": 5,
+    "hierarchy": 7,
+    "consistency": 8,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "41706095738"
   }
  }
 }

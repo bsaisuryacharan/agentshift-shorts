@@ -1,0 +1,18 @@
+{
+ "b4.mp4": {
+  "file": "b4.mp4",
+  "id": "pixabay-14088",
+  "title": "Wowa84",
+  "center": "stock",
+  "license": "Pixabay licence (free to use)",
+  "source": "https://pixabay.com/videos/id-14088/"
+ },
+ "b6.mp4": {
+  "file": "b6.mp4",
+  "id": "NASAExplorers-S4E3",
+  "title": "NASA Explorers S4 E3: Training the Astronauts",
+  "center": "NASA",
+  "license": "NASA media (public domain)",
+  "source": "https://images.nasa.gov/details/NASAExplorers-S4E3"
+ }
+}
