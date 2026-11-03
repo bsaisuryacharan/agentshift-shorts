@@ -71,14 +71,15 @@ def run(text):
     prog = chat.Progress(text, f'🤖 Groq is on it ({MODEL})')
     system = (chat.ROOT / 'docs/AGENT.md').read_text().replace('Claude', 'Groq').replace(' <noreply@anthropic.com>', ' <noreply@users.noreply.github.com>')
     system += '\nYou use Groq, not Claude. Use the repository tool for actions and observation. Never claim an action succeeded without a successful tool result. Effort is ' + chat.settings()['effort'] + '. Keep answers short.'
-    messages = [{'role': 'system', 'content': system}, {'role': 'user', 'content': chat.build_prompt(text)[-18000:]}]
+    messages = [{'role': 'system', 'content': system}, {'role': 'user', 'content': chat.build_prompt(text)[-6000:]}]
     reply, error = '', False
     try:
         with httpx.Client(timeout=90) as client:
             for turn in range(20):
                 r = client.post('https://api.groq.com/openai/v1/chat/completions', headers={'Authorization': 'Bearer ' + os.environ['GROQ_API_KEY']}, json={
-                    'model': MODEL, 'messages': messages, 'tools': TOOLS, 'max_completion_tokens': 4096, 'temperature': 0.3})
+                    'model': MODEL, 'messages': messages, 'tools': TOOLS, 'max_completion_tokens': 2048, 'temperature': 0.3})
                 if r.status_code != 200:
+                    print('[groq-chat] rate limits:', {k: v for k, v in r.headers.items() if k.startswith('x-ratelimit') or k == 'retry-after'})
                     raise RuntimeError(f'Groq HTTP {r.status_code}')
                 msg = r.json()['choices'][0]['message']
                 messages.append({k: v for k, v in msg.items() if k in ('role', 'content', 'tool_calls')})
