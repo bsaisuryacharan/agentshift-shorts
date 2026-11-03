@@ -36,3 +36,4 @@
 {"spec_id": "project-orion-timeline-a2", "mood": "space", "theme": "cool", "hook_words": "12+", "beats": 7, "words": 115, "hf": 3, "real_pictures": 0.14, "grades": {"hook": "A", "story": "C", "visuals": "B", "polish": "B", "policy": "A"}}
 {"spec_id": "project-orion-starship-evolution-a3", "mood": "space", "theme": "cool", "hook_words": "8-11", "beats": 7, "words": 108, "hf": 4, "real_pictures": 0.0, "grades": {"hook": "B", "story": "C", "visuals": "D", "polish": "C", "policy": "A"}}
 {"spec_id": "antikythera-mechanism-how-a1", "mood": "space", "theme": "cool", "hook_words": "8-11", "beats": 8, "words": 104, "hf": 3, "real_pictures": 0.12, "grades": {"hook": "A", "story": "C", "visuals": "D", "polish": "D", "policy": "A"}}
+{"spec_id": "gulf-stream-stops-a1", "mood": "calm", "theme": "cool", "hook_words": "8-11", "beats": 8, "words": 96, "hf": 2, "real_pictures": 0.75, "grades": {"hook": "A", "story": "D", "visuals": "D", "polish": "D", "policy": "D"}}
