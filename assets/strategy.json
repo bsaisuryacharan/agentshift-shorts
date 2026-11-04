@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-03T11:03+00:00",
+ "updated": "2026-11-04T09:21+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 26,
+  "days_left": 25,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 8256,
-  "gained": 2475,
+  "channel_views": 8284,
+  "gained": 2503,
   "pct": 0.25,
-  "pace_per_day": 629,
-  "needed_per_day": 38366,
-  "projected": 18847,
+  "pace_per_day": 453,
+  "needed_per_day": 39899,
+  "projected": 13848,
   "on_track": false
  },
  "shorts_per_day": 2,
@@ -52,7 +52,7 @@
   },
   {
    "title": "Claude Code on Android for FREE — No Cloud Server Needed",
-   "views": 638
+   "views": 680
   }
  ],
  "flops": [
@@ -76,7 +76,7 @@
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Double down on what already wins on this channel: 'Space Is Too Big For Your Brain 🤯 #shorts' (1,690 views); 'These 4 Brain Facts Sound Fake (But They're True) ' (1,113 views); 'Claude Code on Android for FREE — No Cloud Server ' (638 views).",
+  "Double down on what already wins on this channel: 'Space Is Too Big For Your Brain 🤯 #shorts' (1,690 views); 'These 4 Brain Facts Sound Fake (But They're True) ' (1,113 views); 'Claude Code on Android for FREE — No Cloud Server ' (680 views).",
   "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (22); 'What If Grandma Could Just ASK Her Phone' (28); '3 FREE AI Tricks to Get More Interview C' (31).",
   "Prefer the formats the judge scores best: timeline, unsolved.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",

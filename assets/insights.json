@@ -1,31 +1,31 @@
 {
- "generated_at": "2026-11-03T11:03:28+00:00",
+ "generated_at": "2026-11-04T09:21:31+00:00",
  "channel": {
-  "period": "2026-10-04..2026-11-02",
-  "views": 7006.0,
+  "period": "2026-10-05..2026-11-03",
+  "views": 7087.0,
   "avg_view_seconds": 24.0,
-  "avg_view_pct": 60.41,
+  "avg_view_pct": 59.64,
   "net_subscribers": 10.0,
-  "likes": 105.0,
+  "likes": 106.0,
   "shares": 6.0,
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
   "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained",
-  "Most Unpredictable Animal Reactions",
   "What if you dropped 10kg of tungsten from space?",
-  "WORLD’S FASTEST ANIMAL! 💀⚡",
+  "The largest elephant ever recorded",
   "IKAN LELE SAMA BELUT",
   "Hannah Fry on The Nun Study",
   "SIZE OF SOLAR SYSTEM! 💀",
   "Astronomical events in November 2026😲",
+  "Stop Using Sunscreen",
   "Most Shocking Wildlife moments",
-  "This is nature’s most miraculous sight: a flood saves the lives of thousands of animals.",
   "3 Birds That Build Nests in the Most Incredible Ways! 🤯",
+  "This is nature’s most miraculous sight: a flood saves the lives of thousands of animals.",
   "HOW BIG IS THE SOLAR SYSTEM!💀☝️"
  ],
  "learned": {
-  "shorts_scored": 4,
+  "shorts_scored": 6,
   "best": [
    {
     "title": "Inside a Submarine: 5 Systems",
@@ -45,92 +45,92 @@
   ],
   "worst": [
    {
+    "title": "What If Krakatoa Erupted Today?",
+    "avg": 7.2,
+    "weakest": "visual_quality"
+   },
+   {
     "title": "What If Jupiter's Magnetic Shield Protected Earth?",
     "avg": 7.7,
     "weakest": "polish"
    },
    {
-    "title": "Solar Sails: Not Flimsy Curtains",
-    "avg": 8.0,
+    "title": "The Antarctic Ozone Hole: Myth vs. Fact",
+    "avg": 7.9,
     "weakest": "visual_quality"
-   },
-   {
-    "title": "The Mariana Trench Mystery",
-    "avg": 8.0,
-    "weakest": "originality"
    }
   ],
   "weakest_dimensions": [
-   "originality",
    "visual_quality",
+   "originality",
    "polish"
   ]
  },
  "stage_averages": {
-  "hook": 7.7,
+  "hook": 7.5,
   "story": 6.6,
-  "visuals": 6.2,
+  "visuals": 6.3,
   "polish": 6.2,
-  "policy": 9.0
+  "policy": 8.9
  },
- "weakest_stage": "visuals",
+ "weakest_stage": "polish",
  "region": "IN",
- "trend_signals_total": 70,
- "trend_signals_on_niche": 47,
+ "trend_signals_total": 66,
+ "trend_signals_on_niche": 44,
  "niche_winners": [
   {
    "title": "Astronomical events in November 2026😲 #shorts #astronomicalevents #space #helpyn",
-   "views": 3928494,
+   "views": 3997229,
    "url": "https://www.youtube.com/watch?v=_fw3vnQconI"
   },
   {
    "title": "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained #shorts",
-   "views": 8383711,
+   "views": 8632962,
    "url": "https://www.youtube.com/watch?v=K2we_H33tlU"
   },
   {
-   "title": "WORLD’S FASTEST ANIMAL! 💀⚡#shorts #animals #speed #earth",
-   "views": 5568665,
-   "url": "https://www.youtube.com/watch?v=D1IOZS6E55U"
+   "title": "The largest elephant ever recorded #shorts #animals #history",
+   "views": 5883705,
+   "url": "https://www.youtube.com/watch?v=0xmL99Z-GT8"
   },
   {
    "title": "What if you dropped 10kg of tungsten from space?",
-   "views": 7140138,
+   "views": 7486138,
    "url": "https://www.youtube.com/watch?v=uj4plcsfc6k"
   },
   {
    "title": "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
-   "views": 2165603,
+   "views": 2333930,
    "url": "https://www.youtube.com/watch?v=zMt9YzQ_hf4"
   },
   {
    "title": "SIZE OF SOLAR SYSTEM! 💀",
-   "views": 4014088,
+   "views": 4096539,
    "url": "https://www.youtube.com/watch?v=dv-Czhabars"
   },
   {
-   "title": "Scientists Found Something INSANE Inside This Worm!🤯",
-   "views": 1434827,
-   "url": "https://www.youtube.com/watch?v=ttYCiXhTa6U"
+   "title": "3 Birds That Build Nests in the Most Incredible Ways! 🤯 #facts #animals #wildlife",
+   "views": 3017060,
+   "url": "https://www.youtube.com/watch?v=T3wxJlPDlUc"
   },
   {
-   "title": "3 Birds That Build Nests in the Most Incredible Ways! 🤯 #facts #animals #wildlife",
-   "views": 2547926,
-   "url": "https://www.youtube.com/watch?v=T3wxJlPDlUc"
+   "title": "Scientists Found Something INSANE Inside This Worm!🤯",
+   "views": 1462371,
+   "url": "https://www.youtube.com/watch?v=ttYCiXhTa6U"
   }
  ],
  "news": [
-  "NASA reveals a haunting skull hidden in Antarctica’s ice",
-  "IceCube detects ghost particles with 10 billion times the energy of solar neutrinos",
-  "Scientists just found a loophole that could let black holes split in two",
-  "Large Hadron Collider reveals evidence of Big Bang matter in surprisingly small collisions",
-  "NASA's Hubble and Webb discover ancient worlds that remember their past",
-  "Scientists say a forgotten particle may explain why the universe exists",
+  "NASA smashed into an asteroid. Now Hera is closing in to see what happened",
+  "A hidden star is plowing through Betelgeuse’s atmosphere, new evidence suggests",
+  "Scientists identify two overlooked skills that predict reading success",
+  "A 50-year-old mystery of vanishing frogs reveals a hidden killer",
+  "Gene editing could replace a lifetime of medication, but there's a catch",
+  "All 5 genetic “letters” of DNA and RNA discovered in a 4.5-billion-year-old asteroid",
+  "APOD: 2026 November 4 – The Not-So-Hidden Galaxy, IC 342",
+  "Before the Dawn in America’s Heartland",
+  "TB 26-10 Printed Circuit Board Assembly Chip Resistor Body Cracking",
   "APOD: 2026 November 3 – Comet PanSTARRs and Rainbow Meteor",
   "The Pacific’s Busy Storm Season",
-  "Happy 65 Years: NASA’s Johnson Space Center Then and Now",
-  "TB 26-09 Measured Hammer-Tap Inputs",
-  "NASA’s CHAPEA Crew “Returns” to Earth",
-  "What’s Up: November 2026 Skywatching Tips from NASA"
+  "Happy 65 Years: NASA’s Johnson Space Center Then and Now"
  ]
 }

@@ -1,0 +1,112 @@
+{
+ "generated_at": "2026-11-04T09:21:31.636986+00:00",
+ "status": "ok",
+ "takeaways": [
+  "Cut to new visual on every 2‑second beat of the background track",
+  "Use a sliding “map‑wipe” transition that follows a line‑path over the still photo or clip",
+  "Overlay kinetic type that animates in‑sync with a metronome‑style click (letter‑by‑letter or word‑by‑word)",
+  "Apply a duotone or high‑contrast colour filter to all assets for instant visual cohesion",
+  "Introduce a thin, animated border or underline that tracks the cursor‑like path of the map line",
+  "Layer a semi‑transparent “stat‑card” that slides in from the side, stays 3‑seconds, then snaps out",
+  "Add a subtle pulse or scale‑pop to key words or icons at the moment of a narrative punchline",
+  "Keep the aspect ratio 9:16 and use full‑bleed stills; crop any extra space with a vignette to keep focus on the centre action"
+ ],
+ "avoid": [
+  "Slow cross‑fades longer than 1 second",
+  "Over‑loading the screen with more than three type layers at once",
+  "Using stock music without a clear beat to sync cuts",
+  "Full‑screen static text without any motion or visual cue"
+ ],
+ "styles_to_watch": [
+  "Map‑Line Reveal – a thin animated line that draws routes or outlines while the camera pans across a static map",
+  "Beat‑Synced Kinetic Typography – type that jumps, rotates or scales exactly on each beat of a tight soundtrack",
+  "Duotone Split‑Screen – two contrasting colour tones split the screen, each side showing a related still or clip",
+  "Stat‑Card Pop‑In – a compact info card that slides in, pulses, then exits as the narration hits a key fact"
+ ],
+ "signals": [
+  {
+   "title": "D&D Animated: Where Are We? 😢🤣 #dnd #ttrpg #dnd5e",
+   "url": "https://www.youtube.com/watch?v=T24c6-6-sbY",
+   "views": 9772885,
+   "views_hour": 18774,
+   "query": "map animation shorts"
+  },
+  {
+   "title": "Do Not Steal An Egg (Roblox Animation) #shorts",
+   "url": "https://www.youtube.com/watch?v=rPr8jNzV_T0",
+   "views": 20716780,
+   "views_hour": 15845,
+   "query": "map animation shorts"
+  },
+  {
+   "title": "🤯8D City that even confuses Google Maps #shorts #tamil #news #facts #China #travel #Engineering #fyp",
+   "url": "https://www.youtube.com/watch?v=rXqBYdxZBKo",
+   "views": 9876270,
+   "views_hour": 10604,
+   "query": "map animation shorts"
+  },
+  {
+   "title": "Pehle Mene Tumhe Bachaya | Iron Man | #shorts #youtubeshorts #shortvideo",
+   "url": "https://www.youtube.com/watch?v=C4YH3-JWCxk",
+   "views": 1162503,
+   "views_hour": 8109,
+   "query": "motion graphics youtube shorts"
+  },
+  {
+   "title": "The Subway Systems of the World! 😂😂",
+   "url": "https://www.youtube.com/watch?v=UMcv1Xo947c",
+   "views": 8034829,
+   "views_hour": 6236,
+   "query": "map animation shorts"
+  },
+  {
+   "title": "Russian Civil War! #shorts #history #russia #edit",
+   "url": "https://www.youtube.com/watch?v=pYiJspOt6As",
+   "views": 8622322,
+   "views_hour": 5272,
+   "query": "map animation shorts"
+  },
+  {
+   "title": "Introducing Claude Dashboards and Claude Motion",
+   "url": "https://www.youtube.com/watch?v=en0GuyhieQk",
+   "views": 1400691,
+   "views_hour": 2193,
+   "query": "motion graphics youtube shorts"
+  },
+  {
+   "title": "Ha Mujhe Parwaah Hai | Tony & Peter | #shorts #youtubeshorts #shortvideo",
+   "url": "https://www.youtube.com/watch?v=GyhjuFc2S8g",
+   "views": 4416769,
+   "views_hour": 2115,
+   "query": "motion graphics youtube shorts"
+  },
+  {
+   "title": "Pixel PinkiePie animation🩷✨ #pinkiepie #mlp #mylittlepony #shorts #youtubeshorts #alightmotion #art",
+   "url": "https://www.youtube.com/watch?v=NxAAQlVbBQs",
+   "views": 1459380,
+   "views_hour": 1142,
+   "query": "motion graphics youtube shorts"
+  },
+  {
+   "title": "How to Create Ghibli Style AI Videos | AI Video Kaise Banaye | AI Se Cartoon Video Kaise Banaye",
+   "url": "https://www.youtube.com/watch?v=g3VnWOVFaaM",
+   "views": 1166393,
+   "views_hour": 885,
+   "query": "faceless youtube shorts editing style"
+  },
+  {
+   "title": "English ma khata hai fish 🐠",
+   "url": "https://www.youtube.com/watch?v=70wfY1b2eNw",
+   "views": 28045,
+   "views_hour": 877,
+   "query": "kinetic typography shorts"
+  },
+  {
+   "title": "Hame Kya Baccha Samjh Rakha Hai | Thor & Odin | #shorts",
+   "url": "https://www.youtube.com/watch?v=h2ZjVRxbHts",
+   "views": 816117,
+   "views_hour": 386,
+   "query": "motion graphics youtube shorts"
+  }
+ ]
+}
