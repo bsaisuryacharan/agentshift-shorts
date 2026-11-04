@@ -1,0 +1,245 @@
+{
+ "id": "what-if-krakatoa-today-a1",
+ "title": "What If Krakatoa Erupted Today?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "WHAT IF",
+ "format": "what_if",
+ "look": "editorial-paper",
+ "theme": "mono",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "history.com/articles/krakatoa",
+  "b1": "en.wikipedia.org/wiki/Krakatoa",
+  "b4": "en.wikipedia.org/wiki/Krakatoa",
+  "b6": "en.wikipedia.org/wiki/Krakatoa",
+  "wiki": "https://en.wikipedia.org/wiki/Krakatoa",
+  "ref1": "https://www.history.com/articles/krakatoa",
+  "ref2": "https://www.ncei.noaa.gov/news/day-historic-krakatau-eruption-1883",
+  "ref3": "https://phys.org/news/2026-09-anak-krakatau-erupts-disrupting-disaster.html",
+  "ref4": "https://www.livescience.com/28186-krakatoa.html",
+  "ref5": "https://www.bbc.com/news/articles/cvgy5k4n07ko"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Krakatoa Sunda Strait",
+   "prompt": "Wide cinematic shot of the Sunda Strait with a volcanic island in the distance, moody lighting, documentary look.",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Could a single volcanic blast be heard 3,600 km away?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "what if?",
+     "at": "3,600"
+    },
+    {
+     "t": "title",
+     "html": "*3,600 km* blast",
+     "at": "3,600"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "footage": "volcano eruption explosion",
+   "prompt": "Macro close up of volcanic ash and dark smoke billowing into the sky, cinematic lighting.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 1883, Krakatoa exploded with the force of 13,000 Hiroshima bombs.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "13,000 Hiroshima bombs"
+     },
+     "at": "13,000",
+     "dur": 2.5,
+     "fx": "shine"
+    }
+   ],
+   "sfx": [
+    [
+     "13,000",
+     "impact",
+     1.0
+    ]
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "graphic": true,
+   "say": "The eruption was equivalent to 200 megatons of TNT, exceeding the 50 megaton Tsar Bomba.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "200 megatons of TNT",
+      "keyword": "200",
+      "note": "pure power"
+     },
+     "at": "200",
+     "dur": 2.5,
+     "fx": "shine"
+    }
+   ],
+   "sfx": [
+    [
+     "200",
+     "ding",
+     0.5
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "Krakatoa 1883 aftermath",
+   "prompt": "Aerial view of a devastated landscape with volcanic debris and ash, documentary style, no people.",
+   "focal": [
+    0.5,
+    0.6
+   ],
+   "say": "Official records show 165 villages and towns were destroyed by the cataclysm.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Villages",
+       "165",
+       "",
+       "ir"
+      ]
+     ],
+     "at": "165"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "footage": "ocean waves tsunami aerial",
+   "prompt": "Top-down aerial view of massive tsunami waves spreading across the dark ocean, realistic textures.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "At least 36,417 people died, mostly from the massive tsunamis that followed.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "36,417 deaths",
+     "col": "ir",
+     "at": "36,417"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "graphic": true,
+   "say": "This region sits on an arc where the earth is constantly shifting.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "volcanic arc",
+     "at": "arc"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "footage": "volcano smoke wide",
+   "prompt": "Wide cinematic shot of a dark volcano smoking in the middle of the sea, moody lighting.",
+   "focal": [
+    0.5,
+    0.3
+   ],
+   "say": "By 2011, the child island reached a height of 324 m above sea level.",
+   "hud": [
+    {
+     "t": "delta",
+     "text": "324 m",
+     "dir": "up",
+     "col": "ok",
+     "at": "324"
+    }
+   ],
+   "sfx": [
+    [
+     "324",
+     "whoosh",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b7",
+   "img": "s7.jpg",
+   "photo": "Anak Krakatau eruption",
+   "prompt": "Macro shot of jagged black volcanic rock and fresh cinder, documentary look.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "After a major collapse in 2018, new eruptions in 2020 are already rebuilding.",
+   "hud": [
+    {
+     "t": "toast",
+     "title": "Rebuilding",
+     "sub": "New cone in 2020",
+     "icon": "volcano",
+     "at": "2018"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s8.jpg",
+   "prompt": "Photoreal silhouette of a massive volcano peak against a dark, ash-filled sky, cinematic lighting, no people.",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "The cycle of destruction continues. Follow for more.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "*Follow* for more",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Krakatoa",
+  "url": "https://en.wikipedia.org/wiki/Krakatoa",
+  "text": "Krakatoa (), also transcribed Krakatau (), is a caldera in the Sunda Strait between the islands of Java and Sumatra in the Indonesian province of Lampung. The caldera is part of a volcanic island group (Krakatoa archipelago) comprising four islands. Two of them are known as Lang and Verlaten; another, Rakata, is the only remnant of an island, also called Krakatoa, mostly destroyed by an eruption in 1883 which created the caldera. In 1927, a fourth island, Anak Krakatoa, or \"Child of Krakatoa\", emerged from the caldera formed in 1883. There has been new eruptive activity since the late 20th century, with a large collapse causing the 2018 Sunda Strait tsunami. A new cinder cone eventually grew out of its collapse scar from eruptions in the 2020s. == Historical significance ==\n\nThe most notable eruptions of Krakatoa culminated in a series of massive explosions over 26–27 August 1883, which were among the most violent volcanic events in recorded history. With an estimated volcanic explosivity index of 6, the eruption was equivalent to 200 megatons of TNT (840 PJ)—about 13,000 times the nuclear yield of the Little Boy bomb (13 to 16 kt) dropped on Hiroshima, Japan, during World War II, and four times the yield of Tsar Bomba, the most powerful nuclear device ever detonated at 50 Mt. The 1883 eruption ejected approximately 25 km3 (6 cubic miles) of rock. The cataclysmic explosion was heard 3,600 km (2,200 mi) away in Alice Springs, Australia, and on the island of Rodrigues near Mauritius, 4,780 km (2,970 mi) to the west. According to the official records of the Dutch East Indies colony, 165 villages and towns were destroyed near Krakatoa, and 132 were seriously damaged. At least 36,417 people died, and many more thousands were injured, mostly from the tsunamis that followed the explosion. The eruption destroyed two-thirds of the island of Krakatoa. Eruptions in the area since 1927 have built a new island at the same location, named Anak Krakatau (which is Indonesian for \"Child of Krakatoa\"). Periodic eruptions have continued since, with recent eruptions in 2009, 2010, 2011, and 2012, and a major collapse in 2018. In late 2011, this island had a radius of roughly 2 kilometres (1.2 mi), and a highest point of about 324 metres (1,063 ft) above sea level, growing five metres (16 ft) each year. In 2017, the height of Anak Krakatau was reported as over 400 m (1,300 ft) above sea level; following a collapse in December 2018, the height was reduced to 110 meters (361 ft). The most recent eruption at Anak Krakatau took place in September 2026, beginning on 4 September 2026. == Etymology ==\nOne of the earliest mentions of the name Krakatoa is in the Old Sundanese text Bujangga Manik, which was probably written in western Java in the late 15th century. Here Krakatoa is referred to as \"the island of Rakata, a mountain in the middle of the sea\" (pulo Rakata gunung ti tengah sagara, f. 27v). Although there are earlier descriptions in European sources of an island in the Sunda Strait with a \"pointed mountain\", the earliest mention of Krakatoa by name in the western world was on a 1611 map by Lucas Janszoon Waghenaer, who labelled the island \"Pulo Carcata\" (pulo is the Sundanese word for \"island\"). About two dozen variants have been found, including Crackatouw, Cracatoa, and Krakatao (in an older Portuguese-based spelling). The first known appearance of the spelling Krakatau was by Wouter Schouten, who passed by \"the high tree-covered island of Krakatau\" in October 1658. The origin of the Indonesian name Krakatau is uncertain. The main theories are:\n\nFrom Sanskrit karka or karkaṭa or karkaṭaka, meaning \"lobster\" or \"crab\". The abbreviated form rakaṭa also means \"crab\" in the Old Javanese language. The fact that the earliest recorded mentions of the word closely resemble the pronunciation of these words for crab (rakata in Bujangga Manik and carcata in Waghenaer's map) makes this Sanskrit etymology the most likely origin of the word. Onomatopoeia, imitating the noise made by cockatoos (Kakatoes) which used to inhabit the island. However, Van den Berg points out that these birds are found only in the \"eastern part of the archipelago\" (meaning the Lesser Sundas, east of Java, on the other side of the Wallace Line). The closest Malay word is kelakatu, meaning \"white-winged ant\". Furneaux points out that in pre-1883 maps, Krakatoa does somewhat resemble an ant seen from above, with Lang and Verlaten lying to the sides like wings. Van den Berg (1884) recites a story that Krakatau was the result of a linguistic error. According to the legend, a visiting ship's captain asked a local inhabitant the island's name, and the latter replied, \"Kaga tau\" (Aku enggak tahu)—a Jakartan/Betawinese slang phrase meaning \"I don't know\". This story is largely discounted; it closely resembles other linguistic myths about the origin of the word kangaroo and the name of the Yucatán Peninsula. The Smithsonian Institution's Global Volcanism Program cites the Indonesian name, Krakatau, as the correct name, but says that Krakatoa is often employed. == Geographical setting ==\n\nIndonesia has over 130 active volcanoes, the most of any nation. They make up the axis of the Indonesian island arc system produced by northeastward subduction of the Indo-Australian Plate. A majority of these volcanoes lie along Indonesia's two largest islands, Java and Sumatra. These two islands are separated by the Sunda Strait located at a bend in the axis of the island arc.\n\nSOURCE history.com (https://www.history.com/articles/krakatoa):\nBy: HISTORY.com Editors Natural Disasters & Environment # Krakatoa HISTORY.com Editors DeAgostini/Getty Images Published: May 09, 2018Last Updated: June 30, 2025 Table of contents 1 Where Is Krakatoa?2 Krakatoa Eruption3 What Caused the Eruption?4 Global Impact of Krakatoa5 Krakatoa Today6 Sources Krakatoa is a small volcanic island in Indonesia, located about 100 miles west of Jakarta. In August 1883, the eruption of the main island of Krakatoa (or Krakatau) killed more than 36,000 people, making it one of the most devastating volcanic eruptions in human history. ## Where Is Krakatoa? The volcanic island known as Krakatoa is located in the Sunda Strait, between the islands of Java and Sumatra. At the time of its famous eruption in 1883, the region was part of the Dutch East Indies; it’s now part of Indonesia. A previous major eruption, likely in the fifth or sixth century A.D., is thought to have created Krakatoa and two nearby islands, Lang and Verlatan, as well as the undersea caldera (volcanic crater) between them. ## Flashback: Vintage Volcanic Eruptions Volcanoes in Hawaii have been erupting on and off for thousands of years, and the 1950s were no exception. 2:35m watch By 1883, Krakatoa was made up of three peaks: Perboewatan, the northernmost and most active; Danan in the middle; and the largest, Rakata, which formed the southern end of the island. Krakatoa was last thought to have erupted some two centuries earlier, in 1680, and most people believed it was extinct. But in May 1883, people reported feeling tremors and hearing explosions, first in western Java and then on the other side of the Sunda Strait in Sumatra. Reports started coming in from ships sailing through the busy waterway, including the German warship *Elizabeth*, whose captain reported seeing a cloud of ash above Krakatoa stretching some 6 miles high. Things had quieted down by the end of the month, though smoke and ash continued to emerge from Perboewatan crater. ## Krakatoa Eruption Around 1 p.m. on August 26, a volcanic blast sent a cloud of gas and debris some 15 miles into the air above Perboewatan. It would be the first in a series of increasingly powerful explosions over the next 2\n\nSOURCE ncei.noaa.gov (https://www.ncei.noaa.gov/news/day-historic-krakatau-eruption-1883):\nAn official website of the United States government Here's how you know **The .gov means it’s official.** Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site. **The site is secure.** The **https://** ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely. NCEI is currently moving its data and applications to the cloud. This upgrade may result in temporary data access delays. Please see our cloud migration overview and frequently asked questions for more information and resources. Check the NCEI Alerts page for impacted products and datasets. Current Impact: Intermittent degraded order fulfillment services. 1. Home 2. News 3. On This Day: Historic Krakatau Eruption of 1883 # On This Day: Historic Krakatau Eruption of 1883 Courtesy of the Library of Congress On an early May morning in 1883, the captain of the German warship *Elisabeth* spotted a cloud of ash and dust rising above the uninhabited island of Krakatau. Little did the captain know that his documentation of this ominous cloud would be one of the first recorded volcanic eruptions from this Indonesian island in at least two centuries. Over the next two months, commercial vessels and sightseeing ships documented similar spectacles, all of which were associated with explosive noises, churning black clouds and sightings of incandescent ash and pumice. Scientific expeditions were also launched. The local inhabitants on the neighboring islands of Java and Sumatra were so impressed with the display, that a near-festive environment took shape. Only later did they realize that these awe-inspiring displays were a prelude to one of the largest volcanic eruptions in history. On August 26, 1883, a colossal eruption occurred on Krakatau following a series of explosions. The northern two-thirds of the island collapsed beneath the sea, generating a series of lava, pumice, and ash flows and immense tsunamis that ravaged adjacent coastlines. For those living nearby, the events that began on August 26 would cause the death of approximately 36,000 people and the d\n\nSOURCE phys.org (https://phys.org/news/2026-09-anak-krakatau-erupts-disrupting-disaster.html):\n### Science X Account Sign in with Forget Password? Learn more share this! Share Tweet Share Email September 9, 2026 # Anak Krakatau erupts, disrupting 300,000 travelers as 1883 disaster looms large by Heather Handley, The Conversation edited by Swati Mestri, reviewed by Robert Egan ##### Swati Mestri Scientific Editor ##### Robert Egan Senior Editor This article has been reviewed according to Science X's editorial process and policies. Editors have highlighted the following attributes while ensuring the content's credibility: fact-checked trusted source written by researcher(s) proofread Indonesia's Mount Anak Krakatau has erupted again this week, sending plumes of volcanic ash high into the sky and disrupting hundreds of flights. More than 300,000 passengers have been affected. Anak Krakatau, meaning \"child of Krakatau\" in Indonesian, has erupted on and off for almost 100 years. This volcano emerged from the devastation caused when its predecessor, Krakatau (also known as Krakatoa), famously erupted between May and August 1883. It's hard to overstate just how big the 1883 eruption was and the catastrophic and often strange impacts that followed. The moon went blue, sunsets went green and global temperatures fell. Around 35,000 people lost their lives, almost all in tsunamis caused by the eruptions. The sound of one of the 1883 explosions is still the loudest sound in recorded history; it could be heard \"like the distant roar of heavy guns\" near Mauritius, almost 5,000 kilometers (3,100 miles) away. So what caused the 1883 eruptions—and could they happen again? ## What caused the 1883 eruption? Most volcanoes sit at the edges of Earth's tectonic plates. Krakatau sits above what's called a subduction zone, where the Indo-Australian plate is forced beneath the Eurasian plate. This produces molten rock (or magma) with a lot of gas dissolved in it, which helps explain why Indonesian volcanoes can erupt so explosively. There is still some debate about the main triggers at various stages of the eruption. It was once thought the 1883 eruption was caused by seawater entering the volcanic system and interacting with the magma, leading to an explosive eruption. However, \n\nSOURCE livescience.com (https://www.livescience.com/28186-krakatoa.html):\nRead Live Science without the ads DISCOVER PRO Explore Choose your Live Science experience Live Science plus Read more news stories for free, receive our daily newsletter, post comments, play games and earn badges. JOIN FREE Live Science pro Unlimited access to our exclusive features, expert analyses and in-depth interviews, all ad-free. Unlimited, ad-free reading Exclusive, original reporting Scientist interviews and videos Members-only features See what’s in pro Go beyond the headlines Rigorously fact-checked science, expert commentary and an ad-free experience built for those who want to go beyond the headlines See what's in Pro Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. Scientist interviews and video The latest science direct from the most respected people in their fields. Members-only features Exclusive newsletter. Members-only area. Early access to content. of Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. 1 of 4 Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. 2 of 4 Scientist interviews and video The latest science direct from the most respected people in their fields. 3 of 4 Members-only features Exclusive newsletter. Members-only area. Early access to content. 4 of 4 See what's in Pro - Welcome to Live Science club! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Complete any activity to unlock your first badge. Keep earning badges Explore ways to get more involved as a member. Live Science Quizzes Play quick, fun science games Explore Animal facts Learn about the natural world Explore Latest space news Read about discoveries from beyond Earth Explore --- See what you’ve unlocked. Explore your membership benefits. Explore Go beyond the headlines Cancel anytime Start Browsing --- Sign Out - Hi , Keep exploring with your premium access. START BROWSING --- Content * ![Science Spotlight Science Spotlight](https://www.livesc\n\nSOURCE bbc.com (https://www.bbc.com/news/articles/cvgy5k4n07ko):\n# Volcano eruption leaves 170,000 passengers stranded in Indonesia Around 170,000passengers have been left stranded after a volcanic eruption forced Indonesian authorities to temporarily suspend operations at eight airports. Jakarta's Soekarno-Hatta International Airport was the first to be closed on Sunday morning after ash from Anak Krakatau was detected in airspace near the airport. The transport ministry said1,558 flights have been delayed with airports remaining closed until 09:00 local time on Monday morning. The volcano had started erupting late on Friday night, generating continuous seismic activity, lava fountains, and booming sounds across surrounding regions. Two more eruptions happened early on Sunday, authorities said. The transport ministry said the pause in operations mainly affected flights to and from Singapore, also other international routes including Doha, Sydney and Kuala Lumpur. Transport Minister Dudy Purwagandhi said the decision to temporarily close more airports was made after tests found that volcanic ash had spread towards West Java. He urged airlines to speed up processes for refunding tickets for passengers who have been affected by flight cancellations, and for airlines to provide timely information to those with upcoming flights to avoid overcrowding at airports. According to Indonesia's meteorological agency BMKG, ash reached as far as 20,000ft (6,000m) on Java on east of the volcano, and 50,000ft (15,000m) west of the volcano on the Sumatra side. Authorities have confirmed there is no tsunami warning linked to the recent activity of the volcano, which is in the Sunda Strait between the islands of Java and Sumatra. The health minister has urged residents in affected areas to stay indoors and wear face masks to protect against respiratory, eye, and skin risks. According to local newspaper Kompas, several schools cancelled activities on Saturday after students and residents reported eye irritations from the ash, while some fishermen had cancelled fishing trips at sea similarly reporting sore eyes. One resident, Aldi Candra Prayogi, told the outlet that he felt since Friday evening and it felt like \"small grains of sand had gotten i",
+  "extra_sources": [
+   "https://www.history.com/articles/krakatoa",
+   "https://www.ncei.noaa.gov/news/day-historic-krakatau-eruption-1883",
+   "https://phys.org/news/2026-09-anak-krakatau-erupts-disrupting-disaster.html",
+   "https://www.livescience.com/28186-krakatoa.html",
+   "https://www.bbc.com/news/articles/cvgy5k4n07ko"
+  ]
+ },
+ "_writer": "gemini"
+}

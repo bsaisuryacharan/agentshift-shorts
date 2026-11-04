@@ -1,5 +1,5 @@
 {
- "current": "jsc-growth-timeline-a1",
+ "current": "what-if-krakatoa-today-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -337,6 +337,32 @@
     "safe_zone": 10
    },
    "run_id": "41706095738"
+  },
+  "what-if-krakatoa-today-a1": {
+   "title": "What If Krakatoa Erupted Today?",
+   "base": "what-if-krakatoa-today-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 5,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 8,
+    "polish": 5,
+    "hierarchy": 5,
+    "consistency": 8,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "41802268603",
+   "uploaded": {
+    "id": "c0J7RyE30Rk",
+    "url": "https://youtube.com/watch?v=c0J7RyE30Rk",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
   }
  }
 }
