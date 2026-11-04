@@ -185,8 +185,8 @@ def style_radar(settings: Settings, *, client=httpx, distill=None, min_age_days:
     try:
         found = _style_search_signals(settings, client)
         if not found:
-            out["generated_at"] = out.get("generated_at") or datetime.now(UTC).isoformat()
-            out["status"] = "no style signals this window"
+            out["status"] = "no style signals this window (retry next run)"   # no new generated_at: the short-circuit must not lock in an empty radar
+            out["checked_at"] = datetime.now(UTC).isoformat()
             STYLE_JSON.write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding="utf-8")
             return out
         listing = "\n".join(f"- {f['title']} ({f['url']}; {f['views']:,} views, {f['views_hour']:,}/h, searched via '{f['query']}')" for f in found)
