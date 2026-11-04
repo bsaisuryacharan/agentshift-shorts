@@ -50,6 +50,19 @@ LOOKS = {
 DEFAULT_BY_FORMAT = {"ranked": "poster-pop", "scale": "midnight-grid", "versus": "explainer-diagram", "how_it_works": "blueprint",
                      "timeline": "editorial-paper", "unsolved": "graphite-ui", "myth_vs_fact": "swiss-grid", "what_if": "midnight-grid", "anatomy": "blueprint"}
 
+# every look that genuinely fits a format (from each STYLE.md's "best" line), in rotation preference order. app.variety rotates
+# through these so the same format never shows up in the same visual language (the owner's complaint: "all videos seem almost the same").
+CANDIDATES = {"ranked": ["poster-pop", "risograph", "graphite-ui"],
+              "scale": ["midnight-grid", "editorial-paper", "poster-pop", "graphite-ui"],
+              "versus": ["explainer-diagram", "swiss-grid", "graphite-ui", "midnight-grid"],
+              "how_it_works": ["blueprint", "explainer-diagram", "graphite-ui"],
+              "timeline": ["editorial-paper", "risograph", "poster-pop"],
+              "unsolved": ["graphite-ui", "midnight-grid", "blueprint"],
+              "myth_vs_fact": ["swiss-grid", "explainer-diagram", "poster-pop", "editorial-paper"],
+              "what_if": ["midnight-grid", "graphite-ui", "blueprint", "poster-pop"],
+              "anatomy": ["blueprint", "explainer-diagram", "graphite-ui"],
+              "story": ["editorial-paper", "risograph", "graphite-ui"]}
+
 
 def pick(look: str | None, fmt: str | None = None) -> str:
     return look if look in LOOKS else DEFAULT_BY_FORMAT.get(fmt or "", "midnight-grid")

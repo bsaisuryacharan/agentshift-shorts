@@ -26,7 +26,7 @@ from pathlib import Path
 
 import httpx
 
-from . import formats, gallery_hf, ideabank, insights, lessons, looks, picker, tracker, vidiq
+from . import formats, gallery_hf, ideabank, insights, lessons, looks, picker, tracker, variety, vidiq
 
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
@@ -580,9 +580,18 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
     hint = insights.hint()
     if hint:
         user += f"\nCHANNEL INSIGHTS (advisory, never a source of facts): {hint[:WRITER_HINT]}\n"
+    try:                                                 # the weekly style radar: what faceless-Short edits get traction now (advisory)
+        tk = [t for t in (json.loads((ROOT / "data" / "style_radar.json").read_text()).get("takeaways") or []) if isinstance(t, str)]
+        if tk:
+            user += f"\nSTYLE RADAR (what editing styles are winning in faceless Shorts right now; apply what serves this Short, never facts): {' | '.join(t[:150] for t in tk[:3])}\n"
+    except (OSError, ValueError):
+        pass
     learned = lessons.rules()
     if learned:                                          # complaints that keep coming back are avoided from the first attempt
         user += "\nSTANDING RULES LEARNED FROM PAST JUDGE REJECTIONS (follow them):\n- " + "\n- ".join(learned)
+    out_different = variety.brief(fmt)
+    if out_different:                                    # the recent Shorts must not look like this one (decided by code, not hope)
+        user += "\n" + out_different + "\n"
     if notes:
         user += "\nFIX THESE PROBLEMS FROM THE LAST ATTEMPT:\n- " + "\n- ".join(notes)
     order = [["groq", "gemini", "openrouter"], ["gemini", "groq", "openrouter"], ["openrouter", "gemini", "groq"]]
@@ -598,7 +607,7 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
             for i, u in enumerate(facts.get("extra_sources") or [], 1):
                 spec["sources"][f"ref{i}"] = u
             spec["format"] = fmt
-            spec["look"] = looks.pick(spec.get("look"), fmt)        # one visual language for the whole Short
+            spec["look"] = variety.adjust_look(spec.get("look"), fmt)   # one visual language per Short, rotated away from the recent ones
             spec["series_label"] = spec.get("series_label") or formats.FORMATS[fmt]["label"]
             return spec, prov
         user += "\nYour last JSON failed validation: " + "; ".join(errs) + "\nReturn corrected JSON."
@@ -716,6 +725,7 @@ def finish(spec: dict, writer: str, out: Path, deliver: bool, chat: str | None) 
         with open(ledger, "a") as f:
             f.write(json.dumps({"id": spec["id"], "title": spec["title"], "scores": j["scores"],
                                 "blob": spec["title"].lower() + " " + " ".join(b["say"].lower() for b in spec["beats"])}) + "\n")
+        variety.record(spec)                             # the style ledger the next run's variety brief reads
         from . import pack
         text = pack.build(spec, [run_dir / "img" / "credits.json", run_dir / "vid" / "credits.json"])
         (run_dir / "publish.md").write_text(text)

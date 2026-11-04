@@ -1,11 +1,13 @@
 """Live, provenance-preserving trend analysis for short-form editorial selection."""
 from __future__ import annotations
 
+import json
 import logging
 import html
 import re
 import xml.etree.ElementTree as ET
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 from urllib.parse import quote_plus
 
 import httpx
@@ -87,6 +89,138 @@ def _youtube_niche_signals(settings: Settings, client=httpx, days: int = 14) -> 
                                  notes=f"niche search '{ids[v['id']]}': {views:,} views in {age_h / 24:.1f} days = {views / age_h:,.0f} views/hour; study the hook and format, never copy."))
     found.sort(key=lambda s: -(s.metric or 0) / max(1.0, (now - s.published_at).total_seconds() / 3600))
     return found[:15]
+
+
+# ---------------------------------------------------------------- style/editing radar (weekly) -----------------------------
+# The owner's remarks: better motion graphics, HTML-first films, and "keep an eye on faceless short videos, what kind of improvements or
+# styles are getting [traction]". This radar watches HOW such Shorts are made (editing styles), not WHAT the niche talks about (analyze()
+# above already covers topics), so style-intent keywords, not topic keywords.
+STYLE_SEARCHES = ["faceless youtube shorts editing style", "motion graphics youtube shorts", "kinetic typography shorts",
+                  "whiteboard animation shorts", "map animation shorts"]
+STYLE_SEARCH_DAYS = 120                      # editing styles trend over months, not days
+STYLE_JSON = Path(__file__).resolve().parents[1] / "data" / "style_radar.json"
+STYLE_DOC = Path(__file__).resolve().parents[1] / "docs" / "STYLE_UPDATES.md"
+RADAR_KEEP_SECTIONS = 6                      # docs/STYLE_UPDATES.md stays bounded: newest section up top
+
+
+def _style_search_signals(settings: Settings, client=httpx, days: int = STYLE_SEARCH_DAYS) -> list[dict]:
+    """Shorts that people publish and rank about EDITING STYLE right now, viewed per hour (YouTube Data API, ~500 units of the free daily quota)"""
+    if not settings.youtube_api_key:
+        return []
+    since = (datetime.now(UTC) - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    ids: dict[str, str] = {}
+    for q in STYLE_SEARCHES:
+        r = client.get("https://www.googleapis.com/youtube/v3/search", params={"part": "snippet", "q": q, "type": "video", "videoDuration": "short",
+                       "order": "viewCount", "publishedAfter": since, "relevanceLanguage": "en", "regionCode": "US", "maxResults": 5,
+                       "key": settings.youtube_api_key}, timeout=25)
+        r.raise_for_status()
+        for it in r.json().get("items", []):
+            ids.setdefault(it["id"]["videoId"], q)
+    if not ids:
+        return []
+    r = client.get("https://www.googleapis.com/youtube/v3/videos", params={"part": "snippet,statistics",
+                   "id": ",".join(list(ids)[:50]), "key": settings.youtube_api_key}, timeout=25)
+    r.raise_for_status()
+    now = datetime.now(UTC)
+    found = []
+    for v in r.json().get("items", []):
+        sn, st = v["snippet"], v.get("statistics", {})
+        views = int(st.get("viewCount", 0))
+        if views < 20000:
+            continue
+        published = datetime.fromisoformat(sn["publishedAt"].replace("Z", "+00:00"))
+        age_h = max(1.0, (now - published).total_seconds() / 3600)
+        found.append({"title": html.unescape(sn["title"])[:160], "url": f"https://www.youtube.com/watch?v={v['id']}",
+                      "views": views, "views_hour": int(views / age_h), "query": ids[v["id"]]})
+    found.sort(key=lambda f: -f["views_hour"])
+    return found[:12]
+
+
+def _radar_distill(system: str, user: str) -> dict:
+    from .auto import ask                      # lazy: trends must stay importable before auto (weekly imports analyze first)
+    out, _ = ask(system, user, prefer=["groq", "gemini", "openrouter"])
+    return out
+
+
+def _radar_markdown(out: dict) -> str:
+    lines = [f"## {out['generated_at'][:10]} — faceless-Short style radar", ""]
+    for t in out.get("takeaways", []):
+        lines.append(f"- **[apply]** {t}")
+    if out.get("avoid"):
+        lines.append("")
+        lines.append("Dial down (overused right now):")
+        for a in out["avoid"]:
+            lines.append(f"- {a}")
+    if out.get("styles_to_watch"):
+        lines.append("")
+        lines.append("Styles to watch:")
+        for s in out["styles_to_watch"]:
+            lines.append(f"- {s}")
+    if out.get("signals"):
+        lines.append("")
+        lines.append("Signals watched (views/hour):")
+        for f in out["signals"][:8]:
+            lines.append(f"- [{f['title']}]({f['url']}) — {f['views']:,} views ({f['query']})")
+    return "\n".join(lines) + "\n"
+
+
+def style_radar(settings: Settings, *, client=httpx, distill=None, min_age_days: float = 6.5, force: bool = False) -> dict:
+    """Weekly watch on faceless-Short editing styles (the daily cron reuses a radar younger than min_age_days and costs nothing).
+
+    Persists data/style_radar.json (consumed by the writer brief and the Telegram status) and prepends a bounded section to
+    docs/STYLE_UPDATES.md. Takeaways are distilled from the top scoring style-intent Shorts with the free LLM ladder; when the search or
+    the distillation fails the previous radar is returned marked 'stale', never a fresh zero.
+    """
+    if distill is None:
+        distill = _radar_distill
+    out = {}
+    stale = False
+    try:
+        out = json.loads(STYLE_JSON.read_text(encoding="utf-8"))
+        if (datetime.now(UTC) - datetime.fromisoformat(out["generated_at"])).total_seconds() < min_age_days * 86400:
+            return out                                     # fresh enough: today's run reads it, does not redo the search
+        stale = True
+    except (OSError, ValueError, KeyError):
+        pass
+    try:
+        found = _style_search_signals(settings, client)
+        if not found:
+            out["generated_at"] = out.get("generated_at") or datetime.now(UTC).isoformat()
+            out["status"] = "no style signals this window"
+            STYLE_JSON.write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding="utf-8")
+            return out
+        listing = "\n".join(f"- {f['title']} ({f['url']}; {f['views']:,} views, {f['views_hour']:,}/h, searched via '{f['query']}')" for f in found)
+        result = distill("You are the art director for the Agent Shift channel: faceless YouTube Shorts built as HTML/CSS motion-graphics films "
+                         "(kinetic type, animated stat cards, designed grounds) with real free-licence photos/footage as assets, 9:16, under 45 s, "
+                         "no AI-generated faces and no paid tools. From the trending style-intent Shorts below, distill what editing styles are "
+                         "getting traction RIGHT NOW in faceless Shorts. Every takeaway must be CONCRETE and implementable with HTML/CSS overlays "
+                         "plus stills/clips - motion, framing, pacing, type, colour - never generic advice like 'be consistent'. "
+                         "Return JSON {\"takeaways\": [<=8 short imperative techniques], \"avoid\": [<=4 overused moves], "
+                         "\"styles_to_watch\": [<=4 named styles, one line each]}.",
+                         f"Trending style-intent Shorts (views per hour ranks traction):\n{listing}")
+        takeaways = [t for t in (result.get("takeaways") or []) if isinstance(t, str)][:8]
+        out.update({"generated_at": datetime.now(UTC).isoformat(), "status": "ok", "takeaways": takeaways,
+                    "avoid": [a for a in (result.get("avoid") or []) if isinstance(a, str)][:4],
+                    "styles_to_watch": [s for s in (result.get("styles_to_watch") or []) if isinstance(s, str)][:4],
+                    "signals": found})
+    except Exception as e:                                  # noqa: BLE001 - radar must never break the weekly job
+        status = f"failed: {type(e).__name__}" if not stale else "stale (refresh failed)"
+        out["generated_at"] = out.get("generated_at") or datetime.now(UTC).isoformat()
+        out["status"] = status
+    try:
+        STYLE_JSON.parent.mkdir(parents=True, exist_ok=True)
+        STYLE_JSON.write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding="utf-8")
+        if out.get("takeaways"):
+            old = (STYLE_DOC.read_text(encoding="utf-8") if STYLE_DOC.exists() else "")
+            chunks = [c for c in old.split("\n---\n") if c.strip()]
+            if len(chunks) > RADAR_KEEP_SECTIONS - 1:
+                chunks = chunks[:RADAR_KEEP_SECTIONS - 1]          # bounded log: newest section on top
+            head = _radar_markdown(out)
+            body = ("\n---\n\n" + "\n---\n".join(chunks)) if chunks else ""
+            STYLE_DOC.write_text(head + body + "\n", encoding="utf-8")
+    except OSError:
+        pass
+    return out
 
 
 def _science_feed_signals(settings: Settings, client=httpx) -> list[TrendSignal]:

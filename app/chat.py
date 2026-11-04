@@ -260,6 +260,13 @@ def status_block() -> str:
             out.append(f"Performance: {len(perf['shorts'])} uploaded Shorts, best {perf.get('best')}")
     except (OSError, ValueError):
         pass
+    try:
+        radar = json.loads((ROOT / "data" / "style_radar.json").read_text())
+        tk = [t for t in (radar.get("takeaways") or []) if isinstance(t, str)]
+        if tk:
+            out.append(f"Style radar ({str(radar.get('generated_at', ''))[:10]}, {radar.get('status', '')}): " + " | ".join(t[:120] for t in tk[:3]))
+    except (OSError, ValueError):
+        pass
     return "\n".join(out)
 
 

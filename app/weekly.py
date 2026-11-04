@@ -44,6 +44,12 @@ def main() -> int:
         status["ideabank"] = str(ideabank.refresh())                  # fresh breakouts from the reference channels
     except Exception as e:  # noqa: BLE001
         status["ideabank"] = f"failed: {type(e).__name__}"
+    try:
+        from .trends import style_radar                # weekly watch on faceless-Short editing styles; the daily cron reuse is built in
+        radar = style_radar(settings)
+        status["style_radar"] = f"{radar.get('status')}: {len(radar.get('takeaways') or [])} takeaways"
+    except Exception as e:  # noqa: BLE001
+        status["style_radar"] = f"failed: {type(e).__name__}"
     from . import insights
     out = insights.build()
     insights.OUT.parent.mkdir(parents=True, exist_ok=True)
