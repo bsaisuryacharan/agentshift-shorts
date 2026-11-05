@@ -1,0 +1,192 @@
+{
+ "id": "svalbard-seed-vault-how-it-works-a1",
+ "title": "Svalbard Global Seed Vault: How it protects future food",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "HOW IT WORKS",
+ "format": "how_it_works",
+ "theme": "cool",
+ "look": "blueprint",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Svalbard Global Seed Vault, Wikipedia: https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault",
+  "b1": "Svalbard Global Seed Vault, Wikipedia: https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault",
+  "b2": "Svalbard Global Seed Vault, Wikipedia: https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault",
+  "b3": "Svalbard Global Seed Vault, Wikipedia: https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault",
+  "b4": "Svalbard Global Seed Vault, Wikipedia: https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault",
+  "b5": "Svalbard Global Seed Vault, Wikipedia: https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault",
+  "outro": "Svalbard Global Seed Vault, Wikipedia: https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault",
+  "wiki": "https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault",
+  "ref1": "https://www.scientificamerican.com/article/the-arctic-seed-vault-shows-the-flawed-logic-of-climate-adaptation",
+  "ref2": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6204558",
+  "ref3": "https://www.bbc.com/news/science-environment-34658200",
+  "ref4": "https://www.nationalgeographic.com/environment/article/norway-svalbard-global-seed-vault",
+  "ref5": "https://www.smithsonianmag.com/smart-news/take-a-virtual-tour-of-the-doomsday-seed-vault-180981815"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "photorealistic cinematic 9:16 image of the Svalbard Global Seed Vault entrance, partially covered in snow, nestled into a rugged mountain landscape under an arctic sky, wide shot, no people, no text, natural light, documentary style",
+   "focal": [
+    0.5,
+    0.7
+   ],
+   "say": "Deep in the Arctic, the Svalbard Global Seed Vault holds 1,355,591 seed accessions. But how does this doomsday bank protect our future food?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how?",
+     "at": "how?"
+    },
+    {
+     "t": "title",
+     "html": "Svalbard Global Seed Vault",
+     "at": "Svalbard"
+    },
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 1355591,
+      "prefix": "Total Seeds:"
+     },
+     "at": "1,355,591",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Svalbard landscape mountain",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Built into a mountain on Norway’s Spitsbergen island, its $8.8 million construction in 2008 secured its frozen future.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Arctic Location",
+     "at": "Norway’s"
+    },
+    {
+     "t": "big",
+     "text": "$8.8 million",
+     "col": "cy",
+     "at": "Built"
+    }
+   ],
+   "prompt": "documentary photograph of Svalbard landscape mountain, natural light, no text, no people"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "crop seeds macro",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The vault leverages permafrost to keep seeds naturally frozen, storing duplicates representing 13,000 years of agriculture.",
+   "hud": [
+    {
+     "t": "list",
+     "items": [
+      [
+       "❄️",
+       "Permafrost",
+       "Cooling"
+      ],
+      [
+       "🌱",
+       "Crop Samples",
+       "13,000 years"
+      ]
+     ],
+     "at": "permafrost"
+    }
+   ],
+   "prompt": "documentary photograph of crop seeds macro, natural light, no text, no people"
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "say": "Managed by Norway, the Crop Trust, and NordGen, storing seeds is free for countries worldwide.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "Managed by NORWAY",
+      "kicker": "Crop Trust & NordGen"
+     },
+     "at": "Managed",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "say": "In 2016, water encroached 15 meters into the tunnel, yet the vault’s robust design kept seeds safe.",
+   "hud": [
+    {
+     "t": "delta",
+     "text": "-15m Water",
+     "dir": "down",
+     "col": "am",
+     "at": "2016"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s3.jpg",
+   "photo": "Svalbard vault interior storage",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "This secures crop diversity against global crises, ensuring humanity’s food supply for generations to come.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "Food Security",
+     "col": "ok",
+     "at": "This"
+    }
+   ],
+   "prompt": "documentary photograph of Svalbard vault interior storage, natural light, no text, no people"
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "focal": [
+    0.5,
+    0.7
+   ],
+   "say": "This frozen fortress safeguards our future, one seed at a time. Follow for more!",
+   "hud": []
+  }
+ ],
+ "_facts": {
+  "title": "Svalbard Global Seed Vault",
+  "url": "https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault",
+  "text": "The Svalbard Global Seed Vault (Norwegian: Svalbard globale frøhvelv) is a secure backup facility for the Earth's crop diversity on the Norwegian island of Spitsbergen in the remote Arctic Svalbard archipelago. The Seed Vault provides long-term storage for duplicates of seeds from around the world, conserved in gene banks. The Seed Vault is managed under terms spelled out in a tripartite agreement among the Norwegian government, the Crop Trust, and the Nordic Genetic Resource Center (NordGen). The Norwegian government entirely funded the Seed Vault's approximately 45 million kr (US$8.8 million in 2008) construction cost. Norway and the Crop Trust pay for operational costs. Storing seeds in the vault is free to depositors. As of June 2025, the Seed Vault conserves 1,355,591 accessions, representing more than 13,000 years of agricultural history. The vault is of very much cultural significance. == History ==\nIn 1984, the Nordic Gene Bank (now NordGen) began storing backup Nordic plant germplasm via frozen seeds in an abandoned coal mine outside of Longyearbyen. In 2001, the International Treaty on Plant Genetic Resources for Food and Agriculture (ITPGRFA) was adopted and national governments began to ratify the treaty soon after. The treaty establishes a multilateral system for plant genetic resources that includes providing access to the materials and providing mechanisms so that those who use the resources can share any derived benefits. A team led by conservationist Cary Fowler actively campaigned for the development of the Seed Vault and approached the Norwegian Government. Fowler conceptualized the vault, headed the committee that developed the plan for the facility and is the founding chair of the international council that has overseen the vault since its inception. The Norwegian Government gave a contract to the Center for International Environment and Development Studies at the Agricultural University of Norway for Fowler’s role and to the Nordic Gene Bank. Chaired by Fowler, then a professor at the university and a senior advisor in the CGIAR, the committee included Henry Shands (head of the U.S. national gene bank), William George (an engineer), Bent Skovmand (director of the Nordic Gene Bank), and Geoff Hawtin as an observer. The team conducted a feasibility study in 2004 and concurred that Svalbard was an appropriate location for long-term storage. Also in 2004, the ITPGRFA entered into force and provided the legal framework for having one international security facility. The FAO Commission on Genetic Resources for Food and Agriculture endorsed the initiative and in October 2004 the Norwegian Government committed to fund the Seed Vault and begin the construction. In 2006, Geoffrey Hawtin was appointed to prepare a report on technical, administrative and political issues. The Seed Vault officially opened on 26 February 2008, although the first seeds arrived in January 2008. As part of the Seed Vault's first anniversary, more than 90,000 food crop seed samples were placed into storage, bringing the total number of seed samples to 400,000. Among the new seeds included were 32 varieties of potatoes from Ireland's national genebanks and 20,000 new samples from the U.S. Agricultural Research Service. Other seed samples came from genebanks in Canada and Switzerland as well as international genebanks in Colombia, Mexico and Syria. This 4 t (3.9-long-ton; 4.4-short-ton) shipment brought the total number of seeds stored in the Seed Vault to over 200 million. As of this anniversary, the Seed Vault contained samples from approximately one-third of the world's most important food crop varieties. Also as part of the anniversary, experts on food production and climate change met for a three-day conference in Longyearbyen. Japanese sculptor Mitsuaki Tanabe presented a work to the Seed Vault named \"The Seed 2009 / Momi In-Situ Conservation\". In 2010, a delegation of seven U.S. senators deposited a number of different varieties of chili pepper. By 2013, approximately one-third of the genera diversity stored in genebanks globally was represented at the Seed Vault. In 2015, researchers started sending seeds from the Middle East for safeguarding in Svalbard due to ongoing conflicts. In October 2016, the Seed Vault experienced an unusually large degree of water intrusion due to higher than average temperatures and heavy rainfall. While it is common for some water to seep into the Seed Vault's 100 m (328 ft) entrance tunnel during the warmer spring months, in this case the water encroached 15 m (49 ft) into the tunnel before freezing. Because the Seed Vault was designed to be able to handle water intrusion, the seeds were not at risk. As a result, however, the Norwegian public works agency Statsbygg completed improvements to the tunnel in 2019 to prevent any such intrusion in the future, including waterproofing the tunnel walls, removing heat sources from the tunnel, and digging exterior drainage ditches. For the Seed Vault's 10th anniversary on 26 February 2018, a shipment of 70,000 samples was delivered to the facility, bringing the number of samples received to more than one million (not counting withdrawals). According to The Independent the COVID-19 pandemic did not pose a risk to the vault \"as there are no permanent staff at the Svalbard facility.\"\nIn 2019, the Seed Vault cost about 2.4 million kr (US$282,000) to maintain. == Construction ==\n\nNorway, Sweden, Finland, Denmark, and Iceland's prime ministers ceremonially laid \"the first stone\" on 19 June 2006.\n\nSOURCE scientificamerican.com (https://www.scientificamerican.com/article/the-arctic-seed-vault-shows-the-flawed-logic-of-climate-adaptation):\nScientific American SubscribeSign In New Issue: Orbital Catastrophe Ahead? Read Now September 17, 2024 4min read ![Google Logo Add Us On GoogleAdd SciAm](https://www.google.com/preferences/source?q=scientificamerican.com) The Arctic Seed Vault Shows the Flawed Logic of Climate Adaptation The difficulties of the Svalbard seed repository illustrate why we need to prevent climate disaster rather than plan for it By Naomi Oreskes edited by Kate Wong Scott Brundage At a latitude of 78 degrees north lies the northernmost city in the world. It is an odd place. Way above the Arctic Circle—a mere 814 miles from the North Pole—Longyearbyen, in Norway’s Svalbard archipelago, is home to only 2,400 people but more than 1.3 million seeds. The Svalbard Global Seed Vault is an underground storage facility designed to secure seeds to “ensure that food crop varieties are not lost” in the event of a global crisis such as war, terrorism or climate change. Touted as “our insurance policy that we’re going to be able to feed the world in 50 years,” the vault has been situated at a location and depth in the Arctic intended to ensure that the seeds will not rot or sprout and will be available for use when needed. For further safety, the vault is refrigerated to zero de­­grees Fahrenheit and designed to withstand a magnitude 10 earthquake. (For comparison, the quake that produced the tsunami that devastated Fukushima, Ja­­pan, was magnitude 9.) On the surface, the seed repository sounds like a very solid idea. But it rests on shaky foundations. The vault opened in 2008, following on an earlier iteration in which seeds were stored in a nearby coal mine. It is not specifically a response to the threat of climate change, but it is an epitome of climate-­adaptation thinking. The logic behind it goes like this: Climate change is underway, and our political systems seem to be incapable of meaningful action to stop it, so we have little choice but to plan for a fu­ture when we will face serious climate disruption. --- ## On supporting science journalism If you're enjoying this article, consider supporting our award-winning journalism bysubscribing. By purchasing a subscription you are helping t\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC6204558):\n# The Svalbard Global Seed Vault: 10 Years—1 Million Samples Åsmund Asdal, Luigi Guarino Biopreservation and Biobanking · 2018-10-12 · 16(5):391-392 · DOI: 10.1089/bio.2018.0025 · PMID: 30325665 · PMCID: PMC6204558 Genebanks worldwide conserve plant genetic resources with the purpose of making them available for improving food and nutritional security through research, plant breeding, and education. In gene banks, genetic diversity is conserved ex situ through different methods, as seeds, living plants, and plant tissues. Well-dried, vacuum-packed seeds of so-called orthodox species can stay viable at low temperatures for very long predictable periods of time. Thus, for many crops, seed storage is the optimal method for long-term ex situ conservation of genetic diversity in genebanks. There may be some 1750 crop genebanks worldwide. About 130 of these hold >10,000 accessions each.1 Genebank collections are held by international, regional, and national institutes as well as by universities, breeding institutes, NGOs, private entities, and commercial companies. As an extra security measure for the conservation of valuable resources, international guidelines recommend safety duplication of genebank collections. All genebanks providing access to seeds for researchers and plant breeders are free to store security copies of these seeds at the Svalbard Global Seed Vault. The Vault was opened in 2008. It has the capacity to store 4.5 million seed samples in three caverns dug into a mountain at the end of a 100 m tunnel. Svalbard is considered to be an ideal place for a facility of this kind. It has deep permafrost, securing seeds at low temperatures even if the artificial cooling fails and it combines being a remote and calm location with good infrastructure and the presence of public services. Offering the world a safe place for seeds is in accordance with long standing Norwegian policies for supporting biodiversity conservation, and stakeholders all over the world trust that Norway will take good care of the seeds. The Vault is owned by the Norwegian government and managed through an agreement between the Norwegian Ministry for Agriculture and Food, the Global Crop Di\n\nSOURCE bbc.com (https://www.bbc.com/news/science-environment-34658200):\n# The gloomy Arctic seed bank that's key to future crops ## To play this video you need to enable JavaScript in your browser. This video can not be played The forbidding entrance to the Global Seed Vault on the Arctic island of Svalbard **What happens if war or global warming threaten the key plants that the world depends on for food? A consortium of scientists is running what it believes is an answer: a deep-freeze for thousands of seed samples that is meant to serve as a back-up to cope with the worst-case scenarios. The Global Seed Vault is buried inside a mountain on the Arctic islands of Svalbard and science editor David Shukman was allowed inside.** It's an eerie feeling approaching what's meant to be the safest place on the planet. High on a wind-blasted Arctic mountain, a stark concrete doorway leads to the Svalbard Global Seed Vault, external, a store to ensure the survival of the world's most precious plants. Designed to cope with the most pessimistic nightmare of an apocalypse, a day spent here is not destined to be uplifting. The very first barrier to entry is the sheer remoteness of the location - the Svalbard islands sit just 800 miles or 1,300 km from the North Pole. And although there are plenty of flights from mainland Norway, and Arctic adventures are growing in popularity, the population is sparse and mass tourism is not on the cards. Next comes an unintended hazard - a sheet of rock-hard ice covers the small car park as we arrive. Each step is treacherous. I picture the highly unlikely scenario of a rampaging mob threatening the place but failing to remain upright. ## Keys to the kingdom Seeds from more than 5,000 species of crops are held in the vault The outermost door is fashioned out of steel but is opened by a disappointingly ordinary key - the kind that most of us use at home. What happens if you lose it? For some reason, my mind is on a cynical track today. The answer is obvious: we have spares. The first steps inside take us out of a piercing wind and into an atmosphere of extreme quiet. A line of safety helmets is waiting to be worn. Another door opens on to a tunnel that gently descends deeper into the mountain. The temperature is m\n\nSOURCE nationalgeographic.com (https://www.nationalgeographic.com/environment/article/norway-svalbard-global-seed-vault):\nThe Svalbard Global Seed Vault, a doomsday shelter for the food supply, is tucked into a remote mountain on Spitsbergen, in Norway's Svalbard archipelago. Photograph by Jonas Bendiksen, Magnum Photos * FUTURE OF FOOD # ‘Doomsday Vault’ Protects Earth’s Food Supply—Here’s How Designed to be insulated from a cataclysm, the Svalbard Global Seed Vault sprang a leak last year. Now it’s being retooled for climate change. ByJohn Wendle Published March 20, 2018 •14 min read Longyearbyen, Svalbard — The windshield wipers on the SUV work overtime as Åsmund Asdal zigzags up the fog-covered mountain to the Svalbard Global Seed Vault. “The main reason we have civilization is that humans developed ways of using seeds,” says Asdal, the operations and management coordinator of the facility, as he peers over the steering wheel through the haze. Today the wide range of plants that humans have relied on throughout history is threatened by the clones of modern industrial agriculture, new diseases, and climate change. The storage vault—in Norway’s Svalbard archipelago 800 miles above the Arctic Circle—was designed to ensure that nature’s vast array of genes is not lost. At the entrance tunnel to the warehouse, the wind is drowned out by the roar of a cooling system that deepens the freeze in the space to minus 18°C (0°F)—a temperature ensuring that seed samples stay viable in the event of a global cataclysm. “People call the vault a Noah’s Ark for seeds,” says Asdal, a biologist and agronomist. “I think that's quite a good comparison.” But now, on its tenth anniversary, the initiative is confronting one of the very forces it is meant to protect against: global warming. A small drainage ditch in front of the entrance diverts rainwater streaming down the cold rock of the mountain. Twenty years ago, this trench might have been sufficient. Svalbard was thought to be the perfect place to preserve and store seeds because it is a polar desert—cold and dry, with little snow and not much rain. In a cruelly ironic twist for what is meant to be a doomsday backup for civilization, climate change is working faster here than in many other places around the world. This has meant warming temperatur\n\nSOURCE smithsonianmag.com (https://www.smithsonianmag.com/smart-news/take-a-virtual-tour-of-the-doomsday-seed-vault-180981815):\n![Smithsonian Magazine white logo](/) Search Shop Newsletters Renew Give a Gift Subscribe Membership Subscribe to Smithsonian magazine and get a FREE tote. # Take a Virtual Tour of the ‘Doomsday’ Seed Vault ## The impressive depository carefully preserves over one million seed samples in its Arctic location /https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/accounts/headshot/Teresa_Nowakowski.png) Teresa Nowakowski | Daily Correspondent Share EmailSMSFacebookXRedditLinkedInBlueskyPrint Add as preferred source /https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/e1/48/e1483cec-7b69-4337-b565-c8f21f6f0e28/svalbard.jpg) The Svalbard Global Seed Vault is located in the Norwegian Arctic on the remote island of Spitsbergen. Shaliz Barzani / Crop Trust In the frigid Norwegian Arctic, a gray wedge-shaped building protrudes from a mountain. Snow blows across the small metal bridge that leads to its entrance, above which a pattern of steel, mirrors and prisms reflect a ghostly green light. Large letters on the building’s side hint at the precious collection that’s held within, declaring that here is the entrance to the “Svalbard Global Seed Vault.” Only a handful of people are allowed inside the vault, and its five metal doors are only opened a few times each year for new entries of seeds. But now, in honor of its 15th anniversary, you can catch a rare glimpse of the vault’s interior through a virtual tour. Carved into Plateau Mountain on the Norwegian island of Spitsbergen, it holds more than 1.2 million seed samples from almost every country in the world, including recent first-time depositors Albania, Croatia, North Macedonia and Benin. Meant to protect crop biodiversity in case of localized catastrophe, this curious depository is often referred to as the “doomsday seed vault.” /https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/b1/df/b1df3d57-47c6-45b0-98d5-6bb08c84dcbb/seeds.jpg) A member of NordGen, the gene bank of the Nordic countries, places a box of seeds in one of the vault chambers. Luis Salazar / Crop Trust “From here in Svalbard, the world looks different. This seed vault represents hope, unity and security,” says Stefan",
+  "extra_sources": [
+   "https://www.scientificamerican.com/article/the-arctic-seed-vault-shows-the-flawed-logic-of-climate-adaptation",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC6204558",
+   "https://www.bbc.com/news/science-environment-34658200",
+   "https://www.nationalgeographic.com/environment/article/norway-svalbard-global-seed-vault",
+   "https://www.smithsonianmag.com/smart-news/take-a-virtual-tour-of-the-doomsday-seed-vault-180981815"
+  ]
+ },
+ "_writer": "gemini"
+}

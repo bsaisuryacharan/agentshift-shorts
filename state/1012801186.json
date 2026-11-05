@@ -1,5 +1,5 @@
 {
- "current": "what-if-krakatoa-today-a1",
+ "current": "svalbard-seed-vault-how-it-works-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -359,6 +359,32 @@
    "uploaded": {
     "id": "c0J7RyE30Rk",
     "url": "https://youtube.com/watch?v=c0J7RyE30Rk",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
+  },
+  "svalbard-seed-vault-how-it-works-a1": {
+   "title": "Svalbard Global Seed Vault: How it protects future food",
+   "base": "svalbard-seed-vault-how-it-works-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 7,
+    "accuracy": 9,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 9,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "41997248832",
+   "uploaded": {
+    "id": "oIsZeMsprJI",
+    "url": "https://youtube.com/watch?v=oIsZeMsprJI",
     "privacy": "public",
     "wanted": "public",
     "publish_at": null

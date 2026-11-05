@@ -46,3 +46,4 @@
 {"spec_id": "what-if-krakatoa-today-a1", "mood": "space", "theme": "mono", "hook_words": "8-11", "beats": 9, "words": 107, "hf": 2, "real_pictures": 0.33, "grades": {"hook": "C", "story": "B", "visuals": "C", "polish": "D", "policy": "A"}}
 {"spec_id": "halleys-comet-scale-a1", "mood": "data", "theme": "cool", "hook_words": "12+", "beats": 6, "words": 94, "hf": 3, "real_pictures": 0.33, "grades": {"hook": "D", "story": "D", "visuals": "D", "polish": "D", "policy": "A"}}
 {"spec_id": "halleys-comet-scale-explainer-a2", "mood": "warm", "theme": "cool", "hook_words": "12+", "beats": 8, "words": 107, "hf": 3, "real_pictures": 0.38, "grades": {"hook": "D", "story": "D", "visuals": "D", "polish": "D", "policy": "A"}}
+{"spec_id": "svalbard-seed-vault-how-it-works-a1", "mood": "data", "theme": "cool", "hook_words": "12+", "beats": 7, "words": 118, "hf": 2, "real_pictures": 0.5, "grades": {"hook": "A", "story": "C", "visuals": "C", "polish": "C", "policy": "A"}}
