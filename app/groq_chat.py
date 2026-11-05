@@ -10,17 +10,21 @@ import httpx
 
 from . import chat
 
-# the ladder: OpenCode's own model first (same GLM the owner's OpenCode subscription uses), then the free Groq models
-MODEL = "z-ai/glm-5.3-flash"
-FALLBACKS = ("nvidia/nemotron-3-ultra-550b-a55b:free",     # OpenRouter free allowance (50 req/day free-tier): a capable 550B, costs $0
+# the ladder: the owner's OpenCode Go subscription first (GLM-5.3-Flash is billed to the $60/mo Go allowance, not to a token balance),
+# then the OpenRouter free allowance, then the free Groq models. Every rung is OpenAI-compatible.
+MODEL = "glm-5.3-flash"
+FALLBACKS = ("z-ai/glm-5.3-flash",                        # the same GLM via the owner's OpenRouter key (paid; skipped when the balance is 0)
+             "nvidia/nemotron-3-ultra-550b-a55b:free",    # OpenRouter free allowance (50 req/day on the free tier): a capable 550B, costs $0
              "openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen3.8-27b")   # the free Groq models (live model list)
-APIS = {                                   # candidate -> (chat-completions URL, env key). Both are OpenAI-compatible.
+APIS = {                                   # candidate -> (chat-completions URL, env key)
+    "glm-5.3-flash": ("https://opencode.ai/inference/go/openai/v1/chat/completions", "OPENCODE_API_KEY"),
     "z-ai/glm-5.3-flash": ("https://openrouter.ai/api/v1/chat/completions", "OPENROUTER_API_KEY"),
     "nvidia/nemotron-3-ultra-550b-a55b:free": ("https://openrouter.ai/api/v1/chat/completions", "OPENROUTER_API_KEY"),
     "openai/gpt-oss-120b": ("https://api.groq.com/openai/v1/chat/completions", "GROQ_API_KEY"),
     "openai/gpt-oss-20b": ("https://api.groq.com/openai/v1/chat/completions", "GROQ_API_KEY"),
     "qwen/qwen3.8-27b": ("https://api.groq.com/openai/v1/chat/completions", "GROQ_API_KEY"),
 }
+SESSION = "agentshift-telegram"
 DEAD = set()                                             # models a provider retired or cannot bill (HTTP 404/400/403/402); never asked again this run
 PROMPT_CHARS = 6000                                      # the free Groq models are tight on tokens/minute
 TOOLS = [{"type": "function", "function": {"name": "repository", "description":
@@ -101,14 +105,17 @@ def _ask(client, candidate, messages):
     """one model on one provider, one call; returns the response"""
     url, key_env = APIS.get(candidate, APIS["openai/gpt-oss-120b"])
     headers = {'Authorization': 'Bearer ' + os.environ[key_env]}
-    if 'openrouter.ai' in url:
+    if 'opencode.ai' in url:                     # OpenCode Go: it routes and caches by stable conversation id
+        headers.update({'X-Title': 'AgentShift Telegram agent', 'X-OpenCode-Session': SESSION})
+    elif 'openrouter.ai' in url:
         headers.update({'HTTP-Referer': 'https://github.com/bsaisuryacharan/agentshift-shorts', 'X-Title': 'AgentShift Telegram agent'})
     return client.post(url, headers=headers, json={
         'model': candidate, 'messages': messages, 'tools': TOOLS, 'max_completion_tokens': 2048, 'temperature': 0.3})
 
 
 def provider(model: str) -> str:
-    return 'openrouter' if 'openrouter' in APIS.get(model, APIS["openai/gpt-oss-120b"])[0] else 'groq'
+    url = APIS.get(model, APIS["openai/gpt-oss-120b"])[0]
+    return 'opencode-go' if 'opencode.ai' in url else ('openrouter' if 'openrouter' in url else 'groq')
 
 
 def run(text):

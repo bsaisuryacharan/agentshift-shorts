@@ -21,7 +21,8 @@ def base(monkeypatch, tmp_path):
     (tmp_path / 'docs').mkdir()
     (tmp_path / 'docs/AGENT.md').write_text('Rules')
     monkeypatch.setenv('GROQ_API_KEY', 'test')
-    monkeypatch.setenv('OPENROUTER_API_KEY', 'test')        # the primary ladder entry (GLM-5.3-Flash via OpenRouter) is testable too
+    monkeypatch.setenv('OPENROUTER_API_KEY', 'test')        # the fallback ladder entries are testable too
+    monkeypatch.setenv('OPENCODE_API_KEY', 'test')          # the primary ladder entry (GLM-5.3-Flash via the owner's OpenCode Go key)
     monkeypatch.setattr(chat, 'Progress', lambda *a: SimpleNamespace(step=lambda *a: None, done=lambda *a: None))
     monkeypatch.setattr(chat, 'send', lambda text, **kw: 123)
     monkeypatch.setattr(chat, 'remember', lambda *args: None)
