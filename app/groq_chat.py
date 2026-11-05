@@ -12,14 +12,16 @@ from . import chat
 
 # the ladder: OpenCode's own model first (same GLM the owner's OpenCode subscription uses), then the free Groq models
 MODEL = "z-ai/glm-5.3-flash"
-FALLBACKS = ("openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen3.8-27b")   # only models that really exist on Groq (live model list)
+FALLBACKS = ("nvidia/nemotron-3-ultra-550b-a55b:free",     # OpenRouter free allowance (50 req/day free-tier): a capable 550B, costs $0
+             "openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen3.8-27b")   # the free Groq models (live model list)
 APIS = {                                   # candidate -> (chat-completions URL, env key). Both are OpenAI-compatible.
     "z-ai/glm-5.3-flash": ("https://openrouter.ai/api/v1/chat/completions", "OPENROUTER_API_KEY"),
+    "nvidia/nemotron-3-ultra-550b-a55b:free": ("https://openrouter.ai/api/v1/chat/completions", "OPENROUTER_API_KEY"),
     "openai/gpt-oss-120b": ("https://api.groq.com/openai/v1/chat/completions", "GROQ_API_KEY"),
     "openai/gpt-oss-20b": ("https://api.groq.com/openai/v1/chat/completions", "GROQ_API_KEY"),
     "qwen/qwen3.8-27b": ("https://api.groq.com/openai/v1/chat/completions", "GROQ_API_KEY"),
 }
-DEAD = set()                                             # models a provider retired (HTTP 404); never asked again this run
+DEAD = set()                                             # models a provider retired or cannot bill (HTTP 404/400/403/402); never asked again this run
 PROMPT_CHARS = 6000                                      # the free Groq models are tight on tokens/minute
 TOOLS = [{"type": "function", "function": {"name": "repository", "description":
     "Read or write a repository file (path/content), list files (path), or run an allowed command (command). Commands are argv strings, no shell operators. Read docs/AGENT.md for system rules. Code changes must go on chat/* branches and through a PR; never push main.",
@@ -134,8 +136,8 @@ def run(text):
                         break
                     statuses.add(r.status_code)
                     print('[chat] model unavailable:', candidate, 'HTTP', r.status_code)
-                    if r.status_code in (404, 400, 403):
-                        DEAD.add(candidate)                 # gone from the provider: stop asking, use the next model
+                    if r.status_code in (404, 400, 403, 402):
+                        DEAD.add(candidate)                 # gone from the provider, or cannot be billed (no balance): skip the rest of this run
                 if model_used is None:
                     active_model = None
                     if statuses <= {429, 402}:
