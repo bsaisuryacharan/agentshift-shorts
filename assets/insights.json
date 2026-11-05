@@ -1,31 +1,31 @@
 {
- "generated_at": "2026-11-04T11:12:31+00:00",
+ "generated_at": "2026-11-05T11:12:19+00:00",
  "channel": {
-  "period": "2026-10-05..2026-11-03",
-  "views": 7087.0,
+  "period": "2026-10-06..2026-11-04",
+  "views": 8218.0,
   "avg_view_seconds": 24.0,
-  "avg_view_pct": 59.64,
-  "net_subscribers": 10.0,
-  "likes": 106.0,
-  "shares": 6.0,
+  "avg_view_pct": 60.53,
+  "net_subscribers": 12.0,
+  "likes": 136.0,
+  "shares": 7.0,
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
   "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained",
-  "What if you dropped 10kg of tungsten from space?",
-  "The largest elephant ever recorded",
   "IKAN LELE SAMA BELUT",
   "Hannah Fry on The Nun Study",
-  "SIZE OF SOLAR SYSTEM! 💀",
   "Astronomical events in November 2026😲",
+  "SIZE OF SOLAR SYSTEM! 💀",
+  "Stop Using Sunscreen",
   "Most Shocking Wildlife moments",
   "5 Animals That Sleep in the STRANGEST Ways",
   "3 Birds That Build Nests in the Most Incredible Ways! 🤯",
-  "10 Shocking Animal Encounters with Unexpected Twists 😱",
-  "This is nature’s most miraculous sight: a flood saves the lives of thousands of animals."
+  "This is nature’s most miraculous sight: a flood saves the lives of thousands of animals.",
+  "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
+  "Scientists Found Something INSANE Inside This Worm!🤯"
  ],
  "learned": {
-  "shorts_scored": 6,
+  "shorts_scored": 7,
   "best": [
    {
     "title": "Inside a Submarine: 5 Systems",
@@ -55,82 +55,82 @@
     "weakest": "polish"
    },
    {
-    "title": "The Antarctic Ozone Hole: Myth vs. Fact",
+    "title": "Svalbard Global Seed Vault: How it protects future food",
     "avg": 7.9,
-    "weakest": "visual_quality"
+    "weakest": "originality"
    }
   ],
   "weakest_dimensions": [
-   "visual_quality",
    "originality",
+   "visual_quality",
    "polish"
   ]
  },
  "stage_averages": {
-  "hook": 7.5,
-  "story": 6.6,
+  "hook": 7.4,
+  "story": 6.7,
   "visuals": 6.3,
   "polish": 6.2,
-  "policy": 8.9
+  "policy": 9.3
  },
  "weakest_stage": "polish",
  "region": "IN",
- "trend_signals_total": 66,
- "trend_signals_on_niche": 45,
+ "trend_signals_total": 62,
+ "trend_signals_on_niche": 48,
  "niche_winners": [
   {
    "title": "Astronomical events in November 2026😲 #shorts #astronomicalevents #space #helpyn",
-   "views": 4026442,
+   "views": 4301779,
    "url": "https://www.youtube.com/watch?v=_fw3vnQconI"
   },
   {
    "title": "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained #shorts",
-   "views": 8688137,
+   "views": 8854034,
    "url": "https://www.youtube.com/watch?v=K2we_H33tlU"
   },
   {
-   "title": "The largest elephant ever recorded #shorts #animals #history",
-   "views": 5934776,
-   "url": "https://www.youtube.com/watch?v=0xmL99Z-GT8"
-  },
-  {
-   "title": "What if you dropped 10kg of tungsten from space?",
-   "views": 7510309,
-   "url": "https://www.youtube.com/watch?v=uj4plcsfc6k"
-  },
-  {
-   "title": "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
-   "views": 2345214,
-   "url": "https://www.youtube.com/watch?v=zMt9YzQ_hf4"
-  },
-  {
    "title": "SIZE OF SOLAR SYSTEM! 💀",
-   "views": 4101239,
+   "views": 4258213,
    "url": "https://www.youtube.com/watch?v=dv-Czhabars"
   },
   {
    "title": "3 Birds That Build Nests in the Most Incredible Ways! 🤯 #facts #animals #wildlife",
-   "views": 3055935,
+   "views": 3304888,
    "url": "https://www.youtube.com/watch?v=T3wxJlPDlUc"
   },
   {
+   "title": "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
+   "views": 2454731,
+   "url": "https://www.youtube.com/watch?v=zMt9YzQ_hf4"
+  },
+  {
    "title": "Scientists Found Something INSANE Inside This Worm!🤯",
-   "views": 1469483,
+   "views": 1639389,
    "url": "https://www.youtube.com/watch?v=ttYCiXhTa6U"
+  },
+  {
+   "title": "Stop Using Sunscreen #gyrussulcus #dharmendrasir #science #sunscreen",
+   "views": 3956689,
+   "url": "https://www.youtube.com/watch?v=FHByFcOlECA"
+  },
+  {
+   "title": "This is nature’s most miraculous sight: a flood saves the lives of thousands of animals. #",
+   "views": 2922988,
+   "url": "https://www.youtube.com/watch?v=Dm0w53ysg3Q"
   }
  ],
  "news": [
+  "SLAC scientists find conclusive proof of a mysterious third type of magnetism",
+  "NASA is racing against time to save the Hubble Space Telescope",
+  "MIT scientists break a 20-year rule and unlock never-before-seen crystal structures",
+  "AI helps Stanford scientists discover a “natural Ozempic” with a surprising advantage",
+  "Permanent daylight saving time has a dark side, scientists warn",
   "NASA smashed into an asteroid. Now Hera is closing in to see what happened",
   "A hidden star is plowing through Betelgeuse’s atmosphere, new evidence suggests",
-  "Scientists identify two overlooked skills that predict reading success",
-  "A 50-year-old mystery of vanishing frogs reveals a hidden killer",
-  "Gene editing could replace a lifetime of medication, but there's a catch",
-  "All 5 genetic “letters” of DNA and RNA discovered in a 4.5-billion-year-old asteroid",
-  "APOD: 2026 November 4 – The Not-So-Hidden Galaxy, IC 342",
-  "Before the Dawn in America’s Heartland",
-  "TB 26-10 Printed Circuit Board Assembly Chip Resistor Body Cracking",
-  "APOD: 2026 November 3 – Comet PanSTARRs and Rainbow Meteor",
-  "The Pacific’s Busy Storm Season",
-  "Happy 65 Years: NASA’s Johnson Space Center Then and Now"
+  "Scientists may have finally explained why our brains and bodies are cross-wired",
+  "APOD: 2026 November 5 – Enceladus in Silhouette",
+  "Cyprus: Island of Snakes, Cats, and Ophiolites",
+  "NASA Announces X-70 Experimental Aircraft to Advance Flight Research",
+  "NASA Shares Plans to Accelerate Artemis, Return to Moon"
  ]
 }
