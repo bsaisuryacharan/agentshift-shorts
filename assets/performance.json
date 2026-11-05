@@ -1,6 +1,6 @@
 {
  "performance": {
-  "updated": "2026-11-05T10:57+00:00",
+  "updated": "2026-11-05T18:45+00:00",
   "target_views_per_short": 1000000,
   "shorts": [
    {
@@ -10,11 +10,11 @@
     "views": 1692,
     "likes": 25,
     "comments": 0,
-    "age_h": 473.3,
-    "expected": 910620,
+    "age_h": 481.1,
+    "expected": 913448,
     "ratio": 0.002,
     "status": "far_behind",
-    "projected_30d": 1858
+    "projected_30d": 1852
    },
    {
     "spec_id": null,
@@ -23,11 +23,11 @@
     "views": 443,
     "likes": 7,
     "comments": 0,
-    "age_h": 474.9,
-    "expected": 911197,
+    "age_h": 482.7,
+    "expected": 914025,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 486
+    "projected_30d": 484
    },
    {
     "spec_id": null,
@@ -36,11 +36,11 @@
     "views": 1115,
     "likes": 16,
     "comments": 0,
-    "age_h": 475.0,
-    "expected": 911219,
+    "age_h": 482.8,
+    "expected": 914047,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 1223
+    "projected_30d": 1219
    },
    {
     "spec_id": null,
@@ -49,8 +49,8 @@
     "views": 32,
     "likes": 2,
     "comments": 0,
-    "age_h": 546.8,
-    "expected": 937239,
+    "age_h": 554.6,
+    "expected": 940067,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 34
@@ -62,11 +62,11 @@
     "views": 142,
     "likes": 5,
     "comments": 0,
-    "age_h": 549.5,
-    "expected": 938207,
+    "age_h": 557.3,
+    "expected": 941035,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 151
+    "projected_30d": 150
    },
    {
     "spec_id": null,
@@ -75,8 +75,8 @@
     "views": 175,
     "likes": 2,
     "comments": 0,
-    "age_h": 557.5,
-    "expected": 941106,
+    "age_h": 565.3,
+    "expected": 943934,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 185
@@ -88,8 +88,8 @@
     "views": 24,
     "likes": 1,
     "comments": 0,
-    "age_h": 573.4,
-    "expected": 946901,
+    "age_h": 581.3,
+    "expected": 949729,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 25
@@ -101,8 +101,8 @@
     "views": 29,
     "likes": 1,
     "comments": 0,
-    "age_h": 579.5,
-    "expected": 949078,
+    "age_h": 587.3,
+    "expected": 951906,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 30
@@ -114,8 +114,8 @@
     "views": 185,
     "likes": 2,
     "comments": 0,
-    "age_h": 595.4,
-    "expected": 954847,
+    "age_h": 603.2,
+    "expected": 957675,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 193
@@ -127,8 +127,8 @@
     "views": 241,
     "likes": 6,
     "comments": 1,
-    "age_h": 600.6,
-    "expected": 956736,
+    "age_h": 608.4,
+    "expected": 959564,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 251
@@ -140,8 +140,8 @@
     "views": 125,
     "likes": 2,
     "comments": 1,
-    "age_h": 616.5,
-    "expected": 962505,
+    "age_h": 624.3,
+    "expected": 965333,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 129
@@ -150,14 +150,14 @@
     "spec_id": null,
     "video_id": "uU6JXROm7rI",
     "title": "Claude Code on Android for FREE — No Cloud Server Needed",
-    "views": 739,
+    "views": 756,
     "likes": 11,
     "comments": 0,
-    "age_h": 617.7,
-    "expected": 962937,
+    "age_h": 625.5,
+    "expected": 965765,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 767
+    "projected_30d": 782
    }
   ],
   "best": {
@@ -166,7 +166,7 @@
   },
   "ypp": {
    "subscribers": 13,
-   "shorts_views_90d": 9676,
+   "shorts_views_90d": 9750,
    "public_uploads_90d": 23,
    "tier1_fan_funding": {
     "subs_ok": false,
@@ -187,9 +187,9 @@
   "channel_views": 9663,
   "not_public_or_missing": [],
   "lessons": [
-   "topic type: 'warm' averaged 1114 views vs 'data' 357 (n=4 Shorts): do more of 'warm'",
-   "colour theme: 'cool' averaged 675 views vs 'earth' 357 (n=4 Shorts): do more of 'cool'",
-   "gallery graphics per Short: '4' averaged 873 views vs '2' 357 (n=4 Shorts): do more of '4'"
+   "topic type: 'warm' averaged 1114 views vs 'data' 358 (n=5 Shorts): do more of 'warm'",
+   "colour theme: 'cool' averaged 751 views vs 'earth' 358 (n=5 Shorts): do more of 'cool'",
+   "gallery graphics per Short: '4' averaged 873 views vs '2' 358 (n=5 Shorts): do more of '4'"
   ]
  }
 }
