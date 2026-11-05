@@ -21,6 +21,7 @@ def base(monkeypatch, tmp_path):
     (tmp_path / 'docs').mkdir()
     (tmp_path / 'docs/AGENT.md').write_text('Rules')
     monkeypatch.setenv('GROQ_API_KEY', 'test')
+    monkeypatch.setenv('OPENROUTER_API_KEY', 'test')        # the primary ladder entry (GLM-5.3-Flash via OpenRouter) is testable too
     monkeypatch.setattr(chat, 'Progress', lambda *a: SimpleNamespace(step=lambda *a: None, done=lambda *a: None))
     monkeypatch.setattr(chat, 'send', lambda text, **kw: 123)
     monkeypatch.setattr(chat, 'remember', lambda *args: None)
@@ -45,7 +46,7 @@ def test_groq_tool_loop_sends_answer(tmp_path, monkeypatch):
     monkeypatch.setattr(groq_chat.httpx, 'Client', Client)
     assert groq_chat.run('Check system') == 0
     assert sent == ['Groq is connected. System healthy.']
-    assert remembered[0][2]['provider'] == 'groq' and remembered[0][2]['model'] == groq_chat.MODEL
+    assert remembered[0][2]['provider'] == groq_chat.provider(groq_chat.MODEL) and remembered[0][2]['model'] == groq_chat.MODEL
     assert len(calls) == 2
 
 
@@ -95,7 +96,7 @@ def test_quota_message_when_every_model_is_rate_limited(tmp_path, monkeypatch):
         def post(self, url, **kwargs): return SimpleNamespace(status_code=429, json=lambda: {})
     monkeypatch.setattr(groq_chat.httpx, 'Client', Client)
     assert groq_chat.run('hello') == 1
-    assert 'free quota' in sent[0] and remembered[0][2]['error'] is True
+    assert 'rate-limited' in sent[0] and remembered[0][2]['error'] is True
 
 
 def test_retired_model_is_never_asked_again(tmp_path, monkeypatch):
@@ -109,12 +110,12 @@ def test_retired_model_is_never_asked_again(tmp_path, monkeypatch):
         def __exit__(self, *a): pass
         def post(self, url, **kwargs):
             seen.append(kwargs['json']['model'])
-            if kwargs['json']['model'] == 'openai/gpt-oss-120b':                           # pretend Groq retired the primary today
+            if kwargs['json']['model'] == groq_chat.MODEL:                                 # pretend the provider retired the primary today
                 return SimpleNamespace(status_code=404, json=lambda: {})
             return SimpleNamespace(status_code=200, json=lambda: {'choices': [{'message': {'role': 'assistant', 'content': 'Fine.'}}]})
     monkeypatch.setattr(groq_chat.httpx, 'Client', Client)
     assert groq_chat.run('status?') == 0
-    assert seen.count('openai/gpt-oss-120b') == 1                                          # one 404, then skipped forever this run
+    assert seen.count(groq_chat.MODEL) == 1                                               # one 404, then skipped forever this run
 
 
 def test_empty_answer_gets_a_nudge_before_failing(tmp_path, monkeypatch):
