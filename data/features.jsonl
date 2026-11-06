@@ -50,3 +50,4 @@
 {"spec_id": "atacama-mars-key-a1", "mood": "space", "theme": "cool", "hook_words": "12+", "beats": 8, "words": 86, "hf": 3, "real_pictures": 0.12, "grades": {"hook": "A", "story": "D", "visuals": "D", "polish": "D", "policy": "A"}}
 {"spec_id": "atacama-mars-key-a2", "mood": "space", "theme": "cool", "hook_words": "12+", "beats": 8, "words": 101, "hf": 3, "real_pictures": 0.5, "grades": {"hook": "D", "story": "D", "visuals": "D", "polish": "D", "policy": "C"}}
 {"spec_id": "what-if-atacama-mars-a3", "mood": "space", "theme": "cool", "hook_words": "12+", "beats": 8, "words": 111, "hf": 4, "real_pictures": 0.67, "grades": {"hook": "D", "story": "D", "visuals": "D", "polish": "D", "policy": "C"}}
+{"spec_id": "y2k-bug-timeline-a1", "mood": "danger", "theme": "cool", "hook_words": "12+", "beats": 9, "words": 105, "hf": 2, "real_pictures": 0.22, "grades": {"hook": "B", "story": "C", "visuals": "D", "polish": "D", "policy": "A"}}

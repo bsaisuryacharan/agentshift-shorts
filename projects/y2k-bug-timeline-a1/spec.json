@@ -1,0 +1,239 @@
+{
+ "id": "y2k-bug-timeline-a1",
+ "title": "The 600 Billion Dollar Bug",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "TIMELINE",
+ "theme": "cool",
+ "look": "editorial-paper",
+ "format": "timeline",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Wikipedia - Year 2000 problem",
+  "b2": "Britannica - Y2K bug",
+  "b5": "Wikipedia - Year 2000 problem",
+  "b7": "Wikipedia - Year 2000 problem",
+  "wiki": "https://en.wikipedia.org/wiki/Year_2000_problem",
+  "ref1": "http://www.britannica.com/technology/Y2K-bug",
+  "ref2": "https://americanhistory.si.edu/collections/object-groups/y2k",
+  "ref3": "https://www.si.edu/spotlight/y2k",
+  "ref4": "https://www.newscientist.com/article/2262860-2020-in-review-revenge-of-the-y2k-bug-as-lazy-fix-takes-down-software"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "mainframe computer 1960s",
+   "prompt": "photoreal cinematic 9:16 image of a massive 1960s mainframe computer with spinning tape reels, soft room lighting, documentary style",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Individual companies predicted a 600 billion dollar cost to stop the millennium bug.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "when?",
+     "at": "predicted"
+    },
+    {
+     "t": "title",
+     "html": "600 *Billion* Dollar Bug",
+     "at": "billion"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "punched cards IBM",
+   "prompt": "photoreal cinematic 9:16 image of stacks of IBM punched cards on a wooden table, natural office light, documentary style",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "It began in the 1960s when computer memory was extremely scarce.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Expensive Memory",
+     "at": "scarce"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "By 1975, one kilobyte of memory could cost 100 dollars.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 100,
+      "suffix": "dollars"
+     },
+     "at": "dollars"
+    }
+   ],
+   "sfx": [
+    [
+     "dollars",
+     "ding",
+     0.8
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "computer memory chip 1970s",
+   "prompt": "photoreal cinematic 9:16 image of a vintage computer circuit board from 1975, macro shot, realistic materials, documentary style",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Programmers saved space by only storing the last 2 digits of a year.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "Two Digit Dates",
+     "at": "digits",
+     "col": "cy"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 1984, experts warned that 2000 would be indistinguishable from 1900.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "Year",
+      "options": "1900, 2000"
+     },
+     "at": "indistinguishable"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "footage": "stock market ticker",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "By 1997, investors were trading on the risk of a global computer crash.",
+   "hud": [
+    {
+     "t": "line",
+     "values": [
+      400,
+      600
+     ],
+     "labels": [
+      "1990",
+      "1999"
+     ],
+     "col": "cy",
+     "at": "trading"
+    }
+   ],
+   "prompt": "documentary photograph of stock market ticker, natural light, no text, no people"
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "office computers 1990s",
+   "prompt": "photoreal cinematic 9:16 wide shot of a 1990s office with beige computer monitors and tangled wires, natural lighting, documentary style",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "IT experts worked for years to upgrade worldwide infrastructures.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Global Infrastructure Fix",
+     "at": "infrastructures"
+    }
+   ]
+  },
+  {
+   "key": "b7",
+   "img": "s7.jpg",
+   "footage": "times square celebration",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "On January 1, 2000, the pre-emptive action of programmers averted disaster.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "Disaster Averted",
+     "col": "ok",
+     "at": "averted"
+    }
+   ],
+   "sfx": [
+    [
+     "averted",
+     "whoosh",
+     0.5
+    ]
+   ],
+   "prompt": "documentary photograph of times square celebration, natural light, no text, no people"
+  },
+  {
+   "key": "outro",
+   "img": "s8.jpg",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Was it a triumph of planning or just a global scare? Follow for more.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "Follow for *more*",
+     "at": "scare"
+    }
+   ],
+   "prompt": "graphic ground"
+  }
+ ],
+ "_facts": {
+  "title": "Year 2000 problem",
+  "url": "https://en.wikipedia.org/wiki/Year_2000_problem",
+  "text": "The Year 2000 problem (Y2K) was the potential for computer errors on the Gregorian calendar related to the formatting and storage of calendar data for dates in and after the year 2000. Many programs represented four-digit years with only the final two digits, e.g. 1985 as 85, making the year 2000 indistinguishable from 1900. Computer systems' inability to distinguish dates correctly had the potential to bring down worldwide infrastructures for computer-reliant industries. In the years leading up to the turn of the millennium, the public gradually became aware of the \"Y2K scare\", and individual companies predicted the global damage caused by the bug would require anything between $400 billion and $600 billion to rectify. A lack of clarity regarding the potential dangers of the bug led some to stock up on food, water, and firearms, purchase backup generators, and withdraw large sums of money in anticipation of a computer-induced apocalypse. Contrary to published expectations, few major errors occurred in 2000. Supporters of the Y2K remediation effort argued that that was primarily due to the pre-emptive action of many computer programmers and information technology experts. Companies and organizations in some countries, but not all, had checked, fixed, and upgraded their computer systems to address the problem. U.S. President Bill Clinton, who organized efforts to minimize the damage in the United States, labelled Y2K as \"the first challenge of the 21st century successfully met\", and retrospectives on the event typically commend the programmers who worked to avert the anticipated disaster. Critics argued that even in countries where very little had been done to ready software, problems were minimal. The same was true in sectors such as schools and small businesses, where compliance with Y2K policies was inconsistent at best. == Background ==\nY2K is a numeronym and was the common abbreviation for the year 2000 software problem. The abbreviation combines the letter Y for \"year\", the number 2 and a capitalized version of k for the SI unit prefix kilo meaning 1000; hence, 2K signifies 2000. It was also named the \"millennium bug\" because it was associated with the popular (rather than literal) rollover of the millennium, even though most of the problems could have occurred at the end of any century. Computerworld's 1993 three-page \"Doomsday 2000\" article by Peter de Jager was called \"the information-age equivalent of the midnight ride of Paul Revere\" by The New York Times. The problem was the subject of the early book Computers in Crisis by Jerome and Marilyn Murray (Petrocelli, 1984; reissued by McGraw-Hill under the title The Year 2000 Computing Crisis in 1996). Its first recorded mention on a Usenet newsgroup is from 18 January 1985, by Spencer Bolles. The acronym Y2K has been attributed to Massachusetts programmer David Eddy in an e-mail sent on 12 June 1995. He later said, \"People were calling it CDC (Century Date Change), FADL (Faulty Date Logic). There were other contenders. Y2K just came off my fingertips.\"\nThe problem started because on both mainframe computers and later personal computers, memory was expensive, from as low as $10 per kilobyte to more than US $100 per kilobyte in 1975. It was therefore very important for programmers to minimize usage. Since computers only gained wide usage in the 20th century, programs could simply prefix \"19\" to the year of a date, allowing them to only store the last two digits of the year instead of four. As space on disc and tape storage was also expensive, these strategies saved money by reducing the size of stored data files and databases in exchange for becoming unusable past the year 2000. This meant that programs facing two-digit years could not distinguish between dates in 1900 and 2000. Dire warnings at times were in the mode of:\n\nThe Y2K problem is the electronic equivalent of the El Niño and there will be nasty surprises around the globe. — John Hamre, United States Deputy Secretary of Defense\nOptions on the De Jager Year 2000 Index, \"the first index enabling investors to manage risk associated with the  ... computer problem linked to the year 2000\" began trading mid-March 1997. Special committees were set up by governments to monitor remedial work and contingency planning, particularly by crucial infrastructures such as telecommunications, to ensure that the most critical services had fixed their own problems and were prepared for problems with others. While some commentators and experts argued that the coverage of the problem largely amounted to scaremongering, it was only the safe passing of the main event itself, 1 January 2000, that fully quelled public fears. Some experts who argued that scaremongering was occurring, such as Ross Anderson, professor of security engineering at the University of Cambridge Computer Laboratory, have since claimed that despite sending out hundreds of press releases about research results suggesting that the problem was not likely to be as big as some had suggested, they were largely ignored by the media. In a similar vein, the Microsoft Press book Running Office 2000 Professional, published in May 1999, accurately predicted that most personal computer hardware and software would be unaffected by the year 2000 problem. Authors Michael Halvorson and Michael Young characterized most of the worries as popular hysteria, an opinion echoed by Microsoft Corp. == Programming problem ==\nThe practice of using two-digit dates for convenience predates computers, but was never a problem until stored dates were used in calculations. === Bit conservation need ===\n\nBusiness data processing was done using unit record equipment and punched cards, most commonly the 80-column variety employed by IBM, which dominated the industry. Many tricks were used to squeeze needed data into fixed-field 80-character records. Saving two digits for every date field was significant in this effort. In the 1960s, computer memory and mass storage were scarce and expensive.\n\nSOURCE britannica.com (http://www.britannica.com/technology/Y2K-bug):\nTitle: Y2K bug | Definition, Hysteria, & Facts | Britannica * University of Cambridge - Department of Computer Science and Technology - The Millennium Bug – Reasons not to Panic (PDF). * BBC - Millennium bug - was it a myth? # Y2K bug. Also known as: Year 2000 bug, millennium bug. Encyclopaedia Britannica's editors oversee subject areas in which they have extensive knowledge, whether from years of experience gained by working on that content or via study for an advanced degree.... * Why did using two digits for the year in computers cause a problem? * How could the Y2K bug affect computer systems and everyday life? * What steps did people take to fix or prevent the Y2K bug? * Did the Y2K bug cause any major problems when the year 2000 began? * What lessons did computer scientists learn from the Y2K bug? **Y2K bug**, a problem in the coding of computerized systems that was projected to create havoc in computers and computer networks around the world at the beginning of the year 2000 (in metric measurements, *k* stands for 1,000). Until the 1990s many computer programs (especially those written in the early days of computers) were designed to abbreviate four-digit years as two digits in order to save memory space. Many feared that when the clocks struck midnight on January 1, 2000, many affected computers would be using an incorrect date and thus fail to operate properly unless the computers’ software was repaired or replaced before that date. In addition, some computer software did not take into account that the year 2000 was a leap year. It was feared that such a misreading would lead to software and hardware failures in computers used in such important areas as banking, utilities systems, government records, and so on, with the potential for widespread chaos on and following January 1, 2000. : Year 2000 bug or Millennium Bug. In following years, some analysts pointed out that programming upgrades that had been part of the Y2K-compliance campaign had improved computer systems and that the benefits of these improvements would continue to be seen for some time to come.\n\nSOURCE americanhistory.si.edu (https://americanhistory.si.edu/collections/object-groups/y2k):\nSkip to main content **Smithsonian\")** **Explore Topics** * Music * Food History Donate National Museum of American History * Visit * Explore * Collections * Education * Events * Support * About * Search Menu Close * Visit * Explore * Collections * Education * Events * Support * About * Search **Explore Topics** * Music * Food History Breadcrumb 1. Home 2. Collections 3. Object Groups 4. Y2K Object Group # Y2K The term Year 2000 bug, also known as the millennium bug and abbreviated as Y2K, referred to potential computer problems which might have resulted when dates used in computer systems moved from the year 1999 to the year 2000. In the early days of electronic computers, memory was expensive so, in order to save space, programmers abbreviated the four-digit year designation and stored only the final two digits. For example, computers recognized “98” as “1998.” How programs interpret “00” when the date changed to the year 2000? Would “00” be translated as 0000, 1000, 1900, or 2000? (Early in 1999, Computer Chronicles host Stewart Cheifet became aware of the possible problem when he received a credit card from a major gasoline company with an expiration date of 1000.) Mainframe computers in use in important areas such as banking, utilities, communications, insurance, manufacturing, and government were considered the most vulnerable. The problem was not only with systems running conventional software, but it extended to devices such as medical equipment, temperature-control systems, and elevators which used computer chips. The fear was that when clocks struck midnight on January 1, 2000, affected computer systems, unsure of the year, would fail to operate and cause massive power outages, transportation systems to shut down, and banks to close. Widespread chaos would ensue. Research firm Gartner estimated the cost of Y2K remediation to be $300 - $600 billion. Businesses and government organizations created special technology teams to ensure that all hardware and software was Y2K compliant (Y2KC). The goal was to check every system that relied on dates, before midnight December 31, 1999. In some cases, the fix was to replace outdated hardware and/or software. Othe\n\nSOURCE si.edu (https://www.si.edu/spotlight/y2k):\nSkip to main contentSkip to main navigation heart-solid My Visituser Log in Donate ![Image 1: HomeSmithsonian Institution](https://www.si.edu/ \"Home\") Donate Menu Search Press Enter to activate a submenu, down arrow to access the items and Escape to close the submenu. * Visit chevron-down * Overview * Museums and Zoo * Entry and Guidelines * Museum Maps * Dine and Shop * Accessibility * Visiting with Kids * Group Visits * What's On chevron-down * Overview * Exhibitions * Online Events * All Events * IMAX & Planetarium * Explore chevron-down * Overview * Topics * Stories * Collections * Podcasts * Research Resources * Learn chevron-down * Overview * For Educators * For Students * For Caregivers * For Academics * For Lifelong Learners * Support Us chevron-down * Overview * Become a Member * Renew Membership * Make a Gift * Volunteer * About chevron-down * Overview * Our Organization * Our Leadership * Reports and Plans * Newsdesk Expand Search search close Search heart-solid My Visituser Log in # Y2K American History Museum The term Year 2000 bug, also known as the millennium bug and abbreviated as Y2K, referred to potential computer problems which might have resulted when dates used in computer systems moved from the year 1999 to the year 2000. In the early days of electronic computers, memory was expensive so, in order to save space, programmers abbreviated the four-digit year designation and stored only the final two digits. For example, computers recognized “98” as “1998.” How programs interpret “00” when the date changed to the year 2000? Would “00” be translated as 0000, 1000, 1900, or 2000? (Early in 1999, Computer Chronicles host Stewart Cheifet became aware of the possible problem when he received a credit card from a major gasoline company with an expiration date of 1000.) Mainframe computers in use in important areas such as banking, utilities, communications, insurance, manufacturing, and government were considered the most vulnerable. The problem was not only with systems running conventional software, but it extended to devices such as medical equipment, temperature-control systems, and elevators which used computer chips. The fear was that when cloc\n\nSOURCE newscientist.com (https://www.newscientist.com/article/2262860-2020-in-review-revenge-of-the-y2k-bug-as-lazy-fix-takes-down-software):\nAdvertisement ### Explore by section ### Explore by subject ### Explore our products and services #### Manage your subscription Check your subscription status, update your details and more. Activate your subscription #### Technology # 2020 in review: Revenge of the Y2K bug as lazy fix takes down software ANGHI/Getty Images The year began with digital havoc, when a computer glitch known as the Y2020 bug took payment systems, parking meters and a wrestling video game offline. Y2020 arose from a lazy fix to the Y2K (or millennium) bug. This was the concern that computer systems that saved years as two digits – 99, say, instead of 1999 – would treat 00 as 1900 rather than 2000. Thanks to mass patching in 1999, this didn’t happen. Yet it turns out that an estimated 80 per cent of computers solved this using a cheap and quick method known as “windowing”, in which all dates from 00 to 20 would be treated as the 2000s rather than the 1900s. When January 2020 rolled around, those systems reached the end of that window and reset to 1920. Advertisement The issue now seems to be under control, but 19 January 2038 was set to be the next troublesome date for Linux computers, which count the date in seconds from 1 January 1970. The date is stored as a 32-bit integer, and its storage capacity would be exceeded at this point. However, a potential solution emerged this October, postponing the problem for another 400 years: an increase to the effective size of timestamps. The feature will mean that dates beyond 2038 won’t pose a problem until 2486 – the next year to worry about. Advertisement ## Sign up to our weekly newsletter Receive a weekly dose of discovery in your inbox. We'll also keep you up to date with *New Scientist* events and special offers. ## More from *New Scientist* Explore the latest news, articles and features #### Technology ### Photo of 14,000 satellite trails shows how busy space is becoming #### Technology ### The most important part of AI chatbots is being ignored #### Technology ### Robotic dog controlled with a computer powered by human blood cells #### Technology ### Brazil presidential election dogged by alleged bias by Meta AI tools ## Popular articles",
+  "extra_sources": [
+   "http://www.britannica.com/technology/Y2K-bug",
+   "https://americanhistory.si.edu/collections/object-groups/y2k",
+   "https://www.si.edu/spotlight/y2k",
+   "https://www.newscientist.com/article/2262860-2020-in-review-revenge-of-the-y2k-bug-as-lazy-fix-takes-down-software"
+  ]
+ },
+ "_writer": "gemini"
+}

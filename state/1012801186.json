@@ -1,5 +1,5 @@
 {
- "current": "svalbard-seed-vault-how-it-works-a1",
+ "current": "y2k-bug-timeline-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -389,6 +389,25 @@
     "wanted": "public",
     "publish_at": null
    }
+  },
+  "y2k-bug-timeline-a1": {
+   "title": "The 600 Billion Dollar Bug",
+   "base": "y2k-bug-timeline-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 5,
+    "accuracy": 9,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 5,
+    "hierarchy": 8,
+    "consistency": 6,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "42215494784"
   }
  }
 }
