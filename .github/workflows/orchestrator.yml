@@ -38,7 +38,8 @@ jobs:
       - name: Handle (light, ~20 s)
         if: steps.kind.outputs.light == 'true'
         run: |
-          pip install -q httpx python-dotenv google-api-python-client google-auth google-auth-oauthlib
+          pip install -q -e .
+          if [ "$CHAT" = "owner" ]; then CHAT="$TELEGRAM_CHAT_ID"; fi
           python -m app.orchestrator handle --chat "$CHAT" --text "$TEXT"
       - name: Cache Chromium
         if: steps.kind.outputs.light != 'true'
@@ -51,6 +52,7 @@ jobs:
         run: |
           sudo apt-get update -y && sudo apt-get install -y ffmpeg fonts-noto fonts-noto-color-emoji
           pip install -e . && playwright install --with-deps chromium
+          if [ "$CHAT" = "owner" ]; then CHAT="$TELEGRAM_CHAT_ID"; fi
           python -m app.orchestrator handle --chat "$CHAT" --text "$TEXT"
       - uses: actions/upload-artifact@v4          # /new runs keep their video so /upload can fetch it later
         if: always() && steps.kind.outputs.light != 'true'
