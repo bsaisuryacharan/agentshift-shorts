@@ -407,7 +407,14 @@
     "payoff": 7,
     "safe_zone": 10
    },
-   "run_id": "42215494784"
+   "run_id": "42215494784",
+   "uploaded": {
+    "id": "DvPpsIHv9iw",
+    "url": "https://youtube.com/watch?v=DvPpsIHv9iw",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
   }
  }
 }
