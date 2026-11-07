@@ -1,5 +1,5 @@
 {
- "current": "y2k-bug-timeline-a1",
+ "current": "swift-observatory-timeline-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -415,6 +415,25 @@
     "wanted": "public",
     "publish_at": null
    }
+  },
+  "swift-observatory-timeline-a3": {
+   "title": "Swift's 22-Year Journey",
+   "base": "swift-observatory-timeline-a3",
+   "status": "draft",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 4,
+    "accuracy": 9,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 4,
+    "polish": 3,
+    "hierarchy": 6,
+    "consistency": 5,
+    "payoff": 5,
+    "safe_zone": 10
+   },
+   "run_id": "42373304734"
   }
  }
 }

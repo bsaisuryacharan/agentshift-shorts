@@ -1,0 +1,219 @@
+{
+ "id": "swift-observatory-timeline-a3",
+ "title": "Swift's 22-Year Journey",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "TIMELINE",
+ "look": "editorial-paper",
+ "theme": "cool",
+ "format": "timeline",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "NASA Swift Mission Overview, https://en.wikipedia.org/wiki/Neil_Gehrels_Swift_Observatory",
+  "b5": "Swift Reentry Data, https://www.livescience.com/space/astronomy/swift-has-fallen-nasas-22-year-old-space-telescope-burns-up-over-sumatra",
+  "wiki": "https://en.wikipedia.org/wiki/Neil_Gehrels_Swift_Observatory",
+  "ref1": "https://www.livescience.com/space/astronomy/swift-has-fallen-nasas-22-year-old-space-telescope-burns-up-over-sumatra",
+  "ref2": "https://www.nature.com/articles/d41586-026-03461-w",
+  "ref3": "https://phys.org/news/2026-11-nasa-swift-telescope-months-robot.html",
+  "ref4": "https://www.smithsonianmag.com/smart-news/after-observing-the-sky-for-22-years-a-beloved-nasa-space-telescope-is-expected-to-meet-a-fiery-death-this-week-180989796",
+  "ref5": "https://www.sciencedaily.com/releases/2026/11/261105224545.htm"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Neil Gehrels Swift Observatory",
+   "prompt": "A high-tech space telescope with silver and gold foil insulation orbiting Earth, cinematic space photography, natural light, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "The Swift telescope launched in 2004 and survived all the way to 2026.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "when?",
+     "at": "2004"
+    },
+    {
+     "t": "title",
+     "html": "*Swift* Timeline",
+     "at": "2004"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "graphic": true,
+   "say": "NASA first announced the mission in 1995 to study massive cosmic explosions.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "1995",
+      "label": "Mission Start"
+     },
+     "at": "1995"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Delta II rocket",
+   "prompt": "A large Delta II rocket standing on a launch pad at night under white floodlights, no people",
+   "focal": [
+    0.5,
+    0.3
+   ],
+   "say": "On 20 November 2004, it finally reached orbit on a Delta II rocket.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "20 November Launch",
+     "col": "cy",
+     "fx": "shine",
+     "at": "20"
+    }
+   ],
+   "sfx": [
+    [
+     "20",
+     "whoosh",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "graphic": true,
+   "say": "Its Burst Alert Telescope used 52,000 lead tiles to find 100 bursts yearly.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 52000,
+      "suffix": "Tiles"
+     },
+     "at": "52,000"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "graphic": true,
+   "say": "In 2020, the observatory was busier than ever, hitting 70 targets per day.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "Observing",
+      "options": "stars,galaxies,70",
+      "suffix": "targets"
+     },
+     "at": "70"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "footage": "Solar flare sun",
+   "prompt": "Massive solar flare eruption from the sun, realistic solar photography, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 2026, solar activity expanded the atmosphere, dragging the satellite down to Earth.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Solar activity expanded the atmosphere",
+      "keyword": "expanded",
+      "note": "Atmospheric Drag"
+     },
+     "at": "expanded"
+    }
+   ],
+   "sfx": [
+    [
+     "expanded",
+     "whoosh",
+     0.5
+    ]
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "Swift Observatory spacecraft",
+   "prompt": "The Swift space observatory in orbit above Earth, realistic materials, cinematic lighting, no people",
+   "focal": [
+    0.5,
+    0.6
+   ],
+   "say": "NASA terminated operations on 23 October 2026, just before the final descent.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "23 October End",
+     "fx": "shine",
+     "at": "23"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "prompt": "A streak of fire in the night sky as a satellite reenters the atmosphere, cinematic, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Swift burned up on 4 November, ending a legendary mission. Subscribe for more.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "4 November Reentry",
+     "col": "ir",
+     "at": "4"
+    }
+   ],
+   "sfx": [
+    [
+     "4",
+     "impact",
+     0.9
+    ]
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Neil Gehrels Swift Observatory",
+  "url": "https://en.wikipedia.org/wiki/Neil_Gehrels_Swift_Observatory",
+  "text": "Neil Gehrels Swift Observatory, previously called the Swift Gamma-Ray Burst Explorer, was a NASA three-instrument space observatory for studying gamma-ray bursts (GRBs) and monitoring the afterglow in X-ray and UV/visible light at the location of a burst. It was launched on 20 November 2004, aboard a Delta II launch vehicle. Headed by principal investigator Neil Gehrels until his death in February 2017, the mission was developed in a joint partnership between Goddard Space Flight Center and an international consortium from the United States, United Kingdom, and Italy. The burst detection rate is 100 per year, with a sensitivity ~3 times greater than the BATSE detector aboard the Compton Gamma Ray Observatory. The Swift mission was launched with a nominal on-orbit lifetime of two years. Swift is a NASA MIDEX (medium-class Explorer) mission, operated by Pennsylvania State University. It was launched as MIDEX-3, following FUSE (MIDEX-0), IMAGE (MIDEX-1) and WMAP (MIDEX-2). An Announcement of Opportunity (AO) for the first Medium-class Explorer (MIDEX) missions was issued in March 1995. Swift was designed to study gamma-ray bursts, but later came into use as a general-purpose multi-wavelength observatory, particularly for the rapid follow-up and characterization of astrophysical transients of all types. In 2020 Swift received an average of 5.5 Target of Opportunity observing proposals per day, and observed about 70 targets per day, on average. In 2026, Swift's orbit had been lowering, mostly in the previous two years, because an increase in solar activity had expanded the Earth's atmosphere enough to slow Swift due to atmospheric drag. A mission to raise Swift to a higher orbit to prevent it from falling to Earth was launched on 3 July 2026,  but NASA announced on 19 August that the mission had been unsuccessful. NASA officially terminated operations for Swift on 23 October 2026, a few days ahead of its destructive reentry on 4 November of that year. == Overview ==\nSwift is a multi-wavelength space observatory originally dedicated to the study of gamma-ray bursts. Its three instruments work together to observe GRBs and their afterglows in the gamma-ray, X-ray, ultraviolet, and optical wavebands. Based on continuous scans of the area of the sky with one of the instrument's monitors, Swift uses momentum wheels to autonomously slew into the direction of possible GRBs. The name \"Swift\" is not a mission-related acronym, but rather a reference to the instrument's rapid slew capability, and the nimble swift (bird of the same name). All of Swift's discoveries are transmitted to the ground and those data are available to other observatories which join Swift in observing the GRBs. In the time between GRB events, Swift is available for other scientific investigations, and scientists from universities and other organizations can submit proposals for observations. The Swift Mission Operation Center (MOC), where commanding of the satellite is performed, is located in State College, Pennsylvania and operated by the Pennsylvania State University and industry subcontractors. The Swift main ground station is located at the Broglio Space Center near Malindi on the coast of eastern Kenya, and is operated by the Italian Space Agency (ASI). The Swift Science Data Center (SDC) and archive are located at the Goddard Space Flight Center outside Washington, D.C. The United Kingdom Swift Science Data Centre is located at the University of Leicester. The Swift satellite bus was built by Spectrum Astro, which was later acquired by General Dynamics Advanced Information Systems, which was in turn acquired by Orbital Sciences Corporation, which became Northrop Grumman Innovation Systems in 2018. == Instruments ==\n\n\n=== Burst Alert Telescope (BAT) ===\n\nThe BAT detects GRB events and computes its coordinates in the sky. It covers a large fraction of the sky (over one steradian fully coded, three steradians partially coded; by comparison, the full sky solid angle is 4π or about 12.6 steradians). It locates the position of each event with an accuracy of 1 to 4 arcminutes within 15 seconds. This crude position is immediately relayed to the ground, and some wide-field, rapid-slew ground-based telescopes can catch the GRB with this information. The BAT uses a coded-aperture mask of 52,000 randomly placed 5 mm (0.20 in) lead tiles, 1 m (3 ft 3 in) above a detector plane of 32,768 4 mm (0.16 in) cadmium zinc telluride (CdZnTe) hard X-ray detector tiles; it is purpose-built for Swift. Energy range: 15–150 keV. === X-ray Telescope (XRT) ===\n\nThe XRT can take images and perform spectral analysis of the GRB afterglow. This provides more precise location of the GRB, with a typical error circle of approximately 2 arcseconds radius. The XRT is also used to perform long-term monitoring of GRB afterglow light-curves for days to weeks after the event, depending on the brightness of the afterglow. The XRT uses a Wolter Type I X-ray telescope with 12 nested mirrors, focused onto a single MOS charge-coupled device (CCD) similar to those used by the XMM-Newton EPIC MOS cameras. On-board software allows fully automated observations, with the instrument selecting an appropriate observing mode for each object, based on its measured count rate. The telescope has an energy range of 0.2–10 keV. === Ultraviolet/Optical Telescope (UVOT) ===\n\nAfter Swift has slewed towards a GRB, the UVOT is used to detect an optical afterglow. The UVOT provides a sub-arcsecond position and provides optical and ultra-violet photometry through lenticular filters and low resolution spectra (170–650 nm) through the use of its optical and UV grisms. The UVOT is also used to provide long-term follow-ups of GRB afterglow lightcurves. The UVOT is based on the XMM-Newton's Optical Monitor (OM) instrument, with improved optics and upgraded onboard processing computers.\n\nSOURCE livescience.com (https://www.livescience.com/space/astronomy/swift-has-fallen-nasas-22-year-old-space-telescope-burns-up-over-sumatra):\n- Welcome to Live Science club! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Complete any activity to unlock your first badge. Keep earning badges Explore ways to get more involved as a member. Live Science Quizzes Play quick, fun science games Explore Animal facts Learn about the natural world Explore Latest space news Read about discoveries from beyond Earth Explore --- See what you’ve unlocked. Explore your membership benefits. Explore Go beyond the headlines Cancel anytime Start Browsing --- Sign Out - Hi , Keep exploring with your premium access. START BROWSING --- Content * ![Science Spotlight Science Spotlight](https://www.livescience.com/tag/science-spotlight) * ![Book Excerpts Book Excerpts](https://www.livescience.com/tag/book-excerpts) * ![Interviews Interviews](https://www.livescience.com/interviews) * ![Analysis Analysis](https://www.livescience.com/tag/news-analyses) * ![Opinion Opinion](https://www.livescience.com/opinion) --- * ![My Account My Account](https://www.livescience.com/my-account) --- Sign Out ## Choose your Live Science experience ### Live Science plus Read more news stories for free, receive our daily newsletter, post comments, play games and earn badges. JOIN FREE ### Live Science pro Unlimited access to our exclusive features, expert analysis and in-depth interviews, all ad-free. Unlimited, ad-free reading Exclusive, original reporting Scientist interviews and videos Members-only features See what’s in pro ## Go beyond the headlines with Live Science Pro Go beyond the headlines with Live Science Pro Rigorously fact-checked science, expert commentary and an ad-free experience built for those who want to go beyond the headlines See what’s in Pro Not ready for Pro? Join Live Science Plus ### Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. ### Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. ### Scientist interviews and video The latest science direct from the most respected people in their fields. ### Members-only features Exclusive newsletter. Members-on\n\nSOURCE nature.com (https://www.nature.com/articles/d41586-026-03461-w):\nThank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain the best experience, we recommend you use a more up to date browser (or turn off compatibility mode in Internet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles and JavaScript. Advertisement # Revered NASA spacecraft is about to perish in flames — astronomers are mourning Jenna Ahart is a science journalist based in Washington DC. Search author on: PubMed Google Scholar The Neil Gehrels Swift observatory was designed to observe brilliant explosions called γ-ray bursts (artist’s illustration), but branched out to study black holes, supernovae and comets.Credit: NASA/Science Photo Library *Update, 4 November: Swift re-entered Earth's atmosphere at 7.39 a.m. ET over Indonesia, NASA announced. The agency expected that most of the spacecraft had burned up in the atmosphere, although some debris might have survived.* A lauded NASA space observatory that has made countless discoveries well beyond its assigned portfolio will plummet to a fiery demise in Earth’s atmosphere next week, after a rescue attempt went awry. Having spent almost 22 years in orbit, NASA’s Neil Gehrels Swift Observatory has been slowly losing altitude over time, but now it must fully succumb to its doom. In July, a spacecraft blasted off on a mission to boost Swift out of danger. But the rescue mission began to spin uncontrollably before reaching its target. Eventually, Swift drifted so low that it could not lock onto its astronomical targets and, last week, NASA shut off science operations ahead of its impending skyfall. Long-sought signal deepens mystery of fast radio bursts Long-sought signal deepens mystery of fast radio bursts Astronomers are mourning the spacecraft, which has had a glittering career observing everything from black holes to γ-ray bursts — the most powerful explosions in the Universe. “We’re all definitely very sad. There’s definitely grief,” says Caryl Gronwall, Swift’s science operations team lead at Pennsylvania State University in University Park. Swift’s end of operations has been especially “dramatic and tragic”, says\n\nSOURCE phys.org (https://phys.org/news/2026-11-nasa-swift-telescope-months-robot.html):\n* share this! * Share --- November 5, 2026 # NASA's Swift telescope has burned up, months after a robot sent to save it failed by Wanjiku Chebet Kanjumba, The Conversation edited by Sadie Harley, reviewed by Andrew Zinin ##### Sadie Harley Scientific Editor Meet our editorial team Behind our editorial process ##### Andrew Zinin Chief Editor Meet our editorial team Behind our editorial process Editors' notes) This article has been reviewed according to Science X's editorial process and policies. Editors have highlighted the following attributes while ensuring the content's credibility: fact-checked trusted source written by researcher(s) proofread The GIST) Add to Preferred Sources --- \") NASA's Neil Gehrels Swift Observatory orbits above Earth in this illustration. Credit: NASA's Goddard Space Flight Center/Chris Smith (KBRwyle) NASA's Neil Gehrels Swift Observatory took its last look at the sky on Oct. 20, 2026, while orbiting about 171 miles (275 kilometers) above Earth. NASA ended the telescope's mission three days later, because Swift had sunk so low that drag from the thin air there meant its telescopes couldn't hold steady. The telescope reentered the atmosphere on Nov. 4 above the North Sumatra region of Indonesia and largely burned up, an abrupt ending to two decades spent observing powerful cosmic explosions. Swift's reentry comes after a failed rescue mission in the summer of 2026. LINK, a commercial robotic spacecraft sent to raise Swift into a safer orbit, reentered Earth's atmosphere in September. The machine designed to save a falling satellite burned up first. As a Ph.D. candidate in aerospace engineering, I know that rescuing satellites is hard. I research how spacecraft approach and capture satellites, including objects that tumble uncontrollably. Swift's loss points to a new hazard for the young industry that repairs, refuels and moves spacecraft around in orbit. If something goes wrong, the spacecraft doing the rescuing can become another problem. ## The rescuer started spinning The plan was for LINK to approach Swift, grab it with one of its three robotic arms and fire its thrusters to push the telescope back up to about 373 miles (600 kilome\n\nSOURCE smithsonianmag.com (https://www.smithsonianmag.com/smart-news/after-observing-the-sky-for-22-years-a-beloved-nasa-space-telescope-is-expected-to-meet-a-fiery-death-this-week-180989796):\n![Smithsonian Magazine white logo](/) Search Shop Newsletters Renew Give a Gift Subscribe Membership Subscribe to Smithsonian magazine and get a FREE tote. # After Observing the Sky for 22 Years, a Beloved NASA Space Telescope Is Expected to Meet a Fiery Death This Week ## The Neil Gehrels Swift Observatory launched in 2004 and detected thousands of astrophysical phenomena, leading to some huge discoveries. Earlier this year, experts attempted a first-of-its-kind rescue mission to save the falling telescope, but it failed /https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/accounts/headshot/Sara_-_Headshot_thumbnail.png) Sara Hashemi | Daily Correspondent Share EmailSMSFacebookXRedditLinkedInBlueskyPrint /https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/30/c5/30c599b9-6c11-4af1-a8e5-44ec3fad6c92/swift-main.png) Over the past couple of years, Swift had been falling out of orbit faster than expected. NASA’s Goddard Space Flight Center Conceptual Image Lab NASA’s groundbreaking Neil Gehrels Swift Observatory, which stared at the cosmos for more than two decades, is expected to crash down to Earth this week. The U.S. Space Force estimates the beloved space telescope will re-enter the planet’s atmosphere around November 4, where most of it should burn up. “We’ve known this day would come since before Swift was launched. At least in low-Earth orbit, what goes up must come down. And that end is catastrophic,” says John Nousek, an astronomer at Pennsylvania State University who led the control team, to Marcia Dunn at the Associated Press Swift’s fiery death comes after an attempted Hail Mary earlier this year. The aging telescope recently had been falling from its orbit faster than predicted because of unusually strong solar activity in late 2024. That increased atmospheric drag on the observatory, pulling it down. In response, NASA contracted Arizona-based company Katalyst Space Technologies to build a spacecraft that would use robotic arms to lift Swift back into higher orbit. It launched on July 3, but the first-of-its-kind mission failed when the rescue craft had issues with its orientation control system, among other problems. Scientists are \n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2026/11/261105224545.htm):\n![ScienceDaily](/ \"ScienceDaily\") --- Your source for the latest research news Follow: *Facebook* *X/Twitter* Subscribe: *RSS Feeds* *Newsletter* **New!** Sign up for our free **email newsletter**. Science News from research organizations --- # NASA’s Swift telescope falls to Earth after nearly 22 years in space Date: : November 6, 2026 Source: : NASA Summary: : After nearly 22 years of exploring the universe’s most violent explosions, NASA’s Swift Observatory has re-entered Earth’s atmosphere over Indonesia. Originally designed to last just two years, the pioneering space telescope transformed our understanding of black holes, exploding stars, and mysterious cosmic outbursts. Share: : Facebook Twitter Pinterest LinkedIN Email FULL STORY --- NASA’s Swift Observatory has fallen back to Earth after nearly 22 years of uncovering the secrets of the universe’s most powerful explosions. Credit: NASA’s Goddard Space Flight Center Conceptual Image Lab NASA's Neil Gehrels Swift Observatory has returned to Earth after spending nearly 22 years in space, bringing an extraordinary era of astronomical discovery to a close. The spacecraft re-entered Earth's atmosphere on Wednesday, ending a mission that lasted more than ten times longer than originally planned. Launched in 2004, Swift was a pioneering space observatory equipped with three telescopes designed to study some of the most powerful explosions in the universe. Its instruments could detect different types of light, allowing scientists to investigate energetic cosmic events that would be difficult to understand using a single telescope. **NASA's Swift Observatory Re-Enters Earth's Atmosphere** The U.S. Space Force confirmed that Swift entered the atmosphere at 7:39 a.m. EST on Wednesday above North Sumatra, Indonesia. The reported location was approximately 3.4 degrees north latitude and 98.6 degrees east longitude. NASA anticipated that most of the spacecraft would burn up as it plunged through the atmosphere. However, officials acknowledged that some components might have survived the intense heat of re-entry. **A Two-Year NASA Mission That Lasted Nearly 22 Years** Swift was originally developed to investigate gamma-",
+  "extra_sources": [
+   "https://www.livescience.com/space/astronomy/swift-has-fallen-nasas-22-year-old-space-telescope-burns-up-over-sumatra",
+   "https://www.nature.com/articles/d41586-026-03461-w",
+   "https://phys.org/news/2026-11-nasa-swift-telescope-months-robot.html",
+   "https://www.smithsonianmag.com/smart-news/after-observing-the-sky-for-22-years-a-beloved-nasa-space-telescope-is-expected-to-meet-a-fiery-death-this-week-180989796",
+   "https://www.sciencedaily.com/releases/2026/11/261105224545.htm"
+  ]
+ },
+ "_writer": "gemini"
+}
