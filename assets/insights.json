@@ -1,31 +1,31 @@
 {
- "generated_at": "2026-11-06T11:10:35+00:00",
+ "generated_at": "2026-11-07T10:27:55+00:00",
  "channel": {
-  "period": "2026-10-06..2026-11-04",
-  "views": 8218.0,
-  "avg_view_seconds": 24.0,
-  "avg_view_pct": 60.53,
-  "net_subscribers": 12.0,
-  "likes": 136.0,
+  "period": "2026-10-08..2026-11-06",
+  "views": 9651.0,
+  "avg_view_seconds": 26.0,
+  "avg_view_pct": 65.03,
+  "net_subscribers": 15.0,
+  "likes": 171.0,
   "shares": 7.0,
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
-  "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained",
-  "The 3 Most Unbelievable Dangerous Places on Earth!🙄",
   "When Cameras Capture Astonishing Animal Encounters",
+  "The 3 Most Unbelievable Dangerous Places on Earth!🙄",
+  "Most Unpredictable Animal Reactions",
   "IKAN LELE SAMA BELUT",
   "Hannah Fry on The Nun Study",
-  "Astronomical events in November 2026😲",
   "SIZE OF SOLAR SYSTEM! 💀",
-  "Stop Using Sunscreen",
+  "Astronomical events in November 2026😲",
   "5 Animals That Sleep in the STRANGEST Ways",
-  "Most Shocking Wildlife moments",
+  "5 Animals That Can Survive Without Sleep 😱",
   "3 Birds That Build Nests in the Most Incredible Ways! 🤯",
-  "This is nature’s most miraculous sight: a flood saves the lives of thousands of animals."
+  "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
+  "Scientists Found Something INSANE Inside This Worm!🤯"
  ],
  "learned": {
-  "shorts_scored": 7,
+  "shorts_scored": 8,
   "best": [
    {
     "title": "Inside a Submarine: 5 Systems",
@@ -45,6 +45,11 @@
   ],
   "worst": [
    {
+    "title": "The 600 Billion Dollar Bug",
+    "avg": 7.1,
+    "weakest": "visual_quality"
+   },
+   {
     "title": "What If Krakatoa Erupted Today?",
     "avg": 7.2,
     "weakest": "visual_quality"
@@ -53,84 +58,79 @@
     "title": "What If Jupiter's Magnetic Shield Protected Earth?",
     "avg": 7.7,
     "weakest": "polish"
-   },
-   {
-    "title": "Svalbard Global Seed Vault: How it protects future food",
-    "avg": 7.9,
-    "weakest": "originality"
    }
   ],
   "weakest_dimensions": [
-   "originality",
    "visual_quality",
+   "originality",
    "polish"
   ]
  },
  "stage_averages": {
   "hook": 7.4,
-  "story": 6.6,
+  "story": 6.5,
   "visuals": 6.3,
-  "polish": 6.2,
+  "polish": 6.3,
   "policy": 9.2
  },
- "weakest_stage": "polish",
+ "weakest_stage": "visuals",
  "region": "IN",
  "trend_signals_total": 62,
- "trend_signals_on_niche": 43,
+ "trend_signals_on_niche": 41,
  "niche_winners": [
   {
    "title": "When Cameras Capture Astonishing Animal Encounters",
-   "views": 7640235,
+   "views": 12433104,
    "url": "https://www.youtube.com/watch?v=vvnUUFqwsoU"
   },
   {
+   "title": "5 Animals That Can Survive Without Sleep 😱  #animalfacts #sleepdeprivation #animals",
+   "views": 4355281,
+   "url": "https://www.youtube.com/watch?v=j7MMYEKv9g4"
+  },
+  {
    "title": "The 3 Most Unbelievable Dangerous Places on Earth!🙄#city #facts #new #shorts #place #ytsho",
-   "views": 8946662,
+   "views": 9144388,
    "url": "https://www.youtube.com/watch?v=IQNLS4q2ZXQ"
   },
   {
    "title": "Astronomical events in November 2026😲 #shorts #astronomicalevents #space #helpyn",
-   "views": 4561886,
+   "views": 4681502,
    "url": "https://www.youtube.com/watch?v=_fw3vnQconI"
   },
   {
-   "title": "Why Must You Take Steps on a Spinning Ride? 😳 Physics Explained #shorts",
-   "views": 9120196,
-   "url": "https://www.youtube.com/watch?v=K2we_H33tlU"
-  },
-  {
    "title": "SIZE OF SOLAR SYSTEM! 💀",
-   "views": 4479703,
+   "views": 4748634,
    "url": "https://www.youtube.com/watch?v=dv-Czhabars"
   },
   {
    "title": "3 Birds That Build Nests in the Most Incredible Ways! 🤯 #facts #animals #wildlife",
-   "views": 3464739,
+   "views": 3753106,
    "url": "https://www.youtube.com/watch?v=T3wxJlPDlUc"
   },
   {
    "title": "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
-   "views": 2623410,
+   "views": 2635744,
    "url": "https://www.youtube.com/watch?v=zMt9YzQ_hf4"
   },
   {
    "title": "Scientists Found Something INSANE Inside This Worm!🤯",
-   "views": 1986552,
+   "views": 2281568,
    "url": "https://www.youtube.com/watch?v=ttYCiXhTa6U"
   }
  ],
  "news": [
+  "Don't miss: Meteor showers, fireballs, and a supermoon light up November's night sky",
+  "NASA’s Swift telescope falls to Earth after nearly 22 years in space",
+  "Scientists just found dinosaur blood that survived 115 million years",
+  "Scientists discover Europe's ancient forests were nothing like we imagined",
+  "Human bodies produce 2 billion metric tons of CO2 a year just by staying alive",
   "SLAC scientists find conclusive proof of a mysterious third type of magnetism",
   "NASA is racing against time to save the Hubble Space Telescope",
-  "MIT scientists break a 20-year rule and unlock never-before-seen crystal structures",
-  "AI helps Stanford scientists discover a “natural Ozempic” with a surprising advantage",
-  "Scientists discover that a clogged filter could revolutionize oil refining",
-  "Permanent daylight saving time has a dark side, scientists warn",
-  "NASA smashed into an asteroid. Now Hera is closing in to see what happened",
-  "A hidden star is plowing through Betelgeuse’s atmosphere, new evidence suggests",
+  "APOD: 2026 November 7 – De Gerlache-Kocher Massif",
+  "M30’s Sparkling Stars",
+  "Supercomputing Tech Demo Schedule",
   "APOD: 2026 November 6 – A Farewell to Swift",
-  "Taking a Gander at Utah’s Goosenecks",
-  "Midwestern City Lights",
-  "NASA Astronauts to Answer Questions from Florida Students"
+  "Taking a Gander at Utah’s Goosenecks"
  ]
 }
