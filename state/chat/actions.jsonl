@@ -5,3 +5,6 @@
 {"ts": "2026-11-06T13:20:18+00:00", "what": "Groq command", "detail": "python -m app.orchestrator handle --text /upload"}
 {"ts": "2026-11-06T13:20:24+00:00", "what": "Groq command", "detail": "python -m app.orchestrator handle --chat '' --text /upload"}
 {"ts": "2026-11-06T13:20:31+00:00", "what": "Groq command", "detail": "gh api repos/bsaisuryacharan/agentshift-shorts/dispatches -f event_type=telegram -f 'client_payload[chat]=owner' -f 'client_payload[text]=/upload'"}
+{"ts": "2026-11-07T16:05:38+00:00", "what": "Groq command", "detail": "python -m app.refs add https://youtu.be/3tpaWHaiLQ8 --note 'Owner wants a Short made on this video'\"'\"'s subject'"}
+{"ts": "2026-11-07T16:05:42+00:00", "what": "Groq command", "detail": "gh run list --workflow free-daily.yml -L 3"}
+{"ts": "2026-11-07T16:05:46+00:00", "what": "Groq command", "detail": "gh api repos/bsaisuryacharan/agentshift-shorts/dispatches -f event_type=telegram -f 'client_payload[chat]=owner' -f 'client_payload[text]=/new how Claude Code makes viral animation videos'"}
