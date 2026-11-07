@@ -1,5 +1,5 @@
 {
- "current": "swift-observatory-timeline-a3",
+ "current": "turing-test-how-it-works-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -434,6 +434,32 @@
     "safe_zone": 10
    },
    "run_id": "42373304734"
+  },
+  "turing-test-how-it-works-a1": {
+   "title": "How the Turing Test Works",
+   "base": "turing-test-how-it-works-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 8,
+    "accuracy": 9,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 8,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "42385192335",
+   "uploaded": {
+    "id": "N0iEpZYDNQk",
+    "url": "https://youtube.com/watch?v=N0iEpZYDNQk",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
   }
  }
 }

@@ -1,0 +1,249 @@
+{
+ "id": "turing-test-how-it-works-a1",
+ "title": "How the Turing Test Works",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "HOW IT WORKS",
+ "theme": "cool",
+ "look": "blueprint",
+ "format": "how_it_works",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "h": "Wikipedia: Turing Test",
+  "b1": "Computing Machinery and Intelligence (1950)",
+  "b5": "Descartes: Discourse on the Method (1637)",
+  "b6": "Warwick and Shah (2016)",
+  "wiki": "https://en.wikipedia.org/wiki/Turing_test",
+  "ref1": "https://arxiv.org/html/2505.02558v1",
+  "ref2": "https://www.smithsonianmag.com/innovation/turing-test-measures-something-but-not-intelligence-180951702",
+  "ref3": "https://www.livescience.com/technology/artificial-intelligence/what-is-the-turing-test",
+  "ref4": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4867147",
+  "ref5": "https://www.britannica.com/technology/Turing-test"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Manchester Mark 1 computer",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Can a machine trick 33 percent of humans into believing it is real?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how?",
+     "at": "trick"
+    },
+    {
+     "t": "title",
+     "html": "The *Imitation* Game",
+     "at": "believing"
+    }
+   ],
+   "sfx": [
+    [
+     "trick",
+     "whoosh",
+     0.8
+    ]
+   ],
+   "prompt": "documentary photograph of Manchester Mark 1 computer, natural light, no text, no people"
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Computing Machinery and Intelligence 1950",
+   "focal": [
+    0.5,
+    0.3
+   ],
+   "say": "In 1950, Alan Turing asked: Can machines think?",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "1950 TEST",
+      "label": "ALAN TURING"
+     },
+     "at": "1950",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "1950",
+     "ding",
+     0.5
+    ]
+   ],
+   "prompt": "documentary photograph of Computing Machinery and Intelligence 1950, natural light, no text, no people"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "graphic": true,
+   "say": "The setup is simple. An evaluator reads text from two players: a human and a computer.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Player A",
+       "Human",
+       "",
+       "ok"
+      ],
+      [
+       "Player B",
+       "Machine",
+       "",
+       "cy"
+      ]
+     ],
+     "at": "setup"
+    }
+   ],
+   "sfx": [
+    [
+     "setup",
+     "pop",
+     0.6
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "prompt": "photoreal cinematic 9:16 top-down shot of a mechanical keyboard with glowing keys, binary code reflecting on the surface, documentary style",
+   "focal": [
+    0.5,
+    0.7
+   ],
+   "say": "The machine wins if the evaluator cannot tell them apart.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Indistinguishable performance capacity.",
+      "keyword": "Indistinguishable",
+      "note": "The Goal"
+     },
+     "at": "apart",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "footage": "digital data stream",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Correctness does not matter. The only metric is how closely the responses resemble human behavior.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "HUMAN MIMICRY",
+     "col": "am",
+     "at": "metric"
+    }
+   ],
+   "prompt": "documentary photograph of digital data stream, natural light, no text, no people"
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "Descartes Discourse 1637",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "This idea dates to 1637, when Descartes argued machines could never respond appropriately.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 1637,
+      "prefix": "YEAR"
+     },
+     "at": "1637",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "1637",
+     "impact",
+     0.7
+    ]
+   ],
+   "prompt": "documentary photograph of Descartes Discourse 1637, natural light, no text, no people"
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "graphic": true,
+   "say": "In 2016, a program emulating a 13 year old boy convinced 33 percent of judges.",
+   "hud": [
+    {
+     "t": "ring",
+     "pct": 33,
+     "label": "SUCCESS RATE",
+     "col": "ir",
+     "at": "percent"
+    }
+   ],
+   "sfx": [
+    [
+     "2016",
+     "ding",
+     0.5
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "footage": "abstract neural network",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "If a machine acts exactly like us, is there a difference? Follow for more.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "Think *different*.",
+     "at": "difference"
+    }
+   ],
+   "prompt": "documentary photograph of abstract neural network, natural light, no text, no people"
+  }
+ ],
+ "_facts": {
+  "title": "Turing test",
+  "url": "https://en.wikipedia.org/wiki/Turing_test",
+  "text": "The Turing test was designed by Alan Turing to assess a machine's ability to exhibit intelligent behaviour equivalent to that of a human by imitating interactive dialogue. In the modern version, a human evaluator judges a text transcript of a natural-language conversation between a human and a machine. The evaluator tries to identify the machine, and the machine passes if the evaluator cannot reliably tell them apart. The results would not depend on the machine's ability to answer questions correctly, only on how closely its answers resembled those of a human. Since the Turing test is a test of indistinguishability in performance capacity, the original (verbal) version generalises naturally to all of human performance capacity, including nonverbal (robotic). The test was introduced as the imitation game by Turing in his 1950 paper \"Computing Machinery and Intelligence\" while working at the University of Manchester. It opens with the words: \"I propose to consider the question, 'Can machines think?'.\" Because \"thinking\" is difficult to define, Turing chooses to \"replace the question by another, which is closely related to it and is expressed in relatively unambiguous words\". Turing describes the new form of the problem in terms of a three-person party game called the \"imitation game\", in which an interrogator asks questions of a man and a woman in another room in order to determine the correct sex of the two players. Turing's new question is: \"Are there imaginable digital computers which would do well in the imitation game?\" This question, Turing believed, was one that could actually be answered. In the remainder of the paper, he argued against the major objections to the proposition that \"machines can think\". Since Turing introduced his test, it has been highly influential in the philosophy of artificial intelligence, resulting in substantial discussion and controversy, as well as criticism from philosophers like John Searle, who argue against the test's ability to detect consciousness. == History ==\n\n\n=== Philosophical background ===\nThe question of whether it is possible for machines to think has a long history, which is firmly entrenched in the distinction between dualist and materialist views of the mind. René Descartes prefigures aspects of the Turing test in his 1637 Discourse on the Method when he writes: [H]ow many different automata or moving machines could be made by the industry of man ... For we can easily understand a machine's being constituted so that it can utter words, and even emit some responses to action on it of a corporeal kind, which brings about a change in its organs; for instance, if touched in a particular part it may ask what we wish to say to it; if in another part it may exclaim that it is being hurt, and so on. But it never happens that it arranges its speech in various ways, in order to reply appropriately to everything that may be said in its presence, as even the lowest type of man can do. Here Descartes notes that automata are capable of responding to human interactions but argues that such automata cannot respond appropriately to things said in their presence in the way that any human can. Descartes therefore prefigures the Turing test by defining the insufficiency of appropriate linguistic response as that which separates the human from the automaton. Descartes fails to consider the possibility that future automata might be able to overcome such insufficiency, and so does not propose the Turing test as such, even if he prefigures its conceptual framework and criterion. Denis Diderot formulates in his 1746 book Pensées philosophiques a Turing-test criterion, though with the important implicit limiting assumption maintained, of the participants being natural living beings, rather than considering created artefacts:\n\nIf they find a parrot who could answer to everything, I would claim it to be an intelligent being without hesitation. This does not mean he agrees with this, but that it was already a common argument of materialists at that time. According to dualism, the mind is non-physical (or, at the very least, has non-physical properties) and, therefore, cannot be explained in purely physical terms. According to materialism, the mind can be explained physically, which leaves open the possibility of minds that are produced artificially. In 1936, philosopher Alfred Ayer considered the standard philosophical question of other minds: how do we know that other people have the same conscious experiences that we do? In his book, Language, Truth and Logic, Ayer suggested a protocol to distinguish between a conscious man and an unconscious machine: \"The only ground I can have for asserting that an object which appears to be conscious is not really a conscious being, but only a dummy or a machine, is that it fails to satisfy one of the empirical tests by which the presence or absence of consciousness is determined\". (This suggestion is very similar to the Turing test, but it is not certain that Ayer's popular philosophical classic was familiar to Turing.) In other words, a thing is not conscious if it fails the consciousness test. === Cultural background ===\nA rudimentary idea of the Turing test appears in the 1726 novel Gulliver's Travels by Jonathan Swift. When Gulliver is brought before the king of Brobdingnag, the king thinks at first that Gulliver might be a \"a piece of clock-work (which is in that country arrived to a very great perfection) contrived by some ingenious artist\". Even when he hears Gulliver speaking, the king still doubts whether Gulliver was taught \"a set of words\" to make him \"sell at a better price\". Gulliver tells that only after \"he put several other questions to me, and still received rational answers\" the king became satisfied that Gulliver was not a machine. Tests where a human judges whether a computer or an alien is intelligent were an established convention in science fiction by the 1940s, and it is likely that Turing would have been aware of these. Stanley G. Weinbaum's \"A Martian Odyssey\" (1934) provides an example of how nuanced such tests could be. Earlier examples of machines or automatons attempting to pass as human include the Ancient Greek myth of Pygmalion who creates a sculpture of a woman that is animated by Aphrodite, Carlo Collodi's novel The Adventures of Pinocchio, about a puppet who wants to become a real boy, and E. T. A. Hoffmann's 1816 story \"The Sandman,\" where the protagonist falls in love with an automaton. In all these examples, people are fooled by artificial beings that—up to a point—pass as human. === Alan Turing and the imitation game ===\n\nResearchers in the United Kingdom had been exploring \"machine intelligence\" for up to ten years prior to the founding of the field of artificial intelligence (AI) research in 1956. It was a common topic among the members of the Ratio Club, an informal group of British cybernetics and electronics researchers that included Alan Turing. Turing, in particular, had been running the notion of machine intelligence since at least 1941 and one of the earliest-known mentions of \"computer intelligence\" was made by him in 1947.\n\nSOURCE arxiv.org (https://arxiv.org/html/2505.02558v1):\n##### Report GitHub Issue Content selection saved. Describe the issue below: # The Turing Test is More Relevant Than Ever ###### Abstract The Turing Test, first proposed by Alan Turing in 1950, has historically served as a benchmark for evaluating artificial intelligence (AI). However, Since the release of ELIZA in 1966, and particularly with recent advancements in large language models (LLMs), AI has been claimed to pass the Turing Test. Furthermore, criticism argues that the Turing Test primarily assesses deceptive mimicry rather than genuine intelligence, prompting the continuous emergence of alternative benchmarks. This study argues against discarding the Turing Test, proposing instead using more refined versions of it, for example, by interacting simultaneously with both an AI and human candidate to determine who is who, allowing a longer interaction duration, access to the Internet and other AIs, using experienced people as evaluators, etc. Through systematic experimentation using a web-based platform, we demonstrate that richer, contextually structured testing environments significantly enhance participants’ ability to differentiate between AI and human interactions. Namely, we show that, while an off-the-shelf LLM can pass some version of a Turing Test, it fails to do so when faced with a more robust version. Our findings highlight that the Turing Test remains an important and effective method for evaluating AI, provided it continues to adapt as AI technology advances. Additionally, the structured data gathered from these improved interactions provides valuable insights into what humans expect from truly intelligent AI systems. \"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human.\" Alan Turing, 1950 ## 1 Introduction The Turing Test, proposed by Alan Turing in 1950 (Turing, 1950), has historically served as a foundational benchmark for assessing artificial intelligence (AI). Over the decades, several AI systems—most notably ELIZA (Weizenbaum, 1966) and Eugene Goostman (Warwick and Shah, 2016)—have claimed to pass variations of this test, often sparking debate over its adequacy as a measure of gen\n\nSOURCE smithsonianmag.com (https://www.smithsonianmag.com/innovation/turing-test-measures-something-but-not-intelligence-180951702):\n![Smithsonian Magazine white logo](/) Search Shop Newsletters Renew Give a Gift Subscribe Membership Subscribe to Smithsonian magazine and get a FREE tote. # The Turing Test Measures Something, But It’s Not “Intelligence” ## A computer program mimicked human conversation so well that it was mistaken for a real live human, but “machine intelligence” still has a long way to go Dan Falk Share EmailSMSFacebookXRedditLinkedInBlueskyPrint A slate sculpture of Alan Turing by artist Stephen Kettle sits at the Bletchley Park National Codes Centre in Great Britain. Photo: Courtesy of Flickr user LEOL30 Alan Turing, one of the fathers of the computer age, was an extraordinarily clever man. So clever, in fact, that he understood that the term “machine intelligence” was just about meaningless. Better, he reasoned, to talk about what a machine can actually do: Can it talk? Can it hold down a conversation? At least that is something we can attempt to study. Turing eventually proposed what has come to be known as the “Turing test”: If a judge can’t tell which of two hidden entities is a human and which is a artificial, the machine has “passed” the test – which is exactly what is said to have happened this past Saturday in London. “We are… proud to declare that Alan Turing’s test was passed for the first time,” one of the organizers, Kevin Warwick of the University of Reading, said as the results were announced. The winning chatbot goes by the name of “Eugene Goostman,” a computer program that emulates the personality of a 13-year-old Ukrainian boy. “Eugene” managed to convince 33 percent of the judges that it was human at Saturday’s event, held at the Royal Society’s offices in London on the 60th anniversary of Turing’s death. (Turing, a homosexual, was convicted of gross indecency in 1952 and was ordered to undergo hormonal “treatment” as part of a plea agreement. Two years later he died from cyanide poisoning in an apparent suicide.) But a word of caution is in order. “Intelligence” has always been a slippery subject, and the Turing test in particular has long been fraught with controversy. Turing described how it would work in a 1950 paper titled “Computing machinery and int\n\nSOURCE livescience.com (https://www.livescience.com/technology/artificial-intelligence/what-is-the-turing-test):\nRead Science without the ads What's Pro? Explore Choose your Live Science experience Live Science plus Get started to get free access to selected news stories, receive our daily newsletter, post comments, play games and earn badges. JOIN FREE Live Science pro Unlimited access to our exclusive features, expert analysis and in-depth interviews, all ad-free Unlimited, ad-free reading Exclusive, original reporting Scientist interviews and videos Members-only features See what’s in pro Go beyond the headlines Rigorously fact-checked science, expert commentary and an ad-free experience built for those who want to go beyond the headlines See what's in Pro Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. Scientist interviews and video The latest science direct from the most respected people in their fields. Members-only features Exclusive newsletter. Members-only area. Early access to content. of Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. 1 of 4 Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. 2 of 4 Scientist interviews and video The latest science direct from the most respected people in their fields. 3 of 4 Members-only features Exclusive newsletter. Members-only area. Early access to content. 4 of 4 See what's in Pro - Welcome to Live Science club! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Complete any activity to unlock your first badge. Keep earning badges Explore ways to get more involved as a member. Live Science Quizzes Play quick, fun science games Explore Animal facts Learn about the natural world Explore Latest space news Read about discoveries from beyond Earth Explore --- See what you’ve unlocked. Explore your membership benefits. Explore Go beyond the headlines Cancel anytime Start Browsing --- Sign Out - Hi , Keep exploring with your premium access. START BROWSING --- Content * ![Science Spotlight Science Spotlight](h\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC4867147):\n# Passing the Turing Test Does Not Mean the End of Humanity Kevin Warwick, Huma Shah Cognitive Computation · 2015-12-28 · 8:409-419 · DOI: 10.1007/s12559-015-9372-6 · PMID: 27257441 · PMCID: PMC4867147 ## Abstract In this paper we look at the phenomenon that is the Turing test. We consider how Turing originally introduced his imitation game and discuss what this means in a practical scenario. Due to its popular appeal we also look into different representations of the test as indicated by numerous reviewers. The main emphasis here, however, is to consider what it actually means for a machine to pass the Turing test and what importance this has, if any. In particular does it mean that, as Turing put it, a machine can “think”. Specifically we consider claims that passing the Turing test means that machines will have achieved human-like intelligence and as a consequence the singularity will be upon us in the blink of an eye. ## Keywords Deception detection, Natural language, Turing’s imitation game, Chatbots, Machine misidentification ## Introduction There are those who believe that passing the Turing test means that human-level intelligence will have been achieved by machines [10]. The direct consequence of this, as pointed out by Kurzweil [11] and others, is that the singularity will be upon us, thereby resulting in the demise of the human race. In this paper we do not wish to dispute the latter of these arguments, dramatic though it is. What we do wish to dispel, however, is the assumption which links passing the Turing test with the achievement for machines of human-like or human-level intelligence. Unfortunately the assumed chain of events which means that passing the Turing test sounds the death knell for humanity appears to have become engrained in the thinking in certain quarters. One interesting corollary of this is that when it was announced in 2014 that the Turing test had been finally passed [39] there was an understandable response from those same quarters that it was not possible for such an event to have occurred, presumably because we were still here in sterling health to both make and debate the pronouncement. Interestingly the main academic argume\n\nSOURCE britannica.com (https://www.britannica.com/technology/Turing-test):\nAsk the Chatbot Games & Quizzes History & Society Science & Tech Biographies Animals & Nature Geography & Travel Arts & Culture ProCon Money Videos Adding us as a **Preferred Source** tells Google you trust our content, so our articles show up more often in your Google Search, Discover feed, and AI Overviews. Print # Turing test artificial intelligence Written and fact-checked by Britannica Editors Encyclopaedia Britannica's editors oversee subject areas in which they have extensive knowledge, whether from years of experience gained by working on that content or via study for an advanced degree.... Britannica Editors Last updated •History **Turing test**, in artificial intelligence, a test proposed (1950) by the English mathematician Alan M. Turing to determine whether a computer can “think.” There are extreme difficulties in devising any objective criterion for distinguishing “original” thought from sufficiently sophisticated “parroting”; indeed, any evidence for original thought can be denied on the grounds that it ultimately was programmed into the computer. Turing sidestepped the debate about exactly how to define thinking by means of a very practical, albeit subjective, test: if a computer acts, reacts, and interacts like a sentient being, then call it sentient. To avoid prejudicial rejection of evidence of machine intelligence, Turing suggested the “imitation game,” now known as the Turing test: a remote human interrogator, within a fixed time frame, must distinguish between a computer and a human subject based on their replies to various questions posed by the interrogator. By means of a series of such tests, a computer’s success at “thinking” can be measured by its probability of being misidentified as the human subject. In late 2022, the advent of ChatGPT reignited conversation about the likelihood that the components of the Turing test had been met. In 1981 American philosopher John Searle proposed the “Chinese room” argument, a powerful rejoinder to the idea that the Turing test can show that a machine could think. Suppose a human who knows no Chinese is locked in a room with a large set of Chinese characters and a manual that shows how to match quest",
+  "extra_sources": [
+   "https://arxiv.org/html/2505.02558v1",
+   "https://www.smithsonianmag.com/innovation/turing-test-measures-something-but-not-intelligence-180951702",
+   "https://www.livescience.com/technology/artificial-intelligence/what-is-the-turing-test",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC4867147",
+   "https://www.britannica.com/technology/Turing-test"
+  ]
+ },
+ "_writer": "gemini"
+}
