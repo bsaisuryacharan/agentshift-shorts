@@ -1,0 +1,223 @@
+{
+ "id": "voynich-program-what-if-a1",
+ "title": "The 15th-Century Computer?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "WHAT IF",
+ "format": "what_if",
+ "theme": "warm",
+ "look": "midnight-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+  "b1": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+  "b4": "https://www.history.com/articles/voynich-mystery",
+  "wiki": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+  "ref1": "https://www.history.com/articles/voynich-manuscript-mystery",
+  "ref2": "https://www.britannica.com/topic/Voynich-manuscript",
+  "ref3": "https://arxiv.org/vc/arxiv/papers/1604/1604.04149v5.pdf",
+  "ref4": "https://www.newscientist.com/article/1984898-new-signs-of-language-surface-in-mystery-voynich-text"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s1.jpg",
+   "photo": "Voynich manuscript",
+   "prompt": "Photoreal cinematic 9:16 image of an ancient vellum manuscript with mysterious script and botanical drawings, soft natural lighting, documentary style.",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "What if this 15th century book is actually a complex computer program?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "what if?",
+     "at": "15th"
+    },
+    {
+     "t": "title",
+     "html": "Ancient *Code*?",
+     "at": "15th"
+    }
+   ],
+   "sfx": [
+    [
+     "code",
+     "whoosh",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s2.jpg",
+   "photo": "Voynich manuscript parchment",
+   "prompt": "Extreme close-up of aged 15th-century parchment, showing texture, ink stains, and faded handwriting, natural material, macro shot.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Carbon dated between 1404 and 1438, its purpose is still fiercely debated.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "DATED TO 1404",
+      "keyword": "1404",
+      "note": "CARBON TESTED"
+     },
+     "at": "1404"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s3.jpg",
+   "photo": "Voynich manuscript botanical",
+   "prompt": "Top-down view of a medieval manuscript page featuring a detailed illustration of a fantastical, unidentified plant, iron gall ink, flat lay.",
+   "focal": [
+    0.5,
+    0.6
+   ],
+   "say": "It contains 240 pages of unidentified plants and strange astrological symbols.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "240 PAGES",
+     "col": "ok",
+     "at": "240"
+    }
+   ],
+   "sfx": [
+    [
+     "plants",
+     "pop",
+     0.4
+    ]
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s4.jpg",
+   "photo": "Voynich manuscript pages",
+   "prompt": "Wide shot of an open ancient book with multiple folding vellum pages, resting on a wooden library table, soft side lighting, silhouette from behind.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The physical codex measures 23.5 centimeters tall and is divided into 18 quires.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 18,
+      "suffix": "QUIRES"
+     },
+     "at": "18"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "img": "g1.jpg",
+   "say": "Scholars suggest it could be an unreadable code, a cipher, or an elaborate hoax.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "IT IS A",
+      "options": "CODE, CIPHER, HOAX"
+     },
+     "at": "code"
+    }
+   ],
+   "sfx": [
+    [
+     "code",
+     "ding",
+     0.5
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "img": "g2.jpg",
+   "say": "Elite codebreakers have failed to find its meaning since it was found in 1912.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "1912",
+     "col": "am",
+     "at": "1912"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "img": "s7.jpg",
+   "footage": "ancient library books",
+   "prompt": "Cinematic shot of a modern high-resolution scanner digitizing an ancient manuscript in a dark library archive, glowing scanner light.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 2020, Yale published the entire work online, inviting the world to decode it.",
+   "hud": [
+    {
+     "t": "toast",
+     "title": "2020",
+     "sub": "ONLINE RELEASE",
+     "icon": "globe",
+     "at": "2020"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s1.jpg",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Is it a medical manual, or a secret Renaissance algorithm? Follow for more.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "Follow for *more*",
+     "at": "Follow"
+    }
+   ],
+   "sfx": [
+    [
+     "more",
+     "impact",
+     0.7
+    ]
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Voynich manuscript",
+  "url": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+  "text": "The Voynich manuscript (, VOY-nitch) is an illustrated codex, hand-written in an undeciphered script referred to as \"Voynichese\". The vellum on which it is written has been carbon-dated to the early 15th century (1404–1438). Stylistic analysis has indicated the manuscript may have been composed in Italy during the Italian Renaissance. The origins, authorship, and purpose of the manuscript are still debated, but currently scholars lack the translation and context needed to either properly entertain or eliminate any of the possibilities. Hypotheses range from a script for a natural language or constructed language, an unreadable code, cipher, or other form of cryptography, or perhaps a hoax, reference work (i.e. folkloric index or compendium), glossolalia, or work of fiction (e.g. science fantasy or mythopoeia, metafiction, and speculative fiction). The first confirmed owner was Georg Baresch, a 17th-century alchemist from Prague. The manuscript is named after Wilfrid Voynich, a Polish book dealer who purchased it in 1912. The manuscript consists of around 240 pages, but there is evidence that some of the pages are missing. The text is written from left to right, and some pages are foldable sheets of varying sizes. Most of the pages have fantastical illustrations and diagrams, some crudely coloured, with sections of the manuscript showing people, unidentified plants and astrological symbols. Since 1969, it has been held in Yale University's Beinecke Rare Book and Manuscript Library. In 2020, Yale University published the entire manuscript online in its digital library. The Voynich manuscript has been studied by both professional and amateur cryptographers, including American and British codebreakers from both World War I and World War II. Codebreakers Prescott Currier, William Friedman, Elizebeth Friedman, and John Tiltman were unsuccessful. The manuscript has never been demonstrably deciphered, and none of the proposed hypotheses have been independently verified. The mystery of its meaning and origin has excited speculation and provoked study. == Description ==\n\n\n=== Codicology ===\nThe codicology, or physical characteristics of the manuscript, has been studied by many researchers. The manuscript measures 23.5 by 16.2 by 5 cm (9.3 by 6.4 by 2.0 in), with hundreds of vellum pages collected into 18 quires of uneven size (one, two, four, five and seven sheets). The total number of pages is around 240, but the exact number depends on how the manuscript's unusual foldouts are counted. The quires have been numbered from 1 to 20 in various locations, using a style of numerals consistent with those used in the 15th century, and the top right corner of each recto (right-hand) page has been numbered from 1 to 116, using a style of numerals that originated at a later date. From the various numbering gaps in the quires and pages, it seems likely that in the past, the manuscript had at least 272 pages in 20 quires, some of which were already missing when Wilfrid Voynich acquired the manuscript in 1912. There is strong evidence that many of the book's bifolios were reordered at various points in the book's history, and that its pages were originally in a different order than the order they are in today. A 2026 study proposed that the manuscript was originally not bound in quires at all, but as a series of singulions (four-page units made from a single folded bifolio). === Parchment, covers, and binding ===\nSamples from various parts of the manuscript were radiocarbon dated at the University of Arizona in 2009. The results were consistent for all samples tested and indicated a date for the parchment between 1404 and 1438. Protein testing in 2014 revealed that the parchment was made from calfskin, and multispectral analysis showed that it had not been written on before the manuscript was created (i.e., it is not a palimpsest). The quality of the parchment is average and has deficiencies, such as holes and tears, common in parchment codices, but was also prepared with so much care that the skin side is largely indistinguishable from the flesh side. The parchment is made from \"at least fourteen or fifteen entire calfskins\". Some folios (such as 42 and 47) are thicker than the usual parchment. The goatskin binding and covers are not original to the book, but date to its possession by the Collegio Romano. Insect holes are present on the first and last folios of the manuscript in the current order and suggest that a wooden cover was present before the later covers. Discolouring on the edges points to a tanned leather inside cover. Medievalist Lisa Fagin Davis describes the parchment as soft—a texture found in books that have been \"heavily thumbed\". This indicates the manuscript was handled or paged through a great deal and likely served some routine function such as a medical manual or celestial almanac. Its heavy usage also suggests it had a workmanlike role rather than anything sacred or ceremonial. The holes in the parchment from scabs, wounds, or insect bites, and the lack of any luxurious touches such as gold leaf, support this interpretation. === Ink ===\nMany pages contain substantial drawings or charts which are coloured with paint. Based on modern analysis using polarised light microscopy (PLM), it has been determined that a quill pen and iron gall ink were used for the text and figure outlines.\n\nSOURCE history.com (https://www.history.com/articles/voynich-manuscript-mystery):\nBy: Dave Roos Middle Ages # Why the Voynich Manuscript May Be the World’s Most Mysterious Book In 1912, a rare book dealer acquired an ancient manuscript that he claimed would 'startle the scientific world.' Cryptologists are still trying to understand its pages. ![Dave Roos](/authors/dave-roos) AFP via Getty Images Published: May 27, 2025Last Updated: May 27, 2025 In 1921, a London rare book dealer named Dr. Wilfred M. Voynich toured the United States with pages from a mysterious ancient manuscript that he claimed would “startle the scientific world.” \"When the time comes,\" Voynich said, \"I will prove to the world that the black magic of the Middle Ages consisted in discoveries far in advance of 20th-century science.” The Voynich Manuscript—as it came to be known—appears in many ways to be a typical medieval treatise like those produced by alchemists in the 14th and 15th centuries. The manuscript’s pages are crowded with intricate drawings of plants and herbs, diagrams of stars and planets, and even some racy doodles of nude women bathing. But the Voynich Manuscript veers from the “typical” in one very significant way. It’s written in an entirely unknown and indecipherable language. The manuscript contains over 200 pages written in an alphabetic-looking script that is either an encoded text, an invented language or an ingenious medieval hoax. ## An Enduring Mystery Over the centuries, countless cryptologists have searched for the secret key to unlocking the Voynich Manuscript—including World War II codebreaker Alan Turing and the FBI—but none have succeeded. The world’s leading expert in the Voynich Manuscript calls it “the main unsolved problem in the history of cryptography.” Science journalist Garry Shaw, who researched the Voynich Manuscript for his book, *Cryptic: From Voynich to the Angel Diaries, the Story of the World's Mysterious Manuscripts*, says there’s something about the inscrutable manuscript that “sucks you in.” “People love a good mystery,” says Shaw. “And like all good mysteries, it seems like if you put enough effort into [the Voynich Manuscript], you could probably decipher it. Maybe if I spend a bit of time staring at these images, staring \n\nSOURCE britannica.com (https://www.britannica.com/topic/Voynich-manuscript):\nAsk the Chatbot Games & Quizzes History & Society Science & Tech Biographies Animals & Nature Geography & Travel Arts & Culture ProCon Money Videos ![Voynich manuscript](https://cdn.britannica.com/65/188365-050-FF98AEBC/illustration-Voynich-manuscript-collection-Yale-University-New.jpg) Voynich manuscript Botanical illustration, Voynich manuscript (page 40 verso), 16th century; in the collection of the Beinecke Rare Book and Manuscript Library, Yale University, New Haven, Connecticut. # Voynich manuscript illustrated manuscript Written by Naomi Blumberg Naomi Blumberg was Assistant Editor, Arts and Culture for Encyclopaedia Britannica. She covered topics related to art history, architecture, theatre, dance, literature, and music. Naomi Blumberg Fact-checked by Britannica Editors Encyclopaedia Britannica's editors oversee subject areas in which they have extensive knowledge, whether from years of experience gained by working on that content or via study for an advanced degree.... Britannica Editors Last updated •History ## News • A medieval manuscript has confounded scholars for centuries. Have they been reading it wrong all this time? • Oct. 6, 2026, 3:00 AM ET (The Guardian) Top Questions * What is the Voynich manuscript? The Voynich manuscript is an illustrated manuscript, written in an unknown language, that is believed to have been created in the 15th or 16th century. It is named after Wilfrid Voynich, an antiquarian bookseller who purchased it in 1912. Since its discovery, scholars and scientists have tried to decipher the text. The manuscript contains 102 heavily illustrated parchment folios (about 234 pages). The manuscript is divided into six sections based on the illustrations: botany, astronomy and astrology, biology, cosmology, pharmaceutical, and recipes. Since 1969, it has been housed in the Beinecke Rare Book and Manuscript Library at Yale University. 1 Britannica Source 1. Voynich manuscript Created from Britannica articles using AI. AI can make mistakes, so verify using Britannica articles. * Why is the Voynich manuscript famous or mysterious? The Voynich manuscript is a famous, mysterious, illustrated manuscript because it is written in an unkno\n\nSOURCE arxiv.org (https://arxiv.org/vc/arxiv/papers/1604/1604.04149v5.pdf):\n1 Voynich Manuscript coding and decoding methods. Alexander G. Ulyanenkov, alex.ulyanenkov@protonmail.ch © 2016 Alexander Ulyanenkov (Александр Ульяненков). All rights (inc. also code location, identification, decoding, translation etc.) - reserved Abstract: The Voynich manuscript (VMS) is the book dated as 15th - 16th century, written using specific and smart coding methods. This article describes the methods how it was analyzed and how coding keys were found. It also shows the VMS author’s method of coding. Keywords: Voynich manuscript, code, codes, coding, decoding, decipher, VMS, key, keys, Kelley, Kelly, Dee, Trithemij, Trithemius. 1. Introduction This is an ancient manuscript, familiar to many researchers of medieval riddles under the names \"Voynich Manuscript\" (also known in abbreviation – VMS, which I will use in the article), it was also called \"The book, which no one can read,\" because neither the language used for writing it or its author, nor place, nor even the date of writing was unknown. Its current name the manuscript received from the name of one of the last owners - Michael Voynich (1865 -1930) - Polish revolutionary (pseudonym \"Wilfred\"), bibliophile and antiquarian, husband of well known writer Ethel Lilian Voynich. Voynich acquired the mysterious manuscript for his collection in 1912. And although that did not affected the success in deciphering the manuscript, but finally influenced its future fate - in 1959 Voynich family heirs sold it to bookseller Hans Kraus, who in 1969 gave it to Yale University Benecke rare book library , where it is still being held. 2 On the official website of Benecke library of rare books of Yale University [1] the manuscript description is the following: Call Number: Beinecke MS 408 (Request the physical item to view in our reading room) Alternate Title: Voynich Manuscript Date: [ca. 1401-1599?] Genres: Manuscripts Botanical illustrations Astronomical charts Drawings Hand coloring Illustrations Type of Resource: mixed material Description: Parchment. ff. 102 (contemporary foliation, Arabic numerals; not every leaf foliated) + i (paper), including 5 double-folio, 3 triple-folio, 1 quadruple-folio and 1 sextuple-fo\n\nSOURCE newscientist.com (https://www.newscientist.com/article/1984898-new-signs-of-language-surface-in-mystery-voynich-text):\nAdvertisement ### Explore by section ### Explore by subject ### Explore our products and services #### Manage your subscription Check your subscription status, update your details and more. Activate your subscription #### Physics # New signs of language surface in mystery Voynich text Beautiful as well as cryptic (Image: Beinecke Rare Book and Manuscript Library, Yale University) The Voynich manuscript (Image: Beinecke Rare Book and Manuscript Library, Yale University) The Voynich manuscript (Image: Beinecke Rare Book and Manuscript Library, Yale University) The Voynich manuscript (Image: Beinecke Rare Book and Manuscript Library, Yale University) The Voynich manuscript (Image: Beinecke Rare Book and Manuscript Library, Yale University) A mysterious and beautiful 15th-century text that some researchers have recently deemed to be gibberish may not be a hoax after all. A new study suggests the text shares quantifiable features with genuine language, and so may contain a coded message. That verdict emerges from a statistical technique that puts a figure on the information content of elements in a text or code, even if their meaning is unknown. The technique could also be used to determine whether there is meaning in genomes, possible messages from aliens or even the signals between neurons in the brain. Advertisement The Voynich manuscript has baffled and captivated researchers since book dealer Wilfred Voynich found it in an Italian monastery in 1912. It contains illustrations of naked nymphs, unidentifiable plants, astrological diagrams and pages and pages of text in an unidentified alphabet. Although the patterns of word lengths and symbol combinations in the text are similar to those in real languages, several recent studies have suggested that the book was a clever 15th-century hoax designed to dupe Renaissance book collectors, and that the words have no meaning. One study showed that techniques known to 16th-century cryptographers would have allowed someone to create these patterns using a nonsense set of characters. Another study concluded that the statistical properties of the script are consistent with gibberish. ## Word entropy Now Marcelo Montemurro of t",
+  "extra_sources": [
+   "https://www.history.com/articles/voynich-manuscript-mystery",
+   "https://www.britannica.com/topic/Voynich-manuscript",
+   "https://arxiv.org/vc/arxiv/papers/1604/1604.04149v5.pdf",
+   "https://www.newscientist.com/article/1984898-new-signs-of-language-surface-in-mystery-voynich-text"
+  ]
+ },
+ "_writer": "gemini"
+}

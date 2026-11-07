@@ -1,5 +1,5 @@
 {
- "current": "turing-test-how-it-works-a1",
+ "current": "voynich-program-what-if-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -456,6 +456,32 @@
    "uploaded": {
     "id": "N0iEpZYDNQk",
     "url": "https://youtube.com/watch?v=N0iEpZYDNQk",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
+  },
+  "voynich-program-what-if-a1": {
+   "title": "The 15th-Century Computer?",
+   "base": "voynich-program-what-if-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 8,
+    "accuracy": 9,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 8,
+    "hierarchy": 7,
+    "consistency": 9,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "42398243768",
+   "uploaded": {
+    "id": "Vm4mLx72rjM",
+    "url": "https://youtube.com/watch?v=Vm4mLx72rjM",
     "privacy": "public",
     "wanted": "public",
     "publish_at": null
