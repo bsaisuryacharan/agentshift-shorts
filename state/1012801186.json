@@ -1,5 +1,5 @@
 {
- "current": "cmb-top-5-facts-a2",
+ "current": "year-without-summer-1816-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -508,6 +508,32 @@
    "uploaded": {
     "id": "pXu-_Z761RI",
     "url": "https://youtube.com/watch?v=pXu-_Z761RI",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
+  },
+  "year-without-summer-1816-a1": {
+   "title": "The Year Summer Vanished",
+   "base": "year-without-summer-1816-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 7,
+    "accuracy": 9,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 7,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "42495665415",
+   "uploaded": {
+    "id": "4VadxlYDuyw",
+    "url": "https://youtube.com/watch?v=4VadxlYDuyw",
     "privacy": "public",
     "wanted": "public",
     "publish_at": null

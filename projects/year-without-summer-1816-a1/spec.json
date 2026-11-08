@@ -1,0 +1,180 @@
+{
+ "id": "year-without-summer-1816-a1",
+ "title": "The Year Summer Vanished",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "TIMELINE",
+ "format": "timeline",
+ "look": "editorial-paper",
+ "theme": "cool",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "h": "https://en.wikipedia.org/wiki/Year_Without_a_Summer",
+  "wiki": "https://en.wikipedia.org/wiki/Year_Without_a_Summer",
+  "ref1": "https://www.history.com/articles/what-was-the-year-without-a-summer",
+  "ref2": "https://www.britannica.com/story/the-eruption-of-mount-tambora-animated-infographic-spotlight",
+  "ref3": "https://www.usgs.gov/observatories/hvo/news/volcano-watch-infamous-mount-tambora-rumbling-again",
+  "ref4": "https://gml.noaa.gov/outreach/info_activities/pdfs/PSA_volcanoes_and_climate_change.pdf",
+  "ref5": "https://www.sciencedaily.com/releases/2019/09/190917193624.htm"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "graphic": true,
+   "say": "In 1816, the summer season simply vanished from the Northern Hemisphere.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "when?",
+     "at": "1816"
+    },
+    {
+     "t": "title",
+     "html": "*1816*",
+     "at": "1816"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "graphic": true,
+   "say": "The world was already chilled by the Little Ice Age starting in the 14th century.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 14,
+      "suffix": "th Century"
+     },
+     "at": "14th"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Mount Tambora crater",
+   "prompt": "photoreal cinematic 9:16 aerial view of a massive volcanic crater rim, dark basalt rock, clouds swirling inside, documentary look, natural light",
+   "say": "Then, in April 1815, Mount Tambora exploded in the largest volcanic eruption in 1,300 years.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "MT TAMBORA",
+     "col": "cy",
+     "at": "1815"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "graphic": true,
+   "say": "It was a massive VEI 7 event, blasting 37 km of dense rock into the stratosphere.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "37 km of debris",
+      "keyword": "37 km",
+      "note": "Massive Ejection"
+     },
+     "at": "37"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "volcanic sunset atmosphere",
+   "prompt": "photoreal cinematic 9:16 silhouette of a dark landscape under a hazy purple and grey volcanic sunset, thick ash clouds blocking the sun, documentary look",
+   "say": "This volcanic winter dropped global temperatures by 0.7 degrees and dimmed the sun with ash.",
+   "hud": [
+    {
+     "t": "line",
+     "values": [
+      0,
+      -0.4,
+      -0.7
+     ],
+     "labels": [
+      "1814",
+      "1816"
+     ],
+     "col": "ir",
+     "at": "0.7"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "footage": "snow falling on trees",
+   "prompt": "photoreal cinematic 9:16 wide shot of heavy snow falling on a green summer forest, unseasonable frost, documentary look, natural light",
+   "say": "By June 1816, heavy snow fell in New England and crops failed across the globe.",
+   "hud": [
+    {
+     "t": "toast",
+     "title": "CROP FAILURE",
+     "sub": "GLOBAL FAMINE",
+     "at": "1816"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "frozen wheat field",
+   "prompt": "photoreal cinematic 9:16 macro shot of frozen wheat stalks covered in thick white frost, dead crops, morning light, documentary look",
+   "say": "Famine triggered riots in Europe, but the gloom also inspired Mary Shelley to write Frankenstein.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "FRANKENSTEIN",
+      "label": "1816 LEGACY"
+     },
+     "at": "Frankenstein"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "footage": "volcano lava flow",
+   "prompt": "photoreal cinematic 9:16 top-down view of glowing red lava flowing over black rock, steam rising, documentary look",
+   "say": "A single volcano changed human history forever. Follow for more.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "NATURAL *DISASTER*",
+     "at": "history"
+    }
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Year Without a Summer",
+  "url": "https://en.wikipedia.org/wiki/Year_Without_a_Summer",
+  "text": "The year 1816 is known as the Year Without a Summer because of severe climate abnormalities that caused average global temperatures to decrease by 0.4–0.7 °C (0.7–1 °F). Summer temperatures in Europe that year were the coldest of any on record between 1766 and 2000, resulting in crop failures and major food shortages across the Northern Hemisphere. Evidence suggests that the anomaly was predominantly a volcanic winter event caused by the massive eruption of Mount Tambora in the Dutch East Indies (modern-day Indonesia) in April 1815. This eruption was the largest in at least 1,300 years (after the hypothesized eruption causing the volcanic winter of 536); its effect on the climate may have been exacerbated by the 1814 eruption of Mayon in the Philippines. The volcanic ash and gases released into the atmosphere blocked sunlight, leading to global cooling. The United Kingdom of Great Britain and Ireland and Bourbon Restoration France experienced hardship, with food riots and famine becoming common. Adding to the socio-economic stress, the situation was exacerbated by the fact that Europe was still recovering from the Napoleonic Wars. North America also faced extreme weather conditions. In the eastern United States, a persistent \"dry fog\" dimmed the sunlight, causing unusual cold and frost throughout the summer months. Crops failed in regions such as New England, leading to food shortages and economic distress. These conditions forced many families to leave their homes in search of better farming opportunities, contributing to westward expansion. == Description ==\nThe Year Without a Summer was an agricultural disaster; historian John D. Post called it \"the last great subsistence crisis in the Western world\". The climatic aberrations of 1816 had their greatest effect on New England (US), Atlantic Canada, and Western Europe. The main cause of the Year Without a Summer is generally held to be a volcanic winter created by the April 1815 eruption of Mount Tambora on Sumbawa. The eruption had a volcanic explosivity index (VEI) ranking of 7, and ejected at least 37 km3 (8.9 cu mi) of dense-rock equivalent material into the atmosphere. It remains the most recent confirmed VEI-7 eruption to date. Other large volcanic eruptions (of at least VEI-4) around this time include:\n\nThe 1808 mystery eruption in the southwestern Pacific Ocean\n1812, La Soufrière on Saint Vincent in the Caribbean\n1812, Awu in the Sangihe Islands, Dutch East Indies\n1813, Suwanosejima in the Ryukyu Islands\n1814, Mayon in the Philippines\nThese eruptions had built up a substantial amount of atmospheric dust, and thus temperatures fell worldwide as the airborne material blocked sunlight in the stratosphere. According to a 2012 analysis by Berkeley Earth, the 1815 Tambora eruption caused a temporary drop in the Earth's average land temperature of about one degree Celsius; smaller temperature drops were recorded from the 1812–1814 eruptions. The Earth had already been in a centuries-long period of cooling that began in the 14th century. Known today as the Little Ice Age, it had already caused considerable agricultural distress in Europe. The eruption of Tambora occurred near the end of the Little Ice Age, exacerbating the background global cooling of the period. This period also occurred during the Dalton Minimum, a period of relatively low solar activity from 1790 to 1830. May 1816 (part of solar cycle 6) had the lowest Wolf number (0.1) to date since records on solar activity began. It is not yet known, however, if and how changes in solar activity affect Earth's climate, and this correlation does not prove that lower solar activity produces global cooling. === Africa ===\nNo direct evidence for conditions in the Sahel region have been found, though conditions from surrounding areas have implied above-normal rainfall. Below the Sahel, the coastal regions of West Africa likely experienced below-normal levels of precipitation. Severe storms affected the South African coast during the Southern Hemisphere winter. On July 29–30, 1816, a violent storm occurred near Cape Town, South Africa, which brought forceful northerly winds and hail and caused severe damage to shipping. === Asia ===\nThe monsoon season in China was disrupted, resulting in overwhelming floods in the Yangtze Valley. Fort Shuangcheng reported fields disrupted by frost and conscripts deserting as a result. Summer snowfall or otherwise mixed precipitation was reported in various locations in Jiangxi and Anhui. In Taiwan, snow was reported in Hsinchu and Miaoli, and frost was reported in Changhua. A large-scale famine in Yunnan helped reverse the fortunes of the ruling Qing dynasty. In India, the delayed summer monsoon caused late torrential rains that aggravated the spread of cholera from a region near the Ganges in Bengal to as far as Moscow. In Bengal, abnormal cold and snow was reported in the winter monsoon. In Japan, which was still cautious after the cold-weather-related Great Tenmei famine of 1782–1788, cold damaged crops, but no crop failures were reported and there was no adverse effect on population. === Europe ===\nAs a result of the series of volcanic eruptions in the 1810s, crops had been poor for several years; the final blow came in 1815 with the eruption of Tambora. Europe, still recuperating from the Napoleonic Wars, suffered from widespread food shortages, resulting in its worst famine of the century. Low temperatures and heavy rains resulted in failed harvests in Great Britain and Ireland.\n\nSOURCE history.com (https://www.history.com/articles/what-was-the-year-without-a-summer):\nU.S. History All the major chapters in the American story, from Indigenous beginnings to the present day. World History History from countries and communities across the globe, including the world’s major wars. Eras & Ages From prehistory, though antiquity and into the 21st century, all of history’s biggest chapters. Culture & Tradition The stories behind the faiths, food, entertainment and holidays that shape our world. Science & Innovation The pivotal discoveries, visionary inventors and natural phenomena that impacted history. By: Evan Andrews # What was the “Year Without a Summer”? EA In the summer of 1816, the Northern Hemisphere was plagued by a weather disruption of seemingly biblical proportions. Following a relatively ordinary early spring, temperatures in the eastern United States plunged back below freezing, and communities from New England to Virginia experienced heavy snowfalls and crop-killing frost during June, July and August. Europe also found itself in the grip of an unseasonable chill. Winter snows refused to melt, and between April and September, some parts of the Continent were drenched by as many as many as 130 days of rain. The unrelenting gloom inspired author Mary Shelley to write her famous novel “Frankenstein,” but it also wreaked havoc on farmers. Crops failed across Europe and China, spawning deadly famines and outbreaks of typhus and other diseases. In India, the disturbances gave rise to a virulent new strain of cholera that eventually killed millions. The suffering in the United States was less pronounced, but many still felt the squeeze of soaring grain prices. Some poorer Americans were even reduced to eating hedgehogs and scrounging for wild turnips. What caused this calamitous “Year Without a Summer?” At the time, many people believed the chaos was some form of divine retribution, but most scientists now place the lion’s share of the blame on an Indonesian volcano called Mount Tambora. In early 1815, Tambora roared to life with one of the most devastating volcanic eruptions on record—an explosion 10 times more powerful than Krakatoa. Along with killing thousands of locals, the blast also spewed sulfur dioxide into the stratosp\n\nSOURCE britannica.com (https://www.britannica.com/story/the-eruption-of-mount-tambora-animated-infographic-spotlight):\nAsk the Chatbot Games & Quizzes History & Society Science & Tech Biographies Animals & Nature Geography & Travel Arts & Culture ProCon Money Videos Introduction References & Edit History Related Topics Images ![Infographic depicting the 1815 eruption of Mount Tambora in Indonesia, with an illustration of a massive volcanic explosion and ash plume. Key statistics are highlighted, including 24 cubic miles of ash and 60 megatons of sulfur expelled, 10,000 immediate deaths, and 80,000 regional deaths from starvation and disease. Additional facts detail the volcano's dimensions, the global temperature drop in 1816, and a map showing the eruption's location on Sumbawa Island.](https://cdn.britannica.com/13/181513-050-40CFA43E/Mount-Tambora-eruption-much-island-weather-Sumbawa-April-5-1815.jpg) Quick Facts Related Topics: : natural disaster : volcanic eruption : summer See all related content Adding us as a **Preferred Source** tells Google you trust our content, so our articles show up more often in your Google Search, Discover feed, and AI Overviews. Print External Websites ![Mount Tambora: 1815 eruption](https://cdn.britannica.com/13/181513-050-40CFA43E/Mount-Tambora-eruption-much-island-weather-Sumbawa-April-5-1815.jpg) Mount Tambora: 1815 eruption The eruption of Mount Tambora, which began on April 5, 1815, devastated much of the island of Sumbawa and the surrounding region and influenced weather across the globe. # How the 1815 Eruption of Mount Tambora Produced the “Year Without a Summer” The eruption of Mount Tambora, which began on April 5, 1815, devastated much of the island of Sumbawa and the surrounding region and had a lasting influence on weather across the globe. Written by Kenny Chmielewski Kenny Chmielewski is Art Department Manager and Cartographer at *Encyclopædia Britannica*. Kenny Chmielewski Fact-checked by Britannica Editors Encyclopaedia Britannica's editors oversee subject areas in which they have extensive knowledge, whether from years of experience gained by working on that content or via study for an advanced degree.... Britannica Editors Mount Tambora is a stratovolcano and forms the entire 37.3-mile- (60-km-) wide Sanggar peninsula on Sumb\n\nSOURCE usgs.gov (https://www.usgs.gov/observatories/hvo/news/volcano-watch-infamous-mount-tambora-rumbling-again):\nAn official website of the United States government Here's how you know **Official websites use .gov** A **.gov** website belongs to an official government organization in the United States. **Secure .gov websites use HTTPS** A **lock ()** or **https://** means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. ![Home](/ \"Home\") * Facebook * Twitter * Linkedin * Digg * Reddit * Pinterest * Email Frequently Asked Questions # Volcano Watch — Infamous Mount Tambora is rumbling again By Hawaiian Volcano Observatory September 29, 2011 Skies darkened, temperatures plunged, crops failed, and disease and famine ensued. These and other strange phenomena afflicted people around the world in 1816, known as \"The Year without a Summer.\" We now know that the great eruption of Mount Tambora, in Indonesia, the previous year had triggered these changes. With Mount Tambora rumbling again this month, are we about to experience another global catastrophe? Before we answer that, let's examine the 1815 eruption and its remarkable effects. Mount Tambora became restless in 1812 and in April 1815 produced a series of major explosions that peaked on April 10-11. Large ash plumes rose to great heights, and pyroclastic flows swept down the flanks for several days, wiping out entire villages. When the pyroclastic flows reached the sea, they triggered tsunamis that further devastated the surrounding areas. The eruption was massive, rated as a 7 on the Volcanic Explosivity Scale of 0–8. By comparison, the volume of magma it erupted was about 40 times greater than that of the 1980 eruption of Mount St. Helens and 10 times greater than that of the 1991 eruption of Pinatubo. When the eruption was over, a caldera 6 km (3.7 miles) in diameter had formed, and more than 70,000 had died in the surroundings areas, making this the greatest death toll known for a volcanic eruption. The eruption also caused suffering around the world. The 60 megatons of sulfur ejected into the atmosphere led to major temperature drops and increased rainfall the following year in many places, including New England and Europe. In fact, based on tree-ring studies, 181\n\nSOURCE gml.noaa.gov (https://gml.noaa.gov/outreach/info_activities/pdfs/PSA_volcanoes_and_climate_change.pdf):\n1 Student Sheet 1 PROBLEM SOLVING ACTIVITY: PROBLEM SOLVING ACTIVITY: VOLCANOES AND CLIMATE CHANGEVOLCANOES AND CLIMATE CHANGE As volcanoes erupt, they blast huge clouds into the atmosphere. These clouds are made up of particles and gases that were previously trapped in the geosphere, including sulfur dioxide, carbon dioxide, chlorine, argon, carbon monoxide, and water vapor. Millions of tons of harmful sulfur dioxide and carbon dioxide gas can reach the stratosphere from a major volcano. While all these gases play a small part in volcanic-induced climate change, sulfur dioxide aerosols are by far the largest contributors to global cooling. Sulfur dioxide has the most adverse effect on the atmosphere of any of the volcanic gases. Sulfur dioxide combines with water molecules to produce sulfuric acid within months of the eruption. Winds then spread these newly formed aerosols over the majority of the globe, where they stay in the atmosphere for upwards of two years. Not only do these aerosols cool the earth’s surface by reflecting sunlight back into space, but the sulfuric acid also plays a role in the increased depletion of ozone. One of the greatest examples of the global cooling caused by volcanic eruptions occurred in 1816, known as “The Year without a Summer”. One year after Mt.Tambora erupted in Indonesia its effects were already being felt globally. In New England snow fell in July of 1816, and temperatures reached the 30’s. 2 Student Sheet 2 Both Europe and North America faced economic hardships from early frosts destroying large amounts of crops. Some scientists also believe that the eruption of Mt.Toba in Indonesia may have actually cooled the planet by 3-5 degrees Celsius, resulting in a 'volcanic winter'. This super-eruption occurred sometime between 69,000 and 77,000 years ago at Lake Toba (Sumatra, Indonesia). It is recognized as one of the Earth's largest known eruptions. The related catastrophe hypothesis is that this event caused a global volcanic winter of 6– 10 years and possibly a 1,000-year-long cooling episode. It had an estimated Volcanic Explosivity Index of 8- described as \"mega-colossal\" Its erupted mass was 100 times greater than that of\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2019/09/190917193624.htm):\n![ScienceDaily](/ \"ScienceDaily\") --- Your source for the latest research news Follow: *Facebook* *X/Twitter* Subscribe: *RSS Feeds* *Newsletter* **New!** Sign up for our free **email newsletter**. Science News from research organizations --- # Role of Tambora eruption in the 1816 'year without a summer' Date: : September 18, 2019 Source: : IOP Publishing Summary: : A new study has estimated for the first time how the eruption of Mount Tambora changed the probability of the cold and wet European 'year without a summer' of 1816. It found that the observed cold conditions were almost impossible without the eruption, and the wet conditions would have been less likely. Share: : Facebook Twitter Pinterest LinkedIN Email FULL STORY --- A new study has estimated for the first time how the eruption of Mount Tambora changed the probability of the cold and wet European 'year without a summer' of 1816. It found that the observed cold conditions were almost impossible without the eruption, and the wet conditions would have been less likely. 1816 recorded exceptionally low global temperatures, with central and Western Europe seeing a particularly cold and wet summer that led to widespread agricultural failures and famines. The 1815 eruption of Mount Tambora in Indonesia has long been assumed to have been the cause, with a link made as early as 1913. Now, using historical data and modern modelling techniques, researchers led by the University of Edinburgh, UK, have estimated just how important the eruption was. They publish their findings today in *Environmental Research Letters*. The study's lead author, Dr Andrew Schurer, from the University of Edinburgh, said: \"The eruption of Mount Tambora in April 1815 was among the most explosive of the last millennium. It had an enormous impact locally, devastating the island of Sumbawa. The eruption injected a huge amount of sulphur dioxide (SO2) into the stratosphere, which would have quickly spread across the world, oxidising to form sulphate aerosols. \"These volcanic aerosols reduce net shortwave radiation causing widespread, long lasting surface cooling. They also lead to a reduction in global rainfall, while wettening some dry re",
+  "extra_sources": [
+   "https://www.history.com/articles/what-was-the-year-without-a-summer",
+   "https://www.britannica.com/story/the-eruption-of-mount-tambora-animated-infographic-spotlight",
+   "https://www.usgs.gov/observatories/hvo/news/volcano-watch-infamous-mount-tambora-rumbling-again",
+   "https://gml.noaa.gov/outreach/info_activities/pdfs/PSA_volcanoes_and_climate_change.pdf",
+   "https://www.sciencedaily.com/releases/2019/09/190917193624.htm"
+  ]
+ },
+ "_writer": "gemini"
+}
