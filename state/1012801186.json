@@ -1,5 +1,5 @@
 {
- "current": "voynich-program-what-if-a1",
+ "current": "cmb-top-5-facts-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -482,6 +482,32 @@
    "uploaded": {
     "id": "Vm4mLx72rjM",
     "url": "https://youtube.com/watch?v=Vm4mLx72rjM",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
+  },
+  "cmb-top-5-facts-a2": {
+   "title": "4 Extreme CMB Facts",
+   "base": "cmb-top-5-facts-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 7,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 6,
+    "hierarchy": 7,
+    "consistency": 8,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "42475213471",
+   "uploaded": {
+    "id": "pXu-_Z761RI",
+    "url": "https://youtube.com/watch?v=pXu-_Z761RI",
     "privacy": "public",
     "wanted": "public",
     "publish_at": null

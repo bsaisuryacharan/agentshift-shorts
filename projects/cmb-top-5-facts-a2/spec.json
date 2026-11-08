@@ -1,0 +1,212 @@
+{
+ "id": "cmb-top-5-facts-a2",
+ "title": "4 Extreme CMB Facts",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "TOP 5",
+ "theme": "cool",
+ "look": "poster-pop",
+ "format": "ranked",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Cosmic_microwave_background",
+  "b1": "https://en.wikipedia.org/wiki/Cosmic_microwave_background",
+  "b2": "https://lambda.gsfc.nasa.gov/product/suborbit/POLAR/cmb.physics.wisc.edu/polar/ezexp.html",
+  "b3": "https://en.wikipedia.org/wiki/Cosmic_microwave_background",
+  "b4": "https://arxiv.org/html/2607.15666v1",
+  "b5": "https://en.wikipedia.org/wiki/Cosmic_microwave_background",
+  "wiki": "https://en.wikipedia.org/wiki/Cosmic_microwave_background",
+  "ref1": "https://lambda.gsfc.nasa.gov/product/suborbit/POLAR/cmb.physics.wisc.edu/polar/ezexp.html",
+  "ref2": "https://arxiv.org/html/2607.15666v1",
+  "ref3": "https://www.space.com/33892-cosmic-microwave-background.html",
+  "ref4": "https://www.livescience.com/space/cosmology/5-fascinating-facts-about-the-big-bang-the-theory-that-defines-the-history-of-the-universe",
+  "ref5": "https://science.nasa.gov/universe/overview"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "cosmic microwave background",
+   "prompt": "photoreal cinematic 9:16 image of the cosmic microwave background radiation map with intricate temperature fluctuations, deep space aesthetic",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The energy density of this space glow exceeds that of every star in history.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "top 5",
+     "at": "energy"
+    },
+    {
+     "t": "title",
+     "html": "COSMIC *RELICT*",
+     "at": "glow"
+    }
+   ],
+   "sfx": [
+    [
+     "energy",
+     "whoosh",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Holmdel Horn Antenna",
+   "prompt": "photoreal cinematic 9:16 image of a large metal radio antenna horn at a research site, twilight lighting, documentary style",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Rank 5: In 1964, astronomers accidentally discovered the universe's oldest light.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "RANK 5",
+      "label": "1964 DISCOVERY"
+     },
+     "at": "astronomers"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Planck sky map",
+   "prompt": "photoreal cinematic 9:16 image of a detailed colorful oval map of the early universe, glowing pixels, dark background",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Rank 4: CMB photons outnumber all other photons in the universe by a factor of 400 to 1.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 400,
+      "suffix": "TO 1"
+     },
+     "at": "factor"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Rank 3: Its number density is 1 billion times the number density of matter.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "1 BILLION TIMES MATTER",
+      "keyword": "BILLION",
+      "note": "NUMBER DENSITY"
+     },
+     "at": "billion"
+    }
+   ],
+   "sfx": [
+    [
+     "billion",
+     "impact",
+     0.7
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Rank 2: This light has been traveling since 380,000 years after the Big Bang.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "AGE:",
+      "options": "380,000 YEARS"
+     },
+     "at": "380,000"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "footage": "deep space stars",
+   "prompt": "photoreal cinematic 9:16 image of a vast star field with faint nebula gas, realistic lighting",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Rank 1: The entire sky is a uniform thermal bath at 2.72548 Kelvin.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "2.72548 K",
+     "col": "cy",
+     "at": "Kelvin"
+    }
+   ],
+   "sfx": [
+    [
+     "Kelvin",
+     "ding",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The ultimate cosmic fossil. Follow for more like this.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "*FOLLOW* FOR MORE",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Cosmic microwave background",
+  "url": "https://en.wikipedia.org/wiki/Cosmic_microwave_background",
+  "text": "The cosmic microwave background (CMB, CMBR), or relic radiation, is microwave radiation that fills all space in the observable universe. With a standard optical telescope, the background space between stars and galaxies is almost completely dark. However, a sufficiently sensitive radio telescope detects a faint background glow that is almost uniform and is not associated with any star, galaxy, or other object. This glow is strongest in the microwave region of the electromagnetic spectrum. Its energy density exceeds that of all the photons emitted by all the stars in the history of the universe. The accidental discovery of the CMB in 1964 by the American radio astronomers Arno Allan Penzias and Robert Woodrow Wilson was the culmination of work initiated in the 1940s. The CMB is the key experimental evidence of the Big Bang theory for the origin of the universe. In the Big Bang cosmological models, during the earliest periods, the universe was filled with an opaque fog of dense, hot plasma of sub-atomic particles. As the universe expanded, this plasma cooled to the point where protons and electrons combined to form neutral atoms of mostly hydrogen. Unlike the plasma, these atoms could not scatter thermal radiation by Thomson scattering, and so the universe became transparent. Known as the recombination epoch, this decoupling event released photons to travel freely through space. However, the photons have grown less energetic due to the cosmological redshift associated with the expansion of the universe. The surface of last scattering refers to a shell at the right distance in space so photons are now received that were originally emitted at the time of decoupling. The CMB is very smooth and uniform, but maps by sensitive detectors detect small but important temperature variations. Ground and space-based experiments such as COBE, WMAP and Planck have been used to measure these temperature inhomogeneities. The anisotropy structure is influenced by various interactions of matter and photons up to the point of decoupling, which results in a characteristic pattern of tiny ripples that varies with angular scale. The distribution of the anisotropy across the sky has frequency components that can be represented by a power spectrum displaying a sequence of peaks and valleys. The peak values of this spectrum hold important information about the physical properties of the early universe: the first peak determines the overall curvature of the universe, while the second and third peak detail the density of normal matter and so-called dark matter, respectively. Extracting fine details from the CMB data can be challenging, since the emission has undergone modification by foreground features such as galaxy clusters. == Features ==\n\nThe cosmic microwave background radiation is an emission of uniform black body thermal energy coming from all directions. Intensity of the CMB is expressed in kelvin (K), the SI unit of temperature. The CMB has a thermal black body spectrum at a temperature of 2.72548±0.00057 K. Variations in intensity are expressed as variations in temperature. The blackbody temperature uniquely characterizes the intensity of the radiation at all wavelengths; a measured brightness temperature at any wavelength can be converted to a blackbody temperature. The radiation is remarkably uniform across the sky, very unlike the almost point-like structure of stars or clumps of stars in galaxies. The radiation is isotropic to roughly one part in 25,000: the root mean square variations are just over 100 μK, after subtracting a dipole anisotropy from the Doppler shift of the background radiation. The latter is caused by the peculiar velocity of the Sun relative to the comoving cosmic rest frame as it moves at 369.82 ± 0.11 km/s towards the constellation Crater near its boundary with the constellation Leo. The CMB dipole and aberration at higher multipoles have been measured, consistent with galactic motion. Despite the very small degree of anisotropy in the CMB, many aspects can be measured with high precision and such measurements are critical for cosmological theories. In addition to temperature anisotropy, the CMB should have an angular variation in polarization. The polarisation at each direction in the sky has an orientation described in terms of E-mode and B-mode polarization. The E-mode signal is a factor of 10 less strong than the temperature anisotropy; it supplements the temperature data as they are correlated. The B-mode signal is even weaker but may contain additional cosmological data. The anisotropy is related to physical origin of the polarisation. Excitation of an electron by linear polarised light generates polarized light at 90 degrees to the incident direction. If the incoming radiation is isotropic, different incoming directions create polarizations that cancel out. If the incoming radiation has quadrupole anisotropy, residual polarization will be seen. Other than the temperature and polarization anisotropy, the CMB frequency spectrum is expected to feature tiny departures from the black-body law known as spectral distortions. These are also at the focus of an active research effort with the hope of a first measurement within the forthcoming decades, as they contain a wealth of information about the primordial universe and the formation of structures at late time. The CMB contains the vast majority of photons in the universe by a factor of 400 to 1; the number density of photons in the CMB is one billion times  (109) the number density of matter in the universe.\n\nSOURCE lambda.gsfc.nasa.gov (https://lambda.gsfc.nasa.gov/product/suborbit/POLAR/cmb.physics.wisc.edu/polar/ezexp.html):\n# The Cosmic Microwave Background Radiation Cosmology is the study of the physics of the universe from its birth to its ultimate fate. As in any science, there is a relationship between theory and experiment in cosmology. Though there are several theories of how the universe began, the most widely accepted is the Big Bang Theory. It postulates that the universe began at an infinitesimally small point and then expanded outward, eventually cooling and forming galaxies, stars and planets. Why is the big bang theory so thoroughly accepted? This is where experiment comes into play. If the big bang theory were true, we would expect to see certain characteristics in the sky. First of all, the big bang predicts that the universe is expanding. If this is true, then we should see all other galaxies moving away from us with a speed that depends on how far away the galaxy is from us. In fact, Edwin Hubble saw this in the 1920's with his telescopes, and the interpretation was that things were indeed moving farther apart. This revelation led Einstein to admit that he had made a great mistake. The second major thing that the big bang should produce is a characteristic radiation spectrum to be seen in the sky. If the universe were once much smaller and hotter than it is now, and if it has been expanding ever since the beginning, then it must also have been cooling down this whole time. (Imagine a gas that expands adiabatically, if the volume increases, the temperature must decrease). Thus, if we know roughly how old the universe is and what it's expansion rate is, we can form a pretty good guess of what it's current thermodynamic temperature must be. Measurements of these sorts first occured in the 1960's. In 1989, a satellite named COBE measured the spectrum of the left-over radiation from the big bang and the result is below: The solid line above is actually the theoretical prediction for the radiation's spectrum. It has a special name: Blackbody radiation. The data from COBE has data points that all lie so close to the theoretical prediction that the points have error bars that lie within the solid curve above! The blackbody spectrum above is that of a radiation field at a t\n\nSOURCE arxiv.org (https://arxiv.org/html/2607.15666v1):\n##### Report GitHub Issue Content selection saved. Describe the issue below: # UPDATE ON THE PHYSICS OF THE COSMIC MICROWAVE BACKGROUND (2015-2025) ###### Abstract The chapter titled “Physics of the Cosmic Microwave Background Anisotropy” appeared exactly one decade ago in the compilation One Hundred Years of General Relativity: From Genesis and Empirical Foundations to Gravitational Waves, Cosmology and Quantum Gravity. This earlier contribution summarized the state of the field then as well as the underlying cosmology and gravitational physics. This contribution reports on what new has occurred in the field during the intervening time 2015-2025. We also review future prospects. ###### keywords ###### PACS ## 1 Introduction: The CMB in a Nutshell Observations of the Cosmic Microwave Background (CMB) anisotropies in temperature and polarization provide us with a glimpse of the state of the Universe at approximately 1/11001/1100 its present size at a time only some 380,000 years after the putative Big Bang. The CMB offers a two-dimensional view in projection onto the celestial sphere, unlike three-dimensional galaxy and other surveys, which owing to the additional information in the radial direction in principle would be much more information rich if their interpretation were not subject to nonlinearities and ad hoc modeling of astrophysical processes, which at least with the present state of the art cannot be modelled from first principles. (a) (b) (c) (d) The physics of how the CMB was imprinted is relatively simple and clean. It is believed to be well understood, at least if we exclude nonminimal scenarios introducing new physics. As the universe cooled down, the universe transformed from being a fully ionized plasma to a gas of neutral atoms (mostly atomic hydrogen but also some H4​e{}^{4}\\!H\\!e). During this early plasma phase, photons scattering occurred frequently, so that photon directions are rapidly randomized. The photons, ions, and electrons are tightly coupled, behaving much like a fluid. When the contribution of the ions to the inertia compared to the photon energy contribution is negligible, the speed of sound is only slightly below c/3,c/\\sqrt{3},\n\nSOURCE space.com (https://www.space.com/33892-cosmic-microwave-background.html):\nJoin - Join our community Expert insights In-depth guides and features Curated newsletters Handpicked inspiration Early Access Preview new releases first Earn badges as you explore Join the conversation Comment and connect Tailored for you Personalised recommendations Get Space+ Access Quick For the quickest way to join, enter your email below. We’ll send a confirmation email and sign you up to Space.com newsletters with the latest inspiration, expert advice and exclusive offers. By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. FIND OUT ABOUT OUR MAGAZINE Want to subscribe to the magazine? Click the button below to find out more information. Find out more Get Space+ Access Quick Join The Club for quick access. Enter your email below and we'll send confirmation, and sign you up to our newsletter. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions. Geographical rules apply. Welcome to Space+ ! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Start reading to unlock your first badge Keep earning badges Explore ways to get more involved as a member. Space Exploration Latest space missions, discoveries and exploration updates. Explore Astronomy Stargazing tips, cosmic events and expert insights on the universe Explore --- Your membership perks Start exploring exclusive deals, expert advice and more Explore now Never Miss a Discovery Space news, cosmic updates and expert insights straight to your inbox. Choose your newsletters --- Sign Out Jump To: * How did the cosmic microwave background form? * Who discovered the cosmic microwave background? * What does the cosmic microwave background tell us? * Additional reading Get the Space.com Newsletter Breaking space news, the latest updates on rocket launches, skywatching events and more! --- By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. You are now subscribed Your newsletter sign-up was successful --- Want to add more newsletters? --- Join the\n\nSOURCE livescience.com (https://www.livescience.com/space/cosmology/5-fascinating-facts-about-the-big-bang-the-theory-that-defines-the-history-of-the-universe):\nRead Science without the ads What's Pro? Explore Choose your Live Science experience Live Science plus Get started to get free access to selected news stories, receive our daily newsletter, post comments, play games and earn badges. JOIN FREE Live Science pro Unlimited access to our exclusive features, expert analysis and in-depth interviews, all ad-free Unlimited, ad-free reading Exclusive, original reporting Scientist interviews and videos Members-only features See what’s in pro Go beyond the headlines Rigorously fact-checked science, expert commentary and an ad-free experience built for those who want to go beyond the headlines See what's in Pro Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. Scientist interviews and video The latest science direct from the most respected people in their fields. Members-only features Exclusive newsletter. Members-only area. Early access to content. of Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. 1 of 4 Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. 2 of 4 Scientist interviews and video The latest science direct from the most respected people in their fields. 3 of 4 Members-only features Exclusive newsletter. Members-only area. Early access to content. 4 of 4 See what's in Pro - Welcome to Live Science club! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Complete any activity to unlock your first badge. Keep earning badges Explore ways to get more involved as a member. Live Science Quizzes Play quick, fun science games Explore Animal facts Learn about the natural world Explore Latest space news Read about discoveries from beyond Earth Explore --- See what you’ve unlocked. Explore your membership benefits. Explore Go beyond the headlines Cancel anytime Start Browsing --- Sign Out - Hi , Keep exploring with your premium access. START BROWSING --- Content * ![Science Spotlight Science Spotlight](h\n\nSOURCE science.nasa.gov (https://science.nasa.gov/universe/overview):\n## Suggested Searches * Artemis * ISS * Roman * Webb * Quesst * Moon Base * View All Topics A-Z * Home * Missions * Humans in Space * Earth * The Solar System * The Universe * Science * Aeronautics * Technology * Learning Resources * About NASA * Español --- * News & Events * Multimedia * NASA+ ### Highlights 3 min read ### NASA Explores Potential Commercial Servicing for Hubble Telescope article4 days ago5 min read ### NASA-funded Study Details One of Oldest Mars Meteorites Ever Found article5 days ago6 min read ### NASA’s Perseverance Offers Clues to Protect Crews From Mars Dust article1 week ago ### Missions * Search All NASA Missions * A to Z List of Missions * Upcoming Launches and Landings * Spaceships and Rockets * Communicating with Missions * Artemis * James Webb Space Telescope * Hubble Space Telescope * International Space Station * OSIRIS-REx ### Humans in Space * Why Go to Space * Astronauts * Commercial Space * Destinations * Spaceships and Rockets * Living in Space ### Earth * Explore Earth Science * Climate Change * Earth, Our Planet * Earth Science in Action * Earth Multimedia * Earth Data * Earth Science Researchers ### The Solar System * The Sun * Mercury * Venus * Earth * The Moon * Mars * Jupiter * Saturn * Uranus * Neptune * Pluto & Dwarf Planets * Asteroids, Comets & Meteors * The Kuiper Belt * The Oort Cloud * Skywatching ### The Universe * Exoplanets * The Search for Life in the Universe * Stars * Galaxies * Black Holes * The Big Bang * Dark Matter * Dark Energy ### Science * Earth Science * Planetary Science * Astrophysics & Space Science * The Sun & Heliophysics * Biological & Physical Sciences * Lunar Science * Citizen Science * Astromaterials * Aeronautics Research * Human Space Travel Research ### Aeronautics * Science in the Air * NASA Aircraft * Flight Innovation * Supersonic Flight * Air Traffic Solutions * Green Aviation Tech * Drones & You ### Technology * Technology Transfer & Spinoffs * Space Travel Technology * Technology Living in Space * Manufacturing and Materials * Robotics * Science Instruments * Computing ### Learning Resources * For Kids and Students * For Educators * For Colleges and Universities * For Professionals ",
+  "extra_sources": [
+   "https://lambda.gsfc.nasa.gov/product/suborbit/POLAR/cmb.physics.wisc.edu/polar/ezexp.html",
+   "https://arxiv.org/html/2607.15666v1",
+   "https://www.space.com/33892-cosmic-microwave-background.html",
+   "https://www.livescience.com/space/cosmology/5-fascinating-facts-about-the-big-bang-the-theory-that-defines-the-history-of-the-universe",
+   "https://science.nasa.gov/universe/overview"
+  ]
+ },
+ "_writer": "gemini"
+}
