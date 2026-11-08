@@ -1,31 +1,31 @@
 {
- "generated_at": "2026-11-07T10:27:55+00:00",
+ "generated_at": "2026-11-08T10:35:53+00:00",
  "channel": {
-  "period": "2026-10-08..2026-11-06",
-  "views": 9651.0,
+  "period": "2026-10-09..2026-11-07",
+  "views": 9822.0,
   "avg_view_seconds": 26.0,
-  "avg_view_pct": 65.03,
+  "avg_view_pct": 64.85,
   "net_subscribers": 15.0,
-  "likes": 171.0,
+  "likes": 178.0,
   "shares": 7.0,
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
   "When Cameras Capture Astonishing Animal Encounters",
   "The 3 Most Unbelievable Dangerous Places on Earth!🙄",
-  "Most Unpredictable Animal Reactions",
-  "IKAN LELE SAMA BELUT",
   "Hannah Fry on The Nun Study",
   "SIZE OF SOLAR SYSTEM! 💀",
   "Astronomical events in November 2026😲",
   "5 Animals That Sleep in the STRANGEST Ways",
   "5 Animals That Can Survive Without Sleep 😱",
   "3 Birds That Build Nests in the Most Incredible Ways! 🤯",
+  "Most Shocking Wildlife moments",
   "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
-  "Scientists Found Something INSANE Inside This Worm!🤯"
+  "Scientists Found Something INSANE Inside This Worm!🤯",
+  "Learjet Crash in Florida: The Physics Behind the Mayday"
  ],
  "learned": {
-  "shorts_scored": 8,
+  "shorts_scored": 10,
   "best": [
    {
     "title": "Inside a Submarine: 5 Systems",
@@ -63,60 +63,60 @@
   "weakest_dimensions": [
    "visual_quality",
    "originality",
-   "polish"
+   "visual_variety"
   ]
  },
  "stage_averages": {
-  "hook": 7.4,
-  "story": 6.5,
-  "visuals": 6.3,
+  "hook": 7.5,
+  "story": 6.7,
+  "visuals": 6.2,
   "polish": 6.3,
   "policy": 9.2
  },
  "weakest_stage": "visuals",
  "region": "IN",
- "trend_signals_total": 62,
- "trend_signals_on_niche": 41,
+ "trend_signals_total": 60,
+ "trend_signals_on_niche": 40,
  "niche_winners": [
   {
    "title": "When Cameras Capture Astonishing Animal Encounters",
-   "views": 12433104,
+   "views": 17768627,
    "url": "https://www.youtube.com/watch?v=vvnUUFqwsoU"
   },
   {
    "title": "5 Animals That Can Survive Without Sleep 😱  #animalfacts #sleepdeprivation #animals",
-   "views": 4355281,
+   "views": 4691261,
    "url": "https://www.youtube.com/watch?v=j7MMYEKv9g4"
   },
   {
    "title": "The 3 Most Unbelievable Dangerous Places on Earth!🙄#city #facts #new #shorts #place #ytsho",
-   "views": 9144388,
+   "views": 9264687,
    "url": "https://www.youtube.com/watch?v=IQNLS4q2ZXQ"
   },
   {
    "title": "Astronomical events in November 2026😲 #shorts #astronomicalevents #space #helpyn",
-   "views": 4681502,
+   "views": 4746361,
    "url": "https://www.youtube.com/watch?v=_fw3vnQconI"
   },
   {
    "title": "SIZE OF SOLAR SYSTEM! 💀",
-   "views": 4748634,
+   "views": 4987845,
    "url": "https://www.youtube.com/watch?v=dv-Czhabars"
   },
   {
    "title": "3 Birds That Build Nests in the Most Incredible Ways! 🤯 #facts #animals #wildlife",
-   "views": 3753106,
+   "views": 3944404,
    "url": "https://www.youtube.com/watch?v=T3wxJlPDlUc"
   },
   {
-   "title": "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
-   "views": 2635744,
-   "url": "https://www.youtube.com/watch?v=zMt9YzQ_hf4"
+   "title": "Scientists Found Something INSANE Inside This Worm!🤯",
+   "views": 2437343,
+   "url": "https://www.youtube.com/watch?v=ttYCiXhTa6U"
   },
   {
-   "title": "Scientists Found Something INSANE Inside This Worm!🤯",
-   "views": 2281568,
-   "url": "https://www.youtube.com/watch?v=ttYCiXhTa6U"
+   "title": "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
+   "views": 2640318,
+   "url": "https://www.youtube.com/watch?v=zMt9YzQ_hf4"
   }
  ],
  "news": [
@@ -127,10 +127,10 @@
   "Human bodies produce 2 billion metric tons of CO2 a year just by staying alive",
   "SLAC scientists find conclusive proof of a mysterious third type of magnetism",
   "NASA is racing against time to save the Hubble Space Telescope",
+  "APOD: 2026 November 8 – Major Fireball Meteor",
+  "NASA Awards Moon Base Transportation, Technology, Science Projects",
   "APOD: 2026 November 7 – De Gerlache-Kocher Massif",
   "M30’s Sparkling Stars",
-  "Supercomputing Tech Demo Schedule",
-  "APOD: 2026 November 6 – A Farewell to Swift",
-  "Taking a Gander at Utah’s Goosenecks"
+  "Supercomputing Tech Demo Schedule"
  ]
 }

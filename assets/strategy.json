@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-07T10:27+00:00",
+ "updated": "2026-11-08T10:35+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 22,
+  "days_left": 21,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 9953,
-  "gained": 4172,
+  "channel_views": 10010,
+  "gained": 4229,
   "pct": 0.42,
-  "pace_per_day": 247,
-  "needed_per_day": 45264,
-  "projected": 9617,
+  "pace_per_day": 124,
+  "needed_per_day": 47417,
+  "projected": 6836,
   "on_track": false
  },
  "shorts_per_day": 2,
@@ -52,7 +52,7 @@
   },
   {
    "title": "Claude Code on Android for FREE — No Cloud Server Needed",
-   "views": 815
+   "views": 852
   }
  ],
  "flops": [
@@ -71,14 +71,14 @@
  ],
  "best_formats": [
   "timeline",
-  "unsolved",
+  "how_it_works",
   "myth_vs_fact"
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Double down on what already wins on this channel: 'Space Is Too Big For Your Brain 🤯 #shorts' (1,692 views); 'These 4 Brain Facts Sound Fake (But They're True) ' (1,115 views); 'Claude Code on Android for FREE — No Cloud Server ' (815 views).",
+  "Double down on what already wins on this channel: 'Space Is Too Big For Your Brain 🤯 #shorts' (1,692 views); 'These 4 Brain Facts Sound Fake (But They're True) ' (1,115 views); 'Claude Code on Android for FREE — No Cloud Server ' (852 views).",
   "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (24); 'What If Grandma Could Just ASK Her Phone' (30); '3 FREE AI Tricks to Get More Interview C' (32).",
-  "Prefer the formats the judge scores best: timeline, unsolved.",
+  "Prefer the formats the judge scores best: timeline, how_it_works.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."
  ]
