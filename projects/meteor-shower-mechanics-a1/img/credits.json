@@ -1,0 +1,20 @@
+{
+ "s0.jpg": {
+  "file": "Meteor Shower",
+  "license": "NASA media (public domain)",
+  "artist": "HQ",
+  "url": "https://images.nasa.gov/details/NHQ202508030001"
+ },
+ "s2.jpg": {
+  "file": "File:Iron meteorite. Hammersley Range, Australia-8911.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Raimond Spekking",
+  "url": "https://commons.wikimedia.org/wiki/File:Iron_meteorite._Hammersley_Range,_Australia-8911.jpg"
+ },
+ "s5.jpg": {
+  "file": "File:Leonid Meteor Storm 1833.jpg",
+  "license": "Public domain",
+  "artist": "Edmund Wei\u00df",
+  "url": "https://commons.wikimedia.org/wiki/File:Leonid_Meteor_Storm_1833.jpg"
+ }
+}

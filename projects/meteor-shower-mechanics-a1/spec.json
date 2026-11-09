@@ -1,0 +1,233 @@
+{
+ "id": "meteor-shower-mechanics-a1",
+ "title": "How Meteor Showers Work",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "HOW IT WORKS",
+ "theme": "cool",
+ "look": "blueprint",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Meteor_shower",
+  "b2": "https://en.wikipedia.org/wiki/Meteor_shower",
+  "b3": "https://en.wikipedia.org/wiki/Meteor_shower",
+  "b4": "https://en.wikipedia.org/wiki/Meteor_shower",
+  "b5": "https://en.wikipedia.org/wiki/Meteor_shower",
+  "b6": "https://en.wikipedia.org/wiki/Meteor_shower",
+  "wiki": "https://en.wikipedia.org/wiki/Meteor_shower",
+  "ref1": "https://www.nasa.gov/meteoroid-environment-office/about-lunar-impact-monitoring",
+  "ref2": "https://www.space.com/lyrid-meteor-shower-2026-guide",
+  "ref3": "https://www.nationalgeographic.com/science/article/121211-geminid-meteor-shower-space-science"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "meteor shower night",
+   "prompt": "photoreal cinematic 9:16 image of a brilliant meteor shower over a dark mountain range, long exposure streaks, cool blue night sky, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "How can a grain of sand light up the entire sky?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how?",
+     "at": "How"
+    },
+    {
+     "t": "title",
+     "html": "COSMIC *FIREWORKS*",
+     "at": "sky"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "graphic": true,
+   "say": "Most meteors are smaller than a grain of sand, yet create streaks visible for miles.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "SPACE DEBRIS",
+      "accent": "blue"
+     },
+     "at": "streaks"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "iron meteorite",
+   "prompt": "photoreal cinematic 9:16 image of a metallic iron meteorite with a fusion crust on a dark laboratory table, dramatic side lighting",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 1794, Ernst Chladni proposed these fireballs originated in outer space.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "1794 SPACE",
+     "col": "cy",
+     "at": "1794"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "graphic": true,
+   "say": "Fred Whipple proposed in 1951 that comets are dirty snowballs shedding debris.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "COMET",
+       "DEBRIS"
+      ],
+      [
+       "DEBRIS",
+       "METEOR"
+      ]
+     ],
+     "at": "debris"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "footage": "meteor shower time-lapse",
+   "prompt": "photoreal cinematic 9:16 time-lapse of a meteor storm, hundreds of streaks radiating from a single point in the night sky",
+   "focal": [
+    0.5,
+    0.3
+   ],
+   "say": "When Earth hits these trails, 1,000 meteors an hour can ignite a storm.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 1000,
+      "suffix": "per hour",
+      "accent": "violet"
+     },
+     "at": "1,000"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "Leonid meteor storm 1833",
+   "prompt": "photoreal cinematic 9:16 archival style illustration of the 1833 meteor storm, thousands of streaks over a silent 19th century landscape, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The Great Meteor Storm of 1833 was so intense it looked like the sky was falling.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "1833 STORM",
+     "at": "1833"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "graphic": true,
+   "say": "The Meteor Data Centre lists over 900 suspected showers, but only 100 are established.",
+   "hud": [
+    {
+     "t": "bars",
+     "items": [
+      [
+       "SUSPECTED",
+       900,
+       "cy"
+      ],
+      [
+       "KNOWN",
+       100,
+       "ir"
+      ]
+     ],
+     "unit": "showers",
+     "at": "900"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b7",
+   "img": "s7.jpg",
+   "footage": "earth orbit debris",
+   "prompt": "photoreal cinematic 9:16 view from space of Earth with a glowing atmosphere and a faint trail of dust particles in the foreground",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Nature's light show is just space dust hitting our atmosphere.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "COSMIC DUST",
+      "keyword": "DUST",
+      "note": "high velocity",
+      "accent": "blue"
+     },
+     "at": "dust"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s8.jpg",
+   "footage": "starry sky night",
+   "prompt": "photoreal cinematic 9:16 wide shot of the milky way galaxy over a dark horizon, twinkling stars",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "SUBSCRIBE for more like this.",
+   "sfx": [
+    [
+     "SUBSCRIBE",
+     "pop",
+     1
+    ]
+   ],
+   "hud": []
+  }
+ ],
+ "format": "how_it_works",
+ "_facts": {
+  "title": "Meteor shower",
+  "url": "https://en.wikipedia.org/wiki/Meteor_shower",
+  "text": "A meteor shower is a celestial event in which a number of meteors are observed to radiate, or originate, from one point in the night sky. These meteors are caused by streams of cosmic debris called meteoroids entering Earth's atmosphere at extremely high speeds on parallel trajectories. Most meteors are smaller than a grain of sand, so almost all of them disintegrate and never hit the Earth's surface. Very intense or unusual meteor showers are known as meteor outbursts and meteor storms, which produce at least 1,000 meteors an hour, most notably from the Leonids. The Meteor Data Centre lists over 900 suspected meteor showers of which about 100 are well established. Several organizations point to viewing opportunities on the Internet. NASA maintains a daily map of active meteor showers. Historically, meteor showers were regarded as an atmospheric phenomenon. In 1794, Ernst Chladni proposed that meteors originated in outer space. The Great Meteor Storm of 1833 led Denison Olmsted to show it arrived as a cloud of space dust, with the streaks forming a radiant point in the direction of the constellation of Leo. In 1866, Giovanni Schiaparelli proposed that meteors came from comets when he showed that the Leonid meteor shower shared the same orbit as the Comet Tempel. Astronomers learned to compute the orbits of these clouds of cometary dust, including how they are perturbed by planetary gravity. Fred Whipple in 1951 proposed that comets are \"dirty snowballs\" that shed meteoritic debris as their volatiles are ablated by solar energy in the inner Solar System. == Historical developments ==\nHistorical records suggest that Spartan observations of meteor showers occurred as early as 1200 BCE. There are detailed records from ancient archives showing they were observed from China, Japan, and Korea. There are multiple chronicles where Medieval Arabs recorded meteor showers, as they regarded them as good omens. A meteor shower in August 1583 was recorded in the Timbuktu manuscripts by Mahmud Kati. The Lyrids meteor shower is the oldest such event to be continuously recorded, with records in China dating back to 687 BCE. In 1789, Antoine Lavoisier published the first modern chemistry textbook titled, Traité Élémentaire de Chimie. In it, he speculated that dust rising into the upper atmosphere could be consolidated into lumps of matter by lightning, forming fiery meteors as they plummeted to the ground. At the start of the 19th century, this became one of the most favored hypothesis for the formation on meteors. However, in 1794, German scientist Ernst Chladni proposed that meteorites originated in outer space, and as evidence he published a book linking fireballs to iron meteorites. This proposal was initially met with disbelief from some scientists, initially including Alexander von Humboldt, as it contradicted Isaac Newton's statement that space must be empty for planets to continue along their orbits. In the modern era, the first great meteor storm was the Leonids of November 1833. One estimate is a peak rate of over one hundred thousand meteors an hour, but another, done as the storm abated, estimated more than two hundred thousand meteors during the 9 hours of the storm, over the entire region of North America east of the Rocky Mountains. American Denison Olmsted (1791–1859) explained the event most accurately. After spending the last weeks of 1833 collecting information, he presented his findings in January 1834 to the American Journal of Science and Arts, published in January–April 1834, and January 1836. He noted the shower was of short duration and was not seen in Europe, and that the meteors radiated from a point in the constellation of Leo. He speculated the meteors had originated from a cloud of particles in space. Work continued, yet coming to understand the annual nature of showers though the occurrences of storms perplexed researchers. The Italian astronomer Giovanni Schiaparelli ascertained the relation between meteors and comets in a series of letters to Angelo Secchi late in 1866. He was able to demonstrate that the Leonid meteor shower shared the same orbit as the Comet Tempel. Biela's Comet, discovered in 1772 and identified as periodic in 1826, was observed to have two components in 1846. During the 1852 return, both components were fainter and had a greater separation. In 1868, Edmund Weiss determined that the Earth would intersect the orbit of this comet in 1872, and a strong meteor shower was observed at that time. This meteor stream, now referred to as the Andromedids, further established the connection between comets and meteor showers. In the 1890s, Irish astronomer George Johnstone Stoney (1826–1911) and British astronomer Arthur Matthew Weld Downing (1850–1917) were the first to attempt to calculate the position of the dust at Earth's orbit, taking into account the gravitational perturbations of Jupiter. They studied the dust ejected in 1866 by comet 55P/Tempel-Tuttle before the anticipated Leonid shower return of 1898 and 1899. Meteor storms were expected, but the final calculations showed that most of the dust would be far inside Earth's orbit. The same results were independently arrived at by Adolf Berberich of the Königliches Astronomisches Rechen Institut (Royal Astronomical Computation Institute) in Berlin, Germany.\n\nSOURCE nasa.gov (https://www.nasa.gov/meteoroid-environment-office/about-lunar-impact-monitoring):\n![NASA Logo](https://www.nasa.gov/) ![NASA Logo](https://www.nasa.gov/) ## Suggested Searches * Artemis * ISS * Roman * Webb * Quesst * Moon Base * View All Topics A-Z * Home * Missions * Humans in Space * Earth * The Solar System * The Universe * Science * Aeronautics * Technology * Learning Resources * About NASA * Español --- * News & Events * Multimedia * NASA+ ### Featured ![NASA’s Hubble Uncovers Case of Missing Oxygen in Nearby Dwarf Galaxies 5 min read ### NASA’s Hubble Uncovers Case of Missing Oxygen in Nearby Dwarf Galaxies article2 days ago](https://science.nasa.gov/missions/hubble/nasas-hubble-uncovers-case-of-missing-oxygen-in-nearby-dwarf-galaxies/)![A rose-colored rock on a white background. 5 min read ### NASA-funded Study Details One of Oldest Mars Meteorites Ever Found article6 days ago](https://www.nasa.gov/solar-system/planets/mars/nasa-funded-study-details-one-of-oldest-mars-meteorites-ever-found/)![What’s Up: November 2026 Skywatching Tips from NASA 4 min read ### What’s Up: November 2026 Skywatching Tips from NASA article2 days ago](https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/) ### Missions * Search All NASA Missions * A to Z List of Missions * Upcoming Launches and Landings * Spaceships and Rockets * Communicating with Missions * Artemis * James Webb Space Telescope * Hubble Space Telescope * International Space Station * OSIRIS-Rex ### Humans in Space * Why Go to Space * Astronauts * Commercial Space * Destinations * Spaceships and Rockets * Living in Space ### Earth * Explore Earth Science * Climate Change * Earth, Our Planet * Earth Science in Action * Earth Multimedia * Earth Data * Earth Science Researchers ### The Solar System * The Sun * Mercury * Venus * Earth * The Moon * Mars * Jupiter * Saturn * Uranus * Neptune * Pluto & Dwarf Planets * Asteroids, Comets & Meteors * The Kuiper Belt * The Oort Cloud * Skywatching ### The Universe * Exoplanets * The Search for Life in the Universe * Stars * Galaxies * Black Holes * The Big Bang * Dark Energy * Dark Matter ### Science * Earth Science * Planetary Science * Astrophysics & Space Science * The Sun & Heliophysics * Biological & P\n\nSOURCE space.com (https://www.space.com/lyrid-meteor-shower-2026-guide):\nJoin - Join our community Expert insights In-depth guides and features Curated newsletters Handpicked inspiration Early Access Preview new releases first Earn badges as you explore Join the conversation Comment and connect Tailored for you Personalised recommendations Get Space+ Access Quick For the quickest way to join, enter your email below. We’ll send a confirmation email and sign you up to Space.com newsletters with the latest inspiration, expert advice and exclusive offers. By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. FIND OUT ABOUT OUR MAGAZINE Want to subscribe to the magazine? Click the button below to find out more information. Find out more Get Space+ Access Quick Join The Club for quick access. Enter your email below and we'll send confirmation, and sign you up to our newsletter. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions. Geographical rules apply. Welcome to Space+ ! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Start reading to unlock your first badge Keep earning badges Explore ways to get more involved as a member. Space Exploration Latest space missions, discoveries and exploration updates. Explore Astronomy Stargazing tips, cosmic events and expert insights on the universe Explore --- Your membership perks Start exploring exclusive deals, expert advice and more Explore now Never Miss a Discovery Space news, cosmic updates and expert insights straight to your inbox. Choose your newsletters --- Sign Out Jump To: * Where to see the Lyrids meteor shower * What causes the Lyrid meteor shower? * How to see the Lyrid meteor shower * Historical Lyrid meteor shower sightings * Additional information Get the Space.com Newsletter Breaking space news, the latest updates on rocket launches, skywatching events and more! --- By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. You are now subscribed Your newsletter sign-up was successful --- Want to add more newsletters? \n\nSOURCE nationalgeographic.com (https://www.nationalgeographic.com/science/article/121211-geminid-meteor-shower-space-science):\nA shooting star—part of the Geminid meteor shower—lights up California's night. Photograph by Wally Pacholka, TWAN # Sky-watchers Get Set for Cosmic Fireworks Show Strong Geminid meteor shower predicted this year. ByAndrew Fazekas Published December 12, 2012 •4 min read **Sky-watchers are in for an early holiday treat as mid-December marks the peak of the Geminid meteor shower , the most prolific and mysterious annual cosmic fireworks show.** The meteor shower has been growing in intensity in recent decades and should be better than usual this year because it falls during a nearly moonless week. Dozens of shooting stars per hour should streak across the night sky on the night of December 13 and into the early hours of December 14, making the Geminids one of the strongest and most reliable celestial shows around. (See pictures from 2010: \"Brilliant Geminid Meteors Dazzle Sky-Watchers.\") \"Usual estimates of yield are between 80 and 120 meteors per hour—under good viewing conditions,\" said Ben Burress, staff astronomer at the Chabot Space & Science Center in Oakland, California. \"Fortunately December 13th is [a] new moon, so there will be no moon at all during the shower,\" Burress added. He emphasized that viewing from as dark a location as possible, far from city lights, is the best way to see the meteors. **Stronger Through the Years** Historically the Geminids were overlooked by most amateur astronomers simply because the annual event occurs so close to the busy holiday season and frigid winter nights—but that's beginning to change thanks to its rising intensity over the past few decades. In fact, for many astronomers, the December meteors have now dethroned the more popular August Perseids as the shooting-star event of the year. (See Perseid pictures: \"Meteor Shower Dazzles Every August.\") \"This shower was first noticed in 1862, and its intensity has been increasing over the past hundred years,\" said Jim Todd, planetarium manager at the Oregon Museum of Science and Industry. \"Around the year 1900, the peak averaged 15 to 20 meteors per hour, but it is now grown to well over a hundred per hour,\" Todd said. **Mysterious Parentage** The reason for the upswing? Ast",
+  "extra_sources": [
+   "https://www.nasa.gov/meteoroid-environment-office/about-lunar-impact-monitoring",
+   "https://www.space.com/lyrid-meteor-shower-2026-guide",
+   "https://www.nationalgeographic.com/science/article/121211-geminid-meteor-shower-space-science"
+  ]
+ },
+ "_writer": "gemini"
+}

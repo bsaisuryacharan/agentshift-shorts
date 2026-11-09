@@ -1,5 +1,5 @@
 {
- "current": "year-without-summer-1816-a1",
+ "current": "meteor-shower-mechanics-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -534,6 +534,32 @@
    "uploaded": {
     "id": "4VadxlYDuyw",
     "url": "https://youtube.com/watch?v=4VadxlYDuyw",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
+  },
+  "meteor-shower-mechanics-a1": {
+   "title": "How Meteor Showers Work",
+   "base": "meteor-shower-mechanics-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 7,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 8,
+    "hierarchy": 9,
+    "consistency": 9,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "42561035308",
+   "uploaded": {
+    "id": "M_-shFF85N4",
+    "url": "https://youtube.com/watch?v=M_-shFF85N4",
     "privacy": "public",
     "wanted": "public",
     "publish_at": null
