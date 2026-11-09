@@ -1,0 +1,222 @@
+{
+ "id": "coral-bleaching-scale-a2",
+ "title": "How Big is Coral Bleaching?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "SCALE",
+ "format": "scale",
+ "look": "midnight-grid",
+ "theme": "cool",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Coral_bleaching",
+  "b1": "https://en.wikipedia.org/wiki/Coral_bleaching",
+  "b2": "https://en.wikipedia.org/wiki/Coral_bleaching",
+  "b3": "https://en.wikipedia.org/wiki/Coral_bleaching",
+  "b4": "https://en.wikipedia.org/wiki/Coral_bleaching",
+  "b5": "https://en.wikipedia.org/wiki/Coral_bleaching",
+  "b6": "https://en.wikipedia.org/wiki/Coral_bleaching",
+  "outro": "https://en.wikipedia.org/wiki/Coral_bleaching",
+  "wiki": "https://en.wikipedia.org/wiki/Coral_bleaching",
+  "ref1": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9545801",
+  "ref2": "https://coralreefwatch.noaa.gov/satellite/analyses_guidance/global_coral_bleaching_2014-17_status.php",
+  "ref3": "https://pubmed.ncbi.nlm.nih.gov/41667425",
+  "ref4": "https://www.noaa.gov/news-release/noaa-confirms-4th-global-coral-bleaching-event",
+  "ref5": "https://coast.noaa.gov/states/fast-facts/coral-reefs.html"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "photoreal cinematic 9:16 aerial shot of a vast tropical coral reef under clear blue water, sun rays penetrating the surface, no people",
+   "footage": "coral reef aerial",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "84.4% of the world's coral reef area is currently under bleaching-level heat stress.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how big?",
+     "at": "84.4%"
+    },
+    {
+     "t": "title",
+     "html": "HEAT *STRESS*",
+     "at": "stress"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "This crisis has been documented in 83 countries since January 2023.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Crisis in 83 countries",
+      "keyword": "83 countries",
+      "note": "Global Scale"
+     },
+     "at": "countries",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "bleached coral macro",
+   "prompt": "photoreal cinematic 9:16 macro shot of white bleached coral skeleton underwater, fine textures of the calcium carbonate structure, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Bleached corals lose the algae that provide 90% of their energy.",
+   "hud": [
+    {
+     "t": "ring",
+     "pct": 90,
+     "label": "ENERGY LOSS",
+     "col": "ir",
+     "at": "90%"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "dead coral reef",
+   "prompt": "photoreal cinematic 9:16 wide shot of a grey and decaying coral reef, overgrown with dark algae, cloudy water, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 2016, bleaching killed 29 to 50% of the Great Barrier Reef.",
+   "hud": [
+    {
+     "t": "bars",
+     "items": [
+      [
+       "Minimum",
+       29,
+       "ir"
+      ],
+      [
+       "Maximum",
+       50,
+       "ir"
+      ]
+     ],
+     "unit": "%",
+     "at": "killed"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "NOAA confirmed this is the largest global bleaching event on April 15th, 2024.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "GLOBAL EVENT",
+      "label": "NOAA CONFIRMED"
+     },
+     "at": "event",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "With 1.5° of warming, the Great Barrier Reef faces bleaching 3 times per decade.",
+   "hud": [
+    {
+     "t": "kinetic",
+     "text": "3 *PER DECADE*",
+     "at": "decade"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "If warming hits 2°, these events could occur every other year.",
+   "hud": [
+    {
+     "t": "delta",
+     "text": "+2°C",
+     "dir": "up",
+     "col": "ir",
+     "at": "year"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "photo": "healthy coral reef",
+   "prompt": "photoreal cinematic 9:16 top-down shot of a vibrant healthy coral reef with many colors and textures, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Corals can survive short-term stress, but persistent heat leads to reef collapse. Follow for more.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "STAY *INFORMED*",
+     "at": "collapse"
+    }
+   ]
+  }
+ ],
+ "_facts": {
+  "title": "Coral bleaching",
+  "url": "https://en.wikipedia.org/wiki/Coral_bleaching",
+  "text": "Coral bleaching is the process where corals become white due to loss of symbiotic algae and photosynthetic pigments. This loss of pigment can be caused by various stressors, such as changes in water temperature, light, salinity, or nutrients. A bleached coral is under stress, more vulnerable to starvation and disease, and at risk of death. The leading cause of coral bleaching is rising ocean temperatures due to climate change. Take up of carbon dioxide from the atmosphere also has been acidifying the oceans and affects coral health. Large-scale bleaching events can devastate entire reef ecosystems, affecting biodiversity and the livelihoods of coastal communities that depend on healthy reefs for food, tourism, and protection from storm surges. According to the United Nations Environment Programme, between 2014 and 2016, the  global bleaching events killed coral on an unprecedented scale for the time. In 2016, bleaching of coral on the Great Barrier Reef killed 29 to 50 percent of the reef's coral. Bleaching events impact many regions of the world, including Australia, Hawaii, Japan, and more. Natural corals adapted against bleaching and human assistance with reef building may help prevent further damage. On April 15th, 2024, NOAA (National Oceanic and Atmospheric Administration) confirmed the world was in the midst of its fourth and largest global coral bleaching event. From 1 January 2023 to 30 September 2025, bleaching-level heat stress impacted ~84.4% of the worlds coral reef area and bleaching has been documented in at least 83 countries and territories. == Process ==\nThe corals that form the great reef ecosystems of tropical seas depend upon a symbiotic relationship with algae-like single-celled flagellate protozoa called zooxanthellae that live within their tissues and give the coral its coloration. The zooxanthellae provide the coral with nutrients through photosynthesis, a crucial factor in the clear and nutrient-poor tropical waters. In exchange, the coral provides the zooxanthellae with the carbon dioxide and ammonium needed for photosynthesis. Negative environmental conditions, such as abnormally warm or cool temperatures, high light, and even some microbial diseases, can lead to the breakdown of the coral/zooxanthellae symbiosis. According to a study done by D.J. Smith et al., photoinhibition is a likely factor in coral bleaching. It also suggests that the hydrogen peroxide produced in zooxanthealle plays a role in signaling themselves to flee the corals. To ensure short-term survival, the coral-polyp then consumes or expels the zooxanthellae. This leads to a lighter or completely white appearance, hence the term \"bleached\". Under mild stress conditions, some corals may appear bright blue, pink, purple, or yellow instead of white, due to the continued or increased presence of the coral cells' intrinsic pigment molecules, a phenomenon known as \"colourful bleaching\". As the zooxanthellae provide up to 90 percent of the coral's energy needs through products of photosynthesis, after expelling, the coral may begin to starve.Coral can survive short-term disturbances, but if the conditions that lead to the expulsion of the zooxanthellae persist, the coral's chances of survival diminish. In order to recover from bleaching, the zooxanthellae have to re-enter the tissues of the coral polyps and restart photosynthesis to sustain the coral as a whole and the ecosystem that depends on it. If the coral polyps die of starvation after bleaching, they will decay. The hard coral species will then leave behind their calcium carbonate skeletons, which will be taken over by algae, effectively blocking coral regrowth. Eventually, the coral skeletons will erode, causing the reef structure to collapse. == Common triggers ==\nCoral bleaching may be caused by a number of factors. While localized triggers lead to localized bleaching, the large-scale coral bleaching events of recent years have been triggered by global warming. Under the increased carbon dioxide concentration expected in the 21st century, corals are expected to become increasingly rare on reef systems. Coral reefs located in warm, shallow water with low water flow have been more affected than reefs located in areas with higher water flow. Marine heatwaves caused by the El Nino Southern Oscillation have been found to be one of the main causes of widespread coral bleaching and consequent coral mortality. === List of triggers ===\n\nincreased water temperature (marine heatwaves, most commonly due to global warming), or reduced water temperatures\nincreased solar irradiance (photosynthetically active radiation and ultraviolet light)\nincreased sedimentation (due to silt runoff)\nbacterial infections\nchanges in salinity\nherbicides\nextreme low tide and exposure\ncyanide fishing\nelevated sea levels due to global warming (Watson)\nmineral dust from African dust storms caused by drought\npollutants such as oxybenzone, butylparaben, octyl methoxycinnamate, or enzacamene: four common sunscreen ingredients that are nonbiodegradable and can wash off of skin\nocean acidification due to elevated levels of CO2 caused by air pollution\nbeing exposed to oil or other chemical spills\nchanges in water chemistry, particularly an imbalance in the ratio of the macronutrients nitrate and phosphate\nmeteorological conditions\n\n\n== Trends due to climate change ==\n\nExtreme bleaching events are directly linked with climate-induced phenomena that increase ocean temperature, such as El Niño-Southern Oscillation (ENSO). The warming ocean surface waters can lead to bleaching of corals which can cause serious damage and coral death. The IPCC Sixth Assessment Report in 2022 found that: \"Since the early 1980s, the frequency and severity of mass coral bleaching events have increased sharply worldwide\". Coral reefs, as well as other shelf-sea ecosystems, such as rocky shores, kelp forests, seagrasses, and mangroves, have recently undergone mass mortalities from marine heatwaves. It is expected that many coral reefs will \"undergo irreversible phase shifts due to marine heatwaves with global warming levels >1.5°C\".This problem was already identified in 2007 by the Intergovernmental Panel on Climate Change (IPCC) as the greatest threat to the world's reef systems. The Great Barrier Reef experienced its first major bleaching event in 1998. Since then, bleaching events have increased in frequency, with three events occurring in the years 2016–2020. Bleaching is predicted to occur three times a decade on the Great Barrier Reef if warming is kept to 1.5 °C, increasing to every other year at 2 °C.\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC9545801):\n# Coral‐bleaching responses to climate change across biological scales Robert van Woesik, Tom Shlesinger, Andréa G. Grottoli, Rob J. Toonen, Rebecca Vega Thurber, Mark E. Warner, Ann Marie Hulver, Leila Chapron, Rowan H. McLachlan, Rebecca Albright, Eric Crandall, Thomas M. DeCarlo, Mary K. Donovan, Jose Eirin‐Lopez, Hugo B. Harrison, Scott F. Heron, Danwei Huang, Adriana Humanes, Thomas Krueger, Joshua S. Madin, et al. Global Change Biology · 2022-04-27 · 28(14):4229-4250 · DOI: 10.1111/gcb.16192 · PMID: 35475552 · PMCID: PMC9545801 ## Abstract The global impacts of climate change are evident in every marine ecosystem. On coral reefs, mass coral bleaching and mortality have emerged as ubiquitous responses to ocean warming, yet one of the greatest challenges of this epiphenomenon is linking information across scientific disciplines and spatial and temporal scales. Here we review some of the seminal and recent coral‐bleaching discoveries from an ecological, physiological, and molecular perspective. We also evaluate which data and processes can improve predictive models and provide a conceptual framework that integrates measurements across biological scales. Taking an integrative approach across biological and spatial scales, using for example hierarchical models to estimate major coral‐reef processes, will not only rapidly advance coral‐reef science but will also provide necessary information to guide decision‐making and conservation efforts. To conserve reefs, we encourage implementing mesoscale sanctuaries (thousands of km2) that transcend national boundaries. Such networks of protected reefs will provide reef connectivity, through larval dispersal that transverse thermal environments, and genotypic repositories that may become essential units of selection for environmentally diverse locations. Together, multinational networks may be the best chance corals have to persist through climate change, while humanity struggles to reduce emissions of greenhouse gases to net zero. ## Keywords climate change, conservation, coral bleaching, coral reefs, corals, global warming, mesoscale sanctuaries, networks, protected reefs, refugia, thermal stress ## 1 INTRODUCTION The \n\nSOURCE coralreefwatch.noaa.gov (https://coralreefwatch.noaa.gov/satellite/analyses_guidance/global_coral_bleaching_2014-17_status.php):\n![CoralReefWatch banner](/index.php) ![NOAA NESDIS banner](https://www.nesdis.noaa.gov) DOC > NOAA > NESDIS > STAR > CRW USCRTF | CRCP | NCRMP | CoRIS Coral Bleaching During & Since the 2014-2017 Global Coral Bleaching Event Status and an Appeal for Observations *(Last Updated: March 19, 2018)* In 2014, NOAA Coral Reef Watch wrote in *Reef Encounter* about the prospect for a 2014-15 El Niño (Eakin *et al*. 2014![](https://coralreefs.org/wp-content/uploads/2019/01/Reef-Encounter-Aug-2014-080914-FINAL_hires.pdf)). While that El Niño never fully formed, it did help set off a three-year global coral bleaching event -- the third ever documented. A subsequent 2015-16 strong El Niño formed, spreading and worsening the bleaching (Eakin *et al*. 2016![](https://coralreefs.org/wp-content/uploads/2019/01/Reef-Encounter-43-April-2016-HR.pdf)), and a La Niña reared its head thereafter, further extending the event into 2017, as predicted by Coral Reef Watch. Multiple coral reef ecosystems around the world experienced severe bleaching in back-to-back years, including areas like Guam, where corals bleached every year from 2013 to 2017. As of the end of May 2017, the third global coral bleaching event most likely ended (National Oceanic and Atmospheric Administration (NOAA) 2017) but will remain the longest, most widespread, and possibly the most damaging coral bleaching event on record. It affected more reefs than any previous global bleaching event and was worse in some locales (e.g., Great Barrier Reef, Kiribati, Jarvis Island). Heat stress during this event also caused mass bleaching in several reefs that never bleached before (e.g., northernmost Great Barrier Reef). --- **Coral Reef Watch's Analysis of Current Thermal Conditions and Four-Month Outlook** NOAA Coral Reef Watch's most recent daily global 5km satellite Coral Bleaching Alert Area is below. This figure shows the regions currently experiencing high levels of heat stress that can cause coral bleaching and mortality. ![](/satellite/bleaching5km/index_5km_baa_max_r07d.php) NOAA Coral Reef Watch's most recent Four-Month Coral Bleaching Heat Stress Outlook is below. This figure shows the distribution of the lowest heat\n\nSOURCE pubmed.ncbi.nlm.nih.gov (https://pubmed.ncbi.nlm.nih.gov/41667425):\n# Severe and widespread coral reef damage during the 2014-2017 Global Coral Bleaching Event. C Mark Eakin, Scott F Heron, Sean R Connolly, Denise A Devotta, Gang Liu, Erick F Geiger, Jacqueline L De La Cour, Andrea M Gomez, William J Skirving, Andrew H Baird, Neal E Cantin, Courtney S Couch, Simon D Donner, James Gilmour, Manuel Gonzalez-Rivero, Mishal Gudka, Hugo B Harrison, Gregor Hodgson, Ove Hoegh-Guldberg, Andrew S Hoey, et al. Nature communications · 2026-02-10 · 17(1):1318 · DOI: 10.1038/s41467-025-67506-w · PMID: 41667425 · PMCID: PMC12891614 Publication type: Journal Article ## Abstract Ocean warming is increasing the frequency, extent, and severity of tropical-coral bleaching and mortality. During 2014-2017, marine heatwaves caused the Third Global Coral Bleaching Event. We analyze data from 15,066 reef surveys globally during 2014-2017. Across all surveyed reefs, 80% and 35% experienced moderate or greater (affecting >10% of corals) bleaching and mortality, respectively. We assess the global extent of coral bleaching and mortality by applying bleaching response curves calibrated from surveyed reefs to predict bleaching globally, based on comprehensive remote-sensing of heat stress. These models predict that 51% and 15% of the world's coral reefs suffered moderate or greater bleaching and mortality, respectively, during one or multiple years, surpassing damage from any prior global coral bleaching event. Our findings demonstrate that the impacts of ocean warming on coral reefs are accelerating, with the near certainty that ongoing warming will cause large-scale, possibly irreversible, degradation of these essential ecosystems. With heat stress levels during this event surpassing those observed previously, the National Oceanic and Atmospheric Administration developed more extreme Bleaching Alert levels that are now being used during the ongoing Fourth Global Coral Bleaching Event. ## MeSH Terms - Coral Reefs* - Animals - Anthozoa / physiology* - Coral Bleaching* - Global Warming - Ecosystem - Hot Temperature - Oceans and Seas\n\nSOURCE noaa.gov (https://www.noaa.gov/news-release/noaa-confirms-4th-global-coral-bleaching-event):\nAn official website of the United States government Here’s how you know **Official websites use .gov** A **.gov** website belongs to an official government organization in the United States. **Secure .gov websites use HTTPS** A **lock** () or **https://** means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. ![NOAA mobile logo](/ \"Home\") ![NOAA logo](/ \"National Oceanic and Atmospheric Administration home\") National Oceanic and Atmospheric Administration U.S. Department of Commerce # NOAA confirms 4th global coral bleaching event Focus areas: Ocean & Coasts Topics: coral coral reefs climate Share: Share to Twitter Share to Facebook Share by email Print) , to bleached (October 2023), to recovered (March 2024), following extreme marine heat stress throughout the Caribbean basin in 2023. (Image credit: NOAA)\") This three-panel image shows a boulder star coral in St. Croix, USVI, as it shifted from healthy (May 2023), to bleached (October 2023), to recovered (March 2024), following extreme marine heat stress throughout the Caribbean basin in 2023. (Image credit: NOAA) Download Image The world is currently experiencing a global coral bleaching event, according to NOAA scientists. This is the fourth global event on record and the second in the last 10 years. Bleaching-level heat stress, as remotely monitored and predicted by NOAA’s Coral Reef Watch (CRW), has been — and continues to be — extensive across the Atlantic, Pacific and Indian Ocean basins. CRW's heat-stress monitoring is based on sea surface temperature data, spanning 1985 to the present, from a blend of NOAA and partner satellites. that can cause reef-wide coral bleaching and mortality. (Image credit: NOAA)\") NOAA Coral Reef Watch's global 5km-resolution satellite Coral Bleaching Alert Area Maximum map, for January 1, 2023 to April 10, 2024. This figure shows the regions, around the globe, that experienced high levels of marine heat stress (Bleaching Alert Levels 2-5) that can cause reef-wide coral bleaching and mortality. (Image credit: NOAA) Download Image \"From February 2023 to April 2024, significant coral bleaching has been documented in both\n\nSOURCE coast.noaa.gov (https://coast.noaa.gov/states/fast-facts/coral-reefs.html):\n![NOAA Logo ## Office for Coastal Management](../../ \"Home\") Fast Facts / Coral Reefs # Coral Reefs Coral reefs are essential to healthy coasts and vibrant economies, playing a critical role in everything from protecting lives and property to supporting thousands of businesses. Climate change is the biggest threat to the world’s coral reefs, causing mass bleaching, among other things. ##### $3.4 Billion Value The total economic value of coral reef services for the U.S.—including fisheries, tourism, and coastal protection—is over $3.4 billion each year.1 ##### 1 Billion People Worldwide, an estimated one billion people benefit either directly or indirectly from the ecosystem services coral reefs provide.2 ##### $1.8 Billion in Protection Annually, U.S. coral reefs provide flood protection benefits of $1.8 billion in averted damages to property and economic activity.3 ##### Powerful Shoreline Protection Healthy coral reefs can absorb up to 97 percent of a wave’s energy, which buffers shorelines from currents, waves, and storms, helping to prevent loss of life and property damage. Coastlines protected by coral reefs are also more stable in terms of erosion than those without.4 ##### 24 Protected Species Under the Endangered Species Act, 22 coral species are listed as threatened, and two are listed as endangered. The primary threats to coral reefs are climate change, pollution, and impacts from unsustainable fishing.5 ##### Habitat for Millions About 25 percent of all marine species are found in, on, and around coral reefs, rivaling the biodiversity of tropical rainforests.6 ##### $200 Million for Fisheries NOAA’s National Marine Fisheries Service estimates that the annual value of U.S. commercial and recreational fisheries dependent on coral reefs is $100 million each.7 ##### Mass Bleaching—A Coral Reef Crisis Higher sea surface temperatures are directly correlated with widespread coral bleaching; “mass” bleaching (covering hundreds of kilometers or more) is driven by prolonged anomalously warm ocean temperatures. In 2016, heat stress encompassed 51 percent of coral reefs globally and was extremely severe—the first mass bleaching (85 percent bleached) of the northe",
+  "extra_sources": [
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC9545801",
+   "https://coralreefwatch.noaa.gov/satellite/analyses_guidance/global_coral_bleaching_2014-17_status.php",
+   "https://pubmed.ncbi.nlm.nih.gov/41667425",
+   "https://www.noaa.gov/news-release/noaa-confirms-4th-global-coral-bleaching-event",
+   "https://coast.noaa.gov/states/fast-facts/coral-reefs.html"
+  ]
+ },
+ "_writer": "gemini"
+}

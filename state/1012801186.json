@@ -1,5 +1,5 @@
 {
- "current": "meteor-shower-mechanics-a1",
+ "current": "coral-bleaching-scale-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -560,6 +560,32 @@
    "uploaded": {
     "id": "M_-shFF85N4",
     "url": "https://youtube.com/watch?v=M_-shFF85N4",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
+  },
+  "coral-bleaching-scale-a2": {
+   "title": "How Big is Coral Bleaching?",
+   "base": "coral-bleaching-scale-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 8,
+    "accuracy": 9,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 8,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "42618550250",
+   "uploaded": {
+    "id": "x6t5d2e4Abg",
+    "url": "https://youtube.com/watch?v=x6t5d2e4Abg",
     "privacy": "public",
     "wanted": "public",
     "publish_at": null
