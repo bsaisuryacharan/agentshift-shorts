@@ -1,31 +1,31 @@
 {
- "generated_at": "2026-11-08T10:35:53+00:00",
+ "generated_at": "2026-11-09T11:49:50+00:00",
  "channel": {
-  "period": "2026-10-09..2026-11-07",
-  "views": 9822.0,
-  "avg_view_seconds": 26.0,
-  "avg_view_pct": 64.85,
+  "period": "2026-10-10..2026-11-08",
+  "views": 9907.0,
+  "avg_view_seconds": 27.0,
+  "avg_view_pct": 64.52,
   "net_subscribers": 15.0,
-  "likes": 178.0,
+  "likes": 181.0,
   "shares": 7.0,
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
   "When Cameras Capture Astonishing Animal Encounters",
-  "The 3 Most Unbelievable Dangerous Places on Earth!🙄",
-  "Hannah Fry on The Nun Study",
   "SIZE OF SOLAR SYSTEM! 💀",
-  "Astronomical events in November 2026😲",
-  "5 Animals That Sleep in the STRANGEST Ways",
   "5 Animals That Can Survive Without Sleep 😱",
+  "7 Strangest Animal Moments Ever Caught on Camera",
   "3 Birds That Build Nests in the Most Incredible Ways! 🤯",
-  "Most Shocking Wildlife moments",
-  "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
+  "A New 'Atomic Clock' Was INSTALLED Above INDIA! ISRO's NVS 03 Satellite Launch",
+  "November Sky Events 💀",
+  "The Sun Is Dragging Us Into the Deep Unknown at 828,000 km/h! 🌌",
   "Scientists Found Something INSANE Inside This Worm!🤯",
-  "Learjet Crash in Florida: The Physics Behind the Mayday"
+  "Learjet Crash in Florida: The Physics Behind the Mayday",
+  "NASA reveals bold new plan to return astronauts to the Moon in 2028",
+  "A hidden limit of space and time could unlock electronics 100,000 times faster"
  ],
  "learned": {
-  "shorts_scored": 10,
+  "shorts_scored": 13,
   "best": [
    {
     "title": "Inside a Submarine: 5 Systems",
@@ -33,14 +33,14 @@
     "weakest": "originality"
    },
    {
+    "title": "How Meteor Showers Work",
+    "avg": 8.4,
+    "weakest": "visual_quality"
+   },
+   {
     "title": "The Mariana Trench Mystery",
     "avg": 8.0,
     "weakest": "originality"
-   },
-   {
-    "title": "Solar Sails: Not Flimsy Curtains",
-    "avg": 8.0,
-    "weakest": "visual_quality"
    }
   ],
   "worst": [
@@ -55,9 +55,9 @@
     "weakest": "visual_quality"
    },
    {
-    "title": "What If Jupiter's Magnetic Shield Protected Earth?",
+    "title": "The Year Summer Vanished",
     "avg": 7.7,
-    "weakest": "polish"
+    "weakest": "visual_variety"
    }
   ],
   "weakest_dimensions": [
@@ -68,9 +68,9 @@
  },
  "stage_averages": {
   "hook": 7.5,
-  "story": 6.7,
-  "visuals": 6.2,
-  "polish": 6.3,
+  "story": 6.9,
+  "visuals": 6.3,
+  "polish": 6.4,
   "policy": 9.2
  },
  "weakest_stage": "visuals",
@@ -80,57 +80,57 @@
  "niche_winners": [
   {
    "title": "When Cameras Capture Astonishing Animal Encounters",
-   "views": 17768627,
+   "views": 22025725,
    "url": "https://www.youtube.com/watch?v=vvnUUFqwsoU"
   },
   {
    "title": "5 Animals That Can Survive Without Sleep 😱  #animalfacts #sleepdeprivation #animals",
-   "views": 4691261,
+   "views": 4893101,
    "url": "https://www.youtube.com/watch?v=j7MMYEKv9g4"
   },
   {
-   "title": "The 3 Most Unbelievable Dangerous Places on Earth!🙄#city #facts #new #shorts #place #ytsho",
-   "views": 9264687,
-   "url": "https://www.youtube.com/watch?v=IQNLS4q2ZXQ"
+   "title": "The Optical Illusion You Can't Unsee",
+   "views": 6261390,
+   "url": "https://www.youtube.com/watch?v=LdZxRlyM30o"
   },
   {
-   "title": "Astronomical events in November 2026😲 #shorts #astronomicalevents #space #helpyn",
-   "views": 4746361,
-   "url": "https://www.youtube.com/watch?v=_fw3vnQconI"
+   "title": "A New 'Atomic Clock' Was INSTALLED Above INDIA! ISRO's NVS 03 Satellite Launch #shorts",
+   "views": 3850963,
+   "url": "https://www.youtube.com/watch?v=nO1oc4ekdfg"
+  },
+  {
+   "title": "The Sun Is Dragging Us Into the Deep Unknown at 828,000 km/h! 🌌 #SpaceFacts #MilkyWay #Uni",
+   "views": 2809554,
+   "url": "https://www.youtube.com/watch?v=ebd0XMp5vR0"
+  },
+  {
+   "title": "Congo Forest !",
+   "views": 2733373,
+   "url": "https://www.youtube.com/watch?v=phvmipgaIPU"
   },
   {
    "title": "SIZE OF SOLAR SYSTEM! 💀",
-   "views": 4987845,
+   "views": 5059096,
    "url": "https://www.youtube.com/watch?v=dv-Czhabars"
   },
   {
-   "title": "3 Birds That Build Nests in the Most Incredible Ways! 🤯 #facts #animals #wildlife",
-   "views": 3944404,
-   "url": "https://www.youtube.com/watch?v=T3wxJlPDlUc"
-  },
-  {
-   "title": "Scientists Found Something INSANE Inside This Worm!🤯",
-   "views": 2437343,
-   "url": "https://www.youtube.com/watch?v=ttYCiXhTa6U"
-  },
-  {
-   "title": "HOW BIG IS THE SOLAR SYSTEM!💀☝️",
-   "views": 2640318,
-   "url": "https://www.youtube.com/watch?v=zMt9YzQ_hf4"
+   "title": "November Sky Events 💀 #space #earth #shorts",
+   "views": 2994190,
+   "url": "https://www.youtube.com/watch?v=2sEbWCWMJA0"
   }
  ],
  "news": [
-  "Don't miss: Meteor showers, fireballs, and a supermoon light up November's night sky",
-  "NASA’s Swift telescope falls to Earth after nearly 22 years in space",
-  "Scientists just found dinosaur blood that survived 115 million years",
-  "Scientists discover Europe's ancient forests were nothing like we imagined",
-  "Human bodies produce 2 billion metric tons of CO2 a year just by staying alive",
-  "SLAC scientists find conclusive proof of a mysterious third type of magnetism",
-  "NASA is racing against time to save the Hubble Space Telescope",
+  "NASA reveals bold new plan to return astronauts to the Moon in 2028",
+  "DNA on the Shroud of Turin reveals centuries of hidden secrets",
+  "A hidden limit of space and time could unlock electronics 100,000 times faster",
+  "An ancient ocean full of giant predators reveals a surprising twist in evolution",
+  "A nuclear blast could save Earth from an asteroid, but there's a catch",
+  "Mysterious gas leaks suggest Mars may still be volcanically alive",
+  "CHAPEA Mission 2 Crew Reflects After 378 Days on Simulated Mars",
+  "APOD: 2026 November 9 – Rigel and the Witch Head Nebula",
+  "Ozone Hole Reaches Its 2026 Maximum",
   "APOD: 2026 November 8 – Major Fireball Meteor",
   "NASA Awards Moon Base Transportation, Technology, Science Projects",
-  "APOD: 2026 November 7 – De Gerlache-Kocher Massif",
-  "M30’s Sparkling Stars",
-  "Supercomputing Tech Demo Schedule"
+  "APOD: 2026 November 7 – De Gerlache-Kocher Massif"
  ]
 }
