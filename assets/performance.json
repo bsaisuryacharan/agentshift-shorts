@@ -1,6 +1,6 @@
 {
  "performance": {
-  "updated": "2026-11-08T22:54+00:00",
+  "updated": "2026-11-09T02:40+00:00",
   "target_views_per_short": 1000000,
   "shorts": [
    {
@@ -10,11 +10,11 @@
     "views": 1692,
     "likes": 25,
     "comments": 0,
-    "age_h": 557.3,
-    "expected": 941035,
+    "age_h": 561.0,
+    "expected": 942399,
     "ratio": 0.002,
     "status": "far_behind",
-    "projected_30d": 1798
+    "projected_30d": 1795
    },
    {
     "spec_id": null,
@@ -23,11 +23,11 @@
     "views": 443,
     "likes": 7,
     "comments": 0,
-    "age_h": 558.9,
-    "expected": 941612,
+    "age_h": 562.6,
+    "expected": 942976,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 470
+    "projected_30d": 469
    },
    {
     "spec_id": null,
@@ -36,11 +36,11 @@
     "views": 1115,
     "likes": 16,
     "comments": 0,
-    "age_h": 558.9,
-    "expected": 941634,
+    "age_h": 562.7,
+    "expected": 942999,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 1184
+    "projected_30d": 1182
    },
    {
     "spec_id": null,
@@ -49,8 +49,8 @@
     "views": 32,
     "likes": 2,
     "comments": 0,
-    "age_h": 630.7,
-    "expected": 967654,
+    "age_h": 634.5,
+    "expected": 969018,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 33
@@ -62,8 +62,8 @@
     "views": 142,
     "likes": 5,
     "comments": 0,
-    "age_h": 633.4,
-    "expected": 968622,
+    "age_h": 637.2,
+    "expected": 969987,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 146
@@ -75,11 +75,11 @@
     "views": 175,
     "likes": 2,
     "comments": 0,
-    "age_h": 641.4,
-    "expected": 971521,
+    "age_h": 645.2,
+    "expected": 972886,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 180
+    "projected_30d": 179
    },
    {
     "spec_id": null,
@@ -88,8 +88,8 @@
     "views": 24,
     "likes": 1,
     "comments": 0,
-    "age_h": 657.4,
-    "expected": 977317,
+    "age_h": 661.2,
+    "expected": 978681,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 24
@@ -98,14 +98,14 @@
     "spec_id": null,
     "video_id": "cYuyitq8RWk",
     "title": "What If Grandma Could Just ASK Her Phone? 📱 Free AI Tool #shorts",
-    "views": 32,
+    "views": 33,
     "likes": 1,
     "comments": 0,
-    "age_h": 663.4,
-    "expected": 979493,
+    "age_h": 667.2,
+    "expected": 980858,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 32
+    "projected_30d": 33
    },
    {
     "spec_id": null,
@@ -114,8 +114,8 @@
     "views": 185,
     "likes": 2,
     "comments": 0,
-    "age_h": 679.3,
-    "expected": 985262,
+    "age_h": 683.1,
+    "expected": 986626,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 187
@@ -127,11 +127,11 @@
     "views": 242,
     "likes": 6,
     "comments": 1,
-    "age_h": 684.5,
-    "expected": 987151,
+    "age_h": 688.3,
+    "expected": 988516,
     "ratio": 0.0,
     "status": "far_behind",
-    "projected_30d": 245
+    "projected_30d": 244
    },
    {
     "spec_id": null,
@@ -140,8 +140,8 @@
     "views": 125,
     "likes": 2,
     "comments": 1,
-    "age_h": 700.5,
-    "expected": 992920,
+    "age_h": 704.2,
+    "expected": 994284,
     "ratio": 0.0,
     "status": "far_behind",
     "projected_30d": 125
@@ -150,14 +150,14 @@
     "spec_id": null,
     "video_id": "uU6JXROm7rI",
     "title": "Claude Code on Android for FREE — No Cloud Server Needed",
-    "views": 894,
+    "views": 904,
     "likes": 13,
     "comments": 0,
-    "age_h": 701.7,
-    "expected": 993352,
+    "age_h": 705.4,
+    "expected": 994717,
     "ratio": 0.001,
     "status": "far_behind",
-    "projected_30d": 899
+    "projected_30d": 908
    }
   ],
   "best": {
@@ -166,7 +166,7 @@
   },
   "ypp": {
    "subscribers": 15,
-   "shorts_views_90d": 10728,
+   "shorts_views_90d": 10807,
    "public_uploads_90d": 28,
    "tier1_fan_funding": {
     "subs_ok": false,
