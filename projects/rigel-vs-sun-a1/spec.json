@@ -1,0 +1,285 @@
+{
+ "id": "rigel-vs-sun-a1",
+ "title": "Rigel vs the Sun: 363,000 Suns in One Star",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "VERSUS",
+ "format": "versus",
+ "theme": "cool",
+ "look": "midnight-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Rigel",
+  "b1": "https://en.wikipedia.org/wiki/Rigel",
+  "b2": "https://en.wikipedia.org/wiki/Rigel",
+  "b3": "https://en.wikipedia.org/wiki/Rigel",
+  "b4": "https://en.wikipedia.org/wiki/Rigel",
+  "b5": "https://en.wikipedia.org/wiki/Rigel",
+  "b6": "https://en.wikipedia.org/wiki/Rigel",
+  "outro": "https://en.wikipedia.org/wiki/Rigel",
+  "wiki": "https://en.wikipedia.org/wiki/Rigel",
+  "ref1": "https://www.space.com/betelgeuse-rigel-brightest-stars-in-orion",
+  "ref2": "https://science.nasa.gov/universe/glossary",
+  "ref3": "https://assets.science.nasa.gov/content/dam/science/hpd/heat/space-math/problem-sets/Space%20Math-Exploring%20Stars_Properties%20and%20Evolution.pdf?emrc=6ad6f7deabe92",
+  "ref4": "https://www.britannica.com/place/Rigel",
+  "ref5": "https://kids.britannica.com/students/article/Rigel/313227"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Rigel star",
+   "prompt": "photoreal cinematic 9:16 image of a brilliant blue-white star blazing against deep black space, faint diffraction spikes, distant faint stars around it, documentary astrophotography look, natural starlight, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "One star in Orion shines like 363,000 Suns. This is Rigel versus the Sun.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "vs",
+     "at": "star"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "363,000 Suns in *one* star",
+      "split": "word",
+      "accent": "blue"
+     },
+     "at": "363,000",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "363,000",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Orion constellation",
+   "prompt": "photoreal cinematic 9:16 wide shot of the Orion constellation rising above a dark horizon, stars as sharp points in a deep blue-black sky, documentary astrophotography, natural light, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Rigel is a blue supergiant, 850 light-years away, the brightest star in Orion.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Rigel blue supergiant",
+     "at": "Rigel"
+    },
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "850 light-years from Earth",
+      "keyword": "850",
+      "note": "distance",
+      "style": "underline",
+      "accent": "blue"
+     },
+     "at": "850",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "prompt": "photoreal cinematic 9:16 macro view of the Sun's churning granulated surface, boiling plasma cells in natural orange-white light, documentary solar observatory look, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The Sun? Our star, the baseline everything else is measured against.",
+   "graphic": true,
+   "hud": [
+    {
+     "t": "label",
+     "text": "Sun our baseline",
+     "at": "Sun"
+    },
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "THE SUN",
+      "label": "baseline star",
+      "rule": "show",
+      "accent": "blue"
+     },
+     "at": "baseline",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "say": "Rigel blazes with between 61,500 and 363,000 times the Sun's light.",
+   "hud": [
+    {
+     "t": "bars",
+     "items": [
+      [
+       "Rigel",
+       363000,
+       "cy"
+      ],
+      [
+       "Sun",
+       1,
+       "am"
+      ]
+     ],
+     "unit": "x solar light",
+     "at": "363,000"
+    },
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 363000,
+      "prefix": "",
+      "suffix": "Suns",
+      "accent": "blue"
+     },
+     "at": "363,000",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "363,000",
+     "impact",
+     0.8
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "say": "It is also 18 to 24 times as massive, with a surface at 12,100 kelvin.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Mass",
+       "18 to 24",
+       "x Sun",
+       "cy"
+      ],
+      [
+       "Surface",
+       "12,100",
+       "kelvin",
+       "am"
+      ]
+     ],
+     "stagger": 0.4,
+     "at": "massive"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s3.jpg",
+   "photo": "supernova remnant",
+   "prompt": "photoreal cinematic 9:16 image of an expanding supernova remnant, glowing shattered filaments of gas drifting in deep space, documentary telescope look, natural light, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The catch: Rigel has burned through its core hydrogen. It will die as a supernova.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "supernova ahead",
+     "col": "ir",
+     "at": "supernova"
+    },
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "It ends as a",
+      "options": "supernova, supernova",
+      "accent": "blue"
+     },
+     "at": "catch",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "supernova",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s4.jpg",
+   "photo": "Rigel star system",
+   "prompt": "photoreal cinematic 9:16 image of a brilliant blue-white star with faint tiny companion stars nearby in black space, wide documentary astrophotography, natural starlight, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "And it is not alone. Rigel anchors at least 4 stars, orbiting a common center every 24,000 years.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "at least 4 stars",
+     "col": "cy",
+     "at": "4"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "say": "The Sun wins on stability. Rigel wins on raw power. Follow for more versus.",
+   "hud": []
+  }
+ ],
+ "style_map": {
+  "class": "awe_scale",
+  "why": "topic fit",
+  "lemo_style": [
+   "Data Storytelling",
+   "Satellite Briefing",
+   "Time-lapse Symphony"
+  ]
+ },
+ "_facts": {
+  "title": "Rigel",
+  "url": "https://en.wikipedia.org/wiki/Rigel",
+  "text": "Rigel is a blue supergiant star in the equatorial constellation of Orion. It has the Bayer designation β Orionis, which is Latinized to Beta Orionis and abbreviated Beta Ori or β Ori. Rigel is the brightest and most massive component – and the eponym – of a star system of at least four stars that appear as a single blue-white point of light to the naked eye. This system is located at a distance of approximately 850 light-years (260 pc). A star of spectral type B8Ia, Rigel is calculated to be anywhere from 61,500 to 363,000 times as luminous as the Sun, and 18 to 24 times as massive, depending on the method and assumptions used. Its radius is more than seventy times that of the Sun, and its surface temperature is 12,100 K. Due to its stellar wind, Rigel's mass-loss is estimated to be ten million times that of the Sun. With an estimated age of seven to nine million years, Rigel has exhausted its core hydrogen fuel, expanded, and cooled to become a supergiant. It is expected to end its life as a Type II supernova, leaving a neutron star or a black hole as a final remnant, depending on the initial mass of the star. Rigel varies slightly in brightness, its apparent magnitude ranging from 0.05 to 0.18. It is classified as an Alpha Cygni variable due to the amplitude and periodicity of its brightness variation, as well as its spectral type. Its intrinsic variability is caused by pulsations in its unstable atmosphere. Rigel is generally the seventh-brightest star in the night sky and the brightest star in Orion, though it is occasionally outshone by Betelgeuse, which varies over a larger range. A triple-star system is separated from Rigel by an angle of 9.5 arc seconds. It has an apparent magnitude of 6.7, making it 1/400th as bright as Rigel. Two stars in the system can be seen by large telescopes, and the brighter of the two is a spectroscopic binary. These three stars are all blue-white main-sequence stars, each three to four times as massive as the Sun. Rigel and the triple system orbit a common center of gravity with a period estimated to be 24,000 years. The inner stars of the triple system orbit each other every 10 days, and the outer star orbits the inner pair every 63 years. A much fainter star, separated from Rigel and the others by nearly an arc minute, may be part of the same star system. == Nomenclature ==\n\nIn 2016, the International Astronomical Union (IAU) included the name \"Rigel\" in the IAU Catalog of Star Names. According to the IAU, this proper name applies only to the primary component A of the Rigel system. The system is listed variously in historical astronomical catalogs as H II 33, Σ 668, β 555, or ADS 3823. For simplicity, Rigel's companions are referred to as Rigel B, C, and D; the IAU describes such names as \"useful nicknames\" that are \"unofficial\". In modern comprehensive catalogs, the whole multiple star system is known as WDS 05145-0812 or CCDM 05145–0812. The designation of Rigel as β Orionis (Beta Orionis) was made by Johann Bayer in 1603. The \"beta\" designation is commonly given to the second-brightest star in each constellation, but Rigel is almost always brighter than α Orionis (Betelgeuse). Astronomer James B. Kaler has speculated that Rigel was designated by Bayer during a rare period when it was outshone by the variable star Betelgeuse, resulting in the latter star being designated \"alpha\" and Rigel designated \"beta\". Bayer did not strictly order the stars by brightness, instead grouping them by magnitude. Rigel and Betelgeuse were both considered to be of the first magnitude class, and in Orion the stars of each class are thought to have been ordered north to south. Rigel is included in the General Catalogue of Variable Stars, but since it already has a Bayer designation it has no separate variable star designation. Rigel has many other stellar designations taken from various catalogs, including the Flamsteed designation 19 Orionis (19 Ori), the Bright Star Catalogue entry HR 1713, and the Henry Draper Catalogue number HD 34085. These designations frequently appear in the scientific literature, but rarely in popular writing. == Observation ==\n\nRigel is an intrinsic variable star with an apparent magnitude ranging from 0.05 to 0.18. It is typically the seventh-brightest star in the celestial sphere, excluding the Sun, although occasionally fainter than Betelgeuse. It is the fifth-brightest star as seen from mid-northern latitudes. It is fainter than Capella, which may also vary slightly in brightness. Rigel appears slightly blue-white and has a B-V color index of −0.06. It contrasts strongly with reddish Betelgeuse.\n\nSOURCE space.com (https://www.space.com/betelgeuse-rigel-brightest-stars-in-orion):\nJoin - Join our community Expert insights In-depth guides and features Curated newsletters Handpicked inspiration Early Access Preview new releases first Earn badges as you explore Join the conversation Comment and connect Tailored for you Personalised recommendations Get Space+ Access Quick For the quickest way to join, enter your email below. We’ll send a confirmation email and sign you up to Space.com newsletters with the latest inspiration, expert advice and exclusive offers. By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. FIND OUT ABOUT OUR MAGAZINE Want to subscribe to the magazine? Click the button below to find out more information. Find out more Get Space+ Access Quick Join The Club for quick access. Enter your email below and we'll send confirmation, and sign you up to our newsletter. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions. Geographical rules apply. Welcome to Space+ ! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Start reading to unlock your first badge Keep earning badges Explore ways to get more involved as a member. Space Exploration Latest space missions, discoveries and exploration updates. Explore Astronomy Stargazing tips, cosmic events and expert insights on the universe Explore --- Your membership perks Start exploring exclusive deals, expert advice and more Explore now Never Miss a Discovery Space news, cosmic updates and expert insights straight to your inbox. Choose your newsletters --- Sign Out Get the Space.com Newsletter Breaking space news, the latest updates on rocket launches, skywatching events and more! --- By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. You are now subscribed Your newsletter sign-up was successful --- Want to add more newsletters? --- Join the club Get full access to premium articles, exclusive features and a growing list of member rewards. --- An account already exists for this email address, please log in. 1. Astronomy\n\nSOURCE science.nasa.gov (https://science.nasa.gov/universe/glossary):\n![NASA Logo](https://www.nasa.gov) ![NASA Logo](https://www.nasa.gov) ## Suggested Searches * Climate Change * Artemis * Expedition 64 * Mars perseverance * SpaceX Crew-2 * International Space Station * View All Topics A-Z * Home * Missions * Humans in Space * Earth * The Solar System * The Universe * Science * Aeronautics * Technology * Learning Resources * About NASA * Español --- * News & Events * Multimedia * NASA+ ### Highlights ![NASA’s Artemis II Crew Set to Receive Congressional Space Medal of Honor 1 min read ### NASA’s Artemis II Crew Set to Receive Congressional Space Medal of Honor article4 hours ago](https://www.nasa.gov/news-release/nasas-artemis-ii-crew-set-to-receive-congressional-space-medal-of-honor/)![NASA Shares Views of August Solar Eclipse from Ground, Air, Space 3 min read ### NASA Shares Views of August Solar Eclipse from Ground, Air, Space article3 hours ago](https://science.nasa.gov/science-research/heliophysics/nasa-shares-views-of-august-solar-eclipse-from-ground-air-space/)![What’s Up: August 2026 Skywatching Tips from NASA 4 min read ### What’s Up: August 2026 Skywatching Tips from NASA article3 weeks ago](https://science.nasa.gov/solar-system/whats-up-august-2026-skywatching-tips-from-nasa/) ### Missions * Search All NASA Missions * A to Z List of Missions * Upcoming Launches and Landings * Spaceships and Rockets * Communicating with Missions * Artemis * James Webb Space Telescope * Hubble Space Telescope * International Space Station * OSIRIS-REx ### Humans in Space * Why Go to Space * Astronauts * Commercial Space * Destinations * Spaceships and Rockets * Living in Space ### Earth * Explore Earth Science * Climate Change * Earth, Our Planet * Earth Science in Action * Earth Multimedia * Earth Data * Earth Science Researchers ### The Solar System * The Sun * Mercury * Venus * Earth * The Moon * Mars * Jupiter * Saturn * Uranus * Neptune * Pluto & Dwarf Planets * Asteroids, Comets & Meteors * The Kuiper Belt * The Oort Cloud * Skywatching ### The Universe * Exoplanets * The Search for Life in the Universe * Stars * Galaxies * Black Holes * The Big Bang * Dark Matter * Dark Energy ### Science * Earth Science * Planetary Science * As\n\nSOURCE assets.science.nasa.gov (https://assets.science.nasa.gov/content/dam/science/hpd/heat/space-math/problem-sets/Space%20Math-Exploring%20Stars_Properties%20and%20Evolution.pdf?emrc=6ad6f7deabe92):\nNational Aeronautics and Space Administration S T A R S Their properties and evolution SpaceMath@NASA Stars: Their properties and evolution Page 2 Math textbooks routinely provide ‘real world’ examples for students using familiar examples drawn from every-day situations, but there are many other areas where proportional relationships and working with large numbers aid in understanding our physical world. This collection of activities from SpaceMath@NASA is intended for students looking for additional challenges in the math and physical science curriculum in grades 6 through 8, but where the topics are drawn from astronomy and space science. As a science extension, ‘Stars: Their properties and evolution’ introduces students to some of the basic properties of stars and how they are formed and evolve through time. The math problems cover basic scientific notation skills and how they apply to working with ‘astronomically large’ numbers. The evaluation of simple equations involving variables with integer exponents is also covered. Although converting decimal numbers to scientific notation may be first introduced by grade 6, it is common for actual manipulations involving multiplication and division to be covered in grade 8 along with evaluating simple equations with integer exponents. This book, therefore, is better suited to grade 7 or 8 students, who may also be covering the topic of stars in their physical science or earth science classes. For more weekly classroom activities about astronomy and space visit the NASA website, http://spacemath.gsfc.nasa.gov Add your email address to our mailing list by contacting Dr. Sten Odenwald Sten.F.Odenwald@nasa.gov Original artwork kindly provided by Nathalie Rattner (www.nathalierattner.com - Copyright 2012). Ms. Rattner is a highly versatile, award winning Canadian artist whose works have been sold to private collections in North America. Throughout her career, she has been inspired by her love of life, history and the diversity of the world around her. The artwork used in this book was created by her when she was in middle school ! SpaceMath@NASA Stars: Their properties and evolution Page 3 NCTM: Principles and Standards f\n\nSOURCE britannica.com (https://www.britannica.com/place/Rigel):\nAsk the Chatbot Games & Quizzes History & Society Science & Tech Biographies Animals & Nature Geography & Travel Arts & Culture ProCon Money Videos Introduction References & Edit History Related Topics Quick Facts Also called: : Beta Orionis See all related content ![Orion](https://cdn.britannica.com/09/155009-050-F42ADA2F/stars-one-constellation-easiest-Orion-group-line.jpg) Orion The constellation Orion is one of the easiest to recognize because of a group of three stars. The three stars are in a straight line and are often called Orion's Belt. The Orion Nebula can be seen as a pink fuzzy light below the line of three stars. Orion also contains two of the brightest stars in the sky: Betelgeuse (top left) and Rigel (bottom right). # Rigel star Also known as: Beta Orionis Written and fact-checked by Britannica Editors Encyclopaedia Britannica's editors oversee subject areas in which they have extensive knowledge, whether from years of experience gained by working on that content or via study for an advanced degree.... Britannica Editors History **Rigel**, one of the brightest stars in the sky, intrinsically as well as in appearance. A blue-white supergiant in the constellation Orion, Rigel is about 860 light-years from the Sun and is about 47,000 times as luminous. A companion double star, also bluish white, is of the sixth magnitude. The name Rigel derives from an Arabic term meaning “the left leg of the giant,” referring to the figure of Orion. *(List of Brightest Stars as Seen from Earth)* The Editors of Encyclopaedia BritannicaThis article was most recently revised and updated by Erik Gregersen. supernova * Introduction * Historical supernovae * Types of supernovae + Type II supernovae + Type I supernovae References & Edit History Related Topics Images & Videos ![Kepler's Nova](https://cdn.britannica.com/92/124492-050-047F11FB/image-Kepler-Nova-Keplers-Supernova-Chandra-X-ray.jpg)![Swift satellite; Supernova 2007uy](https://cdn.britannica.com/33/136933-050-7F6E7DD0/X-ray-image-satellite-Supernova-NGC-2770-2008D-January-2008.jpg)![Swift satellite; Supernova 2008D](https://cdn.britannica.com/34/136934-050-88DC57E9/X-ray-image-star-Supernova-2008D-satellite-NGC\n\nSOURCE kids.britannica.com (https://kids.britannica.com/students/article/Rigel/313227):\nTitle: Rigel - Students | Britannica Kids | Homework Help <img src=\"https://pubads.g.doubleclick.net/activity;dc_iu=/15510053/DFPAudienceP... # Rigel. ###### **Related resources for this article**. * [StudentsOrion](/students/article/Rigel/313227/media? The seventh brightest star in the night sky is Rigel, or Beta Ori. It is one of the 57 stars of celestial navigation and the brightest star in the constellation Orion. Orion is situated on the celestial equator and is visible from almost any part of the world. Located approximately 10 degrees south of Orion’s belt, Rigel marks Orion’s left heel in depictions of the great hunter. Rigel is situated diagonally across from the red supergiant star Betelgeuse, which marks Orion’s right shoulder. Rigel is at its highest in the sky on January 25 at 10:00 pm when viewed from the middle latitudes. The name Rigel is taken from the Arabic meaning “the left foot [of Orion].” In Scandinavian mythology, Rigel represented the big toe of the giant Orwandil. According to legend the god Thor broke off the giant’s other big toe, which had became frostbitten. Thor tossed the toe into the northern sky where it became Alcor, a star in the Big Dipper. Rigel’s modern name was first used in 1521. A blue-white supergiant star, Rigel is one of the most luminous stars known—its light output is approximately 55,000 times greater than that of the sun. A seventh-magnitude blue-white double star is located approximately 9.5 arc seconds from Rigel. The companions are difficult to see because of Rigel’s intense brightness. Rigel is a member of the Orion OB1 Association, a group of massive stars less than 10 million years old. ## It’s here: the NEW Britannica Kids website! We’ve been busy, working hard to bring you new features and an updated design. We hope you and your family enjoy the **NEW** Britannica Kids. Take a minute to check out all the enhancements! * The same safe and trusted content for explorers of all ages. * Accessible across all of today's devices: phones, tablets, and desktops. * Improved homework resources designed to support a variety of curriculum subjects and standards. * A new, third level of content, designed specially to me",
+  "extra_sources": [
+   "https://www.space.com/betelgeuse-rigel-brightest-stars-in-orion",
+   "https://science.nasa.gov/universe/glossary",
+   "https://assets.science.nasa.gov/content/dam/science/hpd/heat/space-math/problem-sets/Space%20Math-Exploring%20Stars_Properties%20and%20Evolution.pdf?emrc=6ad6f7deabe92",
+   "https://www.britannica.com/place/Rigel",
+   "https://kids.britannica.com/students/article/Rigel/313227"
+  ]
+ },
+ "_writer": "opencode"
+}
