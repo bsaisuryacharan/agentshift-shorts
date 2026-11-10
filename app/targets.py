@@ -54,3 +54,42 @@ def ypp_progress(subscribers: int, shorts_views_90d: int, public_uploads_90d: in
         "tier2_ads": {"subs_ok": subscribers >= t2["subscribers"], "views_ok": shorts_views_90d >= t2["or"]["shorts_views_90d"],
                       "subs_pct": round(100 * subscribers / t2["subscribers"], 1), "views_pct": round(100 * shorts_views_90d / t2["or"]["shorts_views_90d"], 1)},
     }
+
+
+# ---- relative scoring (audit 2026-11-10) -------------------------------------------------------------------------------------------------------------------------
+# Against a 1,000,000-per-Short curve every Short on a 17-subscriber channel is "far_behind" with ratio 0.000, so the loop gets no gradient. What it needs is
+# "better or worse than this channel's own typical Short at the same age", which is what relative() says.
+LADDER = [   # proposed step goals for the next 30 days instead of one 1M number (owner can edit); each step is measured by app.strategy
+    {"name": "typical Short", "metric": "median views per Short at 7 days", "now_hint": 200, "goal": 1_000},
+    {"name": "first breakout", "metric": "one Short above 25,000 views", "goal": 25_000},
+    {"name": "audience", "metric": "subscribers", "goal": 100},
+    {"name": "volume", "metric": "channel views in 30 days", "goal": 100_000},
+]
+
+
+def cohort_stats(shorts: list[dict]) -> dict:
+    """median and spread of the channel's own Shorts that are old enough (>= 72 h) to have most of their views"""
+    import statistics
+    old = [s["views"] for s in shorts if s.get("age_h", 0) >= 72 and s.get("views") is not None]
+    if not old:
+        return {"n": 0, "median": None, "p75": None}
+    old.sort()
+    return {"n": len(old), "median": statistics.median(old), "p75": old[int(0.75 * (len(old) - 1))]}
+
+
+def relative(views: int, age_h: float, cohort: dict) -> str:
+    """breakout / above / typical / below / too_early, against the channel's own cohort (age-adjusted with CURVE)"""
+    if age_h < 6:
+        return "too_early"
+    med = cohort.get("median")
+    if not med:
+        return "unknown"
+    share = max(expected_share(age_h), 0.05)
+    projected = views / share if age_h < 720 else views
+    if projected >= 5 * med:
+        return "breakout"
+    if projected >= 1.5 * med:
+        return "above"
+    if projected >= 0.5 * med:
+        return "typical"
+    return "below"

@@ -33,7 +33,8 @@ def features(spec: dict, run_dir: Path | None = None, grades: dict | None = None
                     pass
     imgs = len({b.get("img") for b in spec["beats"] if b.get("img")})
     hook_words = len(spec["beats"][0].get("say", "").split())
-    return {"spec_id": spec.get("id"), "mood": motionbank.mood_of(spec.get("title", "") + " " + say)[0], "theme": spec.get("theme", "cool"),
+    return {"spec_id": spec.get("id"), "mood": motionbank.mood_of(spec.get("title", "") + " " + say)[0], "theme": spec.get("theme", "cool"), "look": spec.get("look"), "format": spec.get("format"),
+            "style_class": (spec.get("style_map") or {}).get("class"),
             "hook_words": "<=7" if hook_words <= 7 else "8-11" if hook_words <= 11 else "12+", "beats": len(spec["beats"]),
             "words": len(say.split()), "hf": len(hf), "real_pictures": round(credits / imgs, 2) if imgs else 0.0,
             "grades": {k: v.get("grade") for k, v in (grades or {}).items()}}
@@ -56,21 +57,23 @@ def lessons(perf_path: Path, features_path: Path = FEATURES) -> list[str]:
     feats = {r["spec_id"]: r for r in _read(features_path)}
     latest: dict[str, dict] = {}
     for r in _read(perf_path):
-        latest[r["spec_id"]] = r                         # file is chronological: the last row is the newest
+        latest[r.get("video_id") or r["spec_id"]] = r      # one row per VIDEO (keying by spec_id collapsed every channel-listed Short, which has spec_id null, into one)
     joined = []
-    for sid, r in latest.items():
-        if sid in feats:
+    for vid, r in latest.items():
+        f = feats.get(r.get("spec_id")) or _from_title(r.get("title", ""))
+        if f:
             from datetime import UTC, datetime
             age = (datetime.now(UTC) - datetime.fromisoformat(r["published_at"].replace("Z", "+00:00"))).total_seconds() / 3600
             if age >= MIN_AGE_H:
-                joined.append((feats[sid], r["views"]))
+                joined.append((f, r["views"]))
     if len(joined) < MIN_SHORTS:
         return []
     out = []
     for key, label in (("mood", "topic type"), ("theme", "colour theme"), ("hook_words", "opening line length"), ("hf", "gallery graphics per Short")):
         groups: dict[str, list[int]] = {}
         for f, v in joined:
-            groups.setdefault(str(f[key]), []).append(v)
+            if str(f.get(key)) != "?":                      # unknown for Shorts recovered from their title alone
+                groups.setdefault(str(f[key]), []).append(v)
         if len(groups) < 2:
             continue
         means = {g: statistics.mean(v) for g, v in groups.items()}
@@ -78,3 +81,12 @@ def lessons(perf_path: Path, features_path: Path = FEATURES) -> list[str]:
         if means[worst] > 0 and means[best] / means[worst] >= GAP or (means[worst] == 0 and means[best] > 0):
             out.append(f"{label}: '{best}' averaged {means[best]:.0f} views vs '{worst}' {means[worst]:.0f} (n={len(joined)} Shorts): do more of '{best}'")
     return out[:4]
+
+
+def _from_title(title: str) -> dict | None:
+    """features recoverable from a published title alone (Shorts made before the feature ledger, or by hand): topic class and format"""
+    if not title:
+        return None
+    from . import topicscore
+    words = len(title.split())
+    return {"mood": topicscore.topic_class(title), "theme": "?", "hook_words": "<=7" if words <= 7 else "8-11" if words <= 11 else "12+", "hf": "?"}

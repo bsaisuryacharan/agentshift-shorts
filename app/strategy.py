@@ -17,7 +17,7 @@ import sys
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
-from . import targets
+from . import targets, topicscore
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets" / "strategy.json"
@@ -70,11 +70,21 @@ def winners_and_flops(shorts: list[dict]) -> tuple[list[dict], list[dict]]:
     return rows[:3], rows[-3:][::-1] if len(rows) > 3 else []
 
 
+def ladder(shorts: list[dict], prog: dict) -> list[dict]:
+    """progress on the step goals (targets.LADDER) that replace the single 1M-in-a-month number"""
+    cohort = targets.cohort_stats(shorts)
+    best = max((s["views"] for s in shorts), default=0)
+    views30 = prog.get("gained") if prog.get("measured") else None
+    now = {"typical Short": cohort.get("median"), "first breakout": best, "audience": prog.get("subs"), "volume": views30}
+    return [{"name": step["name"], "metric": step["metric"], "goal": step["goal"], "now": now.get(step["name"])} for step in targets.LADDER]
+
+
 def plan(prog: dict, shorts: list[dict], fmt_scores: dict[str, float] | None = None) -> dict:
     top, flop = winners_and_flops(shorts)
     behind = not prog.get("on_track")
     per_day = MAX_PER_DAY if behind else 1
-    fmt = sorted((fmt_scores or {}).items(), key=lambda kv: -kv[1])
+    vf = {f: v["boost"] for f, v in topicscore.format_stats(shorts).items() if v["n"] >= 2 and f != "other"}      # formats ranked by VIEWS; the judge's scores only when there are none
+    fmt = sorted((vf or fmt_scores or {}).items(), key=lambda kv: -kv[1])
     focus_words = sorted({w for s in top for w in _words(s["title"])})[:10]
     avoid_words = sorted({w for s in flop for w in _words(s["title"])} - set(focus_words))[:10]
     actions = [
@@ -85,7 +95,14 @@ def plan(prog: dict, shorts: list[dict], fmt_scores: dict[str, float] | None = N
         "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
         "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers).",
     ]
-    return {"shorts_per_day": per_day, "focus_words": focus_words, "avoid_words": avoid_words,
+    cls, fmts = topicscore.class_stats(shorts), topicscore.format_stats(shorts)
+    win_cls = [k for k, v in sorted(cls.items(), key=lambda kv: -kv[1]["boost"]) if v["boost"] > 0.2][:3]
+    lose_cls = [k for k, v in sorted(cls.items(), key=lambda kv: kv[1]["boost"]) if v["boost"] < -0.2][:3]
+    if win_cls or lose_cls:
+        actions.insert(1, "Topic classes on the channel's own results: more of " + (", ".join(win_cls) or "none proven") + "; less of " + (", ".join(lose_cls) or "none proven") + ".")
+    cohort = targets.cohort_stats(shorts)
+    return {"shorts_per_day": per_day, "topic_classes": cls, "format_results": fmts, "win_classes": win_cls, "lose_classes": lose_cls, "cohort": cohort,
+            "ladder": ladder(shorts, prog), "focus_words": focus_words, "avoid_words": avoid_words,
             "winners": [{"title": s["title"], "views": s["views"]} for s in top], "flops": [{"title": s["title"], "views": s["views"]} for s in flop],
             "best_formats": [f for f, _ in fmt[:3]], "actions": [a for a in actions if a]}
 
@@ -93,7 +110,10 @@ def plan(prog: dict, shorts: list[dict], fmt_scores: dict[str, float] | None = N
 def build(write: bool = True) -> dict:
     from . import insights, lessons
     perf = insights.load().get("performance") or {}
-    prog = progress(_snaps())
+    snaps = _snaps()
+    prog = progress(snaps)
+    sub_rows = [json.loads(l) for l in SNAP.read_text().splitlines() if l.strip()] if SNAP.exists() else []
+    prog["subs"] = next((r.get("subs") for r in reversed(sub_rows) if r.get("subs") is not None), None)
     st = {"updated": datetime.now(UTC).isoformat(timespec="minutes"), "progress": prog, **plan(prog, perf.get("shorts") or [], lessons.format_boost())}
     if write:
         OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -118,9 +138,11 @@ def status_line(st: dict | None = None) -> str:
     if not p.get("measured"):
         return f"Goal: {targets.MONTH_GOAL['views']:,} channel views by {targets.MONTH_GOAL['deadline']} (measuring starts with the first hourly check)."
     pace = f"{p['pace_per_day']:,}/day" if p.get("pace_per_day") is not None else "not measured yet"
+    gap = (p["needed_per_day"] / p["pace_per_day"]) if p.get("pace_per_day") else None
+    honest = (f" That is a {gap:,.0f}x gap: more tuning alone will not close it, so the step goals below are what the plan is measured on." if gap and gap > 20 else "")
     return (f"Goal: {p['goal']:,} channel views by {p['deadline']} ({p['days_left']} days left). Gained {p['gained']:,} ({p['pct']}%). "
             f"Needed: {p['needed_per_day']:,}/day; current pace: {pace}; projected: {p['projected']:,}. "
-            + ("ON TRACK." if p.get("on_track") else "BEHIND."))
+            + ("ON TRACK." if p.get("on_track") else "BEHIND.") + honest)
 
 
 def hint(max_chars: int = 900) -> str:
@@ -133,7 +155,8 @@ def hint(max_chars: int = 900) -> str:
 
 def report(st: dict) -> str:
     """the daily growth report sent to Telegram"""
-    return ("📈 Daily growth report\n" + status_line(st) + "\n\nToday's plan:\n" + "\n".join(f"• {a}" for a in st.get("actions", [])) +
+    steps = "".join(f"\n• {x['name']}: {x['now'] if x['now'] is not None else '?'} / {x['goal']:,} ({x['metric']})" for x in st.get("ladder", []))
+    return ("📈 Daily growth report\n" + status_line(st) + ("\n\nStep goals:" + steps if steps else "") + "\n\nToday's plan:\n" + "\n".join(f"• {a}" for a in st.get("actions", [])) +
             "\n\nReply to talk it through with Claude.")
 
 

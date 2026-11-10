@@ -46,22 +46,36 @@ LOOKS = {
     "risograph": {"ground": "#F5F0E6", "ink": "#0078BF", "panel": "#FF48B0", "panel_ink": "#FFFFFF", "accent": "#FF48B0", "dark": False,
                   "display": "Archivo Black", "body": "Archivo Black", "gfonts": "Archivo+Black", "pattern": "halftone:#FF48B0",
                   "best": "playful nature and culture topics, bold announcements"},
+    # four more looks from the same vendored library (each has its STYLE.md under assets/styles/claude-video-2/styles/<look>/); added 2026-11-10 because 59 of 66
+    # recent Shorts used the same cool theme and 8 looks rotated by format were not enough variety. Tokens transcribed from each STYLE.md.
+    "time-travel": {"ground": "#15120F", "ink": "#F3EEE4", "panel": "#F3EEE4", "panel_ink": "#15120F", "accent": "#C9A15A", "dark": True,
+                    "display": "Playfair Display", "body": "Jost", "gfonts": "Playfair+Display:wght@700;900&family=Jost:wght@500;700", "pattern": "vignette",
+                    "best": "history of an idea, then vs now, timelines, origins"},
+    "paper-cut": {"ground": "#F2E8D5", "ink": "#2B2B2B", "panel": "#2F5D62", "panel_ink": "#F2E8D5", "accent": "#D98C7A", "dark": False,
+                  "display": "EB Garamond", "body": "EB Garamond", "gfonts": "EB+Garamond:wght@500;700", "pattern": "paper:#E3CBA8",
+                  "best": "nature, climate, places, gentle stories"},
+    "ink-line": {"ground": "#F4EFE6", "ink": "#1C1C1C", "panel": "#1C1C1C", "panel_ink": "#F4EFE6", "accent": "#D23C2A", "dark": False,
+                 "display": "Noto Serif JP", "body": "Noto Serif JP", "gfonts": "Noto+Serif+JP:wght@600;900", "pattern": "paper:#E4D9C6",
+                 "best": "calm wonder, one idea turning into the next, the brain and the mind"},
+    "swiss-kinetic": {"ground": "#F1EEE6", "ink": "#111111", "panel": "#111111", "panel_ink": "#F1EEE6", "accent": "#E63022", "dark": False,
+                      "display": "Inter Tight", "body": "Inter Tight", "gfonts": "Inter+Tight:wght@700;900", "pattern": "grid:#CFCBC2",
+                      "best": "kinetic type, bold claims, myth busting, slogans"},
 }
 DEFAULT_BY_FORMAT = {"ranked": "poster-pop", "scale": "midnight-grid", "versus": "explainer-diagram", "how_it_works": "blueprint",
                      "timeline": "editorial-paper", "unsolved": "graphite-ui", "myth_vs_fact": "swiss-grid", "what_if": "midnight-grid", "anatomy": "blueprint"}
 
 # every look that genuinely fits a format (from each STYLE.md's "best" line), in rotation preference order. app.variety rotates
 # through these so the same format never shows up in the same visual language (the owner's complaint: "all videos seem almost the same").
-CANDIDATES = {"ranked": ["poster-pop", "risograph", "graphite-ui"],
-              "scale": ["midnight-grid", "editorial-paper", "poster-pop", "graphite-ui"],
-              "versus": ["explainer-diagram", "swiss-grid", "graphite-ui", "midnight-grid"],
+CANDIDATES = {"ranked": ["poster-pop", "risograph", "graphite-ui", "swiss-kinetic"],
+              "scale": ["midnight-grid", "editorial-paper", "poster-pop", "graphite-ui", "ink-line"],
+              "versus": ["explainer-diagram", "swiss-grid", "graphite-ui", "midnight-grid", "swiss-kinetic"],
               "how_it_works": ["blueprint", "explainer-diagram", "graphite-ui"],
-              "timeline": ["editorial-paper", "risograph", "poster-pop"],
-              "unsolved": ["graphite-ui", "midnight-grid", "blueprint"],
-              "myth_vs_fact": ["swiss-grid", "explainer-diagram", "poster-pop", "editorial-paper"],
-              "what_if": ["midnight-grid", "graphite-ui", "blueprint", "poster-pop"],
+              "timeline": ["editorial-paper", "time-travel", "risograph", "poster-pop"],
+              "unsolved": ["graphite-ui", "midnight-grid", "blueprint", "ink-line", "time-travel"],
+              "myth_vs_fact": ["swiss-grid", "swiss-kinetic", "explainer-diagram", "poster-pop", "editorial-paper"],
+              "what_if": ["midnight-grid", "graphite-ui", "blueprint", "poster-pop", "paper-cut"],
               "anatomy": ["blueprint", "explainer-diagram", "graphite-ui"],
-              "story": ["editorial-paper", "risograph", "graphite-ui"]}
+              "story": ["editorial-paper", "time-travel", "paper-cut", "risograph", "graphite-ui"]}
 
 
 def pick(look: str | None, fmt: str | None = None) -> str:
