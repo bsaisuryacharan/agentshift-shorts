@@ -1,31 +1,31 @@
 {
- "generated_at": "2026-11-09T11:49:50+00:00",
+ "generated_at": "2026-11-10T11:25:04+00:00",
  "channel": {
-  "period": "2026-10-10..2026-11-08",
-  "views": 9907.0,
-  "avg_view_seconds": 27.0,
-  "avg_view_pct": 64.52,
-  "net_subscribers": 15.0,
-  "likes": 181.0,
-  "shares": 7.0,
+  "period": "2026-10-11..2026-11-09",
+  "views": 10270.0,
+  "avg_view_seconds": 26.0,
+  "avg_view_pct": 64.44,
+  "net_subscribers": 16.0,
+  "likes": 201.0,
+  "shares": 9.0,
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
   "When Cameras Capture Astonishing Animal Encounters",
-  "SIZE OF SOLAR SYSTEM! 💀",
+  "10 Unexpected Animal Encounters with Incredible Endings 😱",
   "5 Animals That Can Survive Without Sleep 😱",
   "7 Strangest Animal Moments Ever Caught on Camera",
+  "Astronomical events in November 2026😲",
   "3 Birds That Build Nests in the Most Incredible Ways! 🤯",
-  "A New 'Atomic Clock' Was INSTALLED Above INDIA! ISRO's NVS 03 Satellite Launch",
-  "November Sky Events 💀",
+  "This Boy Tried to Explain How the Fourth Dimension Works 🌀🤯",
   "The Sun Is Dragging Us Into the Deep Unknown at 828,000 km/h! 🌌",
-  "Scientists Found Something INSANE Inside This Worm!🤯",
-  "Learjet Crash in Florida: The Physics Behind the Mayday",
+  "Alzheimer’s may have early warning signs outside the brain",
+  "Scientists finally discover why we learn to love bitter coffee",
   "NASA reveals bold new plan to return astronauts to the Moon in 2028",
   "A hidden limit of space and time could unlock electronics 100,000 times faster"
  ],
  "learned": {
-  "shorts_scored": 13,
+  "shorts_scored": 15,
   "best": [
    {
     "title": "Inside a Submarine: 5 Systems",
@@ -38,8 +38,8 @@
     "weakest": "visual_quality"
    },
    {
-    "title": "The Mariana Trench Mystery",
-    "avg": 8.0,
+    "title": "Rigel vs the Sun: 363,000 Suns in One Star",
+    "avg": 8.1,
     "weakest": "originality"
    }
   ],
@@ -61,76 +61,76 @@
    }
   ],
   "weakest_dimensions": [
-   "visual_quality",
    "originality",
+   "visual_quality",
    "visual_variety"
   ]
  },
  "stage_averages": {
   "hook": 7.5,
-  "story": 6.9,
-  "visuals": 6.3,
-  "polish": 6.4,
+  "story": 6.8,
+  "visuals": 6.2,
+  "polish": 6.2,
   "policy": 9.2
  },
  "weakest_stage": "visuals",
  "region": "IN",
- "trend_signals_total": 60,
- "trend_signals_on_niche": 40,
+ "trend_signals_total": 62,
+ "trend_signals_on_niche": 38,
  "niche_winners": [
   {
    "title": "When Cameras Capture Astonishing Animal Encounters",
-   "views": 22025725,
+   "views": 24830511,
    "url": "https://www.youtube.com/watch?v=vvnUUFqwsoU"
   },
   {
    "title": "5 Animals That Can Survive Without Sleep 😱  #animalfacts #sleepdeprivation #animals",
-   "views": 4893101,
+   "views": 4959190,
    "url": "https://www.youtube.com/watch?v=j7MMYEKv9g4"
   },
   {
+   "title": "Top 15 Scary Birds Sounds #shorts #birds #sound",
+   "views": 3371380,
+   "url": "https://www.youtube.com/watch?v=lFgER4dPINo"
+  },
+  {
    "title": "The Optical Illusion You Can't Unsee",
-   "views": 6261390,
+   "views": 6644499,
    "url": "https://www.youtube.com/watch?v=LdZxRlyM30o"
   },
   {
-   "title": "A New 'Atomic Clock' Was INSTALLED Above INDIA! ISRO's NVS 03 Satellite Launch #shorts",
-   "views": 3850963,
-   "url": "https://www.youtube.com/watch?v=nO1oc4ekdfg"
+   "title": "10 Unexpected Animal Encounters with Incredible Endings 😱",
+   "views": 6003988,
+   "url": "https://www.youtube.com/watch?v=bnacOCA1AUA"
+  },
+  {
+   "title": "What Makes an Airplane Fly | 3D Animation",
+   "views": 2583221,
+   "url": "https://www.youtube.com/watch?v=Vz7ejvMGBXk"
+  },
+  {
+   "title": "Astronomical events in November 2026😲 #shorts #astronomicalevents #space #helpyn",
+   "views": 4778319,
+   "url": "https://www.youtube.com/watch?v=_fw3vnQconI"
   },
   {
    "title": "The Sun Is Dragging Us Into the Deep Unknown at 828,000 km/h! 🌌 #SpaceFacts #MilkyWay #Uni",
-   "views": 2809554,
+   "views": 2992090,
    "url": "https://www.youtube.com/watch?v=ebd0XMp5vR0"
-  },
-  {
-   "title": "Congo Forest !",
-   "views": 2733373,
-   "url": "https://www.youtube.com/watch?v=phvmipgaIPU"
-  },
-  {
-   "title": "SIZE OF SOLAR SYSTEM! 💀",
-   "views": 5059096,
-   "url": "https://www.youtube.com/watch?v=dv-Czhabars"
-  },
-  {
-   "title": "November Sky Events 💀 #space #earth #shorts",
-   "views": 2994190,
-   "url": "https://www.youtube.com/watch?v=2sEbWCWMJA0"
   }
  ],
  "news": [
+  "Scientists finally discover why we learn to love bitter coffee",
   "NASA reveals bold new plan to return astronauts to the Moon in 2028",
+  "After 40 years, CERN finds evidence of a one-in-10-billion particle decay",
   "DNA on the Shroud of Turin reveals centuries of hidden secrets",
   "A hidden limit of space and time could unlock electronics 100,000 times faster",
   "An ancient ocean full of giant predators reveals a surprising twist in evolution",
   "A nuclear blast could save Earth from an asteroid, but there's a catch",
-  "Mysterious gas leaks suggest Mars may still be volcanically alive",
-  "CHAPEA Mission 2 Crew Reflects After 378 Days on Simulated Mars",
-  "APOD: 2026 November 9 – Rigel and the Witch Head Nebula",
-  "Ozone Hole Reaches Its 2026 Maximum",
-  "APOD: 2026 November 8 – Major Fireball Meteor",
-  "NASA Awards Moon Base Transportation, Technology, Science Projects",
-  "APOD: 2026 November 7 – De Gerlache-Kocher Massif"
+  "APOD: 2026 November 10 – Saturn Behind the Moon",
+  "Autumn Mornings Bring Valley Fog",
+  "Curiosity Blog, Sols 5056-5062: Charging Back Up!",
+  "Curiosity Blog, Sols 5050-5055: It’s Nazca, Our 49th Drill Hole",
+  "Rubies on Mars?"
  ]
 }

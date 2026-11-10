@@ -1,40 +1,40 @@
 {
-  "generated_at": "2026-11-09T11:49:43.035929+00:00",
+  "generated_at": "2026-11-10T11:24:57.258485+00:00",
   "status": "ok",
   "date_basis": "YouTube Analytics reports use Pacific calendar days; current day excluded.",
   "current_period": {
-    "start": "2026-10-10",
-    "end": "2026-11-08",
+    "start": "2026-10-11",
+    "end": "2026-11-09",
     "short_rows": 1,
     "summary": {
-      "views": 9907.0,
-      "engagedViews": 4402.0,
-      "estimatedMinutesWatched": 2109.0,
-      "likes": 181.0,
-      "comments": 3.0,
-      "shares": 7.0,
-      "subscribersGained": 15.0,
+      "views": 10270.0,
+      "engagedViews": 4603.0,
+      "estimatedMinutesWatched": 2188.0,
+      "likes": 201.0,
+      "comments": 2.0,
+      "shares": 9.0,
+      "subscribersGained": 16.0,
       "subscribersLost": 0.0,
-      "averageViewDuration": 27.0,
-      "averageViewPercentage": 64.52,
-      "netSubscribers": 15.0
+      "averageViewDuration": 26.0,
+      "averageViewPercentage": 64.44,
+      "netSubscribers": 16.0
     }
   },
   "previous_period": {
-    "start": "2026-09-10",
-    "end": "2026-10-09",
+    "start": "2026-09-11",
+    "end": "2026-10-10",
     "short_rows": 1,
     "summary": {
-      "views": 3.0,
-      "engagedViews": 1.0,
-      "estimatedMinutesWatched": 0.0,
-      "likes": 0.0,
-      "comments": 0.0,
+      "views": 134.0,
+      "engagedViews": 48.0,
+      "estimatedMinutesWatched": 23.0,
+      "likes": 2.0,
+      "comments": 1.0,
       "shares": 0.0,
       "subscribersGained": 0.0,
       "subscribersLost": 0.0,
-      "averageViewDuration": 18.0,
-      "averageViewPercentage": 113.13,
+      "averageViewDuration": 26.0,
+      "averageViewPercentage": 31.02,
       "netSubscribers": 0.0
     }
   },
@@ -46,7 +46,7 @@
   ],
   "topic_guidance": [
     "Use the channel's own strongest Short patterns as a hypothesis, not a rule.",
-    "Average viewed percentage declined; test hook clarity and payoff structure before changing niche.",
+    "Average viewed percentage improved; test hook clarity and payoff structure before changing niche.",
     "No per-video Shorts row is available from this report shape; use the channel-level retention baseline with broad verified trends."
   ]
 }
