@@ -142,3 +142,5 @@
 {"date": "2026-11-09", "topic": "What if a volcano could pop up a new island in minutes?", "wiki": "Surtsey", "outcome": "started", "score": null, "format": "what_if"}
 {"date": "2026-11-09", "topic": "How widespread is coral bleaching, really?", "wiki": "Coral bleaching", "outcome": "started", "score": null, "format": "scale"}
 {"date": "2026-11-09", "topic": "How widespread is coral bleaching, really?", "wiki": "Coral bleaching", "outcome": "delivered", "score": 8.0, "format": null}
+{"date": "2026-11-10", "topic": "The truth about Martian volcanoes", "wiki": "Volcanism on Mars", "outcome": "started", "score": null, "format": "myth_vs_fact"}
+{"date": "2026-11-10", "topic": "The truth about Martian volcanoes", "wiki": "Volcanism on Mars", "outcome": "parked", "score": null, "format": null}
