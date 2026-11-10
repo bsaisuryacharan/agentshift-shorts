@@ -1,0 +1,3 @@
+# append-only ledgers: a concurrent run adds lines at the end, and both sets of lines are wanted. Without this the daily run's rebase stopped on
+# 'CONFLICT (content): Merge conflict in data/judge_notes.jsonl' and the day's ledger was lost (workflow run 42621023224).
+*.jsonl merge=union

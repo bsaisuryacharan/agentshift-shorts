@@ -25,5 +25,8 @@ jobs:
           git config user.name "shorts-bot"; git config user.email "shorts-bot@users.noreply.github.com"
           for f in data/performance.jsonl data/channel_views.jsonl assets/performance.json; do git add "$f" 2>/dev/null || true; done
           git commit -m "monitor: $(date -u +%FT%H:%MZ)" || true
-          git pull --rebase -q || true
-          git push || true
+          for i in 1 2 3 4; do
+            git pull --rebase --autostash -q && git push -q && break
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 4))
+          done

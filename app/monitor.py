@@ -100,6 +100,7 @@ def channel_subscribers(channel_id: str, key: str, client: httpx.Client | None =
 
 
 SNAP = ROOT / "data" / "channel_views.jsonl"
+MAX_TRACKED = 60                    # every public Short the channel has, newest first (the channel has 30; the cap only bounds the file)
 
 
 def snapshot(views: int | None, subs: int | None, path: Path = SNAP, now: datetime | None = None) -> None:
@@ -118,10 +119,14 @@ def summarise(rows: list[dict], subscribers: int | None, now: datetime | None = 
     for r in rows:
         age_h = max(0.0, (now - datetime.fromisoformat(r["published_at"].replace("Z", "+00:00"))).total_seconds() / 3600)
         shorts.append({**{k: r[k] for k in ("spec_id", "video_id", "title", "views", "likes", "comments")}, **targets.status(r["views"], age_h)})
+    shorts.sort(key=lambda s: s["age_h"])                       # newest first; the old `shorts[-12:]` kept the 12 OLDEST and hid every recent Short from the learning loop
+    cohort = targets.cohort_stats(shorts)
+    for s in shorts:
+        s["rel"] = targets.relative(s["views"], s["age_h"], cohort)
     recent = [s for s in shorts if s["age_h"] <= 24 * 90]
     views90 = sum(s["views"] for s in recent)
     best = max(shorts, key=lambda s: s["views"], default=None)
-    return {"updated": now.isoformat(timespec="minutes"), "target_views_per_short": targets.TARGET["views_per_short"], "shorts": shorts[-12:],
+    return {"updated": now.isoformat(timespec="minutes"), "target_views_per_short": targets.TARGET["views_per_short"], "shorts": shorts[:MAX_TRACKED], "cohort": cohort,
             "best": {"title": best["title"], "views": best["views"]} if best else None,
             "ypp": targets.ypp_progress(subscribers or 0, views90, len(recent)) | {"subscribers_known": subscribers is not None},
             "on_track": sum(1 for s in shorts if s["status"] == "on_track"), "behind": sum(1 for s in shorts if s["status"] in ("behind", "far_behind"))}

@@ -67,5 +67,8 @@ jobs:
           git config user.name "shorts-bot"; git config user.email "shorts-bot@users.noreply.github.com"
           for f in state projects data/history.jsonl data/topics.jsonl data/features.jsonl data/scorecards.jsonl; do git add "$f" 2>/dev/null || true; done
           git commit -m "state: $(date -u +%FT%TZ)" || true
-          git pull --rebase -q || true
-          git push || true
+          for i in 1 2 3 4; do
+            git pull --rebase --autostash -q && git push -q && break
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 4))
+          done

@@ -33,9 +33,27 @@ FORMATS: dict[str, dict] = {
 ORDER = list(FORMATS)
 
 
-def choose(recent: list[str], rng: random.Random | None = None, boost: dict[str, float] | None = None) -> str:
-    """least recently used format; never one of the last two used; ties broken at random (or by boost)"""
+EXPLORE = 0.25
+
+
+def choose_weighted(recent: list[str], boost: dict[str, float], rng: random.Random | None = None) -> str:
+    """a bandit over the formats: never one of the last two; 25% of the time uniform (so every format keeps being tested), otherwise weighted by exp(boost) where boost is
+    how the format did on the channel (app.topicscore.format_stats, shrunk towards the channel mean). The old pure least-recently-used rotation gave a format that gets 40 views
+    the same number of slots as one that gets 1,000."""
+    import math
     rng = rng or random.Random()
+    pool = [f for f in ORDER if f not in set(recent[-2:])] or ORDER
+    if rng.random() < EXPLORE:
+        return rng.choice(pool)
+    w = [math.exp(boost.get(f, 0.0)) for f in pool]
+    return rng.choices(pool, weights=w, k=1)[0]
+
+
+def choose(recent: list[str], rng: random.Random | None = None, boost: dict[str, float] | None = None) -> str:
+    """least recently used format; never one of the last two used; ties broken at random (or by boost). With results for >= 3 formats it becomes choose_weighted."""
+    rng = rng or random.Random()
+    if boost and sum(1 for v in boost.values() if v) >= 3 and any(abs(v) > 0.2 for v in boost.values()):
+        return choose_weighted(recent, boost, rng)
     banned = set(recent[-2:])
     pool = [f for f in ORDER if f not in banned] or ORDER
     last_seen = {f: (len(recent) - max((i for i, r in enumerate(recent) if r == f), default=-1 - len(recent))) for f in pool}

@@ -25,6 +25,9 @@ jobs:
       PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
       PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}      # the owner's OpenCode Go key: the writer/picker ladder already prefers it, but the daily job never received it
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      OPENROUTER_VISION_MODEL: ${{ vars.OPENROUTER_VISION_MODEL }}      # optional: a vision-capable model so the judge survives a Gemini 429
       TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -68,8 +71,11 @@ jobs:
           git config user.name "shorts-bot"; git config user.email "shorts-bot@users.noreply.github.com"
           for f in data/history.jsonl data/judge_notes.jsonl data/topics.jsonl data/features.jsonl data/scorecards.jsonl state projects; do git add "$f" 2>/dev/null || true; done
           git commit -m "ledger: $(date -u +%F)" || true
-          git pull --rebase --autostash -q || true
-          git push || true
+          for i in 1 2 3 4; do
+            git pull --rebase --autostash -q && git push -q && break
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 4))
+          done
       - uses: actions/upload-artifact@v4
         if: always()
         with:

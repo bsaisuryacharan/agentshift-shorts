@@ -26,7 +26,7 @@ from pathlib import Path
 
 import httpx
 
-from . import formats, gallery_hf, ideabank, insights, lessons, looks, picker, tracker, variety, vidiq
+from . import formats, gallery_hf, ideabank, insights, lessons, looks, picker, stylemap, topicscore, tracker, variety, vidiq
 
 try:   # keys come from the project's .env (never printed); on CI they are already in the environment
     from dotenv import load_dotenv
@@ -44,10 +44,23 @@ HUD_TYPES = {"bubble", "title", "chip", "big", "label", "sub", "rows", "chain", 
 
 # ---------------------------------------------------------------- LLM ladder (free tiers) ----------------------------------
 def _providers() -> list[str]:
-    return [p for p, k in (("gemini", "GEMINI_API_KEY"), ("groq", "GROQ_API_KEY"), ("openrouter", "OPENROUTER_API_KEY")) if os.environ.get(k)]
+    # the owner's OpenCode Go subscription first: paid allowance ($60/month for glm-5.3-flash), no free-tier 429 walls
+    return [p for p, k in (("opencode", "OPENCODE_API_KEY"), ("gemini", "GEMINI_API_KEY"), ("groq", "GROQ_API_KEY"), ("openrouter", "OPENROUTER_API_KEY")) if os.environ.get(k)]
 
 
 def _call(provider: str, system: str, user: str, image: bytes | None = None) -> str:
+    if provider == "opencode":
+        # the owner's OpenCode Go subscription (docs/console/api/inference): OpenAI-compatible endpoint, billed to the Go allowance
+        model = (os.environ.get("OPENCODE_VISION_MODEL") if image else None) or os.environ.get("OPENCODE_MODEL", "glm-5.3-flash")
+        content = user if not image else [{"type": "text", "text": user},
+                                          {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + base64.b64encode(image).decode()}}]
+        r = httpx.post("https://opencode.ai/inference/go/openai/v1/chat/completions",
+                       headers={"Authorization": "Bearer " + os.environ["OPENCODE_API_KEY"], "X-Title": "AgentShift Shorts pipeline",
+                                "X-OpenCode-Session": "agentshift-shorts", "User-Agent": "agentshift-shorts/1.0"},
+                       timeout=120, json={"model": model, "temperature": 0.7,
+                                          "messages": [{"role": "system", "content": system}, {"role": "user", "content": content}]})
+        r.raise_for_status()
+        return r.json()["choices"][0]["message"]["content"]
     if provider == "gemini":
         parts = [{"text": user}] + ([{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(image).decode()}}] if image else [])
         body = {"systemInstruction": {"parts": [{"text": system}]}, "contents": [{"role": "user", "parts": parts}],
@@ -78,9 +91,10 @@ def _call(provider: str, system: str, user: str, image: bytes | None = None) -> 
         r.raise_for_status()
         return r.json()["choices"][0]["message"]["content"]
     if provider == "openrouter":
-        model = os.environ.get("OPENROUTER_MODEL", "meta-llama/llama-3.3-70b-instruct:free")
+        model = (os.environ.get("OPENROUTER_VISION_MODEL") if image else None) or os.environ.get("OPENROUTER_MODEL", "meta-llama/llama-3.3-70b-instruct:free")
+        content = user if not image else [{"type": "text", "text": user}, {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + base64.b64encode(image).decode()}}]
         r = httpx.post("https://openrouter.ai/api/v1/chat/completions", headers={"Authorization": "Bearer " + os.environ["OPENROUTER_API_KEY"]},
-                       timeout=120, json={"model": model, "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]})
+                       timeout=120, json={"model": model, "messages": [{"role": "system", "content": system}, {"role": "user", "content": content}]})
         r.raise_for_status()
         return r.json()["choices"][0]["message"]["content"]
     raise ValueError(provider)
@@ -98,7 +112,8 @@ def ask(system: str, user: str, image: bytes | None = None, prefer: list[str] | 
     order = [p for p in (prefer or avail) if p in avail and p != exclude]
     if image is not None:
         order = [p for p in order if p != "groq" or os.environ.get("GROQ_VISION_MODEL")]   # Groq currently lists no vision model
-        order = [p for p in order if p != "openrouter"]                                      # free OpenRouter vision models vary; not trusted as judge
+        order = [p for p in order if p != "openrouter" or os.environ.get("OPENROUTER_VISION_MODEL")]   # judge fallback when Gemini is throttled (it was the ONLY vision judge: 429 = Short lost); set the var to a vision-capable model
+        order = [p for p in order if p != "opencode" or os.environ.get("OPENCODE_VISION_MODEL")]   # glm-5.3-flash is text-only unless a vision model is set
     order = order or [p for p in avail if image is None or p == "gemini"]
     errs: list[str] = []
     for rnd in range(3):
@@ -208,6 +223,13 @@ def record_topic(topic: str, wiki: str, outcome: str, score: float | None = None
         f.write(json.dumps({"date": dt.date.today().isoformat(), "topic": topic, "wiki": wiki, "outcome": outcome, "score": score, "format": fmt}, ensure_ascii=False) + "\n")
 
 
+def _format_boost() -> dict[str, float]:
+    """views-based boost per format from the channel's own Shorts; the judge's scores only fill in when there are no results yet (they do not predict views: rho 0.19 on 14 Shorts)"""
+    stats = topicscore.format_stats(picker.live_shorts())
+    views = {f: v["boost"] for f, v in stats.items() if f in formats.FORMATS and v["n"] >= 2}
+    return views or lessons.format_boost()
+
+
 def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple[str, str, str]:
     """no-input topic choice: Google Trends + Wikipedia most-read + evergreen ideas -> the LLM picks ONE explainer-friendly topic for the chosen FORMAT
     that has a real Wikipedia article (the research source), skipping anything similar to past Shorts. Returns (topic framing, wiki_title, format)."""
@@ -238,7 +260,7 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
     items += [(f"OWNER'S IDEA: {i}", "owner") for i in refs.ideas() if not tracker.repeat_of(i)]        # planned from the Shorts the owner saved
     cands = picker.rank(items)                                           # on-niche first: channel results + vidIQ + news, celebrities/sports dropped
     tried = tracker.covered()                                              # readable subjects already covered (newest first)
-    fmt = fmt or formats.choose(recent_formats(), boost=lessons.format_boost())   # ties go to the format the judge has scored best
+    fmt = fmt or formats.choose(recent_formats(), boost=_format_boost())   # a bandit over the formats, weighted by how each did on the channel
     out = {}
     for attempt in range(3):
         out, _ = ask("You choose the next topic for 'Agent Shift', a YouTube Shorts channel of 35-45 s science/tech/history/nature explainers in rotating formats. "
@@ -246,8 +268,8 @@ def pick_topic(deliver_chat: str | None = None, fmt: str | None = None) -> tuple
                      "medical advice). The channel makes curiosity explainers: science, space, nature, the brain, history, tech and engineering (how things work), and big tech news explained (what it is, how it works, why it matters). Never shopping content: product reviews, deals, unboxings or how-to-use tutorials. Items marked OWNER'S IDEA come from Shorts the owner saved as inspiration: prefer one when its subject is real and filmable (the idea is the shape, e.g. taking a machine apart part by part). Prefer timeless science/space/history ideas that connect to something people search for; items marked IN THE NEWS are current science/tech headlines: when one fits, choose the timeless topic that explains it (a news hook gets views) but never a tragedy or politics; use CHANNEL INSIGHTS to favour what has worked "
                      "and avoid what has scored badly. Prefer subjects that have REAL photographs or footage (actual spacecraft, telescopes, natural phenomena, places, historical events, animals) over purely hypothetical future technology, because real pictures make the better Short. It must have a real English Wikipedia article. "
                      'The FORMAT below decides the framing of the title (it is NOT always a what-if). Return ONLY JSON {"options":[{"topic":"a title framing that fits the FORMAT","wiki":"exact Wikipedia article title","why":"...","subjects":["3-4 concrete filmable things the Short would show, 1-3 words each, e.g. lava flow, Voyager probe, aurora"]}, ...three different options, best first]}. Never pick or closely resemble anything in PAST TITLES or ALREADY USED.',
-                     f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}\nBREAKOUT TITLES (angle shapes that went viral for small channels; invent a new topic, never copy): {'; '.join(vidiq.topic_ideas() + ideabank.ideas()) or 'none'}",
-                     prefer=["groq", "gemini", "openrouter"])
+                     f"FORMAT: {fmt} - {formats.FORMATS[fmt]['hook']}. Example framing: {formats.frame(fmt, 'X')}\nCANDIDATES: {cands}\nPAST TITLES: {past}\nALREADY USED (never again): {tried}\nCHANNEL INSIGHTS: {insights.hint() or 'none yet'}\nTOPIC CLASSES: {topicscore.hint(picker.live_shorts()) or 'none yet'}\nBREAKOUT TITLES (angle shapes that went viral for small channels; invent a new topic, never copy): {'; '.join(vidiq.topic_ideas() + ideabank.ideas()) or 'none'}",
+                     prefer=["opencode", "groq", "gemini", "openrouter"])
         opts = out.get("options") if isinstance(out.get("options"), list) else [out]
         opts = [o for o in opts if not (isinstance(o, dict) and tracker.repeat_of(str(o.get("wiki", "")), str(o.get("topic", ""))))]      # never a covered subject
         best = picker.best_option(opts, used, _norm_topic, min_coverage=0.5 if attempt < 2 else 0.0)   # best of three: the one with the most real pictures available wins
@@ -571,6 +593,15 @@ def allowed_numbers(facts_text: str, limit: int = 28) -> str:
     return "\n".join(out)
 
 
+def _normalise_imgs(spec: dict) -> None:
+    """a writer once named a picture 's1.mp4' (the footage file name); the renderer then crashed with 'shot image missing: img/s1.mp4'. Pictures are always .jpg here: footage is attached
+    through the beat's "footage" key, never through "img"."""
+    for b in spec.get("beats", []):
+        img = b.get("img")
+        if isinstance(img, str) and not img.lower().endswith((".jpg", ".jpeg", ".png")):
+            b["img"] = re.sub(r"\.[A-Za-z0-9]+$", "", img) + ".jpg"
+
+
 def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str | None = None) -> tuple[dict, str]:
     fmt = fmt if fmt in formats.FORMATS else formats.choose(recent_formats())
     user = f"TOPIC: {topic}\n{formats.prompt_block(fmt)}\nFACTS (source {facts['url']}):\n{facts['text'][:WRITER_FACTS]}\n"
@@ -594,7 +625,7 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
         user += "\n" + out_different + "\n"
     if notes:
         user += "\nFIX THESE PROBLEMS FROM THE LAST ATTEMPT:\n- " + "\n- ".join(notes)
-    order = [["groq", "gemini", "openrouter"], ["gemini", "groq", "openrouter"], ["openrouter", "gemini", "groq"]]
+    order = [["groq", "opencode", "gemini", "openrouter"], ["opencode", "gemini", "groq", "openrouter"], ["opencode", "gemini", "groq", "openrouter"]]
     for n in range(5):
         spec, prov = ask(SYSTEM, user, prefer=order[n // 2 % 3])      # a model that keeps failing the schema is swapped out
         errs = validate_spec(spec, facts["text"])
@@ -607,7 +638,10 @@ def write_spec(topic: str, facts: dict, notes: list[str] | None = None, fmt: str
             for i, u in enumerate(facts.get("extra_sources") or [], 1):
                 spec["sources"][f"ref{i}"] = u
             spec["format"] = fmt
-            spec["look"] = variety.adjust_look(spec.get("look"), fmt)   # one visual language per Short, rotated away from the recent ones
+            _normalise_imgs(spec)
+            smap = stylemap.choose(spec, fmt, picker.live_shorts())      # topic -> look + colour theme, rotated away from the recent ones, learned from results
+            spec["look"], spec["theme"], spec["style_map"] = smap["look"], smap["theme"], {k: smap[k] for k in ("class", "why", "lemo_style")}
+            print(f"   style: {smap['look']} / {smap['theme']} for class {smap['class']} ({smap['why']})", flush=True)
             spec["series_label"] = spec.get("series_label") or formats.FORMATS[fmt]["label"]
             return spec, prov
         user += "\nYour last JSON failed validation: " + "; ".join(errs) + "\nReturn corrected JSON."

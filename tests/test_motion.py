@@ -121,7 +121,7 @@ def test_write_spec_rotates_provider_and_run_survives_writer_failure(monkeypatch
         raise AssertionError("expected failure")
     except RuntimeError:
         pass
-    assert prefers == ["groq", "groq", "gemini", "gemini", "openrouter"]
+    assert prefers == ["groq", "groq", "opencode", "opencode", "opencode"]      # the OpenCode Go key is the first choice after the first two tries (auto.write_spec order)
     monkeypatch.setattr(auto, "write_spec", lambda *a, **k: (_ for _ in ()).throw(RuntimeError("bad json")))
     monkeypatch.setattr(auto, "facts_for", lambda *a, **k: {"url": "u", "text": "t"})
     sent = []

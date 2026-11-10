@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import re
 
-from . import insights, vidiq
+from . import insights, targets, topicscore, vidiq
 
 STOP = {"the", "a", "an", "of", "to", "and", "in", "is", "are", "your", "you", "why", "how", "what", "that", "for", "on", "it", "do", "does", "can", "with"}
 SOURCE_BONUS = {"owner": 4.0, "news": 2.0, "evergreen": 1.0, "trend": 0.0, "wiki": 0.0}      # "owner": ideas planned from the references the owner saved
@@ -25,8 +25,22 @@ def _words(s: str) -> set[str]:
     return {w for w in re.findall(r"[a-z]{4,}", s.lower()) if w not in STOP}
 
 
+def live_shorts() -> list[dict]:
+    """every public Short the hourly monitor saw (assets/performance.json), newest first"""
+    try:
+        return list((insights.load().get("performance") or {}).get("shorts") or [])
+    except Exception:  # noqa: BLE001 - an unreadable file must never stop the pick
+        return []
+
+
 def winner_words(snapshot: dict | None = None) -> dict[str, float]:
-    """word -> weight from the channel's own Shorts: views above the channel median push their topic words up, flops push them down"""
+    """word -> weight from the channel's own Shorts: views above the channel median push their topic words up, flops push them down.
+    Reads the live monitor data (all Shorts); the vidIQ snapshot is only the fallback before the monitor has run."""
+    if snapshot is None:
+        live = live_shorts()
+        if live:
+            med = targets.cohort_stats(live).get("median") or 26
+            snapshot = {"channel": {"shorts": [{"title": s["title"], "views": s["views"]} for s in live if s.get("age_h", 0) >= 72], "median_views_per_short_after_1_week": med}}
     ch = (snapshot if snapshot is not None else vidiq.load()).get("channel") or {}
     shorts = ch.get("shorts") or []
     if not shorts:
@@ -52,6 +66,7 @@ def score(text: str, source: str, ww: dict[str, float]) -> float:
         return -99.0                                   # popular is not the same as on-niche
     s = SOURCE_BONUS.get(source, 0.0) + (3.0 if niche else 0.0)
     s += sum(ww.get(w, 0.0) for w in _words(text))
+    s += 0.5 * topicscore.curiosity(text)                  # familiar noun / number / tension up, jargon / institutions / AI-tips down
     return s
 
 
@@ -93,13 +108,15 @@ def visual_coverage(subjects: list[str]) -> float:
 def best_option(options: list[dict], used: set[str], norm, min_coverage: float = 0.5) -> dict | None:
     """options from the LLM, each {topic, wiki, why, subjects}: drop used ones, score by real-picture coverage (and the candidate's niche fit), keep the best"""
     scored = []
+    live = live_shorts()
     for o in options:
         if not isinstance(o, dict) or not o.get("wiki") or not o.get("topic") or norm(o["wiki"]) in used or PRODUCT.search(o["topic"] + " " + o["wiki"]):
             continue
         cov = visual_coverage(o.get("subjects") or [])
         niche = 1.0 if insights.NICHE.search(o["topic"] + " " + o["wiki"]) else 0.0
-        o["coverage"], o["score"] = round(cov, 2), round(3 * cov + niche, 2)
-        print(f"   option: {o['topic']!r} coverage {cov:.2f} score {o['score']}", flush=True)
+        boost = topicscore.topic_boost(o["topic"] + " " + o["wiki"], live)       # would a stranger click it, and how has this kind of topic done here
+        o["coverage"], o["score"], o["curiosity"] = round(cov, 2), round(2 * cov + niche + boost, 2), boost
+        print(f"   option: {o['topic']!r} coverage {cov:.2f} curiosity {boost:+.1f} class {topicscore.topic_class(o['topic'] + ' ' + o['wiki'])} score {o['score']}", flush=True)
         scored.append(o)
     best = max(scored, key=lambda o: o["score"]) if scored else None
     if best and best["coverage"] < min_coverage:

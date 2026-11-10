@@ -37,5 +37,8 @@ jobs:
           git add assets/insights.json assets/idea_bank.json assets/strategy.json data/latest_trend_report.json data/latest_channel_analytics.json 2>/dev/null || true
           for f in docs/STYLE_UPDATES.md data/style_radar.json; do [ -f "$f" ] && git add "$f" 2>/dev/null; done || true
           git commit -m "insights: $(date -u +%F)" || true
-          git pull --rebase -q || true
-          git push || true
+          for i in 1 2 3 4; do
+            git pull --rebase --autostash -q && git push -q && break
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 4))
+          done
