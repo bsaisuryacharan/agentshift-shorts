@@ -1,0 +1,271 @@
+{
+ "id": "inside-nasa-moon-rocket-anatomy-a3",
+ "title": "Inside NASA's Moon Rocket, Part by Part",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "format": "anatomy",
+ "series_label": "ANATOMY",
+ "theme": "cool",
+ "look": "blueprint",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Space_Launch_System",
+  "b1": "https://en.wikipedia.org/wiki/Space_Launch_System",
+  "b2": "https://en.wikipedia.org/wiki/Space_Launch_System",
+  "b3": "https://en.wikipedia.org/wiki/Space_Launch_System",
+  "b4": "https://en.wikipedia.org/wiki/Space_Launch_System",
+  "b5": "https://en.wikipedia.org/wiki/Space_Launch_System",
+  "b6": "https://en.wikipedia.org/wiki/Space_Launch_System",
+  "outro": "https://en.wikipedia.org/wiki/Space_Launch_System",
+  "wiki": "https://en.wikipedia.org/wiki/Space_Launch_System",
+  "ref1": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Orion/Artemis_V?lang=pl",
+  "ref2": "https://www.bbc.com/news/articles/cly148lvyevo",
+  "ref3": "https://www.space.com/space-exploration/artemis/new-videos-of-nasas-artemis-ii-launch-show-the-absolute-power-of-the-sls-rocket",
+  "ref4": "https://airandspace.si.edu/stories/editorial/what-artemis-program"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Artemis 1 launch",
+   "footage": "rocket launch night",
+   "prompt": "photoreal cinematic 9:16 vertical shot of a huge white rocket lifting off at night from a coastal launch pad, brilliant engine flames and billowing steam clouds, documentary press-photo look, natural light, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "NASA's Moon rocket hits 39 meganewtons at liftoff. Let's take it apart.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "inside?",
+     "at": "rocket"
+    },
+    {
+     "t": "title",
+     "html": "*ANATOMY*: the Moon rocket",
+     "at": "apart"
+    }
+   ],
+   "sfx": [
+    [
+     "liftoff",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "SLS core stage",
+   "prompt": "photoreal cinematic 9:16 wide shot inside a vast factory high bay, a towering rust-orange rocket core stage on a stand, industrial work lights, documentary look, natural practical light, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "The core stage is 65 meters long and 8.4 meters wide, built by Boeing in New Orleans.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Length",
+       "65",
+       "m",
+       "cy"
+      ],
+      [
+       "Diameter",
+       "8.4",
+       "m",
+       "am"
+      ]
+     ],
+     "stagger": 0.4,
+     "at": "long"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "RS-25 engine test",
+   "footage": "rocket engine test",
+   "prompt": "photoreal cinematic 9:16 macro shot of a single large rocket engine nozzle on a test stand, intricate pipes and metalwork, steam venting, documentary look, natural light, no text, no people",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "Inside sit four RS-25 engines, recycled from the Shuttle, each pushing 513,000 pounds of thrust.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "513,000 lbf",
+     "col": "cy",
+     "at": "513,000"
+    }
+   ],
+   "sfx": [
+    [
+     "thrust",
+     "whoosh",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "solid rocket booster",
+   "prompt": "photoreal cinematic 9:16 low-angle shot of two tall white solid rocket boosters flanking a rocket stage in an assembly building, towering steel structures, documentary look, practical industrial lighting, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Flanking it, two five-segment boosters give the raw punch off the pad.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "They deliver the",
+      "options": "punch, shove, kick",
+      "suffix": "off the pad"
+     },
+     "accent": "green",
+     "at": "boosters"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "RL10 engine",
+   "prompt": "photoreal cinematic 9:16 shot of a compact polished rocket upper stage engine in a clean workshop, gleaming metal nozzle, soft studio lighting, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Current missions use the ICPS upper stage, with an RL10 engine, for the trip to the Moon.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "Orion",
+       "Moon"
+      ]
+     ],
+     "at": "Moon"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The whole machine cost 31.6 billion dollars by 2025.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 31.6,
+      "prefix": "$",
+      "suffix": "B"
+     },
+     "accent": "blue",
+     "at": "31.6"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "It lifts 27 metric tons to the Moon. Saturn V managed 48.6.",
+   "hud": [
+    {
+     "t": "bars",
+     "items": [
+      [
+       "SLS",
+       27,
+       "cy"
+      ],
+      [
+       "Saturn V",
+       48.6,
+       "ir"
+      ]
+     ],
+     "unit": "tons",
+     "at": "27"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s5.jpg",
+   "photo": "Artemis 2 crew",
+   "prompt": "photoreal cinematic 9:16 silhouette of a rocket ascending into a dark blue dawn sky seen from far below, long exhaust trail, documentary look, natural light, no text, no people",
+   "focal": [
+    0.5,
+    0.35
+   ],
+   "say": "Artemis II carried a crew past the Moon in 2026. Follow for more machines, taken apart.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Crew past the Moon in 2026"
+     },
+     "accent": "green",
+     "at": "Moon"
+    },
+    {
+     "t": "toast",
+     "title": "FOLLOW",
+     "sub": "for more machines",
+     "icon": "rocket",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "inside_machine",
+  "why": "topic fit",
+  "lemo_style": [
+   "Exploded Teardown",
+   "Blueprint",
+   "Engineering Briefing Board"
+  ]
+ },
+ "_facts": {
+  "title": "Space Launch System",
+  "url": "https://en.wikipedia.org/wiki/Space_Launch_System",
+  "text": "The Space Launch System (SLS) is an American two-stage super heavy-lift expendable rocket used by NASA. The primary launch vehicle for the Artemis program, SLS is designed to launch the four-person Orion spacecraft. The rocket first launched in November 2022, carrying the uncrewed Artemis I mission. Its only crewed launch has been for the Artemis II lunar flyby in April 2026, becoming the second launch vehicle to carry humans beyond low Earth orbit (LEO), after NASA's Saturn V of the Apollo program. Development of SLS began in 2011 as a congressionally mandated replacement for the retiring Space Shuttle program and the cancelled Ares I and Ares V launch vehicles of the Constellation program, incorporating some hardware from both programs. Costing US$31.6 billion as of 2025, the project has been criticized for mismanagement, budget overruns, and delays, but ultimately succeeded in human spaceflight in 2026. All SLS launches take place from Launch Complex 39B at the Kennedy Space Center in Florida. The new Boeing-built core stage is powered by four ex-Shuttle RS-25 engines. Attached to the core are two Northrop Grumman five-segment Solid Rocket Boosters, built for the Ares vehicles, tested on Ares I-X, developed from the Shuttle's four-segment SRB. SLS currently uses the Interim Cryogenic Propulsion Stage (ICPS) as its second stage, for the insertions to low Earth orbit and trans-lunar injection. ICPS uses the RL10 engine, and was derived from the Delta Cryogenic Second Stage designed by Japan's space agency. Aerojet Rocketdyne builds the RS-25 and RL10 engines. Starting from Artemis IV, SLS will use the Centaur V upper stage, developed for the Vulcan Centaur, instead of ICPS. NASA previously planned to upgrade SLS from its current Block 1 configuration to a Block 1B and Block 2, but cancelled these plans in February 2026, aiming to standardize on Block 1. Block 1B was to use the Exploration Upper Stage, and Block 2 would have used new solid rocket boosters. There plans were included in Section 10812 the most recent NASA Authorization Act and have not been rescinded by Congress. While SLS has the highest liftoff thrust of any rocket to ever carry humans, 39 meganewtons (8,800,000 pounds-force), SLS's payload capacity to trans-lunar injection of 27 metric tons (59,525 lb) is only around half that of the Saturn V's 48.6 metric tons (107,145 lb) payload. Thus for Artemis lunar landings, beginning with Artemis IV targeted early 2028, Orion is planned to dock with the Human Landing System (HLS) in lunar orbit or low Earth orbit, separately launched on a non-SLS rocket; SpaceX's Starship HLS and Blue Origin's Blue Moon are under development as HLS vehicles. Its next scheduled flight is Artemis III, a 2027 low Earth orbit docking test between Orion and HLS vehicles. == Components ==\n\nThe SLS is a Space Shuttle-derived launch vehicle. Its first stage consists of a central core stage powered by four engines, flanked by two space shuttle-derived solid rocket boosters. NASA had planned to introduce upgraded variants of the rocket. The Block 1B configuration was to incorporate a larger, purpose-built upper stage, while the Block 2 configuration was to feature newly developed solid rocket boosters. On February 26, 2026, NASA announced that it would standardize the Block 1 configuration and pursue alternative upper-stage options. === Core stage ===\n\nThe SLS core stage is built by Boeing at NASA's Michoud Assembly Facility in New Orleans. It measures 65 meters (213 ft) in length and 8.4 meters (28 ft) in diameter, matching the diameter of the Space Shuttle external tank to allow NASA to leverage Shuttle-era experience. The stage is visually similar to the Shuttle tank due to its rust-colored spray-on insulation. The stage contains liquid hydrogen and liquid oxygen propellant tanks, the attach points for the solid rocket boosters, avionics, equipment for autogenous pressurization of the tanks, and the Main Propulsion System (MPS), an assembly of four RS-25 engines with associated plumbing and hydraulic gimbal actuators. The first core stages reused MPS plumbing removed from the three remaining Space Shuttle orbiters following their decommissioning. The core stage, when combined with the solid rocket boosters, is capable of propelling the Orion spacecraft into a highly elliptical orbit without the upper stage firing, though the upper stage is required for trans-lunar injection. The core stage structure is primarily made of 2219 aluminum alloy, and compared to the Space Shuttle external tank, several manufacturing improvements were incorporated. Production began in 2014, but delays in manufacturing, testing, and integration postponed the readiness of the first flight article by several years. It uses ten barrel-shaped main sections, four domes, and seven rings. The first four SLS missions will each use four of the remaining fourteen RS-25D engines left over from the Space Shuttle program. The final two engines needed were assembled from existing RS-25D spare parts. Aerojet Rocketdyne refurbished these engines with modernized controllers, expanded throttle capability, and additional insulation to handle the higher thermal environment caused by proximity to the solid rocket boosters. Later flights will transition to the RS-25E, optimized for expendable use, being faster to build and costing 30% less. Thrust for the refurbished RS-25D engines has been increased from 492,000 to 513,000 lbf (2,188 to 2,281 kN), while the RS-25E is rated at 522,000 lbf (2,321 kN) per engine. The first test firing of an RS-25E occurred in June 2025 and was declared successful. The SLS uses a conical frustum-shaped interstage known as the Launch Vehicle Stage Adapter (LVSA) between the core stage and the narrower diameter upper stage.\n\nSOURCE esa.int (https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Orion/Artemis_V?lang=pl):\n![ESA logo](/) ![Earth sets above the lunar horizon during Artemis II](/ESA_Multimedia/Images/2026/04/Earthset_from_lunar_orbit) Science & Exploration # Artemis V 14406 views 45 likes ESA / Science & Exploration / Human and Robotic Exploration / Orion *Editor's note: ESA will update this page to reflect the latest Artemis programme architecture. This mission is now planned to be the second lunar landing of the Artemis programme, but will no longer include the Gateway.* *The Gateway was planned as a small space station in lunar orbit to support Artemis missions and science around the Moon. Europe was set to provide key elements, including the habitation module Lunar I-Hab, the logistics and viewing module Lunar View, and the telecommunications system Lunar Link, drawing on European industrial expertise from the International Space Station.* *In 2026, NASA paused Gateway in its current form to focus on Moon surface operations. Studies are ongoing to explore how these elements could be repurposed to support future missions. ESA will provide its fifth European Service Module for Artemis V. More information on the mission plan can be found here.* The Artemis V mission is the fifth mission of the Artemis programme and will see two astronauts land on the Moon as well as deliver the second ESA module for the Gateway: Lunar View. ![Space Launcher System](/ESA_Multimedia/Images/2022/03/SLS_rocket_before_rollout) Space Launcher System The launch will be on a Space Launch System rocket from the usual Launchpad 39B at NASA’s Kennedy Space Center in Florida, USA. The mega Moon rocket will propel four astronauts inside Orion to the Moon as well as well as tug the ESA’s Lunar View refuelling module for installation on the lunar Gateway. ![Esprit refuelling module](/ESA_Multimedia/Images/2023/08/Lunar_View_refuelling_module_on_Gateway) Esprit refuelling module Once in orbit around Earth, the exploration upper stage will boost Orion and Lunar View to the Moon. Orion will then detach from the second stage and the European Service Module-5 will use its 24 reaction control thruster engines to turn itself around and return to the Esprit module that flew to space under a separate comp\n\nSOURCE bbc.com (https://www.bbc.com/news/articles/cly148lvyevo):\n# Nasa's mega Moon rocket arrives at launch pad for Artemis II mission Nasa's mega rocket has been moved to the launch pad in Cape Canaveral, Florida, as the final preparations get underway for the first crewed mission to the Moon in more than 50 years. Over almost 12 hours, the 98m-tall Space Launch System was carried vertically from the Vehicle Assembly Building on the 4-mile (6.5km) journey to the pad. Now it is in position, the final tests, checks - and a dress rehearsal - will take place, before the go-ahead is given for the 10-day Artemis II mission that will see four astronauts travel around the Moon. Nasa says the earliest the rocket can blast off is 6 February, but there are also more launch windows later that month, as well as in March and April. The rocket began moving at 07:04 local time (12:04 GMT) and arrived at Launch Pad 39B at the Kennedy Space Center at 18:41 local time (23:42 GMT). The rocket was carried by a huge machine called a crawler-transporter, travelling at a top speed of 0.82 mph (1.3 km/h) as it trundled along. Live coverage captured the slow-moving spectacle. Nasa said the rocket will be prepared over the next few days for what it calls a \"wet dress rehearsal\" - a test for fuel operations and countdown procedures. The Artemis II crew - Nasa's Reid Wiseman, Victor Glover and Christina Koch and Canadian astronaut Jeremy Hansen - were at the Kennedy Space Center watching the rocket as it was moved. In just a few weeks, the four astronauts will be strapped into a spacecraft, perched on the top of the rocket, ready to blast off to the Moon. It will be the first crewed mission to the Moon since Apollo 17 landed on its surface in December 1972. Nasa said the mission could take its astronauts further into space than anyone has been before. Artemis II is not scheduled to land on the Moon, but will instead lay the groundwork for a future lunar landing led by the Artemis III mission. Nasa said the launch of Artemis III will take place \"no earlier than\" 2027. But, experts believe 2028 is the earliest possible date. Koch said it was an amazing feeling to see the rocket. \"Astronauts are the calmest people on launch day. And I think... it feels th\n\nSOURCE space.com (https://www.space.com/space-exploration/artemis/new-videos-of-nasas-artemis-ii-launch-show-the-absolute-power-of-the-sls-rocket):\nJoin - Join our community Expert insights In-depth guides and features Curated newsletters Handpicked inspiration Early Access Preview new releases first Earn badges as you explore Join the conversation Comment and connect Tailored for you Personalised recommendations Get Space+ Access Quick For the quickest way to join, enter your email below. We’ll send a confirmation email and sign you up to Space.com newsletters with the latest inspiration, expert advice and exclusive offers. By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. FIND OUT ABOUT OUR MAGAZINE Want to subscribe to the magazine? Click the button below to find out more information. Find out more Get Space+ Access Quick Join The Club for quick access. Enter your email below and we'll send confirmation, and sign you up to our newsletter. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions. Geographical rules apply. Welcome to Space+ ! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Start reading to unlock your first badge Keep earning badges Explore ways to get more involved as a member. Space Exploration Latest space missions, discoveries and exploration updates. Explore Astronomy Stargazing tips, cosmic events and expert insights on the universe Explore --- Your membership perks Start exploring exclusive deals, expert advice and more Explore now Never Miss a Discovery Space news, cosmic updates and expert insights straight to your inbox. Choose your newsletters --- Sign Out Get the Space.com Newsletter Breaking space news, the latest updates on rocket launches, skywatching events and more! --- By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. You are now subscribed Your newsletter sign-up was successful --- Want to add more newsletters? --- Join the club Get full access to premium articles, exclusive features and a growing list of member rewards. --- An account already exists for this email address, please log in. 1. Space Exp\n\nSOURCE airandspace.si.edu (https://airandspace.si.edu/stories/editorial/what-artemis-program):\n# What is the Artemis Program? Feb 02, 2026 By Amanda Laughead People may know Artemis as NASA’s return-to-the-Moon program. However, it is much more than a rerun of Project Apollo. While the destination is the same, the goals are more ambitious. ![A logo featuring a capital A at its center, with a half-moon shape poking out from behind the letter A. A red line swoops from the moon across the A, making up the horizontal line for the A. Under the A is an arched blue line with the word ](/multimedia-gallery/image/artemis-logo-color-positive-rgb-july-2021origjpg) The program’s logo features an “A” for Artemis bridging the Earth and Moon. The red line represents the path of spacecraft traveling between the two. NASA plans to create a permanent base on the lunar south pole to support scientific research and study the long-term effects of living and working on the surface of another world. The lessons learned, technologies tested, and scientific discoveries made during the Artemis missions are intended to build toward NASA’s future endeavors in space—including human exploration of Mars. Whereas NASA contracted with aerospace companies on Project Apollo, it is working alongside companies and international space agencies to achieve its goals for Artemis. The program borrows its name from the goddess of the hunt. In Greek mythology, Artemis is the daughter of Zeus and the twin sister of Apollo. Choosing Apollo’s twin sister as the name for NASA’s second human lunar exploration program emphasizes how this endeavor is related to—but unique from—the Apollo Program. ## Mission Planning To date, NASA has completed the first of its planned Artemis missions. Artemis I was an uncrewed flight test of the Space Launch System and the Orion spacecraft. It launched from the Kennedy Space Center on November 16, 2022, and orbited the Moon before returning to Earth on December 11. Over the intervening three years, engineers have studied the performance of the vehicles to improve function and minimize risk for subsequent crewed flights. ![A tall orange cylinder flanked by two smaller white crayon-shaped cylinders sits at a launch tower, facing upwards toward the sky. Atop the cylinder is",
+  "extra_sources": [
+   "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Orion/Artemis_V?lang=pl",
+   "https://www.bbc.com/news/articles/cly148lvyevo",
+   "https://www.space.com/space-exploration/artemis/new-videos-of-nasas-artemis-ii-launch-show-the-absolute-power-of-the-sls-rocket",
+   "https://airandspace.si.edu/stories/editorial/what-artemis-program"
+  ]
+ },
+ "_writer": "opencode"
+}

@@ -1,5 +1,5 @@
 {
- "current": "rigel-vs-sun-a1",
+ "current": "inside-nasa-moon-rocket-anatomy-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -612,6 +612,32 @@
    "uploaded": {
     "id": "DyavovRQc5E",
     "url": "https://youtube.com/watch?v=DyavovRQc5E",
+    "privacy": "public",
+    "wanted": "public",
+    "publish_at": null
+   }
+  },
+  "inside-nasa-moon-rocket-anatomy-a3": {
+   "title": "Inside NASA's Moon Rocket, Part by Part",
+   "base": "inside-nasa-moon",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 5,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 6,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "43015823816",
+   "uploaded": {
+    "id": "cszV0EpNJY8",
+    "url": "https://youtube.com/watch?v=cszV0EpNJY8",
     "privacy": "public",
     "wanted": "public",
     "publish_at": null
