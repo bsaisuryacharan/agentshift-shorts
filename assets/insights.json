@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-11-10T11:25:04+00:00",
+ "generated_at": "2026-11-11T11:13:10+00:00",
  "channel": {
-  "period": "2026-10-11..2026-11-09",
-  "views": 10270.0,
-  "avg_view_seconds": 26.0,
-  "avg_view_pct": 64.44,
-  "net_subscribers": 16.0,
-  "likes": 201.0,
-  "shares": 9.0,
+  "period": "2026-10-12..2026-11-10",
+  "views": 10548.0,
+  "avg_view_seconds": 27.0,
+  "avg_view_pct": 67.54,
+  "net_subscribers": 18.0,
+  "likes": 224.0,
+  "shares": 10.0,
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
   "When Cameras Capture Astonishing Animal Encounters",
   "10 Unexpected Animal Encounters with Incredible Endings 😱",
   "5 Animals That Can Survive Without Sleep 😱",
-  "7 Strangest Animal Moments Ever Caught on Camera",
   "Astronomical events in November 2026😲",
-  "3 Birds That Build Nests in the Most Incredible Ways! 🤯",
+  "A New 'Atomic Clock' Was INSTALLED Above INDIA! ISRO's NVS 03 Satellite Launch",
   "This Boy Tried to Explain How the Fourth Dimension Works 🌀🤯",
+  "Animal Encounters That Seem Almost Impossible",
+  "Most Unexpected Animal Moments Caught on Camera.",
   "The Sun Is Dragging Us Into the Deep Unknown at 828,000 km/h! 🌌",
-  "Alzheimer’s may have early warning signs outside the brain",
-  "Scientists finally discover why we learn to love bitter coffee",
-  "NASA reveals bold new plan to return astronauts to the Moon in 2028",
-  "A hidden limit of space and time could unlock electronics 100,000 times faster"
+  "Northern Taurids is here🔥",
+  "Scientists discover a giant 66-pound rodent that lived 34 million years ago",
+  "237-million-year-old fossils reveal a bizarre armored sea amphibian"
  ],
  "learned": {
   "shorts_scored": 15,
@@ -68,69 +68,69 @@
  },
  "stage_averages": {
   "hook": 7.5,
-  "story": 6.8,
+  "story": 6.7,
   "visuals": 6.2,
-  "polish": 6.2,
-  "policy": 9.2
+  "polish": 6.1,
+  "policy": 9.3
  },
- "weakest_stage": "visuals",
+ "weakest_stage": "polish",
  "region": "IN",
  "trend_signals_total": 62,
  "trend_signals_on_niche": 38,
  "niche_winners": [
   {
    "title": "When Cameras Capture Astonishing Animal Encounters",
-   "views": 24830511,
+   "views": 26428558,
    "url": "https://www.youtube.com/watch?v=vvnUUFqwsoU"
   },
   {
    "title": "5 Animals That Can Survive Without Sleep 😱  #animalfacts #sleepdeprivation #animals",
-   "views": 4959190,
+   "views": 4994954,
    "url": "https://www.youtube.com/watch?v=j7MMYEKv9g4"
   },
   {
-   "title": "Top 15 Scary Birds Sounds #shorts #birds #sound",
-   "views": 3371380,
-   "url": "https://www.youtube.com/watch?v=lFgER4dPINo"
+   "title": "Animal Encounters That Seem Almost Impossible",
+   "views": 3389981,
+   "url": "https://www.youtube.com/watch?v=xM3UqrvLeYI"
   },
   {
    "title": "The Optical Illusion You Can't Unsee",
-   "views": 6644499,
+   "views": 6960906,
    "url": "https://www.youtube.com/watch?v=LdZxRlyM30o"
   },
   {
    "title": "10 Unexpected Animal Encounters with Incredible Endings 😱",
-   "views": 6003988,
+   "views": 6192412,
    "url": "https://www.youtube.com/watch?v=bnacOCA1AUA"
   },
   {
-   "title": "What Makes an Airplane Fly | 3D Animation",
-   "views": 2583221,
-   "url": "https://www.youtube.com/watch?v=Vz7ejvMGBXk"
+   "title": "Northern Taurids is here🔥#Space",
+   "views": 1785887,
+   "url": "https://www.youtube.com/watch?v=x3Bz6JfkESI"
+  },
+  {
+   "title": "Top 15 Scary Birds Sounds #shorts #birds #sound",
+   "views": 3392377,
+   "url": "https://www.youtube.com/watch?v=lFgER4dPINo"
   },
   {
    "title": "Astronomical events in November 2026😲 #shorts #astronomicalevents #space #helpyn",
-   "views": 4778319,
+   "views": 4785024,
    "url": "https://www.youtube.com/watch?v=_fw3vnQconI"
-  },
-  {
-   "title": "The Sun Is Dragging Us Into the Deep Unknown at 828,000 km/h! 🌌 #SpaceFacts #MilkyWay #Uni",
-   "views": 2992090,
-   "url": "https://www.youtube.com/watch?v=ebd0XMp5vR0"
   }
  ],
  "news": [
+  "Scientists discover a giant 66-pound rodent that lived 34 million years ago",
+  "Why heart attacks can still happen even when bad cholesterol is low",
+  "237-million-year-old fossils reveal a bizarre armored sea amphibian",
+  "NASA’s CHAPEA Mars crew finally emerges after more than a year in isolation",
   "Scientists finally discover why we learn to love bitter coffee",
   "NASA reveals bold new plan to return astronauts to the Moon in 2028",
   "After 40 years, CERN finds evidence of a one-in-10-billion particle decay",
-  "DNA on the Shroud of Turin reveals centuries of hidden secrets",
-  "A hidden limit of space and time could unlock electronics 100,000 times faster",
-  "An ancient ocean full of giant predators reveals a surprising twist in evolution",
-  "A nuclear blast could save Earth from an asteroid, but there's a catch",
-  "APOD: 2026 November 10 – Saturn Behind the Moon",
-  "Autumn Mornings Bring Valley Fog",
-  "Curiosity Blog, Sols 5056-5062: Charging Back Up!",
-  "Curiosity Blog, Sols 5050-5055: It’s Nazca, Our 49th Drill Hole",
-  "Rubies on Mars?"
+  "APOD: 2026 November 11 – NGC 4449: Small Galaxy, Big Impact",
+  "Water Surges Into Navajo Reservoir",
+  "NASA Invites Media, Public to Join Voyager 1 One-Light Day Activities",
+  "NASA to Welcome Expedition 74 Astronauts Home at Space Center Houston",
+  "NASA Scientists Show How Gravitational Waves Can Reveal New Worlds"
  ]
 }
