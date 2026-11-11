@@ -160,3 +160,5 @@
 {"date": "2026-11-11", "topic": "Valley Fog vs Sea Fog: Same Cloud, Two Tricks", "wiki": "Fog", "outcome": "parked", "score": null, "format": null}
 {"date": "2026-11-11", "topic": "Inside NASA's New Moon Rocket, Part by Part", "wiki": "Space Launch System", "outcome": "started", "score": null, "format": "anatomy"}
 {"date": "2026-11-11", "topic": "Inside NASA's New Moon Rocket, Part by Part", "wiki": "Space Launch System", "outcome": "delivered", "score": 7.4, "format": null}
+{"date": "2026-11-11", "topic": "The Truth About Gravitational Waves: Not Just Ripples", "wiki": "Gravitational wave", "outcome": "started", "score": null, "format": "myth_vs_fact"}
+{"date": "2026-11-11", "topic": "The Truth About Gravitational Waves: Not Just Ripples", "wiki": "Gravitational wave", "outcome": "draft", "score": 6.8, "format": null}

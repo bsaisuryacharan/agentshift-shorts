@@ -1,0 +1,311 @@
+{
+ "id": "gravitational-waves-not-just-ripples-a3",
+ "title": "The Truth About Gravitational Waves: Not Just Ripples",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "format": "myth_vs_fact",
+ "series_label": "MYTH VS FACT",
+ "theme": "mono",
+ "look": "swiss-kinetic",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Gravitational wave - Wikipedia, https://en.wikipedia.org/wiki/Gravitational_wave",
+  "b1": "Gravitational wave - Wikipedia, https://en.wikipedia.org/wiki/Gravitational_wave",
+  "b2": "Gravitational wave - Wikipedia, https://en.wikipedia.org/wiki/Gravitational_wave",
+  "b3": "Gravitational wave - Wikipedia, https://en.wikipedia.org/wiki/Gravitational_wave",
+  "b4": "Gravitational wave - Wikipedia, https://en.wikipedia.org/wiki/Gravitational_wave",
+  "b5": "Gravitational wave - Wikipedia, https://en.wikipedia.org/wiki/Gravitational_wave",
+  "b6": "6 Amazing Facts About Gravitational Waves and LIGO - Britannica, https://www.britannica.com/list/6-amazing-facts-about-gravitational-waves-and-ligo",
+  "b7": "Gravitational wave - Wikipedia, https://en.wikipedia.org/wiki/Gravitational_wave",
+  "wiki": "https://en.wikipedia.org/wiki/Gravitational_wave",
+  "ref1": "https://www.britannica.com/list/6-amazing-facts-about-gravitational-waves-and-ligo",
+  "ref2": "https://svs.gsfc.nasa.gov/14358",
+  "ref3": "https://www.nationalgeographic.com/science/article/what-are-gravitational-waves-ligo-astronomy-science",
+  "ref4": "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-gravity-waves",
+  "ref5": "https://www.quantamagazine.org/gravitational-waves-discovered-at-long-last-20160211"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "LIGO detector Hanford",
+   "prompt": "photoreal cinematic 9:16 wide shot of a long concrete tunnel-like observatory arm stretching across a dark desert plain at dusk, cold blue documentary grading, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Gravity feels instant. Newton thought so too. He was wrong.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "true?",
+     "at": "instant",
+     "fx": "shine"
+    },
+    {
+     "t": "title",
+     "html": "gravity is *NOT* instant",
+     "at": "wrong"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Newton's gravity acts everywhere at once — no travel, no delay.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "gravity acts",
+      "options": "instantly,everywhere,at once",
+      "suffix": "— Newton"
+     },
+     "accent": "blue",
+     "at": "Newton's"
+    },
+    {
+     "t": "stamp",
+     "text": "MYTH",
+     "col": "ir",
+     "at": "delay"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "It feels obvious because classical physics has no waves in it.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "Newtonian physics",
+     "col": "cy",
+     "at": "classical"
+    },
+    {
+     "t": "label",
+     "text": "no ripples allowed",
+     "at": "waves"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Einstein disagreed: moving masses ripple spacetime outward at the speed of light.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "spacetime *ripples* outward",
+      "split": "word"
+     },
+     "accent": "blue",
+     "at": "ripple"
+    },
+    {
+     "t": "tape",
+     "text": "speed of light",
+     "col": "cy",
+     "at": "light"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "binary pulsar orbit",
+   "prompt": "photoreal cinematic 9:16 view of two dense white dwarf-like stars orbiting each other in deep space, faint radio beam sweeping, cold blue documentary grade, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "In 1974, a binary pulsar's shrinking orbit matched that prediction. Nobel Prize, 1993.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "1974",
+     "col": "cy",
+     "at": "1974",
+     "count": 4
+    },
+    {
+     "t": "stamp",
+     "text": "NOBEL 1993",
+     "col": "ok",
+     "at": "Nobel"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "black hole merger",
+   "footage": "black hole merger simulation",
+   "prompt": "photoreal cinematic 9:16 view of two black holes spiraling together in dark space, spacetime distortion around them, cold blue documentary grade, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "In 2015, LIGO directly caught two black holes merging. Hundreds followed.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "2015",
+     "col": "cy",
+     "at": "2015",
+     "count": 4
+    },
+    {
+     "t": "toast",
+     "title": "First direct detection",
+     "sub": "LIGO",
+     "icon": "wave",
+     "at": "LIGO"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "LIGO interferometer",
+   "prompt": "photoreal cinematic 9:16 macro shot of a precision laser interferometer mirror suspended in a clean vacuum chamber, cold blue practical light, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The stretch here is under 1 part in 1020 — LIGO resolves 1 part in 5×1022.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Spacetime strain",
+       "1 part in",
+       "1020",
+       "cy"
+      ],
+      [
+       "LIGO resolution",
+       "1 part in",
+       "5×1022",
+       "ok"
+      ]
+     ],
+     "stagger": 0.4,
+     "at": "1020"
+    }
+   ]
+  },
+  {
+   "key": "b7",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Waves pass through matter untouched: 100 pulsars now track the hum of giant black hole mergers.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "100 pulsars listen through anything",
+      "keyword": "through anything",
+      "note": "waves ignore matter",
+      "style": "underline"
+     },
+     "accent": "blue",
+     "at": "pulsars"
+    },
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "merging black holes",
+       "pulsar timing"
+      ],
+      [
+       "timing shifts",
+       "the hum"
+      ]
+     ],
+     "at": "hum"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Not just ripples — a new sense for the universe. Follow for more.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "AGENT SHIFT",
+      "kicker": "not just ripples",
+      "rule": "show"
+     },
+     "accent": "blue",
+     "at": "universe"
+    },
+    {
+     "t": "kinetic",
+     "text": "follow for *more*",
+     "at": "Follow"
+    }
+   ],
+   "prompt": "graphic ground"
+  }
+ ],
+ "style_map": {
+  "class": "myth_fact",
+  "why": "topic fit",
+  "lemo_style": [
+   "Caption News",
+   "Swiss Motion Graphics",
+   "Visual Investigation"
+  ]
+ },
+ "_facts": {
+  "title": "Gravitational wave",
+  "url": "https://en.wikipedia.org/wiki/Gravitational_wave",
+  "text": "Gravitational waves are waves of spacetime curvature produced by the relative motion of gravitating masses and which propagate away at the speed of light. They were first predicted by Albert Einstein as a consequence of his general theory of relativity, appearing as \"ripples in spacetime curvature\". Hundreds of these gravitational waves have since then been observed, first indirectly using binary-pulsar observations and, since 2015, directly through dedicated observatories. Gravitational waves transport energy as gravitational radiation, a form of radiant energy similar to electromagnetic radiation. Newton's law of universal gravitation, part of classical mechanics, does not provide for their existence, instead asserting that gravity has instantaneous effect everywhere. Gravitational waves therefore stand as an important relativistic phenomenon that is absent from Newtonian physics. Gravitational-wave astronomy has the advantage that, unlike electromagnetic radiation, gravitational waves are not affected by intervening matter. Sources that can be studied this way include binary star systems composed of white dwarfs, neutron stars, and black holes; events such as supernovae; and the formation of the early universe shortly after the Big Bang. The first indirect evidence for the existence of gravitational waves came in 1974 from the observed orbital decay of the Hulse–Taylor binary pulsar, which matched the decay predicted by general relativity for energy lost to gravitational radiation. In 1993, Russell Alan Hulse and Joseph Hooton Taylor Jr. received the Nobel Prize in Physics for this discovery. The first direct observation of gravitational waves was made in September 2015, when a signal generated by the merger of two black holes was received by the LIGO gravitational wave detectors in Livingston, Louisiana, and in Hanford, Washington. The 2017 Nobel Prize in Physics was subsequently awarded to Rainer Weiss, Kip Thorne and Barry Barish for their role in the direct detection of gravitational waves. == Introduction ==\n\nIn Albert Einstein's general theory of relativity, gravity is treated as a phenomenon resulting from the curvature of spacetime, which is caused by the presence of mass (see: Stress–energy tensor). If the masses move, the curvature of spacetime changes; and if the motion is not spherically symmetric, it can emit propagating curvature disturbances—i.e., gravitational waves—which radiate outward at the speed of light. A passing gravitational wave alters the relative separation of freely falling masses, reflecting a disturbance in local spacetime curvature. The separation varies in a pattern that mirrors the waveform of the disturbance. The magnitude of this effect is inversely proportional to the distance (not distance squared) from the source. Inspiraling binary neutron stars are predicted to be a powerful source of gravitational waves as they coalesce, due to the very large acceleration of their masses as they orbit close to one another. However, due to the astronomical distances to these sources, the effects when measured on Earth are predicted to be very small, having strains of less than 1 part in 1020. Scientists demonstrate the existence of these waves with highly-sensitive detectors at multiple observation sites. As of 2012, the LIGO and Virgo observatories were the most sensitive detectors, operating at resolutions of about one part in 5×1022. The Japanese detector KAGRA was completed in 2019; its first joint detection with LIGO and VIRGO was reported in 2021. Another European ground-based detector, the Einstein Telescope, is under development. A space-based observatory, the Laser Interferometer Space Antenna (LISA), is also being developed by the European Space Agency. Gravitational waves do not strongly interact with matter in the way that electromagnetic radiation does. This allows for the observation of events involving exotic objects in the distant universe that cannot be observed with more traditional means such as optical telescopes or radio telescopes; accordingly, gravitational wave astronomy gives new insights into the workings of the universe. In particular, gravitational waves could be of interest to cosmologists as they offer a possible way of observing the very early universe. This is not possible with conventional astronomy, since before recombination the universe was opaque to electromagnetic radiation. Precise measurements of gravitational waves will also allow scientists to test more thoroughly the general theory of relativity. In principle, gravitational waves can exist at any frequency. Very low frequency waves can be detected using pulsar timing arrays. In this technique, the timing of approximately 100 pulsars spread widely across the Milky Way is monitored over the course of years. Detectable changes in the arrival time of their signals can result from passing gravitational waves generated by merging supermassive black holes (SMBH) with wavelengths measured in light-years. These timing changes can be used to locate the source of the waves. Using this technique, astronomers have discovered the 'hum' of various SMBH mergers occurring in the universe. Stephen Hawking and Werner Israel list different frequency bands for gravitational waves that could plausibly be detected, ranging from 10−7 Hz up to 1011 Hz. == Speed of gravity ==\n\nThe speed of gravitational waves in the general theory of relativity is equal to the speed of light in vacuum, c. Within the theory of special relativity, the constant c is not only about light; instead it is the highest possible speed for any interaction in nature. Formally, c is a conversion factor for changing the unit of time to the unit of space.\n\nSOURCE britannica.com (https://www.britannica.com/list/6-amazing-facts-about-gravitational-waves-and-ligo):\nAsk the Chatbot Games & Quizzes History & Society Science & Tech Biographies Animals & Nature Geography & Travel Arts & Culture ProCon Money Videos * Gravitational Waves Are Ripples in Space-Time * Gravitational Waves Come from Really Heavy Objects * The Effect of Gravitational Waves Is Very, Very Small * Measuring Gravitational Waves Is Tricky * LIGO Is Very Sensitive * Gravitational-Wave Astronomy Can See an Entirely New Side of the Universe References & Edit History Related Topics Images ![Laser Interferometer Gravitational-Wave Observatory (LIGO)](https://cdn.britannica.com/20/188520-050-B6F32AB7/Laser-Interferometer-Gravitational-Wave-Observatory-Hanford-Washington-installations.jpg) Quick Facts Related Topics: : gravitational wave See all related content Adding us as a **Preferred Source** tells Google you trust our content, so our articles show up more often in your Google Search, Discover feed, and AI Overviews. External Websites ![Laser Interferometer Gravitational-Wave Observatory (LIGO)](https://cdn.britannica.com/20/188520-050-B6F32AB7/Laser-Interferometer-Gravitational-Wave-Observatory-Hanford-Washington-installations.jpg) Laser Interferometer Gravitational-Wave Observatory (LIGO) The Laser Interferometer Gravitational-Wave Observatory (LIGO) near Hanford, Washington, U.S. There are two LIGO installations; the other is near Livingston, Louisiana. # 6 Amazing Facts About Gravitational Waves and LIGO Catch a gravitational wave or two. Written by Erik Gregersen Erik Gregersen is a senior editor at Encyclopaedia Britannica, specializing in the physical sciences and technology. Before joining Britannica in 2007, he worked at the University of Chicago Press on the... Erik Gregersen Fact-checked by Britannica Editors Encyclopaedia Britannica's editors oversee subject areas in which they have extensive knowledge, whether from years of experience gained by working on that content or via study for an advanced degree.... Britannica Editors Nearly everything we know about the universe comes from electromagnetic radiation—that is, light. Astronomy began with visible light and then expanded to the rest of the electromagnetic spectrum. By using the spectrum, from \n\nSOURCE svs.gsfc.nasa.gov (https://svs.gsfc.nasa.gov/14358):\n# Hubble Science: Gravitational Waves: Ripples In Space-Time * **Released** Thursday, August 17, 2023 * ID: 14358 * + Produced by: + James Leigh View full credits --- Gravitational waves are invisible ripples in the fabric of space-time. They are caused by some of the most violent and energetic events in the universe. These include colliding black holes, collapsing stellar cores, merging neutron stars or white dwarf stars, the wobble of neutron stars that are not perfect spheres and possibly even the remnants of gravitational radiation created by the birth of the universe. In this video, Dr. Padi Boyd explains gravitational waves and how important Hubble is to exploring the mysteries of the universe. For more information, visit <https://nasa.gov/hubble>. Credit: NASA's Goddard Space Flight Center Producer & Director: James Leigh Editor: Lucy Lund Director of Photography: James Ball Additional Editing & Photography: Matthew Duncan Executive Producers: James Leigh & Matthew Duncan Production & Post: Origin Films Video Credit: Hubble Space Telescope Animation Credit: M. Kornmesser (ESA/Hubble) Hubble Space Telescope Animation Credit: ESA/Hubble (M. Kornmesser & L. L. Christensen), A. Fujii, Robert Gendler, Digitized Sky Survey 2, Panther Observatory, Steve Cannistra, Michael Pierce, Robert Berrington (Indiana University), Nigel Sharp, Mark Hanna (NOAO)/WIYN/NSF. LIGO Interferometer Illustration Credit: LIGO/T. Pyle Gravitational Wave Animation Credit: NASA GSFC Conceptual Image Lab Kilonova Animation Credit: NASA GSFC Conceptual Image Lab Ripples In Space Time Animation Credit: LIGO/T. Pyle LIGO Hanford Aerial & Interior Credit: Caltech/MIT/LIGO Lab Music Credit: “Alpha and Omega” by Laurent Parisi [SACEM] via KTSA Publishing [SACEM] and Universal Production Music “Cosmic Call” by Immersive Music (Via Shutterstock Music) * ###### Movies * [14358\\_WAVES\\_WIDE\\_MP4.mp4 (1920x1080) [326.9 MB]](/vis/a010000/a014300/a014358/14358_WAVES_WIDE_MP4.mp4) * [14358\\_WAVES\\_WIDE\\_MP4.webm (1920x1080) [23.0 MB]](/vis/a010000/a014300/a014358/14358_WAVES_WIDE_MP4.webm) * ###### Captions * [14358\\_WAVES\\_WIDE\\_CAP.en\\_US.srt [3.8 KB]](/vis/a010000/a014300/a014358/14358_WAVES_WIDE_C\n\nSOURCE nationalgeographic.com (https://www.nationalgeographic.com/science/article/what-are-gravitational-waves-ligo-astronomy-science):\nGravitational Waves 101What are gravitational waves and how are they detected? These ripples in space-time, sometimes caused by neutron stars colliding, were recently recorded in the groundbreaking LIGO-Virgo observation. # What Are Gravitational Waves, and Why Do They Matter? Find out all about these elusive ripples in space-time and why the latest detection has astronomers celebrating. ByNadia Drake and Michael Greshko Published October 16, 2017 •9 min read On October 16, scientists announced the first observation of its kind: the detection of gravitational waves, wrinkles in spacetime predicted by Einstein more than a century ago, thrown off by two colliding neutron stars. The stellar crash, which took place 130 million years ago in the constellation Hydra, marks the first time that astronomers have matched gravitational waves with a visible source—showcasing this new era in astronomy. The discovery is the latest success for one of the most ambitious (and expensive) physics experiments in decades: The Laser Interferometer Gravitational-Wave Observatory, or LIGO for short. NG Staff. Source: LIGO-Virgo collaboration “This is the first time that the cosmos has provided us what I would call a ‘talking movie,’” David Reitze, the executive director of the LIGO Laboratory, said today during an event at the National Press Club in Washington, D.C. “In this case, the ‘audio’ of the soundtrack comes from the [gravitational wave] chirp of the neutron stars as they are inspiraling and colliding; the video is the light that we saw.” It’s been a big few weeks for gravitational waves. Astronomers only recently unveiled the fourth confirmed detection, spawned by a set of colliding black holes. And on October 3, LIGO founders Rai Weiss, Kip Thorne, and Barry Barish won the 2017 Nobel Prize in physics for their work to detect gravitational waves. “For as long as 40 years, people have been thinking about this, trying to make a detection, sometimes failing in the early days, and then slowly but surely getting the technology together to be able to do it,” Weiss said. “It’s very, very exciting that it worked out in the end that we are actually detecting things and actually adding t\n\nSOURCE science.nasa.gov (https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-gravity-waves):\n![NASA Logo](https://www.nasa.gov) ![NASA Logo](https://www.nasa.gov) ## Suggested Searches * Artemis * ISS * Roman * Webb * Quesst * Moon Base * View All Topics A-Z * Home * Missions * Humans in Space * Earth * The Solar System * The Universe * Science * Aeronautics * Technology * Learning Resources * About NASA * Español --- * News & Events * Multimedia * NASA+ ### Highlights ![NASA’s Twin ESCAPADE Spacecraft to Slingshot Past Earth on Way to Mars 5 min read ### NASA’s Twin ESCAPADE Spacecraft to Slingshot Past Earth on Way to Mars article7 days ago](https://science.nasa.gov/blogs/escapade/2026/11/02/nasas-twin-escapade-spacecraft-to-slingshot-past-earth-on-way-to-mars/)![NASA Announces X-70 Experimental Aircraft to Advance Flight Research 2 min read ### NASA Announces X-70 Experimental Aircraft to Advance Flight Research article4 days ago](https://www.nasa.gov/news-release/nasa-announces-x-70-experimental-aircraft-to-advance-flight-research/)![What’s Up: November 2026 Skywatching Tips from NASA 4 min read ### What’s Up: November 2026 Skywatching Tips from NASA article7 days ago](https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/) ### Missions * Search All NASA Missions * A to Z List of Missions * Upcoming Launches and Landings * Spaceships and Rockets * Communicating with Missions * Artemis * James Webb Space Telescope * Hubble Space Telescope * International Space Station * OSIRIS-REx ### Humans in Space * Why Go to Space * Astronauts * Commercial Space * Destinations * Spaceships and Rockets * Living in Space ### Earth * Explore Earth Science * Climate Change * Earth, Our Planet * Earth Science in Action * Earth Multimedia * Earth Data * Earth Science Researchers ### The Solar System * The Sun * Mercury * Venus * Earth * The Moon * Mars * Jupiter * Saturn * Uranus * Neptune * Pluto & Dwarf Planets * Asteroids, Comets & Meteors * The Kuiper Belt * The Oort Cloud * Skywatching ### The Universe * Exoplanets * The Search for Life in the Universe * Stars * Galaxies * Black Holes * The Big Bang * Dark Matter * Dark Energy ### Science * Earth Science * Planetary Science * Astrophysics & Space Science * The Sun & He\n\nSOURCE quantamagazine.org (https://www.quantamagazine.org/gravitational-waves-discovered-at-long-last-20160211):\nAbout Quanta *Get the latest news delivered to your inbox.* Follow Quanta *An editorially independent publication supported by the Simons Foundation.* Type search term(s) and press enter Home Gravitational Waves Discovered at Long Last Read Later ###### Share Copied! * Comments * Read Later astrophysics # Gravitational Waves Discovered at Long Last *By* Natalie Wolchover *February 11, 2016* Ripples in space-time have been detected a century after Einstein predicted them, launching a new era in astronomy. Read Later Add as Preferred Source (opens in a new tab) Click to tell Google to prioritize Quanta and see more of the best coverage of science and math in your search and AI results. As gravitational waves sweep past Earth, they alternately stretch and compress the arms of Advanced LIGO’s twin detectors, located in Hanford, Wash. (pictured), and Livingston, La. LIGO Ripples in space-time caused by the violent mergers of black holes have been detected, 100 years after these “gravitational waves” were predicted by Albert Einstein’s theory of general relativity and half a century after physicists set out to look for them. The landmark discovery was reported today by the Advanced Laser Interferometer Gravitational-Wave Observatory (Advanced LIGO) team, confirming months of rumors that have surrounded the group’s analysis of its first round of data. Astrophysicists say the detection of gravitational waves opens up a new window on the universe, revealing faraway events that can’t be seen by optical telescopes, but whose faint tremors can be felt, even heard, across the cosmos. “We have detected gravitational waves. We did it!” announced David Reitze, executive director of the 1,000-member team, at a National Science Foundation press conference today in Washington, D.C. Gravitational waves are perhaps the most elusive prediction of Einstein’s theory, one that he and his contemporaries debated for decades. According to his theory, space and time form a stretchy fabric that bends under heavy objects, and to feel gravity is to fall along the fabric’s curves. But can the “space-time” fabric ripple like the skin of a drum? Einstein flip-flopped, confused as to what his equa",
+  "extra_sources": [
+   "https://www.britannica.com/list/6-amazing-facts-about-gravitational-waves-and-ligo",
+   "https://svs.gsfc.nasa.gov/14358",
+   "https://www.nationalgeographic.com/science/article/what-are-gravitational-waves-ligo-astronomy-science",
+   "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-gravity-waves",
+   "https://www.quantamagazine.org/gravitational-waves-discovered-at-long-last-20160211"
+  ]
+ },
+ "_writer": "opencode"
+}

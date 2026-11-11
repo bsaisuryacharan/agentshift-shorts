@@ -1,5 +1,5 @@
 {
- "current": "inside-nasa-moon-rocket-anatomy-a3",
+ "current": "gravitational-waves-not-just-ripples-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -642,6 +642,25 @@
     "wanted": "public",
     "publish_at": null
    }
+  },
+  "gravitational-waves-not-just-ripples-a3": {
+   "title": "The Truth About Gravitational Waves: Not Just Ripples",
+   "base": "gravitational-waves-not-just",
+   "status": "draft",
+   "scores": {
+    "hook": 6,
+    "visual_quality": 4,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 5,
+    "hierarchy": 7,
+    "consistency": 6,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "43021929620"
   }
  }
 }
