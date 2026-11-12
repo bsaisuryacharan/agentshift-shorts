@@ -1,5 +1,5 @@
 {
- "current": "gravitational-waves-not-just-ripples-a3",
+ "current": "permafrost-depth-scale-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -661,6 +661,25 @@
     "safe_zone": 10
    },
    "run_id": "43021929620"
+  },
+  "permafrost-depth-scale-a3": {
+   "title": "How Deep is Permafrost? Frozen for 700,000 Years",
+   "base": "permafrost-depth-scale-a3",
+   "status": "draft",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 7,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 3,
+    "polish": 7,
+    "hierarchy": 6,
+    "consistency": 5,
+    "payoff": 5,
+    "safe_zone": 10
+   },
+   "run_id": "43185912075"
   }
  }
 }

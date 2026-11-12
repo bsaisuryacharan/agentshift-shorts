@@ -1,0 +1,226 @@
+{
+ "id": "permafrost-depth-scale-a3",
+ "title": "How Deep is Permafrost? Frozen for 700,000 Years",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "SCALE",
+ "format": "scale",
+ "theme": "earth",
+ "look": "editorial-paper",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Permafrost - Wikipedia, https://en.wikipedia.org/wiki/Permafrost",
+  "b1": "Permafrost - Wikipedia, https://en.wikipedia.org/wiki/Permafrost",
+  "b2": "Permafrost - Wikipedia, https://en.wikipedia.org/wiki/Permafrost",
+  "b3": "Permafrost - Wikipedia, https://en.wikipedia.org/wiki/Permafrost",
+  "b4": "Permafrost - Wikipedia, https://en.wikipedia.org/wiki/Permafrost",
+  "b5": "Permafrost - Wikipedia, https://en.wikipedia.org/wiki/Permafrost",
+  "b6": "Permafrost - Wikipedia, https://en.wikipedia.org/wiki/Permafrost",
+  "outro": "Permafrost - Wikipedia, https://en.wikipedia.org/wiki/Permafrost",
+  "wiki": "https://en.wikipedia.org/wiki/Permafrost",
+  "ref1": "https://www.nationalgeographic.com/history/history-magazine/article/deadly-historic-ambush-preserved-in-alaskan-permafrost",
+  "ref2": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7567650"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "footage": "arctic tundra aerial",
+   "motion": "frost-sequence-camera-orbit",
+   "photo": "permafrost tundra",
+   "prompt": "Photoreal cinematic 9:16 aerial shot of vast Arctic tundra in winter, patterned frozen ground with ice-wedge polygons stretching to the horizon, cold blue overcast light, documentary drone photography, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "The oldest permafrost has been continuously frozen for around 700,000 years. How deep does it go?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how big?",
+     "at": "deep"
+    },
+    {
+     "t": "title",
+     "html": "How deep is *permafrost*?",
+     "at": "permafrost"
+    }
+   ],
+   "sfx": [
+    [
+     "deep",
+     "whoosh",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "say": "Permafrost: ground held below 0 degrees Celsius for two years or more.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "below 0 °C",
+     "col": "cy",
+     "at": "below"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "img": "s1.jpg",
+   "footage": "frozen ground cliff Siberia",
+   "photo": "Siberia permafrost",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a frozen riverbank cut exposing layers of dark frozen soil and clear ice veins, Siberian landscape, pale cold daylight, documentary field photography, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The deepest is greater than 1,500 metres — 4,900 feet of frozen ground.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "1,500 m",
+     "col": "am",
+     "at": "1,500"
+    }
+   ],
+   "sfx": [
+    [
+     "1,500",
+     "impact",
+     0.7
+    ]
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s2.jpg",
+   "photo": "tundra soil core",
+   "prompt": "Photoreal cinematic 9:16 macro shot of a frozen soil core sample in a metal tray, layered dark earth and ice crystals, field station table, cool natural light, documentary science photography, no people, no text",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "Up top sits an active layer — as of 2018, its average thickness is about 145 centimetres.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "active layer ~145 cm",
+      "keyword": "layer",
+      "note": "thaws every year",
+      "style": "underline"
+     },
+     "at": "layer",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "say": "Around 15% of the Northern Hemisphere's exposed land is underlain by permafrost — about 18 million square kilometres.",
+   "hud": [
+    {
+     "t": "ring",
+     "pct": 15,
+     "label": "N. Hemisphere land",
+     "col": "ok",
+     "at": "15%"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "say": "And as it thaws, nearly 70% of infrastructure built on it is at risk by 2050.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 70,
+      "suffix": "%",
+      "accent": "blue"
+     },
+     "at": "70%",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "70%",
+     "impact",
+     0.7
+    ]
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "say": "Plus 13,000 to 20,000 contaminated waste sites wait in the thawing ground.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "toxic sites",
+       "13,000–20,000",
+       "sites",
+       "ir"
+      ]
+     ],
+     "stagger": 0.3,
+     "at": "13,000"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "say": "Deep, old, and thawing. Follow for more scale.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Follow for more *scale*",
+      "accent": "green"
+     },
+     "at": "Follow",
+     "dur": 2.5
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "earth_hazard",
+  "why": "topic fit",
+  "lemo_style": [
+   "Satellite Briefing",
+   "Risograph Print",
+   "Chinese Ink Wash"
+  ]
+ },
+ "_facts": {
+  "title": "Permafrost",
+  "url": "https://en.wikipedia.org/wiki/Permafrost",
+  "text": "Permafrost (from  perma- 'permanent' and  frost) is soil or underwater sediment which continuously remains below 0 °C (32 °F) for two years or more; the oldest permafrost has been continuously frozen for around 700,000 years. Whilst the shallowest permafrost has a vertical extent of below a meter (3 ft), the deepest is greater than 1,500 m (4,900 ft). Similarly, the area of individual permafrost zones may be limited to narrow mountain summits or extend across vast Arctic regions. The ground beneath glaciers and ice sheets is not usually defined as permafrost, so on land, permafrost is generally located beneath a so-called active layer of soil which freezes and thaws depending on the season. Around 15% of the exposed land surface of the Northern Hemisphere, and 11% of the global land surface, is underlain by permafrost, covering a total area of around 18 million km2 (6.9 million sq mi). This includes large areas of Alaska, Canada, Greenland, and Siberia. It is also located in high mountain regions, with the Tibetan Plateau being a prominent example. Only a minority of permafrost exists in the Southern Hemisphere, where it is consigned to mountain slopes like in the Andes of Patagonia, the Southern Alps of New Zealand, or the highest mountains of Antarctica. Permafrost contains large amounts of dead biomass that has accumulated throughout millennia without having had the chance to fully decompose and release its carbon, making tundra soil a carbon sink. As global warming heats the ecosystem, frozen soil thaws and becomes warm enough for decomposition to start anew, accelerating the permafrost carbon cycle. Depending on conditions at the time of thaw, decomposition can release either carbon dioxide or methane, and these greenhouse gas emissions act as a climate change feedback. The emissions from thawing permafrost will have a sufficient impact on the climate to impact global carbon budgets. It is difficult to accurately predict how much greenhouse gases the permafrost releases because the different thaw processes are still uncertain. There is widespread agreement that the emissions will be smaller than human-caused emissions and are not large enough to result in runaway warming. Instead, the annual permafrost emissions are likely comparable with global emissions from deforestation, or to annual emissions of large countries such as Russia, the United States or China. Apart from its climate impact, permafrost thaw brings more risks. Formerly frozen ground often contains enough ice that when it thaws, hydraulic saturation is suddenly exceeded, so the ground shifts substantially and may even collapse outright. Many buildings and other infrastructure were built on permafrost when it was frozen and stable, and so are vulnerable to collapse if it thaws. Estimates suggest nearly 70% of such infrastructure is at risk by 2050, and that the associated costs could rise to tens of billions of dollars in the second half of the century. Furthermore, between 13,000 and 20,000 sites contaminated with toxic waste are present in the permafrost, as well as natural mercury deposits, which are all liable to leak and pollute the environment as the warming progresses. Lastly, concerns have been raised about the potential for pathogenic microorganisms surviving the thaw and contributing to future pandemics. However, this is considered unlikely, and a scientific review on the subject describes the risks as \"generally low\". == Classification and extent ==\n\nPermafrost is soil, rock or sediment that is frozen for more than two consecutive years. In practice, this means that permafrost occurs at a mean annual temperature of 0 °C (32.0 °F) or below. In the coldest regions, the depth of continuous permafrost can exceed 1,400 m (4,600 ft). It typically exists beneath the so-called active layer, which freezes and thaws annually, and so can support plant growth, as the roots can only take hold in the soil that's thawed. Active layer thickness is measured during its maximum extent at the end of summer: as of 2018, the average thickness in the Northern Hemisphere is ~145 centimetres (4.76 ft), but there are significant regional differences. Northeastern Siberia, Alaska and Greenland have the most solid permafrost with the lowest extent of active layer (less than 50 centimetres (1.6 ft) on average, and sometimes only 30 centimetres (0.98 ft)), while southern Norway and the Mongolian Plateau are the only areas where the average active layer is deeper than 600 centimetres (20 ft), with the record of 10 metres (33 ft). The border between active layer and permafrost itself is sometimes called permafrost table. Around 15% of Northern Hemisphere land that is not completely covered by ice is directly underlain by permafrost; 22% is defined as part of a permafrost zone or region. This is because only slightly more than half of this area is defined as a continuous permafrost zone, where 90%–100% of the land is underlain by permafrost. Around 20% is instead defined as discontinuous permafrost, where the coverage is between 50% and 90%. Finally, the remaining <30% of permafrost regions consists of areas with 10%–50% coverage, which are defined as sporadic permafrost zones, and some areas that have isolated patches of permafrost covering 10% or less of their area. Most of this area is found in Siberia, northern Canada, Alaska and Greenland. Beneath the active layer annual temperature swings of permafrost become smaller with depth. The greatest depth of permafrost occurs right before the point where geothermal heat maintains a temperature above freezing. Above that bottom limit there may be permafrost with a consistent annual temperature—\"isothermal permafrost\". === Continuity of coverage ===\nPermafrost typically forms in any climate where the mean annual air temperature is lower than the freezing point of water. Exceptions are found in humid boreal forests, such as in Northern Scandinavia and the North-Eastern part of European Russia west of the Urals, where snow acts as an insulating blanket. Glaciated areas may also be exceptions.\n\nSOURCE nationalgeographic.com (https://www.nationalgeographic.com/history/history-magazine/article/deadly-historic-ambush-preserved-in-alaskan-permafrost):\n* HISTORY MAGAZINE # Deadly historic ambush preserved in Alaskan permafrost Frozen earth protected evidence of an attack some 400 years ago at Nunalleq, but warming temperatures threaten Alaskan sites still holding its buried history. History at riskMany of the artifacts recovered from the Nunalleq site are made from antler, wood, and ivory, materials that are preserved under the tundra but decay quickly after exposure. Kieran Dodds/National Geographic Image Collection ByEditors of National Geographic Published April 21, 2022 •13 min read The archaeological site of Nunalleq on the southwest coast of Alaska pre­serves a fateful moment, frozen in time. The muddy square of earth is full of everyday things that the In­digenous Yup’ik people used to survive and to celebrate life here, all left just as they lay when a deadly attack came almost four centuries ago. As is often the case in archaeology, a tragedy of long ago is a boon to modern science. Ar­chaeologists have recovered 100,000 artifacts at Nunalleq, from typical eating utensils to ex­traordinary things such as wooden ritual masks, ivory tattoo needles, pieces of finely calibrated sea kayaks, and a belt of caribou teeth. Beyond the sheer quantity and variety, the objects are astonishingly well preserved, having been frozen in the ground since about 1660. The ground’s frigid state even preserved rare organic material such as grass ropes, salmon­ berry seeds, and grass strands woven into baskets. “This grass was cut when Shake­speare walked the Earth,” observed lead archaeol­ogist Rick Knecht, of the University of Aberdeen in Scotland. Race against timePhotographed at Nunalleq in Alaska, archaeologists work quickly and carefully to excavate sites that are threatened by warming temperatures and rising levels of the Bering Sea. Erika Larsen/National Geographic Image Collection ## Land of the Yup’ik Archaeologists believe the Yup’ik people’s an­cestors originated in eastern Siberia and Asia. They first crossed the Bering Sea to North America around 10,000 years ago and gradually moved into the coastal areas of western Alaska. Around A.D. 1400 communities moved up the coastal rivers, including the Yukon, to form s\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC7567650):\n# Future threat from the past Amr El-Sayed, Mohamed Kamel Environmental Science and Pollution Research International · 2020-10-17 · 28(2):1287-1291 · DOI: 10.1007/s11356-020-11234-9 · PMID: 33068243 · PMCID: PMC7567650 ## Abstract Global warming is one of the major challenges facing humanity. The increase in the Earth’s temperature and thawing of ancient ice release viable viruses, bacteria, fungi, and other microorganisms which were trapped for thousands and millions of years. Such microorganisms may belong to novel microbial species, unknown genotypes of present pathogens, already eradicated pathogens, or even known pathogens that gained extremely robust characteristics due to their subjection to long-term stress. These worries drew more attention following the death of a child by ancient anthrax spores in Siberian in 2016 and the reconstruction of smallpox and Spanish flu genomes from ancient frozen biological samples. The present review illustrates some examples of recently recovered pathogens after being buried for millions of years, including some identified viable ancient viruses, bacteria and even other forms of life. While some pathogens could be revived, genomes of other ancient pathogens which could not be revived were re-constructed. The present study aims to highlight and alarm the hidden aspect of global warming on the international public health, which represents future threats from the past for humanity. ## Keywords Emerging diseases, Global warming, Mollivirus sibericum, Pithovirus sibericum ## Introduction With the continuous evolution and emergence of new unknown pathogens in the last decades, such as SARS, MERS, Ebola, and recently SARS2 (Covid-19), it is clear that international public health faces severe challenges. However, the re-emergence of serious infectious diseases which were previously partially or completely eradicated represents a similar public health hazard. One of the main reasons for the re-occurrence of eradicated diseases is attributed to the global warming. Among the most underestimated harmful effects of the global warming is the melting of the ice layer and the release of buried materials since decades including radioacti",
+  "extra_sources": [
+   "https://www.nationalgeographic.com/history/history-magazine/article/deadly-historic-ambush-preserved-in-alaskan-permafrost",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC7567650"
+  ]
+ },
+ "_writer": "opencode"
+}
