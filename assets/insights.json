@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-12T11:30:33+00:00",
+ "generated_at": "2026-11-13T11:15:51+00:00",
  "channel": {
-  "period": "2026-10-13..2026-11-11",
-  "views": 10779.0,
-  "avg_view_seconds": 28.0,
-  "avg_view_pct": 67.91,
-  "net_subscribers": 19.0,
-  "likes": 231.0,
+  "period": "2026-10-14..2026-11-12",
+  "views": 10876.0,
+  "avg_view_seconds": 30.0,
+  "avg_view_pct": 72.24,
+  "net_subscribers": 17.0,
+  "likes": 239.0,
   "shares": 9.0,
   "caveat": "all Shorts on the channel, last 30 days"
  },
@@ -14,15 +14,15 @@
   "How the First Combat Submarine Actually Worked",
   "When Cameras Capture Astonishing Animal Encounters",
   "10 Unexpected Animal Encounters with Incredible Endings 😱",
-  "5 Animals That Can Survive Without Sleep 😱",
   "Animal Encounters That Seem Almost Impossible",
+  "5 Animals That Can Survive Without Sleep 😱",
   "Astronomical events in November 2026😲",
   "Most Unexpected Animal Moments Caught on Camera.",
-  "A New 'Atomic Clock' Was INSTALLED Above INDIA! ISRO's NVS 03 Satellite Launch",
   "This Boy Tried to Explain How the Fourth Dimension Works 🌀🤯",
   "November Moon Meet-up Events 💀",
   "Northern Taurids is here🔥",
-  "Right Now the Moon Is Under One Percent Lit"
+  "A new treasure map reveals where Earth's lost prehistoric life may be hiding",
+  "NASA’s Perseverance confirms a key ingredient for life hidden in ancient Mars rocks"
  ],
  "learned": {
   "shorts_scored": 16,
@@ -69,68 +69,68 @@
  "stage_averages": {
   "hook": 7.2,
   "story": 6.7,
-  "visuals": 6.0,
+  "visuals": 5.9,
   "polish": 6.0,
-  "policy": 9.4
+  "policy": 9.3
  },
  "weakest_stage": "visuals",
  "region": "IN",
  "trend_signals_total": 62,
- "trend_signals_on_niche": 43,
+ "trend_signals_on_niche": 42,
  "niche_winners": [
   {
    "title": "How the First Combat Submarine Actually Worked #engineering #history #submarine",
-   "views": 31296738,
+   "views": 32460723,
    "url": "https://www.youtube.com/watch?v=rXgv9bxT8gw"
   },
   {
    "title": "When Cameras Capture Astonishing Animal Encounters",
-   "views": 27142903,
+   "views": 27942261,
    "url": "https://www.youtube.com/watch?v=vvnUUFqwsoU"
   },
   {
    "title": "Animal Encounters That Seem Almost Impossible",
-   "views": 4876705,
+   "views": 5942554,
    "url": "https://www.youtube.com/watch?v=xM3UqrvLeYI"
   },
   {
    "title": "5 Animals That Can Survive Without Sleep 😱  #animalfacts #sleepdeprivation #animals",
-   "views": 5033519,
+   "views": 5073450,
    "url": "https://www.youtube.com/watch?v=j7MMYEKv9g4"
   },
   {
-   "title": "November Moon Meet-up Events 💀 #space #earth #shorts",
-   "views": 2256465,
-   "url": "https://www.youtube.com/watch?v=jbSgKewim3U"
-  },
-  {
-   "title": "The Optical Illusion You Can't Unsee",
-   "views": 7282220,
-   "url": "https://www.youtube.com/watch?v=LdZxRlyM30o"
-  },
-  {
    "title": "10 Unexpected Animal Encounters with Incredible Endings 😱",
-   "views": 6381784,
+   "views": 6549455,
    "url": "https://www.youtube.com/watch?v=bnacOCA1AUA"
   },
   {
+   "title": "November Moon Meet-up Events 💀 #space #earth #shorts",
+   "views": 2265710,
+   "url": "https://www.youtube.com/watch?v=jbSgKewim3U"
+  },
+  {
+   "title": "The Dark Side of the Human Mind!😨",
+   "views": 1327875,
+   "url": "https://www.youtube.com/watch?v=KLljCfSJWfo"
+  },
+  {
    "title": "Top 15 Scary Birds Sounds #shorts #birds #sound",
-   "views": 3407932,
+   "views": 3414707,
    "url": "https://www.youtube.com/watch?v=lFgER4dPINo"
   }
  ],
  "news": [
+  "A new treasure map reveals where Earth's lost prehistoric life may be hiding",
+  "NASA’s Perseverance confirms a key ingredient for life hidden in ancient Mars rocks",
+  "Crows can make decisions twice as fast as humans, scientists discover",
   "Where are all the males? Ancient human fossils reveal a startling mystery",
+  "A butterfly that fooled scientists for 200 years finally reveals its secrets",
+  "AI-powered bionic eye breakthrough could help the blind see again",
   "Earth's fiery birth may have created hundreds of oceans' worth of water",
   "NASA reveals Earth's ozone hole has grown to a size not seen in a decade",
-  "A massive new simulation reveals how the universe emerged from darkness",
-  "Scientists discover a giant 66-pound rodent that lived 34 million years ago",
-  "Why heart attacks can still happen even when bad cholesterol is low",
-  "The mystery of how hair knows where to grow may finally be solved",
-  "NASA’s Parker Solar Probe discovers a hidden pattern in the Sun’s chaotic magnetic fields",
-  "APOD: 2026 November 12 – Moon, Venus and Spica Meet",
-  "Scotland’s Flow Country",
-  "Curiosity Blog, Sols 5063-5069 Rocks and Chips",
-  "APOD: 2026 November 11 – NGC 4449: Small Galaxy, Big Impact"
+  "APOD: 2026 November 13 – NGC 206 and the Star Clouds of Andromeda",
+  "A Global Rebound for Mangroves",
+  "I Am Artemis Katie Spicer",
+  "Heart in the Sky at NASA Kennedy"
  ]
 }

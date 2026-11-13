@@ -1,130 +1,129 @@
 {
- "updated": "2026-11-12T11:30+00:00",
+ "updated": "2026-11-13T11:15+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 17,
+  "days_left": 16,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 11939,
-  "gained": 6158,
-  "pct": 0.62,
-  "pace_per_day": 480,
-  "needed_per_day": 58461,
-  "projected": 14318,
+  "channel_views": 12580,
+  "gained": 6799,
+  "pct": 0.68,
+  "pace_per_day": 390,
+  "needed_per_day": 62075,
+  "projected": 13042,
   "on_track": false,
   "subs": 17
  },
  "shorts_per_day": 2,
  "topic_classes": {
-  "general": {
+  "myth_fact": {
    "n": 6,
-   "mean_log_views": 2.0,
-   "boost": -0.45
+   "mean_log_views": 2.24,
+   "boost": 0.01
+  },
+  "general": {
+   "n": 7,
+   "mean_log_views": 1.89,
+   "boost": -0.48
+  },
+  "what_if": {
+   "n": 3,
+   "mean_log_views": 2.27,
+   "boost": 0.04
   },
   "inside_machine": {
    "n": 5,
-   "mean_log_views": 2.63,
-   "boost": 0.37
+   "mean_log_views": 2.6,
+   "boost": 0.46
   },
   "history_event": {
    "n": 4,
-   "mean_log_views": 2.31,
-   "boost": -0.02
+   "mean_log_views": 2.25,
+   "boost": 0.02
   },
   "awe_scale": {
    "n": 5,
-   "mean_log_views": 2.5,
-   "boost": 0.21
+   "mean_log_views": 2.49,
+   "boost": 0.33
   },
   "jargon_science": {
    "n": 1,
    "mean_log_views": 1.82,
-   "boost": -0.26
-  },
-  "what_if": {
-   "n": 2,
-   "mean_log_views": 2.75,
-   "boost": 0.33
-  },
-  "myth_fact": {
-   "n": 5,
-   "mean_log_views": 2.48,
-   "boost": 0.19
+   "boost": -0.21
   },
   "earth_hazard": {
    "n": 1,
    "mean_log_views": 2.57,
-   "boost": 0.12
+   "boost": 0.17
   },
   "ai_tips": {
    "n": 4,
    "mean_log_views": 1.95,
-   "boost": -0.44
+   "boost": -0.32
   },
   "tech_explainer": {
    "n": 2,
    "mean_log_views": 2.35,
-   "boost": 0.01
+   "boost": 0.09
   }
  },
  "format_results": {
   "other": {
-   "n": 16,
-   "mean_log_views": 2.06,
-   "boost": -0.46
+   "n": 18,
+   "mean_log_views": 1.95,
+   "boost": -0.48
+  },
+  "what_if": {
+   "n": 4,
+   "mean_log_views": 2.12,
+   "boost": -0.13
   },
   "anatomy": {
    "n": 2,
-   "mean_log_views": 2.98,
-   "boost": 0.52
+   "mean_log_views": 2.9,
+   "boost": 0.53
   },
   "versus": {
    "n": 2,
-   "mean_log_views": 2.77,
-   "boost": 0.35
+   "mean_log_views": 2.71,
+   "boost": 0.39
   },
   "scale": {
    "n": 3,
-   "mean_log_views": 2.68,
-   "boost": 0.35
+   "mean_log_views": 2.67,
+   "boost": 0.44
   },
   "how_it_works": {
    "n": 2,
    "mean_log_views": 2.57,
-   "boost": 0.19
+   "boost": 0.27
   },
   "timeline": {
    "n": 1,
    "mean_log_views": 2.35,
-   "boost": 0.01
+   "boost": 0.06
   },
   "ranked": {
    "n": 1,
    "mean_log_views": 1.82,
-   "boost": -0.26
-  },
-  "what_if": {
-   "n": 3,
-   "mean_log_views": 2.38,
-   "boost": 0.05
+   "boost": -0.21
   },
   "myth_vs_fact": {
    "n": 4,
    "mean_log_views": 2.54,
-   "boost": 0.23
+   "boost": 0.35
   },
   "unsolved": {
    "n": 1,
    "mean_log_views": 2.57,
-   "boost": 0.12
+   "boost": 0.17
   }
  },
  "win_classes": [
   "inside_machine",
-  "what_if",
   "awe_scale"
  ],
  "lose_classes": [
@@ -133,16 +132,16 @@
   "jargon_science"
  ],
  "cohort": {
-  "n": 28,
-  "median": 199.0,
-  "p75": 517
+  "n": 31,
+  "median": 229,
+  "p75": 444
  },
  "ladder": [
   {
    "name": "typical Short",
    "metric": "median views per Short at 7 days",
    "goal": 1000,
-   "now": 199.0
+   "now": 229
   },
   {
    "name": "first breakout",
@@ -160,7 +159,7 @@
    "name": "volume",
    "metric": "channel views in 30 days",
    "goal": 100000,
-   "now": 6158
+   "now": 6799
   }
  ],
  "focus_words": [
@@ -177,24 +176,24 @@
  ],
  "avoid_words": [
   "calls",
-  "could",
   "free",
-  "grandma",
   "interview",
-  "just",
   "know",
   "more",
   "people",
-  "phone"
+  "planes",
+  "prompts",
+  "really",
+  "save"
  ],
  "winners": [
   {
    "title": "Inside NASA's Moon Rocket, Part by Part",
-   "views": 385
+   "views": 410
   },
   {
    "title": "Rigel vs the Sun: 363,000 Suns in One Star",
-   "views": 419
+   "views": 433
   },
   {
    "title": "Inside a Submarine: 5 Systems",
@@ -203,29 +202,29 @@
  ],
  "flops": [
   {
+   "title": "Why Planes Really Fly (Not What School Taught) #shorts",
+   "views": 0
+  },
+  {
    "title": "5 AI Prompts 99% of People Don't Know 🤯 (Save This) #shorts",
    "views": 24
   },
   {
    "title": "3 FREE AI Tricks to Get More Interview Calls 🎯 (Save This) #shorts",
    "views": 32
-  },
-  {
-   "title": "What If Grandma Could Just ASK Her Phone? 📱 Free AI Tool #shorts",
-   "views": 34
   }
  ],
  "best_formats": [
   "anatomy",
-  "versus",
-  "scale"
+  "scale",
+  "versus"
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Topic classes on the channel's own results: more of inside_machine, what_if, awe_scale; less of general, ai_tips, jargon_science.",
-  "Double down on what already wins on this channel: 'Inside NASA's Moon Rocket, Part by Part' (385 views); 'Rigel vs the Sun: 363,000 Suns in One Star' (419 views); 'Inside a Submarine: 5 Systems' (1,125 views).",
-  "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (24); '3 FREE AI Tricks to Get More Interview C' (32); 'What If Grandma Could Just ASK Her Phone' (34).",
-  "Prefer the formats the judge scores best: anatomy, versus.",
+  "Topic classes on the channel's own results: more of inside_machine, awe_scale; less of general, ai_tips, jargon_science.",
+  "Double down on what already wins on this channel: 'Inside NASA's Moon Rocket, Part by Part' (410 views); 'Rigel vs the Sun: 363,000 Suns in One Star' (433 views); 'Inside a Submarine: 5 Systems' (1,125 views).",
+  "Drop what flopped: 'Why Planes Really Fly (Not What School T' (0); '5 AI Prompts 99% of People Don't Know 🤯 ' (24); '3 FREE AI Tricks to Get More Interview C' (32).",
+  "Prefer the formats the judge scores best: anatomy, scale.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."
  ]
