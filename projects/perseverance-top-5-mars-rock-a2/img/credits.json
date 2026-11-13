@@ -1,0 +1,26 @@
+{
+ "s0.jpg": {
+  "file": "Mars 2020 Perseverance Rover Wheels",
+  "license": "NASA media (public domain)",
+  "artist": "KSC",
+  "url": "https://images.nasa.gov/details/KSC-20200402-PH-JPL01_0002"
+ },
+ "s1.jpg": {
+  "file": "File:NASA's Ingenuity helicopter on Mars by Perseverance Mastcam-Z, Sol 768 (53475637956).jpg",
+  "license": "CC BY 2.0",
+  "artist": "semeion.photo Credit: NASA/JPL-Caltech/ASU/Simeon Schmau\u00df",
+  "url": "https://commons.wikimedia.org/wiki/File:NASA%27s_Ingenuity_helicopter_on_Mars_by_Perseverance_Mastcam-Z,_Sol_768_(53475637956).jpg"
+ },
+ "s2.jpg": {
+  "file": "Sample Collection and Rock Analysis at Wildcat Ridge",
+  "license": "NASA media (public domain)",
+  "artist": "JPL",
+  "url": "https://images.nasa.gov/details/PIA24928"
+ },
+ "s3.jpg": {
+  "file": "File:A peculiar white rock in Neretva Vallis - SuperCam & Mastcam-Z - Sol 1164 (53758881532).jpg",
+  "license": "Public domain",
+  "artist": "semeion.photo",
+  "url": "https://commons.wikimedia.org/wiki/File:A_peculiar_white_rock_in_Neretva_Vallis_-_SuperCam_%26_Mastcam-Z_-_Sol_1164_(53758881532).jpg"
+ }
+}

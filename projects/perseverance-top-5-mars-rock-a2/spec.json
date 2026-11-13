@@ -1,0 +1,287 @@
+{
+ "id": "perseverance-top-5-mars-rock-a2",
+ "title": "Top 5 From Perseverance's Mars Rock Discovery",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "TOP 5",
+ "format": "ranked",
+ "theme": "warm",
+ "look": "risograph",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Perseverance_%28rover%29",
+  "b1": "https://en.wikipedia.org/wiki/Perseverance_%28rover%29",
+  "b2": "https://en.wikipedia.org/wiki/Perseverance_%28rover%29",
+  "b3": "https://en.wikipedia.org/wiki/Perseverance_%28rover%29",
+  "b4": "https://en.wikipedia.org/wiki/Perseverance_%28rover%29",
+  "b5": "https://en.wikipedia.org/wiki/Perseverance_%28rover%29",
+  "outro": "https://en.wikipedia.org/wiki/Perseverance_%28rover%29",
+  "wiki": "https://en.wikipedia.org/wiki/Perseverance_%28rover%29",
+  "ref1": "https://www.nasa.gov/missions/mars-2020-perseverance/perseverance-rover/rock-sampled-by-nasas-perseverance-embodies-why-rover-came-to-mars",
+  "ref2": "https://www.jpl.nasa.gov/news/nasas-perseverance-mars-rover-makes-surprising-discoveries",
+  "ref3": "https://science.nasa.gov/mission/mars-2020-perseverance/science-highlights",
+  "ref4": "https://www.nature.com/articles/s41586-025-09413-0"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Perseverance rover Mars",
+   "prompt": "Photoreal cinematic 9:16 shot of a six-wheeled robotic rover standing on rust-red rocky Martian ground under a dusty butterscotch sky, documentary NASA-style lighting, wide angle, fine dust and small stones in the foreground, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Perseverance revealed astonishing secrets on Mars — the top 5.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "top 5",
+     "at": "secrets"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "astonishing *secrets* on Mars",
+      "split": "word",
+      "accent": "blue"
+     },
+     "at": "secrets",
+     "dur": 2.5
+    },
+    {
+     "t": "title",
+     "html": "PERSEVERANCE<br>*TOP 5*",
+     "at": "top"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Number 5: MOXIE made 122 grams of oxygen from Mars' thin air.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "5",
+     "col": "cy",
+     "count": 1,
+     "at": "Number"
+    },
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 122,
+      "suffix": "g O2",
+      "accent": "green",
+      "glow": true
+     },
+     "at": "122",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "OXYGEN FROM CO2",
+     "col": "ok",
+     "at": "oxygen"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Number 4: 19 cameras, and 2038 Martian days of driving so far.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "4",
+     "col": "cy",
+     "count": 2,
+     "at": "Number"
+    },
+    {
+     "t": "bars",
+     "items": [
+      [
+       "cameras",
+       19,
+       "cy"
+      ]
+     ],
+     "unit": "cameras",
+     "at": "cameras"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s1.jpg",
+   "photo": "Ingenuity Mars helicopter",
+   "footage": "Ingenuity helicopter Mars flight",
+   "prompt": "Photoreal cinematic 9:16 close view of a small experimental helicopter drone with twin counter-rotating blades resting on pale dusty Martian soil, rust-red rocks behind, natural dusty daylight, documentary look, no text, no people",
+   "focal": [
+    0.45,
+    0.5
+   ],
+   "say": "Number 3: Ingenuity flew the first powered flight on another planet in 2021, retiring in 2024.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "3",
+     "col": "cy",
+     "count": 3,
+     "at": "Number"
+    },
+    {
+     "t": "tape",
+     "text": "FIRST FLIGHT 2021",
+     "col": "am",
+     "at": "flight"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s2.jpg",
+   "photo": "Wildcat Ridge rock Mars",
+   "footage": "Mars rover rock closeup",
+   "prompt": "Photoreal cinematic 9:16 macro-style view of layered sedimentary rock textures on the Martian surface, fine grain and mineral veins in rust and tan tones, shallow depth of field, documentary NASA lighting, no text, no people",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "Number 2: Wildcat Ridge's rocks record an ancient lake, habitable for microbial life.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "2",
+     "col": "cy",
+     "count": 4,
+     "at": "Number"
+    },
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "an ancient lake environment",
+      "keyword": "lake",
+      "note": "recorded in rock",
+      "style": "underline",
+      "accent": "green"
+     },
+     "at": "lake",
+     "dur": 2.5
+    },
+    {
+     "t": "label",
+     "text": "AN ANCIENT LAKE AT WILDCAT RIDGE",
+     "at": "Wildcat"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s3.jpg",
+   "photo": "Cheyava Falls rock Mars",
+   "footage": "Mars surface rocks rover view",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a reddish rocky Martian hillside with a distinctive banded rock outcrop in the center, dusty butterscotch sky, scattered stones, documentary NASA lighting, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Number 1: Cheyava Falls, found in 2024 — a possible biosignature, a hint of past life, unproven.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "1",
+     "col": "cy",
+     "count": 5,
+     "at": "Number"
+    },
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "a possible",
+      "options": "mineral, fossil, biosignature",
+      "accent": "green"
+     },
+     "at": "biosignature",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "STILL UNPROVEN",
+     "col": "am",
+     "at": "unproven"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "photo": "Perseverance rover Mars",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "A hint of past life on Mars. Follow for more.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "AGENT SHIFT",
+      "kicker": "past life, unproven",
+      "rule": "show",
+      "accent": "blue"
+     },
+     "at": "Mars",
+     "dur": 2.5
+    },
+    {
+     "t": "sub",
+     "html": "Follow for <b>more</b>",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "history_event",
+  "why": "topic fit",
+  "lemo_style": [
+   "1920s Newsreel",
+   "Archive Light Table",
+   "Transit Map"
+  ]
+ },
+ "_facts": {
+  "title": "Perseverance (rover)",
+  "url": "https://en.wikipedia.org/wiki/Perseverance_%28rover%29",
+  "text": "Perseverance is a NASA rover that has been exploring Mars since February 18, 2021, as part of the Mars 2020 mission. Built and managed by the Jet Propulsion Laboratory, the car-sized rover was launched on July 30, 2020, from Cape Canaveral aboard an Atlas V rocket and landed in Jezero Crater, a site chosen for its ancient river delta that may preserve evidence of past microbial life. The rover's main goals are to search for signs of ancient life, study the planet's geology and climate, and collect rock and regolith samples for possible return to Earth by a future mission. Perseverance also tests technologies intended to support later human exploration, including an experiment that successfully produced oxygen from the thin carbon-dioxide atmosphere. Perseverance carries seven primary scientific instruments, 19 cameras, and two microphones. It also deployed the experimental helicopter Ingenuity, which in April 2021 performed the first powered and controlled flight on another planet. Originally intended for up to five flights, Ingenuity completed dozens of sorties before being retired in 2024. Powered by a radioisotope thermoelectric generator, Perseverance has an expected mission duration of over a decade. It has provided high-resolution panoramas, drilled and cached samples for later retrieval, and identified rocks which may have been habitable for ancient microbial life in Jezero Crater. In July 2024, it discovered the Cheyava Falls rock containing \"possible biosignature.\" As of 13 November 2026, Perseverance has been active on Mars for 2038 sols (2094 total days; 5 years, 268 days) since its landing. == Mission ==\nDespite the high-profile success of the Curiosity rover landing in August 2012, NASA's Mars Exploration Program was in a state of uncertainty in the early 2010s. Budget cuts forced NASA to pull out of a planned collaboration with the European Space Agency which included a rover mission. By the summer of 2012, the program that had been launching a mission to Mars every two years suddenly found itself with no missions approved after 2013. In 2011, the Planetary Science Decadal Survey, a report from the National Academies of Sciences, Engineering, and Medicine containing an influential set of recommendations made by the planetary science community, stated that the top priority of NASA's planetary exploration program in the decade between 2013 and 2022 should be to begin a NASA-ESA Mars Sample Return campaign, a four-mission project to cache, retrieve, launch, and safely return samples of the Martian surface to Earth. The report stated that NASA should invest in a sample-caching rover as the first step in this effort, with the goal of keeping costs under US$2.5 billion. After the success of the Curiosity rover and in response to the recommendations of the decadal survey, NASA announced its intent to launch a new Mars rover mission by 2020 at the American Geophysical Union conference in December 2012. Though initially hesitant to commit to an ambitious sample-caching capability (and subsequent follow-on missions), a NASA-convened science definition team for the Mars 2020 project released a report in July 2013 that the mission should \"select and store a compelling suite of samples in a returnable cache.\"\n\n\n=== Science objectives ===\nThe Perseverance rover has four main science objectives that support the Mars Exploration Program's science goals:\n\nLooking for habitability: identify past environments that were capable of supporting microbial life. Seeking biosignatures: seek signs of possible past microbial life in those habitable environments, particularly in specific rock types known to preserve signs over time. Caching samples: collect core rock and regolith (unconsolidated and loose \"soil\") samples and store them within the rover and on the Martian surface (as a backup) for delivery to a future sample return rocket. Preparing for humans: test oxygen production from the Martian atmosphere. In the first science campaign, dubbed \"Crater Floor\", Perseverance performed an arching drive southward from its landing site to the Séítah unit to perform a \"toe dip\" into the unit to collect remote-sensing measurements of geologic targets. After that it returned to the Crater Floor Fractured Rough to collect the first core sample there. Passing by the Octavia E. Butler landing site concluded the first science campaign. The second campaign, \"Fan Front\", included several months of travel towards the \"Three Forks\" where Perseverance accessed geologic locations at the base of the ancient delta of Neretva river, as well as ascending the delta by driving up a valley wall to the northwest. The third and fourth campaigns were called \"Upper Fan\", and \"Margin Unit\", and the fifth campaign, \"Northern Rim\", in progress as of December 2024, is exploring \"the northern part of the southwestern section of Jezero's rim\" to study \"rocks from deep down inside Mars that were thrown upward to form the crater rim\" after the impact 3.9 billion years ago that formed Jezero Crater. ==== Results ====\nThe scientific results, as of 2025, are as follows. According to NASA, the mission has made \"discoveries about the volcanic history, habitability, and role of water in Jezero Crater.\" Specifically, they reported that instead of all the rocks in Jezero crater being sedimentary, being \"transported into the crater by wind or water,\" \"several types of igneous rock\" were discovered, which \"showed evidence of interaction with water.\" Additionally, At a rock named \"Wildcat Ridge\" located within Jezero's well-preserved sedimentary fan deposit, Perseverance found evidence for an ancient lake environment. Not only were these sediments likely deposited in a standing body of water, but they also continued to interact with water long after they were formed. The environments recorded within the rocks at Wildcat Ridge would have been habitable for ancient microbial life, and this type of rock is ideal for preserving possible signs of ancient life. They also found that \"sediments entering Jezero's lake were deposited in a delta\" and  \"evidence for late-stage, high-energy flooding that carried large boulders into the crater.\" The MOXIE experiment produced 122 grams of oxygen from carbon dioxide. The microphone studies showed that the speed of sound is slower and the volumes of sounds transmitted through the atmosphere is lower, than on Earth. PIXL found that the Seitah formation and a rock at \"Otis Peak\" contained olivine, phosphates, sulfates, clays, carbonate minerals, silicate minerals, \"augite pyroxene, feldspathic mesostasis, various Fe,Cr,Ti-spinels, and merrillite\", perchlorate, feldspar, magnesite, siderite, oxides, as well as minerals with composition including magnesium, iron, chlorine, and sodium. SHERLOC revealed findings of high concentrations of macromolecules filled with carbon on the Cheyava Falls and Apollo Temple rocks, though it was incapable of determining whether they were of biotic origin or not. RIMFAX revealed findings \"consistent with a subsurface dominated by solid rock and mafic material\" and that \"the crater floor experienced a period of erosion before the deposition of the overlying delta strata. The regularity and horizontality of the basal delta sediments observed in the radar cross sections indicate that they were deposited in a low-energy lake environment.\"\n\n\n== Design ==\n\nThe Perseverance design evolved from its predecessor, the Curiosity rover. The two rovers share a similar body plan, landing system, cruise stage, and power system, but the design was improved in several ways for Perseverance. Engineers designed the rover wheels to be more robust than Curiosity's wheels, which had sustained some damage. Perseverance has thicker, more durable aluminum wheels, with reduced width and a greater diameter, 52.5 cm (20.7 in), than Curiosity's 50 cm (20 in) wheels. The aluminum wheels are covered with cleats for traction and curved titanium spokes for springy support.\n\nSOURCE nasa.gov (https://www.nasa.gov/missions/mars-2020-perseverance/perseverance-rover/rock-sampled-by-nasas-perseverance-embodies-why-rover-came-to-mars):\n### News & Events ### Multimedia ## Suggested Searches ### Featured ### NASA Awards Moon Base Transportation, Technology, Science Projects ### CHAPEA Mission 2 Crew Reflects After 378 Days on Simulated Mars ### What’s Up: November 2026 Skywatching Tips from NASA ### Missions ### Humans in Space ### Earth ### The Solar System ### The Universe ### Science ### Aeronautics ### Technology ### Learning Resources ### About NASA ### NASA en Español ### News & Events ### Multimedia ### Featured ### NASA’s ESCAPADE Completes Powered Earth Flybys, Now En Route to Mars ### CHAPEA Mission 2 Crew Reflects After 378 Days on Simulated Mars ### Hubble Learns Galactic History From Stars ### Highlights ### NASA Astronauts to Answer Questions from Florida Students ### NASA Astronaut, STEM Creator Connect with Students for STEM Day ### NASA’s ISAM State of Play: The Industry Standard for Space Servicing, Assembly, and Manufacturing ### Highlights ### Scotland’s Flow Country ### STRIVE ### Water Surges Into Navajo Reservoir ### Highlights ### NASA’s ESCAPADE Completes Powered Earth Flybys, Now En Route to Mars ### PROMISE ### What’s Up: November 2026 Skywatching Tips from NASA ### Highlights ### NASA’s Hubble Offers Cosmic Sampler of Targets for Roman ### NASA Scientists Show How Gravitational Waves Can Reveal New Worlds ### NASA’s Chandra Finds Source of Star’s Mysterious Outbursts ### Highlights ### NASA’s Hubble Offers Cosmic Sampler of Targets for Roman ### Scotland’s Flow Country ### STRIVE ### Highlights ### Through NASA’s Lens: Capturing Space Shuttle Endeavour’s Move to LA ### MAX POWER: NASA’s Inaugural Aerospace Expo Ignites America’s Future ### NASA Navigation Experiment Shows Promise for Planetary Landings ### Highlights ### NASA Navigation Experiment Shows Promise for Planetary Landings ### High-speed Intelligent Robust Autonomous Terrain Exploration ### The Pacific’s Busy Storm Season ### Featured ### NASA Astronauts to Answer Questions from Florida Students ### NASA Space Grant Students Fuel Agency’s Inspiration Tour ### NASA Astronaut, STEM Creator Connect with Students for STEM Day ### Featured ### NASA Advanced Mid-Power Electric Rocket Challenge ### NASA Announces \n\nSOURCE jpl.nasa.gov (https://www.jpl.nasa.gov/news/nasas-perseverance-mars-rover-makes-surprising-discoveries):\nSolar System .5 min read # NASA’s Perseverance Mars Rover Makes Surprising Discoveries Jet Propulsion Laboratory https://www.jpl.nasa.gov/ Dec. 15, 2021 The findings by rover scientists highlight the diversity of samples geologists and future scientists associated with the agency’s Mars Sample Return program will have to study. Taken by Perseverance’s Mastcam-Z instrument, this video – narrated by Perseverance Project Scientist Ken Farley – features an enhanced-color composite image that pans across Jezero Crater’s delta on Mars. Credit: NASA/JPL-Caltech/ASU/MSSS Scientists with NASA’s Perseverance Mars rover mission have discovered that the bedrock their six-wheeled explorer has been driving on since landing in February likely formed from red-hot magma. The discovery has implications for understanding and accurately dating critical events in the history of Jezero Crater – as well as the rest of the planet. The team has also concluded that rocks in the crater have interacted with water multiple times over the eons and that some contain organic molecules. These and other findings were presented today during a news briefing at the American Geophysical Union fall science meeting in New Orleans. Even before Perseverance touched down on Mars, the mission’s science team had wondered about the origin of the rocks in the area. Were they sedimentary – the compressed accumulation of mineral particles possibly carried to the location by an ancient river system? Or where they igneous, possibly born in lava flows rising to the surface from a now long-extinct Martian volcano? ![Image of Perseverance’s entry into Séítah, plus an image of a subsurface “radargram” from the rover’s RIMFAX instrument](https://d2pn8kiwq2w21t.cloudfront.net/original_images/e1b---PIA25025---RadarGram1-Image-1041.jpg) This graphic depicts Perseverance’s entry into “Séítah” from both an orbital and subsurface perspective. The lower image is a subsurface “radargram” from the rover’s RIMFAX instrument; the red lines indicate link subsurface features to erosion-resistant rocky outcrops visible above the surface. Credit: NASA/JPL-Caltech/University of Arizona/USGS/FFI ![Photo of six sample tubes](https://d\n\nSOURCE science.nasa.gov (https://science.nasa.gov/mission/mars-2020-perseverance/science-highlights):\n![NASA Logo](https://www.nasa.gov) ![NASA Logo](https://www.nasa.gov) ## Suggested Searches * Artemis * ISS * Roman * Webb * Quesst * Moon Base * View All Topics A-Z * Home * Missions * Humans in Space * Earth * The Solar System * The Universe * Science * Aeronautics * Technology * Learning Resources * About NASA * Español --- * News & Events * Multimedia * NASA+ ### Highlights ![NASA Awards Moon Base Transportation, Technology, Science Projects 8 min read ### NASA Awards Moon Base Transportation, Technology, Science Projects article2 days ago](https://www.nasa.gov/news-release/nasa-awards-moon-base-transportation-technology-science-projects/)![CHAPEA Mission 2 Crew Reflects After 378 Days on Simulated Mars 6 min read ### CHAPEA Mission 2 Crew Reflects After 378 Days on Simulated Mars article18 hours ago](https://www.nasa.gov/centers-and-facilities/johnson/chapea-mission-2-crew-reflects-after-378-days-on-simulated-mars/)![What’s Up: November 2026 Skywatching Tips from NASA 4 min read ### What’s Up: November 2026 Skywatching Tips from NASA article1 week ago](https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/) ### Missions * Search All NASA Missions * A to Z List of Missions * Upcoming Launches and Landings * Spaceships and Rockets * Communicating with Missions * Artemis * James Webb Space Telescope * Hubble Space Telescope * International Space Station * OSIRIS-REx ### Humans in Space * Why Go to Space * Astronauts * Commercial Space * Destinations * Spaceships and Rockets * Living in Space ### Earth * Explore Earth Science * Climate Change * Earth, Our Planet * Earth Science in Action * Earth Multimedia * Earth Data * Earth Science Researchers ### The Solar System * The Sun * Mercury * Venus * Earth * The Moon * Mars * Jupiter * Saturn * Uranus * Neptune * Pluto & Dwarf Planets * Asteroids, Comets & Meteors * The Kuiper Belt * The Oort Cloud * Skywatching ### The Universe * Exoplanets * The Search for Life in the Universe * Stars * Galaxies * Black Holes * The Big Bang * Dark Matter * Dark Energy ### Science * Earth Science * Planetary Science * Astrophysics & Space Science * The Sun & Heliophysics * Biological &\n\nSOURCE nature.com (https://www.nature.com/articles/s41586-025-09413-0):\nThank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain the best experience, we recommend you use a more up to date browser (or turn off compatibility mode in Internet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles and JavaScript. Advertisement # Redox-driven mineral and organic associations in Jezero Crater, Mars *Nature* **volume 645**, pages 332–340 (2025) Cite this article 462k Accesses 107 Citations 4928 Altmetric Metrics details This article has been updated ## Abstract The Perseverance rover has explored and sampled igneous and sedimentary rocks within Jezero Crater to characterize early Martian geological processes and habitability and search for potential biosignatures1.\"),2.\"),3.\"),4.\"),5.\"),6.\"),7.\"). Upon entering Neretva Vallis, on Jezero Crater’s western edge8.\"), Perseverance investigated distinctive mudstone and conglomerate outcrops of the Bright Angel formation. Here we report a detailed geological, petrographic and geochemical survey of these rocks and show that organic-carbon-bearing mudstones in the Bright Angel formation contain submillimetre-scale nodules and millimetre-scale reaction fronts enriched in ferrous iron phosphate and sulfide minerals, likely vivianite and greigite, respectively. This organic carbon appears to have participated in post-depositional redox reactions that produced the observed iron-phosphate and iron-sulfide minerals. Geological context and petrography indicate that these reactions occurred at low temperatures. Within this context, we review the various pathways by which redox reactions that involve organic matter can produce the observed suite of iron-, sulfur- and phosphorus-bearing minerals in laboratory and natural environments on Earth. Ultimately, we conclude that analysis of the core sample collected from this unit using high-sensitivity instrumentation on Earth will enable the measurements required to determine the origin of the minerals, organics and textures it contains. ### Similar content being viewed by others ### Strong nickel enrichment co-located with redox-organic interactions in Neretva Vallis, ",
+  "extra_sources": [
+   "https://www.nasa.gov/missions/mars-2020-perseverance/perseverance-rover/rock-sampled-by-nasas-perseverance-embodies-why-rover-came-to-mars",
+   "https://www.jpl.nasa.gov/news/nasas-perseverance-mars-rover-makes-surprising-discoveries",
+   "https://science.nasa.gov/mission/mars-2020-perseverance/science-highlights",
+   "https://www.nature.com/articles/s41586-025-09413-0"
+  ]
+ },
+ "_writer": "opencode"
+}

@@ -1,5 +1,5 @@
 {
- "current": "permafrost-depth-scale-a3",
+ "current": "perseverance-top-5-mars-rock-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -680,6 +680,25 @@
     "safe_zone": 10
    },
    "run_id": "43185912075"
+  },
+  "perseverance-top-5-mars-rock-a2": {
+   "title": "Top 5 From Perseverance's Mars Rock Discovery",
+   "base": "perseverance-top-5-mars",
+   "status": "draft",
+   "scores": {
+    "hook": 6,
+    "visual_quality": 3,
+    "accuracy": 9,
+    "originality": 4,
+    "policy": 10,
+    "visual_variety": 3,
+    "polish": 3,
+    "hierarchy": 7,
+    "consistency": 4,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "43423780854"
   }
  }
 }
