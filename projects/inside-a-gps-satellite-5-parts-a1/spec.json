@@ -1,0 +1,247 @@
+{
+ "id": "inside-a-gps-satellite-5-parts-a1",
+ "title": "Inside a GPS Satellite: 5 Parts",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "format": "anatomy",
+ "series_label": "ANATOMY",
+ "theme": "cool",
+ "look": "blueprint",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "GPS satellite blocks - https://en.wikipedia.org/wiki/GPS_satellite_blocks",
+  "b1": "GPS satellite blocks - https://en.wikipedia.org/wiki/GPS_satellite_blocks",
+  "b2": "GPS Space Segment - https://gssc.esa.int/navipedia/index.php/GPS_Space_Segment",
+  "b3": "GPS satellite blocks - https://en.wikipedia.org/wiki/GPS_satellite_blocks",
+  "b4": "GPS satellite blocks - https://en.wikipedia.org/wiki/GPS_satellite_blocks",
+  "b5": "GPS Space Segment - https://gssc.esa.int/navipedia/index.php/GPS_Space_Segment",
+  "outro": "GPS satellite blocks - https://en.wikipedia.org/wiki/GPS_satellite_blocks",
+  "wiki": "https://en.wikipedia.org/wiki/GPS_satellite_blocks",
+  "ref1": "https://gssc.esa.int/navipedia/index.php/GPS_Space_Segment",
+  "ref2": "https://prod-01-alb-www-gps.woc.noaa.gov/sites/default/files/2026-02/2025%2012-04%20_2024%20GPSPerformanceAnalysis_sps_20251212_9.pdf",
+  "ref3": "https://airandspace.si.edu/collection-objects/model-satellite-gps-block-ii/nasm_A19970067000",
+  "ref4": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6022143",
+  "ref5": "https://www.esa.int/esapub/bulletin/bullet116/chapter9_bul116.pdf"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Earth from space",
+   "footage": "Earth from space",
+   "prompt": "Photoreal cinematic 9:16 view of Earth's curved horizon from high orbit, thin blue atmosphere line, city lights glowing on the night side, deep black space, documentary satellite photography look, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "This box, 20,000 km above your head, tells every phone on Earth where it is. Here's what's inside: 5 parts.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "inside?",
+     "at": "box"
+    },
+    {
+     "t": "title",
+     "html": "GPS *teardown*",
+     "at": "parts"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "GPS satellite",
+   "prompt": "Photoreal cinematic 9:16 close view of a GPS navigation satellite with two wide solar array wings in orbit above Earth, sunlight glinting on dark solar cells, gold and silver spacecraft body, documentary NASA photography style, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Part 1: the power. Two solar arrays supply 710 watts, charging batteries for every pass through Earth's shadow.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 710,
+      "suffix": "W"
+     },
+     "at": "710",
+     "dur": 2.5,
+     "accent": "green"
+    },
+    {
+     "t": "label",
+     "text": "PART 1 POWER",
+     "at": "solar"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "say": "Part 2 is the surprise: atomic clocks. GPS only works because the satellite knows time this precisely.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "the satellite knows *time* precisely",
+      "keyword": "time",
+      "note": "atomic clocks on board"
+     },
+     "at": "clocks",
+     "dur": 2.5,
+     "accent": "blue"
+    },
+    {
+     "t": "big",
+     "text": "ATOMIC CLOCKS",
+     "col": "cy",
+     "count": 4,
+     "at": "clocks"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s2.jpg",
+   "photo": "GPS satellite antenna",
+   "prompt": "Photoreal cinematic 9:16 macro shot of a navigation satellite's antenna array and gold-wrapped electronics module, ribbed antenna dish facing camera, wiring and thermal foil detail, dark orbital background, documentary hardware photography, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Part 3: the payload. It broadcasts two signals, 1575.42 and 1227.60 megahertz, straight down to your phone.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "satellite",
+       "signal"
+      ],
+      [
+       "signal",
+       "your phone"
+      ]
+     ],
+     "at": "broadcasts"
+    },
+    {
+     "t": "chip",
+     "text": "1575.42 MHz",
+     "col": "cy",
+     "at": "1575.42"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s3.jpg",
+   "photo": "satellite thruster",
+   "prompt": "Photoreal cinematic 9:16 silhouette of a satellite's engine nozzle and thruster cluster against the bright limb of Earth from orbit, dark metal hardware detail, natural sunlight, documentary spacecraft photography, no text, no people",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "Part 4: the thrusters. Small hydrazine burns nudge it back onto its exact orbit, every day.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "PART 4 HYDRAZINE",
+     "at": "thrusters"
+    },
+    {
+     "t": "toast",
+     "title": "ORBIT CORRECTED",
+     "sub": "hydrazine burn",
+     "icon": "up",
+     "at": "orbit"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "say": "Part 5: the orbit. 24 slots tilted 55 degrees, so at least 4 satellites are always in view above you.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "24 slots, always *4* in view"
+     },
+     "at": "slots",
+     "dur": 2.5,
+     "accent": "green"
+    },
+    {
+     "t": "ring",
+     "pct": 55,
+     "label": "55° inclination",
+     "col": "cy",
+     "at": "55"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s4.jpg",
+   "photo": "GPS satellite orbit",
+   "footage": "satellite orbiting Earth",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a single navigation satellite flying high above Earth's nightside, solar arrays catching sunlight, stars in deep space, documentary orbital photography, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Power, clocks, payload, thrusters, orbit. That's the whole machine keeping you found. Follow for more teardowns.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "that's the whole",
+      "options": "box, machine, satellite"
+     },
+     "at": "machine",
+     "dur": 2.5,
+     "accent": "blue"
+    },
+    {
+     "t": "sub",
+     "html": "follow for <b>more teardowns</b>",
+     "at": "found"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "inside_machine",
+  "why": "topic fit",
+  "lemo_style": [
+   "Exploded Teardown",
+   "Blueprint",
+   "Engineering Briefing Board"
+  ]
+ },
+ "_facts": {
+  "title": "GPS satellite blocks",
+  "url": "https://en.wikipedia.org/wiki/GPS_satellite_blocks",
+  "text": "GPS satellite blocks are the various production generations of the Global Positioning System (GPS) used for satellite navigation. The first satellite in the system, Navstar 1, was launched by the United States Air Force on 22 February 1978. The GPS satellite constellation is now operated by the 2nd Navigation Warfare Squadron (2 NWS) of Mission Delta 31, United States Space Force. The GPS satellites circle the Earth at an altitude of about 20,000 km (12,427 miles) and complete two full orbits every day. == Satellites by block ==\n\n\n== Block I satellites ==\n\nRockwell International was awarded a contract in 1974 to build the first eight Block I satellites. In 1978, the contract was extended to build an additional three Block I satellites. Beginning with Navstar 1 in 1978, ten \"Block I\" GPS satellites were successfully launched. One satellite, \"Navstar 7\", was lost due to an unsuccessful launch on 18 December 1981. The Block I satellites were launched from Vandenberg Air Force Base using Atlas rockets that were converted intercontinental ballistic missiles. The satellites were built by Rockwell International at the same plant in Seal Beach, California where the S-II second stages of the Saturn V rockets were built. The Block I series consisted of the concept validation satellites and reflected various stages of system development. Lessons learned from the 10 satellites in the series were incorporated into the fully operational Block II series. Dual solar arrays supplied over 400 watts of power, charging nickel–cadmium batteries for operations in Earth's shadow. S-band communications were used for control and telemetry, while an UHF channel provided cross-links between spacecraft. A hydrazine propulsion system was used for orbital correction. The payload included two L-band navigation signals at 1575.42 MHz (L1) and 1227.60 MHz (L2). The final Block I launch was conducted on 9 October 1985, but the last Block I satellite was not taken out of service until 18 November 1995, well past its 5-year design life. == Block II satellites ==\n\nThe Block II satellites were the first full scale operational GPS satellites, designed to provide 14 days of operation without any contact from the control segment. The prime contractor was Rockwell International, which built a SVN 12 qualification vehicle after an amendment to the Block I contract. In 1983, the company was awarded an additional contract to build 28 Block II/IIA satellites. Block II spacecraft were three-axis stabilized, with ground pointing using reaction wheels. Two solar arrays supplied 710 watts of power, while S-band communications were used for control and telemetry. A UHF channel was used for cross-links between spacecraft. A hydrazine propulsion system was used for orbital correction. The payload included two L-band GPS signals at 1575.42 MHz (L1) and 1227.60 MHz (L2). Each spacecraft carried two rubidium and two cesium clocks, as well as nuclear detonation detection sensors, leading to a mass of 1,660 kg (3,660 lb). The first of the nine satellites in the initial Block II series was launched on 14 February 1989; the last was launched on 1 October 1990. The final satellite of the series to be taken out of service was decommissioned on 15 March 2007, well past its 7.5 year design life. === Block IIA series ===\nThe Block IIA satellites were slightly improved versions of the Block II series, designed to provide 180 days of operation without contact from the control segment. However, the mass increased to 1,816 kg (4,004 lb), with no increase to the 7.5 year design life. Nineteen satellites in the Block IIA series were launched, the first on 26 November 1990 and the last on 6 November 1997. Two of the satellites in this series, numbers 35 and 36, were equipped with laser retro-reflectors, allowing them to be tracked independently of their radio signals, providing unambiguous separation of clock and ephemeris errors. SVN-34, the last Block IIA satellite, broadcast on the PRN 18 signal. It was removed from service on 9 October 2019 but kept as an on-orbit spare until April 2020. === Block IIR series ===\nThe Block IIR series are \"replenishment\" (replacement) satellites developed by Lockheed Martin. Each satellite weighs 2,030 kg (4,480 lb) at launch and 1,080 kg (2,380 lb) once on orbit. The first attempted launch of a Block IIR satellite failed on 17 January 1997 when the Delta II rocket exploded 12 seconds into flight. The first successful launch was on 23 July 1997. Twelve satellites in the series were successfully launched. At least ten satellites in this block carried an experimental S-band payload for search and rescue, known as Distress Alerting Satellite System.\n\nSOURCE gssc.esa.int (https://gssc.esa.int/navipedia/index.php/GPS_Space_Segment):\n*If you wish to contribute or participate in the discussions about articles you are invited to **contact** the Editor* # GPS Space Segment From Navipedia Jump to navigation Jump to search | GPSGPS | | --- | | Title | GPS Space Segment | | Edited by | GMV | | Level | Basic | | Year of Publication | 2011 | | | The main functions of the Space Segment are to transmit radio-navigation signals, and to store and retransmit the navigation message sent by the Control Segment. These transmissions are controlled by highly stable atomic clocks on board the satellites. [[1]](#cite_note-GNSS-Book-1) The GPS Space Segment is formed by a satellite constellation with enough satellites to ensure that the users will have, at least, 4 simultaneous satellites in view from any point at the Earth surface at any time. The United States is committed to maintaining the availability of at least 24 operational GPS satellites, 95% of the time. To ensure this commitment, the Air Force has been flying around 30 operational GPS satellites for the past few years. [[2]](#cite_note-GPS_sats-2) ## Contents * 1 GPS Satellite Constellation * 2 GPS Satellite Description + 2.1 Block I + 2.2 Block II + 2.3 Block III * 3 Current GPS Satellite constellation * 4 References ## GPS Satellite Constellation The satellites in the GPS nominal constellation are arranged into in six equally-spaced orbital planes with an inclination of 55 degrees in relation to the equator. Each plane contains four “slots” occupied by baseline satellites. This 24-slot arrangement ensures users can view at least four satellites from virtually any point of the planet. [[2]](#cite_note-GPS_sats-2) ![](/navipedia/index.php?title=File:GPS_constellation.gif) GPS satellite constellation The Air Force normally flies more than 24 GPS satellites to maintain coverage whenever the baseline satellites are serviced or decommissioned. The extra satellites may increase GPS performance but are not considered part of the core constellation.[[2]](#cite_note-GPS_sats-2) In June 2011, the Air Force successfully completed a GPS constellation expansion known as “Expandable 24” configuration. Three of the 24 slots were expanded, and six satellites were r\n\nSOURCE prod-01-alb-www-gps.woc.noaa.gov (https://prod-01-alb-www-gps.woc.noaa.gov/sites/default/files/2026-02/2025%2012-04%20_2024%20GPSPerformanceAnalysis_sps_20251212_9.pdf):\nAn Analysis of Global Positioning System Standard Positioning Service Performance for 2024 Space and Geophysics Laboratory Applied Research Laboratories The University of Texas at Austin Miquela Stein, Austin Finn, Emery B. Reed, Brent A. Renfro December 12, 2025 Contract: NAVSEA Contract N00024-17-D-6421 Task Order: 5101070 Technical Report: TR-SGL-24-02 Distribution A: Approved for public release; Distribution is unlimited. DISCLAIMER: The views expressed are those of the authors and do not reﬂect the oﬃcial guidance or position of the United States Government, the Department of Defense, the United States Air Force, or the United States Space Force. This Page Added for Document Spacing Executive Summary Applied Research Laboratories, The University of Texas at Austin (ARL:UT) examined the performance of the Global Positioning System (GPS) throughout 2024 for the U.S. Space Force (USSF) Space Systems Command (SSC), Military Communications & Positioning, Navigation, and Timing (PNT) Program Executive Oﬃce (PEO). This report is based upon work supported by SSC through U.S. Navy Naval Sea Sys-tems Command (NAVSEA) Contract N00024-17-D-6421, Task Order 5101070, “GNSS Signal Performance and Anomaly Analysis.” Performance is deﬁned by the 2020 Standard Positioning Service (SPS) Performance Standard (SPS PS 2020) [1]. The performance standard provides the U.S. government’s assertions regarding the expected performance of GPS. This report covers those assertions which can be veriﬁed by anyone with knowledge of standard GPS data analysis practices, familiarity with the relevant signal speciﬁcation, and access to a GPS data archive. The few assertions that are not covered are noted in the summary and the reasons are discussed in the text. The assertions evaluated include those of coverage, accuracy, integrity, continuity, and availability of the GPS signal-in-space (SIS) along with the assertions on accuracy of posi-tioning and time transfer. Chapter 1 is an introduction to the report. Chapter 2 contains a tabular summary of performance stated in terms of the metrics provided in the SPS PS 2020. Chapter 3 presents a more detailed explanation of the analysis conducted in \n\nSOURCE airandspace.si.edu (https://airandspace.si.edu/collection-objects/model-satellite-gps-block-ii/nasm_A19970067000):\n# Model, Satellite, GPS, Block II Gallery slides * Slide 1 of 1 ![](/collection-media/NASM-A19970067000cp02) This one-quarter scale model represents the second generation, or \"Block II\" of satellites that make up the Navstar Global Positioning System, known as GPS. GPS is a US Defense-Department system designed to provide world wide, three-dimensional positioning information, 24 hours a day. Civil customers may also access the system at no charge. The first generation, Block I, satellites were used as research vehicles to test the feasibility of the concept. A constellation of 24 Block II satellites make up the space segment of a fully operational system. The satellites were built by Rockwell International, which also built this scale model for exhibit purposes. Launches of Block II satellites began in 1989, and the Defense Department declared GPS fully operational in 1995. New generation systems are being developed and launched as GPS continues to evolve rapidly. ###### Display Status This object is not on display at the National Air and Space Museum. It is either on loan or in storage. #### Object Details ##### Country of Origin United States of America ##### Type MODELS-Uncrewed Spacecraft & Parts ##### Manufacturer Rockwell International Corporation (Huntington and Downey, CA) ##### Dimensions Other: 1 ft. 6 in. tall x 2 ft. 1 in. long x 1 ft. 4 in. wide (45.7 x 63.5 x 40.6cm) Other (solar panel): 1 ft. 5 in. long x 1 ft. 6 in. wide (43.2 x 45.7cm) ##### Materials Covering: Gold-colored Foil Structure: Wood ##### Inventory Number A19970067000 ##### Credit Line Gift of the Rockwell International Corporation ##### Data Source National Air and Space Museum ##### Restrictions & Rights Usage conditions apply For more information, visit the Smithsonian’s Terms of Use.\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC6022143):\n# Temporal Stability of GPS Transmitter Group Delay Variations Susanne Beer, Lambert Wanninger Sensors (Basel, Switzerland) · 2018-05-29 · 18(6):1744 · DOI: 10.3390/s18061744 · PMID: 29843459 · PMCID: PMC6022143 ## Abstract The code observable of global navigation satellite systems (GNSS) is influenced by group delay variations (GDV) of transmitter and receiver antennas. For the Global Positioning System (GPS), the variations can sum up to 1 m in the ionosphere-free linear combination and thus can significantly affect precise code applications. The contribution of the GPS transmitters can amount to 0.8 m peak-to-peak over the entire nadir angle range. To verify the assumption of their time-invariance, we determined daily individual satellite GDV for GPS transmitter antennas over a period of more than two years. Dual-frequency observations of globally distributed reference stations and their multipath combination form the basis for our analysis. The resulting GPS GDV are stable on the level of a few centimeters for C1, P2, and for the ionosphere-free linear combination. Our study reveals that the inconsistencies of the GDV of space vehicle number (SVN) 55 with respect to earlier studies are not caused by temporal instabilities, but are rather related to receiver properties. ## Keywords GPS satellite antennas, code pseudorange, group delay variations, multipath combination, SVN55 ## 1. Introduction Global navigation satellite system (GNSS) transmitter and receiver antennas cause group delay variations (GDV) which affect the pseudorange observable. GDV are frequency-dependent and vary with nadir angle of the transmitted signal and with the elevation of the received signal. In the case of GPS (Global Positioning System) transmitters, space vehicle number (SVN) 49 exhibits the most pronounced GDV with a peak-to-peak difference of several meters in the ionosphere-free linear combination (IF). The main contribution to the GDV comes from the L1 signal. The exceptionally high GDV of SVN49 stems from internal signal reflections of L1 and L2 at the auxiliary L5 port, resulting in a multipath signal superimposed on the primary signal [1,2,3]. Springer and Dilssner [4] took \n\nSOURCE esa.int (https://www.esa.int/esapub/bulletin/bullet116/chapter9_bul116.pdf):\nTechnical & Operational Support 64 esa bulletin 116 - november 2003 www.esa.int # IGS The International GPS Service – for Leading-Edge Space Missions Origins and Brief History Global Navigation Satellite Systems (GNSS) are gradually becoming part of our daily lives. Their uses for aircraft navigation and more and more in our private cars are especially well-known. The general concept involves measuring distances from the user to several satellites and thereby obtaining an almost instantaneous determination of one’s current position. The user systems are passive in that only the satellites transmit signals, and are based on the time differences between the transmission and reception of the signals. Two essential elements of the system are therefore a highly stable oscillator in the user receiver and an algorithm that determines the offset between the GNSS system time and the user’s clock, as well as his or her position. John M. Dow Chairman of the IGS Governing Board ESA Directorate of Technical and Operational Support, ESOC, Darmstadt, Germany esa bulletin 116 - november 2003 www.esa.int 65 GPS for Space Missions The classical type of GNSS is the US Global Positioning System (GPS), which has been developed and refined over the past 30 years and was declared fully operational in 1995. The system consists of at least 24 satellites orbiting in six evenly distributed planes inclined at 55 degrees to the Earth’s equator, at about 20 000 km altitude. There are currently 27 usable GPS satellites in orbit. A similar Russian system (GLONASS) briefly achieved an operational constellation of 24 spacecraft in the mid-1990s, but at present only 10 are active. After a number of years of preparatory studies, Europe is now well on the way to developing its own system, Galileo, joint funded initially by the European Union and ESA and later, it is planned, by private investment. Galileo will comprise 30 satellites in three inclined orbital planes, a few thousand kilometres higher than the GPS and GLONASS satellites in order to minimise the number of correction manoeuvres needed during the system’s 20-year lifetime. During the 1980’s, as the first GPS satellites went into orbit, i",
+  "extra_sources": [
+   "https://gssc.esa.int/navipedia/index.php/GPS_Space_Segment",
+   "https://prod-01-alb-www-gps.woc.noaa.gov/sites/default/files/2026-02/2025%2012-04%20_2024%20GPSPerformanceAnalysis_sps_20251212_9.pdf",
+   "https://airandspace.si.edu/collection-objects/model-satellite-gps-block-ii/nasm_A19970067000",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC6022143",
+   "https://www.esa.int/esapub/bulletin/bullet116/chapter9_bul116.pdf"
+  ]
+ },
+ "_writer": "opencode"
+}

@@ -1,0 +1,18 @@
+{
+ "hook.mp4": {
+  "file": "hook.mp4",
+  "id": "Earth Views from the International Space Station",
+  "title": "Earth Views from the International Space Station",
+  "center": "NASA",
+  "license": "NASA media (public domain)",
+  "source": "https://images.nasa.gov/details/Earth Views from the International Space Station"
+ },
+ "outro.mp4": {
+  "file": "outro.mp4",
+  "id": "GSFC_20111005_LDCM_m10812_Beauty2",
+  "title": "LDCM Spacecraft Beauty Pass 2",
+  "center": "NASA",
+  "license": "NASA media (public domain)",
+  "source": "https://images.nasa.gov/details/GSFC_20111005_LDCM_m10812_Beauty2"
+ }
+}

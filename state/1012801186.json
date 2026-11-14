@@ -1,5 +1,5 @@
 {
- "current": "perseverance-top-5-mars-rock-a2",
+ "current": "inside-a-gps-satellite-5-parts-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -699,6 +699,25 @@
     "safe_zone": 10
    },
    "run_id": "43423780854"
+  },
+  "inside-a-gps-satellite-5-parts-a1": {
+   "title": "Inside a GPS Satellite: 5 Parts",
+   "base": "inside-a-gps-satellite-5-parts-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 5,
+    "accuracy": 9,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 4,
+    "polish": 5,
+    "hierarchy": 8,
+    "consistency": 8,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "43577508505"
   }
  }
 }
