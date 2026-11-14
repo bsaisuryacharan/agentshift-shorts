@@ -1,5 +1,5 @@
 {
- "current": "inside-a-gps-satellite-5-parts-a1",
+ "current": "suns-worst-storms-ranked-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -718,6 +718,25 @@
     "safe_zone": 10
    },
    "run_id": "43577508505"
+  },
+  "suns-worst-storms-ranked-a2": {
+   "title": "The Sun's Worst Storms, Ranked",
+   "base": "suns-worst-storms",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 9,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 8,
+    "polish": 9,
+    "hierarchy": 9,
+    "consistency": 9,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "43590450849"
   }
  }
 }

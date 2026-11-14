@@ -1,0 +1,263 @@
+{
+ "id": "suns-worst-storms-ranked-a2",
+ "title": "The Sun's Worst Storms, Ranked",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "TOP 5",
+ "format": "ranked",
+ "theme": "warm",
+ "look": "risograph",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "NASA Science / Wikipedia — Coronal mass ejection, https://en.wikipedia.org/wiki/Coronal_mass_ejection",
+  "b1": "Wikipedia — Coronal mass ejection, https://en.wikipedia.org/wiki/Coronal_mass_ejection",
+  "b2": "Wikipedia — Coronal mass ejection, https://en.wikipedia.org/wiki/Coronal_mass_ejection",
+  "b3": "Wikipedia — Coronal mass ejection, https://en.wikipedia.org/wiki/Coronal_mass_ejection",
+  "b4": "Wikipedia — Coronal mass ejection (1921 storm reassessment), https://en.wikipedia.org/wiki/Coronal_mass_ejection",
+  "b5": "Wikipedia — Coronal mass ejection (Carrington Event, 1859), https://en.wikipedia.org/wiki/Coronal_mass_ejection",
+  "outro": "NASA Space Weather Math, https://science.nasa.gov/wp-content/uploads/2023/03/574865main-spaceweather-math.pdf",
+  "wiki": "https://en.wikipedia.org/wiki/Coronal_mass_ejection",
+  "ref1": "https://science.nasa.gov/wp-content/uploads/2023/03/574865main-spaceweather-math.pdf",
+  "ref2": "https://assets.science.nasa.gov/content/dam/science/hpd/heat/space-math/problem-sets/Space%20Math_Radiation%20Math.pdf?emrc=6ae12e797a2a0",
+  "ref3": "https://www.scientificamerican.com/article/new-studies-warn-of-cataclysmic-solar-superstorms",
+  "ref4": "https://arxiv.org/html/2609.34685v1"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "solar flare sun",
+   "footage": "solar flare eruption",
+   "prompt": "Photoreal cinematic 9:16 view of the Sun's churning surface from space, a bright solar flare erupting from the limb, plasma arcs against deep black space, documentary NASA style, cool blue-orange grade, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "The Sun's worst storms, ranked — number 1 rewired history.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "top 5",
+     "at": "storms"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "WORST *STORMS* RANKED",
+      "split": "word"
+     },
+     "accent": "blue",
+     "at": "ranked",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "rewired",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Number 5: near solar minimum, the Sun launches just 1 coronal mass ejection every 5 days.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "1 every 5 days",
+     "col": "cy",
+     "at": "minimum"
+    },
+    {
+     "t": "chip",
+     "text": "NUMBER 5",
+     "col": "cy",
+     "at": "Number"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Number 4: at solar maximum, about 3 CMEs erupt daily — the 11-year cycle at full power.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 3,
+      "suffix": "per day"
+     },
+     "accent": "blue",
+     "at": "maximum",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "NUMBER 4",
+     "col": "am",
+     "at": "Number"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "aurora borealis",
+   "footage": "aurora borealis sky",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a vivid green aurora rippling over a dark snowy landscape at night, real natural light, documentary look, cool grade, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Number 3: aimed at Earth, a CME slams into the magnetosphere — auroras, and rare damage to power grids.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "A CME slams into Earth's magnetosphere",
+      "keyword": "magnetosphere",
+      "note": "auroras + grid damage",
+      "style": "underline"
+     },
+     "accent": "blue",
+     "at": "magnetosphere",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "NUMBER 3",
+     "col": "ir",
+     "at": "Number"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "telegraph key",
+   "prompt": "Photoreal cinematic 9:16 macro shot of an antique brass telegraph key on a wooden desk, warm practical lamplight, shallow depth of field, documentary museum look, no text, no people",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "Number 2: May 1921 — the New York Railroad storm, nearly matching Carrington's intensity.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "May 1921 — the",
+      "options": "telegraph storm, railroad storm, NEW YORK RAILROAD STORM"
+     },
+     "accent": "violet",
+     "at": "Railroad",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "NUMBER 2",
+     "col": "am",
+     "at": "Number"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "aurora 1859",
+   "footage": "coronal mass ejection",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a blood-red and green aurora glowing over a dark 19th century town skyline at night, documentary archival mood, mono-cool grade, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Number 1: the Carrington Event, 1859 — the largest recorded geomagnetic perturbation. It disabled America's telegraph network, started fires, and shocked operators.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "1859",
+     "col": "ir",
+     "at": "1859"
+    },
+    {
+     "t": "chip",
+     "text": "NUMBER 1",
+     "col": "ir",
+     "at": "Number"
+    }
+   ],
+   "sfx": [
+    [
+     "fires",
+     "impact",
+     0.9
+    ]
+   ]
+  },
+  {
+   "key": "outro",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "5 storms, 1 lesson: the Sun's cycle is still ticking. Follow for more.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "AGENT SHIFT",
+      "label": "the cycle is still ticking",
+      "kicker": "TOP 5",
+      "rule": "show"
+     },
+     "accent": "blue",
+     "at": "lesson",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  }
+ ],
+ "style_map": {
+  "class": "history_event",
+  "why": "topic fit",
+  "lemo_style": [
+   "1920s Newsreel",
+   "Archive Light Table",
+   "Transit Map"
+  ]
+ },
+ "_facts": {
+  "title": "Coronal mass ejection",
+  "url": "https://en.wikipedia.org/wiki/Coronal_mass_ejection",
+  "text": "A coronal mass ejection (CME) is a significant ejection of plasma mass from the Sun's corona into the heliosphere. CMEs are often associated with solar flares and other forms of solar activity, but a broadly accepted theoretical understanding of these relationships has not been established. If a CME enters interplanetary space, it is sometimes referred to as an interplanetary coronal mass ejection (ICME). ICMEs are capable of reaching and colliding with Earth's magnetosphere, where they can cause geomagnetic storms, aurorae, and in rare cases damage to electrical power grids. The largest recorded geomagnetic perturbation, resulting presumably from a CME, was the solar storm of 1859. Also known as the Carrington Event, it disabled parts of the newly created United States telegraph network, starting fires and electrically shocking some telegraph operators. Near the time in the Sun's eleven-year solar cycle known as solar maxima, the Sun produces about three CMEs daily, whereas near solar minima, there is about one CME for every five days. == Physical description ==\nCMEs release large quantities of matter from the Sun's atmosphere into the solar wind and interplanetary space. The ejected matter is a plasma consisting primarily of electrons and protons embedded within its magnetic field. This magnetic field is commonly in the form of a flux rope, a helical magnetic field with changing pitch angles. The average mass ejected is 1.6×1012 kg (3.5×1012 lb). However, the estimated mass values for CMEs are only lower limits, because coronagraph measurements provide only two-dimensional data. CMEs erupt from strongly twisted or sheared, large-scale magnetic structures in the corona that are kept in equilibrium by overlying magnetic fields. === Origin ===\n\nCMEs erupt from the lower corona, where processes associated with the local magnetic field dominate over other processes. As a result, the coronal magnetic field plays an important role in the formation and eruption of CMEs. Pre-eruption structures originate from magnetic fields that are initially generated in the Sun's interior by the solar dynamo. These magnetic fields rise to the Sun's surface—the photosphere—where they may form localized areas of highly concentrated magnetic flux and expand into the lower solar atmosphere forming active regions. At the photosphere, active region magnetic flux is often distributed in a dipole configuration, that is, with two adjacent areas of opposite magnetic polarity across which the magnetic field arches. Over time, the concentrated magnetic flux cancels and disperses across the Sun's surface, merging with the remnants of past active regions to become a part of the quiet Sun. Pre-eruption CME structures can be present at different stages of the growth and decay of these regions, but they always lie above polarity inversion lines (PIL), or boundaries across which the sign of the vertical component of the magnetic field reverses. PILs may exist in, around, and between active regions or form in the quiet Sun between active region remnants. More complex magnetic flux configurations, such as quadrupolar fields, can also host pre-eruption structures. In order for pre-eruption CME structures to develop, large amounts of energy must be stored and be readily available to be released. As a result of the dominance of magnetic field processes in the lower corona, the majority of the energy must be stored as magnetic energy. The magnetic energy that is freely available to be released from a pre-eruption structure, referred to as the magnetic free energy or nonpotential energy of the structure, is the excess magnetic energy stored by the structure's magnetic configuration relative to that stored by the lowest-energy magnetic configuration the underlying photospheric magnetic flux distribution could theoretically take, a potential field state. Emerging magnetic flux and photospheric motions continuously shifting the footpoints of a structure can result in magnetic free energy building up in the coronal magnetic field as twist or shear. Some pre-eruption structures, referred to as sigmoids, take on an S or reverse-S shape as shear accumulates. This has been observed in active region coronal loops and filaments with forward-S sigmoids more common in the southern hemisphere and reverse-S sigmoids more common in the northern hemisphere. Magnetic flux ropes—twisted and sheared magnetic flux tubes that can carry electric current and magnetic free energy—are an integral part of the post-eruption CME structure; however, whether flux ropes are always present in the pre-eruption structure or whether they are created during the eruption from a strongly sheared core field (see § Initiation) is subject to ongoing debate. Some pre-eruption structures have been observed to support prominences, also known as filaments, composed of cooler material than the surrounding coronal plasma. Prominences are embedded in magnetic field structures referred to as prominence cavities, or filament channels, which may constitute part of a pre-eruption structure (see § Coronal signatures). === Early evolution ===\nThe early evolution of a CME involves its initiation from a pre-eruption structure in the corona and the acceleration that follows. The processes involved in the early evolution of CMEs are poorly understood due to a lack of observational evidence. ==== Initiation ====\nCME initiation occurs when a pre-eruption structure in an equilibrium state enters a nonequilibrium or metastable state where energy can be released to drive an eruption. The specific processes involved in CME initiation are debated, and various models have been proposed to explain this phenomenon based on physical speculation. Furthermore, different CMEs may be initiated by different processes. It is unknown whether a magnetic flux rope exists prior to initiation, in which case either ideal or non-ideal magnetohydrodynamic (MHD) processes drive the expulsion of this flux rope, or whether a flux rope is created during the eruption by non-ideal process. Under ideal MHD circumstances, initiation may involve ideal instabilities or catastrophic loss of equilibrium along an existing flux rope:\n\nThe kink instability occurs when a magnetic flux rope is twisted to a critical point, whereupon the flux rope is unstable to further twisting. The torus instability occurs when the magnetic field strength of an arcade overlying a flux rope decreases rapidly with height. When this decrease is sufficiently rapid, the flux rope is unstable to further expansion.\n\nSOURCE science.nasa.gov (https://science.nasa.gov/wp-content/uploads/2023/03/574865main-spaceweather-math.pdf):\nCover for Space Weather math book which shows 6 i ma g e s of va riou s s pace weather events inclusing solar storms, and astronaut in space and an aurora. Also includes the nasa logo. Space Math http://spacemath.gsfc.nasa.gov i Space Weather Math Mathematical problems featuring space weather applications Dr. Sten Odenwald Catholic University of America / NASA Sten.F.Odenwald@nasa.gov Space Math http://spacemath.gsfc.nasa.gov ii This collection of activities is based on a weekly series of space science problems distributed to thousands of teachers during the 2004-2011 school year. They were intended for students looking for additional challenges in the math and physical science curriculum in grades 7 through 12. The problems were created to be authentic glimpses of modern science and engineering issues, often involving actual research data. The problems were designed to be ‘one-pagers’ with a Teacher’s Guide and Answer Key as a second page. This compact form was deemed very popular by participating teachers. Acknowledgments: We would like to thank Dr. Eric Christian for a careful reading of this resource for accuracy, and for his many valuable comments. Ms. Elaine Lewis, co-Director of the NASA Space Weather Action Center, was instrumental in writing the 'How to use this resource' essay to help teachers better integrate the problems into classroom situations. We also thank Dr. Rita Karl, Director of Education for the Challenger Center for Space Science Education (www.challenger.org), who provided guidance for how this resource could be improved and extended so that students running space activity simulations could better incorporate space weather issues into their simulated space journeys. Image Credits: Front and Back Covers: ISS Astronaut (NASA); Images of the sun (NASA/ESA SOHO LASCO and EIT); Transformer damage (John Kappenman, MetaTech Corp); Aurora borealis (The Morrison Family: Eielson AFB, Alaska); Back: Solar Wind (E. Endo and National Geophysical Data Center); Interior illustrations: Page xii:1947 Sunspot (National Solar Observatory); Geomagnetic Field (Tamas Gambosi: U. Michigan). Page xxvii Van Allen Belts (NASA/Cluster); Page. xxix; GPS Satellite (U\n\nSOURCE assets.science.nasa.gov (https://assets.science.nasa.gov/content/dam/science/hpd/heat/space-math/problem-sets/Space%20Math_Radiation%20Math.pdf?emrc=6ae12e797a2a0):\nNational Aeronautics and Space Administration th a tion M a R diaFront cover of Radiation Math book with NASA logo and illustrations of places where radiation effects are found. Space Math http://spacemath.gsfc.nasa.gov i Radiation Math Mathematical problems featuring radiation effects applications (Updated Version, July 2011) Dr. Sten Odenwald NASA / ADNET Corp. and Ms. Andrea Geyer Virginia Space Grant Consortium Space Math http://spacemath.gsfc.nasa.gov ii This collection of activities is based on a weekly series of space science problems distributed to thousands of teachers during the 2004-2011 school year. They were intended for students looking for additional challenges in the math and physical science curriculum in grades 7 through 12. The problems were created to be authentic glimpses of modern science and engineering issues, often involving actual research data. The problems were designed to be ‘one-pagers’ with a Teacher’s Guide and Answer Key as a second page. This compact form was deemed very popular by participating teachers. The topic for this collection is Radiation which tends to be a very mysterious subject among students and adults. It shouldn’t be. Living on the surface of Earth, we are bathed in a natural background of radiation from many sources. Usually the term is identified by the harmful sources (nuclear bombs and power plants), and health risks that occur when too much radiation is absorbed, such as from skin cancer and UV over-exposure, or medical X-rays, CAT scans and cancer therapy. This book will make the student familiar with the many forms of radiation, how it is measured, and what different doses can lead to over time. Acknowledgments: Ms. Geyer is an Education Specialist for the Virginia Space Grant Consortium (VSGC) in Hampton, Virginia. She supports two NASA programs, NASA’s Global Climate Change Education project and Virginia Aerospace Science and Technology Scholars Program. Geyer holds a Bachelor of Science degree from the College of New Jersey in Physics and a Master of Science degree from University of Massachusetts at Lowell in Radiological Sciences and Protection. Prior to joining VSGC she was a classroom teacher for 13\n\nSOURCE scientificamerican.com (https://www.scientificamerican.com/article/new-studies-warn-of-cataclysmic-solar-superstorms):\nScientific American SubscribeSign In Read the November Issue: Social Media Addiction September 24, 2019 5min read ![Google Logo Add Us On GoogleAdd SciAm](https://www.google.com/preferences/source?q=scientificamerican.com) New Studies Warn of Cataclysmic Solar Superstorms New data suggest the New York Railroad Storm could have surpassed the intensity of the famous Carrington Event of 1859 By Jonathan O'Callaghan Outbursts from the sun, such as this one captured by a NASA satellite in June 2015, can wreak havoc with power grids and telecommunications on Earth. Solar Dynamics Observatory and NASA A powerful disaster-inducing geomagnetic storm is an inevitability in the near future, likely causing blackouts, satellite failures, and more. Unlike other threats to our planet, such as supervolcanoes or asteroids, the time frame for a cataclysmic geomagnetic storm—caused by eruptions from our sun playing havoc with Earth’s magnetic field—is comparatively short. It could happen in the next decade—or in the next century. All we know is, based on previous events, our planet will almost definitely be hit relatively soon, probably within 100 years. Geomagnetic storms are caused by sunspots, solar flares and coronal mass ejections, resulting in calamities to which our modern technological society is becoming ever more susceptible. Most experts regard the Carrington Event, a so-called superstorm that occurred in September 1859, as the most powerful geomagnetic storm on record. But new data suggest that a later storm in May 1921 may have equaled or even eclipsed the Carrington Event in intensity, causing at least three major fires in the U.S., Canada and Sweden—and highlighting the damaging effects these storms can have on Earth today. In a paper published in the journal *Space Weather*, Jeffrey Love of the U.S. Geological Survey and his colleagues reexamined the intensity of the 1921 event, known as the New York Railroad Storm, in greater detail than ever before. Although different measures of intensity exist, geomagnetic storms are often rated on an index called disturbance storm time (Dst)—a way of gauging global magnetic activity by averaging out values for the strength of \n\nSOURCE arxiv.org (https://arxiv.org/html/2609.34685v1):\n##### Report GitHub Issue Content selection saved. Describe the issue below: # P2D - A Two-Dimensional Multi-Spacecraft Solar Wind Persistence Model ###### Abstract The background solar wind is a key component in space weather forecasting, as it contains geoeffective high-speed streams and provides the medium through which coronal mass ejections propagate and evolve in interplanetary space. Due to the solar rotation and the slow evolution of large-scale solar wind structures, solar wind properties exhibit an autocorrelation with a period of roughly 27 days, particularly at solar minimum. We made use of this property to develop a solar wind persistence model with input from multiple spacecraft (Solar Orbiter, Parker Solar Probe, STEREO-A, STEREO-B and the OMNI database). The model ballistically propagates in-situ data from the position of their measurement radially away from the Sun, as well as longitudinally with the solar rotation rate, producing 2D maps of solar wind parameters. These can be extracted at any point in the heliosphere for a solar wind reconstruction. From Earth’s perspective, the reconstruction performs with an MAE of 65.41 km s-1 and 3.51 c​m−3cm^{-3} for speed and density, respectively. During high-speed streams, the peak hit rate is 50% and 48% for speed and density. It performs best during times when there are spacecraft located between Earth and Lagrange point L5. During these times, the mean absolute error of the predicted solar wind speed decreases by roughly 35% in comparison to the benchmark 27-day persistence model. Therefore, future L5 missions like Vigil are expected to provide a robust basis for reliable persistence forecasts. ###### keywords ## 1 Introduction The solar wind is a continuous stream of ionized plasma which fills interplanetary space. It can be generally divided into two modes: fast wind with speeds >> 450 km s-1 and slow wind with speeds << 450 km s-1 (Wolfe et al., 1966, see e.g.,). As the fast solar wind encounters slow streams, plasma is compressed at their intersection, resulting in enhanced plasma density and magnetic field (Belcher and Davis, 1971). Due to the solar rotation, these interaction regions form a spi",
+  "extra_sources": [
+   "https://science.nasa.gov/wp-content/uploads/2023/03/574865main-spaceweather-math.pdf",
+   "https://assets.science.nasa.gov/content/dam/science/hpd/heat/space-math/problem-sets/Space%20Math_Radiation%20Math.pdf?emrc=6ae12e797a2a0",
+   "https://www.scientificamerican.com/article/new-studies-warn-of-cataclysmic-solar-superstorms",
+   "https://arxiv.org/html/2609.34685v1"
+  ]
+ },
+ "_writer": "opencode"
+}

@@ -1,0 +1,26 @@
+{
+ "hook.mp4": {
+  "file": "hook.mp4",
+  "id": "GSFC_20140404_SDO_m11517_Flare",
+  "title": "Graceful Eruption",
+  "center": "NASA",
+  "license": "NASA media (public domain)",
+  "source": "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare"
+ },
+ "b3.mp4": {
+  "file": "b3.mp4",
+  "id": "pixabay-7348",
+  "title": "voltamax",
+  "center": "stock",
+  "license": "Pixabay licence (free to use)",
+  "source": "https://pixabay.com/videos/id-7348/"
+ },
+ "b5.mp4": {
+  "file": "b5.mp4",
+  "id": "GSFC_20140610_SDO_m11564_XFlares",
+  "title": "Sun Emits 3 X-class Flares in 2 Days",
+  "center": "NASA",
+  "license": "NASA media (public domain)",
+  "source": "https://images.nasa.gov/details/GSFC_20140610_SDO_m11564_XFlares"
+ }
+}
