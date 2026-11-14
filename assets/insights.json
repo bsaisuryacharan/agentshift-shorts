@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T11:15:51+00:00",
+ "generated_at": "2026-11-14T10:40:45+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -13,19 +13,19 @@
  "trending": [
   "How the First Combat Submarine Actually Worked",
   "When Cameras Capture Astonishing Animal Encounters",
-  "10 Unexpected Animal Encounters with Incredible Endings 😱",
   "Animal Encounters That Seem Almost Impossible",
   "5 Animals That Can Survive Without Sleep 😱",
-  "Astronomical events in November 2026😲",
   "Most Unexpected Animal Moments Caught on Camera.",
   "This Boy Tried to Explain How the Fourth Dimension Works 🌀🤯",
+  "The Most Amazing Animal Moments Ever Recorded",
   "November Moon Meet-up Events 💀",
   "Northern Taurids is here🔥",
-  "A new treasure map reveals where Earth's lost prehistoric life may be hiding",
-  "NASA’s Perseverance confirms a key ingredient for life hidden in ancient Mars rocks"
+  "Right Now the Moon Is Under One Percent Lit",
+  "The Obstacle Explained in 35 seconds",
+  "5,000-year-old skulls reveal a disturbing secret of ancient Egypt's first kings"
  ],
  "learned": {
-  "shorts_scored": 16,
+  "shorts_scored": 17,
   "best": [
    {
     "title": "Inside a Submarine: 5 Systems",
@@ -50,13 +50,13 @@
     "weakest": "visual_quality"
    },
    {
-    "title": "What If Krakatoa Erupted Today?",
+    "title": "Inside a GPS Satellite: 5 Parts",
     "avg": 7.2,
-    "weakest": "visual_quality"
+    "weakest": "visual_variety"
    },
    {
-    "title": "Inside NASA's Moon Rocket, Part by Part",
-    "avg": 7.4,
+    "title": "What If Krakatoa Erupted Today?",
+    "avg": 7.2,
     "weakest": "visual_quality"
    }
   ],
@@ -67,67 +67,67 @@
   ]
  },
  "stage_averages": {
-  "hook": 7.2,
-  "story": 6.7,
-  "visuals": 5.9,
+  "hook": 7.3,
+  "story": 6.6,
+  "visuals": 5.8,
   "polish": 6.0,
-  "policy": 9.3
+  "policy": 8.8
  },
  "weakest_stage": "visuals",
  "region": "IN",
- "trend_signals_total": 62,
- "trend_signals_on_niche": 42,
+ "trend_signals_total": 60,
+ "trend_signals_on_niche": 44,
  "niche_winners": [
   {
    "title": "How the First Combat Submarine Actually Worked #engineering #history #submarine",
-   "views": 32460723,
+   "views": 33361407,
    "url": "https://www.youtube.com/watch?v=rXgv9bxT8gw"
   },
   {
+   "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
+   "views": 4004503,
+   "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
+  },
+  {
    "title": "When Cameras Capture Astonishing Animal Encounters",
-   "views": 27942261,
+   "views": 28541106,
    "url": "https://www.youtube.com/watch?v=vvnUUFqwsoU"
   },
   {
    "title": "Animal Encounters That Seem Almost Impossible",
-   "views": 5942554,
+   "views": 6387756,
    "url": "https://www.youtube.com/watch?v=xM3UqrvLeYI"
   },
   {
    "title": "5 Animals That Can Survive Without Sleep 😱  #animalfacts #sleepdeprivation #animals",
-   "views": 5073450,
+   "views": 5105657,
    "url": "https://www.youtube.com/watch?v=j7MMYEKv9g4"
   },
   {
-   "title": "10 Unexpected Animal Encounters with Incredible Endings 😱",
-   "views": 6549455,
-   "url": "https://www.youtube.com/watch?v=bnacOCA1AUA"
+   "title": "The Obstacle Explained in 35 seconds",
+   "views": 1063745,
+   "url": "https://www.youtube.com/watch?v=SXgbpXwgQdM"
   },
   {
    "title": "November Moon Meet-up Events 💀 #space #earth #shorts",
-   "views": 2265710,
+   "views": 2267203,
    "url": "https://www.youtube.com/watch?v=jbSgKewim3U"
   },
   {
-   "title": "The Dark Side of the Human Mind!😨",
-   "views": 1327875,
-   "url": "https://www.youtube.com/watch?v=KLljCfSJWfo"
-  },
-  {
-   "title": "Top 15 Scary Birds Sounds #shorts #birds #sound",
-   "views": 3414707,
-   "url": "https://www.youtube.com/watch?v=lFgER4dPINo"
+   "title": "This Boy Tried to Explain How the Fourth Dimension Works 🌀🤯",
+   "views": 4656965,
+   "url": "https://www.youtube.com/watch?v=NOyped1NM7M"
   }
  ],
  "news": [
+  "5,000-year-old skulls reveal a disturbing secret of ancient Egypt's first kings",
   "A new treasure map reveals where Earth's lost prehistoric life may be hiding",
+  "Scientists capture electrons making seemingly impossible quantum jumps",
+  "Superheated magma could fuel towering lava fountains",
   "NASA’s Perseverance confirms a key ingredient for life hidden in ancient Mars rocks",
-  "Crows can make decisions twice as fast as humans, scientists discover",
-  "Where are all the males? Ancient human fossils reveal a startling mystery",
-  "A butterfly that fooled scientists for 200 years finally reveals its secrets",
-  "AI-powered bionic eye breakthrough could help the blind see again",
-  "Earth's fiery birth may have created hundreds of oceans' worth of water",
-  "NASA reveals Earth's ozone hole has grown to a size not seen in a decade",
+  "The Sun unleashed a monster storm. Earth may have made it worse",
+  "Dark energy may have flipped from negative to positive 9.5 billion years ago",
+  "Outbursts from a Massive Star",
   "APOD: 2026 November 13 – NGC 206 and the Star Clouds of Andromeda",
   "A Global Rebound for Mangroves",
   "I Am Artemis Katie Spicer",

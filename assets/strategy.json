@@ -1,105 +1,105 @@
 {
- "updated": "2026-11-13T11:15+00:00",
+ "updated": "2026-11-14T10:40+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 16,
+  "days_left": 15,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 12580,
-  "gained": 6799,
-  "pct": 0.68,
-  "pace_per_day": 390,
-  "needed_per_day": 62075,
-  "projected": 13042,
+  "channel_views": 12648,
+  "gained": 6867,
+  "pct": 0.69,
+  "pace_per_day": 246,
+  "needed_per_day": 66208,
+  "projected": 10571,
   "on_track": false,
   "subs": 17
  },
  "shorts_per_day": 2,
  "topic_classes": {
+  "earth_hazard": {
+   "n": 2,
+   "mean_log_views": 2.01,
+   "boost": -0.17
+  },
   "myth_fact": {
    "n": 6,
-   "mean_log_views": 2.24,
-   "boost": 0.01
+   "mean_log_views": 2.3,
+   "boost": 0.1
   },
   "general": {
    "n": 7,
-   "mean_log_views": 1.89,
-   "boost": -0.48
+   "mean_log_views": 1.91,
+   "boost": -0.43
   },
   "what_if": {
    "n": 3,
    "mean_log_views": 2.27,
-   "boost": 0.04
+   "boost": 0.05
   },
   "inside_machine": {
    "n": 5,
-   "mean_log_views": 2.6,
-   "boost": 0.46
+   "mean_log_views": 2.58,
+   "boost": 0.45
   },
   "history_event": {
    "n": 4,
-   "mean_log_views": 2.25,
-   "boost": 0.02
+   "mean_log_views": 2.23,
+   "boost": 0.01
   },
   "awe_scale": {
    "n": 5,
    "mean_log_views": 2.49,
-   "boost": 0.33
+   "boost": 0.34
   },
   "jargon_science": {
    "n": 1,
-   "mean_log_views": 1.82,
-   "boost": -0.21
-  },
-  "earth_hazard": {
-   "n": 1,
-   "mean_log_views": 2.57,
-   "boost": 0.17
+   "mean_log_views": 1.83,
+   "boost": -0.2
   },
   "ai_tips": {
    "n": 4,
-   "mean_log_views": 1.95,
-   "boost": -0.32
+   "mean_log_views": 1.96,
+   "boost": -0.3
   },
   "tech_explainer": {
    "n": 2,
    "mean_log_views": 2.35,
-   "boost": 0.09
+   "boost": 0.1
   }
  },
  "format_results": {
   "other": {
-   "n": 18,
+   "n": 19,
    "mean_log_views": 1.95,
-   "boost": -0.48
+   "boost": -0.47
   },
   "what_if": {
    "n": 4,
    "mean_log_views": 2.12,
-   "boost": -0.13
+   "boost": -0.12
   },
   "anatomy": {
    "n": 2,
-   "mean_log_views": 2.9,
-   "boost": 0.53
+   "mean_log_views": 2.85,
+   "boost": 0.51
   },
   "versus": {
    "n": 2,
-   "mean_log_views": 2.71,
-   "boost": 0.39
+   "mean_log_views": 2.72,
+   "boost": 0.4
   },
   "scale": {
    "n": 3,
    "mean_log_views": 2.67,
-   "boost": 0.44
+   "boost": 0.45
   },
   "how_it_works": {
    "n": 2,
    "mean_log_views": 2.57,
-   "boost": 0.27
+   "boost": 0.28
   },
   "timeline": {
    "n": 1,
@@ -108,13 +108,13 @@
   },
   "ranked": {
    "n": 1,
-   "mean_log_views": 1.82,
-   "boost": -0.21
+   "mean_log_views": 1.83,
+   "boost": -0.2
   },
   "myth_vs_fact": {
    "n": 4,
    "mean_log_views": 2.54,
-   "boost": 0.35
+   "boost": 0.36
   },
   "unsolved": {
    "n": 1,
@@ -128,8 +128,7 @@
  ],
  "lose_classes": [
   "general",
-  "ai_tips",
-  "jargon_science"
+  "ai_tips"
  ],
  "cohort": {
   "n": 31,
@@ -159,7 +158,7 @@
    "name": "volume",
    "metric": "channel views in 30 days",
    "goal": 100000,
-   "now": 6799
+   "now": 6867
   }
  ],
  "focus_words": [
@@ -176,24 +175,24 @@
  ],
  "avoid_words": [
   "calls",
+  "could",
   "free",
+  "grandma",
   "interview",
+  "just",
   "know",
   "more",
   "people",
-  "planes",
-  "prompts",
-  "really",
-  "save"
+  "phone"
  ],
  "winners": [
   {
    "title": "Inside NASA's Moon Rocket, Part by Part",
-   "views": 410
+   "views": 418
   },
   {
    "title": "Rigel vs the Sun: 363,000 Suns in One Star",
-   "views": 433
+   "views": 438
   },
   {
    "title": "Inside a Submarine: 5 Systems",
@@ -202,16 +201,16 @@
  ],
  "flops": [
   {
-   "title": "Why Planes Really Fly (Not What School Taught) #shorts",
-   "views": 0
-  },
-  {
    "title": "5 AI Prompts 99% of People Don't Know 🤯 (Save This) #shorts",
    "views": 24
   },
   {
    "title": "3 FREE AI Tricks to Get More Interview Calls 🎯 (Save This) #shorts",
    "views": 32
+  },
+  {
+   "title": "What If Grandma Could Just ASK Her Phone? 📱 Free AI Tool #shorts",
+   "views": 34
   }
  ],
  "best_formats": [
@@ -221,9 +220,9 @@
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Topic classes on the channel's own results: more of inside_machine, awe_scale; less of general, ai_tips, jargon_science.",
-  "Double down on what already wins on this channel: 'Inside NASA's Moon Rocket, Part by Part' (410 views); 'Rigel vs the Sun: 363,000 Suns in One Star' (433 views); 'Inside a Submarine: 5 Systems' (1,125 views).",
-  "Drop what flopped: 'Why Planes Really Fly (Not What School T' (0); '5 AI Prompts 99% of People Don't Know 🤯 ' (24); '3 FREE AI Tricks to Get More Interview C' (32).",
+  "Topic classes on the channel's own results: more of inside_machine, awe_scale; less of general, ai_tips.",
+  "Double down on what already wins on this channel: 'Inside NASA's Moon Rocket, Part by Part' (418 views); 'Rigel vs the Sun: 363,000 Suns in One Star' (438 views); 'Inside a Submarine: 5 Systems' (1,125 views).",
+  "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (24); '3 FREE AI Tricks to Get More Interview C' (32); 'What If Grandma Could Just ASK Her Phone' (34).",
   "Prefer the formats the judge scores best: anatomy, scale.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."
