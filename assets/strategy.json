@@ -1,146 +1,146 @@
 {
- "updated": "2026-11-14T10:40+00:00",
+ "updated": "2026-11-15T11:14+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 15,
+  "days_left": 14,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 12648,
-  "gained": 6867,
-  "pct": 0.69,
-  "pace_per_day": 246,
-  "needed_per_day": 66208,
-  "projected": 10571,
+  "channel_views": 12766,
+  "gained": 6985,
+  "pct": 0.7,
+  "pace_per_day": 93,
+  "needed_per_day": 70929,
+  "projected": 8287,
   "on_track": false,
   "subs": 17
  },
  "shorts_per_day": 2,
  "topic_classes": {
+  "tech_explainer": {
+   "n": 3,
+   "mean_log_views": 2.1,
+   "boost": -0.08
+  },
+  "what_if": {
+   "n": 4,
+   "mean_log_views": 2.07,
+   "boost": -0.13
+  },
+  "inside_machine": {
+   "n": 6,
+   "mean_log_views": 2.45,
+   "boost": 0.35
+  },
   "earth_hazard": {
    "n": 2,
-   "mean_log_views": 2.01,
-   "boost": -0.17
+   "mean_log_views": 2.04,
+   "boost": -0.12
   },
   "myth_fact": {
    "n": 6,
-   "mean_log_views": 2.3,
-   "boost": 0.1
+   "mean_log_views": 2.31,
+   "boost": 0.17
   },
   "general": {
    "n": 7,
    "mean_log_views": 1.91,
-   "boost": -0.43
-  },
-  "what_if": {
-   "n": 3,
-   "mean_log_views": 2.27,
-   "boost": 0.05
-  },
-  "inside_machine": {
-   "n": 5,
-   "mean_log_views": 2.58,
-   "boost": 0.45
+   "boost": -0.38
   },
   "history_event": {
    "n": 4,
    "mean_log_views": 2.23,
-   "boost": 0.01
+   "boost": 0.06
   },
   "awe_scale": {
    "n": 5,
    "mean_log_views": 2.49,
-   "boost": 0.34
+   "boost": 0.39
   },
   "jargon_science": {
    "n": 1,
    "mean_log_views": 1.83,
-   "boost": -0.2
+   "boost": -0.18
   },
   "ai_tips": {
    "n": 4,
    "mean_log_views": 1.96,
-   "boost": -0.3
-  },
-  "tech_explainer": {
-   "n": 2,
-   "mean_log_views": 2.35,
-   "boost": 0.1
+   "boost": -0.25
   }
  },
  "format_results": {
+  "versus": {
+   "n": 3,
+   "mean_log_views": 2.35,
+   "boost": 0.17
+  },
+  "what_if": {
+   "n": 5,
+   "mean_log_views": 1.99,
+   "boost": -0.24
+  },
+  "anatomy": {
+   "n": 3,
+   "mean_log_views": 2.5,
+   "boost": 0.32
+  },
   "other": {
    "n": 19,
    "mean_log_views": 1.95,
-   "boost": -0.47
-  },
-  "what_if": {
-   "n": 4,
-   "mean_log_views": 2.12,
-   "boost": -0.12
-  },
-  "anatomy": {
-   "n": 2,
-   "mean_log_views": 2.85,
-   "boost": 0.51
-  },
-  "versus": {
-   "n": 2,
-   "mean_log_views": 2.72,
-   "boost": 0.4
+   "boost": -0.39
   },
   "scale": {
    "n": 3,
    "mean_log_views": 2.67,
-   "boost": 0.45
+   "boost": 0.49
   },
   "how_it_works": {
    "n": 2,
    "mean_log_views": 2.57,
-   "boost": 0.28
+   "boost": 0.31
   },
   "timeline": {
    "n": 1,
    "mean_log_views": 2.35,
-   "boost": 0.06
+   "boost": 0.08
   },
   "ranked": {
    "n": 1,
    "mean_log_views": 1.83,
-   "boost": -0.2
+   "boost": -0.18
   },
   "myth_vs_fact": {
    "n": 4,
    "mean_log_views": 2.54,
-   "boost": 0.36
+   "boost": 0.41
   },
   "unsolved": {
    "n": 1,
    "mean_log_views": 2.57,
-   "boost": 0.17
+   "boost": 0.19
   }
  },
  "win_classes": [
-  "inside_machine",
-  "awe_scale"
+  "awe_scale",
+  "inside_machine"
  ],
  "lose_classes": [
   "general",
   "ai_tips"
  ],
  "cohort": {
-  "n": 31,
-  "median": 229,
-  "p75": 444
+  "n": 36,
+  "median": 199.0,
+  "p75": 438
  },
  "ladder": [
   {
    "name": "typical Short",
    "metric": "median views per Short at 7 days",
    "goal": 1000,
-   "now": 229
+   "now": 199.0
   },
   {
    "name": "first breakout",
@@ -158,7 +158,7 @@
    "name": "volume",
    "metric": "channel views in 30 days",
    "goal": 100000,
-   "now": 6867
+   "now": 6985
   }
  ],
  "focus_words": [
@@ -191,12 +191,12 @@
    "views": 418
   },
   {
-   "title": "Rigel vs the Sun: 363,000 Suns in One Star",
-   "views": 438
-  },
-  {
    "title": "Inside a Submarine: 5 Systems",
    "views": 1125
+  },
+  {
+   "title": "Rigel vs the Sun: 363,000 Suns in One Star",
+   "views": 438
   }
  ],
  "flops": [
@@ -210,20 +210,20 @@
   },
   {
    "title": "What If Grandma Could Just ASK Her Phone? 📱 Free AI Tool #shorts",
-   "views": 34
+   "views": 35
   }
  ],
  "best_formats": [
-  "anatomy",
   "scale",
-  "versus"
+  "myth_vs_fact",
+  "anatomy"
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Topic classes on the channel's own results: more of inside_machine, awe_scale; less of general, ai_tips.",
-  "Double down on what already wins on this channel: 'Inside NASA's Moon Rocket, Part by Part' (418 views); 'Rigel vs the Sun: 363,000 Suns in One Star' (438 views); 'Inside a Submarine: 5 Systems' (1,125 views).",
-  "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (24); '3 FREE AI Tricks to Get More Interview C' (32); 'What If Grandma Could Just ASK Her Phone' (34).",
-  "Prefer the formats the judge scores best: anatomy, scale.",
+  "Topic classes on the channel's own results: more of awe_scale, inside_machine; less of general, ai_tips.",
+  "Double down on what already wins on this channel: 'Inside NASA's Moon Rocket, Part by Part' (418 views); 'Inside a Submarine: 5 Systems' (1,125 views); 'Rigel vs the Sun: 363,000 Suns in One Star' (438 views).",
+  "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (24); '3 FREE AI Tricks to Get More Interview C' (32); 'What If Grandma Could Just ASK Her Phone' (35).",
+  "Prefer the formats the judge scores best: scale, myth_vs_fact.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."
  ]
