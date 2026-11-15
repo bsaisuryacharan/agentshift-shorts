@@ -1,5 +1,5 @@
 {
- "current": "hidden-icy-world-past-pluto-timeline-a3",
+ "current": "crystal-remembers-electricity-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -775,6 +775,25 @@
     "safe_zone": 10
    },
    "run_id": "43732368653"
+  },
+  "crystal-remembers-electricity-a3": {
+   "title": "The Crystal That Remembers Electricity",
+   "base": "crystal",
+   "status": "draft",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 5,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 4,
+    "polish": 5,
+    "hierarchy": 5,
+    "consistency": 5,
+    "payoff": 6,
+    "safe_zone": 10
+   },
+   "run_id": "43750213904"
   }
  }
 }

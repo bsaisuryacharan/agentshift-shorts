@@ -1,0 +1,264 @@
+{
+ "id": "crystal-remembers-electricity-a3",
+ "title": "The Crystal That Remembers Electricity",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+28%",
+ "brand": "AGENT SHIFT",
+ "series_label": "HOW IT WORKS",
+ "format": "how_it_works",
+ "theme": "cool",
+ "look": "blueprint",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b1": "Ferroelectricity — Wikipedia, https://en.wikipedia.org/wiki/Ferroelectricity",
+  "b4": "Ferroelectricity — Wikipedia, https://en.wikipedia.org/wiki/Ferroelectricity",
+  "b5": "Ferroelectricity — Wikipedia, https://en.wikipedia.org/wiki/Ferroelectricity",
+  "b6": "Ferroelectricity — Britannica, https://www.britannica.com/science/ferroelectricity",
+  "wiki": "https://en.wikipedia.org/wiki/Ferroelectricity",
+  "ref1": "https://www.britannica.com/science/ferroelectricity",
+  "ref2": "https://arxiv.org/html/2108.13776v1",
+  "ref3": "https://www.nature.com/articles/s44335-026-00088-y",
+  "ref4": "https://phys.org/news/2023-04-discovery-ferroelectricity-elementary-substance.html",
+  "ref5": "https://www.science.org/doi/10.1126/sciadv.aec5225"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "ferroelectric crystal",
+   "prompt": "photoreal cinematic 9:16 macro of a translucent salt crystal on a dark lab bench, cold blue practical light, shallow depth of field, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "This crystal can remember electricity. Your computer depends on it.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how?",
+     "at": "crystal"
+    },
+    {
+     "t": "title",
+     "html": "A crystal with *memory*",
+     "at": "remember"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Inside, its atoms sit slightly off-centre. That creates a built-in electric polarization, with no battery attached.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "atoms shift *off-centre*"
+     },
+     "accent": "blue",
+     "at": "atoms",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Apply a field, and the polarization flips the other way. Remove it, and the flip stays. That is the memory.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "field on",
+       "polarization flips"
+      ],
+      [
+       "field off",
+       "flip stays"
+      ]
+     ],
+     "at": "flips"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Because it depends on history, not just the present, engineers call it a hysteresis loop. Two stable states: a zero and a one.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "history decides the state",
+      "keyword": "history",
+      "note": "hysteresis loop"
+     },
+     "accent": "green",
+     "at": "history",
+     "dur": 2.5
+    },
+    {
+     "t": "rows",
+     "items": [
+      [
+       "state 1",
+       "polarized",
+       "up",
+       "cy"
+      ],
+      [
+       "state 0",
+       "flipped",
+       "down",
+       "ir"
+      ]
+     ],
+     "stagger": 0.4,
+     "at": "states"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "Rochelle salt crystals",
+   "prompt": "photoreal cinematic 9:16 still life of large Rochelle salt crystals in a vintage physics lab, warm practical lamp light, glassware nearby, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "The effect was first seen in 1920, in Rochelle salt, by physicist Joseph Valasek.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "1920",
+     "col": "cy",
+     "at": "1920"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "ultrasound machine probe",
+   "prompt": "photoreal cinematic 9:16 close-up of a medical ultrasound transducer resting on a clinic bench, cool clinical light, real materials, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "The same crystal works in ferroelectric RAM, RFID cards, and medical ultrasound machines that both send and hear the ping.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "used in",
+      "options": "RAM, RFID, ultrasound"
+     },
+     "accent": "blue",
+     "at": "RAM",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "computer memory chip",
+   "prompt": "photoreal cinematic 9:16 macro of a silicon memory chip on a circuit board, cool blue lab light, fine metallic detail, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "One material that stores data, senses heat, and generates charge when squeezed. A crystal doing three jobs at once.",
+   "hud": [
+    {
+     "t": "list",
+     "items": [
+      [
+       "💾",
+       "stores data",
+       ""
+      ],
+      [
+       "🌡️",
+       "senses heat",
+       ""
+      ],
+      [
+       "⚡",
+       "generates charge",
+       ""
+      ]
+     ],
+     "at": "three"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "So next time your device remembers, thank a crystal. Follow for more how-it-works.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "AGENT SHIFT",
+      "label": "HOW IT WORKS"
+     },
+     "accent": "blue",
+     "at": "crystal",
+     "dur": 2.5
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "inside_machine",
+  "why": "topic fit",
+  "lemo_style": [
+   "Exploded Teardown",
+   "Blueprint",
+   "Engineering Briefing Board"
+  ]
+ },
+ "_facts": {
+  "title": "Ferroelectricity",
+  "url": "https://en.wikipedia.org/wiki/Ferroelectricity",
+  "text": "In physics and materials science, ferroelectricity is the property of certain materials that exhibit a spontaneous electric polarization—an internal electric alignment that arises naturally without an external source. This polarization can be reversed when an external electric field is applied. All ferroelectric materials are also piezoelectric (they generate an electric charge when mechanically stressed) and pyroelectric (they generate a charge when heated or cooled). Their distinctive feature is that the natural electrical polarization is reversible. The term ferroelectricity was coined in analogy to ferromagnetism, where a material exhibits a permanent magnetic moment. Ferromagnetism was already well established when ferroelectricity was first observed in 1920 in Rochelle salt by American physicist Joseph Valasek. The prefix ferro (meaning iron) was adopted even though most ferroelectric materials do not contain iron. Materials that are both ferroelectric and ferromagnetic are known as multiferroics, and they are of particular interest because they combine electric and magnetic ordering in a single system. == Polarization ==\n\nWhen most materials are electrically polarized, the induced polarization P is almost exactly proportional to the applied external electric field E, so the polarization is a linear function. This is called linear dielectric polarization (see figure). Some materials, known as paraelectric materials, show a more enhanced nonlinear polarization (see figure). The electric permittivity, corresponding to the slope of the polarization curve, is not constant as in linear dielectrics but is a function of the external electric field. In addition to being nonlinear, ferroelectric materials demonstrate a spontaneous nonzero polarization (after entrainment, see figure) even when the applied field E is zero. The distinguishing feature of ferroelectrics is that the spontaneous polarization can be reversed by a suitably strong applied electric field in the opposite direction; the polarization is therefore dependent not only on the current electric field but also on its history, yielding a hysteresis loop. They are called ferroelectrics by analogy to ferromagnetic materials, which have spontaneous magnetization and exhibit similar hysteresis loops. Typically, materials demonstrate ferroelectricity only below a certain phase transition temperature, called the Curie temperature (TC), and are paraelectric above this temperature: the spontaneous polarization vanishes, and the ferroelectric crystal transforms into the paraelectric state. Many ferroelectrics lose their pyroelectric properties above TC completely, because their paraelectric phase has a centrosymmetric crystal structure. == Applications ==\nThe nonlinear nature of ferroelectric materials can be used to make capacitors with adjustable capacitance. Typically, a ferroelectric capacitor simply consists of a pair of electrodes sandwiching a layer of ferroelectric material. The permittivity of ferroelectrics is not only adjustable but commonly also very high, especially when close to the phase transition temperature. Because of this, ferroelectric capacitors are small in physical size compared to dielectric (non-tunable) capacitors of similar capacitance. The spontaneous polarization of ferroelectric materials implies a hysteresis effect which can be used as a memory function, and ferroelectric capacitors are indeed used to make ferroelectric RAM for computers and RFID cards. In these applications thin films of ferroelectric materials are typically used, as this allows the field required to switch the polarization to be achieved with a moderate voltage. However, when using thin films a great deal of attention needs to be paid to the interfaces, electrodes and sample quality for devices to work reliably. Ferroelectric materials are required by symmetry considerations to also be piezoelectric and pyroelectric. The combined properties of memory, piezoelectricity, and pyroelectricity make ferroelectric capacitors very useful, e.g. for sensor applications. Ferroelectric capacitors are used in medical ultrasound machines (the capacitors generate and then listen for the ultrasound ping used to image the internal organs of a body), high quality infrared cameras (the infrared image is projected onto a two dimensional array of ferroelectric capacitors capable of detecting temperature differences as small as millionths of a degree Celsius), fire sensors, sonar, vibration sensors, and even fuel injectors on diesel engines. Another idea of recent interest is the ferroelectric tunnel junction (FTJ) in which a contact is made up by nanometer-thick ferroelectric film placed between metal electrodes. The thickness of the ferroelectric layer is small enough to allow tunneling of electrons. The piezoelectric and interface effects as well as the depolarization field may lead to a giant electroresistance (GER) switching effect. Yet another burgeoning application is multiferroics, where researchers are looking for ways to couple magnetic and ferroelectric ordering within a material or heterostructure; there are several recent reviews on this topic. Catalytic properties of ferroelectrics have been studied since 1952 when Parravano observed anomalies in CO oxidation rates over ferroelectric sodium and potassium niobates near the Curie temperature of these materials. Surface-perpendicular component of the ferroelectric polarization can dope polarization-dependent charges on surfaces of ferroelectric materials, changing their chemistry. This opens the possibility of performing catalysis beyond the limits of the Sabatier principle. Sabatier principle states that the surface-adsorbates interaction has to be an optimal amount: not too weak to be inert toward the reactants and not too strong to poison the surface and avoid desorption of the products: a compromise situation. This set of optimum interactions is usually referred to as \"top of the volcano\" in activity volcano plots. On the other hand, ferroelectric polarization-dependent chemistry can offer the possibility of switching the surface—adsorbates interaction from strong adsorption to strong desorption, thus a compromise between desorption and adsorption is no longer needed. Ferroelectric polarization can also act as an energy harvester. Polarization can help the separation of photo-generated electron-hole pairs, leading to enhanced photocatalysis.\n\nSOURCE britannica.com (https://www.britannica.com/science/ferroelectricity):\nAsk the Chatbot Games & Quizzes History & Society Science & Tech Biographies Animals & Nature Geography & Travel Arts & Culture ProCon Money Videos Adding us as a **Preferred Source** tells Google you trust our content, so our articles show up more often in your Google Search, Discover feed, and AI Overviews. Print # ferroelectricity physics Written and fact-checked by Britannica Editors Encyclopaedia Britannica's editors oversee subject areas in which they have extensive knowledge, whether from years of experience gained by working on that content or via study for an advanced degree.... Britannica Editors History **ferroelectricity**, property of certain nonconducting crystals, or dielectrics, that exhibit spontaneous electric polarization (separation of the centre of positive and negative electric charge, making one side of the crystal positive and the opposite side negative) that can be reversed in direction by the application of an appropriate electric field. Ferroelectricity is named by analogy with ferromagnetism, which occurs in such materials as iron. Iron atoms, being tiny magnets, spontaneously align themselves in clusters called ferromagnetic domains, which in turn can be oriented predominantly in a given direction by the application of an external magnetic field. Ferroelectric materials—for example, barium titanate (BaTiO3) and Rochelle salt—are composed of crystals in which the structural units are tiny electric dipoles; that is, in each unit the centres of positive charge and of negative charge are slightly separated. In some crystals these electric dipoles spontaneously line up in clusters called domains, and in ferroelectric crystals the domains can be oriented predominantly in one direction by a strong external electric field. Reversing the external field reverses the predominant orientation of the ferroelectric domains, though the switching to a new direction lags somewhat behind the change in the external electric field. This lag of electric polarization behind the applied electric field is ferroelectric hysteresis, named by analogy with ferromagnetic hysteresis. Ferroelectricity ceases in a given material above a characteristic temperature, c\n\nSOURCE arxiv.org (https://arxiv.org/html/2108.13776v1):\n##### Report GitHub Issue Content selection saved. Describe the issue below: # History of Ferroelectrics – A Crystallography Perspective ###### Abstract “Underlying the whole treatment is the assumption that the physical properties of a solid are closely related to its structure, and that the first step to understanding the physical properties is to understand the structure.” Helen D. Megaw Preface to Ferroelectricity in Crystals, Methuen & Co Ltd, London, 1957. To appear in the IUCr Newsletter 2021 marks the 100th anniversary of the discovery of the phenomenon of ferroelectricity, defined to be a spontaneous electric polarization that is switchable by an applied electric field. This is a wonderful centennial for crystallographers to celebrate, because it is a property of crystals in which functionality and structure – specifically the existence of a polar axis – are intimately related. The key characteristic of a ferroelectric is a hysteresis loop of polarization versus electric field; we reproduce the data from the original discovery by Joseph Valasek in Figure 1 [1]. The similarity with the magnetization behavior of ferromagnetic iron in a magnetic field is clear – just like the well-known hysteretic magnetic-field induced switching between the two stable states of opposite magnetization in a ferromagnet, a ferroelectric material has two stable states of opposite electric polarization associated with opposite relative displacements of its anions and cations – and it’s this analogy that gives ferroelectrics their name, in spite of the fact that most of them are not ferrous! We’ll see in this article the key role played by crystallography in the evolution of ferroelectrics (a timeline of key discoveries is shown in Figure 1), starting from the identification of polar materials, through establishing the nature of ferroelectric phase transitions, to providing crucial information for the development of today’s accepted theories of ferroelectric polarization. We begin our story in 300 BC, when Theophrastus, the successor to Aristotle in his School of Philosophy, made an early mention of the electrostatic behavior of certain rocks in his treatise On Stones. Particul\n\nSOURCE nature.com (https://www.nature.com/articles/s44335-026-00088-y):\nThank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain the best experience, we recommend you use a more up to date browser (or turn off compatibility mode in Internet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles and JavaScript. Advertisement # Toward next-generation computing through ferroelectricity *npj Unconventional Computing* **volume 3**, Article number: 46 (2026) Cite this article 2999 Accesses 1 Citations 1 Altmetric Metrics details ## Abstract Ferroelectric materials offer electrically switchable, non-volatile polarization as a physical state variable for computing. In thin films, polarization can be engineered to control charge transport, interfacial barriers, and conductance, enabling memory and computation to converge within compact devices. This Review examines how ferroelectric physics translates into emerging device functions and computing-specific implementations, outlining design principles for reliable, scalable, energy-efficient, and monolithically integrated next-generation hardware. ### Similar content being viewed by others ### Low-force pulse switching of ferroelectric polarization enabled by imprint field ### Candidate ferroelectrics via ab initio high-throughput screening of polar materials ### Unraveling the origin of ferroelectric resistance switching through the interfacial engineering of layered ferroelectric-metal junctions ### Explore related subjects ## Introduction The continued scaling of conventional silicon electronics is approaching both practical and physical limits, while the slowing of Moore’s law has reduced the extent to which device miniaturization alone can sustain improvements in computational performance, energy efficiency, and integration density1.\"),2.\"). At the architectural level, the von Neumann model imposes an additional constraint because the physical separation of memory and processing units makes data transfer a dominant source of latency and power consumption. Limitations of that kind have become increasingly severe in artificial intelligence workloads, where training and inference require immense data\n\nSOURCE phys.org (https://phys.org/news/2023-04-discovery-ferroelectricity-elementary-substance.html):\n### Science X Account Sign in with Forget Password? Learn more share this! 19 11 Share Email April 6, 2023 # Discovery of ferroelectricity in an elementary substance by National University of Singapore This article has been reviewed according to Science X's editorial process and policies. Editors have highlighted the following attributes while ensuring the content's credibility: fact-checked peer-reviewed publication trusted source proofread shows the ball-and-stick model of black phosphorus-like bismuth (BP-Bi) with top view (top panel) and side view (bottom panel). Different from black phosphorous, BP-Bi has a nonzero buckling Δh. Figure (B) and (C) show the typical non-contact atomic force microscopy (nc-AFM) image and Kelvin probe microscopy (KPFM) map of the same location respectively. Figure (D) represents the domain wall movement detected by nc-AFM when performing the polarization switching. The top and bottom halves are the images acquired after forward and backward bias sweeping respectively. Figure (E) is the tip-height dependence of the current during the bias sweep. Credit: Nature (2023). DOI: 10.1038/s41586-023-05848-5\") National University of Singapore (NUS) physicists have discovered a novel form of ferroelectricity in a single-element bismuth monolayer that can produce regular and reversible dipole moments for future applications of non-volatile memories and electronic sensors. Ferroelectricity refers to the phenomenon of certain materials exhibiting a spontaneous electric polarization that can be reversed by applying an external electric field. Ferroelectric materials are characterized by a crystal structure that lacks a center of symmetry. Due to the potential applications for data storage, ferroelectric materials have attracted widespread research attention. Additionally, their piezoelectric, thermoelectric and nonlinear optical properties have been extensively studied in research areas such as renewable energy, micro-electro-mechanical systems and optical devices. In recent years, two-dimensional (2D) ferroelectric materials have emerged as a new contender in the field of neuromorphic synapse devices, displaying the advantage of low dimension\n\nSOURCE science.org (https://www.science.org/doi/10.1126/sciadv.aec5225):\nOpens in a new window Opens an external website Opens an external website in a new window This website utilizes technologies such as cookies to enable essential site functionality, as well as for analytics, personalization, and targeted advertising. To learn more, view the following link: Privacy Policy Skip to main content Main content starts here # Robust room-temperature ferroelectricity in the wide-bandgap semiconductor Ga2O3 Jiaying Shen <https://orcid.org/0009-0006-5947-4595>, Weng Fu Io <https://orcid.org/0000-0001-9339-5045>, [...] , Chang Liu <https://orcid.org/0000-0001-5013-0549>, Yiyang Wen, [...] , Han Wu, Yilin Cao, Yongtao Yang, Dianmeng Dong, Fan Zhang, [...] , Songhua Cai <https://orcid.org/0000-0003-3839-2030>, Wei Ren <https://orcid.org/0000-0001-7317-3867>, Xianran Xing <https://orcid.org/0000-0003-0704-8886>, Yang Zhang <https://orcid.org/0000-0002-9840-1755>, Zhenping Wu <https://orcid.org/0000-0003-2986-8068>, and Jianhua Hao <https://orcid.org/0000-0002-6186-5169>+12 authors +10 authors +5 authors fewerAuthors Info & Affiliations Science Advances 11 Feb 2026 Vol 12, Issue 7 DOI: 10.1126/sciadv.aec5225 NotificationsBookmark ## Abstract For decades, the integration of power handling and nonvolatile memory has been fundamentally impeded by the incompatibility between wide-bandgap semiconductors and ferroelectric materials. We resolve this challenge by demonstrating robust room-temperature ferroelectricity in epitaxial metastable κ-Ga2O3, grown via industry-compatible metal-organic chemical vapor deposition, creating an intrinsically ferroelectric wide-bandgap semiconductor. Through systematic characterization including piezoresponse force microscopy, polarization hysteresis measurements, and positive up–negative down tests, we provide conclusive evidence of stable ferroelectric switching down to 5-nanometer thickness—exceeding conventional ferroelectric limits—via a unique octahedral-tetrahedral transformation. Ferroelectric tunnel junctions achieve giant tunneling electroresistance exceeding 105. This fundamental discovery in a mainstream semiconductor challenges conventional materials paradigms and enables monolithic integration of power a",
+  "extra_sources": [
+   "https://www.britannica.com/science/ferroelectricity",
+   "https://arxiv.org/html/2108.13776v1",
+   "https://www.nature.com/articles/s44335-026-00088-y",
+   "https://phys.org/news/2023-04-discovery-ferroelectricity-elementary-substance.html",
+   "https://www.science.org/doi/10.1126/sciadv.aec5225"
+  ]
+ },
+ "_writer": "opencode"
+}
