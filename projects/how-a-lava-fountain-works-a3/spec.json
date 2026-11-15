@@ -1,0 +1,259 @@
+{
+ "id": "how-a-lava-fountain-works-a3",
+ "title": "How a Lava Fountain Works",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "format": "how_it_works",
+ "series_label": "HOW IT WORKS",
+ "theme": "cool",
+ "look": "blueprint",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "USGS Hawaiian Volcano Observatory, https://www.usgs.gov/observatories/hvo/news/volcano-watch-when-have-lava-fountains-formed-kilauea-and-what-are-their",
+  "b1": "Lava, Wikipedia, https://en.wikipedia.org/wiki/Lava",
+  "b2": "Lava, Wikipedia, https://en.wikipedia.org/wiki/Lava",
+  "b3": "Lava, Wikipedia, https://en.wikipedia.org/wiki/Lava",
+  "b4": "Lava, Wikipedia, https://en.wikipedia.org/wiki/Lava",
+  "b5": "Lava, Wikipedia, https://en.wikipedia.org/wiki/Lava",
+  "b6": "Lava, Wikipedia, https://en.wikipedia.org/wiki/Lava",
+  "wiki": "https://en.wikipedia.org/wiki/Lava",
+  "ref1": "https://www.usgs.gov/observatories/hvo/news/volcano-watch-when-have-lava-fountains-formed-kilauea-and-what-are-their",
+  "ref2": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10630439",
+  "ref3": "https://www.britannica.com/science/lava-fountain",
+  "ref4": "https://www.science.org/doi/10.1126/science.aef2931",
+  "ref5": "https://pubs.usgs.gov/fs/2000/fs152-00"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Kilauea lava fountain",
+   "footage": "lava fountain eruption",
+   "prompt": "photoreal cinematic 9:16 documentary shot of a basaltic volcano erupting a tall jet of incandescent lava at dusk, dark crater walls, real volcanic terrain, natural firelight only, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Kilauea has fired lava fountains 12 times since December 23, 2024. Here's how rock flies.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how?",
+     "at": "fountains"
+    },
+    {
+     "t": "title",
+     "html": "lava *fountains*",
+     "at": "rock"
+    }
+   ],
+   "sfx": [
+    [
+     "eruption",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Kilauea lava lake",
+   "footage": "lava lake bubbling",
+   "prompt": "photoreal cinematic 9:16 macro shot of a molten lava lake surface glowing deep orange, dark cooling crust plates drifting on the melt, volcanic vent walls, natural firelight, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Magma sits at 800 to 1,200 degrees Celsius, rising through cracks in the crust.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "800–1,200 °C",
+     "col": "am",
+     "at": "Celsius"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Pressure drops, gas exsolves into bubbles — the major driving force.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "magma rises",
+       "gas bubbles"
+      ],
+      [
+       "gas bubbles",
+       "pressure builds"
+      ],
+      [
+       "pressure builds",
+       "fountain"
+      ]
+     ],
+     "at": "bubbles"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The lava itself flows like ketchup: 10,000 to 100,000 times thicker than water.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 100000,
+      "suffix": "× water"
+     },
+     "at": "100,000",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s2.jpg",
+   "photo": "lava flow",
+   "footage": "lava flow creeping",
+   "prompt": "photoreal cinematic 9:16 wide shot of a slow basaltic lava flow at night, glowing crack in a black crusted channel, rough volcanic rock field, natural firelight, no people, no text",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "A crust forms instantly on exposed lava, insulating the liquid so it keeps flowing.",
+   "hud": [
+    {
+     "t": "tape",
+     "text": "crust insulates",
+     "col": "am",
+     "at": "insulating"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Fountain lava is low in silica — 45% to 52% — so it runs thin, and gas jets it skyward.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "low *silica* runs thin",
+      "accent": "green"
+     },
+     "at": "silica",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "45%–52% silica",
+     "col": "cy",
+     "at": "45%"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "img": "s3.jpg",
+   "photo": "Vesuvius volcano",
+   "prompt": "photoreal cinematic 9:16 documentary wide shot of the Vesuvius volcano cone above the bay at dawn, hazy natural light, real volcanic slopes, no people, no text",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Even the name is a mix-up: Italian for a rain flood, first used for Vesuvius in 1737.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "lava means a rain flood",
+      "keyword": "rain flood",
+      "note": "Italian, 1737",
+      "style": "underline"
+     },
+     "at": "Italian",
+     "dur": 2.5
+    },
+    {
+     "t": "stamp",
+     "text": "1737",
+     "col": "ir",
+     "at": "1737"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Rock that flies, guided by gas. Follow for more.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "The engine is",
+      "options": "heat, pressure, gas",
+      "accent": "green"
+     },
+     "at": "gas",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  }
+ ],
+ "style_map": {
+  "class": "inside_machine",
+  "why": "topic fit",
+  "lemo_style": [
+   "Exploded Teardown",
+   "Blueprint",
+   "Engineering Briefing Board"
+  ]
+ },
+ "_facts": {
+  "title": "Lava",
+  "url": "https://en.wikipedia.org/wiki/Lava",
+  "text": "Lava is magma that has been expelled from the interior of a terrestrial planet (such as Earth) or a moon onto its surface. Lava may be erupted at a volcano or through a fracture in the crust, on land or underwater, usually at temperatures from 800 to 1,200 °C (1,470 to 2,190 °F). Lava may be erupted directly onto the land surface or onto the sea floor or it may be ejected into the atmosphere before falling back down. The solid volcanic rock resulting from subsequent cooling of the molten material is often also called lava. A lava flow is an outpouring of lava during an effusive eruption. (An explosive eruption, by contrast, produces a mixture of volcanic ash and other fragments called tephra, not lava flows.) The viscosity of most molten lava is about that of ketchup, roughly 10,000 to 100,000 times that of water (the latter two substances measured at 25 °C (77 °F) and 1 atm). Even so, lava can flow great distances before cooling causes it to solidify, because lava exposed to air quickly develops a solid crust that insulates the remaining liquid lava, helping to keep it hot and inviscid enough to continue flowing. == Etymology ==\nThe word lava comes from Italian and originally describes a stream caused by sudden rain. It is probably derived from the Latin word labes, meaning a 'fall' or 'slide'. An alternative explanation is that it is derived from lavare, 'to wash.' An early use of the word in connection with extrusion of magma from below the surface is found in a short account of the 1737 eruption of Vesuvius, written by Francesco Serao, who described \"a flow of fiery lava\" as an analogy to the flow of water and mud down the flanks of the volcano (a lahar) after heavy rain. == Properties ==\n\n\n=== Composition ===\n\nSolidified lava on the Earth's crust is predominantly silicate minerals: mostly feldspars, feldspathoids, olivine, pyroxenes, amphiboles, micas and quartz. Rare nonsilicate lavas can be formed by local melting of nonsilicate mineral deposits or by separation of a magma into immiscible silicate and nonsilicate liquid phases. ==== Silicate ====\nSilicate lavas are molten mixtures dominated by oxygen and silicon, the most abundant elements of the Earth's crust, with smaller quantities of aluminium, calcium, magnesium, iron, sodium, and potassium and minor amounts of many other elements. Petrologists routinely express the composition of a silicate lava in terms of the weight or molar mass fraction of the oxides of the major elements (other than oxygen) present in the lava. The silica component dominates the physical behavior of silicate magmas. Silicon ions in lava strongly bind to four oxygen ions in a tetrahedral arrangement. If an oxygen ion is bound to two silicon ions in the melt, it is described as a bridging oxygen, and lava with many clumps or chains of silicon ions connected by bridging oxygen ions is described as partially polymerized. Aluminium in combination with alkali metal oxides (sodium and potassium) also tends to polymerize the lava. Other cations, such as ferrous iron, calcium, and magnesium, bond much more weakly to oxygen and reduce the tendency to polymerize. Partial polymerization makes the lava viscous, so lava high in silica is much more viscous than lava low in silica. Because of the role of silica in determining viscosity and because many other properties of a lava (such as its temperature) are observed to correlate with silica content, silicate lavas are divided into four chemical types based on silica content: felsic, intermediate, mafic, and ultramafic. ===== Felsic =====\nFelsic or silicic lavas have a silica content greater than 63%. They include rhyolite and dacite lavas. With such a high silica content, these lavas are extremely viscous, ranging from 108 cP (105 Pa⋅s) for hot rhyolite lava at 1,200 °C (2,190 °F) to 1011 cP (108 Pa⋅s) for cool rhyolite lava at 800 °C (1,470 °F). For comparison, water has a viscosity of about 1 cP (0.001 Pa⋅s). Because of this very high viscosity, felsic lavas usually erupt explosively to produce pyroclastic (fragmental) deposits. However, rhyolite lavas occasionally erupt effusively to form lava spines, lava domes or \"coulees\" (which are thick, short lava flows). The lavas typically fragment as they extrude, producing block lava flows. These often contain obsidian. Felsic magmas can erupt at temperatures as low as 800 °C (1,470 °F). Unusually hot (>950 °C; >1,740 °F) rhyolite lavas, however, may flow for distances of many tens of kilometres, such as in the Snake River Plain of the northwestern United States. ===== Intermediate =====\nIntermediate or andesitic lavas contain 52% to 63% silica, and are lower in aluminium and usually somewhat richer in magnesium and iron than felsic lavas. Intermediate lavas form andesite domes and block lavas and may occur on steep composite volcanoes, such as in the Andes. They are also commonly hotter than felsic lavas, in the range of 850 to 1,100 °C (1,560 to 2,010 °F). Because of their lower silica content and higher eruptive temperatures, they tend to be much less viscous, with a typical viscosity of 3.5 million cP (3,500 Pa⋅s) at 1,200 °C (2,190 °F). This is slightly greater than the viscosity of smooth peanut butter. Intermediate lavas show a greater tendency to form phenocrysts. Higher iron and magnesium tends to manifest as a darker groundmass, including amphibole or pyroxene phenocrysts. ===== Mafic =====\nMafic or basaltic lavas are typified by relatively high magnesium oxide and iron oxide content (whose molecular formulas provide the consonants in mafic) and have a silica content limited to a range of 52% to 45%. They generally erupt at temperatures of 1,100 to 1,200 °C (2,010 to 2,190 °F) and at relatively low viscosities, around 104 to 105 cP (10 to 100 Pa⋅s).\n\nSOURCE usgs.gov (https://www.usgs.gov/observatories/hvo/news/volcano-watch-when-have-lava-fountains-formed-kilauea-and-what-are-their):\nAn official website of the United States government Here's how you know **Official websites use .gov** A **.gov** website belongs to an official government organization in the United States. **Secure .gov websites use HTTPS** A **lock ()** or **https://** means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. Frequently Asked Questions ## Breadcrumb ## Breadcrumb ## Volcano Watch — When have lava fountains formed on Kīlauea and what are their hazards? Kīlauea is in a unique phase of activity in Halemaʻumaʻu, with 12 episodes of dual lava fountains since December 23, 2024. Several past eruptions have been characterized by similar lava fountaining episodes, including at the start of the Puʻuʻōʻō eruption in 1983, the start of the Maunaulu eruption in 1969, and the 1959 Kīlauea Iki eruption. *Volcano Watch**is a weekly article and activity update written by U.S. Geological Survey* *Hawaiian Volcano Observatory* *scientists and affiliates. Today's article is by HVO geologist Katie Mulliken.* Even more recently, fissure 8 of the 2018 lower East Rift Zone eruption exhibited a continuous lava fountain for over two months. However, the lava fountain at fissure 8 differed from episodic lava fountains occurring recently at Kīlauea summit. The continuous fissure 8 lava fountains were primarily driven by a pressure gradient as magma moved from storage chambers beneath the summit to erupt out of the low-elevation vent on the flank of the volcano. Episodic lava fountains are driven by changes in pressurization, related to new magma being supplied. As new magma accumulates, the amount of pressure builds. Eventually, lava erupts and de-pressurizes the system. As magma rises to the surface, magmatic gas rapidly exsolves as bubbles—just like when you open a bottle of soda or champagne. This gas is a major driving force of the lava fountaining, and the pieces of lava found around the crater rim are filled with bubbles, resembling a stiff foam. Many people remember the 1983–2018 middle East Rift Zone of eruption of Puʻuʻōʻō for the accessible lava flows on the coastal plain and ocean entries. But the first three years of th\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC10630439):\n# Near-surface magma flow instability drives cyclic lava fountaining at Fagradalsfjall, Iceland Samuel Scott, Melissa Pfeffer, Clive Oppenheimer, Enikö Bali, Oliver D. Lamb, Talfan Barnie, Andrew W. Woods, Rikey Kjartansdóttir, Andri Stefánsson Nature Communications · 2023-11-07 · 14:6810 · DOI: 10.1038/s41467-023-42569-9 · PMID: 37935706 · PMCID: PMC10630439 ## Abstract Lava fountains are a common manifestation of basaltic volcanism. While magma degassing plays a clear key role in their generation, the controls on their duration and intermittency are only partially understood, not least due to the challenges of measuring the most abundant gases, H2O and CO2. The 2021 Fagradalsfjall eruption in Iceland included a six-week episode of uncommonly periodic lava fountaining, featuring ~ 100–400 m high fountains lasting a few minutes followed by repose intervals of comparable duration. Exceptional conditions on 5 May 2021 permitted close-range (~300 m), highly time-resolved (every ~ 2 s) spectroscopic measurement of emitted gases during 16 fountain-repose cycles. The observed proportions of major and minor gas molecular species (including H2O, CO2, SO2, HCl, HF and CO) reveal a stage of CO2 degassing in the upper crust during magma ascent, followed by further gas-liquid separation at very shallow depths (~100 m). We explain the pulsatory lava fountaining as the result of pressure cycles within a shallow magma-filled cavity. The degassing at Fagradalsfjall and our explanatory model throw light on the wide spectrum of terrestrial lava fountaining and the subsurface cavities associated with basaltic vents. ## Web Summary This study of volcanic gas chemistry during pulsatory lava fountaining at Fagradalsfjall volcano in Iceland reveals that the intermittency stems from pressure cycles and gas-melt separation within a shallow magma-filled cavity. ## Keywords Volcanology, Geochemistry ## Introduction Lava fountains drive a column of gas and liquid or solid clasts extending from a few tens of meters to up to 1 km or more1–4. Distinct from ‘explosive’ and ‘effusive’ eruption styles, which reflect magma fragmentation at depth in the conduit or at the surface, respectively, lav\n\nSOURCE britannica.com (https://www.britannica.com/science/lava-fountain):\nAsk the Chatbot Games & Quizzes History & Society Science & Tech Biographies Animals & Nature Geography & Travel Arts & Culture ProCon Money Videos # lava fountain geology Written by The Information Architects of Encyclopaedia Britannica The Information Architects maintain a master list of the topics included in the corpus of *Encyclopædia Britannica*, and create and manage the relationships between them. The Information Architects of Encyclopaedia Britannica Last updated ## Quick Summary A lava fountain is a volcanic phenomenon where molten rock, or lava, erupts from a vent in a continuous stream, resembling a fountain. This occurs when magma, which is molten rock beneath the Earth's surface, rises and erupts as lava. Lava fountains are often associated with basaltic lava, which is less viscous and allows for more fluid eruptions.12 These fountains can create \"curtains of fire\" along fissures, producing ramparts of spatter and cinder cones. The Laki fissure eruption in Iceland in 1783 is a notable example, producing high lava fountains and extensive lava flows. Lava flows themselves are a common volcanic hazard, with different types like pahoehoe and aa depending on the lava's viscosity and temperature.12 Summary created from Britannica articles using AI. AI can make mistakes, so verify using Britannica articles. 2 Britannica Sources 1. volcano - Fissure vents 2. volcano - Lava flows Ask Britannica AI about this topic Britannica doesn't have a full article on this topic, so we've curated a list of our relevant coverage. * ![Mount St. Helens volcano volcano / Mauna Loa, Hawaii, 1984 Lava fountains along the fissure formed a curtain of fire that illuminated the clouds and volcanic fumes into a red glow backlighting the black profile of the volcano’s huge but gently sloping summit. Lava from the summit fissure ponded in the caldera, and the first… Read More Lava fountains along the fissure formed a curtain of fire that illuminated the clouds and volcanic fumes into a red glow backlighting the black profile of the volcano’s huge but gently sloping summit. Lava from the summit fissure ponded in the caldera, and the first… Read More](/science/volcano/Mauna-Loa-Hawaii\n\nSOURCE science.org (https://www.science.org/doi/10.1126/science.aef2931):\nOpens in a new window Opens an external website Opens an external website in a new window This website utilizes technologies such as cookies to enable essential site functionality, as well as for analytics, personalization, and targeted advertising. Privacy Policy Skip to main content Main content starts here # Insights from more than a year of ongoing episodic lava fountaining at Kīlauea A. F. Flinders <https://orcid.org/0000-0003-2483-4635>, N. I. Deligne <https://orcid.org/0000-0001-9221-8581>, [...] , K. Hon <https://orcid.org/0000-0002-8954-5802>, D. T. Downs <https://orcid.org/0000-0002-9056-1404>, [...] , K. J. Lynn <https://orcid.org/0000-0001-7886-4376>, P. A. Nadeau <https://orcid.org/0000-0002-6732-3686>, K. Mulliken <https://orcid.org/0000-0003-4190-5060>, J. C. Chang <https://orcid.org/0000-0002-1258-589X>, P. J. Dotray <https://orcid.org/0000-0003-2984-455X>, [...] , M. Bagnardi <https://orcid.org/0000-0002-4315-0944>, I. A. Johanson <https://orcid.org/0000-0002-6049-2225>, M. H. Zoeller <https://orcid.org/0000-0003-4716-8567>, K. R. Anderson <https://orcid.org/0000-0001-8041-3996>, M. R. Patrick <https://orcid.org/0000-0002-8042-6639>, C. Kern <https://orcid.org/0000-0002-8920-5701>, C. R. Sealing <https://orcid.org/0009-0009-2912-1846>, M. P. Poland <https://orcid.org/0000-0001-5240-6123>, D. Phillips <https://orcid.org/0000-0003-4149-1582>, M. Cappos <https://orcid.org/0000-0001-9883-1475>, L. DeSmither <https://orcid.org/0000-0002-2422-3490>, A. P. Ellis <https://orcid.org/0000-0003-2543-0640>, S. Fuke <https://orcid.org/0009-0000-2088-7874>, P. Fukunaga <https://orcid.org/0000-0002-9788-3246>, M. Hawk <https://orcid.org/0009-0000-8074-340X>, T.-J. Hoomanawanui <https://orcid.org/0000-0002-4640-4110>, J. Jamora <https://orcid.org/0009-0007-6559-5454>, A. Kamakeʻeaina, K. Kamibayashi <https://orcid.org/0000-0001-6364-5218>, S. Lowman <https://orcid.org/0000-0002-5355-1610>, W. Tollett <https://orcid.org/0000-0001-9646-0244>, K. Rubio <https://orcid.org/0009-0006-7157-4548>, S. Swaney, S. M. Warren <https://orcid.org/0000-0003-0564-1766>, H. Winslow <https://orcid.org/0000-0001-6664-6339>, N. L. Bennington <https://orcid.org/0000-0003-3230-6744>,\n\nSOURCE pubs.usgs.gov (https://pubs.usgs.gov/fs/2000/fs152-00):\n![US Geological Survey visual mark](http://www.usgs.gov) U.S. Geological Survey Fact Sheet 152-00 Online Version 1.0 **Viewing Lava Safely - Common Sense is Not Enough** | | | --- | | Kilauea Volcano has been erupting almost continuously since 1983. Although it is noted for its approachable lava flows, the volcano undergoes many changes that can be unpredictable and life threatening. Without knowledge of the landscape and the processes that form it, visitors can find themselves in dangerous, even deadly, situations. Understanding volcanic hazards and taking the right equipment are keys to safely exploring volcanic landscapes. | --- | | | --- | | **PLEASE READ CAREFULLY-YOUR LIFE MAY DEPEND ON IT** | | | | --- | | Car-sized bubbles of lava from a lava-formed 'bench'. | | An explosion throwing hot lava spatter and rocks. | The image above shows car-sized bubbles of lava from a lava-formed \"bench\" at the water's edge. Ocean water enters the lava tube, flashes to steam, and blows through the roof of the tube. The image to the left shows an explosive fountain throwing hot lava spatter and basket-ball sized rocks 300 feet (100 m) in the air; the fountain resulted when a piece of a lava-filled bench collapsed and exposed hot rock into the ocean. | The current eruption of Kilauea Volcano began in 1983 with spectacular lava fountaining at a new vent, named Pu‘u ‘O‘o, high on the volcano's east rift zone. Although surface flows have been common in this eruption, most of the lava from the vent travels concealed in lava tubes until it reaches the ocean. When lava moves through the landscape and into the ocean, we see how the Hawaiian Islands are built. The experience of witnessing rock in its bright molten state and watching land being formed has fascinated and inspired everyone who has been lucky enough to see it. Seeing lava for the first time is captivating and often lures the viewer closer, but it is also beguiling and dangerous. When hot lava enters the water, it bursts into pieces, building new land at the ocean edge from the fragmental material. This pile of rubble is then covered with a veneer of lava flows, forming a \"bench\" that gives a false impression of solid g",
+  "extra_sources": [
+   "https://www.usgs.gov/observatories/hvo/news/volcano-watch-when-have-lava-fountains-formed-kilauea-and-what-are-their",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC10630439",
+   "https://www.britannica.com/science/lava-fountain",
+   "https://www.science.org/doi/10.1126/science.aef2931",
+   "https://pubs.usgs.gov/fs/2000/fs152-00"
+  ]
+ },
+ "_writer": "opencode"
+}

@@ -1,5 +1,5 @@
 {
- "current": "suns-worst-storms-ranked-a2",
+ "current": "how-a-lava-fountain-works-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -737,6 +737,25 @@
     "safe_zone": 10
    },
    "run_id": "43590450849"
+  },
+  "how-a-lava-fountain-works-a3": {
+   "title": "How a Lava Fountain Works",
+   "base": "how-a-lava-fountain-works-a3",
+   "status": "draft",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 4,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 5,
+    "hierarchy": 6,
+    "consistency": 4,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "43676146812"
   }
  }
 }
