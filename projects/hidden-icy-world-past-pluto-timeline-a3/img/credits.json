@@ -1,0 +1,20 @@
+{
+ "s2.jpg": {
+  "file": "File:Canada-France-Hawaii Telescope Sunset.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Generic1139",
+  "url": "https://commons.wikimedia.org/wiki/File:Canada-France-Hawaii_Telescope_Sunset.jpg"
+ },
+ "s3.jpg": {
+  "file": "File:Dark Energy Survey, Dark Energy Camera, DES, DECAM, Cerro Tololo Inter-American Observatory, Chile (12-0326-07Dhr-CC).jpg",
+  "license": "CC BY 4.0",
+  "artist": "DOE/FNAL/DECam/R. Hahn/CTIO/NOIRLab/NSF/AURA",
+  "url": "https://commons.wikimedia.org/wiki/File:Dark_Energy_Survey,_Dark_Energy_Camera,_DES,_DECAM,_Cerro_Tololo_Inter-American_Observatory,_Chile_(12-0326-07Dhr-CC).jpg"
+ },
+ "s5.jpg": {
+  "file": "File:Grand star-forming region R136 in NGC 2070 (captured by the Hubble Space Telescope).jpg",
+  "license": "Public domain",
+  "artist": "NASA, ESA, F. Paresce (INAF-IASF, Bologna, Italy), R. O'Connell (University of Virginia, Charlottesville), and the Wide Field Camera 3 Science Oversight Committee",
+  "url": "https://commons.wikimedia.org/wiki/File:Grand_star-forming_region_R136_in_NGC_2070_(captured_by_the_Hubble_Space_Telescope).jpg"
+ }
+}

@@ -1,0 +1,317 @@
+{
+ "id": "hidden-icy-world-past-pluto-timeline-a3",
+ "title": "The Hidden Icy World Found in Old Photos",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+28%",
+ "brand": "AGENT SHIFT",
+ "format": "timeline",
+ "series_label": "TIMELINE",
+ "theme": "warm",
+ "look": "paper-cut",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/2017_OF201",
+  "b1": "https://en.wikipedia.org/wiki/2017_OF201",
+  "b2": "https://en.wikipedia.org/wiki/2017_OF201",
+  "b3": "https://en.wikipedia.org/wiki/2017_OF201",
+  "b4": "https://en.wikipedia.org/wiki/2017_OF201",
+  "b5": "https://en.wikipedia.org/wiki/2017_OF201",
+  "b6": "https://en.wikipedia.org/wiki/2017_OF201",
+  "b7": "https://en.wikipedia.org/wiki/2017_OF201",
+  "outro": "https://www.smithsonianmag.com/smart-news/astronomers-discover-a-possible-dwarf-planet-far-beyond-neptune-where-there-should-have-only-been-empty-space-180986703",
+  "wiki": "https://en.wikipedia.org/wiki/2017_OF201",
+  "ref1": "https://www.smithsonianmag.com/smart-news/astronomers-discover-a-possible-dwarf-planet-far-beyond-neptune-where-there-should-have-only-been-empty-space-180986703?itm_medium=parsely-api",
+  "ref2": "https://www.sciencedaily.com/releases/2026/11/261112230447.htm",
+  "ref3": "https://arxiv.org/html/2505.15806v1",
+  "ref4": "https://www.newscientist.com/article/2481477-new-dwarf-planet-spotted-at-the-edge-of-the-solar-system"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "Photoreal cinematic 9:16 deep space scene, a small icy dwarf planet silhouette against a vast dark starfield at the edge of the Solar System, cold blue moonlight on ice, documentary astrophotography look, no text, no people",
+   "focal": [
+    0.5,
+    0.42
+   ],
+   "say": "A hidden icy world swings out to 1,610 times Earth's distance from the Sun, and it sat in old photos for years.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "when?",
+     "at": "hidden"
+    },
+    {
+     "t": "title",
+     "html": "Found in *old photos*",
+     "at": "world"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "HIDING SINCE 2011",
+      "accent": "blue"
+     },
+     "at": "photos",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "hidden",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Sloan Digital Sky Survey telescope",
+   "footage": "observatory dome night sky",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "2004: the Sloan Digital Sky Survey photographs it by accident, and nobody notices.",
+   "hud": [
+    {
+     "t": "tape",
+     "text": "2004 first image",
+     "col": "cy",
+     "at": "2004"
+    },
+    {
+     "t": "stamp",
+     "text": "MISSED",
+     "col": "ir",
+     "at": "notices"
+    }
+   ],
+   "prompt": "documentary photograph of Sloan Digital Sky Survey telescope, natural light, no text, no people"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Canada France Hawaii Telescope",
+   "footage": "telescope dome stars",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "2011 to 2012: the Canada France Hawaii Telescope catches it again in archived images.",
+   "hud": [
+    {
+     "t": "tape",
+     "text": "2011 to 2012",
+     "col": "cy",
+     "at": "2011"
+    },
+    {
+     "t": "chip",
+     "text": "archive images",
+     "col": "am",
+     "at": "archived"
+    }
+   ],
+   "prompt": "documentary photograph of Canada France Hawaii Telescope, natural light, no text, no people"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "Dark Energy Camera Chile",
+   "footage": "observatory mountain night",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "2014 to 2018: the Dark Energy Camera records it repeatedly, enough to trace its strange orbit.",
+   "hud": [
+    {
+     "t": "tape",
+     "text": "2014 to 2018",
+     "col": "cy",
+     "at": "2014"
+    },
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "the Dark Energy Camera records it again and again",
+      "keyword": "strange orbit",
+      "note": "extreme TNO",
+      "accent": "blue"
+     },
+     "at": "strange",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "documentary photograph of Dark Energy Camera Chile, natural light, no text, no people"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "Minor Planet Center",
+   "focal": [
+    0.5,
+    0.42
+   ],
+   "say": "21 May 2025: the Minor Planet Center announces it to the world as 2017 OF201.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "21 MAY 2025",
+     "col": "ok",
+     "at": "2025"
+    },
+    {
+     "t": "toast",
+     "title": "ANNOUNCED",
+     "sub": "2017 OF201",
+     "icon": "planet",
+     "at": "announces"
+    }
+   ],
+   "sfx": [
+    [
+     "2025",
+     "ding",
+     0.7
+    ]
+   ],
+   "prompt": "documentary photograph of Minor Planet Center, natural light, no text, no people"
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "Hubble Space Telescope",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "17 October 2026: Hubble photographs it directly, hunting for moons.",
+   "hud": [
+    {
+     "t": "tape",
+     "text": "17 OCT 2026",
+     "col": "cy",
+     "at": "2026"
+    },
+    {
+     "t": "chip",
+     "text": "Hubble photo",
+     "col": "ok",
+     "at": "photographs"
+    }
+   ],
+   "prompt": "documentary photograph of Hubble Space Telescope, natural light, no text, no people"
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "say": "Its orbit stretches 840 astronomical units on average, taking 24,000 years to circle the Sun once.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 24000,
+      "suffix": "YEARS",
+      "accent": "blue"
+     },
+     "at": "24,000",
+     "dur": 2.5
+    },
+    {
+     "t": "line",
+     "values": [
+      45,
+      90.5,
+      840,
+      1610
+     ],
+     "labels": [
+      "45 AU",
+      "1,610 AU"
+     ],
+     "col": "cy",
+     "at": "orbit"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b7",
+   "graphic": true,
+   "say": "And its orbit does not match the clustering pattern behind Planet Nine, so the hypothesis just got weaker.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "Planet Nine is",
+      "options": "proven, certain, weaker",
+      "accent": "blue"
+     },
+     "at": "weaker",
+     "dur": 2.5
+    },
+    {
+     "t": "delta",
+     "text": "weaker",
+     "dir": "down",
+     "col": "ir",
+     "at": "hypothesis"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s6.jpg",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a frozen dark planetary surface with distant stars, cold documentary lighting, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Astronomers think thousands more like it are still hiding in the archives. Follow for more.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "Thousands *still hiding*",
+     "at": "hiding"
+    },
+    {
+     "t": "kinetic",
+     "text": "FOLLOW FOR MORE",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "history_event",
+  "why": "exploring a fresh fit",
+  "lemo_style": [
+   "1920s Newsreel",
+   "Archive Light Table",
+   "Transit Map"
+  ]
+ },
+ "_facts": {
+  "title": "2017 OF201",
+  "url": "https://en.wikipedia.org/wiki/2017_OF201",
+  "text": "2017 OF201 is an extreme trans-Neptunian object and dwarf planet candidate, estimated to be around 500 to 900 kilometres (300 to 600 miles) in diameter. It was announced in 2025 by Sihao Cheng, Jiaxuan Li, and Eritas Yang, who discovered the object in archived telescope images from 2011 to 2018. With an absolute magnitude between 3~4, 2017 OF201 is one of the brightest known objects in the Solar System that does not have a directly measured size. The orbit of 2017 OF201 is extremely large and elongated, bringing it from 45 to 1,610 astronomical units (0.00071 to 0.02546 ly) away from the Sun. 2017 OF201 is not considered a sednoid because its perihelion or closest point to the Sun is below 60 AU, which means that the object comes close enough to Neptune that the planet's gravitational influence affects the orbit of 2017 OF201. The Hubble Space Telescope photographed 2017 OF201 on 17 October 2026, during a search for moons around large trans-Neptunian objects. == Discovery ==\n2017 OF201 was discovered by a team at the Institute for Advanced Study led by Sihao Cheng and two Princeton University students, Jiaxuan Li and Eritas Yang, in a search for trans-Neptunian objects (TNOs) in archived Dark Energy Camera Legacy Survey (DECaLS) images in the hope of finding the hypothetical Planet Nine. Cheng stated that he became inspired to survey the deep Solar system after attending a 2005 lecture by Michael E. Brown, the discoverer of Eris and Sedna and co-author of the Planet Nine hypothesis. Cheng's team were able to find ten DECaLS detections of 2017 OF201 from 2014–2018, which allowed them to determine that this TNO had an unusually distant and eccentric orbit. Following the advice of Mike Alexandersen of the Minor Planet Center, Cheng's team found nine additional detections of 2017 OF201 in archived Canada–France–Hawaii Telescope (CFHT) images from 2011–2012, which further improved calculations of 2017 OF201's orbit. Cheng's team attempted to search for 2017 OF201 in more archived images from the Subaru and Gemini North telescopes, but were unable to find any detections. Cheng's team reported their DECaLS and CFHT detections to the Minor Planet Center, which gave the TNO its provisional designation 2017 OF201 and announced it to the public on 21 May 2025. Following the announcement, the institutions of Cheng's team published a press release and a paper detailing the discovery of 2017 OF201. Additional precovery observations of 2017 OF201 were later found in Sloan Digital Sky Survey images from 2004 and 2009. == Orbit ==\n\n2017 OF201 orbits far beyond Neptune at an average distance (semi-major axis) of 840 astronomical units (AU), taking around 24,000 years to complete an orbit around the Sun. 2017 OF201 has an extremely elongated orbit with an eccentricity of 0.95, which together with its large orbital distance makes it an extreme trans-Neptunian object (TNO). 2017 OF201 has an orbital inclination of 16.2° with respect to the ecliptic. Fortuitously for its discovery, it recently passed through its closest approach in mid-November 1930. As of 2025, its current distance from the Sun is 90.5 AU, making it one of the most distant observed Solar System objects. Because of 2017 OF201's extremely distant and eccentric orbit, it is only visible to Earth during perihelion, which spans less than 1% of its orbit. Co-discoverer Eritas Yang stated that the discovery of 2017 OF201 means that there are likely thousands of similar objects that are currently too distant and faint from Earth to be observed. The orbit of 2017 OF201 has a perihelion distance of 44.9 AU and aphelion distance of 1,610 AU (0.0255 light-years), which places this object near the estimated boundary of the scattered disc region and the inner Oort cloud. As a result, over billions of years, the orbit of 2017 OF201 is shaped by both Neptune and the galactic tide. Specifically, 2017 OF201 is thought to have been gravitationally scattered into a high semi-major axis and low perihelion orbit by Neptune first, and then galactic tides and stellar encounters raised its perihelion. Yang has not stated which planetary body the team thinks scattered 2017 OF201, and argued that it might have been scattered multiple times. Specifically, Yang stated the team believes that 2017 OF201 had been scattered into the Oort cloud by some \"large planet\" and something from the Oort cloud ejected it again into its current orbit. In terms of semi-major axis and eccentricity, the orbit of 2017 OF201 is similar to that of extreme TNO 2013 SY99. === Implications for the Planet Nine hypothesis ===\nThe orientation or longitude of perihelion of 2017 OF201's orbit does not align with other extreme TNOs like Sedna, whose orbits have been hypothesized to be clustered because of the gravitational influence of a distant massive planet, dubbed Planet Nine. Simulations run by Cheng's team suggest that Planet Nine would have ejected 2017 OF201 from its current orbit within 100 million years, though 2017 OF201's current orbit could be a temporary state. Cheng stated\n\n\"the existence of 2017 OF201 as an outlier to [TNOs] clustering could potentially challenge [the Planet Nine] hypothesis.\"\nKonstantin Batygin, the co-author of the Planet Nine hypothesis, argued that the discovery of 2017 OF201 means nothing in relation to the hypothesis, because the object's orbit is significantly influenced by Neptune. Cheng, however, notes that 2017 OF201 \"is right at the boundary between being stable and unstable\". Nevertheless, Cheng's team agree that their simulations do not disprove Planet Nine. In an interview with The New York Times, Cheng \"still thought Planet Nine was possible\" while Yang \"was neutral on Planet Nine’s existence\". Li initially thought \"Okay, this kills Planet Nine\" upon seeing 2017 OF201's orbit, but later conceded that the results were not definitive, jokingly stating that \"it's 49 percent killed\". Yang also reiterated that the discovery of 2017 OF201 means it is likely there are many more similar objects in similar orbits that just have not been detected yet. In response to the discovery, astronomer Samantha Lawler from the University of Regina stated that \"the original argument for Planet Nine is getting weaker and weaker\". == Physical characteristics ==\nThe diameter of 2017 OF201 has not been measured with observational techniques, but it can be estimated from its brightness by assuming it has the same geometric albedo as other, similar, large scattered disc objects. Cheng, Li, and Yang estimate that 2017 OF201 is most likely 700 km (430 mi) in diameter, with a predicted albedo of 0.13. If 2017 OF201 has a density of 1.7 g/cm3, its mass would be roughly 3×1020 kg.\n\nSOURCE smithsonianmag.com (https://www.smithsonianmag.com/smart-news/astronomers-discover-a-possible-dwarf-planet-far-beyond-neptune-where-there-should-have-only-been-empty-space-180986703?itm_medium=parsely-api):\n![Smithsonian Magazine white logo](/) Search Shop Newsletters Renew Give a Gift Subscribe Membership Subscribe to Smithsonian magazine and get a FREE tote. # Astronomers Discover a Possible Dwarf Planet Far Beyond Neptune, Where There Should Have Only Been Empty Space ## As it orbits the sun once every 25,000 years, the celestial body 2017 OF201 travels beyond the Kuiper Belt into a region thought to be largely devoid of objects /https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/accounts/headshot/Margherita_Bassi.png) Margherita Bassi | Daily Correspondent Share EmailSMSFacebookXRedditLinkedInBlueskyPrint /https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/aa/de/aadee1c1-17ac-45ee-bbfc-f2ac64a86ede/dwarf_planets.png) The five dwarf planets recognized by the International Astronomical Union are Pluto, Ceres, Eris, Haumea and Makemake—and these are pictured with 2017 OF201 in a telescope image. Dwarf planets: NASA / JPL-Caltech; 2017 OF201: Sihao Cheng et al. While the James Webb Space Telescope looks for the most distant galaxies ever seen, astronomers have discovered something new in our very own solar system. Researchers from the U.S. and Canada have identified a celestial body with an enormous orbit that takes it around the sun once every roughly 25,000 years. With an estimated diameter of 435 miles, the object is potentially large enough to be classified as a dwarf planet like Pluto, though it’s more than three times smaller than the famously demoted planet. Its existence, if confirmed, casts doubt on the idea that an undiscovered ninth planet might be lurking in the far reaches of our solar system, referred to as Planet X or Planet Nine. “While searching for Planet X/Planet Nine, we found an extreme ‘cousin’ of Pluto,” Sihao Cheng, an astrophysicist at the Institute for Advanced Study, writes on his personal website. “Its orbit is extremely wide that it should come from the inner Oort cloud, a remote region in the solar system we still know little about.” The International Astronomical Union’s Minor Planet Center announced the discovery last week, and Cheng is the lead author of a preprint study, which has not yet been peer-reviewed, po\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2026/11/261112230447.htm):\n![ScienceDaily](/ \"ScienceDaily\") --- Your source for the latest research news Follow: *Facebook* *X/Twitter* Subscribe: *RSS Feeds* *Newsletter* **New!** Sign up for our free **email newsletter**. Science News from research organizations --- # A giant icy world hiding beyond Pluto could be our sixth dwarf planet Date: : November 14, 2026 Source: : University of Washington Summary: : Astronomers have uncovered a potentially enormous new dwarf planet beyond Pluto, hidden for years in one of the most crowded regions of the night sky. The discovery of 2026 ED138 could expand the solar system's official dwarf planet family and hints that more mysterious worlds may be lurking far beyond Neptune. Share: : Facebook Twitter Pinterest LinkedIN Email FULL STORY --- Scientists have discovered a mysterious icy world beyond Pluto that could become our solar system's sixth officially recognized dwarf planet, with more hidden worlds potentially waiting to be found. Credit: AI/ScienceDaily.com An enormous icy world discovered beyond Pluto could soon become the sixth officially recognized dwarf planet in our solar system. The object, temporarily named 2026 ED138, was identified by an astronomer analyzing observations from the Simonyi Survey Telescope at the NSF-DOE Vera C. Rubin Observatory. Early estimates suggest it ranks among the largest dwarf planet candidates ever found beyond Neptune. If its status is confirmed, it would join the five dwarf planets currently recognized by the International Astronomical Union: Pluto, Ceres, Eris, Haumea and Makemake. The discovery was announced at a press conference featuring Matthew Holman, a senior astrophysicist at the Harvard & Smithsonian Center for Astrophysics, and Mario Jurić, a University of Washington astronomy professor who leads Rubin's solar system team. Holman made the initial discovery, while Jurić helped gather the additional evidence needed to verify it. \"If confirmed as a dwarf planet, ED138 would join a very small family of worlds,\" Holman said. \"Rubin will image the whole southern sky again and again for 10 years, so any others hiding in the places earlier surveys skipped are now within reach.\" \"Finding an object this b\n\nSOURCE arxiv.org (https://arxiv.org/html/2505.15806v1):\n##### Report GitHub Issue Content selection saved. Describe the issue below: # Discovery of a dwarf planet candidate in an extremely wide orbit: 2017 OF201 Facilities: Blanco (DECam), CFHT (MegaCam) ###### Abstract We report the discovery of a dwarf planet candidate, 2017 OF201, currently located at a distance of 90.5 au. Its orbit is extremely wide and extends to the inner Oort cloud, with a semi-major axis of 838 au and a perihelion of 44.9 au precisely determined from 19 observations over seven years. Assuming a typical albedo of 0.15, we estimate a diameter ∼\\sim700 km, making it the second-largest known object in this dynamical population and a likely dwarf planet. Its high eccentricity suggests that it is part of a broader, unseen population of similar objects totaling ∼\\sim1% of Earth’s mass. Notably, the longitude of perihelion of 2017 OF201 lies well outside the clustering observed in extreme trans-Neptunian objects, which has been proposed as dynamical evidence for a distant, undetected planet. ###### Keywords: show]scheng@ias.edu show]jiaxuanl@princeton.edu show]qy8274@princeton.edu ## I Introduction While the asteroid belt contains only ∼\\sim0.04% of the Earth’s mass (M⊕M\\_{\\oplus}), the Kuiper Belt – home to Pluto and numerous icy bodies – harbors significantly more material, with an estimated total mass of 2% M⊕M\\_{\\oplus} [21, 35]. Even greater mass is believed to reside beyond the classic Kuiper Belt, in the scattering disk and Oort Cloud, which may together contain up to several M⊕M\\_{\\oplus} [25]. These distant reservoirs of comets, small bodies, minor planets and possibly undetected massive planets holds essential clues to the formation and evolution of the solar system. After 30 years of the discovery of the first trans-Neptunian objects (TNOs) [29] other than Pluto, various survey programs have been conducted to explore the vast region of outer solar system, and more than 5,000 TNOs have been discovered so far. Although the census of large TNOs near the ecliptic plane is nearly complete, it remains highly incomplete in regions that are beyond ∼\\sim 60 au or at high latitude, due to the challenging scaling relation that the brightness of refl\n\nSOURCE newscientist.com (https://www.newscientist.com/article/2481477-new-dwarf-planet-spotted-at-the-edge-of-the-solar-system):\nAdvertisement ### Explore by section ### Explore by subject ### Explore our products and services #### Manage your subscription Check your subscription status, update your details and more. Activate your subscription #### Space # New dwarf planet spotted at the edge of the solar system A potential dwarf planet has been discovered in the outer reaches of our solar system, orbiting beyond Neptune. Its presence there challenges the existence of a hypothetical body known as Planet 9 or Planet X. Sihao Cheng at the Institute for Advanced Study in Princeton, New Jersey, and his colleagues first detected the object, known as 2017 OF201, as a bright spot in an astronomical image database from the Victor M. Blanco Telescope in Chile. Why we must investigate Phobos, the solar system’s strangest object 2017 OF201 is about 700 kilometres across – big enough to qualify as a dwarf planet like Pluto, which has a diameter about three times as big. The object is currently about 90.5 astronomical units (AU) away from us, or roughly 90 times as far from Earth as the sun is. Advertisement Because 2017 OF201’s average orbit around the sun is greater than that of Neptune, it is what’s known as a trans-Neptunian object (TNO). It passes through the Kuiper belt, a disc of icy objects in the outer solar system beyond the orbit of Neptune. The researchers looked back over 19 observations, taken over seven years by the Canada France Hawaii Telescope, to determine that the closest 2017 OF201 gets to the sun – its perihelion – is 44.5 AU, which is similar to Pluto’s orbit. The furthest it gets from the sun is 1600 AU, way outside the solar system. This far-flung orbit may be the result of an encounter with a giant planet, which ejected the candidate dwarf planet out of the solar system, say the researchers. Free newsletter #### Sign up to Launchpad “It’s a really cool discovery,” says Kevin Napier at the University of Michigan. The object would go so far outside the solar system that it could be interacting with other stars in the galaxy just as strongly as it interacts with some of the planets in our solar system, he says. The orbits of many extreme TNOs seem to cluster in a specific orient",
+  "extra_sources": [
+   "https://www.smithsonianmag.com/smart-news/astronomers-discover-a-possible-dwarf-planet-far-beyond-neptune-where-there-should-have-only-been-empty-space-180986703?itm_medium=parsely-api",
+   "https://www.sciencedaily.com/releases/2026/11/261112230447.htm",
+   "https://arxiv.org/html/2505.15806v1",
+   "https://www.newscientist.com/article/2481477-new-dwarf-planet-spotted-at-the-edge-of-the-solar-system"
+  ]
+ },
+ "_writer": "opencode"
+}

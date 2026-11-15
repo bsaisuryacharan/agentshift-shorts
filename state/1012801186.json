@@ -1,5 +1,5 @@
 {
- "current": "how-a-lava-fountain-works-a3",
+ "current": "hidden-icy-world-past-pluto-timeline-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -756,6 +756,25 @@
     "safe_zone": 10
    },
    "run_id": "43676146812"
+  },
+  "hidden-icy-world-past-pluto-timeline-a3": {
+   "title": "The Hidden Icy World Found in Old Photos",
+   "base": "hidden-icy-world-past-pluto-timeline-a3",
+   "status": "draft",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 5,
+    "accuracy": 9,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 4,
+    "hierarchy": 6,
+    "consistency": 7,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "43732368653"
   }
  }
 }
