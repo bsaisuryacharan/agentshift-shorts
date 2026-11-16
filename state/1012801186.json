@@ -1,5 +1,5 @@
 {
- "current": "mangrove-comeback-scale-a1",
+ "current": "atom-vs-fridge-magnet-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -813,6 +813,25 @@
     "safe_zone": 10
    },
    "run_id": "43803250186"
+  },
+  "atom-vs-fridge-magnet-a2": {
+   "title": "One Atom vs Your Fridge Magnet",
+   "base": "atom-vs-fridge-magnet-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 7,
+    "accuracy": 9,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 7,
+    "hierarchy": 7,
+    "consistency": 8,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "43970267192"
   }
  }
 }
