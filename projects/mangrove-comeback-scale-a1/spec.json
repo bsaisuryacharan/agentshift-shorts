@@ -1,0 +1,270 @@
+{
+ "id": "mangrove-comeback-scale-a1",
+ "title": "How Big Is the Mangrove Comeback?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "SCALE",
+ "format": "scale",
+ "theme": "cool",
+ "look": "midnight-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Mangrove — Wikipedia, https://en.wikipedia.org/wiki/Mangrove",
+  "b1": "Mangrove — Wikipedia, https://en.wikipedia.org/wiki/Mangrove",
+  "b2": "Mangrove — Wikipedia, https://en.wikipedia.org/wiki/Mangrove",
+  "b3": "Mangrove — Wikipedia, https://en.wikipedia.org/wiki/Mangrove",
+  "b4": "Mangrove — Wikipedia, https://en.wikipedia.org/wiki/Mangrove",
+  "b5": "Mangrove — Wikipedia, https://en.wikipedia.org/wiki/Mangrove",
+  "b6": "Mangrove — Wikipedia, https://en.wikipedia.org/wiki/Mangrove",
+  "outro": "Mangrove — Wikipedia, https://en.wikipedia.org/wiki/Mangrove",
+  "wiki": "https://en.wikipedia.org/wiki/Mangrove",
+  "ref1": "https://science.nasa.gov/blogs/science-news/2026/06/04/mangrove-forests-rebound",
+  "ref2": "https://www.livescience.com/planet-earth/satellite-images-reveals-mangroves-rebounding-worldwide-but-heres-why-they-could-still-drown",
+  "ref3": "https://www.bbc.com/news/articles/cn4pk07npvvo"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "mangrove forest aerial",
+   "footage": "mangrove forest aerial",
+   "prompt": "Photoreal cinematic 9:16 aerial view of a vast mangrove forest at low tide, dense green canopy cut by winding dark tidal channels, natural overcast coastal light, documentary drone shot, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "In 2025, the area of mangroves globally is estimated at 15.9 million hectares. How big is that?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how big?",
+     "at": "big"
+    },
+    {
+     "t": "title",
+     "html": "15.9 *MILLION* hectares",
+     "at": "hectares"
+    }
+   ],
+   "sfx": [
+    [
+     "how big?",
+     "pop",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "They grow between 30 degrees north and south, thickest within 5 degrees of the equator.",
+   "hud": [
+    {
+     "t": "tape",
+     "text": "30°N – 30°S",
+     "col": "ok",
+     "at": "north"
+    },
+    {
+     "t": "chip",
+     "text": "within 5° of equator",
+     "col": "cy",
+     "at": "equator"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Indonesia has the world's largest extent of mangroves: 3.40 million hectares. Brazil, Australia, Nigeria and Mexico follow.",
+   "hud": [
+    {
+     "t": "bars",
+     "items": [
+      [
+       "Indonesia",
+       3.4,
+       "cy"
+      ],
+      [
+       "Brazil",
+       1.39,
+       "am"
+      ],
+      [
+       "Australia",
+       1.11,
+       "ok"
+      ],
+      [
+       "Nigeria",
+       0.976,
+       "ir"
+      ],
+      [
+       "Mexico",
+       0.947,
+       "ir"
+      ]
+     ],
+     "unit": "million ha",
+     "stagger": true,
+     "at": "Indonesia"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Those five countries host almost half of the global mangrove area: 49%.",
+   "hud": [
+    {
+     "t": "ring",
+     "pct": 49,
+     "label": "of global area",
+     "col": "cy",
+     "at": "49%"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "A 2022 study estimates a 3,700 square kilometre net decrease, 1999 to 2019.",
+   "hud": [
+    {
+     "t": "delta",
+     "text": "−3,700 km²",
+     "dir": "down",
+     "col": "ir",
+     "at": "3,700"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "mangrove roots",
+   "prompt": "Photoreal cinematic 9:16 macro shot of tangled mangrove prop roots in shallow brackish water, mud and small fish shadows beneath, soft natural daylight, documentary nature photography, no people, no text",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "Loss continues: annual deforestation is estimated at 0.16%, per-country rates as high as 0.70%.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Global loss: 0.16% per year",
+      "keyword": "0.16%",
+      "note": "as high as 0.70% per country",
+      "style": "underline"
+     },
+     "accent": "green",
+     "at": "0.16%",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "mangrove forest",
+   "footage": "mangrove forest aerial",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a healthy mangrove forest edge at golden-hour-free soft daylight, dense green canopy meeting calm tidal water, mist over the channels, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Restoration matters: mangroves shield coasts and store carbon.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Mangroves shield coasts and *store carbon*"
+     },
+     "accent": "green",
+     "at": "shield",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "photo": "mangrove coastline aerial",
+   "prompt": "Photoreal cinematic 9:16 top-down aerial of a mangrove coastline, vivid green forest meeting turquoise shallow sea in organic fractal patterns, natural light, documentary satellite-like drone framing, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "In 2025, the area of mangroves globally is estimated at 15.9 million hectares. Follow for more impossible scales.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 15.9,
+      "suffix": "million ha"
+     },
+     "accent": "green",
+     "at": "hectares",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "Follow",
+     "ding",
+     0.5
+    ]
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "awe_scale",
+  "why": "topic fit",
+  "lemo_style": [
+   "Data Storytelling",
+   "Satellite Briefing",
+   "Time-lapse Symphony"
+  ]
+ },
+ "_facts": {
+  "title": "Mangrove",
+  "url": "https://en.wikipedia.org/wiki/Mangrove",
+  "text": "A mangrove is a shrub or tree that grows mainly in coastal saline or brackish water. Mangroves grow in an equatorial climate, typically along coastlines and tidal rivers. They have particular adaptations to take in extra oxygen and remove salt, allowing them to tolerate conditions that kill most plants. The term is also used for tropical coastal vegetation consisting of such species. Mangroves are taxonomically diverse due to convergent evolution in several plant families. They occur worldwide in tropical and subtropical coastal areas, mainly between latitudes 30° N and 30° S, with the greatest mangrove area within 5° of the equator. Mangrove plant families first appeared during the Late Cretaceous to Paleocene epochs and became widely distributed in part due to the movement of tectonic plates. The oldest known fossils of mangrove palm date to 75 million years ago. Mangroves are salt-tolerant (halophytic) and are adapted to live in harsh coastal conditions. They contain a complex salt filtration system and a complex root system to cope with saltwater immersion and  wave action. They are adapted to the low-oxygen conditions of waterlogged mud, but are most likely to thrive in the upper half of the intertidal zone. The mangrove biome, often called the mangrove forest or mangal, is a distinct saline woodland or shrubland habitat characterized by depositional coastal environments, where fine sediments (often with high organic content) collect in areas protected from high-energy wave action. The saline conditions tolerated by various mangrove species range from brackish water, through pure seawater (3 to 4% salinity), to water concentrated by evaporation to over twice the salinity of ocean seawater (up to 9% salinity). Beginning in 2010, remote sensing technologies and global data have been used to assess areas, conditions and deforestation rates of mangroves around the world. In 2018, the Global Mangrove Watch Initiative released a new global baseline which estimates the total mangrove forest area of the world as of 2010 at 137,600 km2 (53,100 sq mi), spanning 118 countries and territories. A 2022 study on losses and gains of tidal wetlands estimates a 3,700 km2 (1,400 sq mi) net decrease in global mangrove extent from 1999 to 2019. Mangrove loss continues due to human activity, with a global annual deforestation rate estimated at 0.16%, and per-country rates as high as 0.70%. Degradation in quality of remaining mangroves is also an important concern. There is interest in mangrove restoration for several reasons. Mangroves support sustainable coastal and marine ecosystems. They protect nearby areas from tsunamis and extreme weather events. Mangrove forests are also effective at carbon sequestration and storage. The success of mangrove restoration may depend heavily on engagement with local stakeholders, and on careful assessment to ensure that growing conditions will be suitable for the species chosen. In 2025, the area of mangroves globally is estimated at 15.9 million hectares. Asia has the largest area, at 6.10 million ha, and Europe reported no mangrove area. Among countries and areas, Indonesia has the world's largest extent of mangroves, at 3.40 million ha, followed by Brazil (1.39 million ha), Australia (1.11 million ha), Nigeria (976,000 ha) and Mexico (947,000 ha). Collectively, these five countries host almost half (49%) of the global mangrove area. The International Day for the Conservation of the Mangrove Ecosystem is celebrated every year on 26 July. == Etymology ==\n\nEtymology of the English term mangrove is speculative and disputed. The term may have come to English from the Portuguese mangue or the Spanish\nmangle. Further back, it may be traced to South America and  Cariban and Arawakan languages such as  Taíno. Other possibilities include the Malay language manggi-manggi. The English usage may reflect a corruption via folk etymology of the words mangrow and grove. The word \"mangrove\" is used in at least three senses:\n\nMost broadly to refer to the habitat and entire plant assemblage or mangal, for which the terms mangrove forest biome and mangrove swamp are also used;\nTo refer to all trees and large shrubs in a mangrove swamp; and\nNarrowly to refer only to mangrove trees of the genus Rhizophora of the family Rhizophoraceae. == Biology ==\nAccording to Hogarth (2015), among the recognized mangrove species there are about 70 species in 20 genera from 16 families that constitute the \"true mangroves\" – species that occur almost exclusively in mangrove habitats. Demonstrating convergent evolution, many of these species found similar solutions to the tropical conditions of variable salinity, tidal range (inundation), anaerobic soils, and intense sunlight. Plant biodiversity is generally low in a given mangrove. The greatest biodiversity of mangroves occurs in Southeast Asia, particularly in the Indonesian archipelago. === Adaptations to low oxygen ===\nThe red mangrove (Rhizophora mangle) survives in the most inundated areas, props itself above the water level with stilt or prop roots and then absorbs air through lenticels in its bark. The black mangrove (Avicennia germinans) lives on higher ground and develops many specialized root-like structures called pneumatophores, which stick up out of the soil like straws for breathing.\n\nSOURCE science.nasa.gov (https://science.nasa.gov/blogs/science-news/2026/06/04/mangrove-forests-rebound):\n![NASA Logo](https://www.nasa.gov) ![NASA Logo](https://www.nasa.gov) ## Suggested Searches * Artemis * ISS * Roman * Webb * Quesst * Moon Base * View All Topics A-Z * Home * Missions * Humans in Space * Earth * The Solar System * The Universe * Science * Aeronautics * Technology * Learning Resources * About NASA * Español --- * News & Events * Multimedia * NASA+ ### Highlights ![NASA Invites Media, Public to Join Voyager 1 One-Light Day Activities 3 min read ### NASA Invites Media, Public to Join Voyager 1 One-Light Day Activities article5 days ago](https://www.nasa.gov/news-release/nasa-invites-media-public-to-join-voyager-1-one-light-day-activities/)![NASA’s ESCAPADE Completes Powered Earth Flybys, Now En Route to Mars 5 min read ### NASA’s ESCAPADE Completes Powered Earth Flybys, Now En Route to Mars article6 days ago](https://science.nasa.gov/science-research/heliophysics/nasas-escapade-completes-powered-earth-flybys-now-en-route-to-mars/)![What’s Up: November 2026 Skywatching Tips from NASA 4 min read ### What’s Up: November 2026 Skywatching Tips from NASA article2 weeks ago](https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/) --- ### Missions * Search All NASA Missions * A to Z List of Missions * Upcoming Launches and Landings * Spaceships and Rockets * Communicating with Missions * Artemis * James Webb Space Telescope * Hubble Space Telescope * International Space Station * OSIRIS-REx ### Humans in Space * Why Go to Space * Astronauts * Commercial Space * Destinations * Spaceships and Rockets * Living in Space ### Earth * Explore Earth Science * Climate Change * Earth, Our Planet * Earth Science in Action * Earth Multimedia * Earth Data * Earth Science Researchers ### The Solar System * The Sun * Mercury * Venus * Earth * The Moon * Mars * Jupiter * Saturn * Uranus * Neptune * Pluto & Dwarf Planets * Asteroids, Comets & Meteors * The Kuiper Belt * The Oort Cloud * Skywatching ### The Universe * Exoplanets * The Search for Life in the Universe * Stars * Galaxies * Black Holes * The Big Bang * Dark Matter * Dark Energy ### Science * Earth Science * Planetary Science * Astrophysics & Space Science * The Sun \n\nSOURCE livescience.com (https://www.livescience.com/planet-earth/satellite-images-reveals-mangroves-rebounding-worldwide-but-heres-why-they-could-still-drown):\n- Welcome to Live Science club! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Complete any activity to unlock your first badge. Keep earning badges Explore ways to get more involved as a member. Live Science Quizzes Play quick, fun science games Explore Animal facts Learn about the natural world Explore Latest space news Read about discoveries from beyond Earth Explore --- See what you’ve unlocked. Explore your membership benefits. Go beyond the headlines Cancel anytime Start Browsing --- Sign Out - Hi , Keep exploring with your premium access. START BROWSING --- Content * ![Science Spotlight Science Spotlight](https://www.livescience.com/tag/science-spotlight) * ![Book Excerpts Book Excerpts](https://www.livescience.com/tag/book-excerpts) * ![Interviews Interviews](https://www.livescience.com/interviews) * ![Analysis Analysis](https://www.livescience.com/tag/news-analyses) * ![Opinion Opinion](https://www.livescience.com/opinion) --- * ![My Account My Account](https://www.livescience.com/my-account) --- Sign Out ## Choose your Live Science experience ### Live Science plus Read more news stories for free, receive our daily newsletter, post comments, play games and earn badges. JOIN FREE ### Live Science pro Unlimited access to our exclusive features, expert analysis and in-depth interviews, all ad-free. Unlimited, ad-free reading Exclusive, original reporting Scientist interviews and videos Members-only features See what’s in pro ## Go beyond the headlines with Live Science Pro Go beyond the headlines with Live Science Pro Rigorously fact-checked science, expert commentary and an ad-free experience built for those who want to go beyond the headlines See what’s in Pro Not ready for Pro? Join Live Science Plus ### Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. ### Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. ### Scientist interviews and video The latest science direct from the most respected people in their fields. ### Members-only features Exclusive newsletter. Members-only area.\n\nSOURCE bbc.com (https://www.bbc.com/news/articles/cn4pk07npvvo):\n# Mangrove forests are healing after decades of human destruction The world's coastal mangrove forests, which protect millions of people from storms - and soak up vast amounts of planet-warming gases - are staging an unexpected comeback, scientists find. For decades these swampy trees had been declining rapidly as they were cleared for fish farms and housing. But a new study shows that since 2010 the world has been gaining more mangroves than it has been losing - driven by stronger legal protections and increased public awareness of their importance, sparked by disasters such as the 2004 Indian Ocean tsunami. The researchers say the key factor though is the remarkable capacity of these forests to regenerate naturally once humans stop chopping them down. Mangroves are one of the world's unsung environmental heroes. Not only do they store up to five times more carbon dioxide than land-based forests, but their tangled roots can also slow down waves and protect coastal communities from storm surges and tsunamis. These same roots provide a perfect nursery for many species of fish and other marine life - protecting them from predators and providing ample food. These benefits, though, have come under serious threat over the past century as the rise of fish farming, agriculture and the expansion of coastal cities and towns have seen mangroves chopped down and rapidly removed. From the 1980s to 2010, over 12,000 sq km (4,600 sq miles) of mangroves were cleared or destroyed across Asia, Africa and the Americas - an area the size of Jamaica. However, the new study shows a real reversal of that trend, particularly over the last decade. The total net losses - the forest lost and not replaced - since the 1980s have now been reduced to around 849 sq km (328 sq miles). Restoration efforts over decades have helped degraded forests to recover, but the big change has come from the natural expansion of mangroves in many parts of the world following drops in deforestation. This has enabled forest levels to stabilise in Indonesia and grow in Myanmar (formerly known as Burma) - two of the most mangrove-dense countries. In Indonesia, the aftermath of the Indian Ocean tsunami in 2004 se",
+  "extra_sources": [
+   "https://science.nasa.gov/blogs/science-news/2026/06/04/mangrove-forests-rebound",
+   "https://www.livescience.com/planet-earth/satellite-images-reveals-mangroves-rebounding-worldwide-but-heres-why-they-could-still-drown",
+   "https://www.bbc.com/news/articles/cn4pk07npvvo"
+  ]
+ },
+ "_writer": "opencode"
+}

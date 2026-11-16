@@ -1,5 +1,5 @@
 {
- "current": "crystal-remembers-electricity-a3",
+ "current": "mangrove-comeback-scale-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -794,6 +794,25 @@
     "safe_zone": 10
    },
    "run_id": "43750213904"
+  },
+  "mangrove-comeback-scale-a1": {
+   "title": "How Big Is the Mangrove Comeback?",
+   "base": "mangrove-comeback-scale-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 9,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 8,
+    "polish": 8,
+    "hierarchy": 9,
+    "consistency": 9,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "43803250186"
   }
  }
 }
