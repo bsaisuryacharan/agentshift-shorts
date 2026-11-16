@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T11:14:33+00:00",
+ "generated_at": "2026-11-16T11:45:22+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -14,18 +14,18 @@
   "How the First Combat Submarine Actually Worked",
   "When Cameras Capture Astonishing Animal Encounters",
   "Animal Encounters That Seem Almost Impossible",
-  "5 Animals That Made The WORST Mistake Of Their Lives",
-  "The Biological Drill: Why Peanuts Grow Underground & Their Hidden Biochemistry | Explained",
-  "5 Animals That Can Survive Without Sleep 😱",
-  "This Boy Tried to Explain How the Fourth Dimension Works 🌀🤯",
+  "Saap Katne Par Ye Sab Kyon?",
   "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄",
+  "5 Animals That Can Survive Without Sleep 😱",
   "Tetanus Kya Sach Me Jang Se Hota Hai?",
-  "5 Hybrid Animals Created by Humans 😱",
+  "The Most Amazing Animal Moments Ever Recorded",
   "November Moon Meet-up Events 💀",
-  "Alzheimer’s may start shrinking two brain regions years before memory loss"
+  "The secret to building Moon bases may be hiding in emergency blankets",
+  "Vitamin C could help block cancer-linked chemicals in your stomach, study finds",
+  "Physicists defy expectations by controlling the magnetic heart of a single atom"
  ],
  "learned": {
-  "shorts_scored": 18,
+  "shorts_scored": 19,
   "best": [
    {
     "title": "The Sun's Worst Storms, Ranked",
@@ -33,14 +33,14 @@
     "weakest": "originality"
    },
    {
-    "title": "Inside a Submarine: 5 Systems",
-    "avg": 8.5,
+    "title": "How Big Is the Mangrove Comeback?",
+    "avg": 8.7,
     "weakest": "originality"
    },
    {
-    "title": "How Meteor Showers Work",
-    "avg": 8.4,
-    "weakest": "visual_quality"
+    "title": "Inside a Submarine: 5 Systems",
+    "avg": 8.5,
+    "weakest": "originality"
    }
   ],
   "worst": [
@@ -68,69 +68,69 @@
  },
  "stage_averages": {
   "hook": 7.2,
-  "story": 6.5,
-  "visuals": 5.8,
-  "polish": 5.9,
-  "policy": 8.6
+  "story": 6.4,
+  "visuals": 5.7,
+  "polish": 5.7,
+  "policy": 8.7
  },
  "weakest_stage": "visuals",
  "region": "IN",
  "trend_signals_total": 60,
- "trend_signals_on_niche": 45,
+ "trend_signals_on_niche": 40,
  "niche_winners": [
   {
    "title": "How the First Combat Submarine Actually Worked #engineering #history #submarine",
-   "views": 34540147,
+   "views": 35276406,
    "url": "https://www.youtube.com/watch?v=rXgv9bxT8gw"
   },
   {
    "title": "When Cameras Capture Astonishing Animal Encounters",
-   "views": 29387912,
+   "views": 30036694,
    "url": "https://www.youtube.com/watch?v=vvnUUFqwsoU"
   },
   {
    "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
-   "views": 5555156,
+   "views": 6370243,
    "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
   },
   {
    "title": "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄#shorts #facts #farming  #animals",
-   "views": 4860903,
+   "views": 6138754,
    "url": "https://www.youtube.com/watch?v=toBtC1Cllwk"
   },
   {
-   "title": "5 Animals That Made The WORST Mistake Of Their Lives",
-   "views": 5813514,
-   "url": "https://www.youtube.com/watch?v=ZwRzD11Y9Qw"
-  },
-  {
    "title": "Animal Encounters That Seem Almost Impossible",
-   "views": 6860768,
+   "views": 7070443,
    "url": "https://www.youtube.com/watch?v=xM3UqrvLeYI"
   },
   {
-   "title": "The Biological Drill: Why Peanuts Grow Underground & Their Hidden Biochemistry | Explained",
-   "views": 5176009,
-   "url": "https://www.youtube.com/watch?v=1WeYsecTgaQ"
+   "title": "Saap Katne Par Ye Sab Kyon? #shorts #ytshorts  #facts #science #documentary #factsinhindi",
+   "views": 6358199,
+   "url": "https://www.youtube.com/watch?v=rwI1Fv_j1AM"
+  },
+  {
+   "title": "Indian girl shocked everyone 🤯 #shorts #facts",
+   "views": 2795861,
+   "url": "https://www.youtube.com/watch?v=5Tgi298uvgo"
   },
   {
    "title": "5 Animals That Can Survive Without Sleep 😱  #animalfacts #sleepdeprivation #animals",
-   "views": 5144110,
+   "views": 5159395,
    "url": "https://www.youtube.com/watch?v=j7MMYEKv9g4"
   }
  ],
  "news": [
-  "Euclid discovers ancient cosmic beacons from the dawn of time, shining like a trillion suns",
-  "Dinosaurs may have been eating seaweed 100 million years ago",
-  "Physicists use laser light to unlock a crystal's hidden electrical powers",
-  "Scientists discover a bizarre paradox among endangered penguins",
-  "A giant icy world hiding beyond Pluto could be our sixth dwarf planet",
+  "The secret to building Moon bases may be hiding in emergency blankets",
+  "Physicists defy expectations by controlling the magnetic heart of a single atom",
+  "An ancient virus may help explain what makes the human brain different",
+  "Uranus and Neptune’s bizarre magnetic fields may finally be explained",
+  "APOD: 2026 November 16 – NGC 7129: Star Formation with Jets from Webb",
+  "The Last Ice on Puncak Jaya",
   "Outbursts from a Massive Star",
   "APOD: 2026 November 13 – NGC 206 and the Star Clouds of Andromeda",
   "A Global Rebound for Mangroves",
   "I Am Artemis Katie Spicer",
   "Heart in the Sky at NASA Kennedy",
-  "NASA Ames Stars of the Month: November 2026",
-  "NASA’s Hubble Offers Cosmic Sampler of Targets for Roman"
+  "Can Network Science Transform Health and Nutrition?"
  ]
 }
