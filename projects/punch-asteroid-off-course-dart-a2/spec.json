@@ -1,0 +1,242 @@
+{
+ "id": "punch-asteroid-off-course-dart-a2",
+ "title": "We Already Punched an Asteroid Off Course",
+ "format": "what_if",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+28%",
+ "brand": "AGENT SHIFT",
+ "series_label": "WHAT IF",
+ "theme": "cool",
+ "look": "midnight-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b1": "https://en.wikipedia.org/wiki/65803_Didymos",
+  "b3": "https://en.wikipedia.org/wiki/65803_Didymos",
+  "b5": "https://en.wikipedia.org/wiki/65803_Didymos",
+  "wiki": "https://en.wikipedia.org/wiki/65803_Didymos",
+  "ref1": "https://www.nasa.gov/missions/dart/nasas-dart-mission-changed-orbit-of-asteroid-didymos-around-sun?linkId=916168374",
+  "ref2": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11289111"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "asteroid Didymos",
+   "footage": "asteroid space",
+   "prompt": "Photoreal cinematic 9:16 view of a grey rocky near-Earth asteroid drifting in deep space, harsh sunlight from one side, black starless void background, documentary spacecraft-observation look, no text, no people",
+   "focal": [
+    0.5,
+    0.42
+   ],
+   "say": "What if we could punch an asteroid off course? NASA already tried it. For real.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "what if?",
+     "at": "What",
+     "fx": "shine"
+    },
+    {
+     "t": "title",
+     "html": "We *punched* an asteroid",
+     "at": "asteroid"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Dimorphos asteroid",
+   "prompt": "Photoreal cinematic 9:16 close view of a small irregular rubble-pile moon orbiting a larger spheroidal asteroid, dim sunlight, deep space, documentary probe-observation look, no text, no people",
+   "focal": [
+    0.45,
+    0.5
+   ],
+   "say": "Meet Didymos, a twin asteroid system near Earth. Its little moon, Dimorphos, is just 160 meters wide.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 160,
+      "suffix": "m"
+     },
+     "at": "160",
+     "dur": 2.5,
+     "accent": "green"
+    },
+    {
+     "t": "label",
+     "text": "Dimorphos, the target",
+     "at": "Dimorphos"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "footage": "asteroid flyby space",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a boxy spacecraft with solar panels approaching a small asteroid in deep space, sunlight glinting off panels, documentary mission-visualization look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "NASA built a spacecraft called DART and aimed it straight at that tiny moon. No explosives. Just mass, and speed.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "The weapon was",
+      "options": "explosives, lasers, luck, mass and speed"
+     },
+     "at": "aimed",
+     "dur": 2.5,
+     "accent": "blue"
+    },
+    {
+     "t": "chip",
+     "text": "kinetic impactor",
+     "at": "mass",
+     "col": "cy"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "DART spacecraft impact",
+   "footage": "asteroid impact plume",
+   "prompt": "Photoreal cinematic 9:16 view of a small asteroid surface erupting with dust and debris as a spacecraft strikes it, harsh sunlight, deep space, documentary observation look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "DART slammed into Dimorphos, and a tiny Italian cubesat flew past to film the crash.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Direct hit on *Dimorphos*"
+     },
+     "at": "slammed",
+     "dur": 2.5,
+     "accent": "green"
+    },
+    {
+     "t": "stamp",
+     "text": "IMPACT CONFIRMED",
+     "at": "crash",
+     "col": "ok"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "say": "The crash nudged the moon's orbit. Humanity's first real planetary defense test had worked.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "The orbit changed by hand",
+      "keyword": "by hand",
+      "note": "first deflection test"
+     },
+     "at": "nudged",
+     "dur": 2.5,
+     "accent": "green"
+    },
+    {
+     "t": "delta",
+     "text": "orbit shifted",
+     "dir": "up",
+     "col": "ok",
+     "at": "orbit"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "Hera spacecraft",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a slender science spacecraft with solar panels cruising toward a small cratered asteroid, cold sunlight, deep space, documentary mission look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Now a spacecraft called Hera is surveying the aftermath, measuring exactly what one punch can do.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "HERA",
+      "label": "surveying the aftermath"
+     },
+     "at": "Hera",
+     "dur": 2.5,
+     "accent": "blue"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "say": "Didymos swings between 1.0 and 2.3 times Earth's distance from the Sun, circling every 770 days. If one ever aimed at us, we'd have a playbook.",
+   "hud": [
+    {
+     "t": "line",
+     "values": [
+      1.0,
+      2.3
+     ],
+     "labels": [
+      "1.0 AU",
+      "2.3 AU"
+     ],
+     "col": "cy",
+     "at": "swings"
+    },
+    {
+     "t": "big",
+     "text": "770 days",
+     "col": "am",
+     "at": "770"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "say": "So the answer to what if is simple: we already did. Follow for more.",
+   "hud": []
+  }
+ ],
+ "style_map": {
+  "class": "what_if",
+  "why": "topic fit",
+  "lemo_style": [
+   "Sci-fi Hologram HUD",
+   "Isometric Infographic",
+   "Sports Telestrator"
+  ]
+ },
+ "_facts": {
+  "title": "65803 Didymos",
+  "url": "https://en.wikipedia.org/wiki/65803_Didymos",
+  "text": "65803 Didymos (provisional designation 1996 GT) is a sub-kilometer asteroid and binary system that is classified as a potentially hazardous asteroid and near-Earth object of the Apollo group. The asteroid was discovered in 1996 by the Spacewatch survey at Kitt Peak, and its small 160-meter minor-planet moon, named Dimorphos, was discovered in 2003. Due to its binary nature, the asteroid was then named Didymos, the Greek word for 'twin'. Didymos's moon, Dimorphos, was the target of the DART mission to test the viability of asteroid impact avoidance by collision with a spacecraft, while the impact was witnessed by LICIACube, a flyby CubeSat component of the mission. The aftermath of the impact is now being surveyed by the Hera spacecraft. == Discovery ==\n\nDidymos was discovered on 11 April 1996 by the University of Arizona Steward Observatory's, and Lunar and Planetary Laboratory's, Spacewatch survey using its 0.9-meter telescope at Kitt Peak National Observatory in Arizona, United States. The binary nature of the asteroid was discovered by others; suspicions of binarity first arose in Goldstone delay-Doppler echoes, and these were confirmed with an optical lightcurve analysis, along with Arecibo radar imaging on 23 November 2003. == Orbital characteristics ==\nDidymos orbits the Sun at a distance of 1.0–2.3 AU once every 770 days (2 years and 1 month). Its orbit has an eccentricity of 0.38 and an inclination of 3° with respect to the ecliptic. The minimum distance between the orbit of Earth and the orbit of Didymos is currently 0.04 AU (6.0 million km), but will change as the asteroid is perturbed. In November 2003 it passed 7.18 million km from Earth; it will not come that near again until November 2123, with a distance of 5.86 million km. Didymos also occasionally passes very close to Mars: it will fly by Mars at a distance of 4.68 million km in July 2144. The Earth approach of October 2184, at a distance of 8.6 million km, is listed with an uncertainty region of roughly ±105 km. Didymos spends one third of its time orbiting far enough from the Sun to cross the inner parts of the main asteroid belt, where collisions with other asteroids are more probable. This means that about every 73–84 thousand years, an object impacts Didymos with the energy of the DART mission satellite. Over its median NEA lifetime of 8 to 10 million years, Didymos probably has been hit several tens of times. == Physical characteristics ==\n\nIn the SMASS classification, Didymos was classified as an Xk-type asteroid, which transitions from the X-type to the rare K-type asteroids. Subsequent visible and near-infrared spectroscopy showed it to be silicate in nature, which also qualifies it as a stony S-type asteroid. It rotates rapidly, with a period of 2.26 hours and a low brightness variation of 0.08 magnitude (U=3/3), which indicates that the body has a nearly spheroidal shape. Radar observations confirmed this spheroidal shape, showing it to be oblate due to its rapid rotation. === Satellite ===\n\nDidymos is a binary asteroid with a satellite in its orbit. The minor-planet moon, named Dimorphos, moves in a mostly circular retrograde orbit with an orbital period of 11.9 hours. It measures approximately 160 meters (520 ft) in diameter compared to 780 meters (2,560 ft) for its primary (a mean diameter-ratio of 0.22). It was previously known by its provisional designation S/2003 (65803) 1 and had been informally called \"Didymoon\" or \"Didymos B\". == Naming ==\nThis minor planet was named \"Didymos\", Greek for \"twin\", due to its binary nature. The name was suggested by the discoverer, University of Arizona Lunar and Planetary Laboratory astronomer Joseph L. \"Joe\" Montani, who made the naming proposal to the International Astronomical Union after the binary nature of the object was detected. The approved naming citation was published on 13 July 2004 (M.P.C. 52326). The proper name for the satellite Didymos B comes from the word \"Dimorphos\", Greek for \"having two forms\". The meaning of the name represents how the form of Dimorphos's orbit will change after the collision with NASA's Double Asteroid Redirection Test (DART) spacecraft, though in fact the change will be only a very slight change in its orbital parameters. Appropriately, Dimorphos serves dual roles as both a test target and as a part of a blueprint for a modality for future planetary protection. The name of the moon was suggested by planetary scientist Kleomenis Tsiganis at the Aristotle University of Thessaloniki, Greece. Two boulders (saxa) have been given names of traditional drums. == Exploration ==\n\nIn the early 2010s, Didymos's moon, Dimorphos was to be the principal target of proposed robotic mission by the ESA and NASA, called the Asteroid Impact & Deflection Assessment (AIDA) mission. The ESA dropped out, and the mission did not proceed. NASA redefined mission requirements and decided to proceed with a 2020s mission to visit Didymos with an impactor, which had been considered as a part of the earlier AIDA mission, named the Double Asteroid Redirection Test or DART. The NASA mission was intended to test whether a spacecraft impact could successfully deflect an asteroid on a collision course with Earth. The DART spacecraft was launched on 24 November 2021, and impacted Dimorphos on September 26, 2022. It was accompanied by the Italian Space Agency's (ASI) six-unit LICIACube flyby Cubesat that was released 15 days before impact to observe the asteroid and DART's impact.\n\nSOURCE nasa.gov (https://www.nasa.gov/missions/dart/nasas-dart-mission-changed-orbit-of-asteroid-didymos-around-sun?linkId=916168374):\n### News & Events ### Multimedia ## Suggested Searches ### Featured ### NASA Invites Media, Public to Join Voyager 1 One-Light Day Activities ### NASA’s ESCAPADE Completes Powered Earth Flybys, Now En Route to Mars ### What’s Up: November 2026 Skywatching Tips from NASA ### Missions ### Humans in Space ### Earth ### The Solar System ### The Universe ### Science ### Aeronautics ### Technology ### Learning Resources ### About NASA ### NASA en Español ### News & Events ### Multimedia ### Featured ### NASA Invites Media, Public to Join Voyager 1 One-Light Day Activities ### NASA’s Chandra Finds Source of Star’s Mysterious Outbursts ### NASA’s Hubble Offers Cosmic Sampler of Targets for Roman ### Highlights ### NASA Astronauts to Answer Questions from Florida Students ### NASA Astronaut, STEM Creator Connect with Students for STEM Day ### NASA’s ISAM State of Play: The Industry Standard for Space Servicing, Assembly, and Manufacturing ### Highlights ### The Last Ice on Puncak Jaya ### A Global Rebound for Mangroves ### Scotland’s Flow Country ### Highlights ### NASA’s ESCAPADE Completes Powered Earth Flybys, Now En Route to Mars ### PROMISE ### What’s Up: November 2026 Skywatching Tips from NASA ### Highlights ### NASA’s Hubble Offers Cosmic Sampler of Targets for Roman ### NASA Scientists Show How Gravitational Waves Can Reveal New Worlds ### NASA’s Chandra Finds Source of Star’s Mysterious Outbursts ### Highlights ### NASA Selects 23 U.S. Research Teams to Advance Science Priorities, Develop Future STEM Workforce ### A Global Rebound for Mangroves ### NASA’s Hubble Offers Cosmic Sampler of Targets for Roman ### Highlights ### Through NASA’s Lens: Capturing Space Shuttle Endeavour’s Move to LA ### MAX POWER: NASA’s Inaugural Aerospace Expo Ignites America’s Future ### NASA Navigation Experiment Shows Promise for Planetary Landings ### Highlights ### 2025 NASA Power to Explore Contest Winners ### NASA Navigation Experiment Shows Promise for Planetary Landings ### High-speed Intelligent Robust Autonomous Terrain Exploration ### Featured ### NASA Knows for Students ### NASA Astronauts to Answer Questions from Florida Students ### NASA Space Grant Students Fuel Agency’s\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC11289111):\n# Evidence for multi-fragmentation and mass shedding of boulders on rubble-pile binary asteroid system (65803) Didymos M. Pajola, F. Tusberti, A. Lucchetti, O. Barnouin, S. Cambioni, C. M. Ernst, E. Dotto, R. T. Daly, G. Poggiali, M. Hirabayashi, R. Nakano, E. Mazzotta Epifani, N. L. Chabot, V. Della Corte, A. Rivkin, H. Agrusa, Y. Zhang, L. Penasa, R.-L. Ballouz, S. Ivanovski, et al. Nature Communications · 2024-07-30 · 15:6205 · DOI: 10.1038/s41467-024-50148-9 · PMID: 39080257 · PMCID: PMC11289111 ## Abstract Asteroids smaller than 10 km are thought to be rubble piles formed from the reaccumulation of fragments produced in the catastrophic disruption of parent bodies. Ground-based observations reveal that some of these asteroids are today binary systems, in which a smaller secondary orbits a larger primary asteroid. However, how these asteroids became binary systems remains unclear. Here, we report the analysis of boulders on the surface of the stony asteroid (65803) Didymos and its moonlet, Dimorphos, from data collected by the NASA DART mission. The size-frequency distribution of boulders larger than 5 m on Dimorphos and larger than 22.8 m on Didymos confirms that both asteroids are piles of fragments produced in the catastrophic disruption of their progenitors. Dimorphos boulders smaller than 5 m have size best-fit by a Weibull distribution, which we attribute to a multi-phase fragmentation process either occurring during coalescence or during surface evolution. The density per km2 of Dimorphos boulders ≥1 m is 2.3x with respect to the one obtained for (101955) Bennu, while it is 3.0x with respect to (162173) Ryugu. Such values increase once Dimorphos boulders ≥5 m are compared with Bennu (3.5x), Ryugu (3.9x) and (25143) Itokawa (5.1x). This is of interest in the context of asteroid studies because it means that contrarily to the single bodies visited so far, binary systems might be affected by subsequential fragmentation processes that largely increase their block density per km2. Direct comparison between the surface distribution and shapes of the boulders on Didymos and Dimorphos suggest that the latter inherited its material from the former. This findin",
+  "extra_sources": [
+   "https://www.nasa.gov/missions/dart/nasas-dart-mission-changed-orbit-of-asteroid-didymos-around-sun?linkId=916168374",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC11289111"
+  ]
+ },
+ "_writer": "opencode"
+}
