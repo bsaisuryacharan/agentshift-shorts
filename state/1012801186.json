@@ -1,5 +1,5 @@
 {
- "current": "atom-vs-fridge-magnet-a2",
+ "current": "how-big-moon-base-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -832,6 +832,25 @@
     "safe_zone": 10
    },
    "run_id": "43970267192"
+  },
+  "how-big-moon-base-a1": {
+   "title": "How Big Is a Moon Base, Really?",
+   "base": "how-big-moon-base-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 6,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 8,
+    "hierarchy": 8,
+    "consistency": 9,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "44049815433"
   }
  }
 }

@@ -1,0 +1,251 @@
+{
+ "id": "how-big-moon-base-a1",
+ "title": "How Big Is a Moon Base, Really?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "series_label": "SCALE",
+ "format": "scale",
+ "theme": "mono",
+ "look": "poster-pop",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b1": "NASA Artemis Base Camp overview, via space.com https://www.space.com/nasa-artemis-base-camp-more-moon-bases",
+  "b2": "NASA Artemis Base Camp stages, via space.com https://www.space.com/nasa-artemis-base-camp-more-moon-bases",
+  "b3": "space.com https://www.space.com/nasa-artemis-base-camp-more-moon-bases",
+  "b4": "space.com https://www.space.com/nasa-artemis-base-camp-more-moon-bases",
+  "b5": "space.com https://www.space.com/nasa-artemis-base-camp-more-moon-bases",
+  "b6": "Jim Free, 38th Space Symposium, via space.com https://www.space.com/nasa-artemis-base-camp-more-moon-bases",
+  "wiki": "https://en.wikipedia.org/wiki/Space_blanket",
+  "ref1": "https://www.space.com/nasa-artemis-base-camp-more-moon-bases",
+  "ref2": "https://arstechnica.com/civis/threads/nasa-kills-lunar-space-station-to-focus-on-ambitious-moon-base.1512251?thutp_user_id=607431"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Artemis moon base",
+   "prompt": "Photoreal cinematic 9:16 view of a small modular habitat on the grey lunar surface, practical harsh sunlight, long shadows across regolith, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "NASA's Moon base sounds huge — but it houses just 4 astronauts.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how big?",
+     "at": "huge"
+    },
+    {
+     "t": "title",
+     "html": "How big is a *Moon base*?",
+     "at": "base"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "say": "Artemis Base Camp supports a crew of 4, for up to 1 week at a time.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 4,
+      "prefix": "crew of",
+      "suffix": "astronauts"
+     },
+     "at": "crew",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "1 week per stay",
+     "col": "cy",
+     "at": "week"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "say": "And it is not one giant dome. It rolls out in stages: landers, rovers and habitats.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "not one giant dome",
+      "split": "word",
+      "accent": "blue"
+     },
+     "at": "dome"
+    },
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "lander",
+       "rover"
+      ],
+      [
+       "rover",
+       "habitat"
+      ]
+     ],
+     "at": "stages"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "Moon south pole",
+   "prompt": "Photoreal cinematic 9:16 aerial view of the cratered lunar south pole, harsh low sunlight and deep shadow, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "NASA unveiled the plan in 2020, parked at the lunar south pole.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "unveiled in 2020",
+      "keyword": "2020",
+      "note": "plan revealed",
+      "style": "highlight",
+      "accent": "blue"
+     },
+     "at": "2020"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "Shackleton crater",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a deep polar Moon crater with permanently shadowed floor, cold blue-grey grade, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The leading site is Shackleton Crater, where shadowed regions hide water ice.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Shackleton Crater",
+     "at": "Shackleton"
+    },
+    {
+     "t": "toast",
+     "title": "WATER ICE",
+     "sub": "hidden in shadow",
+     "icon": "droplet",
+     "at": "ice"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "lunar lander",
+   "prompt": "Photoreal cinematic 9:16 shot of a lander touching down on grey lunar regolith, dust kicked up, harsh sunlight, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Astronauts return to the Moon as soon as 2025.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "back on the Moon",
+      "options": "someday, soon, 2025",
+      "accent": "green"
+     },
+     "at": "2025"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "say": "And it may not stay one base. NASA says several bases could follow.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "hud": [
+    {
+     "t": "delta",
+     "text": "1 base → more",
+     "dir": "up",
+     "col": "ok",
+     "at": "base"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "photo": "lunar surface",
+   "prompt": "Photoreal cinematic 9:16 silhouette of a lone habitat module on the lunar horizon at low sun, cold grade, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Smaller than you imagined. Follow for more scale checks.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "4 astronauts",
+     "col": "cy",
+     "at": "imagined"
+    },
+    {
+     "t": "sub",
+     "html": "Follow for more <b>*scale checks*</b>",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "myth_fact",
+  "why": "topic fit",
+  "lemo_style": [
+   "Caption News",
+   "Swiss Motion Graphics",
+   "Visual Investigation"
+  ]
+ },
+ "_facts": {
+  "title": "Space blanket",
+  "url": "https://en.wikipedia.org/wiki/Space_blanket",
+  "text": "A space blanket is an especially low-weight, low-bulk blanket made of heat-reflective thin plastic sheeting. They are used on the exterior surfaces of spacecraft for thermal control, as well as by people. Their design reduces the heat loss in a person's body, which would otherwise occur quickly due to thermal radiation, water evaporation, or convection. Their low weight and compact size before unfurling make them ideal when space or weight are at a premium. They may be included in first aid kits and with camping equipment. Lost campers and hikers have an additional possible benefit: the shiny surface flashes in the sun, allowing its use as an improvised distress beacon for searchers and as a method of signalling over long distances to other people. == Name ==\nSpace blankets are also known by the names of Mylar blanket, emergency blanket, first aid blanket, safety blanket, thermal blanket, weather blanket, heat sheet, foil blanket, or shock blanket. == Manufacturing ==\n\nFirst developed by NASA's Marshall Space Flight Center in 1964 for the US space program,\nthe material comprises a thin sheet of plastic (often PET film) that is coated with a metallic, reflecting agent, making it metallized polyethylene terephthalate (MPET) that is usually gold or silver in color, which reflects up to 97% of radiated heat. For use in space, polyimide (e.g. Kapton, UPILEX) substrate is usually chosen due to its resistance to the hostile space environment, large temperature range (cryogenic to −260 °C and for short excursions over 480 °C), low outgassing (making it suitable for vacuum use), and resistance to ultraviolet radiation. Aluminized Kapton, with foil thickness of 50 and 125 μm, was used on the Apollo Lunar Module. The polyimide gives the foils their distinctive amber-gold color. Space blankets are made by vacuum-depositing a very precise amount of pure aluminum vapor onto a very thin, durable film substrate. == Usage ==\nIn their principal usage, space blankets are included in many emergency, first aid, and survival kits because they are usually waterproof and windproof. That, along with their low weight and ability to pack into a small space, has made them popular among outdoor enthusiasts and emergency workers. Space blankets are often given to marathoners and other endurance athletes at the end of races, or while waiting before races if the weather is chilly. The material may be used in conjunction with conductive insulation material and may be formed into a bag for use as a bivouac sack (survival bag). In first aid, the blankets are used to prevent or counter hypothermia. A threefold action facilitates this:\n\nThe airtight foil reduces convection\nHeat loss caused by evaporation of perspiration is reduced\nThe reflective surface inhibits losses caused by thermal radiation\nIn a hot environment, they can be used to provide shade or protection against radiated heat, but using them to wrap a person would be counterproductive, because body heat would get trapped by the airtight foil. This effect would exceed any benefit gained from heat reflection to the outside. Wearing a space blanket produces an insignificantly slower cooling rate after running in hot, humid conditions. Space blankets are used to reduce heat loss from a person's body, but as they are constructed of PET film, they can be used for other applications for which this material is useful, such as insulating containers (e.g. DIY solar concentrators) and other applications. In addition to the space blanket, the United States military also uses a similar blanket called the \"casualty blanket\". It uses a thermal reflective layer similar to the space blanket, backed by an olive drab-colored, reinforcing, outer layer. It provides greater durability and warmth than a basic space blanket at the cost of greater bulk and weight. It is also used as a partial liner inside the layers of bivouac sacks in very cold weather climates. Space blankets were also used by the Taliban to hide their heat signature from NATO forces. == See also ==\nEmergency shelter\nEmissivity\nR-value (insulation)\nRadiant barrier\nReflectivity\nThermal insulation\nThermoregulation\nThin-film deposition\n\n\n== References ==\n\n\n== External links ==\n Media related to Space blankets at Wikimedia Commons\n\nSOURCE space.com (https://www.space.com/nasa-artemis-base-camp-more-moon-bases):\nTitle: NASA may build more than one moon base for Artemis astronauts | Space For the quickest way to join, enter your email below. We’ll send a confirmation email and sign you up to Space.com newsletters with the latest inspiration, expert advice and exclusive offers. By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. Enter your email below and we'll send confirmation, and sign you up to our newsletter. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions. Explore ways to get more involved as a member. # NASA may build more than one moon base for Artemis lunar missions. 'It's really hard to say we're going to have a single base camp.'. NASA may now opt for more than one moon base at the lunar south pole. — NASA's goal of returning astronauts to the moon by 2025 has long been part of a long-term plan to build a sustainable base on the lunar surface. Jim Free, NASA's associate administrator for exploration systems development, said Monday (April 17) that the agency's Artemis program may ultimately build several bases around the moon instead of a single Artemis Base Camp at the lunar south pole as unveiled in 2020. \"It's really hard to say we're going to have a single base camp,\" Free told reporters here in a briefing at the 38th Space Symposium. NASA's Artemis program aims to roll out a base camp on the moon in stages using an orbiting Gateway station, landers, rovers and habitats as seen in this timeline illustration. NASA's Artemis program originally aimed to roll out a base camp on the moon in stages using an orbiting Gateway station, landers, rovers and habitats as seen in this timeline illustration. NASA's Artemis Base Camp called for a primary moon base at the lunar south pole, possibly at Shackleton Crater, which has long been on the agency's candidate list to explore on an Artemis mission because it is known to harbor water ice in its shadowed regions. The base would serve as a hub for crewed Artemis moon landings and support a team of four astronauts for up to a week at a time.\n\nSOURCE arstechnica.com (https://arstechnica.com/civis/threads/nasa-kills-lunar-space-station-to-focus-on-ambitious-moon-base.1512251?thutp_user_id=607431):\nTitle: NASA kills lunar space station to focus on ambitious Moon base | Ars OpenForum You are using an out of date browser. It may not display this or other websites correctly. You should upgrade or use an alternative browser. # NASA kills lunar space station to focus on ambitious Moon base. Jump to latest Follow Reply. : You're currently viewing only big-ted's posts. Click here to go back to viewing the entire thread. \"Everyone wants to be on the surface.\". Sort by date Sort by votes. #### big-ted. ##### Ars Centurion. A recent study concludes that The Moon Has Far Less Water Than Previously Thought which might limit their ambitions especially when China gets there first. #### More options. You must log in or register to reply here.",
+  "extra_sources": [
+   "https://www.space.com/nasa-artemis-base-camp-more-moon-bases",
+   "https://arstechnica.com/civis/threads/nasa-kills-lunar-space-station-to-focus-on-ambitious-moon-base.1512251?thutp_user_id=607431"
+  ]
+ },
+ "_writer": "opencode"
+}
