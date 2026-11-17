@@ -1,105 +1,105 @@
 {
- "updated": "2026-11-16T11:45+00:00",
+ "updated": "2026-11-17T12:06+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 13,
+  "days_left": 12,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 13028,
-  "gained": 7247,
-  "pct": 0.72,
-  "pace_per_day": 150,
-  "needed_per_day": 76365,
-  "projected": 9207,
+  "channel_views": 13080,
+  "gained": 7299,
+  "pct": 0.73,
+  "pace_per_day": 147,
+  "needed_per_day": 82725,
+  "projected": 9074,
   "on_track": false,
   "subs": 17
  },
  "shorts_per_day": 2,
  "topic_classes": {
+  "inside_machine": {
+   "n": 7,
+   "mean_log_views": 2.53,
+   "boost": 0.46
+  },
   "general": {
    "n": 9,
-   "mean_log_views": 1.92,
-   "boost": -0.4
+   "mean_log_views": 1.91,
+   "boost": -0.43
   },
   "tech_explainer": {
    "n": 3,
-   "mean_log_views": 2.34,
-   "boost": 0.15
+   "mean_log_views": 2.31,
+   "boost": 0.11
   },
   "what_if": {
    "n": 4,
-   "mean_log_views": 2.06,
-   "boost": -0.15
-  },
-  "inside_machine": {
-   "n": 6,
-   "mean_log_views": 2.45,
-   "boost": 0.36
+   "mean_log_views": 2.05,
+   "boost": -0.17
   },
   "earth_hazard": {
    "n": 2,
    "mean_log_views": 2.02,
-   "boost": -0.13
+   "boost": -0.14
   },
   "myth_fact": {
    "n": 6,
    "mean_log_views": 2.3,
-   "boost": 0.15
+   "boost": 0.13
   },
   "history_event": {
    "n": 4,
    "mean_log_views": 2.23,
-   "boost": 0.05
+   "boost": 0.04
   },
   "awe_scale": {
    "n": 5,
    "mean_log_views": 2.49,
-   "boost": 0.38
+   "boost": 0.37
   },
   "jargon_science": {
    "n": 1,
    "mean_log_views": 1.83,
-   "boost": -0.18
+   "boost": -0.19
   },
   "ai_tips": {
    "n": 4,
    "mean_log_views": 1.97,
-   "boost": -0.25
+   "boost": -0.26
   }
  },
  "format_results": {
   "other": {
-   "n": 21,
-   "mean_log_views": 1.95,
-   "boost": -0.41
+   "n": 22,
+   "mean_log_views": 2.0,
+   "boost": -0.36
   },
   "versus": {
    "n": 3,
-   "mean_log_views": 2.59,
-   "boost": 0.4
+   "mean_log_views": 2.56,
+   "boost": 0.36
   },
   "what_if": {
    "n": 5,
    "mean_log_views": 1.98,
-   "boost": -0.26
+   "boost": -0.28
   },
   "anatomy": {
    "n": 3,
-   "mean_log_views": 2.51,
-   "boost": 0.32
+   "mean_log_views": 2.5,
+   "boost": 0.3
   },
   "scale": {
    "n": 3,
    "mean_log_views": 2.67,
-   "boost": 0.49
+   "boost": 0.47
   },
   "how_it_works": {
    "n": 2,
    "mean_log_views": 2.57,
-   "boost": 0.31
+   "boost": 0.3
   },
   "timeline": {
    "n": 1,
@@ -109,30 +109,30 @@
   "ranked": {
    "n": 1,
    "mean_log_views": 1.83,
-   "boost": -0.18
+   "boost": -0.19
   },
   "myth_vs_fact": {
    "n": 4,
    "mean_log_views": 2.54,
-   "boost": 0.4
+   "boost": 0.39
   },
   "unsolved": {
    "n": 1,
    "mean_log_views": 2.57,
-   "boost": 0.19
+   "boost": 0.18
   }
  },
  "win_classes": [
-  "awe_scale",
-  "inside_machine"
+  "inside_machine",
+  "awe_scale"
  ],
  "lose_classes": [
   "general",
   "ai_tips"
  ],
  "cohort": {
-  "n": 38,
-  "median": 180.0,
+  "n": 39,
+  "median": 175,
   "p75": 419
  },
  "ladder": [
@@ -140,7 +140,7 @@
    "name": "typical Short",
    "metric": "median views per Short at 7 days",
    "goal": 1000,
-   "now": 180.0
+   "now": 175
   },
   {
    "name": "first breakout",
@@ -158,20 +158,20 @@
    "name": "volume",
    "metric": "channel views in 30 days",
    "goal": 100000,
-   "now": 7247
+   "now": 7299
   }
  ],
  "focus_words": [
-  "apollo",
-  "before",
-  "blue",
-  "eight",
-  "million",
-  "minute",
-  "phone",
-  "sunlight",
-  "sunsets",
-  "takes"
+  "blades",
+  "engine",
+  "have",
+  "holes",
+  "inside",
+  "moon",
+  "nasa",
+  "part",
+  "rocket",
+  "submarine"
  ],
  "avoid_words": [
   "calls",
@@ -187,16 +187,16 @@
  ],
  "winners": [
   {
-   "title": "Your Phone vs Apollo: 2 Million Times the RAM #shorts",
-   "views": 123
+   "title": "Why Jet Engine Blades Have Tiny Holes #shorts",
+   "views": 521
   },
   {
-   "title": "Sunlight Takes Thousands of Years Before Its Eight-Minute Trip #shorts",
-   "views": 16
+   "title": "Inside a Submarine: 5 Systems",
+   "views": 1125
   },
   {
-   "title": "Why the Sky Is Blue (and Sunsets Are Red) #shorts",
-   "views": 81
+   "title": "Inside NASA's Moon Rocket, Part by Part",
+   "views": 419
   }
  ],
  "flops": [
@@ -215,15 +215,15 @@
  ],
  "best_formats": [
   "scale",
-  "versus",
-  "myth_vs_fact"
+  "myth_vs_fact",
+  "versus"
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Topic classes on the channel's own results: more of awe_scale, inside_machine; less of general, ai_tips.",
-  "Double down on what already wins on this channel: 'Your Phone vs Apollo: 2 Million Times the RAM #sho' (123 views); 'Sunlight Takes Thousands of Years Before Its Eight' (16 views); 'Why the Sky Is Blue (and Sunsets Are Red) #shorts' (81 views).",
+  "Topic classes on the channel's own results: more of inside_machine, awe_scale; less of general, ai_tips.",
+  "Double down on what already wins on this channel: 'Why Jet Engine Blades Have Tiny Holes #shorts' (521 views); 'Inside a Submarine: 5 Systems' (1,125 views); 'Inside NASA's Moon Rocket, Part by Part' (419 views).",
   "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (24); 'How Submarines Make Air From Seawater #s' (4); '3 FREE AI Tricks to Get More Interview C' (32).",
-  "Prefer the formats the judge scores best: scale, versus.",
+  "Prefer the formats the judge scores best: scale, myth_vs_fact.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."
  ]
