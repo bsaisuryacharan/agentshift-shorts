@@ -1,146 +1,145 @@
 {
- "updated": "2026-11-17T12:06+00:00",
+ "updated": "2026-11-18T11:57+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 12,
+  "days_left": 11,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 13080,
-  "gained": 7299,
-  "pct": 0.73,
-  "pace_per_day": 147,
-  "needed_per_day": 82725,
-  "projected": 9074,
+  "channel_views": 13658,
+  "gained": 7877,
+  "pct": 0.79,
+  "pace_per_day": 327,
+  "needed_per_day": 90193,
+  "projected": 11474,
   "on_track": false,
   "subs": 17
  },
  "shorts_per_day": 2,
  "topic_classes": {
+  "general": {
+   "n": 10,
+   "mean_log_views": 1.9,
+   "boost": -0.4
+  },
+  "awe_scale": {
+   "n": 6,
+   "mean_log_views": 2.25,
+   "boost": 0.11
+  },
   "inside_machine": {
    "n": 7,
-   "mean_log_views": 2.53,
-   "boost": 0.46
-  },
-  "general": {
-   "n": 9,
-   "mean_log_views": 1.91,
-   "boost": -0.43
+   "mean_log_views": 2.51,
+   "boost": 0.49
   },
   "tech_explainer": {
    "n": 3,
-   "mean_log_views": 2.31,
-   "boost": 0.11
+   "mean_log_views": 2.28,
+   "boost": 0.12
   },
   "what_if": {
    "n": 4,
    "mean_log_views": 2.05,
-   "boost": -0.17
+   "boost": -0.13
   },
   "earth_hazard": {
    "n": 2,
    "mean_log_views": 2.02,
-   "boost": -0.14
+   "boost": -0.11
   },
   "myth_fact": {
    "n": 6,
    "mean_log_views": 2.3,
-   "boost": 0.13
+   "boost": 0.18
   },
   "history_event": {
    "n": 4,
    "mean_log_views": 2.23,
-   "boost": 0.04
-  },
-  "awe_scale": {
-   "n": 5,
-   "mean_log_views": 2.49,
-   "boost": 0.37
+   "boost": 0.08
   },
   "jargon_science": {
    "n": 1,
    "mean_log_views": 1.83,
-   "boost": -0.19
+   "boost": -0.17
   },
   "ai_tips": {
    "n": 4,
-   "mean_log_views": 1.97,
-   "boost": -0.26
+   "mean_log_views": 1.98,
+   "boost": -0.21
   }
  },
  "format_results": {
   "other": {
-   "n": 22,
-   "mean_log_views": 2.0,
-   "boost": -0.36
+   "n": 23,
+   "mean_log_views": 1.98,
+   "boost": -0.32
+  },
+  "scale": {
+   "n": 4,
+   "mean_log_views": 2.25,
+   "boost": 0.11
   },
   "versus": {
    "n": 3,
-   "mean_log_views": 2.56,
-   "boost": 0.36
+   "mean_log_views": 2.53,
+   "boost": 0.37
   },
   "what_if": {
    "n": 5,
    "mean_log_views": 1.98,
-   "boost": -0.28
+   "boost": -0.23
   },
   "anatomy": {
    "n": 3,
    "mean_log_views": 2.5,
-   "boost": 0.3
-  },
-  "scale": {
-   "n": 3,
-   "mean_log_views": 2.67,
-   "boost": 0.47
+   "boost": 0.34
   },
   "how_it_works": {
    "n": 2,
    "mean_log_views": 2.57,
-   "boost": 0.3
+   "boost": 0.33
   },
   "timeline": {
    "n": 1,
    "mean_log_views": 2.35,
-   "boost": 0.08
+   "boost": 0.09
   },
   "ranked": {
    "n": 1,
    "mean_log_views": 1.83,
-   "boost": -0.19
+   "boost": -0.17
   },
   "myth_vs_fact": {
    "n": 4,
    "mean_log_views": 2.54,
-   "boost": 0.39
+   "boost": 0.43
   },
   "unsolved": {
    "n": 1,
    "mean_log_views": 2.57,
-   "boost": 0.18
+   "boost": 0.2
   }
  },
  "win_classes": [
-  "inside_machine",
-  "awe_scale"
+  "inside_machine"
  ],
  "lose_classes": [
   "general",
   "ai_tips"
  ],
  "cohort": {
-  "n": 39,
-  "median": 175,
-  "p75": 419
+  "n": 41,
+  "median": 142,
+  "p75": 421
  },
  "ladder": [
   {
    "name": "typical Short",
    "metric": "median views per Short at 7 days",
    "goal": 1000,
-   "now": 175
+   "now": 142
   },
   {
    "name": "first breakout",
@@ -158,72 +157,72 @@
    "name": "volume",
    "metric": "channel views in 30 days",
    "goal": 100000,
-   "now": 7299
+   "now": 7877
   }
  ],
  "focus_words": [
+  "antarctic",
   "blades",
   "engine",
+  "fact",
   "have",
+  "hole",
   "holes",
   "inside",
-  "moon",
-  "nasa",
-  "part",
-  "rocket",
-  "submarine"
+  "myth",
+  "ozone"
  ],
  "avoid_words": [
-  "calls",
-  "free",
+  "earth",
   "from",
-  "interview",
+  "keeps",
   "know",
   "make",
-  "more",
+  "moving",
   "people",
   "prompts",
-  "save"
+  "save",
+  "seawater"
  ],
  "winners": [
   {
    "title": "Why Jet Engine Blades Have Tiny Holes #shorts",
-   "views": 521
+   "views": 560
   },
   {
    "title": "Inside a Submarine: 5 Systems",
    "views": 1125
   },
   {
-   "title": "Inside NASA's Moon Rocket, Part by Part",
-   "views": 419
+   "title": "The Antarctic Ozone Hole: Myth vs. Fact",
+   "views": 980
   }
  ],
  "flops": [
   {
-   "title": "5 AI Prompts 99% of People Don't Know 🤯 (Save This) #shorts",
-   "views": 24
+   "title": "Earth Stops. The Air Keeps Moving. #shorts",
+   "views": 0
   },
   {
    "title": "How Submarines Make Air From Seawater #shorts",
    "views": 4
   },
   {
-   "title": "3 FREE AI Tricks to Get More Interview Calls 🎯 (Save This) #shorts",
-   "views": 32
+   "title": "5 AI Prompts 99% of People Don't Know 🤯 (Save This) #shorts",
+   "views": 24
   }
  ],
  "best_formats": [
-  "scale",
   "myth_vs_fact",
-  "versus"
+  "versus",
+  "anatomy"
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Topic classes on the channel's own results: more of inside_machine, awe_scale; less of general, ai_tips.",
-  "Double down on what already wins on this channel: 'Why Jet Engine Blades Have Tiny Holes #shorts' (521 views); 'Inside a Submarine: 5 Systems' (1,125 views); 'Inside NASA's Moon Rocket, Part by Part' (419 views).",
-  "Drop what flopped: '5 AI Prompts 99% of People Don't Know 🤯 ' (24); 'How Submarines Make Air From Seawater #s' (4); '3 FREE AI Tricks to Get More Interview C' (32).",
-  "Prefer the formats the judge scores best: scale, myth_vs_fact.",
+  "Topic classes on the channel's own results: more of inside_machine; less of general, ai_tips.",
+  "Double down on what already wins on this channel: 'Why Jet Engine Blades Have Tiny Holes #shorts' (560 views); 'Inside a Submarine: 5 Systems' (1,125 views); 'The Antarctic Ozone Hole: Myth vs. Fact' (980 views).",
+  "Drop what flopped: 'Earth Stops. The Air Keeps Moving. #shor' (0); 'How Submarines Make Air From Seawater #s' (4); '5 AI Prompts 99% of People Don't Know 🤯 ' (24).",
+  "Prefer the formats the judge scores best: myth_vs_fact, versus.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."
  ]

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T12:06:20+00:00",
+ "generated_at": "2026-11-18T11:57:13+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -12,20 +12,20 @@
  },
  "trending": [
   "How the First Combat Submarine Actually Worked",
-  "When Cameras Capture Astonishing Animal Encounters",
   "How to Invent a Dam",
-  "Animal Encounters That Seem Almost Impossible",
   "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄",
+  "Animal Encounters That Seem Almost Impossible",
+  "Saap Katne Par Ye Sab Kyon?",
   "5 Animals That Can Survive Without Sleep 😱",
   "Tetanus Kya Sach Me Jang Se Hota Hai?",
-  "5 Hybrid Animals Created by Humans 😱",
   "The Most Amazing Animal Moments Ever Recorded",
-  "If All The Ice Melted, Which Indian City Survives? | Explained",
+  "The Most Astonishing Animal Encounters Caught On Camera",
   "NASA smashed into an asteroid. Now Hera has revealed a strange new world",
-  "The secret to building Moon bases may be hiding in emergency blankets"
+  "A mysterious twist in the universe’s oldest light could reveal new physics",
+  "The hidden language of psychopathy is not what scientists expected"
  ],
  "learned": {
-  "shorts_scored": 21,
+  "shorts_scored": 22,
   "best": [
    {
     "title": "The Sun's Worst Storms, Ranked",
@@ -67,70 +67,70 @@
   ]
  },
  "stage_averages": {
-  "hook": 7.1,
+  "hook": 7.2,
   "story": 6.5,
-  "visuals": 5.9,
-  "polish": 5.8,
-  "policy": 8.4
+  "visuals": 6.0,
+  "polish": 5.9,
+  "policy": 8.2
  },
  "weakest_stage": "polish",
  "region": "IN",
- "trend_signals_total": 62,
- "trend_signals_on_niche": 41,
+ "trend_signals_total": 59,
+ "trend_signals_on_niche": 38,
  "niche_winners": [
   {
    "title": "How the First Combat Submarine Actually Worked #engineering #history #submarine",
-   "views": 35642518,
+   "views": 36052291,
    "url": "https://www.youtube.com/watch?v=rXgv9bxT8gw"
   },
   {
-   "title": "When Cameras Capture Astonishing Animal Encounters",
-   "views": 30526028,
-   "url": "https://www.youtube.com/watch?v=vvnUUFqwsoU"
-  },
-  {
    "title": "How to Invent a Dam #dam #engineering #hydropower #howitworks",
-   "views": 22155602,
+   "views": 22761730,
    "url": "https://www.youtube.com/watch?v=yE3L0H3tSmM"
   },
   {
    "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
-   "views": 9052776,
+   "views": 11214356,
    "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
   },
   {
+   "title": "The Most Astonishing Animal Encounters Caught On Camera",
+   "views": 3187739,
+   "url": "https://www.youtube.com/watch?v=qT1ePxFsjEE"
+  },
+  {
    "title": "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄#shorts #facts #farming  #animals",
-   "views": 6926006,
+   "views": 7304948,
    "url": "https://www.youtube.com/watch?v=toBtC1Cllwk"
   },
   {
    "title": "Animal Encounters That Seem Almost Impossible",
-   "views": 7164492,
+   "views": 7185334,
    "url": "https://www.youtube.com/watch?v=xM3UqrvLeYI"
   },
   {
-   "title": "If All The Ice Melted, Which Indian City Survives? | Explained",
-   "views": 1766738,
-   "url": "https://www.youtube.com/watch?v=B7EtMkJoO24"
+   "title": "Saap Katne Par Ye Sab Kyon? #shorts #ytshorts  #facts #science #documentary #factsinhindi",
+   "views": 6673282,
+   "url": "https://www.youtube.com/watch?v=rwI1Fv_j1AM"
   },
   {
    "title": "Indian girl shocked everyone 🤯 #shorts #facts",
-   "views": 3100999,
+   "views": 3197114,
    "url": "https://www.youtube.com/watch?v=5Tgi298uvgo"
   }
  ],
  "news": [
   "NASA smashed into an asteroid. Now Hera has revealed a strange new world",
+  "A mysterious twist in the universe’s oldest light could reveal new physics",
+  "The hidden language of psychopathy is not what scientists expected",
+  "Scientists tracked kids for 8 years. What they found about screen time was surprising",
+  "A material just one atom thick reveals a strange quantum secret",
   "The secret to building Moon bases may be hiding in emergency blankets",
   "NASA is offering $1 million for bold ideas to help build a Moon base",
-  "Physicists defy expectations by controlling the magnetic heart of a single atom",
-  "An ancient virus may help explain what makes the human brain different",
-  "Uranus and Neptune’s bizarre magnetic fields may finally be explained",
-  "APOD: 2026 November 17 – Milky Way versus Aurora",
-  "Tossing Fireworks from Cloud to Cloud",
-  "Perseverance Update: The Ghostly Rocks of ‘Idubi’ — Bright Remnants of Aqueous Systems from Long Ago",
-  "A Collage Showing 49 Drill Holes Made by NASA’s Curiosity Mars Rover",
-  "NASA Receives 16th Consecutive ‘Clean’ Financial Audit Opinion",
-  "Sentinel-6B in Orbit Around Earth"
+  "APOD: 2026 November 18 – An M-class Solar Flare",
+  "Sierra Snow Season Spins Up",
+  "New Album of Baby Star Sounds Shared by NASA’s Chandra",
+  "NASA to Cover 35th SpaceX Resupply Mission Space Station Departure",
+  "NICER Status Updates"
  ]
 }
