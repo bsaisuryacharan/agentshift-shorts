@@ -1,0 +1,301 @@
+{
+ "id": "solar-flares-not-heat-waves-a3",
+ "title": "Solar Flares Are NOT Space Heat Waves",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "format": "myth_vs_fact",
+ "series_label": "MYTH VS FACT",
+ "theme": "cool",
+ "look": "explainer-diagram",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Solar_flare",
+  "b1": "https://en.wikipedia.org/wiki/Solar_flare",
+  "b2": "https://en.wikipedia.org/wiki/Solar_flare",
+  "b3": "https://www.nationalgeographic.com/science/article/110608-solar-flare-sun-science-space",
+  "b4": "https://en.wikipedia.org/wiki/Solar_flare",
+  "b5": "https://en.wikipedia.org/wiki/Solar_flare",
+  "b6": "https://en.wikipedia.org/wiki/Solar_flare",
+  "outro": "https://en.wikipedia.org/wiki/Solar_flare",
+  "wiki": "https://en.wikipedia.org/wiki/Solar_flare",
+  "ref1": "https://www.nationalgeographic.com/science/article/110608-solar-flare-sun-science-space",
+  "ref2": "http://www.esa.int/Science_Exploration/Space_Science/What_are_solar_flares",
+  "ref3": "https://www.space.com/solar-flares-effects-classification-formation"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "solar flare",
+   "footage": "solar flare eruption",
+   "prompt": "Photoreal cinematic 9:16 view of the Sun's limb in space, a bright white flare erupting from an active region, looping plasma arcs visible, deep black sky, documentary telescope look, cool blue-white grade, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "A solar flare is a heat wave in space. That's wrong. It's a magnetic explosion.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "true?",
+     "at": "space"
+    },
+    {
+     "t": "title",
+     "html": "MYTH: a flare is a *heat wave*",
+     "at": "wrong"
+    }
+   ],
+   "sfx": [
+    [
+     "boom",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "People believe it because flares sound fiery. But no hot gas drifts your way.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "MYTH: flares are *heat waves* in space",
+      "split": "word",
+      "accent": "blue"
+     },
+     "at": "fiery",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "belief #1",
+     "col": "ir",
+     "at": "fiery"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "img": "s2.jpg",
+   "prompt": "Diagram-like photoreal 9:16 scene of tangled magnetic field lines above the Sun's surface snapping and reconnecting, glowing plasma loops in an arcade, dark space background, documentary look, cool grade, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "It's electromagnetic radiation, released when stored magnetic energy snaps and accelerates charged particles.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "a flare is",
+      "options": "heat, fire, light, radiation",
+      "suffix": "",
+      "accent": "blue"
+     },
+     "at": "radiation",
+     "dur": 2.5
+    },
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "stored magnetic energy",
+       "snaps"
+      ],
+      [
+       "charged particles",
+       "accelerate"
+      ]
+     ],
+     "at": "snaps"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "solar flare plasma",
+   "footage": "solar eruption plasma",
+   "prompt": "Photoreal cinematic 9:16 shot of plasma spraying off the Sun's limb into space, arcing material against black sky, documentary telescope look, cool blue grade, no people, no text",
+   "focal": [
+    0.55,
+    0.4
+   ],
+   "say": "Flare sprays blast material outward at up to 2,000 kilometres per second.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "2,000 km/s",
+     "col": "am",
+     "at": "2,000"
+    },
+    {
+     "t": "tape",
+     "text": "FLARE SPRAY",
+     "col": "cy",
+     "at": "outward"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "whoosh",
+     0.7
+    ]
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "aurora borealis",
+   "footage": "aurora borealis sky",
+   "prompt": "Photoreal cinematic 9:16 night sky with green aurora curtains over a dark landscape, documentary look, cool grade, no people, no text",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Only extreme ultraviolet and X-ray radiation is absorbed by the ionosphere. It never reaches the ground.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "absorbed in the ionosphere",
+     "at": "ionosphere"
+    },
+    {
+     "t": "stamp",
+     "text": "NEVER REACHES GROUND",
+     "col": "ir",
+     "at": "ground"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Flares follow the Sun's 11-year cycle, with about 1,200 M-class flares per cycle.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 1200,
+      "suffix": "M-class flares",
+      "accent": "green"
+     },
+     "at": "1,200",
+     "dur": 2.5
+    },
+    {
+     "t": "ring",
+     "pct": 11,
+     "label": "11-year cycle",
+     "col": "cy",
+     "at": "cycle"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 1984, scientists found gamma-ray flares cluster on a 154-day rhythm.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "gamma-ray flares follow a 154-day rhythm",
+      "keyword": "154-day",
+      "note": "found in 1984",
+      "style": "circle",
+      "accent": "blue"
+     },
+     "at": "154-day",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "1984 discovery",
+     "col": "am",
+     "at": "1984"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s7.jpg",
+   "photo": "sunspots sun surface",
+   "prompt": "Photoreal cinematic 9:16 close view of the Sun's surface with dark sunspot groups and granulation, documentary telescope look, cool grade, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "So not a heat wave. A magnetic bomb. Follow for more myths, busted.",
+   "hud": [
+    {
+     "t": "kinetic",
+     "text": "not heat — a *magnetic bomb*",
+     "at": "magnetic"
+    },
+    {
+     "t": "toast",
+     "title": "MYTH BUSTED",
+     "sub": "follow for more",
+     "icon": "check",
+     "at": "busted"
+    }
+   ],
+   "sfx": [
+    [
+     "ding",
+     "ding",
+     0.5
+    ]
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "jargon_science",
+  "why": "topic fit",
+  "lemo_style": [
+   "Whiteboard Explainer",
+   "Chalkboard",
+   "Microscope Story"
+  ]
+ },
+ "_facts": {
+  "title": "Solar flare",
+  "url": "https://en.wikipedia.org/wiki/Solar_flare",
+  "text": "A solar flare is a relatively intense, localized emission of electromagnetic radiation in the Sun's atmosphere. Flares occur in active regions and are often, but not always, accompanied by coronal mass ejections, solar particle events, and other eruptive solar phenomena. The occurrence of solar flares varies with the 11-year solar cycle. Solar flares are thought to occur when stored magnetic energy in the Sun's atmosphere accelerates charged particles in the surrounding plasma. This results in the emission of electromagnetic radiation across the electromagnetic spectrum. The typical time profile of these emissions features three identifiable phases: a precursor phase, an impulsive phase when particle acceleration dominates, a gradual phase in which hot plasma injected into the corona by the flare cools by a combination of radiation and conduction of energy back down to the lower atmosphere, and a currently unexplained extreme ultraviolet (EUV) late phase  that occurs in some flares. The extreme ultraviolet and X-ray radiation from solar flares is absorbed by the daylight side of Earth's upper atmosphere, in particular the ionosphere, and does not reach the surface. This absorption can temporarily increase the ionization of the ionosphere which may interfere with short-wave radio communication. The prediction of solar flares is an active area of research. Flares also occur on other stars, where the term stellar flare applies. == Physical description ==\n\nSolar flares are eruptions of electromagnetic radiation originating in the Sun's atmosphere. They affect all layers of the solar atmosphere (photosphere, chromosphere, and corona). The plasma medium is heated to >107 kelvin, while electrons, protons, and heavier ions are accelerated to near the speed of light. Flares emit electromagnetic radiation across the electromagnetic spectrum, from radio waves to gamma rays. Flares occur in active regions, often around sunspots, where intense magnetic fields penetrate the photosphere to link the corona to the solar interior. Flares are powered by the sudden (timescales of minutes to tens of minutes) release of magnetic energy stored in the corona. The same energy releases may also produce coronal mass ejections (CMEs), although the relationship between CMEs and flares is not well understood. Associated with solar flares are flare sprays. They involve faster ejections of material than eruptive prominences, and reach velocities of 20 to 2,000 kilometres per second. === Cause ===\nFlares occur when accelerated charged particles, mainly electrons, interact with the plasma medium. Evidence suggests that the phenomenon of magnetic reconnection leads to this extreme acceleration of charged particles. On the Sun, magnetic reconnection may happen on solar arcades—a type of prominence consisting of a series of closely occurring coronal loops following magnetic lines of force. These lines of force quickly reconnect into a lower arcade of loops leaving a helix of magnetic field unconnected to the rest of the arcade. The sudden release of energy in this reconnection is the origin of the particle acceleration. The unconnected magnetic helical field and the material that it contains may violently expand outwards forming a CME. This also explains why solar flares typically erupt from active regions on the Sun where magnetic fields are much stronger. Although there is a general agreement on the source of a flare's energy, the mechanisms involved are not well understood. It is not clear how the magnetic energy is transformed into the kinetic energy of the particles, nor is it known how some particles can be accelerated to the GeV range (109 electron volt) and beyond. There are also some inconsistencies regarding the total number of accelerated particles, which sometimes seems to be greater than the total number in the coronal loop. === Post-eruption loops and arcades ===\n\nAfter the eruption of a solar flare, post-eruption loops made of hot plasma begin to form across the neutral line separating regions of opposite magnetic polarity near the flare's source. These loops extend from the photosphere up into the corona and form along the neutral line at increasingly greater distances from the source as time progresses. The existence of these hot loops is thought to be continued by prolonged heating present after the eruption and during the flare's decay stage. In sufficiently powerful flares, typically of C-class or higher, the loops may combine to form an elongated arch-like structure known as a post-eruption arcade. These structures may last anywhere from multiple hours to multiple days after the initial flare. In some cases, dark sunward-traveling plasma voids known as supra-arcade downflows may form above these arcades. == Frequency ==\n\nThe frequency of occurrence of solar flares varies with the 11-year solar cycle. It can typically range from several per day during solar maxima to less than one every week during solar minima. Additionally, more powerful flares are less frequent than weaker ones. For example, X10-class (severe) flares occur on average about 2–3 times per cycle, whereas M-class flares occur on average about 1,200 times per cycle. In 1984, Erich Rieger and coworkers discovered an approximately 154-day period in the occurrence of gamma-ray emitting solar flares at least since the solar cycle 19.\n\nSOURCE nationalgeographic.com (https://www.nationalgeographic.com/science/article/110608-solar-flare-sun-science-space):\n# Solar Flare Sparks Biggest Eruption Ever Seen on Sun. Enormous ejection of particles into space shocks scientists. **A mushroom of cooled plasma popped like a pimple and rained onto the surface of the sun yesterday—shooting perhaps the largest amount of solar material into space ever seen, scientists say.**. (Watch a video of the solar flare.). The solar flare—an unusually bright spot on the sun—wasn't surprising as a \"moderate\" event. Space observatories in the past year recorded about 70 such solar flares, each roughly ten times weaker than \"extreme\" flares, of which only two have occurred since 2007. (Related: \"Biggest Solar Flare in Years—Auroras to Be Widespread Tonight?\"). The event's simultaneous launch of particles into space is called a coronal mass ejection (CME). There wasn't much going on with this spot, but as it came from behind the sun, all of the sudden there was a flare and huge ejection of particles,\" said astrophysicist Phillip Chamberlin of NASA's Solar Dynamics Observatory (SDO), one of several spacecraft that recorded the event. (See pictures of solar eruptions.). **Solar Flares May Threaten Power Grids**. Chamberlin said it will take some time to calculate the energy and mass of electrons and protons blasted into space. The ejection of particles burst from the right limb of the sun and sprayed into space, so the blast will miss Earth—though the explosion may brighten auroras near Earth's poles, Chamberlin said. (See pictures of auroras generated by the Valentine's Day solar flare.). But he warned space-weather experts are concerned about future solar events. Magnetic messiness will peak around that time and prompt nasty solar storms. On the planet's surface, extra currents of solar particles drive extra electric current through power lines and heat them up. A solar storm in 1859, for example, caused telegraph lines to burst into flames. Power companies distribute loads to avoid such a disaster, but energetic solar storms could still blow transformers and lead to power outages, especially during heat waves like the one sweeping the eastern U.S. this week. *For more on solar flares, sunspots, and solar wind, read \"The Sun—Living With a Sto\n\nSOURCE esa.int (http://www.esa.int/Science_Exploration/Space_Science/What_are_solar_flares):\n# What are solar flares? A solar flare is a tremendous explosion on the Sun that happens when energy stored in 'twisted' magnetic fields (usually above sunspots) is suddenly released. In a matter of just a few minutes they heat material to many millions of degrees and produce a burst of radiation across the electromagnetic spectrum, from radio waves to X-rays and gamma rays. Scientists classify solar flares according to their peak brightness in X-ray wavelengths. **X-class flares** are the biggest; they are major events that can trigger radio blackouts around the whole world and long-lasting radiation storms in the upper atmosphere. **M-class flares** are medium-sized; they generally cause brief radio blackouts that affect Earth's polar regions. Minor radiation storms sometimes follow an M-class flare. **C-class flares** are small with few noticeable consequences here on Earth. At its peak, a C-class flare is ten times less powerful than an M-class flare. **B-class flares** are ten times smaller or weaker than C-class flares. **A-class flares** are at least ten times less intense than B-class flares, with no noticeable consequences on Earth. To indicate the strength of a flare, the class letter is often followed by a number. The higher the number, the stronger the flare! ## Flare, coronal mass ejection, or both? While a flare is a burst of radiation, a 'coronal mass ejection' (CME) flings out large amounts of solar material in the form of huge bubbles of charged particles (plasma) threaded with magnetic field lines. Although flares are sometimes accompanied by CMEs and other eruptive solar phenomena, they have also been seen to occur separately. This has important implications for understanding and predicting the effects of solar activity on the Earth and in space. The electromagnetic radiation from solar flares directly affects the ionosphere (the upper, charged layer of Earth's atmosphere) and radio communications. Additionally, a CME can deform Earth's magnetic field, affecting the magnetic field direction (so you can't trust your compass anymore) and even inducing electrical currents in Earth itself. To understand and predict space weather and the effect of \n\nSOURCE space.com (https://www.space.com/solar-flares-effects-classification-formation):\nJoin - Join our community Expert insights In-depth guides and features Curated newsletters Handpicked inspiration Early Access Preview new releases first Earn badges as you explore Join the conversation Comment and connect Tailored for you Personalised recommendations Get Space+ Access Quick For the quickest way to join, enter your email below. We’ll send a confirmation email and sign you up to Space.com newsletters with the latest inspiration, expert advice and exclusive offers. By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. FIND OUT ABOUT OUR MAGAZINE Want to subscribe to the magazine? Click the button below to find out more information. Find out more Get Space+ Access Quick Join The Club for quick access. Enter your email below and we'll send confirmation, and sign you up to our newsletter. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions. Geographical rules apply. Welcome to Space+ ! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Start reading to unlock your first badge Keep earning badges Explore ways to get more involved as a member. Space Exploration Latest space missions, discoveries and exploration updates. Explore Astronomy Stargazing tips, cosmic events and expert insights on the universe Explore --- Your membership perks Start exploring exclusive deals, expert advice and more Explore now Never Miss a Discovery Space news, cosmic updates and expert insights straight to your inbox. Choose your newsletters --- Sign Out Jump To: * What causes solar flares? * Solar flares today * Types of solar flares * How do solar flares affect Earth? * Solar flare prediction * Additional resources Get the Space.com Newsletter Breaking space news, the latest updates on rocket launches, skywatching events and more! --- By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. You are now subscribed Your newsletter sign-up was successful --- Want to add more newsletters? --- Join the club Get full ",
+  "extra_sources": [
+   "https://www.nationalgeographic.com/science/article/110608-solar-flare-sun-science-space",
+   "http://www.esa.int/Science_Exploration/Space_Science/What_are_solar_flares",
+   "https://www.space.com/solar-flares-effects-classification-formation"
+  ]
+ },
+ "_writer": "opencode"
+}

@@ -1,5 +1,5 @@
 {
- "current": "punch-asteroid-off-course-dart-a2",
+ "current": "solar-flares-not-heat-waves-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -870,6 +870,25 @@
     "safe_zone": 10
    },
    "run_id": "44142066159"
+  },
+  "solar-flares-not-heat-waves-a3": {
+   "title": "Solar Flares Are NOT Space Heat Waves",
+   "base": "solar-flares-not-heat-waves-a3",
+   "status": "draft",
+   "scores": {
+    "hook": 6,
+    "visual_quality": 4,
+    "accuracy": 9,
+    "originality": 5,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 3,
+    "hierarchy": 5,
+    "consistency": 4,
+    "payoff": 6,
+    "safe_zone": 10
+   },
+   "run_id": "44305678777"
   }
  }
 }
