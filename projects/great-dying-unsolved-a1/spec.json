@@ -1,0 +1,245 @@
+{
+ "id": "great-dying-unsolved-a1",
+ "title": "Nobody Knows What Caused Earth's Worst Extinction",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "UNSOLVED",
+ "format": "unsolved",
+ "theme": "warm",
+ "look": "paper-cut",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Ars Technica, https://arstechnica.com/science/2014/04/a-new-microbe-might-have-accelerated-the-great-dying",
+  "b1": "Smithsonian Magazine, https://www.smithsonianmag.com/science-nature/massive-volcanic-eruptions-triggered-earths-great-dying-180956431",
+  "b2": "Smithsonian Magazine, https://www.smithsonianmag.com/science-nature/massive-volcanic-eruptions-triggered-earths-great-dying-180956431",
+  "b3": "Smithsonian Magazine, https://www.smithsonianmag.com/science-nature/massive-volcanic-eruptions-triggered-earths-great-dying-180956431",
+  "b4": "Ars Technica, https://arstechnica.com/science/2014/04/a-new-microbe-might-have-accelerated-the-great-dying",
+  "b5": "Phys.org, https://phys.org/news/2019-01-earth-largest-extinction-event.html",
+  "b6": "Phys.org, https://phys.org/news/2019-01-earth-largest-extinction-event.html",
+  "outro": "Wikipedia, https://en.wikipedia.org/wiki/Great_Dying_(disambiguation)",
+  "wiki": "https://en.wikipedia.org/wiki/Great_Dying_%28disambiguation%29",
+  "ref1": "https://www.smithsonianmag.com/science-nature/massive-volcanic-eruptions-triggered-earths-great-dying-180956431",
+  "ref2": "https://arstechnica.com/science/2014/04/a-new-microbe-might-have-accelerated-the-great-dying",
+  "ref3": "https://phys.org/news/2019-01-earth-largest-extinction-event.html",
+  "ref4": "https://www.livescience.com/64270-animals-suffocated-permian-extinction.html",
+  "ref5": "https://www.ncbi.nlm.nih.gov/search/research-news/1926"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "trilobite fossil",
+   "prompt": "photoreal cinematic 9:16 macro shot of a trilobite fossil embedded in dark grey sedimentary rock, museum specimen lighting from the side, fine mineral texture, documentary natural light, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "97 percent of all species died 250 million years ago. Science still argues about what killed them.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "why?",
+     "at": "species"
+    },
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 97,
+      "suffix": "%",
+      "accent": "violet"
+     },
+     "at": "percent",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "died",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Meishan section China",
+   "prompt": "photoreal cinematic 9:16 wide shot of layered grey and red sedimentary cliff strata at a Chinese quarry site, overcast daylight, geological documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Rocks in China date the die-off precisely. The mystery is what set it off.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "The mystery is *what set it off*",
+      "accent": "violet"
+     },
+     "at": "mystery",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Siberian Traps",
+   "footage": "volcanic eruption lava",
+   "prompt": "photoreal cinematic 9:16 aerial view of vast dark basalt lava plains in Siberia under a grey ash sky, fissures venting smoke, documentary natural light, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Suspect one: the Siberian Traps. They spewed carbon and methane into the atmosphere for roughly 2 million years.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "Suspect one:",
+      "options": "volcanoes, asteroids, microbes, volcanoes",
+      "accent": "violet"
+     },
+     "at": "Suspect",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "2 million years",
+     "col": "am",
+     "at": "million"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "say": "Timing fits: eruptions began 300,000 years before the extinction and ran 500,000 years after.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Eruptions began",
+       "300,000",
+       "years before",
+       "am"
+      ],
+      [
+       "Continued",
+       "500,000",
+       "years after",
+       "am"
+      ]
+     ],
+     "stagger": 0.4,
+     "at": "Timing"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "say": "But the die-off started late. Maybe a tipping point hit only after a critical volume of magma erupted.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Maybe a tipping point hit late",
+      "keyword": "tipping point",
+      "note": "why the delay?",
+      "style": "circle",
+      "accent": "violet"
+     },
+     "at": "tipping",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s3.jpg",
+   "photo": "Coalcliff cliffs Australia",
+   "prompt": "photoreal cinematic 9:16 wide shot of tall coastal sandstone cliffs above a grey ocean, stratified rock layers, moody overcast sky, documentary aerial look, no people, no text",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Suspect two: a microbe called Methanosarcina, whose new metabolism may have spiked carbon and acidified oceans.",
+   "hud": []
+  },
+  {
+   "key": "b6",
+   "img": "s4.jpg",
+   "photo": "fossil pollen rock",
+   "footage": "ocean waves aerial",
+   "prompt": "photoreal cinematic 9:16 macro shot of fossilized pollen grains in dark rock core sample, side lighting, geological documentary detail, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "And plants in Australia died 400,000 years before marine animals, poisoned by nickel aerosol from Siberia.",
+   "hud": [
+    {
+     "t": "delta",
+     "text": "400,000 years earlier",
+     "dir": "up",
+     "col": "ir",
+     "at": "400,000"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "graphic": true,
+   "say": "Volcanoes, microbes, nickel. The Great Dying keeps its verdict open. Follow for more unsolved science.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "UNSOLVED",
+      "label": "AGENT SHIFT",
+      "accent": "violet"
+     },
+     "at": "verdict",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  }
+ ],
+ "style_map": {
+  "class": "history_event",
+  "why": "exploring a fresh fit",
+  "lemo_style": [
+   "1920s Newsreel",
+   "Archive Light Table",
+   "Transit Map"
+  ]
+ },
+ "_facts": {
+  "title": "Great Dying (disambiguation)",
+  "url": "https://en.wikipedia.org/wiki/Great_Dying_%28disambiguation%29",
+  "text": "The Great Dying is a colloquial name for the Permian–Triassic extinction event. Great Dying may also refer to:\n\nThe Great Dying: Cosmic Catastrophe, Dinosaurs and the Theory of Evolution, a 1986 book by Kenneth Hsu\nA name for the impact of the European colonization of the Americas; see Population history of the Indigenous peoples of the Americas\n\n\n== See also ==\nGreat Mortality, or Great Death; alternative names for the Black Death\n\nSOURCE smithsonianmag.com (https://www.smithsonianmag.com/science-nature/massive-volcanic-eruptions-triggered-earths-great-dying-180956431):\nTitle: Massive Volcanic Eruptions Triggered Earth’s \"Great Dying\" ## Geologists nailed down the timing of the ancient event and confirmed that it is a likely suspect in the Permian extinction. Sarah Zielinski/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/accounts/headshot/Sarah-Zielinski-240.jpg). iStock_000012182716_Medium.jpg/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/f8/01/f801dd3b-1c48-4ec0-b2f3-c1fa9893ff1f/istock_000012182716_medium.jpg). The world’s worst mass extinction has been a great whodunit for decades. But what caused trilobites, Eurypterid “sea scorpions” and all those other species to go extinct? Scientists had long suspected that massive releases of magma from the Siberian Traps played a key role, and now they have the best evidence yet that the ancient volcanic activity most likely triggered the Great Dying. Early studies had estimated that the mass extinction and the Siberian Traps eruptions happened within a few million years of each other. “For magmatism to be a plausible trigger, we must be able to assert outside the uncertainty on the dates that it preceded [the] mass extinction,” says Seth Burgess, a post-doc at the U.S. Geological Survey who completed this research while he was a graduate student at MIT. “Simply put, if magmatism began after the onset of mass extinction, then magmatism isn’t the cause.”. Burgess and his colleagues nailed down the timing of the mass extinction last year by determining the ages of rocks in China that had been laid down before and after the epic die-off. They calculate that magmatism began about 300,000 years before the mass extinction and continued for some 500,000 years after. “We show that magmatism is a plausible trigger” for the Great Dying, Burgess says. A big question, though, is why the die-off didn’t start until hundreds of thousands of years after the eruptions began. It could be that the planet reached a tipping point only after a critical volume of magma had erupted, Burgess says. Or only small amounts of magma erupted until right before the mass extinction began. For the oceans, at least, scientists have a good working theory: In addition to rock and lava, the Siberia\n\nSOURCE arstechnica.com (https://arstechnica.com/science/2014/04/a-new-microbe-might-have-accelerated-the-great-dying):\nTitle: A new microbe might have accelerated the Great Dying - Ars Technica # A new microbe might have accelerated the Great Dying. The greatest mass extinction may have been enhanced by a new metabolic pathway. The worst time to be alive in Earth’s history is absolutely the end-Permian, about 250 million years ago. It is the period when the greatest-ever extinction took place, killing 97 percent of all species. The event was so severe it has been called The Great Dying. The end-Permian extinction has generally been blamed on massive volcanic eruptions that took place at the same time. But now in a new analysis, researchers at the Massachusetts Institute of Technology argue that the mass extinction event may have been instigated by microbes. These microbes led to a perturbation of the carbon cycle that caused environmental shocks, such as global warming and ocean acidification. The shocks wiped out species in great numbers over a period of tens of thousands of years—a blip on geological scales. The end-Permian extinction, which took place about 250 million years ago, is the most severe of five known mass extinction events. For an event of this size to take place, a lot of things would have to go wrong. The upshot of all this would have been a “runaway” climate that kept heating up and removing more oxygen from the environment. After all, about 2.4 billion years ago, it was microbes in the form of cyanobacteria that gave our atmosphere all of its oxygen,” Rothman added. That period, called the Great Oxygenation Event, also killed most organisms that were adapted to the lack of oxygen and began one of the longest cold periods in Earth’s history. With colleagues at MIT, Rothman looked at the evolutionary history of Earth and spotted the origin of a particular type of microbe that occurred around the time of the Great Dying. (One of the enzymes the microbes use relies on it as a co-factor.) He went looking for evidence that *Methanosarcina* was thriving at the time in the sedimentary layer of the Meishan region of China. This would mean increased global temperatures and acidification of the oceans; the latter would have combined with the loss of oxygen (used up in cr\n\nSOURCE phys.org (https://phys.org/news/2019-01-earth-largest-extinction-event.html):\nTitle: Earth's largest extinction event likely took plants first View of Coalcliff in New South Wales, Australia, where researchers discovered evidence that Earth's largest extinction may have extinguished plant life nearly 400,000 years before marine animal species disappeared. Little life could endure the Earth-spanning cataclysm known as the Great Dying, but plants may have suffered its wrath long before many animal counterparts, says new research led by the University of Nebraska-Lincoln. Spewing carbon and methane into the atmosphere for roughly 2 million years, the eruption helped extinguish about 96 percent of oceanic life and 70 percent of land-based vertebrates—the largest extinction event in Earth's history. Yet the new study suggests that a byproduct of the eruption—nickel—may have driven some Australian plant life to extinction nearly 400,000 years before most marine species perished. The researchers reached the conclusion by studying fossilized pollen, the chemical composition and age of rock, and the layering of sediment on the southeastern cliffsides of Australia. Tracy Frank, professor and chair of Earth and atmospheric sciences, said the finding points to the eruption of lava through nickel deposits in Siberia. That volcanism could have converted the nickel into an aerosol that drifted thousands of miles southward before descending on, and poisoning, much of the plant life there. \"And that's a recurring theme through all five of the major mass extinctions in Earth's history.\". Shifts from grey to red sediment generally indicate that the volcanism's ejection of ash and greenhouse gases altered the world's climate in major ways, the researchers said. Yet that grey-red gradient is much more gradual at the Sydney Basin, Fielding said, suggesting that its distance from the eruption initially helped buffer it against the intense rises in temperature and aridity found elsewhere. Though the time scale and magnitude of the Great Dying exceeded the planet's current ecological crises, Frank said the emerging similarities—especially the spikes in greenhouse gases and continuous disappearance of species—make it a lesson worth studying. New evidence that Sibe\n\nSOURCE livescience.com (https://www.livescience.com/64270-animals-suffocated-permian-extinction.html):\n- Welcome to Live Science club! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Complete any activity to unlock your first badge. Keep earning badges Explore ways to get more involved as a member. Live Science Quizzes Play quick, fun science games Explore Animal facts Learn about the natural world Explore Latest space news Read about discoveries from beyond Earth Explore --- See what you’ve unlocked. Explore your membership benefits. Explore Go beyond the headlines Cancel anytime Start Browsing --- Sign Out - Hi , Keep exploring with your premium access. START BROWSING --- Content * ![Science Spotlight Science Spotlight](https://www.livescience.com/tag/science-spotlight) * ![Book Excerpts Book Excerpts](https://www.livescience.com/tag/book-excerpts) * ![Interviews Interviews](https://www.livescience.com/interviews) * ![Analysis Analysis](https://www.livescience.com/tag/news-analyses) * ![Opinion Opinion](https://www.livescience.com/opinion) --- * ![My Account My Account](https://www.livescience.com/my-account) --- Sign Out ## Choose your Live Science experience ### Live Science plus Read more news stories for free, receive our daily newsletter, post comments, play games and earn badges. JOIN FREE ### Live Science pro Unlimited access to our exclusive features, expert analysis and in-depth interviews, all ad-free. Unlimited, ad-free reading Exclusive, original reporting Scientist interviews and videos Members-only features See what’s in pro ## Go beyond the headlines with Live Science Pro Go beyond the headlines with Live Science Pro Rigorously fact-checked science, expert commentary and an ad-free experience built for those who want to go beyond the headlines See what’s in Pro Not ready for Pro? Join Live Science Plus ### Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. ### Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. ### Scientist interviews and video The latest science direct from the most respected people in their fields. ### Members-only features Exclusive newsletter. Members-on\n\nSOURCE ncbi.nlm.nih.gov (https://www.ncbi.nlm.nih.gov/search/research-news/1926):\nSkip to main page content An official website of the United States government **The .gov means it’s official.** Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site. **The site is secure.** The **https://** ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely. ![NIH NLM Logo](https://www.ncbi.nlm.nih.gov/) Log in #### Account Logged in as: **username** * Dashboard * Publications * Account settings * Log out Access keys NCBI Homepage MyNCBI Homepage Main Content Main Navigation Search NCBI # News: The 'great dying': rapid warming... (The Guardian) - Behind the headlines ## In the news Media coverage of health and science topics The Guardian Dec. 6, 2018 ### The 'great dying': rapid warming caused largest extinction event ever, report says Up to 96% of all marine species and more than two-thirds of terrestrial species perished 252m years ago Read more at The Guardian ## Behind the headlines Research findings and data from the National Library of Medicine ### PubMed articles Science DEC. 7, 2018 #### Temperature-dependent hypoxia explains biogeography and severity of end-Permian marine mass extinction JL Penn et al Rapid climate change at the end of the Permian Period (~252 million years ago) is the hypothesized trigger for the largest mass extinction in Earth's history. We present … #### Related content #### Similar articles #### Reviews #### People also viewed ## Also of interest Additional recent and related news The New York Times DEC. 7, 2018 #### The Planet Has Seen Sudden Warming Before. It Wiped Out Almost Everything. (Published 2018) In some ways, the planet's worst mass extinction — 250 million years ago, at the end of the Permian Period — may parallel climate change today. The Scientist DEC. 6, 2018 #### Warming Water and Lack of Oxygen Caused Massive Extinction Simulations of Earth's climate 252 million years ago reveal that the same symptoms of modern climate change likely account for the time period's extensive loss of marine life. The Washington Post FEB. 18, 2023 #### Fossil study challen",
+  "extra_sources": [
+   "https://www.smithsonianmag.com/science-nature/massive-volcanic-eruptions-triggered-earths-great-dying-180956431",
+   "https://arstechnica.com/science/2014/04/a-new-microbe-might-have-accelerated-the-great-dying",
+   "https://phys.org/news/2019-01-earth-largest-extinction-event.html",
+   "https://www.livescience.com/64270-animals-suffocated-permian-extinction.html",
+   "https://www.ncbi.nlm.nih.gov/search/research-news/1926"
+  ]
+ },
+ "_writer": "opencode"
+}

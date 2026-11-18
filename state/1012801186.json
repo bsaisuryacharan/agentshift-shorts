@@ -1,5 +1,5 @@
 {
- "current": "solar-flares-not-heat-waves-a3",
+ "current": "great-dying-unsolved-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -889,6 +889,25 @@
     "safe_zone": 10
    },
    "run_id": "44305678777"
+  },
+  "great-dying-unsolved-a1": {
+   "title": "Nobody Knows What Caused Earth's Worst Extinction",
+   "base": "great-dying-unsolved-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 8,
+    "accuracy": 9,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 8,
+    "hierarchy": 8,
+    "consistency": 9,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "44395293569"
   }
  }
 }
