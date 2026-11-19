@@ -1,0 +1,26 @@
+{
+ "s0.jpg": {
+  "file": "File:Barnard 33.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Ken Crawford",
+  "url": "https://commons.wikimedia.org/wiki/File:Barnard_33.jpg"
+ },
+ "s2.jpg": {
+  "file": "Horsehead Nebula",
+  "license": "NASA media (public domain)",
+  "artist": "GSFC",
+  "url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001518"
+ },
+ "s3.jpg": {
+  "file": "File:Orion Head to Toe.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Rogelio Bernal Andreo",
+  "url": "https://commons.wikimedia.org/wiki/File:Orion_Head_to_Toe.jpg"
+ },
+ "s4.jpg": {
+  "file": "File:Hubble Sees a Horsehead of a Different Color.jpg",
+  "license": "CC BY 4.0",
+  "artist": "NASA/ESA/Hubble Heritage Team",
+  "url": "https://commons.wikimedia.org/wiki/File:Hubble_Sees_a_Horsehead_of_a_Different_Color.jpg"
+ }
+}

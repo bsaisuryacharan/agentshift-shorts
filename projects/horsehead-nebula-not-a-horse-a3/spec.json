@@ -1,0 +1,219 @@
+{
+ "id": "horsehead-nebula-not-a-horse-a3",
+ "title": "The Horsehead Nebula Isn't a Horse",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "format": "myth_vs_fact",
+ "series_label": "MYTH VS FACT",
+ "theme": "mono",
+ "look": "swiss-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Horsehead Nebula - Wikipedia, https://en.wikipedia.org/wiki/Horsehead_Nebula",
+  "b1": "Horsehead Nebula - Wikipedia, https://en.wikipedia.org/wiki/Horsehead_Nebula",
+  "b3": "Horsehead Nebula - Wikipedia, https://en.wikipedia.org/wiki/Horsehead_Nebula",
+  "b4": "Horsehead Nebula - Wikipedia, https://en.wikipedia.org/wiki/Horsehead_Nebula",
+  "b5": "Horsehead Nebula - Wikipedia, https://en.wikipedia.org/wiki/Horsehead_Nebula",
+  "b6": "Horsehead Nebula - Wikipedia, https://en.wikipedia.org/wiki/Horsehead_Nebula",
+  "wiki": "https://en.wikipedia.org/wiki/Horsehead_Nebula",
+  "ref1": "https://www.jpl.nasa.gov/news/first-science-images-released-from-esa-mission-with-nasa-contributions",
+  "ref2": "https://www.scientificamerican.com/article/euclid-space-telescope-releases-stunning-first-science-images",
+  "ref3": "https://science.nasa.gov/mission/webb/faqs-full",
+  "ref4": "https://www.newscientist.com/article/2399067-mouse-embryos-have-been-grown-in-space-for-the-first-time",
+  "ref5": "https://www.sciencenews.org/article/celebrating-25-years-hubble-space-telescope"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Horsehead Nebula",
+   "prompt": "Photoreal cinematic 9:16 deep-space photograph of the Horsehead Nebula, dark dust silhouette against faint red ionised hydrogen glow, dense star field behind, documentary telescope look, natural cold light, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "That dark shape in Orion? Everyone calls it a horse's head. It's not a horse. It's a shadow.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "true?",
+     "at": "Orion",
+     "fx": "shine"
+    },
+    {
+     "t": "title",
+     "html": "Not a *horse*",
+     "at": "shadow"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "say": "The myth: a giant horse head floats in space, carved from glowing gas.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "a giant horse head in space",
+      "accent": "blue"
+     },
+     "at": "myth",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "say": "People believe it because thick dust blocks the light of stars behind it. A silhouette, by pure chance.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "thick dust blocks the starlight",
+      "keyword": "dust",
+      "note": "blocks light behind",
+      "style": "circle",
+      "accent": "blue"
+     },
+     "at": "dust",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s1.jpg",
+   "photo": "Harvard photographic plate",
+   "prompt": "Photoreal cinematic 9:16 macro of an antique glass astronomical photographic plate on a wooden desk, faint star images on emulsion, dim archival lamplight, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Williamina Fleming found it in 1888, on a photographic plate at Harvard.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "1888",
+     "col": "cy",
+     "at": "1888",
+     "fx": "shine"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s2.jpg",
+   "photo": "Horsehead Nebula",
+   "prompt": "Photoreal cinematic 9:16 wide telescope view of the Horsehead Nebula, dark dust pillar against red hydrogen glow in Orion, sharp star field, documentary deep-sky look, no text, no people",
+   "focal": [
+    0.5,
+    0.42
+   ],
+   "say": "The real answer: it's catalogued as Barnard 33, a dark nebula 1,375 light-years away.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 1375,
+      "suffix": "light-years",
+      "accent": "blue"
+     },
+     "at": "1,375",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s3.jpg",
+   "photo": "Orion Belt stars",
+   "prompt": "Photoreal cinematic 9:16 wide night-sky view of Orion's Belt stars above a dark horizon, crisp star field, natural cold night light, documentary astrophotography look, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "It sits inside dust cloud Lynds 1630, on the edge of region IC 434.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "not a horse — a",
+      "options": "horse,shadow,nursery",
+      "accent": "blue"
+     },
+     "at": "edge",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s4.jpg",
+   "photo": "Horsehead Nebula infrared",
+   "prompt": "Photoreal cinematic 9:16 close telescope view of bright young stars forming at the base of the Horsehead Nebula's dust pillar, warm points of light in cold gas, documentary deep-sky look, no text, no people",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "And the bright spots at its base? Young stars, forming right now.",
+   "hud": []
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "So not a horse. A star nursery that happens to look like one. Follow for more.",
+   "hud": [
+    {
+     "t": "tape",
+     "text": "B33",
+     "col": "cy",
+     "at": "nursery",
+     "fx": "shine"
+    },
+    {
+     "t": "sub",
+     "html": "Follow for <b>more</b>",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "myth_fact",
+  "why": "exploring a fresh fit",
+  "lemo_style": [
+   "Caption News",
+   "Swiss Motion Graphics",
+   "Visual Investigation"
+  ]
+ },
+ "_facts": {
+  "title": "Horsehead Nebula",
+  "url": "https://en.wikipedia.org/wiki/Horsehead_Nebula",
+  "text": "The Horsehead Nebula (also known as Barnard 33 or B33) is a small dark nebula located about 1,375 light-years (422 pc) from Earth in the constellation of Orion. The nebula is located just to the south of Alnitak, the easternmost star of Orion's Belt, and is part of the much larger Orion molecular cloud complex. It appears within the southern region of the dense dust cloud known as Lynds 1630, along the edge of the much larger, active star-forming H II region called IC 434. It is one of the most identifiable nebulae because of its resemblance to a horse's head. == History ==\nThe nebula was discovered by Williamina Fleming in 1888 on a photographic plate taken at the Harvard College Observatory. One of the first descriptions was made by E. E. Barnard, describing it as: \"Dark mass, diam. 4′, on nebulous strip extending south from ζ Orionis\", cataloguing the dark nebula as Barnard 33. == Structure ==\nIt has an easily recognizable shape which resembles the head of a horse. Heavy concentrations of dust in the Horsehead Nebula region and the neighbouring Orion Nebula are localized into interstellar clouds resulting in alternating sections of nearly complete opacity and transparency. The darkness of the Horsehead is caused mostly by thick dust blocking the light of stars behind it. The lower part of the Horsehead's neck casts a shadow to the left. The visible dark nebula emerging from the gaseous complex is an active site of the formation of \"low-mass\" stars. Bright spots in the Horsehead Nebula's base are young stars just in the process of forming. The dark cloud of dust and gas is a region in the Orion molecular cloud complex, where star formation is taking place. It is located in the constellation of Orion, which is prominent in the winter evening sky in the Northern Hemisphere and the summer evening sky in the Southern Hemisphere. Colour images reveal a red colour that originates from ionised hydrogen gas (Hα) predominantly behind the nebula, and caused by the nearby bright star Sigma Orionis. Magnetic fields channel the gases, leaving the nebula into streams, shown as foreground streaks against the background glow. A glowing strip of hydrogen gas marks the edge of the enormous cloud, and the densities of nearby stars are noticeably different on either side. == In popular culture ==\nIn Isaac Asimov's 1951 novel The Stars, Like Dust, two characters argue over where the nebula got its name. One character, who studied on earth, explains that it was so named because it looks like a horse's head. The other character, who grew up on another planet, believes it was so named after Horace Hedd, the first man to enter it. == See also ==\nList of Hubble anniversary images\n\n\n== Notes ==\n\n\n== References ==\n\n\n== External links ==\n\nSOFIA/upGREAT [C II] Velocity Resolved Map of the Horsehead Nebula\nThe Horsehead Nebula @ The Electronic Sky\nHubble Observes the Horsehead Nebula\nThe discovery of early photographs of the Horsehead nebula, by Waldee and Hazen\nThe Horsehead Nebula in the 19th Century, by Waldee\nDetection of new nebulae by photography, by Pickering\nHorsehead Nebula at ESA/Hubble\nThe Horsehead Nebula at the Astro-Photography site of Mr. T. Yoshida. The Horsehead-Nebula and neighboring structures in a classical view\nThe Horsehead Nebula on interactive astro-photography survey at Wikisky.org\nThe Horsehead Nebula at Constellation Guide\n\nSOURCE jpl.nasa.gov (https://www.jpl.nasa.gov/news/first-science-images-released-from-esa-mission-with-nasa-contributions):\nStars and Galaxies .4 min read # First Science Images Released From ESA Mission With NASA Contributions Jet Propulsion Laboratory https://www.jpl.nasa.gov/ Nov. 7, 2023 ![The image shows thousands of galaxies across the black expanse of space. The closest thousand or so galaxies appear as small disks of spiraling material, surrounded by halos of yellow and white light.](https://d2pn8kiwq2w21t.cloudfront.net/original_images/1-Perseus-cluster_1oEasJg.jpg) One of the first images captured by Euclid shows the Perseus cluster, a group of thousands of galaxies located 240 million light-years from Earth. The closest galaxies appear as swirling structures while hundreds of thousands of background galaxies are visible only as points of light. Credit: ESA/Euclid/Euclid Consortium/NASA, image processing by J.-C. Cuillandre (CEA Paris-Saclay), G. Anselmi; CC BY-SA 3.0 IGO The new images from the Euclid mission include a cluster of thousands of distant galaxies, demonstrating the spacecraft’s unique abilities. The Euclid mission, which will investigate the mysteries of dark matter and dark energy, released its first five science images Tuesday, Nov. 7 The observatory, led by ESA (European Space Agency) with NASA contributions, is scheduled to begin regular science operations in early 2024. The new images include views of a large cluster of thousands of distant galaxies, close-ups of two nearby galaxies, a gravitationally bound group of stars called a globular cluster, and a nebula (a cloud of gas and dust in space where stars form) – all depicted in vibrant colors. ![A spiral galaxy is visible at the centre of the image. The galaxy is made up of spiral arms that wrap around a white central region. The arms are dusty and sprinkled with purple, pink, and white smudges.](https://d2pn8kiwq2w21t.cloudfront.net/original_images/2-Spiral-galaxy-IC-342.jpg) The spiral galaxy IC 342, located about 11 million light-years from Earth, lies behind the crowded plane of the Milky Way: Dust, gas, and stars obscure it from our view. Euclid used its near-infrared instrument to peer through the dust and study it. Credit: ESA/Euclid/Euclid Consortium/NASA, image processing by J.-C. Cuillandre (C\n\nSOURCE scientificamerican.com (https://www.scientificamerican.com/article/euclid-space-telescope-releases-stunning-first-science-images):\nScientific American SubscribeSign In Read the November Issue: Social Media Addiction November 8, 2023 6min read ![Google Logo Add Us On GoogleAdd SciAm](https://www.google.com/preferences/source?q=scientificamerican.com) Euclid Space Telescope Releases Stunning First Science Images Fresh images show off the Euclid space telescope’s ability to capture crisp pictures of vast swaths of sky By Stephanie Pappas edited by Lee Billings Euclid’s image of the Perseus cluster, a grouping of 1,000 galaxies, also captures more than 100,000 galaxies in the far more distant cosmos. ESA/Euclid/Euclid Consortium/NASA;J.-C. Cuillandre/CEA Paris-Saclay/G. Anselmi (CC BY-SA 3.0 IGO) The first full-color science images from the Euclid space telescope showcase crystal-clear views of hundreds of thousands of galaxies, star clusters and other stunning cosmic objects. The images are just a taste of what researchers hope the space telescope, which is stationed 1.5 million kilometers from Earth, will provide over its planned six-year primary mission. This European Space Agency (ESA) project is designed to study the universe’s large-scale structure to help solve the mysteries of dark matter and dark energy. The release of the images marked the end of the calibration-and-testing part of the mission and the move into day-to-day science observations, said Carole Mundell, director of ESA’s science program, in a November 2023 webcast that revealed the images. “Today is an iconic day,” Mundell said. Cosmologists know that the well-understood parts of the universe—stars and other visible matter, as well as electromagnetic radiation and other familiar forms of energy—make up only about 5 percent of what’s really out there. The rest is dark matter and dark energy. The former is a substance that is all but invisible, save for its gravitational pull, and the latter is a mysterious force that powers the accelerating expansion of the universe. Dark matter and dark energy alike subtly influence the shapes and arrangements of galaxies and galaxy clusters, which collectively form filaments, sheets and voids in a vast “cosmic web.” --- ## On supporting science journalism If you're enjoying this article, c\n\nSOURCE science.nasa.gov (https://science.nasa.gov/mission/webb/faqs-full):\n![NASA Logo](https://www.nasa.gov) ![NASA Logo](https://www.nasa.gov) ## Suggested Searches * Artemis * ISS * Roman * Webb * Quesst * Moon Base * View All Topics A-Z * Home * Missions * Humans in Space * Earth * The Solar System * The Universe * Science * Aeronautics * Technology * Learning Resources * About NASA * Español --- * News & Events * Multimedia * NASA+ ### Highlights ![NASA’s SR-1 Freedom Advances with Progress on Nuclear Power Module 2 min read ### NASA’s SR-1 Freedom Advances with Progress on Nuclear Power Module article1 day ago](https://www.nasa.gov/centers-and-facilities/glenn/sr-1-freedom-advances-with-progress-on-nuclear-power-module/)![TIME Best Inventions of 2026 1 min read ### TIME Best Inventions of 2026 article6 days ago](https://science.nasa.gov/blogs/honors/2026/10/15/time-best-inventions-of-2026/)![What’s Up: October 2026 Skywatching Tips from NASA 3 min read ### What’s Up: October 2026 Skywatching Tips from NASA article3 weeks ago](https://science.nasa.gov/solar-system/skywatching/whats-up-october-2026-skywatching-tips-from-nasa/) ### Missions * Search All NASA Missions * A to Z List of Missions * Upcoming Launches and Landings * Spaceships and Rockets * Communicating with Missions * Artemis * James Webb Space Telescope * Hubble Space Telescope * International Space Station * OSIRIS-REx ### Humans in Space * Why Go to Space * Astronauts * Commercial Space * Destinations * Spaceships and Rockets * Living in Space ### Earth * Explore Earth Science * Climate Change * Earth, Our Planet * Earth Science in Action * Earth Multimedia * Earth Data * Earth Science Researchers ### The Solar System * The Sun * Mercury * Venus * Earth * The Moon * Mars * Jupiter * Saturn * Uranus * Neptune * Pluto & Dwarf Planets * Asteroids, Comets & Meteors * The Kuiper Belt * The Oort Cloud * Skywatching ### The Universe * Exoplanets * The Search for Life in the Universe * Stars * Galaxies * Black Holes * The Big Bang * Dark Matter * Dark Energy ### Science * Earth Science * Planetary Science * Astrophysics & Space Science * The Sun & Heliophysics * Biological & Physical Sciences * Lunar Science * Citizen Science * Astromaterials * Aeronautics Research * Human S\n\nSOURCE newscientist.com (https://www.newscientist.com/article/2399067-mouse-embryos-have-been-grown-in-space-for-the-first-time):\nAdvertisement ### Explore by section ### Explore by subject ### Explore our products and services #### Manage your subscription Check your subscription status, update your details and more. Activate your subscription #### Space # Mouse embryos have been grown in space for the first time Mouse embryos have been cultured on the International Space Station (ISS) for the first time to explore whether it might be safe for humans to become pregnant in space. “There is a possibility of pregnancy during a future trip to Mars because it will take more than 6 months to travel there,” says Teruhiko Wakayama at the University of Yamanashi in Japan, who led the study. “We are conducting research to ensure we will be able to safely have children if that time comes.” Wakayama and his colleagues performed the first steps of the experiment in their lab on Earth, extracting embryos that were at an early two-cell stage from pregnant mice and freezing them. Advertisement The frozen embryos were sent to the ISS on a SpaceX rocket that launched from Florida in August 2021. They were stored inside special devices that Wakayama’s team designed so that astronauts on the station could easily thaw the embryos and culture them for 4 days. The astronauts then chemically preserved the embryos and sent them back to Earth on a return vessel. The embryos were only grown for four days because they can only survive for that length of time outside a uterus, says Wakayama. His team studied the returned embryos to see if their development had been affected by their exposure to the higher radiation and low gravity – known as microgravity – in space. Free newsletter #### Sign up to Launchpad The embryos didn’t show signs of DNA damage from the radiation exposure, possibly because they were only in space for a short time. They also displayed normal structural development, including differentiation into two groups of cells that form the basis of the fetus and placenta. This was an important finding because it was previously thought that microgravity may affect the ability of embryos to separate into these two different cell types, says Wakayama. Data leak means anyone can see when astronauts urinate on \n\nSOURCE sciencenews.org (https://www.sciencenews.org/article/celebrating-25-years-hubble-space-telescope):\nOn a chilly Saturday evening in March, unfazed by more than 6 inches of new snow, hundreds of people crowded into Shriver Hall at Johns Hopkins University in Baltimore to hear the East Coast premiere of “Cosmic Dust,” an orchestral piece set to images of deep space. A trumpet fanfare conveyed the immense power of an exploding star; a cascade from the violins accompanied the flights of comets. As the symphony played, images of galaxies and nebulae scrolled by on a big screen. Not many telescopes get a concert in their honor. But the Hubble Space Telescope is not just any telescope. “Hubble is stargazing on steroids,” says Russell Steinberg, the Los Angeles-based composer who wrote “Cosmic Dust.” From its vantage point high above the blurring effects of Earth’s atmosphere, Hubble is one of the sharpest eyes ever to peer out at the universe. ## Cosmic inspiration Hubble’s iconic images inspired composer Russell Steinberg to write “Cosmic Dust,” a musical exploration of humankind’s connection to the cosmos. The Hopkins Symphony Orchestra performed the East Coast premiere on March 7 to an audience of stargazers and music lovers alike. *Credit: Russell Steinberg, composer; performed by the Hopkins Symphony Orchestra* After 25 years in space, Hubble has seen it all. It witnessed fragments of a comet pummel Jupiter (*SN: 7/23/94, p. 55*). It spied planet nurseries silhouetted by the light of new stars in the Orion Nebula. It confirmed that in the center of every large galaxy lurks a supermassive black hole, an invisible behemoth weighing up to several billion suns. Hubble even monitored pulsating stars as far as 70 million light-years away. By doing so, it resolved a decades-long dispute about the expansion rate and age of the universe (*SN: 4/5/14, p. 18*). And, of course, there are the pictures. From the Pillars of Creation, where newborn stars sculpt spires of gas several light-years high, to the Hubble Deep Fields, where more than 10,000 galaxies span vast expanses of space and time, Hubble’s iconic images set a new standard for how astronomers — and the public — see the universe. Not too shabby for a telescope that started off as the butt of late-night TV jokes aft",
+  "extra_sources": [
+   "https://www.jpl.nasa.gov/news/first-science-images-released-from-esa-mission-with-nasa-contributions",
+   "https://www.scientificamerican.com/article/euclid-space-telescope-releases-stunning-first-science-images",
+   "https://science.nasa.gov/mission/webb/faqs-full",
+   "https://www.newscientist.com/article/2399067-mouse-embryos-have-been-grown-in-space-for-the-first-time",
+   "https://www.sciencenews.org/article/celebrating-25-years-hubble-space-telescope"
+  ]
+ },
+ "_writer": "opencode"
+}
