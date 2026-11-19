@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T11:57:13+00:00",
+ "generated_at": "2026-11-19T11:53:54+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -11,21 +11,21 @@
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
-  "How the First Combat Submarine Actually Worked",
   "How to Invent a Dam",
+  "The Most Unexpected Animal Encounters Ever",
   "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄",
   "Animal Encounters That Seem Almost Impossible",
-  "Saap Katne Par Ye Sab Kyon?",
-  "5 Animals That Can Survive Without Sleep 😱",
-  "Tetanus Kya Sach Me Jang Se Hota Hai?",
   "The Most Amazing Animal Moments Ever Recorded",
   "The Most Astonishing Animal Encounters Caught On Camera",
-  "NASA smashed into an asteroid. Now Hera has revealed a strange new world",
-  "A mysterious twist in the universe’s oldest light could reveal new physics",
-  "The hidden language of psychopathy is not what scientists expected"
+  "If All The Ice Melted, Which Indian City Survives? | Explained",
+  "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
+  "2027 Sky Events 🤩",
+  "The Obstacle Explained in 35 seconds",
+  "People Who Couldn’t Be Explained By science 🧬",
+  "Scientists tested 212 plant-based foods. Every single one contained fungal toxins"
  ],
  "learned": {
-  "shorts_scored": 22,
+  "shorts_scored": 23,
   "best": [
    {
     "title": "The Sun's Worst Storms, Ranked",
@@ -69,68 +69,68 @@
  "stage_averages": {
   "hook": 7.2,
   "story": 6.5,
-  "visuals": 6.0,
-  "polish": 5.9,
-  "policy": 8.2
+  "visuals": 6.3,
+  "polish": 6.0,
+  "policy": 8.5
  },
  "weakest_stage": "polish",
  "region": "IN",
- "trend_signals_total": 59,
- "trend_signals_on_niche": 38,
+ "trend_signals_total": 60,
+ "trend_signals_on_niche": 39,
  "niche_winners": [
   {
-   "title": "How the First Combat Submarine Actually Worked #engineering #history #submarine",
-   "views": 36052291,
-   "url": "https://www.youtube.com/watch?v=rXgv9bxT8gw"
+   "title": "The Most Unexpected Animal Encounters Ever",
+   "views": 13786671,
+   "url": "https://www.youtube.com/watch?v=cxlIQYt868k"
   },
   {
    "title": "How to Invent a Dam #dam #engineering #hydropower #howitworks",
-   "views": 22761730,
+   "views": 23290416,
    "url": "https://www.youtube.com/watch?v=yE3L0H3tSmM"
   },
   {
    "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
-   "views": 11214356,
+   "views": 12268661,
    "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
   },
   {
    "title": "The Most Astonishing Animal Encounters Caught On Camera",
-   "views": 3187739,
+   "views": 4049758,
    "url": "https://www.youtube.com/watch?v=qT1ePxFsjEE"
   },
   {
    "title": "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄#shorts #facts #farming  #animals",
-   "views": 7304948,
+   "views": 7738868,
    "url": "https://www.youtube.com/watch?v=toBtC1Cllwk"
   },
   {
+   "title": "People Who Couldn’t Be Explained By science 🧬",
+   "views": 1079458,
+   "url": "https://www.youtube.com/watch?v=yZY4jAYwKUo"
+  },
+  {
    "title": "Animal Encounters That Seem Almost Impossible",
-   "views": 7185334,
+   "views": 7274071,
    "url": "https://www.youtube.com/watch?v=xM3UqrvLeYI"
   },
   {
-   "title": "Saap Katne Par Ye Sab Kyon? #shorts #ytshorts  #facts #science #documentary #factsinhindi",
-   "views": 6673282,
-   "url": "https://www.youtube.com/watch?v=rwI1Fv_j1AM"
-  },
-  {
-   "title": "Indian girl shocked everyone 🤯 #shorts #facts",
-   "views": 3197114,
-   "url": "https://www.youtube.com/watch?v=5Tgi298uvgo"
+   "title": "If All The Ice Melted, Which Indian City Survives? | Explained",
+   "views": 2759992,
+   "url": "https://www.youtube.com/watch?v=B7EtMkJoO24"
   }
  ],
  "news": [
-  "NASA smashed into an asteroid. Now Hera has revealed a strange new world",
-  "A mysterious twist in the universe’s oldest light could reveal new physics",
-  "The hidden language of psychopathy is not what scientists expected",
-  "Scientists tracked kids for 8 years. What they found about screen time was surprising",
-  "A material just one atom thick reveals a strange quantum secret",
-  "The secret to building Moon bases may be hiding in emergency blankets",
-  "NASA is offering $1 million for bold ideas to help build a Moon base",
-  "APOD: 2026 November 18 – An M-class Solar Flare",
-  "Sierra Snow Season Spins Up",
-  "New Album of Baby Star Sounds Shared by NASA’s Chandra",
-  "NASA to Cover 35th SpaceX Resupply Mission Space Station Departure",
-  "NICER Status Updates"
+  "Scientists tested 212 plant-based foods. Every single one contained fungal toxins",
+  "This 6-million-year-old whale may have had the most crooked face in mammal history",
+  "Is free will an illusion? New brain research reveals a surprising twist",
+  "Why do farts smell so bad? The secret is brewing in your gut",
+  "Something strange is living beneath the skin of deep-sea pigs",
+  "Why hydrogen flames can glow orange, then turn nearly invisible",
+  "This strange creature lived 309 million years ago, long before the dinosaurs",
+  "Too much exercise could leave your brain stuck in overdrive",
+  "APOD: 2026 November 19 – The Horsehead and Flame Nebulas",
+  "El Niño Rains Paint the Atacama",
+  "NASA Sets Coverage for Northrop Grumman CRS-25 Launch, Prelaunch",
+  "MAF EAP – Holidays – How to manage the BAH HUMBUG that tries to sneak in"
  ]
 }
