@@ -1,0 +1,274 @@
+{
+ "id": "tully-monster-scale-a3",
+ "title": "This Monster Predates the Dinosaurs",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "brand": "AGENT SHIFT",
+ "format": "scale",
+ "series_label": "SCALE",
+ "theme": "warm",
+ "look": "editorial-paper",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Tullimonstrum",
+  "b1": "https://en.wikipedia.org/wiki/Tullimonstrum",
+  "b2": "https://en.wikipedia.org/wiki/Tullimonstrum",
+  "b3": "https://en.wikipedia.org/wiki/Tullimonstrum",
+  "b4": "https://en.wikipedia.org/wiki/Tullimonstrum",
+  "b5": "https://en.wikipedia.org/wiki/Tullimonstrum",
+  "b6": "https://www.sciencedaily.com/releases/2023/04/230417142532.htm",
+  "outro": "https://en.wikipedia.org/wiki/Tullimonstrum",
+  "wiki": "https://en.wikipedia.org/wiki/Tullimonstrum",
+  "ref1": "https://www.sciencedaily.com/releases/2023/04/230417142532.htm"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "Photoreal cinematic 9:16 underwater scene in a murky prehistoric tropical estuary, a small cigar-shaped soft-bodied marine animal with a long thin proboscis ending in a toothed claw and two eyes on short stalks swimming through muddy green water, shafts of dim sunlight, natural documentary lighting, no text, no people",
+   "photo": "Tullimonstrum reconstruction",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "310 million years before the dinosaurs, this monster swam in Illinois.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how big?",
+     "at": "monster"
+    },
+    {
+     "t": "title",
+     "html": "310 MILLION *YEARS*",
+     "at": "Illinois"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "310 million years before the dinosaurs",
+      "accent": "green"
+     },
+     "at": "310",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "monster",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "prompt": "Photoreal cinematic 9:16 macro of a reddish-brown concretion fossil split open on a dark studio table, faint imprint of a soft-bodied creature with a long proboscis, raking natural light, documentary look, no text, no people",
+   "photo": "Tullimonstrum fossil",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "It's called the Tully monster, and science still can't say what it was.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "It was a",
+      "options": "worm, mollusc, fish, mystery",
+      "accent": "blue"
+     },
+     "at": "science",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "Tullimonstrum",
+     "col": "cy",
+     "at": "Tully"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "prompt": "Photoreal cinematic 9:16 reconstruction-style underwater wide shot, a small cigar-shaped sea animal with a triangular tail fin, two long stalked eyes and a long thin proboscis tipped with a toothed claw, gliding over a muddy estuary floor, soft natural light, no text, no people",
+   "photo": "Tullimonstrum model",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The largest reached 35 centimeters long, with a claw-tipped proboscis.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "35 CM",
+     "col": "am",
+     "at": "35"
+    },
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "a claw-tipped proboscis",
+      "keyword": "proboscis",
+      "note": "up to 8 teeth per jaw",
+      "style": "circle",
+      "accent": "green"
+     },
+     "at": "proboscis",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The smallest were just 8 centimeters, smaller than your hand.",
+   "hud": [
+    {
+     "t": "bars",
+     "items": [
+      [
+       "largest",
+       35,
+       "cy"
+      ],
+      [
+       "smallest",
+       8,
+       "am"
+      ]
+     ],
+     "unit": "cm",
+     "at": "8"
+    },
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 8,
+      "suffix": "cm",
+      "accent": "blue"
+     },
+     "at": "hand",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s3.jpg",
+   "prompt": "Photoreal cinematic 9:16 extreme macro of a fossil impression showing a thin transverse bar ending in two round dark eye organs, preserved melanosome texture, dark slate background, raking side light, documentary look, no text, no people",
+   "photo": "Tullimonstrum eyes",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Two eyes on a bar across its body, and a mouth full of teeth.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "stalked eyes",
+     "at": "bar"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s4.jpg",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a muddy fossil-hunting creek bank in Illinois with layered grey shale nodules, overcast natural light, documentary look, no text, no people",
+   "photo": "Mazon Creek fossils",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "An amateur collector found the first one in 1955.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "1955",
+     "col": "ir",
+     "at": "1955"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 2023, 3D scans delivered a verdict: not a vertebrate at all.",
+   "hud": [
+    {
+     "t": "toast",
+     "title": "3D SCAN RESULT",
+     "sub": "not a vertebrate",
+     "icon": "scan",
+     "at": "verdict"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Older than the dinosaurs, and still unclassified. Follow for more.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "OLDER THAN <b>THE DINOSAURS</b>",
+     "at": "dinosaurs"
+    },
+    {
+     "t": "chip",
+     "text": "Follow for more",
+     "col": "ok",
+     "at": "Follow"
+    }
+   ],
+   "sfx": [
+    [
+     "more",
+     "ding",
+     0.6
+    ]
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "history_event",
+  "why": "topic fit",
+  "lemo_style": [
+   "1920s Newsreel",
+   "Archive Light Table",
+   "Transit Map"
+  ]
+ },
+ "_facts": {
+  "title": "Tullimonstrum",
+  "url": "https://en.wikipedia.org/wiki/Tullimonstrum",
+  "text": "Tullimonstrum, colloquially known as the Tully monster or sometimes Tully's monster, is an extinct genus of soft-bodied bilaterian marine animal that lived in shallow tropical coastal waters of muddy estuaries during the Pennsylvanian, about 310 million years ago. A single species, T. gregarium, is known. Examples of Tullimonstrum have been found only in sediments deposited far from the palaeocoast (formally termed the Essex biota), in the Mazon Creek fossil beds of Illinois, United States. Its classification has been the subject of controversy, and interpretations of the fossil have likened it to molluscs, arthropods, conodonts, worms, tunicates, and vertebrates. This creature had a mostly cigar-shaped body, with a triangular tail fin, two long stalked eyes, and a proboscis tipped with a mouth-like appendage. Based on the fossils, it seems this creature was a nektonic carnivore that hunted in the ocean's water column. When Tullimonstrum was alive, Illinois was a mixture of ecosystems like muddy estuaries, marine environments, rivers and lakes. == Description ==\n\nTullimonstrum probably reached lengths of up to 35 centimeters (14 in); the smallest individuals are about 8 cm (3.1 in) long. Tullimonstrum had a pair of vertical, ventral fins (though the fidelity of preservation of fossils of its soft body makes this difficult to determine) situated at the tail end of its body, and typically featured a long proboscis with up to eight small sharp teeth on each \"jaw\", with which it may have actively probed for small creatures and edible detritus in the muddy bottom. It was part of the ecological community represented in the unusually rich group of soft-bodied organisms found among the assemblage called the Mazon Creek fossils from their site in Grundy County, Illinois. The absence of hard parts in the fossil implies that the animal did not possess organs composed of bone, chitin or calcium carbonate. There is evidence of serially repeated internal structures. Its head is poorly differentiated. A transverse bar-shaped structure, which was either dorsal or ventral, terminates in two round organs which are associated with dark material which have been identified as melanosomes (containing the pigment melanin). Their form and structure is suggestive of a camera-type eye. Tullimonstrum possessed structures which have been interpreted as gills, and a possible notochord or rudimentary spinal cord. == History of discovery ==\nAmateur collector Francis Tully found the first of these fossils in 1955 in a fossil bed known as the Mazon Creek formation. He took the strange creature to the Field Museum of Natural History, but paleontologists were stumped as to which phylum Tullimonstrum belonged to. The species Tullimonstrum gregarium (\"Tully's common monster\"), as these fossils later were named, takes its genus name from Tully, whereas the species name, gregarium, means \"common\", and reflects its abundance within the formation. The term monstrum (\"monster\") relates to the creature's outlandish appearance and strange body plan. The fossil remains \"a puzzle\", and interpretations liken it to a worm, a mollusc, an arthropod, a conodont, or a vertebrate. Since it appears to lack characteristics of the well-known modern phyla, some speculate that it was representative of a stem group to one of the many phyla of worms that are poorly represented today. Similarities with Cambrian fossil organisms were noted. Chen et al. suggested similarities to Nectocaris pteryx. Others pointed to a general resemblance between Tullimonstrum and Opabinia regalis, although Cave et al. notes that they were too morphologically dissimilar to be related. == Classification ==\nThe classification of Tullimonstrum has been an ongoing debate since the creature was first described, with many scientists presenting evidence of a vertebrate affinity, and others of an invertebrate affinity. === Arguments in favor of vertebrate affinities ===\nIn 2016 two studies were released simultaneously suggesting that Tullimonstrum may have been a basal vertebrate, thus a member of the phylum Chordata. ==== McCoy et al. (2016) ====\n\nMcCoy et al. undertook a morphological study of several specimens; their analysis indicated that Tullimonstrum may be closely related to modern lampreys. This affinity was attributed based on pronounced cartilaginous vertebral structures known as arcualia, a dorsal fin and asymmetric caudal fin, keratinous teeth, a single nostril, and tectal cartilages like in lampreys. While McCoy et al. raised the possibility that Tullimonstrum belong to the ancestral group of lamprey, it also has many features not found in Cyclostomes (lampreys and hagfishes). ==== Clements et al. (2016) ====\nClements et al. (2016) examined the eye anatomy of Tullimonstrum, concluding that the camera-like eye, with preserved lenses and the presence of cylindrical and spheroid melanosomes arranged in distinct layers, was indicative of a stem-vertebrate affinity. These ocular pigments and their unique structure was interpreted to be a retinal pigmented epithelium (RPE), offering strong support that the bar organs were indeed eyes.\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2023/04/230417142532.htm):\n![ScienceDaily](/ \"ScienceDaily\") --- Your source for the latest research news Follow: *Facebook* *X/Twitter* Subscribe: *RSS Feeds* *Newsletter* **New!** Sign up for our free **email newsletter**. Science News from research organizations --- # New details of Tully monster revealed ## 3D scanning of enigmatic fossil may have brought an end to debate about whether it is a vertebrate or invertebrate Date: : April 18, 2023 Source: : University of Tokyo Summary: : For more than half a century, the Tully monster (Tullimonstrum gregarium), an enigmatic animal that lived about 300 million years ago, has confounded paleontologists, with its strange anatomy making it difficult to classify. Recently, a group of researchers proposed a hypothesis that Tullimonstrum was a vertebrate similar to cyclostomes (jawless fish like lamprey and hagfish). If it was, then the Tully monster would potentially fill a gap in the evolutionary history of early vertebrates. Studies so far have both supported and rejected this hypothesis. Now, using 3D imaging technology, a team in Japan believes it has found the answer after uncovering detailed characteristics of the Tully monster which strongly suggest that it was not a vertebrate. However, its exact classification and what type of invertebrate it was is still to be decided. Share: : Facebook Twitter Pinterest LinkedIN Email FULL STORY --- For more than half a century, the Tully monster (*Tullimonstrum gregarium*), an enigmatic animal that lived about 300 million years ago,has confounded paleontologists, with its strange anatomy making it difficult to classify. Recently, a group of researchers proposed a hypothesis that *Tullimonstrum* was a vertebrate similar to cyclostomes (jawless fish like lamprey and hagfish). If it was, then the Tully monster would potentially fill a gap in the evolutionary history of early vertebrates. Studies so far have both supported and rejected this hypothesis. Now, using 3D imaging technology, a team in Japan believes it has found the answer after uncovering detailed characteristics of the Tully monster which strongly suggest that it was not a vertebrate. However, its exact classification and what type of invert",
+  "extra_sources": [
+   "https://www.sciencedaily.com/releases/2023/04/230417142532.htm"
+  ]
+ },
+ "_writer": "opencode"
+}

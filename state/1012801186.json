@@ -1,5 +1,5 @@
 {
- "current": "horsehead-nebula-not-a-horse-a3",
+ "current": "tully-monster-scale-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -927,6 +927,25 @@
     "safe_zone": 10
    },
    "run_id": "44579976317"
+  },
+  "tully-monster-scale-a3": {
+   "title": "This Monster Predates the Dinosaurs",
+   "base": "tully-monster-scale-a3",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 5,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 7,
+    "hierarchy": 9,
+    "consistency": 6,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "44813434926"
   }
  }
 }
