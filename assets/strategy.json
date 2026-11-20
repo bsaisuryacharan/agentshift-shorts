@@ -1,33 +1,33 @@
 {
- "updated": "2026-11-19T11:53+00:00",
+ "updated": "2026-11-20T11:55+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 10,
+  "days_left": 9,
   "measured": true,
   "baseline_views": 5781,
   "channel_views": 13830,
   "gained": 8049,
   "pct": 0.8,
-  "pace_per_day": 300,
-  "needed_per_day": 99195,
-  "projected": 11049,
+  "pace_per_day": 254,
+  "needed_per_day": 110216,
+  "projected": 10337,
   "on_track": false,
   "subs": 17
  },
  "shorts_per_day": 2,
  "topic_classes": {
   "general": {
-   "n": 11,
-   "mean_log_views": 1.85,
-   "boost": -0.41
+   "n": 13,
+   "mean_log_views": 1.92,
+   "boost": -0.3
   },
   "history_event": {
    "n": 5,
-   "mean_log_views": 2.1,
-   "boost": -0.01
+   "mean_log_views": 2.08,
+   "boost": -0.03
   },
   "awe_scale": {
    "n": 6,
@@ -36,23 +36,23 @@
   },
   "inside_machine": {
    "n": 7,
-   "mean_log_views": 2.5,
+   "mean_log_views": 2.49,
    "boost": 0.54
   },
   "tech_explainer": {
-   "n": 3,
-   "mean_log_views": 2.28,
-   "boost": 0.16
+   "n": 1,
+   "mean_log_views": 2.14,
+   "boost": 0.02
   },
   "what_if": {
    "n": 4,
    "mean_log_views": 2.06,
-   "boost": -0.07
+   "boost": -0.06
   },
   "earth_hazard": {
    "n": 2,
    "mean_log_views": 2.03,
-   "boost": -0.07
+   "boost": -0.06
   },
   "myth_fact": {
    "n": 5,
@@ -67,29 +67,29 @@
   "ai_tips": {
    "n": 3,
    "mean_log_views": 1.62,
-   "boost": -0.5
+   "boost": -0.49
   }
  },
  "format_results": {
   "other": {
    "n": 24,
-   "mean_log_views": 1.89,
-   "boost": -0.39
+   "mean_log_views": 1.88,
+   "boost": -0.4
   },
   "scale": {
    "n": 4,
    "mean_log_views": 2.25,
-   "boost": 0.16
+   "boost": 0.17
   },
   "versus": {
    "n": 3,
    "mean_log_views": 2.53,
-   "boost": 0.41
+   "boost": 0.42
   },
   "what_if": {
    "n": 5,
    "mean_log_views": 1.98,
-   "boost": -0.17
+   "boost": -0.16
   },
   "anatomy": {
    "n": 3,
@@ -114,7 +114,7 @@
   "myth_vs_fact": {
    "n": 3,
    "mean_log_views": 2.67,
-   "boost": 0.56
+   "boost": 0.57
   },
   "unsolved": {
    "n": 1,
@@ -132,15 +132,15 @@
  ],
  "cohort": {
   "n": 41,
-  "median": 128,
-  "p75": 358
+  "median": 112,
+  "p75": 422
  },
  "ladder": [
   {
    "name": "typical Short",
    "metric": "median views per Short at 7 days",
    "goal": 1000,
-   "now": 128
+   "now": 112
   },
   {
    "name": "first breakout",
@@ -162,20 +162,19 @@
   }
  ],
  "focus_words": [
-  "antarctic",
+  "almost",
+  "below",
   "blades",
   "engine",
-  "fact",
+  "from",
   "have",
-  "hole",
   "holes",
-  "inside",
-  "myth",
-  "ozone"
+  "kilometres",
+  "life",
+  "mechanical"
  ],
  "avoid_words": [
   "earth",
-  "from",
   "keeps",
   "know",
   "make",
@@ -183,20 +182,21 @@
   "people",
   "prompts",
   "save",
-  "seawater"
+  "seawater",
+  "stops"
  ],
  "winners": [
   {
+   "title": "Life Survives Almost 11 Kilometres Below the Sea #shorts",
+   "views": 112
+  },
+  {
    "title": "Why Jet Engine Blades Have Tiny Holes #shorts",
-   "views": 562
+   "views": 561
   },
   {
-   "title": "Inside a Submarine: 5 Systems",
-   "views": 1125
-  },
-  {
-   "title": "The Antarctic Ozone Hole: Myth vs. Fact",
-   "views": 980
+   "title": "What Stops a Mechanical Watch From Unwinding at Once? #shorts",
+   "views": 76
   }
  ],
  "flops": [
@@ -221,7 +221,7 @@
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
   "Topic classes on the channel's own results: more of inside_machine, myth_fact; less of ai_tips, general.",
-  "Double down on what already wins on this channel: 'Why Jet Engine Blades Have Tiny Holes #shorts' (562 views); 'Inside a Submarine: 5 Systems' (1,125 views); 'The Antarctic Ozone Hole: Myth vs. Fact' (980 views).",
+  "Double down on what already wins on this channel: 'Life Survives Almost 11 Kilometres Below the Sea #' (112 views); 'Why Jet Engine Blades Have Tiny Holes #shorts' (561 views); 'What Stops a Mechanical Watch From Unwinding at On' (76 views).",
   "Drop what flopped: 'Earth Stops. The Air Keeps Moving. #shor' (0); 'How Submarines Make Air From Seawater #s' (4); '5 AI Prompts 99% of People Don't Know 🤯 ' (24).",
   "Prefer the formats the judge scores best: myth_vs_fact, versus.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
