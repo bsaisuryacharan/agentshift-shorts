@@ -1,0 +1,262 @@
+{
+ "id": "voyager-1-vs-pioneer-10-a1",
+ "title": "Voyager 1 vs Pioneer 10: Who Left First?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+28%",
+ "brand": "AGENT SHIFT",
+ "format": "versus",
+ "series_label": "VERSUS",
+ "theme": "cool",
+ "look": "explainer-diagram",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b1": "Pioneer 10 - Wikipedia, https://en.wikipedia.org/wiki/Pioneer_10",
+  "b2": "Voyager 1 - NASA Science, https://science.nasa.gov/mission/voyager/voyager-1",
+  "b4": "Pioneer 10 - Wikipedia, https://en.wikipedia.org/wiki/Pioneer_10",
+  "b5": "Voyager 1 - NASA Science, https://science.nasa.gov/mission/voyager/voyager-1",
+  "wiki": "https://en.wikipedia.org/wiki/Pioneer_10",
+  "ref1": "https://science.nasa.gov/mission/voyager/voyager-1",
+  "ref2": "https://www.nasa.gov/history/45-years-ago-pioneer-10-first-to-explore-jupiter",
+  "ref3": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5255541"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "Photoreal cinematic 9:16 vertical shot of deep space: a vast black starfield with a faint band of the Milky Way, one tiny distant spacecraft silhouette drifting far from camera, cold blue documentary grade, no text, no people.",
+   "footage": "deep space stars",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Pioneer 10 left the Solar System first. Voyager 1 is still flying, farther than anything we have ever built.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "vs",
+     "at": "Pioneer"
+    },
+    {
+     "t": "title",
+     "html": "Pioneer *10* vs Voyager *1*",
+     "at": "Voyager"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Pioneer 10 spacecraft",
+   "footage": "asteroid belt space",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Pioneer 10 launched in 1972. It was the first spacecraft across the asteroid belt, and the first to reach escape velocity from the Solar System.",
+   "hud": [
+    {
+     "t": "rows",
+     "at": "launched",
+     "stagger": true,
+     "items": [
+      [
+       "Launch",
+       "1972",
+       "",
+       "cy"
+      ],
+      [
+       "Finish",
+       "first out",
+       "",
+       "ok"
+      ]
+     ]
+    },
+    {
+     "t": "tape",
+     "text": "FIRST THROUGH",
+     "at": "asteroid",
+     "col": "cy"
+    }
+   ],
+   "prompt": "documentary photograph of Pioneer 10 spacecraft, natural light, no text, no people"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Voyager 1 spacecraft",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Voyager 1 launched later, on a faster route. It overtook its own twin and never stopped, sailing straight into interstellar space.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "at": "faster",
+     "dur": 2.5,
+     "vars": {
+      "prefix": "It flew the",
+      "options": "slow,fast,fastest",
+      "suffix": "route"
+     },
+     "accent": "blue"
+    },
+    {
+     "t": "chip",
+     "text": "Interstellar space",
+     "at": "interstellar",
+     "col": "am"
+    }
+   ],
+   "prompt": "documentary photograph of Voyager 1 spacecraft, natural light, no text, no people"
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "So this is a race with two finish lines.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "at": "race",
+     "dur": 2.5,
+     "vars": {
+      "text": "Two probes, two *finish* lines",
+      "split": "word"
+     },
+     "accent": "green"
+    },
+    {
+     "t": "list",
+     "at": "finish",
+     "items": [
+      [
+       "🛰",
+       "Pioneer 10",
+       "first out"
+      ],
+      [
+       "🛰",
+       "Voyager 1",
+       "farthest out"
+      ]
+     ]
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The verdict on leaving: Pioneer 10 wins. It was the first of five spacecraft to achieve escape velocity from the Solar System.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "FIRST OUT",
+     "at": "wins",
+     "col": "ok"
+    },
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "at": "escape",
+     "dur": 2.5,
+     "vars": {
+      "text": "First of five to escape the Solar System",
+      "keyword": "five",
+      "note": "escape velocity club",
+      "style": "circle"
+     },
+     "accent": "green"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s3.jpg",
+   "photo": "Jupiter Pioneer 10",
+   "footage": "Jupiter clouds",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "But distance is a different race. Pioneer 10 fell silent in 2003. Voyager 1 is still transmitting, now one light-day away.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "at": "silent",
+     "dur": 2.5,
+     "vars": {
+      "end": 2003,
+      "prefix": "Last signal",
+      "suffix": ""
+     },
+     "accent": "blue"
+    },
+    {
+     "t": "chip",
+     "text": "1 light-day away",
+     "at": "transmitting",
+     "col": "am"
+    }
+   ],
+   "prompt": "documentary photograph of Jupiter Pioneer 10, natural light, no text, no people"
+  },
+  {
+   "key": "outro",
+   "img": "s4.jpg",
+   "photo": "interstellar space stars",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "First out, or farthest out? Depends where you draw the line. Follow for more versus.",
+   "hud": [
+    {
+     "t": "toast",
+     "at": "Follow",
+     "title": "FOLLOW",
+     "sub": "for more versus",
+     "icon": "rocket"
+    }
+   ],
+   "prompt": "documentary photograph of interstellar space stars, natural light, no text, no people"
+  }
+ ],
+ "style_map": {
+  "class": "inside_machine",
+  "why": "topic fit",
+  "lemo_style": [
+   "Exploded Teardown",
+   "Blueprint",
+   "Engineering Briefing Board"
+  ]
+ },
+ "_facts": {
+  "title": "Pioneer 10",
+  "url": "https://en.wikipedia.org/wiki/Pioneer_10",
+  "text": "Pioneer 10 (originally designated Pioneer F) is a space probe launched by NASA in 1972 that completed the first mission to the planet Jupiter. It was the first spacecraft to traverse the asteroid belt and the first of five artificial objects to achieve the escape velocity needed to leave the Solar System. The mission was managed by NASA Ames Research Center in California, and the spacecraft was built by TRW Inc. The spacecraft was built around a hexagonal satellite bus with a 2.74 m (9.0 ft) diameter parabolic high-gain antenna and was spin-stabilized about the antenna axis. Electrical power was supplied by four radioisotope thermoelectric generators (RTGs), which produced a combined 155 watts at launch. Pioneer 10 was launched on March 3, 1972, at 01:49:00 UTC (March 2 local time), aboard an Atlas-Centaur rocket from Cape Canaveral Launch Complex 36A. It passed through the asteroid belt from July 15, 1972 to February 15, 1973, becoming the first spacecraft to do so. Imaging of Jupiter began on November 6, 1973, from a distance of 25 million km (16 million mi), and the spacecraft returned more than 500 images. Its closest approach to Jupiter was on December 3, 1973, passing within 132,252 km (82,178 mi) of the planet. During the mission, its scientific instruments investigated the asteroid belt, the environment of Jupiter, the solar wind, cosmic rays, and the outer heliosphere. The last signal from Pioneer 10 was received on January 23, 2003, after declining electrical power from its RTGs left the spacecraft unable to operate its radio transmitter. At that time, it was about 80 AU (12 billion km; 7.4 billion mi) from Earth. == Mission background ==\n\n\n=== History ===\nIn the 1960s, aerospace engineer Gary Flandro of NASA's Jet Propulsion Laboratory proposed the Planetary Grand Tour, a mission concept that would take advantage of a rare alignment of the Solar System's outer planets. Although the concept was ultimately realized in the late 1970s by the Voyager program, NASA decided in 1964 to test key elements of the mission by sending two probes to the outer Solar System. An advocacy group, the Outer Space Panel, chaired by James A. Van Allen, developed the scientific rationale for exploring the outer planets. NASA's Goddard Space Flight Center proposed a pair of \"Galactic Jupiter Probes\" that would pass through the asteroid belt and explore Jupiter. The spacecraft were planned for launch in 1972 and 1973 during launch windows that occurred for only a few weeks every 13 months; launching outside those windows would have required significantly more propellant. NASA approved the mission in February 1969. Before launch, the two spacecraft were designated Pioneer F and Pioneer G; they were later renamed Pioneer 10 and Pioneer 11, respectively. They formed part of the Pioneer program, a series of uncrewed U.S. space missions launched between 1958 and 1978. Pioneer 10 and Pioneer 11 were the first spacecraft in the program designed to explore the outer Solar System. Their primary objectives were to investigate the interplanetary medium beyond Mars, study the asteroid belt, assess potential hazards to spacecraft passing through it, and explore Jupiter and its environment. More than 150 scientific experiments were proposed for the missions. The final instrument payload, selected through a series of planning meetings during the 1960s and completed by early 1970, was designed to image and perform polarimetric observations of Jupiter and several of its moons, conduct infrared and ultraviolet observations of Jupiter, detect asteroids and meteoroids, determine the composition of charged particles, and measure magnetic fields, plasma, cosmic rays, and zodiacal light. Radio tracking during the spacecraft's occultation by Jupiter would provide measurements of the planet's atmosphere by detecting changes in the radio signal as it passed through the atmosphere. Precision tracking of the spacecraft would also improve estimates of the masses of Jupiter and its moons by measuring the small changes in the spacecraft's trajectory and velocity caused by their gravitational interactions. NASA Ames Research Center, rather than Goddard, was selected to manage the project as part of the Pioneer program. Ames, under the direction of Charles F. Hall, was chosen because of its experience with spin-stabilized spacecraft. The mission required a small, lightweight, magnetically clean spacecraft capable of operating in interplanetary space while minimizing interference with its scientific instruments. Its design incorporated hardware previously proven on Pioneer 6 through Pioneer 9. In February 1970, NASA awarded TRW Inc. a US$380 million contract to build both spacecraft without a competitive bidding process in order to meet the mission schedule. B. J. O'Brien and Herb Lassen led the team responsible for assembling the spacecraft. Their design and construction required an estimated 25 million man-hours. To meet the original schedule, the first spacecraft would have had to launch between February 29 and March 17 to reach Jupiter in November 1974.\n\nSOURCE science.nasa.gov (https://science.nasa.gov/mission/voyager/voyager-1):\n# Voyager 1 The most distant human-made object next milestone where ## ‘Shine Bright for Voyager’s Light-Day’ Help celebrate Voyager 1's epic milestone — NASA invites everyone in the world to create a symbolic wave of golden light encircling the planet after sunset on Tuesday, Nov. 17, by flashing a message to the spacecraft with phones, flashlights, and even entire buildings. See how to join in! ### Celebrate a Once-in-Human-History Moment Join people worldwide and shine a bright greeting to celebrate Voyager 1 for reaching one light-day distance from Earth. On Tuesday, Nov. 17, help create a wave of golden light, when we'll illuminate the sky with phones, flashlights, porch lights, and even local landmarks and public spaces. ‘Shine Bright’ — Learn More, and Join In ## What is Voyager 1? Voyager 1 has been exploring our solar system since 1977. The probe is now in interstellar space, the region outside the heliopause, or the bubble of energetic particles and magnetic fields from the Sun. Voyager 1 was launched after Voyager 2, but because of a faster route it exited the asteroid belt earlier than its twin, and it overtook Voyager 2 on Dec. 15, 1977. - Voyager 1 discovered a thin ring around Jupiter and two new Jovian moons: Thebe and Metis. - At Saturn, Voyager 1 found five new moons and a new ring called the G-ring. - Voyager 1 was the first spacecraft to cross the heliosphere, the boundary where the influences from outside our solar system are stronger than those from our Sun. - Voyager 1 is the first human-made object to venture into interstellar space. ## Eyes on the Solar System: Messaging Voyager at One Light-Day Away Light (and radio waves) are very fast, but Voyager 1 is very far away — which is why a radio signal takes an entire day to reach the spacecraft now. Use NASA's Eyes visualization tool to see how long a signal takes to get to and from our most-distant messenger, even at light-speed, and even if you speed up that view. ## In Depth: Voyager 1 **Nation**United States of America (USA) **Objective(s)**Jupiter Flyby, Saturn Flyby **Spacecraft**Voyager 1 **Spacecraft Mass**1,592 pounds (721.9 kilograms) **Spacecraft Power**3 Multi-Hundred Watt Radio\n\nSOURCE nasa.gov (https://www.nasa.gov/history/45-years-ago-pioneer-10-first-to-explore-jupiter):\nBy the time it reached its target, the Pioneer 10 spacecraft had been traveling through space for 21 months, traversing regions of the solar system never before explored by human made robots. Built by TRW Systems in Redondo Beach, California, and managed by NASA’s Ames Research Center in Silicon Valley, California, Pioneer 10 was the first spacecraft to explore the solar system’s largest planet Jupiter. Following its launch from Cape Kennedy on Mar. 2, 1972, Pioneer 10 became the fastest human-made object: traveling at more than 32,000 miles per hour after leaving Earth, it passed the orbit of the Moon in less than 11 hours. Just four months after launch, on Jul. 15, it left the inner solar system and became the first spacecraft to enter the asteroid belt. At the time, it was uncertain whether it would traverse it safely since the density of particles large enough to damage the craft was not yet known. It passed within 5.5 million miles of an unnamed 0.5-mile diameter asteroid on Aug. 2 and the 15-mile wide asteroid 307 Nike on Dec. 2, 1972. After seven months, on Feb. 15, 1973, Pioneer 10 emerged from the asteroid belt unscathed. During its flight from Earth, Pioneer 10 made measurements of the solar wind, and in August 1972, in conjunction with several Pioneer solar orbiting spacecraft, it recorded details of a massive solar storm. The 571-pound spacecraft carried 11 instruments for its close-up study of Jupiter and interplanetary space during its journey. These instruments were a helium vector magnetometer to measure Jupiter’s magnetic field; a quadrispherical plasma analyzer, a charged particle instrument, a cosmic ray telescope, a Geiger tube telescope, and a trapped radiation detector to measure the solar wind and radiation levels; meteoroid detectors and an asteroid/meteoroid detector to record interplanetary dust particles; an ultraviolet photometer to determine the quantities of hydrogen and helium in space and on Jupiter; an imaging photopolarimeter to return images of the planet; and an infrared radiometer for temperature measurements. Pioneer 10 used plutonium-238 in two radioisotope thermal generators (RTG) to supply power to its systems and instrum\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC5255541):\nSkip to main content An official website of the United States government Here's how you know Here's how you know **Official websites use .gov** A **.gov** website belongs to an official government organization in the United States. **Secure .gov websites use HTTPS** A **lock** ( ) or **https://** means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. ![Image 4: NCBI home page](https://www.ncbi.nlm.nih.gov/) Search Log in * Dashboard * Publications * Account settings * Log out Search… Search NCBI Primary site navigation Search Logged in as: * Dashboard * Publications * Account settings Log in Search PMC Full-Text Archive Search in PMC * Journal List * User Guide As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with, the contents by NLM or the National Institutes of Health. Learn more: PMC Disclaimer | PMC Copyright Notice Living Rev Relativ . 2010 Sep 1;13(1):4. doi: 10.12942/lrr-2010-4 * Search in PMC * Search in PubMed * View in NLM Catalog * Add to search # The Pioneer Anomaly Slava G. Turyshev ### Slava G. Turyshev 1 Jet Propulsion Laboratory, California Institute of Technology, 4800 Oak Grove Drive, Pasadena, CA 91109 USA Find articles by Slava G. Turyshev 1, Viktor T. Toth ### Viktor T. Toth 2 Ottawa, ON K1N 9H5 Canada Find articles by Viktor T. Toth 2 * Author information * Article notes * Copyright and License information 1 Jet Propulsion Laboratory, California Institute of Technology, 4800 Oak Grove Drive, Pasadena, CA 91109 USA 2 Ottawa, ON K1N 9H5 Canada Accepted 2010 Jul 16 © The Author(s) 2010 PMC Copyright notice PMCID: PMC5255541 PMID: 28163614 ## Abstract Radio-metric Doppler tracking data received from the Pioneer 10 and 11 spacecraft from heliocentric distances of 20–70 AU has consistently indicated the presence of a small, anomalous, blue-shifted frequency drift uniformly changing with a rate of ∼ 6 × 10−9 Hz/s. Ultimately, the drift was interpreted as a constant sunward deceleration of each particular spacecraft at the level of _a_ _P_ = (8.74 ± 1.33) × 10−10 m/s 2. This apparent violation of the Newton",
+  "extra_sources": [
+   "https://science.nasa.gov/mission/voyager/voyager-1",
+   "https://www.nasa.gov/history/45-years-ago-pioneer-10-first-to-explore-jupiter",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC5255541"
+  ]
+ },
+ "_writer": "opencode"
+}

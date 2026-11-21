@@ -1,5 +1,5 @@
 {
- "current": "deep-sea-pigs-myth-a3",
+ "current": "voyager-1-vs-pioneer-10-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -965,6 +965,25 @@
     "safe_zone": 10
    },
    "run_id": "44865414243"
+  },
+  "voyager-1-vs-pioneer-10-a1": {
+   "title": "Voyager 1 vs Pioneer 10: Who Left First?",
+   "base": "voyager-1-vs-pioneer-10-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 5,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 6,
+    "hierarchy": 7,
+    "consistency": 6,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "44886558524"
   }
  }
 }
