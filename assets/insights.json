@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T11:55:10+00:00",
+ "generated_at": "2026-11-21T11:25:47+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -14,18 +14,18 @@
   "How to Invent a Dam",
   "The Most Unexpected Animal Encounters Ever",
   "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄",
-  "10 Strange Viral Animal Moments You Won’t Believe 😱",
   "The Most Astonishing Animal Encounters Caught On Camera",
   "The Most Amazing Animal Moments Ever Recorded",
+  "Most Shocking animal Encounters | Ep 35",
   "dinosaur apne egg kaise garam rakhte the",
   "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
-  "The Secret Engineering Behind Jagannath Puri Temple 🙏🏻",
-  "People Who Couldn’t Be Explained By science 🧬",
-  "key range of car|EM wave Explain",
-  "Experimental compound burns fat without sacrificing muscle"
+  "Daant Mein Keeda Sach Mein Hota Hai?",
+  "Gold mein rhenium powder mila kr scam ?",
+  "NASA’s Voyager 1 is now so far away that light takes 24 hours to reach it",
+  "After 8 years in space, a groundbreaking X-ray telescope finally opens its eyes"
  ],
  "learned": {
-  "shorts_scored": 23,
+  "shorts_scored": 26,
   "best": [
    {
     "title": "The Sun's Worst Storms, Ranked",
@@ -67,70 +67,70 @@
   ]
  },
  "stage_averages": {
-  "hook": 7.4,
+  "hook": 7.2,
   "story": 6.4,
-  "visuals": 6.1,
-  "polish": 5.9,
-  "policy": 8.8
+  "visuals": 6.2,
+  "polish": 6.1,
+  "policy": 8.6
  },
  "weakest_stage": "polish",
  "region": "IN",
- "trend_signals_total": 59,
- "trend_signals_on_niche": 34,
+ "trend_signals_total": 57,
+ "trend_signals_on_niche": 32,
  "niche_winners": [
   {
-   "title": "The Most Unexpected Animal Encounters Ever",
-   "views": 14738940,
-   "url": "https://www.youtube.com/watch?v=cxlIQYt868k"
-  },
-  {
    "title": "What It Is Finding In This Elephant's Eyes??? #wildlife",
-   "views": 16923986,
+   "views": 22445043,
    "url": "https://www.youtube.com/watch?v=sYp0duGOXXI"
   },
   {
+   "title": "The Most Unexpected Animal Encounters Ever",
+   "views": 15453834,
+   "url": "https://www.youtube.com/watch?v=cxlIQYt868k"
+  },
+  {
    "title": "How to Invent a Dam #dam #engineering #hydropower #howitworks",
-   "views": 23745108,
+   "views": 24349342,
    "url": "https://www.youtube.com/watch?v=yE3L0H3tSmM"
   },
   {
    "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
-   "views": 13041780,
+   "views": 13894158,
    "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
   },
   {
    "title": "The Most Astonishing Animal Encounters Caught On Camera",
-   "views": 4691185,
+   "views": 5327574,
    "url": "https://www.youtube.com/watch?v=qT1ePxFsjEE"
   },
   {
+   "title": "Why Milk is Fighting Your Truck",
+   "views": 3418173,
+   "url": "https://www.youtube.com/watch?v=fQYmEG460Sc"
+  },
+  {
    "title": "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄#shorts #facts #farming  #animals",
-   "views": 8413144,
+   "views": 9045670,
    "url": "https://www.youtube.com/watch?v=toBtC1Cllwk"
   },
   {
-   "title": "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
-   "views": 2934397,
-   "url": "https://www.youtube.com/watch?v=4HfsJwKiogE"
-  },
-  {
-   "title": "People Who Couldn’t Be Explained By science 🧬",
-   "views": 1337107,
-   "url": "https://www.youtube.com/watch?v=yZY4jAYwKUo"
+   "title": "Gold mein rhenium powder mila kr scam ? | #science #education #physics #learning #experime",
+   "views": 1713204,
+   "url": "https://www.youtube.com/watch?v=4QNV2diIHco"
   }
  ],
  "news": [
+  "NASA’s Voyager 1 is now so far away that light takes 24 hours to reach it",
+  "After 8 years in space, a groundbreaking X-ray telescope finally opens its eyes",
+  "Two massive stars may be secretly feeding the Milky Way’s supermassive black hole",
+  "CERN scientists finally find evidence of a particle decay so rare it took 40 years to detect",
+  "Scientists turn Moon dust into LEGO-like bricks for future lunar bases",
   "Experimental compound burns fat without sacrificing muscle",
   "Scientists tested 212 plant-based foods. Every single one contained fungal toxins",
-  "This 6-million-year-old whale may have had the most crooked face in mammal history",
-  "Is free will an illusion? New brain research reveals a surprising twist",
-  "Why do farts smell so bad? The secret is brewing in your gut",
-  "Something strange is living beneath the skin of deep-sea pigs",
-  "Why hydrogen flames can glow orange, then turn nearly invisible",
-  "This strange creature lived 309 million years ago, long before the dinosaurs",
-  "APOD: 2026 November 20 – V-G-R",
-  "The Stormy Southwest Pacific",
-  "NASA Science Data Powers New Method to Discover Hard-to-Find Pulsars",
-  "Lake Pelku"
+  "A 3-million-year-old child just made human evolution far more complicated",
+  "APOD: 2026 November 21 – Voyager’s Neptune",
+  "Curiosity Spots Drifting Twilight Clouds",
+  "NASA Honor Awards Ceremony Recognizes Employees at Stennis Space Center",
+  "NASA’s Curiosity Mars Rover Collects Samples"
  ]
 }

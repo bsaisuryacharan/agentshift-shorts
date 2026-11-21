@@ -1,146 +1,148 @@
 {
- "updated": "2026-11-20T11:55+00:00",
+ "updated": "2026-11-21T11:25+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 9,
+  "days_left": 8,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 13830,
-  "gained": 8049,
-  "pct": 0.8,
-  "pace_per_day": 254,
-  "needed_per_day": 110216,
-  "projected": 10337,
+  "channel_views": 14119,
+  "gained": 8338,
+  "pct": 0.83,
+  "pace_per_day": 133,
+  "needed_per_day": 123957,
+  "projected": 9405,
   "on_track": false,
   "subs": 17
  },
  "shorts_per_day": 2,
  "topic_classes": {
+  "jargon_science": {
+   "n": 2,
+   "mean_log_views": 1.47,
+   "boost": -0.49
+  },
   "general": {
-   "n": 13,
-   "mean_log_views": 1.92,
-   "boost": -0.3
+   "n": 14,
+   "mean_log_views": 1.86,
+   "boost": -0.37
   },
   "history_event": {
    "n": 5,
-   "mean_log_views": 2.08,
-   "boost": -0.03
+   "mean_log_views": 2.07,
+   "boost": -0.02
   },
   "awe_scale": {
    "n": 6,
    "mean_log_views": 2.25,
-   "boost": 0.18
+   "boost": 0.21
   },
   "inside_machine": {
    "n": 7,
    "mean_log_views": 2.49,
-   "boost": 0.54
+   "boost": 0.57
   },
   "tech_explainer": {
    "n": 1,
    "mean_log_views": 2.14,
-   "boost": 0.02
+   "boost": 0.03
   },
   "what_if": {
    "n": 4,
    "mean_log_views": 2.06,
-   "boost": -0.06
+   "boost": -0.03
   },
   "earth_hazard": {
    "n": 2,
    "mean_log_views": 2.03,
-   "boost": -0.06
+   "boost": -0.05
   },
   "myth_fact": {
    "n": 5,
    "mean_log_views": 2.33,
-   "boost": 0.28
-  },
-  "jargon_science": {
-   "n": 1,
-   "mean_log_views": 1.83,
-   "boost": -0.14
+   "boost": 0.31
   },
   "ai_tips": {
-   "n": 3,
-   "mean_log_views": 1.62,
-   "boost": -0.49
+   "n": 1,
+   "mean_log_views": 1.63,
+   "boost": -0.23
   }
  },
  "format_results": {
   "other": {
-   "n": 24,
-   "mean_log_views": 1.88,
-   "boost": -0.4
+   "n": 25,
+   "mean_log_views": 1.83,
+   "boost": -0.45
   },
   "scale": {
    "n": 4,
    "mean_log_views": 2.25,
-   "boost": 0.17
+   "boost": 0.19
   },
   "versus": {
    "n": 3,
    "mean_log_views": 2.53,
-   "boost": 0.42
+   "boost": 0.44
   },
   "what_if": {
-   "n": 5,
-   "mean_log_views": 1.98,
-   "boost": -0.16
+   "n": 4,
+   "mean_log_views": 2.06,
+   "boost": -0.03
   },
   "anatomy": {
    "n": 3,
    "mean_log_views": 2.5,
-   "boost": 0.39
+   "boost": 0.42
   },
   "how_it_works": {
    "n": 2,
    "mean_log_views": 2.57,
-   "boost": 0.37
+   "boost": 0.39
   },
   "timeline": {
    "n": 1,
    "mean_log_views": 2.35,
-   "boost": 0.12
+   "boost": 0.13
   },
   "ranked": {
    "n": 1,
    "mean_log_views": 1.83,
-   "boost": -0.14
+   "boost": -0.13
   },
   "myth_vs_fact": {
    "n": 3,
    "mean_log_views": 2.67,
-   "boost": 0.57
+   "boost": 0.59
   },
   "unsolved": {
    "n": 1,
    "mean_log_views": 2.57,
-   "boost": 0.23
+   "boost": 0.24
   }
  },
  "win_classes": [
   "inside_machine",
-  "myth_fact"
+  "myth_fact",
+  "awe_scale"
  ],
  "lose_classes": [
-  "ai_tips",
-  "general"
+  "jargon_science",
+  "general",
+  "ai_tips"
  ],
  "cohort": {
-  "n": 41,
-  "median": 112,
-  "p75": 422
+  "n": 42,
+  "median": 111.0,
+  "p75": 358
  },
  "ladder": [
   {
    "name": "typical Short",
    "metric": "median views per Short at 7 days",
    "goal": 1000,
-   "now": 112
+   "now": 111.0
   },
   {
    "name": "first breakout",
@@ -158,7 +160,7 @@
    "name": "volume",
    "metric": "channel views in 30 days",
    "goal": 100000,
-   "now": 8049
+   "now": 8338
   }
  ],
  "focus_words": [
@@ -166,37 +168,37 @@
   "below",
   "blades",
   "engine",
-  "from",
   "have",
   "holes",
+  "inside",
   "kilometres",
   "life",
-  "mechanical"
+  "submarine"
  ],
  "avoid_words": [
+  "calls",
   "earth",
+  "free",
+  "from",
+  "interview",
   "keeps",
-  "know",
   "make",
+  "more",
   "moving",
-  "people",
-  "prompts",
-  "save",
-  "seawater",
-  "stops"
+  "save"
  ],
  "winners": [
   {
-   "title": "Life Survives Almost 11 Kilometres Below the Sea #shorts",
-   "views": 112
-  },
-  {
    "title": "Why Jet Engine Blades Have Tiny Holes #shorts",
-   "views": 561
+   "views": 562
   },
   {
-   "title": "What Stops a Mechanical Watch From Unwinding at Once? #shorts",
-   "views": 76
+   "title": "Life Survives Almost 11 Kilometres Below the Sea #shorts",
+   "views": 113
+  },
+  {
+   "title": "Inside a Submarine: 5 Systems",
+   "views": 1125
   }
  ],
  "flops": [
@@ -209,8 +211,8 @@
    "views": 4
   },
   {
-   "title": "5 AI Prompts 99% of People Don't Know 🤯 (Save This) #shorts",
-   "views": 24
+   "title": "3 FREE AI Tricks to Get More Interview Calls 🎯 (Save This) #shorts",
+   "views": 33
   }
  ],
  "best_formats": [
@@ -220,9 +222,9 @@
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Topic classes on the channel's own results: more of inside_machine, myth_fact; less of ai_tips, general.",
-  "Double down on what already wins on this channel: 'Life Survives Almost 11 Kilometres Below the Sea #' (112 views); 'Why Jet Engine Blades Have Tiny Holes #shorts' (561 views); 'What Stops a Mechanical Watch From Unwinding at On' (76 views).",
-  "Drop what flopped: 'Earth Stops. The Air Keeps Moving. #shor' (0); 'How Submarines Make Air From Seawater #s' (4); '5 AI Prompts 99% of People Don't Know 🤯 ' (24).",
+  "Topic classes on the channel's own results: more of inside_machine, myth_fact, awe_scale; less of jargon_science, general, ai_tips.",
+  "Double down on what already wins on this channel: 'Why Jet Engine Blades Have Tiny Holes #shorts' (562 views); 'Life Survives Almost 11 Kilometres Below the Sea #' (113 views); 'Inside a Submarine: 5 Systems' (1,125 views).",
+  "Drop what flopped: 'Earth Stops. The Air Keeps Moving. #shor' (0); 'How Submarines Make Air From Seawater #s' (4); '3 FREE AI Tricks to Get More Interview C' (33).",
   "Prefer the formats the judge scores best: myth_vs_fact, versus.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."
