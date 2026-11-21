@@ -1,0 +1,246 @@
+{
+ "id": "deep-sea-pigs-myth-a3",
+ "title": "The Truth About Deep-Sea 'Pigs'",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "MYTH VS FACT",
+ "format": "myth_vs_fact",
+ "theme": "mono",
+ "look": "swiss-kinetic",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm",
+  "b1": "https://www.wired.com/2014/06/the-creature-feature-10-fun-facts-about-sea-pigs",
+  "b2": "https://www.wired.com/2014/06/the-creature-feature-10-fun-facts-about-sea-pigs",
+  "b3": "https://www.wired.com/2014/06/the-creature-feature-10-fun-facts-about-sea-pigs",
+  "b4": "https://www.wired.com/2014/06/the-creature-feature-10-fun-facts-about-sea-pigs",
+  "b5": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm",
+  "b6": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm",
+  "outro": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm",
+  "wiki": "https://en.wikipedia.org/wiki/Sea_pig",
+  "ref1": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm",
+  "ref2": "https://www.scientificamerican.com/article/see-strange-deep-sea-creatures-from-sea-pigs-to-disco-worms",
+  "ref3": "https://www.wired.com/2014/06/the-creature-feature-10-fun-facts-about-sea-pigs",
+  "ref4": "https://phys.org/news/2026-11-sea-pigs-abyss-host-unusual.html",
+  "ref5": "https://www.livescience.com/animals/strange-sea-pigs-sea-spiders-and-a-spawning-butterfly-discovered-on-antarctic-ocean-floor-by-scientists"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "sea pig deep sea",
+   "prompt": "photoreal cinematic 9:16 documentary image of a pale pink sea cucumber crawling across a dark deep-sea seafloor, cold blue water, soft ROV light, natural look, no people, no text",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "Sea pigs own the deep seafloor. But something stranger is living inside them.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "true?",
+     "at": "pigs"
+    },
+    {
+     "t": "title",
+     "html": "MYTH vs *FACT*",
+     "at": "seafloor"
+    }
+   ],
+   "sfx": [
+    [
+     "seafloor",
+     "whoosh",
+     0.5
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "sea cucumber seafloor",
+   "prompt": "photoreal cinematic 9:16 wide shot of a pale pink sea cucumber walking on tube feet across a muddy abyssal plain, dim cold light, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The myth: sea pigs are rare, mysterious blobs almost nobody has studied.",
+   "hud": [
+    {
+     "t": "tape",
+     "text": "THE MYTH",
+     "col": "ir",
+     "at": "myth"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "sea cucumber ocean floor",
+   "prompt": "photoreal cinematic 9:16 top-down shot of many pale pink sea cucumbers scattered across the dark muddy seafloor, cold blue tones, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "People believe it because they live 3.7 miles down, far past human eyes.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "3.7 MILES",
+     "col": "cy",
+     "count": true,
+     "at": "miles"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "say": "The evidence says otherwise. In some regions they make up over 95% of the animal weight on the seafloor.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 95,
+      "suffix": "%"
+     },
+     "accent": "blue",
+     "at": "95%",
+     "dur": 2.5
+    },
+    {
+     "t": "label",
+     "text": "of seafloor animal weight",
+     "at": "weight"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s3.jpg",
+   "photo": "HMS Challenger ship",
+   "prompt": "photoreal cinematic 9:16 archival-style image of a 19th century wooden sailing research ship on open grey ocean, natural light, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Science has known them since 1882. Over 100 years of study, not a mystery.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "SINCE 1882",
+     "col": "ok",
+     "at": "1882"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "say": "The real answer: in 2026, University of Tokyo researchers found an unknown bacterium living inside their body walls.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "an unknown *bacterium* inside"
+     },
+     "accent": "blue",
+     "at": "bacterium",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "2026 discovery",
+     "col": "cy",
+     "at": "2026"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "say": "Its genome is just 649,000 DNA bases, yet over a quarter builds giant surface proteins, some over 5,000 amino acids long.",
+   "hud": [
+    {
+     "t": "bars",
+     "items": [
+      [
+       "genome",
+       649000,
+       "cy"
+      ],
+      [
+       "giant proteins",
+       5000,
+       "am"
+      ]
+     ],
+     "unit": "bases",
+     "at": "bases"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s4.jpg",
+   "photo": "sea pig abyssal",
+   "prompt": "photoreal cinematic 9:16 macro shot of a translucent pink sea cucumber's tube feet pressing into dark seafloor sediment, cold dim light, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "The microbe depends on its host. What sea pigs get back? Still a mystery. Follow for more.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "the *trade* is unknown",
+      "keyword": "trade",
+      "note": "what sea pigs gain"
+     },
+     "accent": "green",
+     "at": "mystery",
+     "dur": 2.5
+    },
+    {
+     "t": "sub",
+     "html": "SUBSCRIBE <b>for more</b>",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "myth_fact",
+  "why": "topic fit",
+  "lemo_style": [
+   "Caption News",
+   "Swiss Motion Graphics",
+   "Visual Investigation"
+  ]
+ },
+ "_facts": {
+  "title": "Sea pig",
+  "url": "https://en.wikipedia.org/wiki/Sea_pig",
+  "text": "Sea pig or seapig may refer to:\n\n\n== Animals ==\nScotoplanes, a genus of deep-sea holothurians (sea cucumbers) commonly called sea pigs\nAn obsolete name for the Eastern smooth boxfish\nSea Swine (a.k.a. Porcus Marinus), a historical name for porpoise and mythical creatures\nA local name for the dugong\nThe name of guinea pigs in some countries\nHawaiian flagtail, sometimes called puaʻa kai (sea pig)\n\n\n== Other uses ==\n\"The Sea Pig\", an episode from the PBS series Songs For Unusual Creatures by Michael Hearst\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2026/11/261118065512.htm):\n# Something strange is living beneath the skin of deep-sea pigs Date: November 19, 2026 Source: University of Tokyo Summary: Scientists have discovered a strange bacterium hiding beneath the skin of deep-sea creatures known as sea pigs, revealing an unexpected biological partnership. The microbe has an unusually tiny genome, yet more than a quarter of its DNA is devoted to making surface proteins, some of them exceptionally large. Researchers suspect it depends heavily on its host for survival, but what the sea pigs gain in return remains a mystery. Share: Deep beneath the ocean's surface, strange, translucent creatures known as sea pigs crawl across the seafloor. Now, researchers at the University of Tokyo have discovered that these unusual animals are hiding something even stranger beneath their \"skin.\" Living within their body walls is a previously unknown bacterium with an extraordinarily small genome and a surprising collection of genes responsible for producing enormous proteins. The researchers identified the bacterium, which they named *Candidatus Abyssoplasma scotoplanesicola*, and used fluorescence imaging to pinpoint its location inside sea pig tissues. Genetic analysis revealed that its genome contains just 649,000 DNA bases, yet more than a quarter of its genetic material is devoted to producing groups of proteins associated with the bacterial surface. Some of these \"giant\" proteins contain more than 5,000 amino acids and may help the bacteria interact with their hosts or form clusters (clustering into groups). The discovery offers new insights into how bacteria adapt to living in close association with other organisms and which biological functions they retain as they become increasingly dependent on their hosts. **Meet the Strange Sea Pigs of the Deep Ocean** Sea lions, seahorses, and sea cows may be familiar marine animals, but sea pigs are considerably less well known. These small, gelatinous creatures are actually a type of sea cucumber that inhabits the deep ocean. Using numerous tube-shaped feet, they slowly travel across the seafloor, gathering decaying organic material and delivering it to their mouths with specialized tentacles. Despite th\n\nSOURCE scientificamerican.com (https://www.scientificamerican.com/article/see-strange-deep-sea-creatures-from-sea-pigs-to-disco-worms):\nScientific American SubscribeSign In Read the November Issue: Social Media Addiction March 25, 2025 4min read ![Google Logo Add Us On GoogleAdd SciAm](https://www.google.com/preferences/source?q=scientificamerican.com) Meet Some of the Strangest Deep-Sea Creatures, from ‘Sea Pigs’ to ‘Disco Worms’ A riotous photography collection from a recent underwater mission off the coast of Chile shows new and fascinating deep-sea creatures—including a “mystery mollusk,” a bioluminescent jellyfish and a “sea pig” By Ashley Balzer Vigil edited by Andrea Thompson ROV SuBastian/Schmidt Ocean Institute An entire world lives deep under the ocean’s surface, far from human notice and as bustling as any city. Animals such as tubeworms and clams live crowded around plumes of methane that bubble up through cracks in the ocean floor. Their residence attracts shrimp, fish and many other creatures. These deep-sea oases are just some of many areas of the ocean floor that scientists are only beginning to explore, discovering new species along the way. A recent exploratory expedition by the Schmidt Ocean Institute on its research vessel *Falkor (too)* targeted nearly 20 of these natural underwater gas leaks and five deep-sea canyons off the coast of Chile. Along the way, the research team used its underwater robot to spot a trove of fever-dream characters come to life, including 60 that may be new to science. ROV SuBastian/Schmidt Ocean Institute --- ## On supporting science journalism If you're enjoying this article, consider supporting our award-winning journalism bysubscribing. By purchasing a subscription you are helping to ensure the future of impactful stories about the discoveries and ideas shaping our world today. --- The scientists found methane seeps like this one by combining visual surveys, seafloor mapping and chemical sampling for methane at suspected sites—they even traced telltale bubbles using sonar. Clams huddle around the methane seep so that the chemosynthetic microbes in their gills get a rich supply of food. The microbes convert the methane into organic molecules that the clams absorb as nutrients. ROV SuBastian/Schmidt Ocean Institute Dense colonies of methane-munchi\n\nSOURCE wired.com (https://www.wired.com/2014/06/the-creature-feature-10-fun-facts-about-sea-pigs):\nThe animals commonly known as sea pigs are in fact a type of sea cucumber. Sea cucumbers are echinoderms, a group of marine animals that includes sea urchins and starfish. Sea pigs are found in all the world's oceans. In some areas, they comprise more than 95% of the total weight of animals on the deep-sea floor. Despite their abundance, most people will never see a sea pig, as they live in the coldest and deepest parts of the ocean. It's a shame, because these little piggies are both cute and play an essential role in the ocean ecosystem. **1. \"Sea Pig\" is a pretty accurate description.** Sea pigs earned their moniker from their puffy legs and plump, oval-shaped pinkish bodies. **2. They fit in the palm of your hand.** Sea pigs tend to be about 4-6 inches long. **3. Sea pigs live in the deepest part of the ocean.** Sea pigs are found in the deepest abyssal depths of the world's oceans, as far as 3.7 miles under the ocean surface. **4. Scientists have known about sea pigs for more than 100 years.** They were first described by Swedish zoologist Hjalmar Théel in 1882. Théel described about 65 new species discovered by the British research ship HMS *Challenger* during her round-the-world expedition of 1872-1876. **5. They get around by walking on the seafloor.** Sea pigs have five to seven pairs of enlarged tube feet. These \"walking legs\" are hydraulically operated appendages that can be inflated and deflated to move around. **6. Those aren't antennae — they're also feet.** Although they look like antennae, the structures on the top of the sea pig's head are actually feet. These upper papillae are modified tube feet, like the animal's \"walking legs.\" They may help propel the sea pig along the ocean, or they may have a sensory function, helping it detect the chemical trail of a tasty meal. **7. Sea pigs scour mud for delicious scum.** Sea pigs are deposit or detrital feeders, eating bits of decaying plant and animal material found in deep sea mud. Their mouths are surrounded by a ring of feeding tentacles that they use to sift through the mud and grab onto food. Sea pigs are especially fond of food that has recently fallen from the ocean's surface, like a whale cor\n\nSOURCE phys.org (https://phys.org/news/2026-11-sea-pigs-abyss-host-unusual.html):\n### Science X Account Sign in with Forget Password? Learn more share this! Share Tweet Share Email November 12, 2026 # Sea pigs from the abyss host unusual bacteria by University of Tokyo edited by Sadie Harley, reviewed by Robert Egan ##### Sadie Harley Scientific Editor ##### Robert Egan Senior Editor This article has been reviewed according to Science X's editorial process and policies. Editors have highlighted the following attributes while ensuring the content's credibility: fact-checked trusted source proofread In the deep ocean, translucent sea pigs trundle across the seafloor. Researchers at the University of Tokyo have discovered an unusual bacterium beneath the sea pig's \"skin.\" Through fluorescent imaging, they determined the location of the bacterium, which they named Candidatus Abyssoplasma scotoplanesicola. DNA analysis revealed a minimized genome of just 649,000 bases. Unexpectedly, more than a quarter of this was dedicated to building surface-associated protein groups, including \"giant\" proteins exceeding 5,000 amino acids in length, possibly for interactions with host tissues or bacterial aggregation (clustering into groups). This study, published in the journal *ISME Host Microbe*, offers clues to which functions remain in symbiotic bacteria living closely with their host. ## Sea pigs shelter more than crabs The sea pig is a small, jellylike creature that lives in the deep ocean and is a type of sea cucumber. It slowly meanders across the ocean floor on its many tubelike feet, scooping up dead matter into its tentacled mouth. It may be small, but it is influential in the ocean ecosystem. Not only does it recycle organic matter and nutrients, but, despite its defenseless appearance, its squishy body provides shelter from predators to young king crabs. However, there is a lot we don't know about these curious-looking creatures. How long do they live? Why do they have waving, antennalike protrusions on their heads? And what is their relationship with the symbiotic bacteria which live underneath their skin? ## Mapping bacteria beneath the skin Like other echinoderms, sea pigs have subcuticular bacteria growing in the layers which encase their bodie\n\nSOURCE livescience.com (https://www.livescience.com/animals/strange-sea-pigs-sea-spiders-and-a-spawning-butterfly-discovered-on-antarctic-ocean-floor-by-scientists):\n- Welcome to Live Science club! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Complete any activity to unlock your first badge. Keep earning badges Explore ways to get more involved as a member. Live Science Quizzes Play quick, fun science games Explore Animal facts Learn about the natural world Explore Latest space news Read about discoveries from beyond Earth Explore --- See what you’ve unlocked. Explore your membership benefits. Go beyond the headlines Cancel anytime Start Browsing --- Sign Out - Hi , Keep exploring with your premium access. START BROWSING --- Content * ![Science Spotlight Science Spotlight](https://www.livescience.com/tag/science-spotlight) * ![Book Excerpts Book Excerpts](https://www.livescience.com/tag/book-excerpts) * ![Interviews Interviews](https://www.livescience.com/interviews) * ![Analysis Analysis](https://www.livescience.com/tag/news-analyses) * ![Opinion Opinion](https://www.livescience.com/opinion) --- * ![My Account My Account](https://www.livescience.com/my-account) --- Sign Out ## Choose your Live Science experience ### Live Science plus Read more news stories for free, receive our daily newsletter, post comments, play games and earn badges. JOIN FREE ### Live Science pro Unlimited access to our exclusive features, expert analysis and in-depth interviews, all ad-free. Unlimited, ad-free reading Exclusive, original reporting Scientist interviews and videos Members-only features See what’s in pro ## Go beyond the headlines with Live Science Pro Go beyond the headlines with Live Science Pro Rigorously fact-checked science, expert commentary and an ad-free experience built for those who want to go beyond the headlines See what’s in Pro Not ready for Pro? Join Live Science Plus ### Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. ### Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. ### Scientist interviews and video The latest science direct from the most respected people in their fields. ### Members-only features Exclusive newsletter. Members-only area.",
+  "extra_sources": [
+   "https://www.sciencedaily.com/releases/2026/11/261118065512.htm",
+   "https://www.scientificamerican.com/article/see-strange-deep-sea-creatures-from-sea-pigs-to-disco-worms",
+   "https://www.wired.com/2014/06/the-creature-feature-10-fun-facts-about-sea-pigs",
+   "https://phys.org/news/2026-11-sea-pigs-abyss-host-unusual.html",
+   "https://www.livescience.com/animals/strange-sea-pigs-sea-spiders-and-a-spawning-butterfly-discovered-on-antarctic-ocean-floor-by-scientists"
+  ]
+ },
+ "_writer": "opencode"
+}

@@ -1,5 +1,5 @@
 {
- "current": "tully-monster-scale-a3",
+ "current": "deep-sea-pigs-myth-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -946,6 +946,25 @@
     "safe_zone": 10
    },
    "run_id": "44813434926"
+  },
+  "deep-sea-pigs-myth-a3": {
+   "title": "The Truth About Deep-Sea 'Pigs'",
+   "base": "deep-sea-pigs-myth-a3",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 8,
+    "accuracy": 9,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 7,
+    "hierarchy": 7,
+    "consistency": 8,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "44865414243"
   }
  }
 }
