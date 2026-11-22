@@ -1,5 +1,5 @@
 {
- "current": "voyager-1-vs-pioneer-10-a1",
+ "current": "milky-way-black-hole-scale-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -984,6 +984,25 @@
     "safe_zone": 10
    },
    "run_id": "44886558524"
+  },
+  "milky-way-black-hole-scale-a3": {
+   "title": "How Big Is the Milky Way's Black Hole, Really?",
+   "base": "milky-way-black-hole-scale-a3",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 6,
+    "accuracy": 9,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 6,
+    "hierarchy": 7,
+    "consistency": 8,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "45004482287"
   }
  }
 }

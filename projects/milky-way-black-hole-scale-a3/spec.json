@@ -1,0 +1,258 @@
+{
+ "id": "milky-way-black-hole-scale-a3",
+ "title": "How Big Is the Milky Way's Black Hole, Really?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+28%",
+ "brand": "AGENT SHIFT",
+ "series_label": "SCALE",
+ "format": "scale",
+ "theme": "mono",
+ "look": "explainer-diagram",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b1": "Smithsonian Magazine — What the Image of the Milky Way's Black Hole Really Shows — https://www.smithsonianmag.com/science-nature/what-the-image-of-the-milky-ways-black-hole-really-shows-180981125",
+  "b2": "Smithsonian Magazine — https://www.smithsonianmag.com/science-nature/what-the-image-of-the-milky-ways-black-hole-really-shows-180981125",
+  "b3": "Smithsonian Magazine — https://www.smithsonianmag.com/science-nature/what-the-image-of-the-milky-ways-black-hole-really-shows-180981125",
+  "b4": "Smithsonian Magazine — https://www.smithsonianmag.com/science-nature/what-the-image-of-the-milky-ways-black-hole-really-shows-180981125",
+  "b5": "Smithsonian Magazine — https://www.smithsonianmag.com/science-nature/what-the-image-of-the-milky-ways-black-hole-really-shows-180981125",
+  "b6": "Smithsonian Magazine — https://www.smithsonianmag.com/science-nature/what-the-image-of-the-milky-ways-black-hole-really-shows-180981125",
+  "wiki": "https://en.wikipedia.org/wiki/Peder_A._Aar%C3%B8e",
+  "ref1": "https://pubs.usgs.gov/bul/1075/report.pdf",
+  "ref2": "http://arxiv.org/list/cs.AI/2023-11?skip=250&show=2000",
+  "ref3": "https://www.smithsonianmag.com/science-nature/what-the-image-of-the-milky-ways-black-hole-really-shows-180981125",
+  "ref4": "https://www.quantamagazine.org/what-drives-galaxies-the-milky-ways-black-hole-may-be-the-key-20220823"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Sagittarius A* black hole",
+   "prompt": "Photoreal cinematic vertical shot of the glowing orange ring of hot plasma surrounding a dark central shadow in deep space, the event horizon silhouette of a supermassive black hole, surrounded by faint stars, cold deep-blue documentary grade, no text, no people.",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "There is a monster at the center of our galaxy, and we have photographed it.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how big?",
+     "at": "monster",
+     "fx": "shine"
+    },
+    {
+     "t": "title",
+     "html": "Sagittarius A*<br>*up close*",
+     "at": "photographed"
+    }
+   ],
+   "sfx": [
+    [
+     "monster",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Sagittarius A* image",
+   "prompt": "Photoreal close-up macro view of the orange donut-shaped ring of superheated plasma around a black hole's shadow, grainy radio-astronomy reconstruction look, deep space background, cool blue-orange documentary grade, no text, no people.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "That orange donut is Sagittarius A star, the black hole at the Milky Way's heart.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Sagittarius A star",
+     "at": "donut"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "But here is the twist: that is not the black hole itself. A black hole is invisible.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "That glow is",
+      "options": "the black hole, hot plasma, light itself",
+      "suffix": "not the hole"
+     },
+     "at": "twist",
+     "accent": "blue",
+     "dur": 2.5
+    },
+    {
+     "t": "tape",
+     "text": "INVISIBLE",
+     "at": "invisible"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "What you see is hot plasma swirling around its event horizon, the point of no return.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "the point of no return",
+      "keyword": "no return",
+      "note": "event horizon",
+      "style": "circle"
+     },
+     "at": "horizon",
+     "accent": "green",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "event horizon",
+     "col": "am",
+     "at": "plasma"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s2.jpg",
+   "photo": "M87 black hole",
+   "prompt": "Photoreal wide shot of the first imaged black hole in a distant galaxy, a bright orange ring of glowing plasma against pitch-black space, faint stars, cool documentary grade, no text, no people.",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "And for scale: our galaxy's black hole is much smaller than the first one ever photographed, in galaxy Messier eighty-seven.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Messier eighty-seven",
+     "at": "photographed"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s3.jpg",
+   "photo": "Milky Way galactic center",
+   "prompt": "Photoreal aerial wide view of the dense hazy core of the Milky Way galaxy, countless stars and dust lanes glowing faintly, deep blue and pale orange documentary grade, no text, no people.",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "It was also far harder to see, hidden behind the hazy disk of our own galaxy.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "hidden behind the hazy galactic disk",
+      "split": "word"
+     },
+     "at": "hidden",
+     "accent": "blue",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Hundreds of astronomers pieced the image together from radio waves, using eight telescopes spread across the whole Earth.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "EVENT HORIZON TELESCOPE",
+      "label": "eight telescopes, one planet"
+     },
+     "at": "telescopes",
+     "accent": "blue",
+     "dur": 2.5
+    },
+    {
+     "t": "list",
+     "items": [
+      [
+       "📡",
+       "radio waves",
+       "captured worldwide"
+      ],
+      [
+       "🧮",
+       "algorithms",
+       "built the image"
+      ]
+     ],
+     "at": "radio"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "So the picture is real, but it shows the fire around the shadow, not the shadow itself. Follow for more scale.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "the fire around<br>the *shadow*",
+     "at": "shadow",
+     "fx": "shine"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "myth_fact",
+  "why": "exploring a fresh fit",
+  "lemo_style": [
+   "Caption News",
+   "Swiss Motion Graphics",
+   "Visual Investigation"
+  ]
+ },
+ "_facts": {
+  "title": "Peder A. Aarøe",
+  "url": "https://en.wikipedia.org/wiki/Peder_A._Aar%C3%B8e",
+  "text": "Peder A. Aarøe (1868–1927) was a Norwegian trade unionist. He was born in Stjørdalen. Aarøe was chairman of the trade union Møbelindustriarbeiderforbundet, and deputy chairman of Norges Kooperative Landsforening from 1913 to his death. He was the treasurer of the Norwegian Confederation of Trade Unions from 1915 to his death. In 1922, Aarøe was a delegate to the Fourth Comintern Congress. Politically, he belonged to Labour. == References ==\n\nSOURCE pubs.usgs.gov (https://pubs.usgs.gov/bul/1075/report.pdf):\nBibliography of North American Geology, 1956 By RUTH REECE KING and otMrs GEOLOGICAL SURVEY BULLETIN 1075 This bibliography represents work done jointly by Ruth Reece King, Virginia M. Jussen, Elisabeth S. Loud, Georgianna D. Conant, and Herbert C. Crandell, Jr. UNITED STATES GOVERNMENT PRINTING OFFICE, WASHINGTON : 1959 UNITED STATES DEPARTMENT OF THE INTERIOR FRED A. SEATON, Secretary GEOLOGICAL SURVEY Thomas B. Nolan, Director For sale by the Superintendent of Documents, U. S. Government Printing Office Washington 25, D. C. -Price $1.75 (paper cover) CONTENTS Page Introduction______________________________________________________ 1 Serials___________________________________________________________ 3 BibliographY--------------------------------------------------~---9 Index------------------------------------------------------------279 ni BIBLIOGRAPHY OF NORTH AMERICAN GEOLOGY 1956 By Rum REECE KING and others 1 INTRODUCTION The current annual volume lists publications that appeared during 1956 concerning the geology of the North American continent, in-cluding Greenland, the West Indies, and other adjacent islands, and Hawaii, Guam, and other island possessions, but not the trust terri-tories of the United States. A few articles published before 1956, but not included in previous volumes, are cited also. Articles by American authors published in foreign journals are cited if they deal with North American localities or are of a general nature, but not if they deal with foreign areas. Articles by foreign authors on North America are included regardless of place of publication; those of a general nature are included if they appeared in North American journals. The citations are listed alphabetically by author, with full title and publication data. There follows a subject index to the papers cited. Geologic names in the index are those used by the individual authors, and their listing here does not imply approval by the Geological Survey. Assistance of Margaret E. Barcroft, Lois F. Idleman, Mildred C. Mead, and Yetta C. Millman in the preparation of this volume is gratefully acknow !edged. The Bibliography of North American Geology comprises the follow-ing bulletin\n\nSOURCE arxiv.org (http://arxiv.org/list/cs.AI/2023-11?skip=250&show=2000):\n# Artificial Intelligence ## Authors and titles for November 2023 Total of 2123 entries : 251-2123 2001-2123 \\[251] arXiv:2311.14315 \\[pdf, html, other] \\[252] arXiv:2311.14324 \\[pdf, html, other] \\[253] arXiv:2311.14378 \\[pdf, other] \\[254] arXiv:2311.14401 \\[pdf, html, other] \\[255] arXiv:2311.14426 \\[pdf, html, other] \\[256] arXiv:2311.14455 \\[pdf, html, other] \\[257] arXiv:2311.14457 \\[pdf, html, other] \\[258] arXiv:2311.14563 \\[pdf, other] \\[259] arXiv:2311.14570 \\[pdf, other] \\[260] arXiv:2311.15162 \\[pdf, other] \\[261] arXiv:2311.15209 \\[pdf, html, other] \\[262] arXiv:2311.15298 \\[pdf, other] \\[263] arXiv:2311.15781 \\[pdf, html, other] \\[264] arXiv:2311.15920 \\[pdf, html, other] \\[265] arXiv:2311.15933 \\[pdf, html, other] \\[266] arXiv:2311.16030 \\[pdf, html, other] \\[267] arXiv:2311.16171 \\[pdf, html, other] \\[268] arXiv:2311.16173 \\[pdf, html, other] \\[269] arXiv:2311.16534 \\[pdf, html, other] \\[270] arXiv:2311.16683 \\[pdf, html, other] \\[271] arXiv:2311.16781 \\[pdf, html, other] \\[272] arXiv:2311.16807 \\[pdf, html, other] \\[273] arXiv:2311.17165 \\[pdf, html, other] \\[274] arXiv:2311.17227 \\[pdf, html, other] \\[275] arXiv:2311.17305 \\[pdf, html, other] \\[276] arXiv:2311.17351 \\[pdf, html, other] \\[277] arXiv:2311.17393 \\[pdf, html, other] \\[278] arXiv:2311.17453 \\[pdf, html, other] \\[279] arXiv:2311.17471 \\[pdf, html, other] \\[280] arXiv:2311.17541 \\[pdf, html, other] \\[281] arXiv:2311.17766 \\[pdf, html, other] \\[282] arXiv:2311.17822 \\[pdf, html, other] \\[283] arXiv:2311.18644 \\[pdf, html, other] \\[284] arXiv:2311.18662 \\[pdf, html, other] \\[285] arXiv:2311.00048 (cross-list from cs.CV) \\[pdf, html, other] \\[286] arXiv:2311.00056 (cross-list from cs.CV) \\[pdf, html, other] \\[287] arXiv:2311.00063 (cross-list from cs.RO) \\[pdf, html, other] \\[288] arXiv:2311.00094 (cross-list from cs.LG) \\[pdf, html, other] \\[289] arXiv:2311.00096 (cross-list from cs.LG) \\[pdf, html, other] \\[290] arXiv:2311.00123 (cross-list from math.OC) \\[pdf, html, other] \\[291] arXiv:2311.00143 (cross-list from cs.LG) \\[pdf, html, other] \\[292] arXiv:2311.00146 (cross-list from eess.AS) \\[pdf, html, other] \\[293] arXiv:2311.00157 (cross-list from cs.LG) \\[pdf, html, other] \\[294] ar\n\nSOURCE smithsonianmag.com (https://www.smithsonianmag.com/science-nature/what-the-image-of-the-milky-ways-black-hole-really-shows-180981125):\n# What the Image of the Milky Way’s Black Hole Really Shows ## This year’s picture of the swirling plasma around the massive object’s edges will help to reveal more about the galaxy’s history and evolution It would seem, then, that a black hole should be invisible — and taking its picture impossible. So great fanfare accompanied the release in 2019 of the first image of a black hole. Then, in spring 2022, astronomers unveiled another black hole photo — this time of the one at the center of our own Milky Way. The image shows an orange, donut-shaped blob that looks remarkably similar to the earlier picture of the black hole in the center of galaxy Messier 87. But the Milky Way’s black hole, Sagittarius A\\*, is actually much smaller than the first and was more difficult to see, since it required peering through the hazy disk of our galaxy. So even though the observations of our own black hole were conducted at the same time as M87’s, it took three additional years to create the picture. Doing so required an international collaboration of hundreds of astronomers, engineers and computer scientists, and the development of sophisticated computer algorithms to piece together the image from the raw data. These “photos” do not, of course, directly show a black hole, defined as the region of space inside a point-of-no-return barrier known as an event horizon. They actually record portions of the flat pancake of hot plasma swirling around the black hole at high speeds in what’s known as the accretion disk. The plasma is composed of high-energy charged particles. As plasma spirals around the black hole, its accelerating particles emit radio waves. The blurry orange ring seen in the images are an elaborate reconstruction of these radio waves captured by eight telescopes scattered around the Earth, collectively known as the Event Horizon Telescope (EHT). The latest image tells the tale of the epic journey of radio waves from the center of the Milky Way, providing unprecedented detail about Sagittarius A\\*. The image also constitutes “one of the most important visual proofs of general relativity,” our current best theory of gravity, says Sera Markoff, an astrophysicist at the U\n\nSOURCE quantamagazine.org (https://www.quantamagazine.org/what-drives-galaxies-the-milky-ways-black-hole-may-be-the-key-20220823):\nAbout Quanta *Get the latest news delivered to your inbox.* Follow Quanta *An editorially independent publication supported by the Simons Foundation.* Type search term(s) and press enter Home What Drives Galaxies? The Milky Way’s Black Hole May Be the Key. Read Later ###### Share Copied! * Comments * Read Later black holes # What Drives Galaxies? The Milky Way’s Black Hole May Be the Key. *By* Thomas Lewton *August 23, 2022* Supermassive black holes have come to the fore as engines of galactic evolution, but new observations of the Milky Way and its central hole don’t yet hang together. Read Later Add as Preferred Source (opens in a new tab) Click to tell Google to prioritize Quanta and see more of the best coverage of science and math in your search and AI results. Olena Shmahalo for Quanta Magazine ## Introduction On May 12, at nine simultaneous press conferences around the world, astrophysicists revealed the first image of the black hole at the heart of the Milky Way. At first, awesome though it was, the painstakingly produced image of the ring of light around our galaxy’s central pit of darkness seemed to merely prove what experts already expected: The Milky Way’s supermassive black hole exists, it is spinning, and it obeys Albert Einstein’s general theory of relativity. And yet, on closer inspection, things don’t quite stack up. From the brightness of the bagel of light, researchers have estimated how quickly matter is falling onto Sagittarius A\\* — the name given to the Milky Way’s central black hole. The answer is: not quickly at all. “It’s clogged up to a little trickle,” said Priya Natarajan, a cosmologist at Yale University, comparing the galaxy to a broken showerhead. Somehow only a thousandth of the matter that’s flowing into the Milky Way from the surrounding intergalactic medium makes it all the way down and into the hole. “That’s revealing a huge problem,” Natarajan said. “Where is this gas going? What is happening to the flow? It’s very clear that our understanding of black hole growth is suspect.” Over the past quarter century, astrophysicists have come to recognize what a tight-knit, dynamic relationship exists between many galaxies and the bla",
+  "extra_sources": [
+   "https://pubs.usgs.gov/bul/1075/report.pdf",
+   "http://arxiv.org/list/cs.AI/2023-11?skip=250&show=2000",
+   "https://www.smithsonianmag.com/science-nature/what-the-image-of-the-milky-ways-black-hole-really-shows-180981125",
+   "https://www.quantamagazine.org/what-drives-galaxies-the-milky-ways-black-hole-may-be-the-key-20220823"
+  ]
+ },
+ "_writer": "opencode"
+}
