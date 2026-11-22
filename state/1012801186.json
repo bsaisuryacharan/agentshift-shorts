@@ -1,5 +1,5 @@
 {
- "current": "milky-way-black-hole-scale-a3",
+ "current": "roman-coffin-westminster-abbey-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1003,6 +1003,25 @@
     "safe_zone": 10
    },
    "run_id": "45004482287"
+  },
+  "roman-coffin-westminster-abbey-a2": {
+   "title": "The Roman Coffin Under Westminster Abbey",
+   "base": "roman-coffin-westminster-abbey-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 6,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 8,
+    "polish": 5,
+    "hierarchy": 7,
+    "consistency": 7,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "45023276194"
   }
  }
 }

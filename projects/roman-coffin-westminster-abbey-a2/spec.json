@@ -1,0 +1,235 @@
+{
+ "id": "roman-coffin-westminster-abbey-a2",
+ "title": "The Roman Coffin Under Westminster Abbey",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+28%",
+ "brand": "AGENT SHIFT",
+ "format": "story",
+ "series_label": "THE STORY",
+ "theme": "mono",
+ "look": "swiss-kinetic",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Live Science — https://www.livescience.com/archaeology/case-of-mysterious-medieval-skeleton-buried-in-roman-era-sarcophagus-at-westminster-abbey-finally-solved",
+  "b1": "Wikipedia — https://en.wikipedia.org/wiki/Westminster_Abbey",
+  "b2": "Wikipedia — https://en.wikipedia.org/wiki/Westminster_Abbey",
+  "b3": "Wikipedia — https://en.wikipedia.org/wiki/Westminster_Abbey",
+  "b4": "Live Science — https://www.livescience.com/archaeology/case-of-mysterious-medieval-skeleton-buried-in-roman-era-sarcophagus-at-westminster-abbey-finally-solved",
+  "b5": "Wikipedia — https://en.wikipedia.org/wiki/Westminster_Abbey",
+  "b6": "Live Science — https://www.livescience.com/archaeology/case-of-mysterious-medieval-skeleton-buried-in-roman-era-sarcophagus-at-westminster-abbey-finally-solved",
+  "outro": "Live Science — https://www.livescience.com/archaeology/case-of-mysterious-medieval-skeleton-buried-in-roman-era-sarcophagus-at-westminster-abbey-finally-solved",
+  "wiki": "https://en.wikipedia.org/wiki/Westminster_Abbey",
+  "ref1": "https://www.livescience.com/archaeology/case-of-mysterious-medieval-skeleton-buried-in-roman-era-sarcophagus-at-westminster-abbey-finally-solved",
+  "ref2": "https://www.sciencedaily.com/releases/2026/11/261119194553.htm"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Westminster Abbey",
+   "prompt": "photoreal cinematic 9:16 vertical shot of a great Gothic abbey church facade in London at dusk, warm stone lit by low evening light, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Under Westminster Abbey sits a Roman-era coffin. Inside it, a skeleton from centuries later.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "story",
+     "at": "Under"
+    },
+    {
+     "t": "title",
+     "html": "A *Roman* coffin, a *medieval* body",
+     "at": "skeleton"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Westminster Abbey interior",
+   "prompt": "photoreal cinematic 9:16 wide interior of a Gothic abbey nave, stone columns and vaulted ceiling, candle-lit warm practical light, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Monks have lived on this Thames island since about 959. The Abbey grew around them, stone by stone.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Monks since 959",
+      "accent": "violet"
+     },
+     "at": "959",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "Thorney Island",
+     "col": "am",
+     "at": "island"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Westminster Abbey coronation",
+   "prompt": "photoreal cinematic 9:16 view down the abbey's central aisle toward the high altar, golden stone, shafts of daylight from clerestory windows, no people, no text",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "Since 1066, 40 monarchs have been crowned here, and 18 lie buried beneath your feet.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 40,
+      "suffix": "coronations",
+      "accent": "violet"
+     },
+     "at": "40",
+     "dur": 2.5
+    },
+    {
+     "t": "delta",
+     "text": "18 royal burials",
+     "dir": "up",
+     "col": "am",
+     "at": "buried"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "Henry VII Chapel",
+   "prompt": "photoreal cinematic 9:16 detail of Perpendicular Gothic fan vaulting in stone, intricate carved ceiling patterns, warm natural light, no people, no text",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Henry III began today's church in 1245. Layer upon layer of English history, stacked in one building.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "Rebuilt in",
+      "options": "1042, 1066, 1245",
+      "accent": "violet"
+     },
+     "at": "1245",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "Roman sarcophagus",
+   "prompt": "photoreal cinematic 9:16 macro of an ancient weathered stone coffin lid, chiselled Roman-era surface, museum-style raking light, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Then workers found a Roman-era sarcophagus on the site. The puzzle: the body inside was medieval.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "A Roman coffin at a medieval abbey",
+      "keyword": "Roman",
+      "note": "centuries older than the body",
+      "style": "circle",
+      "accent": "violet"
+     },
+     "at": "Then",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "Westminster Abbey tombs",
+   "prompt": "photoreal cinematic 9:16 wide shot of a dim abbey chapel lined with ancient stone tombs and effigies, low warm light, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The Abbey holds more than 3,300 burials. So why was one man buried in a coffin far older than him?",
+   "hud": []
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "medieval stone coffin",
+   "prompt": "photoreal cinematic 9:16 overhead top-down of an opened stone sarcophagus in an excavation trench, soil and recording grid around it, documentary daylight, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Analysis settled it: the remains belong to a high-ranking medieval abbot, placed to rest inside the reused Roman coffin.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "MEDIEVAL ABBOT",
+     "col": "ok",
+     "at": "abbot"
+    },
+    {
+     "t": "label",
+     "text": "reused Roman coffin",
+     "at": "Roman"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "photo": "Westminster Abbey",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "One coffin, two eras, one Abbey that never stops giving up its dead. Follow for more stories buried in plain sight.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "Follow for more <b>buried stories</b>",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "myth_fact",
+  "why": "topic fit",
+  "lemo_style": [
+   "Caption News",
+   "Swiss Motion Graphics",
+   "Visual Investigation"
+  ]
+ },
+ "_facts": {
+  "title": "Westminster Abbey",
+  "url": "https://en.wikipedia.org/wiki/Westminster_Abbey",
+  "text": "Westminster Abbey, formally titled the Collegiate Church of Saint Peter at Westminster, is an Anglican church in the City of Westminster, London, England. Since 1066, it has been the location of the coronations of 40 English and British monarchs and a burial site for 18 English, Scottish, and British monarchs. At least 16 royal weddings have taken place at the abbey since 1100. Although the origins of the church are obscure, an abbey housing Benedictine monks was on the site by the mid-10th century. The church got its first large building from the 1040s, commissioned by King Edward the Confessor, who is buried inside. Construction of the present church began in 1245 on the orders of Henry III. The monastery was dissolved in 1559, and the church was made a royal peculiar – a Church of England church, accountable directly to the sovereign – by Elizabeth I. The abbey, the Palace of Westminster and St Margaret's Church became a UNESCO World Heritage Site in 1987 because of their historic and symbolic significance. The church's Gothic architecture is chiefly inspired by 13th-century French and English styles, although some sections of the church have earlier Romanesque styles or later Baroque and modern styles. The Henry VII Chapel, at the east end of the church, is a typical example of Perpendicular Gothic architecture; antiquarian John Leland called it orbis miraculum (\"the wonder of the world\"). The abbey is the burial site of more than 3,300 people, many prominent in British history: monarchs, prime ministers, poets laureate, actors, musicians, scientists, military leaders, and the Unknown Warrior. Due to the fame of the figures buried there, artist William Morris described the abbey as a \"National Valhalla\". == History ==\nHistorians agree that there was a monastery dedicated to Saint Peter on the site prior to the 11th century, though its exact origin is somewhat obscure. One legend claims that it was founded by the Saxon king Sæberht of Essex, and another claims that its founder was the fictional 2nd-century British king Lucius. One tradition claims that a young fisherman on the River Thames had a vision of Saint Peter near the site. The Fishmongers' Company still gives the abbey a salmon each year in recognition of this story. The origins of the abbey are generally thought to date to about 959, when Dunstan and King Edgar installed a community of Benedictine monks on the site. At that time, the location was an island in the Thames called Thorney Island. This building has not survived, but archaeologists have found some pottery and foundations from this period on the abbey site. === Edward the Confessor's abbey ===\nBetween 1042 and 1052, Edward the Confessor began rebuilding Saint Peter's Abbey to provide himself with a royal burial church. It was built in the Romanesque style and was the first church in England built on a cruciform floorplan. The master stonemason for the project was Leofsi Duddason, with Godwin and Wendelburh Gretsyd (meaning \"fat purse\") as patrons, and Teinfrith as \"churchwright\", probably meaning someone who worked on the carpentry and roofing. Endowments from Edward supported a community that increased from a dozen monks during Dunstan's time, to as many as 80. The building was completed around 1060 and was consecrated on 28 December 1065, about a week before Edward's death on 5 January 1066. A week later, he was buried in the church; nine years later, his wife Edith was buried alongside him. His successor, Harold Godwinson, was probably crowned here, although the first documented coronation is that of William the Conqueror later that year. The only extant depiction of Edward's abbey is in the Bayeux Tapestry. The foundations still survive under the present church, and above ground, some of the lower parts of the monastic dormitory survive in the undercroft, including a door said to come from the previous Anglo-Saxon abbey. It was a little smaller than the current church, with a central tower. In 1103, thirty-seven years after his death, Edward's tomb was re-opened by Abbot Gilbert Crispin and Henry I, who discovered that his body was still in perfect condition. This was considered proof of his saintliness, and he was canonised in 1161. Two years later he was moved to a new shrine, during which time his ring was removed and placed in the abbey's collection. The abbey became more closely associated with royalty from the second half of the 12th century, as kings increasingly used the nearby Palace of Westminster as the seat of their governments. In 1222, the abbey was officially granted exemption from the Bishop of London's jurisdiction, making it answerable only to the head of the Church itself. By this time, the abbey owned a large swath of land around it, from modern-day Oxford Street to the Thames, plus entire parishes in the City of London, such as St Alban, Wood Street and St Magnus the Martyr, as well as several wharfs. Outside London, the abbey owned estates across southeast England, including in Middlesex, Hertfordshire, Essex, Oxfordshire and Gloucestershire. The abbot was also the lord of the manor for the town of Westminster, as a settlement of two to three thousand people grew around the abbey. As a consumer and employer on a grand scale, the abbey helped fuel the town's economy. It also paid for houses and shops to be built in the local area, and gave alms to the local poor. === Henry III's rebuilding ===\nWestminster Abbey continued to be used as a coronation site, but after Edward the Confessor, no monarchs were buried there until Henry III began to rebuild it in the Gothic style.\n\nSOURCE livescience.com (https://www.livescience.com/archaeology/case-of-mysterious-medieval-skeleton-buried-in-roman-era-sarcophagus-at-westminster-abbey-finally-solved):\nRead Science without the ads What's Pro? Explore Choose your Live Science experience Live Science plus Get started to get free access to selected news stories, receive our daily newsletter, post comments, play games and earn badges. JOIN FREE Live Science pro Unlimited access to our exclusive features, expert analysis and in-depth interviews, all ad-free Unlimited, ad-free reading Exclusive, original reporting Scientist interviews and videos Members-only features See what’s in pro Go beyond the headlines Rigorously fact-checked science, expert commentary and an ad-free experience built for those who want to go beyond the headlines See what's in Pro Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. Scientist interviews and video The latest science direct from the most respected people in their fields. Members-only features Exclusive newsletter. Members-only area. Early access to content. Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. 1 of 4 Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. 2 of 4 Scientist interviews and video The latest science direct from the most respected people in their fields. 3 of 4 Members-only features Exclusive newsletter. Members-only area. Early access to content. 4 of 4 See what's in Pro - Welcome to Live Science club! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Complete any activity to unlock your first badge. Keep earning badges Explore ways to get more involved as a member. Live Science Quizzes Play quick, fun science games Explore Animal facts Learn about the natural world Explore Latest space news Read about discoveries from beyond Earth Explore --- See what you’ve unlocked. Explore your membership benefits. Explore Go beyond the headlines Cancel anytime Start Browsing --- Sign Out - Hi , Keep exploring with your premium access. START BROWSING --- Content * ![Science Spotlight Science Spotlight](http\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2026/11/261119194553.htm):\n# Who was buried in Westminster Abbey's Roman coffin? A 150-year mystery may be solved Date: November 21, 2026 Source: Taylor & Francis Group Summary: A mysterious skeleton discovered in a Roman sarcophagus at Westminster Abbey may finally be identified after more than 150 years. New dating evidence suggests the remains belonged to a high-ranking medieval abbot who was buried inside a centuries-old recycled Roman coffin. Share: A mystery surrounding a skeleton discovered inside an ancient Roman coffin at Westminster Abbey may finally be approaching a solution, more than 150 years after the remains first attracted attention. The limestone sarcophagus, formally excavated in 1869, carries an inscription naming Valerius Amandinus, a wealthy Briton who lived in London sometime between 300 and 400 AD. However, a large Latin cross carved into its lid dates to approximately the 10th or 11th century, suggesting that the person buried inside lived hundreds of years after the coffin was originally made. Now, fresh archaeological research points to a surprising explanation. The remains likely belong to a prominent medieval monk, and researchers have narrowed the possible identities to two men who once led Westminster Abbey. **Two Medieval Abbots Emerge as Leading Candidates** The new findings, published in the peer-reviewed *Journal of the British Archaeological Association*, come from Professor Warwick Rodwell, Consultant Archaeologist at Westminster Abbey. Rodwell identifies Aelfwig, an abbot who died around 1020, as the strongest candidate. At the time, Westminster Abbey was a Benedictine monastery, and Aelfwig had served there as a monk before becoming its abbot. Another possibility is Wulnoth, who succeeded Aelfwig and died in 1049. Both men are believed to have been buried at the Abbey, making either a plausible match for the skeleton. \"We have two viable contenders for the occupant of the sarcophagus,\" says Professor Rodwell, Consultant Archaeologist at Westminster Abbey. \"We do not know the date of birth of either. But either would fit equally well if we assume the Abbot was in his early twenties when the appointment was made and close to fifty when he died. \"The fa",
+  "extra_sources": [
+   "https://www.livescience.com/archaeology/case-of-mysterious-medieval-skeleton-buried-in-roman-era-sarcophagus-at-westminster-abbey-finally-solved",
+   "https://www.sciencedaily.com/releases/2026/11/261119194553.htm"
+  ]
+ },
+ "_writer": "opencode"
+}
