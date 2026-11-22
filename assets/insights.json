@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T11:25:47+00:00",
+ "generated_at": "2026-11-22T11:41:17+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -11,21 +11,21 @@
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
-  "How to Invent a Dam",
   "The Most Unexpected Animal Encounters Ever",
   "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄",
   "The Most Astonishing Animal Encounters Caught On Camera",
+  "10 Strange Viral Animal Moments You Won’t Believe 😱",
   "The Most Amazing Animal Moments Ever Recorded",
   "Most Shocking animal Encounters | Ep 35",
   "dinosaur apne egg kaise garam rakhte the",
   "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
-  "Daant Mein Keeda Sach Mein Hota Hai?",
+  "hamare desh ne kya khoja",
   "Gold mein rhenium powder mila kr scam ?",
-  "NASA’s Voyager 1 is now so far away that light takes 24 hours to reach it",
-  "After 8 years in space, a groundbreaking X-ray telescope finally opens its eyes"
+  "Time may be far stranger than we realize. Scientists have a way to test it",
+  "A giant star swallowed another star. James Webb reveals the aftermath"
  ],
  "learned": {
-  "shorts_scored": 26,
+  "shorts_scored": 27,
   "best": [
    {
     "title": "The Sun's Worst Storms, Ranked",
@@ -61,17 +61,17 @@
    }
   ],
   "weakest_dimensions": [
-   "originality",
    "visual_quality",
+   "originality",
    "visual_variety"
   ]
  },
  "stage_averages": {
-  "hook": 7.2,
+  "hook": 7.3,
   "story": 6.4,
   "visuals": 6.2,
   "polish": 6.1,
-  "policy": 8.6
+  "policy": 8.7
  },
  "weakest_stage": "polish",
  "region": "IN",
@@ -79,58 +79,53 @@
  "trend_signals_on_niche": 32,
  "niche_winners": [
   {
-   "title": "What It Is Finding In This Elephant's Eyes??? #wildlife",
-   "views": 22445043,
-   "url": "https://www.youtube.com/watch?v=sYp0duGOXXI"
-  },
-  {
    "title": "The Most Unexpected Animal Encounters Ever",
-   "views": 15453834,
+   "views": 15730753,
    "url": "https://www.youtube.com/watch?v=cxlIQYt868k"
   },
   {
-   "title": "How to Invent a Dam #dam #engineering #hydropower #howitworks",
-   "views": 24349342,
-   "url": "https://www.youtube.com/watch?v=yE3L0H3tSmM"
-  },
-  {
    "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
-   "views": 13894158,
+   "views": 14270999,
    "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
   },
   {
    "title": "The Most Astonishing Animal Encounters Caught On Camera",
-   "views": 5327574,
+   "views": 5938475,
    "url": "https://www.youtube.com/watch?v=qT1ePxFsjEE"
   },
   {
    "title": "Why Milk is Fighting Your Truck",
-   "views": 3418173,
+   "views": 4255934,
    "url": "https://www.youtube.com/watch?v=fQYmEG460Sc"
   },
   {
    "title": "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄#shorts #facts #farming  #animals",
-   "views": 9045670,
+   "views": 9430653,
    "url": "https://www.youtube.com/watch?v=toBtC1Cllwk"
   },
   {
    "title": "Gold mein rhenium powder mila kr scam ? | #science #education #physics #learning #experime",
-   "views": 1713204,
+   "views": 1762727,
    "url": "https://www.youtube.com/watch?v=4QNV2diIHco"
+  },
+  {
+   "title": "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
+   "views": 3570270,
+   "url": "https://www.youtube.com/watch?v=4HfsJwKiogE"
   }
  ],
  "news": [
+  "Time may be far stranger than we realize. Scientists have a way to test it",
+  "A giant star swallowed another star. James Webb reveals the aftermath",
   "NASA’s Voyager 1 is now so far away that light takes 24 hours to reach it",
   "After 8 years in space, a groundbreaking X-ray telescope finally opens its eyes",
   "Two massive stars may be secretly feeding the Milky Way’s supermassive black hole",
-  "CERN scientists finally find evidence of a particle decay so rare it took 40 years to detect",
-  "Scientists turn Moon dust into LEGO-like bricks for future lunar bases",
-  "Experimental compound burns fat without sacrificing muscle",
-  "Scientists tested 212 plant-based foods. Every single one contained fungal toxins",
-  "A 3-million-year-old child just made human evolution far more complicated",
+  "Who was buried in Westminster Abbey's Roman coffin? A 150-year mystery may be solved",
+  "Even scientists can't agree on what science actually is",
+  "A 50-year-old theory about evolution may have been wrong all along",
+  "APOD: 2026 November 22 – Swirls and Colors on Jupiter from Juno",
   "APOD: 2026 November 21 – Voyager’s Neptune",
   "Curiosity Spots Drifting Twilight Clouds",
-  "NASA Honor Awards Ceremony Recognizes Employees at Stennis Space Center",
-  "NASA’s Curiosity Mars Rover Collects Samples"
+  "NASA Honor Awards Ceremony Recognizes Employees at Stennis Space Center"
  ]
 }
