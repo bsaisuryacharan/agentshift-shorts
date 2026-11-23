@@ -1,5 +1,5 @@
 {
- "current": "wolf-rayet-vs-sagittarius-a-a2",
+ "current": "uhz1-black-hole-too-early-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1041,6 +1041,25 @@
     "safe_zone": 10
    },
    "run_id": "45141532760"
+  },
+  "uhz1-black-hole-too-early-a3": {
+   "title": "A Black Hole That Shouldn't Exist Yet",
+   "base": "uhz1-black-hole-too-early-a3",
+   "status": "approved",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 6,
+    "accuracy": 10,
+    "originality": 8,
+    "policy": 10,
+    "visual_variety": 3,
+    "polish": 5,
+    "hierarchy": 6,
+    "consistency": 5,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "45197311752"
   }
  }
 }

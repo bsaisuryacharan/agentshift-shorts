@@ -1,0 +1,212 @@
+{
+ "id": "uhz1-black-hole-too-early-a3",
+ "title": "A Black Hole That Shouldn't Exist Yet",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "format": "unsolved",
+ "series_label": "UNSOLVED",
+ "theme": "cool",
+ "look": "midnight-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "UHZ1 - Wikipedia, https://en.wikipedia.org/wiki/UHZ1",
+  "b1": "UHZ1 - Wikipedia, https://en.wikipedia.org/wiki/UHZ1",
+  "b2": "UHZ1 - Wikipedia, https://en.wikipedia.org/wiki/UHZ1",
+  "b3": "UHZ1 - Wikipedia, https://en.wikipedia.org/wiki/UHZ1",
+  "b4": "UHZ1 - Wikipedia, https://en.wikipedia.org/wiki/UHZ1",
+  "b5": "UHZ1 - Wikipedia, https://en.wikipedia.org/wiki/UHZ1",
+  "b6": "Dark stars could solve three major mysteries of the early universe - ScienceDaily, https://sciencedaily.com/releases/2026/01/260128075355.htm",
+  "outro": "The 'Beautiful Confusion' of the First Billion Years - Quanta Magazine, https://www.quantamagazine.org/the-beautiful-confusion-of-the-first-billion-years-comes-into-view-20241009",
+  "wiki": "https://en.wikipedia.org/wiki/UHZ1",
+  "ref1": "https://www.quantamagazine.org/the-beautiful-confusion-of-the-first-billion-years-comes-into-view-20241009",
+  "ref2": "https://sciencedaily.com/releases/2026/01/260128075355.htm",
+  "ref3": "https://arxiv.org/abs/2410.05891",
+  "ref4": "https://chandra.si.edu/photo/2023/uhz1",
+  "ref5": "https://www.livescience.com/space/james-webb-space-telescope-discovers-mysterious-red-monster-galaxies-so-large-they-shouldnt-exist"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "UHZ1 quasar",
+   "prompt": "Photoreal cinematic 9:16 deep-space image: a faint smudged orange-red distant galaxy in the center of a dark field, surrounded by a curved arc of stretched lensed light, documentary astronomy-photograph look, deep blue-black grade, no text, no people.",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "A supermassive black hole existed 470 million years after the Big Bang. That shouldn't be possible.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "why?",
+     "at": "hole"
+    },
+    {
+     "t": "title",
+     "html": "A black hole *too early*",
+     "at": "existed"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s0.jpg",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "This is UHZ1, a quasar at redshift 10.1, 13.2 billion light-years away, when the universe was 3 percent of its current age.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "the earliest known quasar",
+      "accent": "blue"
+     },
+     "at": "UHZ1",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "redshift 10.1",
+     "col": "cy",
+     "at": "redshift"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Abell 2744 cluster",
+   "prompt": "Photoreal cinematic 9:16 wide astronomy image: a dense cluster of hundreds of pale golden galaxies scattered across deep black space, faint arcs of lensed light curving around the cluster core, documentary telescope-photograph look, cool blue grade, no text, no people.",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Chandra found it using the Abell 2744 cluster as a gravitational lens.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "gravitational lens",
+     "at": "lens"
+    },
+    {
+     "t": "tape",
+     "text": "Abell 2744",
+     "col": "cy",
+     "at": "Abell"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "say": "Its black hole is already supermassive, in a galaxy too young to have fed it.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 470,
+      "suffix": "million years",
+      "accent": "blue"
+     },
+     "at": "already",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "say": "Idea one: it was born big, from a gas cloud collapsing directly.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "It was",
+      "options": "born big, fed fast, seeded dark",
+      "accent": "blue"
+     },
+     "at": "born",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "say": "Idea two: it grew past the Eddington limit for over 200 million years.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "it grew past the Eddington limit",
+      "keyword": "Eddington",
+      "note": "grew too fast",
+      "style": "circle",
+      "accent": "blue"
+     },
+     "at": "Eddington",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "James Webb Space Telescope",
+   "prompt": "Photoreal cinematic 9:16 image: a gold honeycomb-patterned space telescope mirror segment floating in dark space above a blue Earth limb, documentary engineering-photograph look, natural sunlight, cool grade, no text, no people.",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Idea three: dark stars, powered by dark matter, collapsed to plant the seed.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "dark matter",
+     "col": "ir",
+     "at": "dark"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "say": "Which one is true? Nobody knows yet. Follow for more unsolved space mysteries.",
+   "hud": []
+  }
+ ],
+ "style_map": {
+  "class": "awe_scale",
+  "why": "topic fit",
+  "lemo_style": [
+   "Data Storytelling",
+   "Satellite Briefing",
+   "Time-lapse Symphony"
+  ]
+ },
+ "_facts": {
+  "title": "UHZ1",
+  "url": "https://en.wikipedia.org/wiki/UHZ1",
+  "text": "UHZ1 is a background galaxy containing a quasar. At a redshift of approximately 10.1, UHZ1 is at a distance of 13.2 billion light-years, seen when our universe was about 3 percent of its current age. This redshift made it the most distant, and therefore earliest known quasar in the observable universe as of 2023. To detect this object, astronomers working at the Chandra X-ray Observatory used the Abell 2744's cluster mass as a gravitational lens in order to magnify distant objects directly behind it. At the time of discovery, it exceeded the distance record of QSO J0313−1806. The discovery of this object has led astronomers to suggest the seeds of the first quasars may have been direct-collapse black holes, from the collapse of supermassive primordial masses of matter at the beginning of our universe. == Impact on astronomical research ==\nThe Chandra-JWST discovery of a quasar with a redshift of ≈ 10.1 at the center of UHZ1 reveals that accreting supermassive black holes (SMBHs) already existed at about 470 million years after the Big Bang. The detection of early black holes as they transition from \"seeds\" to supermassive black holes (BHs) provides good sources at high redshift, facilitating the testing on seeding and growth models for BHs. One of the open questions about the formation of supermassive BHs is whether they originate from stellar-mass black holes, remnants from the death of massive stars or whether there are mechanisms that operate to form heavier initial seeds to begin its formation. UHZ1's data shows it requires either continuous growth exceeding the Eddington limit for >200 Myr, or a massive seed. Data collected provides a clue to the seeding mechanism and supports it. == UHZ1 as candidate Overmassive Black Hole Galaxy ==\nThe Chandra X-ray source detected in UHZ1 is Compton-thick. It has a bolometric luminosity of Lbol ~ 5×1045 erg s−1, corresponding to an estimated BH mass of ~ 4×107 M☉. The data collected from UHZ1 and its quasar are in agreement with prior theoretical predictions by astronomers for a unique class of transient, high-redshift objects known as Overmassive (or Outsize) Black Hole Galaxies (OBGs). OBGs are heavy initial black hole seeds that likely formed from the direct collapse of gas clouds. Due to the agreement between the multi-wavelength properties of UHZ1 and the theoretical model template predictions, some astronomers suggest UHZ1 is the first detected OBG candidate. == Footnotes ==\n\n\n== References ==\n\n\n== External links ==\nVideo (2:52): Possible Discovery of Overmassive Black Hole Galaxy (O.B.G.) in UHZ1 on YouTube\n\nSOURCE quantamagazine.org (https://www.quantamagazine.org/the-beautiful-confusion-of-the-first-billion-years-comes-into-view-20241009):\nAbout Quanta *Get the latest news delivered to your inbox.* Follow Quanta *An editorially independent publication supported by the Simons Foundation.* Type search term(s) and press enter Home The ‘Beautiful Confusion’ of the First Billion Years Comes Into View Read Later ###### Share Copied! * Comments * Read Later astrophysics # The ‘Beautiful Confusion’ of the First Billion Years Comes Into View *By* Rebecca Boyle *October 9, 2024* Astronomers are reveling in the James Webb Space Telescope’s discoveries about the formative epoch of cosmic history. Read Later Unexpectedly bright galaxies, mysterious little red dots, surprisingly massive black holes, and galaxies shaped like pickles or bunches of grapes have been spotted all over the young universe. Kristina Armitage/*Quanta Magazine* The galaxies were never supposed to be so bright. They were never supposed to be so big. And yet there they are — oddly large, luminous objects that keep appearing in images taken by the James Webb Space Telescope (JWST). Kevin Hainline is part of a team that uses the JWST to find these galaxies, whose brightness, apparent mass, and sheer existence a virtual eyeblink after the Big Bang are among the biggest surprises from the three-year-old mission. And these findings have raised a lot of questions. In August, Hainline and other researchers came together at the Kavli Institute for Theoretical Physics (KITP) in Santa Barbara, California, to hash them all out. “People were saying, ‘Well, Kevin, it can’t be *that*,’” he told me. “And the observers are like, ‘Well, this is what we see,’ and then theorists can go figure it out and mess around.” After the first morning of the conference, I found Hainline in the courtyard. The new discoveries I had been hearing about seemed revolutionary, perhaps even paradigm-shifting. I wanted to check my reaction with one of the people doing the actual work. Were these results as extraordinary as I, a reporter, thought they were? “We are knocking on the door of history,” Hainline assured me. “Astronomers need to be better about celebrating discoveries.” In Santa Barbara, they did. Over star-studded slide decks and rounds of Pacifico beer, 100 or so ast\n\nSOURCE sciencedaily.com (https://sciencedaily.com/releases/2026/01/260128075355.htm):\n![ScienceDaily](/ \"ScienceDaily\") --- Your source for the latest research news Follow: *Facebook* *X/Twitter* Subscribe: *RSS Feeds* *Newsletter* **New!** Sign up for our free **email newsletter**. Science News from research organizations --- # Dark stars could solve three major mysteries of the early universe ## Dark matter–powered stars may be the missing link behind JWST’s strangest and most exciting cosmic discoveries. Date: : January 28, 2026 Source: : Colgate University Summary: : JWST has revealed a strange early universe filled with ultra-bright “blue monster” galaxies, mysterious “little red dots,” and black holes that seem far too massive for their age. A new study proposes that dark stars—hypothetical stars powered by dark matter—could tie all these surprises together. These exotic objects may have grown huge very quickly, lighting up the early cosmos and planting the seeds of supermassive black holes. Share: : Facebook Twitter Pinterest LinkedIN Email FULL STORY --- UHZ1, a record-breaking galaxy 13.2 billion light-years away, seen when the universe was only 3% of its current age. UHZ1 is puzzling in view of it harboring a supermassive black hole that could not have possibly been seeded even by regular stars, in view of its mass and very little time for the BH to grow. As such, UHZ1 is believed to be evidence for supermassive stars that, upon collapse, generate the supermassive black hole powering the quasar at its center. In this study, the authors show how UHZ1 could harbor a supermassive black hole seeded by the collapse of a dark star. The mechanisms identified by the authors are not restricted to UHZ1 — it provides a pathway for explaining over massive black hole galaxies, of which UHZ1 is a prominent example. Credit: X-ray: NASA/CXC/SAO/Ákos Bogdán; Infrared: NASA/ESA/CSA/STScI; Image Processing: NASA/CXC/SAO/L. Frattare & K. Arcand A new study led by Colgate Assistant Professor of Physics and Astronomy Cosmin Ilie, working with Jillian Paulin '23 of the University of Pennsylvania, Andreea Petric of the Space Telescope Science Institute, and Katherine Freese of the University of Texas at Austin, proposes a single idea that could address three m\n\nSOURCE arxiv.org (https://arxiv.org/abs/2410.05891):\n# Astrophysics &gt; Astrophysics of Galaxies \\[Submitted on 8 Oct 2024] # Title:Supermassive primordial black holes for the GHZ9 and UHZ1 observed by the JWST View PDF HTML (experimental) > Abstract:The high redshift ($z&gt;10$) galaxies GHZ9 and UHZ1 observed by the James Webb Space Telescope (JWST) are very massive and have exceptionally high black hole-to-star mass ratios with the central black hole masses $M\\\\gtrsim 10^7\\\\rm~M\\_\\\\odot$. In this paper, we explore the possibility that they are seeded by the supermassive primordial black holes (SMPBHs), which came into being in the very early universe, with initial masses $\\\\sim 10^7\\\\rm~M\\_\\\\odot$. We present the self-similar accretion solutions for SMPBHs, and find that the mass growth of SMPBHs during pregalactic era may be negligible. These SMPBHs, when the redshift $z\\\\lesssim 20$, can accelerate seeding high-redshift galaxies and their baryonic content, and consequently explain the central supermassive black holes (SMBHs) of high-redshift massive galaxies through sub-Eddington accretion. According to our results, SMPBHs actually could lead to the existence of more massive SMBHs at higher redshifts compared to other SMBH seed scenarios, specially SMBHs with masses $M\\\\gtrsim 10^7~\\\\rm M\\_\\\\odot$ at $z&gt;20$ might only origin from SMPBHs, thus the corresponding observation can serve as a potential probe to PBHs. ### Current browse context: astro-ph.GA Change to browse by: ### References & Citations Loading... # Bibliographic and Citation Tools Bibliographic Explorer *(What is the Explorer?)* Connected Papers *(What is Connected Papers?)* Litmaps *(What is Litmaps?)* scite Smart Citations *(What are Smart Citations?)* # Code, Data and Media Associated with this Article alphaXiv *(What is alphaXiv?)* CatalyzeX Code Finder for Papers *(What is CatalyzeX?)* DagsHub *(What is DagsHub?)* Gotit.pub *(What is GotitPub?)* Hugging Face *(What is Huggingface?)* ScienceCast *(What is ScienceCast?)* # Demos # Recommenders and Search Tools Influence Flower *(What are Influence Flowers?)* CORE Recommender *(What is CORE?)* IArxiv Recommender *(What is IArxiv?)* # arXivLabs: experimental projects with community collaborat\n\nSOURCE chandra.si.edu (https://chandra.si.edu/photo/2023/uhz1):\nThis image contains the most distant black hole ever detected in X-rays, a result that may explain how some of the first supermassive black holes in the universe formed. As we report in our press release, this discovery was made using X-rays from NASA’s Chandra X-ray Observatory (purple) and infrared data from NASA’s James Webb Space Telescope (red, green, blue). The extremely distant black hole is located in the galaxy UHZ1 in the direction of the galaxy cluster Abell 2744. The galaxy cluster is about 3.5 billion light-years from Earth. Webb data, however, reveal that UHZ1 is much farther away than Abell 2744. At some 13.2 billion light-years away, UHZ1 is seen when the universe was only 3% of its current age. By using over two weeks of observations from Chandra, researchers were able to detect X-ray emission from UHZ1 — a telltale signature of a growing supermassive black hole in the center of the galaxy. The X-ray signal is extremely faint and Chandra was only able to detect it — even with this long observation — because of the phenomenon known as gravitational lensing that enhanced the signal by a factor of four. The purple parts of the image show X-rays from large amounts of hot gas in Abell 2744. The infrared image shows hundreds of galaxies in the cluster, along with a few foreground stars. The insets zoom into a small area centered on UHZ1. The small object in the Webb image is the distant galaxy UHZ1 and the center of the Chandra image shows X-rays from material close to the supermassive black hole in the middle of UHZ1. The large size of the X-ray source compared to the infrared view of the galaxy is because it represents the smallest size that Chandra can resolve. The X-rays actually come from a region that is much smaller than the galaxy. Different smoothing was applied to the full-field Chandra image and to the Chandra image in the close-up. Smoothing across many pixels was performed for the large image, to highlight the faint cluster emission, at the expense of not showing faint X-ray point sources like UHZ1. Much less smoothing was applied to the close-up so faint X-ray sources are visible. The image is oriented so that north points 42.5 degrees t\n\nSOURCE livescience.com (https://www.livescience.com/space/james-webb-space-telescope-discovers-mysterious-red-monster-galaxies-so-large-they-shouldnt-exist):\n# James Webb Space Telescope discovers mysterious 'red monster' galaxies so large they shouldn't exist The James Webb telescope has spotted three gigantic \"red monster\" galaxies that were spawned soon after the Big Bang. They're so large they could rewrite the laws of galactic evolution. The James Webb Space Telescope (JWST) has spotted a trio of gigantic \"red monster\" galaxies in the early universe, and they could rewrite our understanding of how stars and galaxies first formed. The enormous galaxies — each 100 billion times the mass of our sun and nearly as massive as the Milky Way — are more than 12.8 billion years old, having formed within a billion years of the Big Bang. This means that the stars within these galaxies coalesced at a bafflingly fast rate; so fast, they challenge existing models of how galaxies form. The researchers published their findings Nov. 13 in the journal Nature. \"Finding three such massive beasts among the sample poses a tantalising puzzle,\" study co-author Stijn Wuyts, a professor of astronomy at the University of Bath in the U.K., said in a statement. \"Many processes in galaxy evolution have a tendency to introduce a rate-limiting step in how efficiently gas can convert into stars, yet somehow these Red Monsters appear to have swiftly evaded most of these hurdles.\" The conventional view among astronomers is that galaxies form within gigantic halos of dark matter, whose powerful gravity sucks ordinary matter such as gas and dust inwards before compressing it to form stars. Typically, this is seen as a fairly inefficient process, with just 20% of the infalling gas ending up as stars. The discovery of the red monsters confounds this view, with as much of 80% of their gas seemingly converted into bright young stars. Get the world’s most fascinating discoveries delivered straight to your inbox. \"These results indicate that galaxies in the early Universe could form stars with unexpected efficiency,\" study lead author Mengyuan Xiao, a researcher at the University of Geneva, said in the statement. \"As we study these galaxies in more depth, they will offer new insights into the conditions that shaped the Universe's earliest epochs. The Red ",
+  "extra_sources": [
+   "https://www.quantamagazine.org/the-beautiful-confusion-of-the-first-billion-years-comes-into-view-20241009",
+   "https://sciencedaily.com/releases/2026/01/260128075355.htm",
+   "https://arxiv.org/abs/2410.05891",
+   "https://chandra.si.edu/photo/2023/uhz1",
+   "https://www.livescience.com/space/james-webb-space-telescope-discovers-mysterious-red-monster-galaxies-so-large-they-shouldnt-exist"
+  ]
+ },
+ "_writer": "opencode"
+}
