@@ -1,48 +1,48 @@
 {
- "updated": "2026-11-22T11:41+00:00",
+ "updated": "2026-11-23T13:14+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 7,
+  "days_left": 6,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 14162,
-  "gained": 8381,
-  "pct": 0.84,
-  "pace_per_day": 121,
-  "needed_per_day": 141659,
-  "projected": 9230,
+  "channel_views": 14239,
+  "gained": 8458,
+  "pct": 0.85,
+  "pace_per_day": 54,
+  "needed_per_day": 165257,
+  "projected": 8786,
   "on_track": false,
   "subs": 18
  },
  "shorts_per_day": 2,
  "topic_classes": {
+  "awe_scale": {
+   "n": 7,
+   "mean_log_views": 2.33,
+   "boost": 0.33
+  },
   "jargon_science": {
    "n": 2,
-   "mean_log_views": 1.45,
-   "boost": -0.5
+   "mean_log_views": 1.5,
+   "boost": -0.47
   },
   "general": {
    "n": 14,
    "mean_log_views": 1.84,
-   "boost": -0.39
+   "boost": -0.41
   },
   "history_event": {
    "n": 5,
    "mean_log_views": 2.07,
-   "boost": -0.01
-  },
-  "awe_scale": {
-   "n": 6,
-   "mean_log_views": 2.25,
-   "boost": 0.22
+   "boost": -0.03
   },
   "inside_machine": {
    "n": 7,
-   "mean_log_views": 2.49,
-   "boost": 0.58
+   "mean_log_views": 2.5,
+   "boost": 0.57
   },
   "tech_explainer": {
    "n": 1,
@@ -52,59 +52,59 @@
   "what_if": {
    "n": 4,
    "mean_log_views": 2.06,
-   "boost": -0.03
+   "boost": -0.04
   },
   "earth_hazard": {
    "n": 2,
    "mean_log_views": 2.03,
-   "boost": -0.04
+   "boost": -0.05
   },
   "myth_fact": {
-   "n": 5,
-   "mean_log_views": 2.33,
-   "boost": 0.32
+   "n": 4,
+   "mean_log_views": 2.35,
+   "boost": 0.29
   },
   "ai_tips": {
    "n": 1,
    "mean_log_views": 1.63,
-   "boost": -0.22
+   "boost": -0.23
   }
  },
  "format_results": {
   "other": {
    "n": 25,
-   "mean_log_views": 1.82,
-   "boost": -0.46
+   "mean_log_views": 1.84,
+   "boost": -0.44
   },
   "scale": {
    "n": 4,
    "mean_log_views": 2.25,
-   "boost": 0.2
+   "boost": 0.19
   },
   "versus": {
    "n": 3,
    "mean_log_views": 2.53,
-   "boost": 0.45
+   "boost": 0.43
   },
   "what_if": {
    "n": 4,
    "mean_log_views": 2.06,
-   "boost": -0.03
+   "boost": -0.04
   },
   "anatomy": {
    "n": 3,
-   "mean_log_views": 2.5,
-   "boost": 0.42
+   "mean_log_views": 2.51,
+   "boost": 0.41
   },
   "how_it_works": {
    "n": 2,
    "mean_log_views": 2.57,
-   "boost": 0.39
+   "boost": 0.38
   },
   "timeline": {
    "n": 1,
    "mean_log_views": 2.35,
-   "boost": 0.14
+   "boost": 0.13
   },
   "ranked": {
    "n": 1,
@@ -114,7 +114,7 @@
   "myth_vs_fact": {
    "n": 3,
    "mean_log_views": 2.67,
-   "boost": 0.59
+   "boost": 0.58
   },
   "unsolved": {
    "n": 1,
@@ -124,8 +124,8 @@
  },
  "win_classes": [
   "inside_machine",
-  "myth_fact",
-  "awe_scale"
+  "awe_scale",
+  "myth_fact"
  ],
  "lose_classes": [
   "jargon_science",
@@ -133,8 +133,8 @@
   "ai_tips"
  ],
  "cohort": {
-  "n": 43,
-  "median": 110,
+  "n": 45,
+  "median": 103,
   "p75": 358
  },
  "ladder": [
@@ -142,7 +142,7 @@
    "name": "typical Short",
    "metric": "median views per Short at 7 days",
    "goal": 1000,
-   "now": 110
+   "now": 103
   },
   {
    "name": "first breakout",
@@ -160,45 +160,45 @@
    "name": "volume",
    "metric": "channel views in 30 days",
    "goal": 100000,
-   "now": 8381
+   "now": 8458
   }
  ],
  "focus_words": [
-  "antarctic",
   "blades",
+  "earth",
   "engine",
-  "fact",
   "have",
-  "hole",
   "holes",
   "inside",
-  "myth",
-  "ozone"
+  "jupiter",
+  "scale",
+  "submarine",
+  "systems"
  ],
  "avoid_words": [
-  "calls",
-  "earth",
-  "free",
   "from",
-  "interview",
   "keeps",
   "make",
-  "more",
+  "moon",
   "moving",
-  "save"
+  "seawater",
+  "stops",
+  "submarines",
+  "tonight",
+  "vanished"
  ],
  "winners": [
   {
+   "title": "Earth, Jupiter, and the Sun to Scale",
+   "views": 343
+  },
+  {
    "title": "Why Jet Engine Blades Have Tiny Holes #shorts",
-   "views": 562
+   "views": 564
   },
   {
    "title": "Inside a Submarine: 5 Systems",
    "views": 1125
-  },
-  {
-   "title": "The Antarctic Ozone Hole: Myth vs. Fact",
-   "views": 980
   }
  ],
  "flops": [
@@ -211,8 +211,8 @@
    "views": 4
   },
   {
-   "title": "3 FREE AI Tricks to Get More Interview Calls 🎯 (Save This) #shorts",
-   "views": 33
+   "title": "What If the Moon Vanished Tonight? #shorts",
+   "views": 9
   }
  ],
  "best_formats": [
@@ -222,9 +222,9 @@
  ],
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
-  "Topic classes on the channel's own results: more of inside_machine, myth_fact, awe_scale; less of jargon_science, general, ai_tips.",
-  "Double down on what already wins on this channel: 'Why Jet Engine Blades Have Tiny Holes #shorts' (562 views); 'Inside a Submarine: 5 Systems' (1,125 views); 'The Antarctic Ozone Hole: Myth vs. Fact' (980 views).",
-  "Drop what flopped: 'Earth Stops. The Air Keeps Moving. #shor' (0); 'How Submarines Make Air From Seawater #s' (4); '3 FREE AI Tricks to Get More Interview C' (33).",
+  "Topic classes on the channel's own results: more of inside_machine, awe_scale, myth_fact; less of jargon_science, general, ai_tips.",
+  "Double down on what already wins on this channel: 'Earth, Jupiter, and the Sun to Scale' (343 views); 'Why Jet Engine Blades Have Tiny Holes #shorts' (564 views); 'Inside a Submarine: 5 Systems' (1,125 views).",
+  "Drop what flopped: 'Earth Stops. The Air Keeps Moving. #shor' (0); 'How Submarines Make Air From Seawater #s' (4); 'What If the Moon Vanished Tonight? #shor' (9).",
   "Prefer the formats the judge scores best: myth_vs_fact, versus.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
   "When a big science or tech story breaks this week, explain it while it is hot (news hooks get pushed to new viewers)."

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T11:41:17+00:00",
+ "generated_at": "2026-11-23T13:14:58+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -13,19 +13,19 @@
  "trending": [
   "The Most Unexpected Animal Encounters Ever",
   "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄",
+  "You Never Actually Touch Anything! 🤯",
   "The Most Astonishing Animal Encounters Caught On Camera",
-  "10 Strange Viral Animal Moments You Won’t Believe 😱",
+  "Real Life Monsters Still Walking Earth 💀",
   "The Most Amazing Animal Moments Ever Recorded",
-  "Most Shocking animal Encounters | Ep 35",
-  "dinosaur apne egg kaise garam rakhte the",
+  "The Wildest Animal Encounters Caught on Camera",
   "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
+  "Bro Just Explained the Future of Computing 🤯",
   "hamare desh ne kya khoja",
   "Gold mein rhenium powder mila kr scam ?",
-  "Time may be far stranger than we realize. Scientists have a way to test it",
-  "A giant star swallowed another star. James Webb reveals the aftermath"
+  "Two monster black holes from the dawn of time defy explanation"
  ],
  "learned": {
-  "shorts_scored": 27,
+  "shorts_scored": 29,
   "best": [
    {
     "title": "The Sun's Worst Storms, Ranked",
@@ -67,65 +67,70 @@
   ]
  },
  "stage_averages": {
-  "hook": 7.3,
-  "story": 6.4,
-  "visuals": 6.2,
-  "polish": 6.1,
-  "policy": 8.7
+  "hook": 7.5,
+  "story": 6.5,
+  "visuals": 6.3,
+  "polish": 6.2,
+  "policy": 8.9
  },
  "weakest_stage": "polish",
  "region": "IN",
- "trend_signals_total": 57,
+ "trend_signals_total": 58,
  "trend_signals_on_niche": 32,
  "niche_winners": [
   {
    "title": "The Most Unexpected Animal Encounters Ever",
-   "views": 15730753,
+   "views": 15975784,
    "url": "https://www.youtube.com/watch?v=cxlIQYt868k"
   },
   {
+   "title": "The Wildest Animal Encounters Caught on Camera",
+   "views": 4418722,
+   "url": "https://www.youtube.com/watch?v=77yTZXiBlmo"
+  },
+  {
    "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
-   "views": 14270999,
+   "views": 14392518,
    "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
   },
   {
-   "title": "The Most Astonishing Animal Encounters Caught On Camera",
-   "views": 5938475,
-   "url": "https://www.youtube.com/watch?v=qT1ePxFsjEE"
-  },
-  {
    "title": "Why Milk is Fighting Your Truck",
-   "views": 4255934,
+   "views": 4929919,
    "url": "https://www.youtube.com/watch?v=fQYmEG460Sc"
   },
   {
+   "title": "The Most Astonishing Animal Encounters Caught On Camera",
+   "views": 6166694,
+   "url": "https://www.youtube.com/watch?v=qT1ePxFsjEE"
+  },
+  {
    "title": "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄#shorts #facts #farming  #animals",
-   "views": 9430653,
+   "views": 9634580,
    "url": "https://www.youtube.com/watch?v=toBtC1Cllwk"
   },
   {
-   "title": "Gold mein rhenium powder mila kr scam ? | #science #education #physics #learning #experime",
-   "views": 1762727,
-   "url": "https://www.youtube.com/watch?v=4QNV2diIHco"
+   "title": "You Never Actually Touch Anything! 🤯 #QuantumPhysics #Science",
+   "views": 9264148,
+   "url": "https://www.youtube.com/watch?v=jR4zV8q02Bk"
   },
   {
-   "title": "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
-   "views": 3570270,
-   "url": "https://www.youtube.com/watch?v=4HfsJwKiogE"
+   "title": "Bro Just Explained the Future of Computing 🤯 #nvidia #shorts",
+   "views": 2987063,
+   "url": "https://www.youtube.com/watch?v=Z-HYbC9sfGQ"
   }
  ],
  "news": [
-  "Time may be far stranger than we realize. Scientists have a way to test it",
-  "A giant star swallowed another star. James Webb reveals the aftermath",
-  "NASA’s Voyager 1 is now so far away that light takes 24 hours to reach it",
-  "After 8 years in space, a groundbreaking X-ray telescope finally opens its eyes",
-  "Two massive stars may be secretly feeding the Milky Way’s supermassive black hole",
-  "Who was buried in Westminster Abbey's Roman coffin? A 150-year mystery may be solved",
-  "Even scientists can't agree on what science actually is",
-  "A 50-year-old theory about evolution may have been wrong all along",
+  "This tiny spider named after Stephen Colbert has a genome 50% larger than a human’s",
+  "Two monster black holes from the dawn of time defy explanation",
+  "Archaeologists reveal a powerful Iron Age king may have been a woman",
+  "Mysterious new viruses reveal a missing link in evolution",
+  "A galactic shock wave could rewrite the map of the Milky Way",
+  "DNA’s secret sunscreen may have helped life survive on early Earth",
+  "A mysterious gap hints at black holes born from stars that never exploded",
+  "APOD: 2026 November 23 – The Emergence of Dark Nebula Lynds 1251",
+  "Laser Focus at the Top of the World",
+  "65 Years of Human Spaceflight at NASA Johnson",
   "APOD: 2026 November 22 – Swirls and Colors on Jupiter from Juno",
-  "APOD: 2026 November 21 – Voyager’s Neptune",
-  "Curiosity Spots Drifting Twilight Clouds",
-  "NASA Honor Awards Ceremony Recognizes Employees at Stennis Space Center"
+  "APOD: 2026 November 21 – Voyager’s Neptune"
  ]
 }
