@@ -1,5 +1,5 @@
 {
- "current": "roman-coffin-westminster-abbey-a2",
+ "current": "wolf-rayet-vs-sagittarius-a-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1022,6 +1022,25 @@
     "safe_zone": 10
    },
    "run_id": "45023276194"
+  },
+  "wolf-rayet-vs-sagittarius-a-a2": {
+   "title": "Wolf-Rayet Stars vs Sagittarius A*",
+   "base": "wolf",
+   "status": "approved",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 8,
+    "accuracy": 10,
+    "originality": 8,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 6,
+    "hierarchy": 6,
+    "consistency": 8,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "45141532760"
   }
  }
 }

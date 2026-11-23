@@ -1,0 +1,240 @@
+{
+ "id": "wolf-rayet-vs-sagittarius-a-a2",
+ "title": "Wolf-Rayet Stars vs Sagittarius A*",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "VERSUS",
+ "format": "versus",
+ "theme": "cool",
+ "look": "explainer-diagram",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Space.com — Galactic Center VR visualization https://www.space.com/galactic-center-vr-black-hole-visualization.html",
+  "b1": "Space.com — Galactic Center VR visualization https://www.space.com/galactic-center-vr-black-hole-visualization.html",
+  "b2": "Quanta Magazine — Black Hole Image Reveals Sagittarius A* https://www.quantamagazine.org/black-hole-image-reveals-sagittarius-a-20220512",
+  "b3": "Space.com — Galactic Center VR visualization https://www.space.com/galactic-center-vr-black-hole-visualization.html",
+  "b4": "Quanta Magazine — Black Hole Image Reveals Sagittarius A* https://www.quantamagazine.org/black-hole-image-reveals-sagittarius-a-20220512",
+  "b5": "Space.com — Galactic Center VR visualization https://www.space.com/galactic-center-vr-black-hole-visualization.html",
+  "b6": "Quanta Magazine — Black Hole Image Reveals Sagittarius A* https://www.quantamagazine.org/black-hole-image-reveals-sagittarius-a-20220512",
+  "outro": "Space.com — Galactic Center VR visualization https://www.space.com/galactic-center-vr-black-hole-visualization.html",
+  "wiki": "https://en.wikipedia.org/wiki/Peder_A._Aar%C3%B8e",
+  "ref1": "https://www.space.com/galactic-center-vr-black-hole-visualization.html",
+  "ref2": "https://arxiv.org/html/2609.09032v1",
+  "ref3": "https://www.quantamagazine.org/black-hole-image-reveals-sagittarius-a-20220512"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Milky Way center",
+   "prompt": "photoreal cinematic 9:16 wide shot of the dense star field at the center of the Milky Way, thousands of stars and glowing dust lanes in deep blue and cyan, documentary astrophotography look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "25 stars throw winds at our galaxy's black hole — and it's still starving.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "vs",
+     "at": "stars"
+    },
+    {
+     "t": "title",
+     "html": "WOLF-RAYET *VS* SAGITTARIUS A*",
+     "at": "starving"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Wolf-Rayet star",
+   "prompt": "photoreal cinematic 9:16 macro view of a massive blue-white star shedding wisps of glowing gas into dark space, natural astrophotography grading, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Side one: Wolf-Rayet stars. Massive, doomed stars shedding their outer layers in supersonic winds.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Wolf-Rayet stars shed their outer layers",
+      "keyword": "shed",
+      "note": "supersonic winds"
+     },
+     "at": "shedding",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Sagittarius A*",
+   "prompt": "photoreal cinematic 9:16 image of the Event Horizon Telescope style orange ring around a dark shadow at the galactic center, deep blue background, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Side two: Sagittarius A*, the black hole at the Milky Way's heart — 4 million solar masses.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "a black hole of",
+      "options": "4 million, 4 million solar masses",
+      "suffix": "at the heart"
+     },
+     "at": "million",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "Chandra X-ray Observatory",
+   "prompt": "photoreal cinematic 9:16 wide shot of a cylindrical X-ray telescope with long focal instruments orbiting above Earth, natural sunlight on metal, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Where winds collide, shocks heat the gas to X-ray glow — Chandra sees it.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "winds collide",
+       "shocks"
+      ],
+      [
+       "shocks",
+       "X-rays"
+      ]
+     ],
+     "at": "shocks"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "The verdict: the winds lose. Gravity grabs the gas, but the black hole stays starved.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "STARVED",
+     "col": "ir",
+     "at": "starved"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "The catch: in the simulation, Sgr A* is enlarged 10,000 times — otherwise it's one pixel.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 10000,
+      "suffix": "x enlarged"
+     },
+     "at": "10,000",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "img": "s4.jpg",
+   "photo": "M87 black hole",
+   "prompt": "photoreal cinematic 9:16 image of a glowing asymmetric ring of hot plasma around a dark central shadow, orange and blue tones, documentary astrophotography, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "For scale: 4 million solar masses here — 6.5 billion for M87's black hole, 1,000 times heavier.",
+   "hud": [
+    {
+     "t": "bars",
+     "items": [
+      [
+       "Sgr A*",
+       4,
+       "cy"
+      ],
+      [
+       "M87",
+       6.5,
+       "am"
+      ]
+     ],
+     "unit": "billion solar masses",
+     "at": "billion"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s5.jpg",
+   "photo": "galactic center stars",
+   "prompt": "photoreal cinematic 9:16 silhouette of a dense star cluster seen through glowing interstellar dust, deep blue and cyan grading, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "500 years of feeding, and it's still hungry. Follow for more versus.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "500 years of feeding, still hungry"
+     },
+     "at": "feeding",
+     "dur": 2.5
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "general",
+  "why": "topic fit",
+  "lemo_style": [
+   "Data Storytelling",
+   "Swiss Motion Graphics"
+  ]
+ },
+ "_facts": {
+  "title": "Peder A. Aarøe",
+  "url": "https://en.wikipedia.org/wiki/Peder_A._Aar%C3%B8e",
+  "text": "Peder A. Aarøe (1868–1927) was a Norwegian trade unionist. He was born in Stjørdalen. Aarøe was chairman of the trade union Møbelindustriarbeiderforbundet, and deputy chairman of Norges Kooperative Landsforening from 1913 to his death. He was the treasurer of the Norwegian Confederation of Trade Unions from 1915 to his death. In 1922, Aarøe was a delegate to the Fourth Comintern Congress. Politically, he belonged to Labour. == References ==\n\nSOURCE space.com (https://www.space.com/galactic-center-vr-black-hole-visualization.html):\n# Visit the Milky Way's supermassive black hole with 'Galactic Center VR' visualization (video) A new virtual reality experience lets you fly closely, but safely, towards the supermassive black hole embedded in the heart of our galaxy, the Milky Way. The \"adventure\" visualization is called Galactic Center VR and is based on data from NASA's Chandra X-Ray Observatory, as well as other telescopes. The latest iteration allows viewers to see 500 years of evolution at Sagittarius A* (Sgr A\\*), the black hole in the Milky Way's Center. You can view the experience for free from Steam or Vivepoint. The Sgr A* simulation is based on modeling from 25 extremely bright and massive objects, called Wolf-Rayet stars. Similarly to supernovas, or star explosions, Wolf-Rayet stars push their outer layers of material into space. At Sgr A\\*, this star-shedding activity produces supersonic winds, and the material is picked up in the black hole's gravity. **Video: Last 500 years around Milky Way's supermassive black hole** **Related: Something weird is up with the black hole at the Milky Way's center** \"When the winds from the Wolf-Rayet stars collide, the material is heated to millions of degrees by shocks — similar to sonic booms — and produce copious amounts of X-rays,\" NASA said in a statement. \"The center of the galaxy is too distant for Chandra to detect individual examples of these collisions, but the overall X-ray glow of this hot gas is detectable with Chandra's sharp X-ray vision.\" The visualization displays about three light-years of space centered on Sgr A\\*, but the black hole is not shown to scale. It is enlarged by about 10,000 times to make it more visible; otherwise, NASA said, Sgr A* would only occupy a single pixel of space in the simulation. Users can move around the simulation in different directions, playing with aspects such as the playback speed and the number of Wolf-Rayet winds shown. The visualization shows the Wolf-Rayet stars in white, with their orbits represented in gray. X-ray emissions are shown in blue and cyan, and wind material is portrayed in red and yellow. The overlap of wind materials and X-ray emissions is shown in purple. Chandra is one of th\n\nSOURCE arxiv.org (https://arxiv.org/html/2609.09032v1):\nTitle: WOLF-RAYET STARS AND BLACK HOLES: MASS DISTRIBUTIONS AND EVOLUTIONARY CONNECTION The form and relationship between the mass distributions of Wolf-Rayet stars and black holes are analyzed using a direct method for estimating the distribution function from a sample of mass values with individual distributions obtained from current observations. It is shown that, taking into account the mass loss of WR stars by the end of this evolutionary stage, the mass distribution of black holes is close to that of the CO-cores of WR stars before gravitational collapse, MBH≃MCOM\\_{\\mathrm{BH}}\\simeq M\\_{\\mathrm{CO}}. The final stage in the evolution of a massive star (MZAMS≳8÷10​M⊙M\\_{\\mathrm{ZAMS}}\\gtrsim 8\\div 10\\penalty\\ M\\_{\\odot}) is the gravitational collapse of its core resulting in the formation of a compact object — a neutron star (NS) or a black hole (BH). In the direct gravitational collapse of the carbon-oxygen (CO) core of a WR star with a mass exceeding the Oppenheimer-Volkoff limit (MCO>MOV≈3​M⊙M\\_{\\mathrm{CO}}>M\\_{\\mathrm{OV}}\\approx 3\\penalty\\ M\\_{\\odot}), the black hole formation is the most likely outcome. In close binary systems (CBS) with black holes observed as high-mass or low-mass X-ray binaries (HMXB/LMXB), black hole formation should also proceed through a CBS stage with a WR star [1, 2, 3]. A similar comparison, performed for the WR and BH mass distributions, demonstrated a close relation between black hole masses and the mass of CO-cores in pre-collapse stellar stars [4, 5]. This paper aims to provide a more detailed analysis of the form and relationship of these distributions using a direct method for estimating the distribution function from a sample of mass values with observed individual distributions, without making a priori assumptions about the parametric form of the distribution. ### 2.1 WR masses from WR+OB binaries. The analysis of the WR and BH mass distributions in this paper is based on data similar to those used in our previous paper [4]. This technique allows us to correctly take into account the observed spread of γ\\gamma-velocities and reduces the error in determining KWRK\\_{\\mathrm{WR}} and KOBK\\_{\\mathrm{OB}} from which the \n\nSOURCE quantamagazine.org (https://www.quantamagazine.org/black-hole-image-reveals-sagittarius-a-20220512):\n# Black Hole Image Reveals the Beast Inside the Milky Way’s Heart ## Introduction Today, more than three years after the release of the first-ever image of a black hole (opens a new tab), scientists from the Event Horizon Telescope (EHT) shared an image of Sagittarius A* (pronounced A-star) — the supermassive specimen sitting at the center of our own Milky Way galaxy. “It is a dream that comes true after decades of work,” said Heino Falcke, an astrophysicist at Radboud University in the Netherlands. “I always knew this day would come, but I never expected it to be so clear and impressive right away.” The image immediately reveals new information about the Milky Way’s monster. “The major things we found out about Sag A* were: Is the black hole spinning? Yes, it is,” said Sara Issaoun, an astrophysicist and member of the EHT team. “And what is the orientation of the black hole with respect to us? Now we are fairly confident it is pointed more or less face on to us,” with one of the poles pointed in our direction. The black hole shown in the new image is vastly different from the one in the earlier photo. The other black hole sits in the center of M87, an enormous elliptical galaxy that’s significantly more massive than our spiral-shaped Milky Way. That black hole fires out a vast jet powered by intense magnetic fields (opens a new tab). Sagittarius A\\*, by contrast, is 1,000 times less massive than M87’s black hole — 4 million versus 6.5 billion solar masses — making it much harder to see despite its relative proximity. And with less matter swirling around it, Sagittarius A* is dimmer as well. “It’s got a very low mass supply,” said Roger Blandford, an astrophysicist at Stanford University who is not involved with the EHT. “It’s been starved, essentially.” But despite these differences, the two images look remarkably alike. “We were amazed that Sag A* looked so similar to the famous black hole in the M87 galaxy,” said Issaoun. “This similarity reveals to us a key aspect of black holes. No matter their size, or the environment they live in, once you arrive at the edge of a black hole, gravity takes over.” In order to take an image of Sagittarius A\\*, the researcher",
+  "extra_sources": [
+   "https://www.space.com/galactic-center-vr-black-hole-visualization.html",
+   "https://arxiv.org/html/2609.09032v1",
+   "https://www.quantamagazine.org/black-hole-image-reveals-sagittarius-a-20220512"
+  ]
+ },
+ "_writer": "opencode"
+}
