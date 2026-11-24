@@ -1,0 +1,278 @@
+{
+ "id": "radcliffe-wave-hidden-shock-a2",
+ "title": "The Milky Way's Hidden Shock Wave",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "format": "story",
+ "series_label": "THE STORY",
+ "theme": "cool",
+ "look": "editorial-paper",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Radcliffe Wave — Wikipedia, https://en.wikipedia.org/wiki/Radcliffe_wave",
+  "b1": "ESA Gaia Image of the Week, https://www.cosmos.esa.int/web/gaia/iow_20200108",
+  "b2": "Radcliffe Wave — Wikipedia, https://en.wikipedia.org/wiki/Radcliffe_wave",
+  "b3": "Radcliffe Wave — Wikipedia, https://en.wikipedia.org/wiki/Radcliffe_wave",
+  "b4": "Radcliffe Wave — Wikipedia, https://en.wikipedia.org/wiki/Radcliffe_wave",
+  "b5": "Radcliffe Wave — Wikipedia, https://en.wikipedia.org/wiki/Radcliffe_wave",
+  "b6": "Radcliffe Wave — Wikipedia, https://en.wikipedia.org/wiki/Radcliffe_wave",
+  "outro": "Gaia space astrometry review, https://arxiv.org/html/2509.10883v1",
+  "wiki": "https://en.wikipedia.org/wiki/Radcliffe_wave",
+  "ref1": "https://arxiv.org/html/2509.10883v1",
+  "ref2": "https://www.cosmos.esa.int/web/gaia/iow_20200108",
+  "ref3": "https://www.livescience.com/space/astronomy/gaia-telescope-retires-scientists-bid-farewell-to-the-discovery-machine-of-the-decade-that-mapped-2-billion-milky-way-stars",
+  "ref4": "https://www.sciencedaily.com/releases/2026/05/260513221751.htm"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Milky Way galaxy",
+   "footage": "milky way timelapse",
+   "prompt": "Photoreal cinematic 9:16 view of the Milky Way band arching over a dark desert ridge at night, dense star field and dust lanes, deep blue and cool grey grade, natural exposure, no people, no text",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "A wave 8,800 light-years long is rippling through our galaxy — and it sits right next door.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "story",
+     "at": "wave"
+    },
+    {
+     "t": "title",
+     "html": "The *hidden* shock wave",
+     "at": "galaxy"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "8,800 light-years long",
+      "accent": "blue"
+     },
+     "at": "rippling",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "wave",
+     "whoosh",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Gaia spacecraft",
+   "footage": "nebula stars space",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a star-mapping space observatory silhouette above Earth's limb in deep space, cool blue grade, practical sunlight glint on solar array, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "In 2020, astronomers found it hiding in plain sight, buried in data from the Gaia spacecraft.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 2020,
+      "prefix": "found in",
+      "accent": "blue"
+     },
+     "at": "2020",
+     "dur": 2.5
+    },
+    {
+     "t": "chip",
+     "text": "Gaia data",
+     "col": "cy",
+     "at": "Gaia"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "say": "The team, led by Catherine Zucker and João Alves, named it the Radcliffe Wave.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "named it the",
+      "options": "ring, belt, Radcliffe Wave",
+      "accent": "blue"
+     },
+     "at": "named",
+     "dur": 2.5
+    },
+    {
+     "t": "stamp",
+     "text": "Nature 2020",
+     "col": "cy",
+     "at": "Radcliffe"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "say": "It was invisible in 2D. Only new 3D mapping revealed a chain of stellar nurseries.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "2D flat",
+       "3D wave"
+      ]
+     ],
+     "at": "invisible"
+    },
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Only 3D mapping revealed the wave",
+      "keyword": "3D",
+      "note": "invisible in 2D",
+      "style": "circle",
+      "accent": "blue"
+     },
+     "at": "mapping",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s2.jpg",
+   "photo": "Taurus Molecular Cloud",
+   "footage": "star cluster space",
+   "prompt": "Photoreal cinematic 9:16 deep-field astrophotography of a dark molecular cloud with faint newborn stars, cool blue-grey grade, natural telescope look, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Its nearest cloud lies just 400 light-years away; its farthest about 5,000.",
+   "hud": [
+    {
+     "t": "line",
+     "values": [
+      400,
+      5000
+     ],
+     "labels": [
+      "Taurus",
+      "Cygnus X"
+     ],
+     "col": "cy",
+     "at": "light-years"
+    },
+    {
+     "t": "label",
+     "text": "right next door",
+     "at": "nearest"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "say": "Some scientists think the Sun was even born inside it.",
+   "hud": [
+    {
+     "t": "toast",
+     "title": "Birthplace?",
+     "sub": "the Sun may have formed here",
+     "icon": "star",
+     "at": "Sun"
+    },
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "OUR ORIGIN",
+      "kicker": "Radcliffe Wave",
+      "accent": "blue"
+     },
+     "at": "born",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "say": "And in 2024, the wave was found to be oscillating — a traveling wave across the galaxy.",
+   "hud": [
+    {
+     "t": "delta",
+     "text": "oscillating",
+     "dir": "up",
+     "col": "cy",
+     "at": "oscillating"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s3.jpg",
+   "photo": "Milky Way night sky",
+   "prompt": "Photoreal cinematic 9:16 low-angle wide shot of the galactic core rising above a still lake at night, mirrored star field, deep cool blue grade, no people, no text",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "The biggest structure near Earth was found just years ago. Follow for more hidden sky.",
+   "hud": [
+    {
+     "t": "title",
+     "html": "Hidden *next door*",
+     "at": "biggest"
+    },
+    {
+     "t": "chip",
+     "text": "Follow for more",
+     "col": "ok",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "awe_scale",
+  "why": "topic fit",
+  "lemo_style": [
+   "Data Storytelling",
+   "Satellite Briefing",
+   "Time-lapse Symphony"
+  ]
+ },
+ "_facts": {
+  "title": "Radcliffe wave",
+  "url": "https://en.wikipedia.org/wiki/Radcliffe_wave",
+  "text": "The Radcliffe wave is a neighbouring coherent gaseous structure in the Milky Way, dotted with a related high concentration of interconnected stellar nurseries. It stretches about 8,800 light years. This structure runs with the trajectory of the Milky Way arms. It lies at its closest (the Taurus Molecular Cloud) at around 400 light-years and at its farthest about 5,000 light-years (the Cygnus X star complex) from the Sun, always within the Local Arm (Orion Arm) itself, spanning about 40% of its length and on average 20% of its width. Its discovery was announced in January 2020, and its proximity surprised astronomers. == Formation ==\n\nScientists do not know how the undulation of dust and gas formed. It has been suggested that it could be a result of a much smaller galaxy colliding with the Milky Way, leaving behind \"ripples\", or could be related to dark matter. Inside the dense clouds, gas can be so compressed that new stars are born. It has been suggested that this may be where the Sun originated. Many of the star-forming regions found in the Radcliffe wave were thought to be part of a similar-sized but somewhat helio-centric ring which contained the Solar System, the \"Gould Belt\". It is now understood the nearest discrete relative concentration of sparse interstellar matter instead forms a massive wave. == Discovery ==\nThe wave was discovered by an international team of astronomers including Catherine Zucker and João Alves. It was announced by co-author Alyssa A. Goodman at the 235th meeting of the American Astronomical Society, held at Honolulu and published in the journal Nature on 7 January 2020. The discovery was made using data collected by the European Space Agency's Gaia space observatory. The wave was invisible in 2D, requiring new 3D techniques of mapping interstellar matter to reveal its pattern using the software Glue. The proximity of the wave surprised astronomers. It is named after the Radcliffe Institute for Advanced Study in Cambridge, Massachusetts, the place of study of the team. == Structure and movement ==\nThe Radcliffe wave contains four of the five Gould Belt clouds:\n\nOrion molecular cloud complex\nPerseus molecular cloud\nTaurus molecular cloud\nCepheus OB2\nThe cloud not within its scope is the Rho Ophiuchi Cloud complex, part of a linear structure parallel to the Radcliffe wave. Other structures in the wave, further from the local star system, are Canis Major OB1, the North America Nebula and Cygnus X. The mass of this structure is on the scale of ≥3×106 M☉. It has a length of 8,800 light-years (2,700 parsecs) and an amplitude of 520 light-years (160 parsecs). The Radcliffe wave occupies about 20% of the width and 40% of the length of the local arm (Orion Arm). The latter is more dispersed as to its interstellar medium than the wave and has further large star-forming regions such as Monoceros OB1, California Nebula, Cepheus Far, and Rho Ophiuchi. A 2024 paper announced the discovery that the Radcliffe wave is oscillating in the form of a traveling wave. == See also ==\nAntlia 2, another giant ripple across the Milky Way's disc found in data from the Gaia space telescope\nList of nearby stellar associations and moving groups\nGreat Rift (astronomy)\nSerpens-Aquila Rift\n\n\n== References ==\n\n\n== Further reading ==\nAlves, João; Zucker, Catherine; Goodman, Alyssa A.; Speagle, Joshua S.; Meingast, Stefan; Robitaille, Thomas; Finkbeiner, Douglas P.; Schlafly, Edward F.; Green, Gregory M. (2020). \"A Galactic-scale gas wave in the solar neighborhood\". Nature. 578 (7794): 237–239. arXiv:2001.08748. Bibcode:2020Natur.578..237A. doi:10.1038/s41586-019-1874-z. PMID 31910431. == External links ==\nInteractive map of the Radcliffe wave on the sky\nThe Radcliffe Wave informational site created by Harvard University\n\nSOURCE arxiv.org (https://arxiv.org/html/2509.10883v1):\n# Space Astrometry with Gaia: Advances in Understanding our Galaxy ###### Abstract Gaia is a satellite mission of the European Space Agency which is creating a catalogue of extremely accurate positions, distances and space motions of two billion stars in our Galaxy, along with more than one hundred thousand solar system asteroids, and several million distant quasars, all on the same extragalactic reference system. Complementary information on each object’s multi-epoch photometry and spectra provides a vast and unprecedented data base of (model-dependent) fundamental physical quantities, such as each star’s mass, age, and chemical composition. I outline the field’s historical context, and explain the key principles involved in these space measurements. This is followed by a broad review of the many areas of solar system science, stellar structure and evolution, and topics in Galactic structure, evolution, and dynamics, that are being derived from these data. ###### Keywords: Gaia , astrometry , stellar structure and evolution , Galaxy structure and evolution , space science ## 1 Introduction Gaia is a major scientific satellite developed and operated by the European Space Agency (ESA). It exploits the environmental advantages of space to measure the positions of a large number of stars and other celestial objects with unprecedented accuracy. With studies starting in the early 1990s (and overlapping with the final phases of the pioneering Hipparcos space mission), the project was accepted as part of ESA’s scientific programme in 2000. The satellite was launched in December 2013, and operated continuously from its Lagrange Sun–Earth (L2) orbit location until January 2025. Through repeated scanning of the celestial sphere over more than 10 years, its state-of-the-art optical telescope and detector system allows construction of an extremely accurate three-dimensional map of the positions and space motions of some two billion stars, and more than 100 000 solar system objects, all referred to an extragalactic reference frame defined by several million quasars and compact galaxies. Despite the enormous distances in astronomy, around 1 pc (3 light-years) to the nearest s\n\nSOURCE cosmos.esa.int (https://www.cosmos.esa.int/web/gaia/iow_20200108):\n## IoW\\_20200108 - Gaia ## Image of the Week ### the largest ever seen gaseous structure in our galaxy *In this illustration, the newly found wave-shaped gaseous structure called the \"Radcliffe Wave\" is overlaid on an image of the Milky Way galaxy. Image from the WorldWide Telescope, courtesy of Alyssa Goodman.* Once again Gaia helps to advance our knowledge of the structures in our galaxy. A team of astronomers from the Vienna and Harvard Universities have discovered a wave-shaped gaseous structure. In honour of the collaboration's home base, the structure was named the Radcliffe Wave. This structure is the largest ever seen in our galaxy and is made up of interconnected stellar nurseries. The accurate data from Gaia played an essential role in this discovery: through mapping the interstellar matter in the Milky Way the team noticed this unexpected pattern in the spiral arm close to Earth. The structure appears to be undulating and can be well described by a damped sinusoidal wave on the plane of the Milky Way, with an average period of about 2 kpc and a maximum amplitude of about 160 pc. The found structure is long and thin, extending to about 9000 light-years but only 400 light-years wide with a height of about 500 light-years above and below the mid-plane of the Galaxy's disk. In the below video the location and shape of the structure can be seen in more detail. “We don’t know what causes this shape but it could be like a ripple in a pond as if something extraordinarily massive landed in our galaxy,” said Alves. “What we do know is that our Sun interacts with this structure. It passed by a festival of supernovae as it crossed Orion 13 million years ago, and in another 13 million years it will cross the structure again, sort of like we are ‘surfing the wave’.” “No astronomer expected that we live next to a giant, wave-like collection of gas–or that it forms the Local Arm of the Milky Way,” said Alyssa Goodman, Professor of Applied Astronomy and co-director of the Science Program at the Radcliffe Institute of Advanced Study. “We were completely shocked when we first realized how long and straight the Radcliffe Wave is, looking down on it from above in 3D – but\n\nSOURCE livescience.com (https://www.livescience.com/space/astronomy/gaia-telescope-retires-scientists-bid-farewell-to-the-discovery-machine-of-the-decade-that-mapped-2-billion-milky-way-stars):\n# Gaia telescope retires: Scientists bid farewell to 'the discovery machine of the decade' that mapped 2 billion Milky Way stars After 11 years mapping the Milky Way, the European Space Agency's Gaia space telescope has retired. Scientists hailed it as \"the discovery machine of the decade.\" On March 27, scientists bid farewell to the Gaia telescope, bringing to a close its groundbreaking 11-year mission of mapping the Milky Way and our cosmic neighborhood. Though not as famous as some of its peers like the Hubble or James Webb space telescopes, Gaia has reshaped our understanding of our home galaxy, the Milky Way. Since 2014, the European Space Agency's (ESA) telescope has meticulously charted the cosmos, creating a vast catalog of nearly 2 billion stars, more than 4 million potential galaxies and around 150,000 asteroids, with moons possibly circling hundreds of them. These observations have led to more than 13,000 scientific studies, with many more likely to follow in the coming years. \"Gaia's extensive data releases are a unique treasure trove for astrophysical research, and influence almost all disciplines in astronomy,\" Johannes Sahlmann, a physicist at the European Space Astronomy Centre in Spain and a project scientist for the Gaia mission, said in a statement. After 11 years of operations — nearly double its expected lifetime — Gaia ran out of fuel, prompting its operators at ESA to power down and retire the spacecraft. ## The best map of the Milky Way galaxy Since it launched in December 2013, Gaia charted the cosmos from a vantage point about a million miles (1.6 million kilometers) from Earth, at a spot called Lagrange point 2 (L2), where the gravitational forces of Earth and the sun, and the orbital motion of a satellite balance each other. Gaia's primary goal was to map the positions and movements of over a billion stars within the Milky Way, creating the largest, most precise 3D map of our galaxy. To do so, it was equipped with twin telescopes pointed in different directions to measure the distances between stars, while three onboard instruments collected data on the positions, velocities, colors as well as chemical compositions of celestial object\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2026/05/260513221751.htm):\n![ScienceDaily](/ \"ScienceDaily\") --- Your source for the latest research news Follow: *Facebook* *X/Twitter* Subscribe: *RSS Feeds* *Newsletter* **New!** Sign up for our free **email newsletter**. Science News from research organizations --- # Earth is flying through ancient supernova debris and scientists found the evidence in Antarctic ice ## Earth is drifting through the lingering ashes of an ancient exploding star — and scientists found the evidence frozen deep in Antarctic ice. Date: : May 13, 2026 Source: : Helmholtz-Zentrum Dresden-Rossendorf Summary: : Earth is quietly collecting radioactive debris from an ancient stellar explosion as our Solar System drifts through a giant cloud of gas and dust between the stars. Scientists analyzing Antarctic ice up to 80,000 years old discovered traces of iron-60 — a rare isotope forged in supernova explosions — and found evidence that this “cosmic ash” has been lingering inside the Local Interstellar Cloud for ages. The discovery suggests the cloud surrounding our Solar System was shaped by a long-ago exploding star, offering researchers a new way to study our galactic neighborhood. Share: : Facebook Twitter Pinterest LinkedIN Email FULL STORY --- Path of the solar system through the Local Interstellar Cloud. The cloud’s profile is preserved as an interstellar fingerprint in Antarctic ice. Credit: B. Schröder/HZDR/ NASA/Goddard/Adler/U.Chicago/Wesleyan Scientists have uncovered new evidence that Earth is traveling through a cloud of ancient stellar debris left behind by a long ago exploding star. By studying Antarctic ice that formed tens of thousands of years ago, researchers detected traces of iron-60, a rare radioactive form of iron created during supernova explosions. The findings support the idea that the Local Interstellar Cloud surrounding our Solar System contains material from an ancient stellar blast. The research was led by an international team from the Helmholtz-Zentrum Dresden-Rossendorf (HZDR), and the results were published in *Physical Review Letters*. **Rare Supernova Iron Found in Antarctic Ice** Iron-60 forms deep inside massive stars and is released into space when those stars explode as superno",
+  "extra_sources": [
+   "https://arxiv.org/html/2509.10883v1",
+   "https://www.cosmos.esa.int/web/gaia/iow_20200108",
+   "https://www.livescience.com/space/astronomy/gaia-telescope-retires-scientists-bid-farewell-to-the-discovery-machine-of-the-decade-that-mapped-2-billion-milky-way-stars",
+   "https://www.sciencedaily.com/releases/2026/05/260513221751.htm"
+  ]
+ },
+ "_writer": "opencode"
+}

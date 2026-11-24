@@ -1,5 +1,5 @@
 {
- "current": "uhz1-black-hole-too-early-a3",
+ "current": "radcliffe-wave-hidden-shock-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1060,6 +1060,25 @@
     "safe_zone": 10
    },
    "run_id": "45197311752"
+  },
+  "radcliffe-wave-hidden-shock-a2": {
+   "title": "The Milky Way's Hidden Shock Wave",
+   "base": "radcliffe-wave-hidden-shock-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 10,
+    "visual_quality": 8,
+    "accuracy": 9,
+    "originality": 8,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 10,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "45295730476"
   }
  }
 }
