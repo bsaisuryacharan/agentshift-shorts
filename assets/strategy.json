@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-23T13:14+00:00",
+ "updated": "2026-11-24T13:58+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 6,
+  "days_left": 5,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 14239,
-  "gained": 8458,
-  "pct": 0.85,
-  "pace_per_day": 54,
-  "needed_per_day": 165257,
-  "projected": 8786,
+  "channel_views": 14683,
+  "gained": 8902,
+  "pct": 0.89,
+  "pace_per_day": 207,
+  "needed_per_day": 198219,
+  "projected": 9937,
   "on_track": false,
   "subs": 18
  },
@@ -21,13 +21,13 @@
  "topic_classes": {
   "awe_scale": {
    "n": 7,
-   "mean_log_views": 2.33,
-   "boost": 0.33
+   "mean_log_views": 2.32,
+   "boost": 0.32
   },
   "jargon_science": {
    "n": 2,
-   "mean_log_views": 1.5,
-   "boost": -0.47
+   "mean_log_views": 1.52,
+   "boost": -0.46
   },
   "general": {
    "n": 14,
@@ -42,7 +42,7 @@
   "inside_machine": {
    "n": 7,
    "mean_log_views": 2.5,
-   "boost": 0.57
+   "boost": 0.56
   },
   "tech_explainer": {
    "n": 1,
@@ -133,16 +133,16 @@
   "ai_tips"
  ],
  "cohort": {
-  "n": 45,
-  "median": 103,
-  "p75": 358
+  "n": 46,
+  "median": 98.5,
+  "p75": 344
  },
  "ladder": [
   {
    "name": "typical Short",
    "metric": "median views per Short at 7 days",
    "goal": 1000,
-   "now": 103
+   "now": 98.5
   },
   {
    "name": "first breakout",
@@ -160,7 +160,7 @@
    "name": "volume",
    "metric": "channel views in 30 days",
    "goal": 100000,
-   "now": 8458
+   "now": 8902
   }
  ],
  "focus_words": [
@@ -190,7 +190,7 @@
  "winners": [
   {
    "title": "Earth, Jupiter, and the Sun to Scale",
-   "views": 343
+   "views": 427
   },
   {
    "title": "Why Jet Engine Blades Have Tiny Holes #shorts",
@@ -223,7 +223,7 @@
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
   "Topic classes on the channel's own results: more of inside_machine, awe_scale, myth_fact; less of jargon_science, general, ai_tips.",
-  "Double down on what already wins on this channel: 'Earth, Jupiter, and the Sun to Scale' (343 views); 'Why Jet Engine Blades Have Tiny Holes #shorts' (564 views); 'Inside a Submarine: 5 Systems' (1,125 views).",
+  "Double down on what already wins on this channel: 'Earth, Jupiter, and the Sun to Scale' (427 views); 'Why Jet Engine Blades Have Tiny Holes #shorts' (564 views); 'Inside a Submarine: 5 Systems' (1,125 views).",
   "Drop what flopped: 'Earth Stops. The Air Keeps Moving. #shor' (0); 'How Submarines Make Air From Seawater #s' (4); 'What If the Moon Vanished Tonight? #shor' (9).",
   "Prefer the formats the judge scores best: myth_vs_fact, versus.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",

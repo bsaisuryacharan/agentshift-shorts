@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T13:14:58+00:00",
+ "generated_at": "2026-11-24T13:58:13+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -13,19 +13,19 @@
  "trending": [
   "The Most Unexpected Animal Encounters Ever",
   "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄",
-  "You Never Actually Touch Anything! 🤯",
   "The Most Astonishing Animal Encounters Caught On Camera",
-  "Real Life Monsters Still Walking Earth 💀",
-  "The Most Amazing Animal Moments Ever Recorded",
+  "How submarine works",
   "The Wildest Animal Encounters Caught on Camera",
+  "Real Life Monsters Still Walking Earth 💀",
   "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
   "Bro Just Explained the Future of Computing 🤯",
-  "hamare desh ne kya khoja",
   "Gold mein rhenium powder mila kr scam ?",
-  "Two monster black holes from the dawn of time defy explanation"
+  "Why Is It Called the Beaver Moon? 🦫🌕",
+  "Most Terrifying Cave Exploring Disasters in History! 🕳️ (Part 1)",
+  "Earth's next ice age may have already begun. Global warming stopped it"
  ],
  "learned": {
-  "shorts_scored": 29,
+  "shorts_scored": 31,
   "best": [
    {
     "title": "The Sun's Worst Storms, Ranked",
@@ -38,12 +38,17 @@
     "weakest": "originality"
    },
    {
-    "title": "Inside a Submarine: 5 Systems",
-    "avg": 8.5,
-    "weakest": "originality"
+    "title": "The Milky Way's Hidden Shock Wave",
+    "avg": 8.6,
+    "weakest": "visual_variety"
    }
   ],
   "worst": [
+   {
+    "title": "A Black Hole That Shouldn't Exist Yet",
+    "avg": 7.0,
+    "weakest": "visual_variety"
+   },
    {
     "title": "The 600 Billion Dollar Bug",
     "avg": 7.1,
@@ -53,11 +58,6 @@
     "title": "Inside a GPS Satellite: 5 Parts",
     "avg": 7.2,
     "weakest": "visual_variety"
-   },
-   {
-    "title": "What If Krakatoa Erupted Today?",
-    "avg": 7.2,
-    "weakest": "visual_quality"
    }
   ],
   "weakest_dimensions": [
@@ -67,70 +67,70 @@
   ]
  },
  "stage_averages": {
-  "hook": 7.5,
-  "story": 6.5,
-  "visuals": 6.3,
-  "polish": 6.2,
-  "policy": 8.9
+  "hook": 7.6,
+  "story": 6.4,
+  "visuals": 5.9,
+  "polish": 5.8,
+  "policy": 8.8
  },
  "weakest_stage": "polish",
  "region": "IN",
- "trend_signals_total": 58,
- "trend_signals_on_niche": 32,
+ "trend_signals_total": 61,
+ "trend_signals_on_niche": 37,
  "niche_winners": [
   {
    "title": "The Most Unexpected Animal Encounters Ever",
-   "views": 15975784,
+   "views": 16167249,
    "url": "https://www.youtube.com/watch?v=cxlIQYt868k"
   },
   {
    "title": "The Wildest Animal Encounters Caught on Camera",
-   "views": 4418722,
+   "views": 5690137,
    "url": "https://www.youtube.com/watch?v=77yTZXiBlmo"
   },
   {
    "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
-   "views": 14392518,
+   "views": 14507039,
    "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
   },
   {
+   "title": "How submarine works #science #fun #shorts #entertainment",
+   "views": 6021007,
+   "url": "https://www.youtube.com/watch?v=NFsLFx0I264"
+  },
+  {
+   "title": "Why Pothole Always Coming Back",
+   "views": 1715441,
+   "url": "https://www.youtube.com/watch?v=qeYe2Sw9qi8"
+  },
+  {
+   "title": "Why Is It Called the Beaver Moon? 🦫🌕 #beavermoon #space",
+   "views": 1288366,
+   "url": "https://www.youtube.com/watch?v=tpofTlZxBnU"
+  },
+  {
    "title": "Why Milk is Fighting Your Truck",
-   "views": 4929919,
+   "views": 5568670,
    "url": "https://www.youtube.com/watch?v=fQYmEG460Sc"
   },
   {
    "title": "The Most Astonishing Animal Encounters Caught On Camera",
-   "views": 6166694,
+   "views": 6241353,
    "url": "https://www.youtube.com/watch?v=qT1ePxFsjEE"
-  },
-  {
-   "title": "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄#shorts #facts #farming  #animals",
-   "views": 9634580,
-   "url": "https://www.youtube.com/watch?v=toBtC1Cllwk"
-  },
-  {
-   "title": "You Never Actually Touch Anything! 🤯 #QuantumPhysics #Science",
-   "views": 9264148,
-   "url": "https://www.youtube.com/watch?v=jR4zV8q02Bk"
-  },
-  {
-   "title": "Bro Just Explained the Future of Computing 🤯 #nvidia #shorts",
-   "views": 2987063,
-   "url": "https://www.youtube.com/watch?v=Z-HYbC9sfGQ"
   }
  ],
  "news": [
+  "2,200-year-old Roman shipwreck reveals an ingenious waterproofing trick",
+  "Earth's next ice age may have already begun. Global warming stopped it",
+  "Earth's core may be leaking a 4.5-billion-year-old secret",
   "This tiny spider named after Stephen Colbert has a genome 50% larger than a human’s",
   "Two monster black holes from the dawn of time defy explanation",
+  "Earth’s ancient oceans may have fooled scientists about its oxygen history",
   "Archaeologists reveal a powerful Iron Age king may have been a woman",
   "Mysterious new viruses reveal a missing link in evolution",
-  "A galactic shock wave could rewrite the map of the Milky Way",
-  "DNA’s secret sunscreen may have helped life survive on early Earth",
-  "A mysterious gap hints at black holes born from stars that never exploded",
-  "APOD: 2026 November 23 – The Emergence of Dark Nebula Lynds 1251",
-  "Laser Focus at the Top of the World",
-  "65 Years of Human Spaceflight at NASA Johnson",
-  "APOD: 2026 November 22 – Swirls and Colors on Jupiter from Juno",
-  "APOD: 2026 November 21 – Voyager’s Neptune"
+  "APOD: 2026 November 24 – Galaxies Battle in the NGC 7771 Group",
+  "Eruption Extends Iwo Jima’s Beach",
+  "NASA Awards Contract for NOAA’s Near Earth Orbit Network Program",
+  "NASA Seeks Partners to Design First Nuclear Reactor for the Moon"
  ]
 }
