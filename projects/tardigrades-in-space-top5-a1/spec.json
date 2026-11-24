@@ -1,0 +1,274 @@
+{
+ "id": "tardigrades-in-space-top5-a1",
+ "title": "5 Extreme Facts About Tardigrades in Space",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "TOP 5",
+ "format": "ranked",
+ "theme": "warm",
+ "look": "risograph",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b1": "National Geographic - Tardigrades, https://www.nationalgeographic.com/animals/invertebrates/facts/tardigrades-water-bears",
+  "b2": "Wikipedia - Tardigrades in space, https://en.wikipedia.org/wiki/Tardigrades_in_space",
+  "b3": "Wikipedia - BIOPAN on FOTON-M3, 2007, https://en.wikipedia.org/wiki/Tardigrades_in_space",
+  "b4": "Wikipedia - LIFE prototype on STS-134, 2011, https://en.wikipedia.org/wiki/Tardigrades_in_space",
+  "b5": "Wikipedia - Lunar lander Beresheet, 2019, https://en.wikipedia.org/wiki/Tardigrades_in_space",
+  "wiki": "https://en.wikipedia.org/wiki/Tardigrades_in_space",
+  "ref1": "https://www.nationalgeographic.com/animals/invertebrates/facts/tardigrades-water-bears",
+  "ref2": "https://www.space.com/tardigrades-on-space-station-extreme-survival",
+  "ref3": "https://kids.nationalgeographic.com/animals/invertebrates/facts/tardigrade",
+  "ref4": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5705745",
+  "ref5": "https://www.livescience.com/57985-tardigrade-facts.html"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "graphic": true,
+   "prompt": "Photoreal cinematic 9:16 macro shot of a single microscopic tardigrade curled in its dried tun state, resting on a dark moss fibre, deep blue-black laboratory backdrop, cool rim light, documentary microscope photography look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "These 0.5 millimeter animals survived open space. Top 5 extreme facts, biggest last.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "top 5",
+     "at": "space"
+    },
+    {
+     "t": "title",
+     "html": "*Tardigrades* in space",
+     "at": "survived"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "survived open space",
+      "split": "word",
+      "accent": "green"
+     },
+     "at": "survived",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "space",
+     "whoosh",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "5. Roughly 1,300 species of tardigrades live everywhere from deep sea to sand dunes.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "1,300 species",
+     "col": "cy",
+     "count": 1300,
+     "at": "1,300"
+    },
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "they live",
+      "options": "deep sea, hot springs, sand dunes, rooftops",
+      "accent": "blue"
+     },
+     "at": "everywhere",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "tardigrade microscope",
+   "prompt": "Photoreal cinematic 9:16 macro photograph of a living eight-legged tardigrade crawling across a wet green moss strand, shallow depth of field, cool natural light, scientific documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "4. Sending them to space was proposed in 1964, because they shrug off radiation.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "proposed 1964",
+     "at": "1964"
+    },
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "they shrug off radiation",
+      "keyword": "radiation",
+      "note": "DNA shielded by Dsup",
+      "style": "circle",
+      "accent": "green"
+     },
+     "at": "radiation",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "FOTON-M3 spacecraft",
+   "prompt": "Photoreal cinematic 9:16 image of a spherical unmanned space capsule descending under parachute against a pale blue sky, cool documentary tone, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "3. In 2007, FOTON-M3 exposed them to vacuum for 10 days. Over 68% woke up within 30 minutes.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "10 days vacuum",
+     "at": "vacuum"
+    },
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 68,
+      "suffix": "%",
+      "glow": true,
+      "accent": "green"
+     },
+     "at": "68%",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "2007",
+     "ding",
+     0.5
+    ]
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "Space Shuttle Endeavour launch",
+   "footage": "space shuttle launch",
+   "prompt": "Photoreal cinematic 9:16 image of a space shuttle rising on a bright exhaust column at dawn, seen from a distance across flat land, cool blue-grey documentary grade, no text, no people",
+   "focal": [
+    0.5,
+    0.35
+   ],
+   "say": "2. In 2011, tardigrades flew to the International Space Station on STS-134, and microgravity barely touched them.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "STS-134",
+     "col": "cy",
+     "at": "2011"
+    },
+    {
+     "t": "tape",
+     "text": "microgravity ok",
+     "col": "ok",
+     "at": "microgravity"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "Beresheet lunar lander",
+   "footage": "moon surface crater",
+   "prompt": "Photoreal cinematic 9:16 image of the grey cratered lunar surface from low orbit, long shadows across regolith, cool monochrome grade, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "1. In 2019, the Beresheet lander crashed on the Moon carrying tardigrades. The crash hit harder than the 1.14 gigapascals they survive.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "crashed 2019",
+     "col": "ir",
+     "at": "crashed"
+    },
+    {
+     "t": "big",
+     "text": "1.14 GPa",
+     "col": "ir",
+     "at": "1.14"
+    }
+   ],
+   "sfx": [
+    [
+     "crashed",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "outro",
+   "graphic": true,
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The toughest animals on Earth may be scattered on the Moon. Follow for more.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "AGENT SHIFT",
+      "label": "follow for more",
+      "rule": "show",
+      "accent": "green"
+     },
+     "at": "Follow",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  }
+ ],
+ "style_map": {
+  "class": "history_event",
+  "why": "topic fit",
+  "lemo_style": [
+   "1920s Newsreel",
+   "Archive Light Table",
+   "Transit Map"
+  ]
+ },
+ "_facts": {
+  "title": "Tardigrades in space",
+  "url": "https://en.wikipedia.org/wiki/Tardigrades_in_space",
+  "text": "The use of tardigrades in space, first proposed in 1964 because of their extreme tolerance to radiation, began in 2007 with the FOTON-M3 mission in low Earth orbit, where they were exposed to space's vacuum for 10 days, and reanimated, just by rehydration, back on Earth. In 2011, tardigrades were on board the International Space Station on STS-134. In 2019, a capsule containing tardigrades was on board the Israeli lunar lander Beresheet which crashed on the Moon. == Tardigrades ==\n\nTardigrades are small arthropods able to tolerate extreme environments. Many live in tufts of moss, such as on rooftops, where they get repeatedly dried out and rewetted. Others live in the Arctic or atop mountains, where they are exposed to cold. When dried, they go into a cryptobiotic 'tun' state in which metabolism is suspended. They have been described as the toughest animals on Earth. Their DNA is protected from damage, such as by radiation, by Dsup proteins. == Proposals ==\nIn 1964, R.M. May and colleagues proposed that the tardigrade Macrobiotus areolatus would be a suitable model organism for space experiments because of its exceptional radiation tolerance. In 2001, R. Bertolani and colleagues proposed tardigrades as a model for a study of animal survival in space. As terrestrial experiments on tardigrades proceeded, knowledge of their survival abilities grew, enabling K.I. Jönsson in 2007, and then other researchers such as Daiki Horikawa in 2008 and Roberto Guidetti in 2012, to present evidence that they would resist desiccation, radiation, heat, and cold, suiting them for astrobiological studies. In 2008, F. Ono and colleagues suggested that tardigrades might be able to survive a journey through space on a meteorite, enabling panspermia, the transfer of life from one planet to another. == Missions ==\n\n\n=== BIOPAN on FOTON-M3, 2007 ===\n\nTardigrades have survived exposure to space. In 2007, dehydrated tardigrades were taken into low Earth orbit on the FOTON-M3 mission carrying the BIOPAN astrobiology payload. For 10 days, in the \"Tardigrade Resistance to Space Effects\" (TARSE) experiment, groups of Paramacrobiotus richtersi tardigrades, some of them previously dehydrated, some of them not, were exposed to the hard vacuum of space, or vacuum and solar ultraviolet radiation. Back on Earth, more than 68% of the subjects protected from solar ultraviolet radiation were reanimated within 30 minutes following rehydration; although subsequent mortality was high, many produced viable embryos. In contrast, in the \"Tardigrades in Space\" (TARDIS) experiment, hydrated samples exposed to the combined effect of vacuum and full solar ultraviolet radiation had significantly reduced survival, with only three subjects of Milnesium tardigradum surviving. The space vacuum did not much affect egg-laying in either Richtersius coronifer or M. tardigradum, whereas UV radiation did reduce egg-laying in M. tardigradum. The third FOTON-M3 experiment, \"Rotifers, Tardigrades and Radiation\" (RoTaRad) focused mainly on radiation survival. === LIFE prototype on STS-134, 2011 ===\nIn 2011, Angela Maria Rizzo and colleagues sent tardigrades and extremophiles on board the STS-134 Space Shuttle Endeavour mission to the  International Space Station for the \"Tardigrades in Space\" (TARDIKISS) experiment. They concluded that microgravity and cosmic radiation \"did not significantly affect survival of tardigrades in flight\" and that tardigrades were useful in space research, with implications for astrobiology, where they should be suitable model organisms. The mission was a prototype for the \"Living Interplanetary Flight Experiment\" (LIFE) which was to have travelled to the Martian moon Phobos on the Russian Fobos-Grunt spacecraft. The spacecraft however failed to leave Earth orbit and was destroyed. === Lunar lander Beresheet, 2019 ===\n\nIn 2019, a capsule containing tardigrades in a cryptobiotic state was on board the Israeli lunar lander Beresheet which crashed on the Moon. They were described as unlikely to have survived the impact because the shock pressure of the crash would have been well above the 1.14 GPa that they have been measured as surviving. Despite tardigrades' ability to survive in space, they would still need food, lacking on the Moon, to be able to grow and reproduce. The possibility that tardigrades survived the crash attracted concern about contamination of the Moon with biological material. If they did survive the crash, they would not rehydrate because of the lack of liquid water on the Moon. Spilling tardigrades across the Moon is legal. The Outer Space Treaty only explicitly bans weapons and experiments or tools that could interfere with other missions. Large space agencies typically follow guidelines for sterilizing mission equipment, but there is no single entity to globally enforce these rules. == See also ==\nAnimals in space\n\n\n== References ==\n\nSOURCE nationalgeographic.com (https://www.nationalgeographic.com/animals/invertebrates/facts/tardigrades-water-bears):\n* Animals * Reference # Tardigrade Common Name: : Tardigrades Scientific Name: : Tardigrada Diet: : Omnivore Size: : 0.5 millimeter ## **What is a tardigrade?** Tardigrades are microscopic eight-legged animals that have been to outer space and would likely survive the apocalypse. Bonus: They look like adorable miniature bears. Scientists have discovered roughly 1,300 species of tardigrades worldwide. These creatures are considered aquatic because they need a thin layer of water around their bodies to prevent dehydration. Despite their need for water, they live in all kinds places, from the deep sea and hot springs to terrestrial environments like sand dunes. Terrestrial tardigrades prefer freshwater mosses and lichen habitats, hence their nickname, moss piglet. (*This new species of ‘indestructible’ animal was found in a surprising place*.) Tardigrades may look squishy, but they have a tough outer layer. This cuticle is like the exoskeletons of insect species including grasshoppers and praying mantises. Like those insects, tardigrades have to shed their cuticles in order to grow. They have four to six claws on each foot, which help them cling to plant matter. A specialized mouthpart, called a *bucco pharyngeal apparatus*, allows them to suck nutrients from plants and microorganisms. Tardigrades have a segmented body and move by shuffling their stubby legs in a “lumbering gait,” similar to stick insects. The claws on their back legs face the opposite direction, possibly to grasp plants or maneuver around. ## **How are tardigrades so resilient?** Tardigrades belong to an elite category of animals known as extremophiles. These members of the animal kingdom can survive extreme environments that most others can’t. For instance, tardigrades can go up to 30 years without food or a water supply. They can live in very cold temperatures, even at absolute zero, and can survive above boiling temperatures. They can handle pressure six times greater than the ocean’s deepest trenches and exist in the vacuum of space. Their long term resiliency is in part due to a unique protein in their bodies called Dsup, short for “damage suppressor.” This protein protects their DNA from har\n\nSOURCE space.com (https://www.space.com/tardigrades-on-space-station-extreme-survival):\nJoin - Join our community Expert insights In-depth guides and features Curated newsletters Handpicked inspiration Early Access Preview new releases first Earn badges as you explore Join the conversation Comment and connect Tailored for you Personalised recommendations Get Space+ Access Quick For the quickest way to join, enter your email below. We’ll send a confirmation email and sign you up to Space.com newsletters with the latest inspiration, expert advice and exclusive offers. By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. FIND OUT ABOUT OUR MAGAZINE Want to subscribe to the magazine? Click the button below to find out more information. Find out more Get Space+ Access Quick Join The Club for quick access. Enter your email below and we'll send confirmation, and sign you up to our newsletter. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions. Geographical rules apply. Welcome to Space+ ! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Start reading to unlock your first badge Keep earning badges Explore ways to get more involved as a member. Space Exploration Latest space missions, discoveries and exploration updates. Explore Astronomy Stargazing tips, cosmic events and expert insights on the universe Explore --- Your membership perks Start exploring exclusive deals, expert advice and more Explore now Never Miss a Discovery Space news, cosmic updates and expert insights straight to your inbox. Choose your newsletters --- Sign Out Get the Space.com Newsletter Breaking space news, the latest updates on rocket launches, skywatching events and more! --- By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. You are now subscribed Your newsletter sign-up was successful --- Want to add more newsletters? --- Join the club Get full access to premium articles, exclusive features and a growing list of member rewards. --- An account already exists for this email address, please log in. 1. Space Exp\n\nSOURCE kids.nationalgeographic.com (https://kids.nationalgeographic.com/animals/invertebrates/facts/tardigrade):\n![National Geographic Kids Logo - Home](/) Personality Quizzes Funny Fill-In Videos Amazing Animals Weird But True! Party Animals Try This! Animals Mammals Birds Prehistoric Reptiles Amphibians Invertebrates Fish Magazine history Science Space U.S. States Weird But True! Subscribe Around 1,300 species of tardigrades are found worldwide. Around 1,300 species of tardigrades are found worldwide. Photograph by Eye of Science / Science Source # Tardigrade You can boil them, bake them, deep-freeze them, crush them, dehydrate them, or even blast them into space. It doesn’t matter—tardigrades can survive practically anything. These eight-legged aquatic animals may be small, but they’re nearly indestructible. ByKay Boatner Common Name: : Tardigrades Scientific Name: : Tardigrada Diet: : Omnivore Size: : 0.5 millimeter ## **Tiny, but tough** In fact, these invertebrates are so tiny, you need a microscope to be able to see them. But despite being smaller than a poppy seed, tardigrades look pretty fierce when you view them up close: They have claws like bears and daggerlike teeth that tear into and suck the juices out of moss and algae. They’ve even been nicknamed “water bears” for their resemblance to the furry predators. Tardigrades can be found almost anywhere on Earth, from the top of the Himalaya mountain range to the bottom of the sea, from icy Antarctica to bubbling hot springs. The teeny-tiny creatures can survive extreme temperatures, ranging from minus 328°F up to 304°F. Tardigrades need only a drop of water to thrive. ## **No water? No problem.** Without access to water, a tardigrade will curl up into a dry ball called a tun. Their body systems slow down so much that they’re almost—but not quite—dead. The tiny animals can survive like this for decades. Scientists call this extreme type of hibernation “cryptobiosis.” When they’re re-exposed to water, tardigrades can come back to life in just a few hours. Once, when dried moss that had been in a museum for a hundred years was moistened, tardigrades inside the moss came crawling out, totally fine. Tardigrades spend most of their time snacking on plants and bacteria. They have to be careful, though. Although tardigra\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC5705745):\n# Tardigrades in Space Research - Past and Future Erdmann Weronika, Kaczmarek Łukasz Origins of Life and Evolution of the Biosphere · 2016-10-20 · 47(4):545-553 · DOI: 10.1007/s11084-016-9522-1 · PMID: 27766455 · PMCID: PMC5705745 ## Abstract To survive exposure to space conditions, organisms should have certain characteristics including a high tolerance for freezing, radiation and desiccation. The organisms with the best chance for survival under such conditions are extremophiles, like some species of Bacteria and Archea, Rotifera, several species of Nematoda, some of the arthropods and Tardigrada (water bears). There is no denying that tardigrades are one of the toughest animals on our planet and are the most unique in the extremophiles group. Tardigrada are very small animals (50 to 2,100 μm in length), and they inhabit great number of Earth environments. Ever since it was proven that tardigrades have high resistance to the different kinds of stress factors associated with cosmic journeys, combined with their relatively complex structure and their relative ease of observation, they have become a perfect model organism for space research. This taxon is now the focus of astrobiologists from around the world. Therefore, this paper presents a short review of the space research performed on tardigrades as well as some considerations for further studies. ## Keywords Extreme conditions, Extremophiles, Space research, Space biology, Tardigrada, Water bears ## What are Tardigrades? Water bears (Tardigrada), discovered in 1773, are a phylum of small invertebrates belonging to the supertype Articulata. They can be found all over the Earth and can inhabit very diverse environments (from the deepest oceans to mountain tops). Water bears are small, cylindrical invertebrates, up to 2.1 mm in length, and are divided into five segments. The first segment contains the head and the next four each have one pair of unsegmented legs ending (most often) in claws. The tardigrade body is covered with a flexible cuticle, which is smooth or covered with gibbosities, spines or plates. Despite being so small, they have a very complicated internal structure. Water bears have a complete di\n\nSOURCE livescience.com (https://www.livescience.com/57985-tardigrade-facts.html):\nRead Science without the ads What's Pro? Explore Choose your Live Science experience Live Science plus Get started to get free access to selected news stories, receive our daily newsletter, post comments, play games and earn badges. JOIN FREE Live Science pro Unlimited access to our exclusive features, expert analysis and in-depth interviews, all ad-free Unlimited, ad-free reading Exclusive, original reporting Scientist interviews and videos Members-only features See what’s in pro Go beyond the headlines Rigorously fact-checked science, expert commentary and an ad-free experience built for those who want to go beyond the headlines See what's in Pro Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. Scientist interviews and video The latest science direct from the most respected people in their fields. Members-only features Exclusive newsletter. Members-only area. Early access to content. Unlimited, ad-free reading No ads on any Live Science articles. No pop-ups. Full access to everything. 1 of 4 Exclusive content Trusted, in-depth, pro-science features that are available only to Pro members. 2 of 4 Scientist interviews and video The latest science direct from the most respected people in their fields. 3 of 4 Members-only features Exclusive newsletter. Members-only area. Early access to content. 4 of 4 See what's in Pro - Welcome to Live Science club! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Complete any activity to unlock your first badge. Keep earning badges Explore ways to get more involved as a member. Live Science Quizzes Play quick, fun science games Explore Animal facts Learn about the natural world Explore Latest space news Read about discoveries from beyond Earth Explore --- See what you’ve unlocked. Explore your membership benefits. Explore Go beyond the headlines Cancel anytime Start Browsing --- Sign Out - Hi , Keep exploring with your premium access. START BROWSING --- Content * ![Science Spotlight Science Spotlight](http",
+  "extra_sources": [
+   "https://www.nationalgeographic.com/animals/invertebrates/facts/tardigrades-water-bears",
+   "https://www.space.com/tardigrades-on-space-station-extreme-survival",
+   "https://kids.nationalgeographic.com/animals/invertebrates/facts/tardigrade",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC5705745",
+   "https://www.livescience.com/57985-tardigrade-facts.html"
+  ]
+ },
+ "_writer": "opencode"
+}

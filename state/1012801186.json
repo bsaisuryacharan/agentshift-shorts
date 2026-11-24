@@ -1,5 +1,5 @@
 {
- "current": "how-big-is-earths-core-a2",
+ "current": "tardigrades-in-space-top5-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1117,6 +1117,25 @@
     "safe_zone": 10
    },
    "run_id": "45473203761"
+  },
+  "tardigrades-in-space-top5-a1": {
+   "title": "5 Extreme Facts About Tardigrades in Space",
+   "base": "tardigrades-in-space-top5-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 7,
+    "accuracy": 9,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 6,
+    "hierarchy": 7,
+    "consistency": 8,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "45503486389"
   }
  }
 }
