@@ -1,0 +1,238 @@
+{
+ "id": "how-big-is-earths-core-a2",
+ "title": "How Big Is Earth's Core, Really?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "SCALE",
+ "format": "scale",
+ "theme": "mono",
+ "look": "poster-pop",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Wikipedia, Earth's inner core — https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+  "b1": "Wikipedia, Earth's inner core — https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+  "b2": "Wikipedia, Earth's inner core — https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+  "b3": "Wikipedia, Earth's inner core — https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+  "b4": "Wikipedia, Earth's inner core — https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+  "b5": "Live Science, Earth's core is 'leaking' gold — https://www.livescience.com/planet-earth/earths-core-is-leaking-gold-study-finds",
+  "b6": "Wikipedia, Earth's inner core — https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+  "outro": "Live Science — https://www.livescience.com/planet-earth/earths-core-is-leaking-gold-study-finds",
+  "wiki": "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+  "ref1": "https://www.livescience.com/planet-earth/earths-core-is-leaking-gold-study-finds",
+  "ref2": "https://www.britannica.com/place/Earth/The-interior",
+  "ref3": "https://www.sciencedaily.com/releases/2026/11/261123005336.htm",
+  "ref4": "https://www.quantamagazine.org/earths-core-appears-to-be-leaking-up-and-out-of-earths-surface-20250804",
+  "ref5": "https://www.sciencenews.org/article/earth-core-hide-oceans-hydrogen"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "earth cutaway core",
+   "prompt": "Photoreal cinematic 9:16 cross-section illustration of planet Earth sliced open, glowing dense metal sphere at the center, deep blue and dark charcoal grade, documentary science-visual style, natural light, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Under your feet sits a solid metal ball, radius 1,230 kilometers. How big is that?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how big?",
+     "at": "How"
+    },
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 1230,
+      "prefix": "radius",
+      "suffix": "km"
+     },
+     "at": "radius",
+     "dur": 2.5,
+     "accent": "blue"
+    }
+   ],
+   "sfx": [
+    [
+     "boom",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "graphic": true,
+   "say": "That's Earth's inner core: iron and nickel, with some other elements — 20% of Earth's radius.",
+   "hud": [
+    {
+     "t": "ring",
+     "pct": 20,
+     "label": "of Earth radius",
+     "col": "cy",
+     "at": "20%"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "full moon",
+   "prompt": "Photoreal cinematic 9:16 view of the full Moon against a deep black starfield, cool blue-grey grade, crisp documentary telescope look, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "It's also 70% of the Moon's radius. Half a Moon, buried underfoot.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Half a Moon, buried underfoot"
+     },
+     "at": "Moon",
+     "dur": 2.5,
+     "accent": "blue"
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "sun surface",
+   "prompt": "Photoreal cinematic 9:16 close view of the churning granulated surface of the Sun, orange plasma texture, natural documentary solar-observatory look, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Its surface is about 5,700 kelvin — as hot as the Sun's surface.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "5,700 K",
+     "col": "am",
+     "at": "5,700"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "seismograph",
+   "prompt": "Photoreal cinematic 9:16 macro shot of a vintage seismograph needle tracing a line on rotating paper drum, warm practical lamplight, documentary laboratory look, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "We found it in 1936, when Inge Lehmann traced earthquake waves off it.",
+   "hud": [
+    {
+     "t": "line",
+     "values": [
+      1400,
+      1221
+     ],
+     "labels": [
+      "1936",
+      "today"
+     ],
+     "col": "cy",
+     "at": "1936"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "volcano eruption",
+   "prompt": "Photoreal cinematic 9:16 aerial view of an erupting volcano at dusk, glowing lava flow down dark slopes, natural documentary light, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "It leaks: 99.9% of Earth's gold hides in the center of our planet, some reaching volcanoes.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "It leaks gold from the center",
+      "keyword": "leaks",
+      "note": "into the mantle"
+     },
+     "at": "leaks",
+     "dur": 2.5,
+     "accent": "green"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "say": "In 2025, evidence showed this solid ball is partially deformable — slowly changing shape.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "It is",
+      "options": "solid, rigid, deformable"
+     },
+     "at": "2025",
+     "dur": 2.5,
+     "accent": "green"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "graphic": true,
+   "say": "A hidden metal ball, leaking gold beneath your feet. Follow for more scale secrets.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "AGENT SHIFT",
+      "label": "SCALE"
+     },
+     "at": "Follow",
+     "dur": 2.5,
+     "accent": "blue"
+    }
+   ],
+   "prompt": "graphic ground"
+  }
+ ],
+ "style_map": {
+  "class": "myth_fact",
+  "why": "topic fit",
+  "lemo_style": [
+   "Caption News",
+   "Swiss Motion Graphics",
+   "Visual Investigation"
+  ]
+ },
+ "_facts": {
+  "title": "Earth's inner core",
+  "url": "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+  "text": "Earth's inner core is the innermost geologic layer of the planet Earth. It is primarily a solid ball with a radius of about 1,230 km (760 mi), which is about 20% of Earth's radius or 70% of the Moon's radius. As recently as February 2025 there are indications that the previously believed solid iron-nickel sphere is partially deformable and undergoing viscous changes. There are no samples of the core accessible for direct measurement, as there are for Earth's mantle. The characteristics of the core have been deduced mostly from measurements of seismic waves and Earth's magnetic field. The inner core is believed to be composed of an iron–nickel alloy with some other elements. The temperature at its surface is estimated to be approximately 5,700 K (5,430 °C; 9,800 °F), about the temperature at the surface of the Sun. The inner core is solid at high temperature because of its high pressure, in accordance with the Simon-Glatzel equation. == Scientific history ==\nEarth was discovered to have a solid inner core distinct from its molten outer core in 1936, by the Danish seismologist Inge Lehmann's study of seismograms from earthquakes in New Zealand, detected by sensitive seismographs on the Earth's surface. She deduced that the seismic waves reflect off the boundary of the inner core and inferred a radius of 1,400 km (870 mi) for the inner core, not far from the currently accepted value of 1,221 km (759 mi). In 1938, Beno Gutenberg and Charles Richter analyzed a more extensive set of data and estimated the thickness of the outer core as 1,950 km (1,210 mi) with a steep but continuous 300 km (190 mi) thick transition to the inner core, implying a radius between 1,230 and 1,530 km (760 and 950 mi) for the inner core. A few years later, in 1940, it was hypothesized that this inner core was made of solid iron. In 1952, Francis Birch published a detailed analysis of the available data and concluded that the inner core was probably crystalline iron. The boundary between the inner and outer cores is sometimes called the \"Lehmann discontinuity\", although the name usually refers to another discontinuity. The name \"Bullen\" or \"Lehmann-Bullen discontinuity\", after Keith Edward Bullen, has been proposed, but its use seems to be rare. The rigidity of the inner core was confirmed in 1971. Adam Dziewonski and James Freeman Gilbert established that measurements of normal modes of vibration of Earth caused by large earthquakes were consistent with a liquid outer core. In 2005, shear waves were detected passing through the inner core; these claims were initially controversial, but are now gaining acceptance. == Data sources ==\n\n\n=== Seismic waves ===\nAlmost all measurements that scientists have about the physical properties of the inner core are the seismic waves that pass through it. Deep earthquakes generate the most informative waves, 30 km or more below the surface of the Earth (where the mantle is relatively more homogeneous) and are recorded by seismographs as they reach the surface, all over the world. Seismic waves include \"P\" (primary or pressure)  compressional waves that can travel through solid or liquid materials, and \"S\" (secondary or shear) shear waves that can only propagate through rigid elastic solids. The two waves have different velocities and are damped at different rates as they travel through the same material. Of particular interest are the so-called \"PKiKP\" waves—pressure waves (P) that start near the surface, cross the mantle-core boundary, travel through the core (K), are reflected at the inner core boundary (i), cross the liquid core (K) again, cross back into the mantle, and are detected as pressure waves (P) at the surface. Also of interest are the \"PKIKP\" waves, that travel through the inner core (I) instead of being reflected at its surface (i). Those signals are easier to interpret when the path from source to detector is close to a straight line—namely, when the receiver is just above the source for the reflected PKiKP waves, and antipodal to it for the transmitted PKIKP waves. While S waves cannot reach or leave the inner core as such, P waves can be converted into S waves, and vice versa, as they hit the boundary between the inner and outer core at an oblique angle. The \"PKJKP\" waves are similar to the PKIKP waves, but are converted into S waves when they enter the inner core, travel through it as S waves (J), and are converted again into P waves when they exit the inner core. Thanks to this phenomenon, it is known that the inner core can propagate S waves, and therefore must be solid. === Other sources ===\nOther sources of information about the inner core include\n\nthe Earth's magnetic field. While it seems to be generated mostly by fluid and electric currents in the outer core, those currents are strongly affected by the presence of the solid inner core and by the heat that flows out of it. (Although made of iron, the core is not ferromagnetic, due to being above the Curie temperature.)\nthe Earth's mass, its gravitational field, and its angular inertia. These are all affected by the density and dimensions of the inner layers. the natural oscillation frequencies and modes of the whole Earth oscillations, when large earthquakes make the planet \"ring\" like a bell. These oscillations also depend strongly on the inner layers' density, size, and shape. == Physical properties ==\n\n\n=== Seismic wave velocity ===\nThe velocity of the S waves in the core varies smoothly from about 3.7 km/s at the center to about 3.5 km/s at the surface. That is considerably less than the velocity of S waves in the lower crust (about 4.5 km/s) and less than half the velocity in the deep mantle, just above the outer core (about 7.3 km/s). The velocity of the P-waves in the core also varies smoothly through the inner core, from about 11.4 km/s at the center to about 11.1 km/s at the surface. Then the speed drops abruptly at the inner-outer core boundary to about 10.4 km/s. === Size and shape ===\nOn the basis of the seismic data, the inner core is estimated to be about 1221 km in radius (2442 km in diameter), which is about 19% of the radius of the Earth and 70% of the radius of the Moon. Its volume is about 7.6 billion cubic km (7.6 × 1018 m3), which is about 1⁄146 (0.69%) of the volume of the whole Earth.\n\nSOURCE livescience.com (https://www.livescience.com/planet-earth/earths-core-is-leaking-gold-study-finds):\n# Earth's core is 'leaking' gold, study finds Our planet's core is rich in gold that can leak out into the mantle, and in some cases, end up in volcanos on the surface, according to a new study. Researchers have found evidence that Earth's core is leaking gold and other precious metals, according to a new study. The vast majority (99.9%) of Earth's gold and other precious metals are hidden in the center of our planet, with thousands of miles of near-impenetrable rock between us and these natural treasures. However, while humans are unlikely to ever mine Earth's core, new research indicates that some metals have migrated out of the core into enriched rocks that eventually ended up at the surface. While investigating volcanic rocks in Hawaii, a team of scientists identified signs of the precious metal ruthenium — a platinum group metal — that they conclude could only have come from the core-mantle boundary, more than 1,800 miles (2,900 km) below the surface. \"When the first results came in, we realised that we had literally struck gold!\" study first author Nils Messling, a researcher in the geochemistry department at Göttingen University in Germany, said in a statement. \"Our data confirmed that material from the core, including gold and other precious metals, is leaking into the Earth's mantle above.\" The researchers published their findings May 21 in the journal Nature. Earth is made up of three basic layers: a crust, mantle and core. The crust acts like a thin outer shell, the mantle is a less rigid middle layer of rocks that makes up most of the planet, and the core is the sphere in the middle. At the core, there's a sea of molten metals about 1,400 miles (2,300 km) thick – called the outer core — swirling around a mostly solid iron ball that's about 1,520 miles (2,440 km) wide — called the inner core. Get the world’s most fascinating discoveries delivered straight to your inbox. Previous research has found that the make-up of Earth's Ru changed during the later stages of the planet's formation as it accumulated more material, so the Ru locked away in the core is slightly different from the Ru typically found in the mantle and crust. For the new study, the rese\n\nSOURCE britannica.com (https://www.britannica.com/place/Earth/The-interior):\n**Preferred Source**tells Google you trust our content, so our articles show up more often in your Google Search, Discover feed, and AI Overviews. *verified*Cite # The interior of Earth # Earth More than 90 percent of Earth’s mass is composed of iron, oxygen, silicon, and magnesium, elements that can form the crystalline minerals known as silicates. Nevertheless, in chemical and mineralogical composition, as in physical properties, Earth is far from homogeneous. Apart from the superficial lateral differences near the surface (i.e., in the compositions of the continental and oceanic crusts), Earth’s principal differences vary with distance toward the centre. This is due to increasing temperatures and pressures and to the original segregation of materials, soon after Earth accreted from the solar nebula about 4.56 billion years ago, into a metal-rich core, a silicate-rich mantle, and the more highly refined crustal rocks. Earth is geochemically differentiated to a great extent (*see below* Planetary differentiation). Crustal rocks contain several times as much of the rock-forming element aluminum as does the rest of the solid Earth and many dozens of times as much uranium. On the other hand, the crust, which accounts for a mere 0.4 percent of Earth’s mass, contains less than 0.1 percent of its iron. Between 85 and 90 percent of Earth’s iron is concentrated in the core. ## News • The increasing pressure with depth causes phase changes in crustal rocks at depths between 5 and 50 km (3 and 30 miles), which marks the top of the upper mantle, as mentioned above. This transition area is called the Mohorovic̆ić discontinuity, or Moho. Most basaltic magmas are generated in the upper mantle at depths of hundreds of kilometres. The upper mantle, which is rich in the olivine, pyroxene, and silicate perovskite minerals, shows significant lateral differences in composition. A large fraction of Earth’s interior, from a depth of about 650 km (400 miles) down to 2,900 km (1,800 miles), consists of the lower mantle, which is composed chiefly of magnesium- and iron-bearing silicates, including the high-pressure equivalents of olivine and pyroxene. The mantle is not static but rathe\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2026/11/261123005336.htm):\n# Earth's core may be leaking a 4. 5-billion-year-old secret Date: November 23, 2026 Source: Columbia Climate School Summary: Scientists have discovered an unusual carbon signature in Hawaiian volcanic rocks that suggests some of Earth's carbon originated in ancient meteorites and later escaped from deep within the planet's core. The discovery raises an astonishing possibility: Carbon essential to life may have traveled from space to Earth's depths before emerging through volcanoes billions of years later. Share: Carbon is essential to every living thing on Earth, from microscopic organisms to humans. Yet scientists are still working to answer a fundamental question about our planet's history: Where did all this carbon originally come from? A new study of volcanic rocks from Hawaii offers a surprising possible answer. Researchers have uncovered chemical evidence suggesting that much of Earth's carbon may have arrived aboard ancient meteorites during a particular stage of the planet's formation. Even more remarkably, the findings suggest that some of this carbon became trapped deep inside Earth's core before eventually making its way back to the surface. The discovery centers on unusual carbon dioxide signatures preserved in volcanic rocks. Researchers believe these chemical fingerprints may reveal carbon that originated in Earth's core and traveled upward through the planet's interior. \"We think that we found evidence of carbon from Earth's core leaking into the core-mantle boundaries and traveling all the way to the surface,\" says lead author Yves Moussallam, an associate professor in Columbia University's Department of Earth and Environmental Sciences at Lamont-Doherty Earth Observatory. The findings were published in the *Proceedings of the National Academy of Sciences*. **How Carbon Could Escape From Earth's Core** To understand how carbon might travel from Earth's deepest interior to its surface, it helps to look at the planet's internal structure. Beneath Earth's thin outer crust lies the mantle, a vast region of mostly solid rock extending approximately 1,800 miles downward. Below that is the outer core, a roughly 1,400-mile-thick layer of molten metal su\n\nSOURCE quantamagazine.org (https://www.quantamagazine.org/earths-core-appears-to-be-leaking-up-and-out-of-earths-surface-20250804):\nAbout Quanta *Get the latest news delivered to your inbox.* Follow Quanta *An editorially independent publication supported by the Simons Foundation.* Type search term(s) and press enter Home Earth’s Core Appears To Be Leaking Up and Out of Earth’s Surface Read Later ###### Share Copied! * Comments * Read Later earth science # Earth’s Core Appears To Be Leaking Up and Out of Earth’s Surface *By* Robin George Andrews *August 4, 2025* Strong new evidence suggests that primordial material from the planet’s center is somehow making its way out. Continent-size entities anchored to the core-mantle boundary might be involved. Read Later Volcanic activity in Hawai‘i shows clear-cut signatures of material from Earth’s core. Deposit Photos/Alamy ## Introduction All the activity on Earth’s surface — erupting volcanoes, shifting tectonic plates, restless seas and myriad forms of life — depends on the two-part engine under the hood. Directly beneath Earth’s crust lies the mantle: rock that melts, churns and flows like putty, driving the volcanic and tectonic activity at the surface. And below that, there’s the outer core, a liquid-metal ocean whose swirling streams surround the planet with a protective magnetic field. A longtime assumption of geoscientists is that the boundary between the mantle and the outer core is clear and severe. After all, lighter mantle rock should essentially float atop the denser metallic core. But a recently published pair of studies tells a surprising story, one that was already suspected: Earth’s core is leaking material. This stuff is making its way right up to the surface, potentially ferried through two monster-size blobs sitting at the core-mantle boundary. This “is kind of crazy,” said Harriet Lau, a geodynamicist at Brown University who was not involved with either study. If material is effusing from the core into the mantle, is the boundary between them “as distinct as we think?” The research concludes that this abyssal wall has doorways. “It’s a really exciting suggestion,” said Forrest Horton, a petrologist at the Woods Hole Oceanographic Institution who was not involved with either study. ## **The Heart of the Matter** The internal arch\n\nSOURCE sciencenews.org (https://www.sciencenews.org/article/earth-core-hide-oceans-hydrogen):\nSkip to content **Subscribe today** Every print subscription comes with full digital access Subscribe Now Home INDEPENDENT JOURNALISM SINCE 1921 News Earth # Earth’s core may hide dozens of oceans of hydrogen Experiments suggest that Earth’s core is up to 0.36 percent hydrogen by weight Earth’s core may contain vast reserves of the element hydrogen, which can form water if it leaks into the oxygen-rich mantle. fpm/E+/Getty Images Plus By Nikk Ogasa ## Share this: * Share * Share via email (Opens in new window) Email * Share on Facebook (Opens in new window) Facebook * Share on Reddit (Opens in new window) Reddit * Share on X (Opens in new window) X * Print (Opens in new window) Print This is a human-written story voiced by AI. Got feedback? Take our survey . (See our AI policy here .) The oceans are the largest entity on Earth’s surface. All that blue, however, may be dwarfed by an immense reservoir of hydrogen concealed in the planet’s heart. Experiments indicate that enough hydrogen to form dozens of oceans of water may have been entombed in Earth’s core during its formation, researchers report February 10 in *Nature Communications*. Those chthonic reserves may influence processes on the planet’s surface. Hydrogen does not exist as liquid water in the core, but it becomes water as it escapes upward into the mantle and reacts with oxygen, says geodynamicist Motohiko Murakami of ETH Zurich. “Oxygen is one of the most abundant mineral elements in the mantle.” Earlier estimates of the core’s hydrogen reserves varied enormously and were based on indirect measurements of the element’s abundance in iron, taken by adding hydrogen to iron and measuring the resulting volume change. For the new study, Murakami and colleagues went for a more direct approach. The team started with artificial pieces of the core — iron shards enveloped in a hydrogen-bearing glass. The researchers then squeezed the shards between two diamonds in a powerful mechanical press and beamed a laser through the diamonds to heat the samples up to 4,826° Celsius (8,720° Fahrenheit). At those conditions, the samples melted into iron blobs laced with silicon, hydrogen and oxygen. The early core coalesced",
+  "extra_sources": [
+   "https://www.livescience.com/planet-earth/earths-core-is-leaking-gold-study-finds",
+   "https://www.britannica.com/place/Earth/The-interior",
+   "https://www.sciencedaily.com/releases/2026/11/261123005336.htm",
+   "https://www.quantamagazine.org/earths-core-appears-to-be-leaking-up-and-out-of-earths-surface-20250804",
+   "https://www.sciencenews.org/article/earth-core-hide-oceans-hydrogen"
+  ]
+ },
+ "_writer": "opencode"
+}

@@ -1,5 +1,5 @@
 {
- "current": "iron-age-king-woman-a3",
+ "current": "how-big-is-earths-core-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1098,6 +1098,25 @@
     "safe_zone": 10
    },
    "run_id": "45395293270"
+  },
+  "how-big-is-earths-core-a2": {
+   "title": "How Big Is Earth's Core, Really?",
+   "base": "how-big-is-earths-core-a2",
+   "status": "draft",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 4,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 3,
+    "hierarchy": 5,
+    "consistency": 6,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "45473203761"
   }
  }
 }
