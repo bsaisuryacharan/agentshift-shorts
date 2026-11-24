@@ -1,5 +1,5 @@
 {
- "current": "radcliffe-wave-hidden-shock-a2",
+ "current": "iron-age-king-woman-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1079,6 +1079,25 @@
     "safe_zone": 10
    },
    "run_id": "45295730476"
+  },
+  "iron-age-king-woman-a3": {
+   "title": "The Iron Age King Who Was a Woman",
+   "base": "iron-age-king-woman-a3",
+   "status": "draft",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 5,
+    "accuracy": 9,
+    "originality": 8,
+    "policy": 10,
+    "visual_variety": 8,
+    "polish": 4,
+    "hierarchy": 6,
+    "consistency": 7,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "45395293270"
   }
  }
 }

@@ -1,0 +1,239 @@
+{
+ "id": "iron-age-king-woman-a3",
+ "title": "The Iron Age King Who Was a Woman",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+28%",
+ "brand": "AGENT SHIFT",
+ "series_label": "MYTH VS FACT",
+ "format": "myth_vs_fact",
+ "theme": "warm",
+ "look": "editorial-paper",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b3": "ScienceDaily, Bournemouth University, 2026 — https://www.sciencedaily.com/releases/2026/11/261122060338.htm",
+  "b5": "Cassius Dio, Roman History, via ScienceDaily — https://www.sciencedaily.com/releases/2026/11/261122060338.htm",
+  "b6": "ScienceDaily — https://www.sciencedaily.com/releases/2026/11/261122060338.htm",
+  "wiki": "https://en.wikipedia.org/wiki/Iron_Age",
+  "ref1": "https://www.sciencedaily.com/releases/2026/11/261122060338.htm",
+  "ref2": "https://www.bbc.com/news/articles/c4g2284zx4jo",
+  "ref3": "https://www.britannica.com/event/Iron-Age",
+  "ref4": "https://www.history.com/articles/iron-age",
+  "ref5": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7123324"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Verica coin",
+   "prompt": "Photorealistic macro shot of an ancient Iron Age silver coin with a worn classical profile and faint patterns, lying on dark aged parchment, warm museum lighting, shallow depth of field, documentary archaeology look, 9:16 vertical, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Every Iron Age king was a man? Wrong. Archaeologists just proved one powerful king was a woman.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "true?",
+     "at": "king"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "A KING *WAS* A WOMAN",
+      "split": "word"
+     },
+     "accent": "blue",
+     "at": "woman",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "wrong",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Verica coin",
+   "prompt": "Photorealistic top-down flat lay of several ancient corroded Iron Age coins arranged on weathered oak, soft window light, archaeological cataloging scene, warm documentary grade, 9:16 vertical, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Verica ruled the Atrebates, a tribe across Hampshire and West Sussex. His coins circulated widely.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "TRIBE ATREBATES",
+     "col": "am",
+     "at": "Atrebates"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "say": "So why did everyone believe Verica was male? Historians in the 19th century simply assumed it.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "Historians called Verica a",
+      "options": "king, chief, warlord, woman"
+     },
+     "accent": "blue",
+     "at": "male",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "img": "s2.jpg",
+   "photo": "Verica coin",
+   "prompt": "Photorealistic close-up of gloved hands not visible, an ancient coin under an archaeologist's desk lamp beside brushes and sieved soil on a lab bench, warm practical light, documentary dig look, 9:16 vertical, no people, no faces",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "In 2026, Bournemouth University researchers re-examined the evidence. The conclusion: Verica was a woman.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 2026,
+      "prefix": "RESEARCH"
+     },
+     "accent": "blue",
+     "at": "2026",
+     "dur": 2.5
+    },
+    {
+     "t": "stamp",
+     "text": "RECLASSIFIED",
+     "col": "am",
+     "at": "woman"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s3.jpg",
+   "photo": "Roman forum ruins",
+   "prompt": "Photorealistic wide shot of weathered Roman stone columns and ruined walls at golden hour, empty plaza of ancient paving stones, warm documentary grade, 9:16 vertical, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Around AD 40 she was driven from power and fled to Rome, appealing straight to Emperor Claudius.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "AD 40 EXILE",
+     "col": "am",
+     "at": "40"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s4.jpg",
+   "photo": "Roman Britain mosaic",
+   "prompt": "Photorealistic overhead shot of an intricate ancient Roman mosaic floor in faded reds and creams, partially excavated with soil at the edges, natural daylight, documentary archaeology grade, 9:16 vertical, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The historian Cassius Dio claimed her plea is why Claudius invaded Britain in AD 43. One exile changed everything.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "Exile plea",
+       "Invasion"
+      ]
+     ],
+     "at": "invaded"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "graphic": true,
+   "say": "So the fact: a female Iron Age ruler may have set Rome's invasion in motion. No mere footnote.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "She was no mere footnote",
+      "keyword": "footnote",
+      "note": "history changed by her plea"
+     },
+     "accent": "blue",
+     "at": "footnote",
+     "dur": 2.5
+    },
+    {
+     "t": "kinetic",
+     "text": "MYTH *BUSTED*",
+     "at": "fact"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "outro",
+   "img": "s5.jpg",
+   "photo": "Verica coin",
+   "prompt": "Photorealistic macro of the same ancient worn silver coin resting in a bed of dark excavated soil, single warm lamp beam from above, museum documentary grade, 9:16 vertical, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "History hid her for centuries. Follow for more myths that just fell apart.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "MYTH <b>BUSTED</b>",
+     "at": "myths"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "history_event",
+  "why": "topic fit",
+  "lemo_style": [
+   "1920s Newsreel",
+   "Archive Light Table",
+   "Transit Map"
+  ]
+ },
+ "_facts": {
+  "title": "Iron Age",
+  "url": "https://en.wikipedia.org/wiki/Iron_Age",
+  "text": "The Iron Age is the final epoch of the three-age system of technology after the Copper Age and Bronze Age. It has also been considered as the final age of the three-age division starting with prehistory (before recorded history) and progressing to protohistory (before written history). In this usage, it is preceded by the Stone Age (subdivided into the Paleolithic, Mesolithic and Neolithic) and Bronze Age. These concepts originated for describing Iron Age Europe and the ancient Near East. In the archaeology of the Americas, a five-period system is conventionally used instead; indigenous cultures there did not develop an iron economy in the pre-Columbian era, though some did work copper and silver. Indigenous metalworking arrived in Australia with European contact. Although meteoric iron has been used for millennia in many regions, the beginning of the Iron Age is defined locally around the world by archaeological convention when the production of smelted iron (especially steel tools and weapons) replaces their bronze equivalents in common use. However, this notion is being challenged. In Anatolia and the Caucasus, or Southeast Europe, the Iron Age began c. 1300 BC. In the ancient Near East, this transition occurred simultaneously with the Late Bronze Age collapse, during the 12th century BC. The technology soon spread throughout the Mediterranean basin region and to South Asia between the 12th and 11th centuries BC. Its further spread to Central Asia, Eastern Europe, and Central Europe was somewhat delayed, and Northern Europe was not reached until c. the 5th century BC. The Iron Age in India is stated as beginning with the ironworking Painted Grey Ware culture, dating from c. 1200 BC to the reign of Ashoka in the 3rd century BC. The term \"Iron Age\" in the archaeology of South, East, and Southeast Asia is more recent and less common than for western Eurasia. Africa did not have a universal \"Bronze Age\", and many areas transitioned directly from stone to iron. Some archaeologists believe that iron metallurgy was developed in sub-Saharan Africa independently from Eurasia and neighbouring parts of Northeast Africa as early as 2000 BC. The concept of the Iron Age ending with the beginning of the written historiographical record has not generalized well, as written language and steel use have developed at different times in different areas across the archaeological record. For instance, in China, written history started before iron smelting began, so the term is used infrequently for the archaeology of China. In Mesopotamia, written history predates iron smelting  by hundreds of years. For the ancient Near East, the establishment of the Achaemenid Empire c. 550 BC is used traditionally and still usually as an end date; later dates are considered historical according to the record by Herodotus despite considerable written records now being known from well back into the Bronze Age. In Central and Western Europe, the conquests by the Roman Empire during the 1st century BC serve as marking the end of the Iron Age. The Germanic Iron Age of Scandinavia is considered to end c. AD 800, with the beginning of the Viking Age. == History of the concept ==\n\nThe three-age system of Stone, Bronze, and Iron Ages was first used for the archaeology of Europe during the first half of the 19th century; by the latter half of the 19th century, it had been extended to the archaeology of the ancient Near East. Its name harks back to the mythological \"Ages of Man\" of Hesiod. As an archaeological era, it was first introduced to Scandinavia by Christian Jürgensen Thomsen during the 1830s. By the 1860s, it was embraced as a useful division of the \"earliest history of mankind\" in general and began to be applied in Assyriology. The development of the now-conventional periodization in the archaeology of the ancient Near East was developed during the 1920s and 1930s. == Definition of \"iron\" ==\n\nMeteoric iron, a natural iron–nickel alloy, was used by various ancient peoples thousands of years before the Iron Age. The earliest known meteoric iron artifacts are nine small beads dated to 3200 BC, which were found in burials at Gerzeh in Lower Egypt, and had been shaped by possibly the earliest smithing (i.e., hammering and annealing). The characteristic of an Iron Age culture is the mass production of tools and weapons made not just of found iron, but from smelted steel alloys with an added carbon content. Only with the capability of the production of carbon steel does ferrous metallurgy result in tools or weapons that are harder and lighter than bronze. Smelted iron appears sporadically in the archeological record from the middle Bronze Age. Whilst terrestrial iron is abundant naturally, temperatures above 1,250 °C (2,280 °F) are required to smelt it, which was impractical to achieve with the technology available commonly until the end of the second millennium BC. In contrast, the components of bronze—tin with a melting point of 231.9 °C (449.4 °F) and copper with a relatively moderate melting point of 1,085 °C (1,985 °F)—were within the capabilities of Neolithic kilns, which date back to 6000 BC and were able to produce temperatures greater than 900 °C (1,650 °F). In addition to specially designed furnaces, ancient iron production required the development of complex procedures for the removal of impurities, the regulation of the admixture of carbon, and the invention of hot-working to achieve a useful balance of hardness and strength in steel.\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2026/11/261122060338.htm):\n# Archaeologists reveal a powerful Iron Age king may have been a woman Date: November 23, 2026 Source: Bournemouth University Summary: Archaeologists have uncovered evidence that Verica, the Iron Age ruler whose exile helped trigger Rome’s invasion of Britain in AD 43, was actually a woman. The discovery challenges centuries of historical assumptions and suggests that a largely forgotten female leader may have changed the course of British history. Share: New archaeological research from Bournemouth University (BU) suggests that an influential Iron Age British ruler, long believed to have been a man, was actually a woman. The ruler, known as Verica, played a pivotal role in events leading to the Roman invasion of Britain in AD 43. The findings challenge longstanding assumptions about early British history and the political influence of women during this period. Verica ruled the Atrebates, a powerful tribe whose lands extended across much of what is now Hampshire and West Sussex. Around AD 40, Verica was forced from power and escaped to Rome, where the exiled ruler sought assistance from Emperor Claudius. The Roman historian Cassius Dio claimed that Verica's appeal was the reason Claudius decided to invade Britain. If this account is accurate, Verica's actions may have helped set in motion one of the most consequential events in British history. **Ancient Evidence Challenges an Iron Age King's Identity** Dr. Miles Russell, Director of Archaeological Fieldwork at Bournemouth University, led the research and argues that earlier historians incorrectly identified Verica as male. \"Verica is assumed to have been male because of the patriarchal mindset of 19th-century classical historians. Verica was not only critical to the special relationship between Britain and Rome in the early first century AD but was indisputably female.\" Russell points to several pieces of evidence supporting this interpretation. One is the name Verica itself, which ends in the letter \"a,\" a feature common among female names of the time. Other prominent examples include Cartimandua, who ruled the Brigantes (in Yorkshire), and Boudica, leader of the Iceni (in Norfolk). All three rulers lived duri\n\nSOURCE bbc.com (https://www.bbc.com/news/articles/c4g2284zx4jo):\n# History professor's Iron Age hoard sells for £33k Tom Licence A hoard of 18 Iron Age gold coins discovered in a field by a metal detecting history professor has sold for £33,200 at auction. The coins are the largest known find from the reign of Iron Age king Dubnovellaunos, who ruled the Trinovantes tribe in eastern England between 25BC and AD10. Known as The Bury St Edmunds Hoard after the Suffolk town, the coins went under the hammer at auctioneer Noonans Mayfair. The money raised was shared with the landowner. The finder Prof Tom Licence, from the University of East Anglia, said: \"With the share which the landowner is generously granting me, I will be supporting archaeological work in Suffolk.\" Tom Licence Licence, a professor of medieval history and literature at the Norwich-based university, found the hoard in the autumn of 2024. Among the find were 16 coins known as staters and one quarter-stater. The professor, who was born in Essex, found the field while looking for somewhere to take his niece metal detecting. He first found some Viking hack silver and then struck gold. Tom Licence Towards the end of the day, he took the coins to show the landowner and his wife, returning to the site a few months later and finding one more stater. \"It was an honour to see expert collectors taking these coins into their care,\" the detectorist said. \"So much of the research on ancient coins is done by the collecting community, all around the world. Without their contribution, we would know very little.\" Noonans The Trinovantes tribe were based in what is now mostly Essex and Suffolk. Among the hoard's highlights was a Addedomaros wheel stater, which confirmed the spelling of the name on that early type, which was previously uncertain. It was estimated to fetch up to 3,600, but instead made £4,600. Noonans A Dubnovellaunos stater, with a previously unrecorded die, fetched £3,400, against an estimate of up to £2,000. They were bought by the same anonymous collector from the United States. All the auctioned coins were sold, but Licence and the landowner chose to keep a single stater each. *Follow Suffolk news on BBC Sounds, Facebook, Instagram and X.*\n\nSOURCE britannica.com (https://www.britannica.com/event/Iron-Age):\nAsk the Chatbot Games & Quizzes History & Society Science & Tech Biographies Animals & Nature Geography & Travel Arts & Culture ProCon Money Videos Adding us as a **Preferred Source** tells Google you trust our content, so our articles show up more often in your Google Search, Discover feed, and AI Overviews. Print ![Maiden Castle](https://cdn.britannica.com/65/59065-004-7047B58C/ramparts-Maiden-Castle-Iron-Age-Dorset-England.jpg) Maiden Castle The multiple ramparts at Maiden Castle, an Iron Age hill fort in Dorset, England. # Iron Age historical technological and cultural stage Written and fact-checked by Britannica Editors Encyclopaedia Britannica's editors oversee subject areas in which they have extensive knowledge, whether from years of experience gained by working on that content or via study for an advanced degree.... Britannica Editors Last updated •History Top Questions ### What is the Iron Age? The Iron Age was the final technological and cultural stage in the Stone–Bronze–Iron Age sequence. The date of the full Iron Age, in which this metal, for the most part, replaced bronze in implements and weapons, varied geographically, beginning in the Middle East and southeastern Europe about 1200 BCE but in China not until about 600 BCE. ### When did the Iron Age begin in China? The date of the Iron Age varied geographically. In China, it did not begin before about 600 BCE. ### How did the Iron Age change human life? With the large-scale production of iron implements came new patterns of more permanent settlement. The utilization of iron for weapons put arms in the hands of many more people than previously and set off a series of large-scale movements that did not end for 2,000 years, and that changed the face of Europe and Asia. ## News • Danube gravel workers stumbled upon 500 rusty Iron Age iron bars, probably a sunken boat’s cargo • Oct. 18, 2026, 1:11 PM ET (Earth.com) Human bones found in Iron Age and Viking Age homes are forcing scientists to rethink how violent those societies truly were • Oct. 14, 2026, 1:11 PM ET (Earth.com) Iron Age skulls show babies had ‘flat head syndrome’ thousands of years ago, not just in modern times • Oct. 10, 2026, 1:48 PM \n\nSOURCE history.com (https://www.history.com/articles/iron-age):\nU.S. History All the major chapters in the American story, from Indigenous beginnings to the present day. World History History from countries and communities across the globe, including the world’s major wars. Eras & Ages From prehistory, though antiquity and into the 21st century, all of history’s biggest chapters. Culture & Tradition The stories behind the faiths, food, entertainment and holidays that shape our world. Science & Innovation The pivotal discoveries, visionary inventors and natural phenomena that impacted history. By: HISTORY.com Editors # Iron Age 1 When Was the Iron Age? 2 Greek Dark Ages 3 Persian Empire 4 Iron Age In Europe 5 Iron Age Hill Forts 6 Bog Bodies 7 Sources: The Iron Age was a period in human history that started between 1200 B.C. and 600 B.C., depending on the region, and followed the Stone Age and Bronze Age. During the Iron Age, people across much of Europe, Asia and parts of Africa began making tools and weapons from iron and steel. For some societies, including Ancient Greece, the start of the Iron Age was accompanied by a period of cultural decline. Humans may have smelted iron sporadically throughout the Bronze Age, though they likely saw iron as an inferior metal. Iron tools and weapons weren’t as hard or durable as their bronze counterparts. The use of iron became more widespread after people learned how to make steel, a much harder metal, by heating iron with carbon. The Hittites—who lived during the Bronze Age in what is now Turkey—may have been the first to make steel. ## When Was the Iron Age? The Iron Age began around 1200 B.C. in the Mediterranean region and Near East with the collapse of several prominent Bronze Age civilizations, including the Mycenaean civilization in Greece and the Hittite Empire in Turkey. Ancient cities including Troy and Gaza were destroyed, trade routes were lost and literacy declined throughout the region. The cause for the collapse of these Bronze Age kingdoms remains unclear. Archaeological evidence suggests a succession of severe droughts in the eastern Mediterranean region over a 150-year period from 1250 to 1100 B.C. likely figured prominently in the collapse. Earthquakes, famine, socio\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC7123324):\n# How Disease Affected the End of the Bronze Age Philip Norrie A History of Disease in Ancient Times · 2016-06-26 · 61-101 · DOI: 10.1007/978-3-319-28937-3_5 · PMCID: PMC7123324 ## Abstract Dr. Norrie provides a summary of the fifteen currently accepted causes for the end of the Bronze Age in the Near East and then goes on to discuss the sixteenth reason—infectious disease epidemics. These are the real reason that the end of the Bronze Age in the Near East was called either the “catastrophe” or the “collapse” due to its short time frame of 50 years, the mass migration of the general population and the “Sea Peoples” plus the abandonment of cities such as Hattusa, the capital of the Hittite Empire c.1200 bce. The diseases most likely to cause this collapse are smallpox, bubonic plague and tularemia. ## Keywords Tree Ring, Nile Delta, Yersinia Pestis, Mass Migration, Francisella Tularensis ## The Ancient Near East 1700–1150 bce: A Geopolitical Background The Ancient Near East was the region home to early civilizations that were so important in the development of human society, and is referred to as the “Cradle of Civilization”. The Ancient Near East region covered the modern Middle East including Mesopotamia (modern Iraq), Ancient Egypt, Ancient Iran, Anatolia/Asia Minor (modern Turkey), The Levant (modern Syria, Lebanon, Israel, Palestine and Jordan) and the Arabian Peninsula. For the purposes of this book, the region has been expanded to include the Eastern Mediterranean region adjacent to the Near East which includes Greece, Crete and Cyprus. The Ancient Near East was characterized by being the first to practice intensive year-round agriculture, developing the first writing system, inventing the potter’s wheel and mill wheel, pioneering centralized governments, law codes and empires. The Ancient Near East also introduced organized warfare, slavery and the stratification of societies, as well as laying down the foundations of the fields of astronomy and mathematics. The Ancient Near East and Middle East Periodization Chart (Table 5.1) shows Near Eastern and Middle Eastern history divided into eras. The focus of this book is the period from 1700 bce when the Hitti",
+  "extra_sources": [
+   "https://www.sciencedaily.com/releases/2026/11/261122060338.htm",
+   "https://www.bbc.com/news/articles/c4g2284zx4jo",
+   "https://www.britannica.com/event/Iron-Age",
+   "https://www.history.com/articles/iron-age",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC7123324"
+  ]
+ },
+ "_writer": "opencode"
+}
