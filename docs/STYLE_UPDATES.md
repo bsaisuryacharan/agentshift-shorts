@@ -1,3 +1,38 @@
+## 2026-11-25 — faceless-Short style radar
+
+- **[apply]** Cut clips to 2‑3 s beats and sync each cut to a percussive sound cue
+- **[apply]** Layer a CSS‑based parallax background that pans 5‑10 % while foreground stays static
+- **[apply]** Animate key phrases with kinetic type: slide‑in, scale‑bounce, then fade‑out using ease‑out cubic
+- **[apply]** Use duotone or limited‑palette colour grading on all assets for instant visual cohesion
+- **[apply]** Display stats or facts in pop‑up cards that slide from the side and pulse on entry
+- **[apply]** Add on‑screen captions that appear word‑by‑word timed to narration, using a clean sans‑serif
+- **[apply]** Employ quick “pin‑drop” markers on maps or images that scale‑up and jitter for emphasis
+- **[apply]** Loop a subtle background effect (glow, grain, or light streak) that runs continuously under the main clip
+
+Dial down (overused right now):
+- Full‑screen fade‑to‑black transitions between every segment
+- Static title screens that linger more than 1 s
+- Overly busy stock music that masks narration
+- Excessive zoom‑ins that cause motion sickness
+
+Styles to watch:
+- Map‑Reveal + Pin‑Drop: animated map with zoom‑pan and bouncing markers
+- Dynamic Duotone Kinetic Type: bold duotone visuals paired with bounce‑in text
+- Stat Card Pop‑Up: slide‑in data cards with pulse on key numbers
+- Pattern Loop Overlay: repeating cultural pattern (e.g., rangoli) animated as a subtle background loop
+
+Signals watched (views/hour):
+- [D&D Animated: Where Are We? 😢🤣 #dnd #ttrpg #dnd5e](https://www.youtube.com/watch?v=T24c6-6-sbY) — 13,007,933 views (map animation shorts)
+- [Do Not Steal An Egg (Roblox Animation) #shorts](https://www.youtube.com/watch?v=rPr8jNzV_T0) — 20,821,485 views (map animation shorts)
+- [Every part of this chicken is a real country 🐔](https://www.youtube.com/watch?v=3ZUCGEAptFI) — 7,409,236 views (map animation shorts)
+- [Diwali special rangoli design 😍🪔✨ #shorts #youtubeshorts #diwali #rangoli #festival #youtube #art](https://www.youtube.com/watch?v=YzH7MTzjp_0) — 2,531,454 views (motion graphics youtube shorts)
+- [fruit fly simulator for @coldones #shorts #comedy #gaming #funny #memes #animation](https://www.youtube.com/watch?v=HF6WQ7A5PCM) — 7,433,652 views (map animation shorts)
+- [🤦🏻‍♂️ You’re Using CANVA Wrong… Here’s Why! #canvatricks #canvatutorial](https://www.youtube.com/watch?v=Hz9KIPpM4jA) — 10,337,626 views (motion graphics youtube shorts)
+- [Slideshow | Blender Animation](https://www.youtube.com/watch?v=p3BVgW0XQls) — 3,595,240 views (motion graphics youtube shorts)
+- [नेपाल में ऐसी तबाही क्यों आई? 😱 Glacier टूटते ही आया खतरनाक Flash Flood! #shorts #fyp #ai](https://www.youtube.com/watch?v=ig4Xtg96hUA) — 5,967,178 views (map animation shorts)
+
+---
+
 ## 2026-11-18 — faceless-Short style radar
 
 - **[apply]** Use rapid vertical zoom‑pan over a static 9:16 map image, easing the motion and adding sliding pin icons that appear with a 0.2s slide‑in.
@@ -99,6 +134,7 @@ Signals watched (views/hour):
 - [Russian Civil War! #shorts #history #russia #edit](https://www.youtube.com/watch?v=pYiJspOt6As) — 8,622,322 views (map animation shorts)
 - [Introducing Claude Dashboards and Claude Motion](https://www.youtube.com/watch?v=en0GuyhieQk) — 1,400,691 views (motion graphics youtube shorts)
 - [Ha Mujhe Parwaah Hai | Tony & Peter | #shorts #youtubeshorts #shortvideo](https://www.youtube.com/watch?v=GyhjuFc2S8g) — 4,416,769 views (motion graphics youtube shorts)
+
 
 
 

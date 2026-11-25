@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T13:58:13+00:00",
+ "generated_at": "2026-11-25T13:13:08+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -11,21 +11,21 @@
   "caveat": "all Shorts on the channel, last 30 days"
  },
  "trending": [
-  "The Most Unexpected Animal Encounters Ever",
-  "5 Most China’s Weirdest Farms Will Leave You Speechless!🙄",
+  "When the camera captures the most unexpected animal encounters",
   "The Most Astonishing Animal Encounters Caught On Camera",
   "How submarine works",
   "The Wildest Animal Encounters Caught on Camera",
   "Real Life Monsters Still Walking Earth 💀",
+  "Mot Unexpected Animal Moments Caught On Camera",
   "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
+  "These animal moments are so wild you won't Believe they were real",
   "Bro Just Explained the Future of Computing 🤯",
-  "Gold mein rhenium powder mila kr scam ?",
-  "Why Is It Called the Beaver Moon? 🦫🌕",
-  "Most Terrifying Cave Exploring Disasters in History! 🕳️ (Part 1)",
-  "Earth's next ice age may have already begun. Global warming stopped it"
+  "A space telescope hunting for dark matter just discovered something unexpected",
+  "Physicists trap antimatter in a breakthrough that could explain why the universe exists",
+  "What is a thought made of? Why human consciousness may be beyond AI’s reach"
  ],
  "learned": {
-  "shorts_scored": 31,
+  "shorts_scored": 34,
   "best": [
    {
     "title": "The Sun's Worst Storms, Ranked",
@@ -67,70 +67,70 @@
   ]
  },
  "stage_averages": {
-  "hook": 7.6,
-  "story": 6.4,
-  "visuals": 5.9,
-  "polish": 5.8,
+  "hook": 7.7,
+  "story": 6.6,
+  "visuals": 6.0,
+  "polish": 6.0,
   "policy": 8.8
  },
- "weakest_stage": "polish",
+ "weakest_stage": "visuals",
  "region": "IN",
- "trend_signals_total": 61,
- "trend_signals_on_niche": 37,
+ "trend_signals_total": 62,
+ "trend_signals_on_niche": 32,
  "niche_winners": [
   {
-   "title": "The Most Unexpected Animal Encounters Ever",
-   "views": 16167249,
-   "url": "https://www.youtube.com/watch?v=cxlIQYt868k"
+   "title": "When the camera captures the most unexpected animal encounters",
+   "views": 11522440,
+   "url": "https://www.youtube.com/watch?v=7UekPIdjdvw"
   },
   {
    "title": "The Wildest Animal Encounters Caught on Camera",
-   "views": 5690137,
+   "views": 5970835,
    "url": "https://www.youtube.com/watch?v=77yTZXiBlmo"
   },
   {
    "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
-   "views": 14507039,
+   "views": 14631561,
    "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
   },
   {
+   "title": "TOP 5 Zwierząt, które mają najdziwniejszych wrogów #shorts",
+   "views": 7611714,
+   "url": "https://www.youtube.com/watch?v=0h2uXKVVer0"
+  },
+  {
    "title": "How submarine works #science #fun #shorts #entertainment",
-   "views": 6021007,
+   "views": 6210234,
    "url": "https://www.youtube.com/watch?v=NFsLFx0I264"
   },
   {
-   "title": "Why Pothole Always Coming Back",
-   "views": 1715441,
-   "url": "https://www.youtube.com/watch?v=qeYe2Sw9qi8"
-  },
-  {
-   "title": "Why Is It Called the Beaver Moon? 🦫🌕 #beavermoon #space",
-   "views": 1288366,
-   "url": "https://www.youtube.com/watch?v=tpofTlZxBnU"
-  },
-  {
    "title": "Why Milk is Fighting Your Truck",
-   "views": 5568670,
+   "views": 5914741,
    "url": "https://www.youtube.com/watch?v=fQYmEG460Sc"
   },
   {
    "title": "The Most Astonishing Animal Encounters Caught On Camera",
-   "views": 6241353,
+   "views": 6285690,
    "url": "https://www.youtube.com/watch?v=qT1ePxFsjEE"
+  },
+  {
+   "title": "Why Pothole Always Coming Back",
+   "views": 1826814,
+   "url": "https://www.youtube.com/watch?v=qeYe2Sw9qi8"
   }
  ],
  "news": [
+  "A space telescope hunting for dark matter just discovered something unexpected",
+  "Physicists trap antimatter in a breakthrough that could explain why the universe exists",
+  "What is a thought made of? Why human consciousness may be beyond AI’s reach",
   "2,200-year-old Roman shipwreck reveals an ingenious waterproofing trick",
   "Earth's next ice age may have already begun. Global warming stopped it",
+  "Physicists just sent an unblockable message through a brick wall using gravity",
   "Earth's core may be leaking a 4.5-billion-year-old secret",
-  "This tiny spider named after Stephen Colbert has a genome 50% larger than a human’s",
-  "Two monster black holes from the dawn of time defy explanation",
-  "Earth’s ancient oceans may have fooled scientists about its oxygen history",
-  "Archaeologists reveal a powerful Iron Age king may have been a woman",
-  "Mysterious new viruses reveal a missing link in evolution",
-  "APOD: 2026 November 24 – Galaxies Battle in the NGC 7771 Group",
-  "Eruption Extends Iwo Jima’s Beach",
-  "NASA Awards Contract for NOAA’s Near Earth Orbit Network Program",
-  "NASA Seeks Partners to Design First Nuclear Reactor for the Moon"
+  "APOD: 2026 November 25 – SPHEREx Seeing Through Dust",
+  "Georgia’s Pecan Belt",
+  "NASA+ Content Coming to Big Screen at Greenbelt, Maryland Cinema",
+  "Teams Lock in Mission Architecture for NASA’s SR-1 Freedom",
+  "Amateur Astronomer? Be a Kilonova Catcher!"
  ]
 }

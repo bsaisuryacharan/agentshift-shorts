@@ -1,110 +1,111 @@
 {
- "generated_at": "2026-11-18T11:57:13.636960+00:00",
+ "generated_at": "2026-11-25T13:13:08.948953+00:00",
  "status": "ok",
  "takeaways": [
-  "Use rapid vertical zoom‑pan over a static 9:16 map image, easing the motion and adding sliding pin icons that appear with a 0.2s slide‑in.",
-  "Sync kinetic typography to the audio beat: each word scales from 0.8→1.2 and rotates ±5° on the downbeat, then fades out in 0.6s.",
-  "Introduce stat‑cards as floating rectangles that pop up from the bottom, use CSS transform: translateY(100%) → translateY(0) with a 0.3s ease‑out.",
-  "Layer a high‑contrast color accent (e.g., neon orange) on key elements; animate the accent with a pulsing CSS animation (0.8s infinite).",
-  "Split‑screen two‑clip comparison: left clip plays at 0.8× speed, right clip at 1.2×, both masked by a thin CSS border that slides in from the center.",
-  "Apply a quick 0.4s “flash cut” (background color flash) before each major scene change to boost visual rhythm.",
-  "Loop seamless pattern reveals (e.g., rangoli) by animating a CSS mask‑gradient that sweeps across the image in 2‑second cycles."
+  "Cut clips to 2‑3 s beats and sync each cut to a percussive sound cue",
+  "Layer a CSS‑based parallax background that pans 5‑10 % while foreground stays static",
+  "Animate key phrases with kinetic type: slide‑in, scale‑bounce, then fade‑out using ease‑out cubic",
+  "Use duotone or limited‑palette colour grading on all assets for instant visual cohesion",
+  "Display stats or facts in pop‑up cards that slide from the side and pulse on entry",
+  "Add on‑screen captions that appear word‑by‑word timed to narration, using a clean sans‑serif",
+  "Employ quick “pin‑drop” markers on maps or images that scale‑up and jitter for emphasis",
+  "Loop a subtle background effect (glow, grain, or light streak) that runs continuously under the main clip"
  ],
  "avoid": [
-  "Long fades longer than 0.8 s that stall the pacing.",
-  "Static text blocks that never move or change size.",
-  "Over‑used stock footage with generic bokeh overlays.",
-  "Heavy filter stacks that mute the original colors."
+  "Full‑screen fade‑to‑black transitions between every segment",
+  "Static title screens that linger more than 1 s",
+  "Overly busy stock music that masks narration",
+  "Excessive zoom‑ins that cause motion sickness"
  ],
  "styles_to_watch": [
-  "Map Flythrough – smooth zoom‑pan across static maps with pin‑pop overlays.",
-  "Kinetic Type Pulse – beat‑synced scaling/rotating text bursts.",
-  "Stat Card Pop – animated info cards that slide up from the bottom with icon accents.",
-  "Rangoli Loop – seamless pattern‑reveal loops using CSS mask gradients."
+  "Map‑Reveal + Pin‑Drop: animated map with zoom‑pan and bouncing markers",
+  "Dynamic Duotone Kinetic Type: bold duotone visuals paired with bounce‑in text",
+  "Stat Card Pop‑Up: slide‑in data cards with pulse on key numbers",
+  "Pattern Loop Overlay: repeating cultural pattern (e.g., rangoli) animated as a subtle background loop"
  ],
  "signals": [
   {
    "title": "D&D Animated: Where Are We? 😢🤣 #dnd #ttrpg #dnd5e",
    "url": "https://www.youtube.com/watch?v=T24c6-6-sbY",
-   "views": 12528280,
-   "views_hour": 14582,
-   "query": "map animation shorts"
-  },
-  {
-   "title": "Verity vs. Meccha Chameleon (Minecraft Stickman Animation Challenge) #shorts",
-   "url": "https://www.youtube.com/watch?v=4W_MROLd1pw",
-   "views": 24241172,
-   "views_hour": 13657,
+   "views": 13007933,
+   "views_hour": 12648,
    "query": "map animation shorts"
   },
   {
    "title": "Do Not Steal An Egg (Roblox Animation) #shorts",
    "url": "https://www.youtube.com/watch?v=rPr8jNzV_T0",
-   "views": 20793554,
-   "views_hour": 12632,
+   "views": 20821485,
+   "views_hour": 11470,
+   "query": "map animation shorts"
+  },
+  {
+   "title": "Every part of this chicken is a real country 🐔",
+   "url": "https://www.youtube.com/watch?v=3ZUCGEAptFI",
+   "views": 7409236,
+   "views_hour": 6832,
    "query": "map animation shorts"
   },
   {
    "title": "Diwali special rangoli design 😍🪔✨ #shorts #youtubeshorts #diwali #rangoli #festival #youtube #art",
    "url": "https://www.youtube.com/watch?v=YzH7MTzjp_0",
-   "views": 2496338,
-   "views_hour": 10034,
+   "views": 2531454,
+   "views_hour": 6055,
    "query": "motion graphics youtube shorts"
   },
   {
-   "title": "Every part of this chicken is a real country 🐔",
-   "url": "https://www.youtube.com/watch?v=3ZUCGEAptFI",
-   "views": 6738905,
-   "views_hour": 7364,
+   "title": "fruit fly simulator for @coldones #shorts #comedy #gaming #funny #memes #animation",
+   "url": "https://www.youtube.com/watch?v=HF6WQ7A5PCM",
+   "views": 7433652,
+   "views_hour": 4629,
    "query": "map animation shorts"
-  },
-  {
-   "title": "Russian Civil War! #shorts #history #russia #edit",
-   "url": "https://www.youtube.com/watch?v=pYiJspOt6As",
-   "views": 10879765,
-   "views_hour": 5511,
-   "query": "map animation shorts"
-  },
-  {
-   "title": "Slideshow | Blender Animation",
-   "url": "https://www.youtube.com/watch?v=p3BVgW0XQls",
-   "views": 3371599,
-   "views_hour": 4544,
-   "query": "motion graphics youtube shorts"
   },
   {
    "title": "🤦🏻‍♂️ You’re Using CANVA Wrong… Here’s Why! #canvatricks #canvatutorial",
    "url": "https://www.youtube.com/watch?v=Hz9KIPpM4jA",
-   "views": 9836429,
-   "views_hour": 4408,
+   "views": 10337626,
+   "views_hour": 4306,
    "query": "motion graphics youtube shorts"
   },
   {
-   "title": "وش تختار ؟ 🤔 #whiteboardanimation #شورتس",
-   "url": "https://www.youtube.com/watch?v=BpWSUULS3BU",
-   "views": 147617,
-   "views_hour": 4323,
-   "query": "whiteboard animation shorts"
+   "title": "Slideshow | Blender Animation",
+   "url": "https://www.youtube.com/watch?v=p3BVgW0XQls",
+   "views": 3595240,
+   "views_hour": 3945,
+   "query": "motion graphics youtube shorts"
+  },
+  {
+   "title": "नेपाल में ऐसी तबाही क्यों आई? 😱 Glacier टूटते ही आया खतरनाक Flash Flood! #shorts #fyp #ai",
+   "url": "https://www.youtube.com/watch?v=ig4Xtg96hUA",
+   "views": 5967178,
+   "views_hour": 2824,
+   "query": "map animation shorts"
   },
   {
    "title": "Ha Mujhe Parwaah Hai | Tony & Peter | #shorts #youtubeshorts #shortvideo",
    "url": "https://www.youtube.com/watch?v=GyhjuFc2S8g",
-   "views": 4436948,
-   "views_hour": 1828,
+   "views": 4440173,
+   "views_hour": 1710,
    "query": "motion graphics youtube shorts"
   },
   {
    "title": "How to Create Ghibli Style AI Videos | AI Video Kaise Banaye | AI Se Cartoon Video Kaise Banaye",
    "url": "https://www.youtube.com/watch?v=g3VnWOVFaaM",
-   "views": 1697695,
-   "views_hour": 1025,
+   "views": 1921551,
+   "views_hour": 1052,
    "query": "faceless youtube shorts editing style"
+  },
+  {
+   "title": "وش تختار ؟ 🤔 #whiteboardanimation #شورتس",
+   "url": "https://www.youtube.com/watch?v=BpWSUULS3BU",
+   "views": 198455,
+   "views_hour": 975,
+   "query": "whiteboard animation shorts"
   },
   {
    "title": "Pixel PinkiePie animation🩷✨ #pinkiepie #mlp #mylittlepony #shorts #youtubeshorts #alightmotion #art",
    "url": "https://www.youtube.com/watch?v=NxAAQlVbBQs",
-   "views": 1516677,
-   "views_hour": 938,
+   "views": 1543727,
+   "views_hour": 864,
    "query": "motion graphics youtube shorts"
   }
  ]
