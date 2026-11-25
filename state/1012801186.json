@@ -1,5 +1,5 @@
 {
- "current": "earth-skipped-ice-age-timeline-a3",
+ "current": "early-oceans-oxygen-myth-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1155,6 +1155,25 @@
     "safe_zone": 10
    },
    "run_id": "45545817281"
+  },
+  "early-oceans-oxygen-myth-a2": {
+   "title": "Earth's Early Oceans Didn't Breathe Like We Thought",
+   "base": "early-oceans-oxygen-myth-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 6,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 7,
+    "hierarchy": 8,
+    "consistency": 9,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "45615527299"
   }
  }
 }
