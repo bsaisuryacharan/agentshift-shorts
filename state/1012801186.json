@@ -1,5 +1,5 @@
 {
- "current": "tardigrades-in-space-top5-a1",
+ "current": "earth-skipped-ice-age-timeline-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1136,6 +1136,25 @@
     "safe_zone": 10
    },
    "run_id": "45503486389"
+  },
+  "earth-skipped-ice-age-timeline-a3": {
+   "title": "How Earth Skipped Its Next Ice Age",
+   "base": "earth-skipped-ice-age-timeline-a3",
+   "status": "approved",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 8,
+    "accuracy": 9,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 8,
+    "hierarchy": 8,
+    "consistency": 9,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "45545817281"
   }
  }
 }

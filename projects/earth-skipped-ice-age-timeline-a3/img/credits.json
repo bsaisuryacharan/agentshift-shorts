@@ -1,0 +1,26 @@
+{
+ "s1.jpg": {
+  "file": "Early Melt on the Greenland Ice Sheet",
+  "license": "NASA media (public domain)",
+  "artist": "GSFC",
+  "url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000112"
+ },
+ "s2.jpg": {
+  "file": "File:GISP2 1855m ice core layers.png",
+  "license": "Public domain",
+  "artist": "",
+  "url": "https://commons.wikimedia.org/wiki/File:GISP2_1855m_ice_core_layers.png"
+ },
+ "s3.jpg": {
+  "file": "File:North America from low orbiting satellite Suomi NPP.jpg",
+  "license": "Public domain",
+  "artist": "NASA/NOAA/GSFC/Suomi NPP/VIIRS/Norman Kuring",
+  "url": "https://commons.wikimedia.org/wiki/File:North_America_from_low_orbiting_satellite_Suomi_NPP.jpg"
+ },
+ "s4.jpg": {
+  "file": "Aerial view of melting glacier surface on South Engilchek Glacier, Central Tian ",
+  "license": "CC BY-SA 4.0",
+  "artist": "Maryliflower",
+  "url": "https://commons.wikimedia.org/w/index.php?curid=194889948"
+ }
+}
