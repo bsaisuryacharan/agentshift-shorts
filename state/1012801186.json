@@ -1,5 +1,5 @@
 {
- "current": "early-oceans-oxygen-myth-a2",
+ "current": "commodore-barry-bridge-scale-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1174,6 +1174,25 @@
     "safe_zone": 10
    },
    "run_id": "45615527299"
+  },
+  "commodore-barry-bridge-scale-a2": {
+   "title": "How Big Is the Commodore Barry Bridge, Really?",
+   "base": "commodore-barry-bridge-scale-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 7,
+    "visual_quality": 9,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 9,
+    "polish": 7,
+    "hierarchy": 9,
+    "consistency": 9,
+    "payoff": 7,
+    "safe_zone": 10
+   },
+   "run_id": "45821373490"
   }
  }
 }

@@ -1,0 +1,237 @@
+{
+ "id": "commodore-barry-bridge-scale-a2",
+ "title": "How Big Is the Commodore Barry Bridge, Really?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "SCALE",
+ "format": "scale",
+ "theme": "mono",
+ "look": "poster-pop",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "https://en.wikipedia.org/wiki/Commodore_Barry_Bridge",
+  "b1": "https://en.wikipedia.org/wiki/Commodore_Barry_Bridge",
+  "b2": "https://en.wikipedia.org/wiki/Commodore_Barry_Bridge",
+  "b3": "https://en.wikipedia.org/wiki/Commodore_Barry_Bridge",
+  "b4": "https://en.wikipedia.org/wiki/Commodore_Barry_Bridge",
+  "b5": "https://en.wikipedia.org/wiki/Commodore_Barry_Bridge",
+  "outro": "https://en.wikipedia.org/wiki/Commodore_Barry_Bridge",
+  "wiki": "https://en.wikipedia.org/wiki/Commodore_Barry_Bridge",
+  "ref1": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5621030",
+  "ref2": "https://nauticalcharts.noaa.gov/publications/coast-pilot/files/cp3/CPB3_C06_WEB.pdf",
+  "ref3": "https://www.britannica.com/summary/Delaware-River",
+  "ref4": "https://pub-data.diver.orr.noaa.gov/admin-record/6404/Preassessment%20Data%20Report%20andAttached%20Appendices_June_2006.pdf",
+  "ref5": "https://repository.library.noaa.gov/view/noaa/15071"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Commodore Barry Bridge",
+   "prompt": "photoreal cinematic 9:16 wide shot of a massive cantilever bridge spanning a wide river at dusk, industrial riverfront, cool blue-grey documentary grade, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "The Commodore Barry Bridge is 13,912 feet long. That is hard to feel, so let's scale it.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how big?",
+     "at": "Commodore"
+    },
+    {
+     "t": "title",
+     "html": "13,912 *feet* long",
+     "at": "long"
+    }
+   ],
+   "sfx": [
+    [
+     "impact",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Commodore Barry Bridge Delaware River",
+   "prompt": "photoreal cinematic 9:16 aerial shot looking down the length of a long cantilever bridge over a wide river, approach spans stretching to the horizon, cool documentary grade, no people, no text",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "It spans the Delaware River from Chester, Pennsylvania to Bridgeport, New Jersey.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Chester to Bridgeport, across the Delaware",
+      "accent": "blue"
+     },
+     "at": "Delaware",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "cantilever bridge span",
+   "prompt": "photoreal cinematic 9:16 low-angle shot of a giant cantilever bridge truss reaching over a river, engineering detail, cool blue-grey grade, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "It is a cantilever bridge, and the main span alone reaches 1,644 feet.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "1,644 feet",
+     "col": "cy",
+     "at": "1,644",
+     "count": 1644
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "say": "That makes it the longest cantilever bridge in the United States, and the fourth longest in the world.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 4,
+      "prefix": "No.",
+      "accent": "blue"
+     },
+     "at": "fourth",
+     "dur": 2.5
+    },
+    {
+     "t": "stamp",
+     "text": "LONGEST IN USA",
+     "col": "ok",
+     "at": "That"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s3.jpg",
+   "photo": "bridge zipper barrier traffic",
+   "prompt": "photoreal cinematic 9:16 top-down shot of a five-lane bridge deck with a movable concrete barrier machine, traffic lines, cool documentary grade, no people, no text",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "The deck has 5 lanes split by a zipper barrier, added in 2002, that a machine can move to shift lanes with traffic.",
+   "hud": [
+    {
+     "t": "rows",
+     "items": [
+      [
+       "Lanes",
+       "5",
+       "",
+       "cy"
+      ],
+      [
+       "Zipper added",
+       "2002",
+       "",
+       "am"
+      ]
+     ],
+     "stagger": 0.4,
+     "at": "5"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s4.jpg",
+   "photo": "Commodore Barry Bridge night",
+   "prompt": "photoreal cinematic 9:16 silhouette shot of a cantilever bridge against a dusk sky over a river, industrial shoreline lights, cool blue grade, no people, no text",
+   "focal": [
+    0.5,
+    0.42
+   ],
+   "say": "Construction began in 1969, and it opened in 1974, replacing a ferry that had run since 1930.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "Ferry 1930",
+       "Bridge 1974"
+      ]
+     ],
+     "at": "1974"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s5.jpg",
+   "photo": "Commodore Barry Bridge aerial",
+   "prompt": "photoreal cinematic 9:16 wide aerial shot of a full cantilever bridge crossing a wide river at golden dusk, river traffic below, cool grade, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "13,912 feet, one river, one crossing. Follow for more scale you can finally feel.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "13,912 feet over the Delaware",
+      "keyword": "13,912",
+      "note": "still the US record",
+      "accent": "blue"
+     },
+     "at": "13,912",
+     "dur": 2.5
+    },
+    {
+     "t": "sub",
+     "html": "Follow for <b>more scale</b>",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "myth_fact",
+  "why": "topic fit",
+  "lemo_style": [
+   "Caption News",
+   "Swiss Motion Graphics",
+   "Visual Investigation"
+  ]
+ },
+ "_facts": {
+  "title": "Commodore Barry Bridge",
+  "url": "https://en.wikipedia.org/wiki/Commodore_Barry_Bridge",
+  "text": "The Commodore John Barry Bridge (commonly known as the Commodore Barry Bridge or simply the Commodore Barry) is a cantilever bridge that spans the Delaware River from Chester, Pennsylvania to Bridgeport, New Jersey, in Logan Township. It is named after John Barry, an American Revolutionary War hero and Philadelphia resident. Along with the Betsy Ross Bridge, the Ben Franklin Bridge and the Walt Whitman Bridge, the Commodore Barry Bridge is one of the four toll bridges connecting the metropolitan Philadelphia region with southern New Jersey owned by the Delaware River Port Authority. Originally designed to connect with a now-cancelled freeway, the limited-access bridge has recently been retrofitted to better serve the local area. Between 2007 and 2011, both the Delaware River Port Authority and the Pennsylvania Department of Transportation, in conjunction with the Chester Redevelopment Authority, built a pair of entrance-exit ramps that allowed motorists, primarily heavy truck traffic, to access the Chester Waterfront, via PA 291 and Flower Street (via West 9th Street (US 13)) from I-95. Other improvements, such as deck joint replacement, concrete patching (on the approaches), and other safety and engineering improvements are either ongoing or have been completed. The bridge replaced the Chester–Bridgeport Ferry, a ferry service that from July 1, 1930 to February 1, 1974, was the sole means of crossing the Delaware River from Delaware County, Pennsylvania to Gloucester County, New Jersey. The Chester side of the ferry service experienced the Wade Dump fire and SuperFund cleanup, and has since become the city-owned Barry Bridge Park with the adjacent Subaru Park (home of the Major League Soccer's Philadelphia Union franchise) being opened in 2010. == History ==\nConstruction of the bridge began on April 14, 1969, and it opened to traffic on February 1, 1974. It has a total length of 13,912 feet (4,240 m), and a main span of 1,644 feet (501 m), making the bridge the fourth longest cantilever bridge in the world, and the longest in the United States. The road has a total of five lanes, divided by a zipper barrier, which was added to the bridge in 2002, in which a machine can configure the number of lanes in each direction, depending upon traffic volume or construction. The bridge is designated as part of US 322 and has direct connections with PA 291 (West 2nd Street), US 13 (West 9th Street) and I-95 in Chester and US 130 in Bridgeport, with a connection to I-295 and the New Jersey Turnpike within a 5-mile (8.0 km) radius of the bridge. Originally created to be a connection to one of the then-proposed freeways in New Jersey, the Commodore Barry Bridge was to connect I-95 near Chester to, at one point, the Atlantic City Expressway near Hammonton, but those plans were eventually scrapped when it was realized that many people in the college town of Glassboro would be affected. There are new talks of possibly upgrading US 322 to a freeway from US 130 to I-295's current Exit 11, or even as far as the New Jersey Turnpike's Exit 2. There is no mention if this new freeway would be included in the Interstate Highway System, though it hasn't been ruled out yet, either. On February 2, 1978, an intense fire broke out at Wade Dump, a rubber recycling facility and illegal industrial chemical dumping site almost directly under the bridge. The heat, rising flames and noxious fumes shut down the bridge temporarily. The burning chemicals injured 43 firemen and caused long-term health problems for the first responders to the fire. In 1981, the location was declared a Superfund cleanup site and remediation occurred throughout the 1980s. In 1989, the site was deemed safe and removed from the Superfund national priorities list. In 2004 the site was converted to a parking lot for the nearby Barry Bridge Park. == Tolls ==\n\nA $6.00 one-way toll is charged entering Pennsylvania for passenger vehicles less than or equal to 7,000 lb (3,200 kg) gross vehicle weight and SUVs. A $18 credit will be given on a per tag basis for any New Jersey-issued E-ZPass tag that crosses one of the four DRPA bridges 18 times in a calendar month. Trucks, commercial vehicles, mobile homes and recreation vehicles (weighing at least 7,001 lb (3,176 kg) gross vehicle weight), pay $9.00 cash per axle. Seniors aged 65 and over with an NJ E-ZPass can use a discount program to pay $3.00 per trip. On July 17, 2024, the Delaware River Port Authority approved an increase in the toll for passenger vehicles from $5.00 to $6.00, which went into effect on September 1, 2024. == See also ==\n Transport portal\n Engineering portal\n Pennsylvania portal\n New Jersey portal\nList of crossings of the Delaware River\n\n\n== References ==\n\n\n== External links ==\n\nDelaware River Port Authority - Commodore Barry Bridge\nCommodore Barry Bridge: Historic Overview\nCommodore Barry Bridge at Structurae\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC5621030):\n# Deployment of a Smart Structural Health Monitoring System for Long-Span Arch Bridges: A Review and a Case Study Zengshun Chen, Xiao Zhou, Xu Wang, Lili Dong, Yuanhao Qian Sensors (Basel, Switzerland) · 2017-09-19 · 17(9):2151 · DOI: 10.3390/s17092151 · PMID: 28925943 · PMCID: PMC5621030 ## Abstract Structural health monitoring (SHM) technology for surveillance and evaluation of existing and newly built long-span bridges has been widely developed, and the significance of the technique has been recognized by many administrative authorities. The paper reviews the recent progress of the SHM technology that has been applied to long-span bridges. The deployment of a SHM system is introduced. Subsequently, the data analysis and condition assessment including techniques on modal identification, methods on signal processing, and damage identification were reviewed and summarized. A case study about a SHM system of a long-span arch bridge (the Jiubao bridge in China) was systematically incorporated in each part to advance our understanding of deployment and investigation of a SHM system for long-span arch bridges. The applications of SHM systems of long-span arch bridge were also introduced. From the illustrations, the challenges and future trends for development a SHM system were concluded. ## Keywords structural health monitoring, smart system, long-span arch bridge, intelligent management ## 1. Introduction With the development of economy and society, many long-span bridges have been built or are under construction all over the world, i.e., the Akashi Kaikyo Bridge (suspension bridge, main span 1991 m) in Japan, the Sutong Bridge (main span 1088 m) in China, the Chaotianmen Bridge (arch bridge, main span 552 m) in China [1,2]. The long-span bridges should meet the requirement of the serviceability, safety and sustainability during the operation stage. However, global climate change tends to present many challenges for long-span bridges such as stronger hurricanes and faster material deterioration. A considerable number of long-span bridges were destroyed due to natural and man-made hazards. For example, the famous Tacoma Narrow Bridge collapsed due to the strong wind\n\nSOURCE nauticalcharts.noaa.gov (https://nauticalcharts.noaa.gov/publications/coast-pilot/files/cp3/CPB3_C06_WEB.pdf):\n208 ¢ U.S. Coast Pilot 3, Chapter 6﻿ \b 08 FEB 2026 40°N 39°N INDIAN RIVER INLET MAURICE RIVER SALEM RIVER CAPE MAY INLET D E L A W A R E B A Y 75°30'W 74°30'W 39°30'N 38°30'N N E W J E R S E Y P E N N S Y L V A N I A D E L A W A R E Trenton Cape Henlopen Atlantic City Lewes Wilmington Philadelphia Camden D E L A WA R E R I V E R CHESAPEAKE & DELAWARE CANAL N O R T H A T L A N T I C O C E A N Chart Coverage in Coast Pilot 3—Chapter 6 NOAA’s Online Interactive Chart Catalog has complete chart coverage http://www.charts.noaa.gov/InteractiveCatalog/nrnc.shtml 75°W 08 FEB 2026\b U.S. Coast Pilot 3, Chapter 6﻿ ¢ 209 Delaware Bay (1) This chapter describes Delaware Bay and River and their navigable tributaries and includes an explanation of the Traffic Separation Scheme at the entrance to the bay. Major ports covered are Wilmington, Chester, Philadelphia, Camden and Trenton, with major facilities at Delaware City, Deepwater Point and Marcus Hook. Also described are Christina River, Salem River, and Schuylkill River, the principal tributaries of Delaware River and other minor waterways, including Mispillion, Maurice and Cohansey Rivers. (3) North Atlantic Right Whales (4) Endangered North Atlantic right whales may occur within 30 miles of the Delaware coast in the approaches to Delaware Bay and ports of Philadelphia (peak season: November through April, although right whales have been sighted in the area year-round). (See North Atlantic Right Whales, indexed as such in chapter 3, for more information on right whales and recommended measures to avoid collisions.) (5) All vessels 65 feet or greater in length overall (LOA) and subject to the jurisdiction of the United States are restricted to speeds of 10 knots or less in a Seasonal Management Area existing around Delaware Bay between November 1 and April 30. The area is defined as the waters within a 20-nm radius of 38°52'27.4\"N., 75°01'32.1\"W. (See 50 CFR 224.105 in chapter 2 for regulations, limitations and exceptions.) (6) COLREGS Demarcation Lines (7) The lines established for Delaware Bay are described in 33 CFR 80.503, chapter 2. (8) Delaware Bay and River (9) Delaware Bay and Delaware River form the boundary between\n\nSOURCE britannica.com (https://www.britannica.com/summary/Delaware-River):\n**Delaware River**, River in Pennsylvania, Delaware, New Jersey, and New York, U.S. Formed by the junction of its eastern and western branches in southern New York, it flows about 405 mi (650 km) to empty into the Atlantic Ocean at Delaware Bay. Navigable to Trenton, N.J., it is spanned by the Commodore Barry Bridge, completed in 1974. *verified*Cite While every effort has been made to follow citation style rules, there may be some discrepancies. Please refer to the appropriate style manual or other sources if you have any questions. Select Citation Style # Delaware River summary Below is the article summary. For the full article, see Delaware River.\n\nSOURCE pub-data.diver.orr.noaa.gov (https://pub-data.diver.orr.noaa.gov/admin-record/6404/Preassessment%20Data%20Report%20andAttached%20Appendices_June_2006.pdf):\nFinal Preassessment Data Report M/T ATHOS I Oil Spill, Delaware River June 2006 U.S. Department of Commerce National Oceanic and Atmospheric Administration State of New Jersey Department of Environmental Protection Commonwealth of Pennsylvania Department of Conservation and Natural Resources Department of Environmental Protection Fish and Boat Commission Game Commission State of Delaware Department of Natural Resources and Environmental Control U.S. Department of the Interior U.S. Fish and Wildlife Service i TABLE OF CONTENTS 1.0 INTRODUCTION 1 2.0 OVERVIEW OF THE INCIDENT AND PREASSESSMENT ACTIVITIES 1 3.0 CHARACTERISTICS OF THE SPILLED PRODUCT 5 4.0 PREASSESSMENT DATA COLLECTION METHODS AND RESULTS 7 4.1 Aquatic Resources 8 4.1.1 Water Quality 8 4.1.2 Sediment Quality 13 4.1.2.1 Subsurface Oil Observations 13 4.1.2.2 Subtidal and Intertidal Sediment Sampling 14 4.1.2.3 Sediment Toxicity Triad 17 4.1.3 Oysters 18 4.1.4 Fish 19 4.1.5 Horseshoe Crabs and Whelks 22 4.2 Shorelines 23 4.2.1 Shoreline Cleanup Assessment 23 4.3 Birds and Wildlife 26 4.3.1 Wildlife Response and Rescue Operations 27 4.3.2 Wildlife Ground Surveys 27 4.3.3 Aerial Bird Surveys 29 4.4 Lost Recreational Use 31 5.0 REFERENCES 32 ii List of Figures___________________________________________________________ Figure 1. Approximate location of the Athos oil spill incident on the Delaware River 2 Figure 2. Submerged objects recovered from the vicinity of the Athos grounding location 3 Figure 3. Aerial view of Athos listing to the port side following grounding incident 3 Figure 4. Key resources exposed to Athos oil 4 Figure 5. Example of asphalt tar mats (a) and tar balls (b) that washed up on the shorelines following the Athos incident 6 Figure 6a. Water sample locations in the upper Delaware River 10 Figure 6b. Water sample locations in the middle Delaware River 11 Figure 6c. Water sample locations in the lower Delaware River 12 Figure 7a. Sediment samples and total PAHs (ng/g) in the lower Delaware River 15 Figure 7b. Sediment samples and total PAHs (ng/g) in the upper Delaware River 16 Figure 8. Ten day percent survival of Leptocheirus plumulosus 18 Figure 9. Oyster sample locations and total PA\n\nSOURCE repository.library.noaa.gov (https://repository.library.noaa.gov/view/noaa/15071):\n# Commodore Barry Bridge Delaware River access : final report Supporting Files ## Details - **Alternative Title:** Commodore Barry Bridge - **NOAA Program & Office:** - **Subjects:** - **Document Type:** - **Funding:** - **Place as Subject:** - **Rights Information:** Public Domain - **Compliance:** Library - **Download URL:** - **File Type:** - **Collection(s):** - **Main Document Checksum:** urn:sha256:9595d10b323c8a6582d919c25820471d32ffb06efe290dffc401754416b37421 ## Supporting Files Send us an email at: The **NOAA IR**serves as an archival repository of NOAA-published products including scientific findings, journal articles, guidelines, recommendations, or other information authored or co-authored by NOAA or funded partners. As a repository, the**NOAA IR**retains documents in their original published format to ensure public access to scientific information. You May Also Like COLLECTION National Ocean Service (NOS)",
+  "extra_sources": [
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC5621030",
+   "https://nauticalcharts.noaa.gov/publications/coast-pilot/files/cp3/CPB3_C06_WEB.pdf",
+   "https://www.britannica.com/summary/Delaware-River",
+   "https://pub-data.diver.orr.noaa.gov/admin-record/6404/Preassessment%20Data%20Report%20andAttached%20Appendices_June_2006.pdf",
+   "https://repository.library.noaa.gov/view/noaa/15071"
+  ]
+ },
+ "_writer": "opencode"
+}
