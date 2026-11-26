@@ -1,5 +1,5 @@
 {
- "current": "commodore-barry-bridge-scale-a2",
+ "current": "roman-ship-waterproof-trick-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1193,6 +1193,25 @@
     "safe_zone": 10
    },
    "run_id": "45821373490"
+  },
+  "roman-ship-waterproof-trick-a2": {
+   "title": "The 2,200-Year-Old Trick That Kept a Roman Ship Dry",
+   "base": "roman-ship-waterproof-trick-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 8,
+    "accuracy": 9,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 8,
+    "hierarchy": 8,
+    "consistency": 8,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "45877645234"
   }
  }
 }

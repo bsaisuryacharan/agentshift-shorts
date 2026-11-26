@@ -1,0 +1,257 @@
+{
+ "id": "roman-ship-waterproof-trick-a2",
+ "title": "The 2,200-Year-Old Trick That Kept a Roman Ship Dry",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "format": "how_it_works",
+ "series_label": "HOW IT WORKS",
+ "theme": "cool",
+ "look": "blueprint",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Smithsonian Magazine, https://www.smithsonianmag.com/smart-news/brittle-coating-on-2200-year-old-roman-shipwreck-revealing-how-ancient-soliders-kept-ships-afloat-180989394",
+  "b1": "Smithsonian Magazine, https://www.smithsonianmag.com/smart-news/brittle-coating-on-2200-year-old-roman-shipwreck-revealing-how-ancient-soliders-kept-ships-afloat-180989394",
+  "b2": "Smithsonian Magazine, https://www.smithsonianmag.com/smart-news/brittle-coating-on-2200-year-old-roman-shipwreck-revealing-how-ancient-soliders-kept-ships-afloat-180989394",
+  "b3": "Smithsonian Magazine, https://www.smithsonianmag.com/smart-news/brittle-coating-on-2200-year-old-roman-shipwreck-revealing-how-ancient-soliders-kept-ships-afloat-180989394",
+  "b4": "Smithsonian Magazine, https://www.smithsonianmag.com/smart-news/brittle-coating-on-2200-year-old-roman-shipwreck-revealing-how-ancient-soliders-kept-ships-afloat-180989394",
+  "b5": "Wikipedia, Nemi ships, https://en.wikipedia.org/wiki/Nemi_ships",
+  "b6": "Wikipedia, Nemi ships, https://en.wikipedia.org/wiki/Nemi_ships",
+  "outro": "Smithsonian Magazine, https://www.smithsonianmag.com/smart-news/brittle-coating-on-2200-year-old-roman-shipwreck-revealing-how-ancient-soliders-kept-ships-afloat-180989394",
+  "wiki": "https://en.wikipedia.org/wiki/Nemi_ships",
+  "ref1": "https://www.smithsonianmag.com/smart-news/brittle-coating-on-2200-year-old-roman-shipwreck-revealing-how-ancient-soliders-kept-ships-afloat-180989394",
+  "ref2": "https://www.sciencedaily.com/releases/2026/08/260820202907.htm",
+  "ref3": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5874049",
+  "ref4": "https://science.nasa.gov/astrophysics/programs/exep/exopag/announcements/announcements-2022",
+  "ref5": "https://spo.nmfs.noaa.gov/sites/default/files/pdf-content/fish-bull/hildebrand.pdf"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "ancient shipwreck underwater",
+   "prompt": "photoreal cinematic 9:16 underwater documentary shot of an ancient wooden shipwreck hull on the seabed, waterlogged planks and timbers half buried in sediment, dim natural light filtering down through blue-green Adriatic water, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "This wood spent 2,200 years in seawater — and part of it never soaked through.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how?",
+     "at": "wood"
+    },
+    {
+     "t": "big",
+     "text": "2,200 years",
+     "col": "am",
+     "at": "seawater"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "whoosh",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "shipwreck seabed",
+   "prompt": "photoreal cinematic 9:16 aerial shot of a calm Adriatic sea surface near a Croatian island coastline, gentle ripples, muted warm documentary light, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "A Roman Republic ship sank off Croatia, carrying timber and wine. Divers found it in 2016.",
+   "hud": [
+    {
+     "t": "chip",
+     "text": "found 2016",
+     "col": "cy",
+     "at": "2016"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "pine tree bark macro",
+   "prompt": "photoreal cinematic 9:16 macro shot of thick amber pine pitch oozing from cracked conifer bark on a tree trunk, natural daylight, documentary texture detail, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The hull was coated with pitch made from conifer trees — a waterproof barrier.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "The coating was",
+      "options": "tar, glue, wax, pitch"
+     },
+     "accent": "green",
+     "at": "pitch",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "beeswax honeycomb macro",
+   "prompt": "photoreal cinematic 9:16 top-down macro shot of golden beeswax and honeycomb texture on a dark wooden surface, warm natural light, documentary detail, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "One sample held pitch mixed with beeswax, sealing every joint against the sea.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "pitch mixed with beeswax",
+      "keyword": "beeswax",
+      "note": "seals the joints"
+     },
+     "style": "underline",
+     "accent": "green",
+     "at": "beeswax",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "say": "Timber hull, then pitch, then wax — layers that kept seawater out.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "timber hull",
+       "pitch"
+      ],
+      [
+       "pitch",
+       "beeswax"
+      ],
+      [
+       "beeswax",
+       "dry wood"
+      ]
+     ],
+     "at": "layers"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s4.jpg",
+   "photo": "Lake Nemi",
+   "prompt": "photoreal cinematic 9:16 wide shot of a small circular volcanic crater lake in Italy at dusk, calm water reflecting the sky, forested crater walls, documentary landscape, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Rome went further: Caligula's Nemi ships were sheathed in lead, with plumbing and baths aboard.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "lead sheathing, *plumbing*, baths"
+     },
+     "accent": "green",
+     "at": "lead",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s5.jpg",
+   "photo": "museum fire",
+   "prompt": "photoreal cinematic 9:16 silhouette shot of a museum building at night with smoke rising, dark documentary tone, warm fire light on the horizon, no people, no faces, no text",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Recovered in 1929, those ships burned in 1944 under artillery fire.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "recovered",
+       "1929"
+      ],
+      [
+       "burned",
+       "1944"
+      ]
+     ],
+     "at": "burned"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s6.jpg",
+   "footage": "underwater shipwreck timbers",
+   "motion": "godrays",
+   "photo": "waterlogged wood timbers",
+   "prompt": "photoreal cinematic 9:16 underwater close shot of ancient waterlogged wooden planks lying in seabed sediment, soft light rays from above, blue-green water, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The wood survived because it stayed waterlogged, low in oxygen — and the coating kept the hull tight. Follow for more.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "AGENT SHIFT",
+      "label": "follow for more"
+     },
+     "accent": "green",
+     "at": "Follow",
+     "dur": 2.5
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "inside_machine",
+  "why": "topic fit",
+  "lemo_style": [
+   "Exploded Teardown",
+   "Blueprint",
+   "Engineering Briefing Board"
+  ]
+ },
+ "_facts": {
+  "title": "Nemi ships",
+  "url": "https://en.wikipedia.org/wiki/Nemi_ships",
+  "text": "The Nemi ships were two ships, of different sizes, built under the reign of the Roman emperor Caligula in the 1st century AD on Lake Nemi. Although the purpose of the ships is speculated upon, the larger ship was an elaborate floating palace, which contained quantities of marble, mosaic floors, heating and plumbing, and amenities such as baths. Both ships featured technology thought to have been developed historically later. It has been stated that the emperor was influenced by the lavish lifestyles of the Hellenistic rulers of Syracuse and Ptolemaic Egypt. Recovered from the lake bed in 1929, and placed in a purpose-built museum, almost all the wooden parts of the ships were accidentally destroyed by a fire started by American artillery in 1944 during World War II. The larger ship was 73 m (240 ft) in length, with a beam (width) of 24 m (79 ft). The other ship was 70 m (230 ft) long, with a beam of 20 m (66 ft). == Location ==\n\nLake Nemi (Italian: Lago di Nemi, Latin: Nemorensis Lacus) is a small circular volcanic lake in the Lazio region of Italy, 30 km (19 mi) south of Rome. It has a surface of 1.67 km2 (0.64 sq mi) and a maximum depth of 33 m (108 ft). There is considerable speculation regarding why the emperor Caligula chose to build two large ships on such a small lake. From the size of the ships it was long held that they were pleasure barges, though, as the lake was sacred, no ship could sail on it under Roman law (Pliny the Younger, Litterae VIII-20) implying a religious exemption. Caligula particularly favoured the Egyptian Isis cult which he had established in Rome and also supported that of Diana Nemorensis, whom, in the Roman tradition of syncretism, he likely viewed as an aspect of Isis. Situated on opposite sides of the lake and atop the crater walls are the towns of Genzano and Nemi. Genzano was dedicated by the Romans to the goddess Cynthia, a cult associated with that of Diana Nemorensis. Nemi did not exist in Roman times. The name Nemi derives from the Latin nemus Aricinum (grove of Ariccia), Ariccia being an important nearby town associated with the worship of Diana and the god Virbius (the Latin name for Hyppolytus, a young man whom Diana loved). Located at Nemi are the ruins of an ancient temple dedicated to Diana, which was connected by the Via Virbia to the Via Appia (the Roman road between Rome and Brindisi). During the time of the Roman Empire, the area around Genzano was used by wealthy Roman citizens for its clean air, uncontaminated water and cooler temperatures during the hot summer months. The lake has its own microclimate and is protected from wind by the crater walls. Johann Wolfgang von Goethe, Lord Byron, and Charles Gounod all lived in Nemi and note the reflection of the Moon, seen in the centre of the lake during summer. This phenomenon is the source of the Roman name for the lake, Speculum Dianae (Diana's Mirror). == Recovery ==\n\nLocal fishermen had long been aware of the existence of the wrecks, and had explored them and removed small artefacts, often using grappling hooks to pull up pieces, which they sold to tourists. In 1446, His Eminence Prospero Cardinal Colonna and Leon Battista Alberti followed up on the stories regarding the remains and discovered them lying at a depth of 18.3 metres (60 ft), which at that time was too deep for effective salvage. They damaged the ships by using ropes with hooks to tear planks from them. Alberti learned little more than the type of wood and that it was covered in lead sheathing. In 1535, Francesco De Marchi dived on the wreck using a diving helmet. His finds included bricks, marble paving stones, bronze, copper, lead artefacts, and a great number of timber beams. From material recovered he added the knowledge that mortise and tenon joints had been used in their construction. Despite the successful salvage of entire structures and parts, there was no academic interest in the ships, so no further research was performed. The objects recovered were lost and their fate remains unknown. By 1827, interest had revived and it had become a widespread belief that earlier material recovered either had been part of a temple to Diana or was from the villa of Julius Caesar cited by Suetonius. Annesio Fusconi built a floating platform from which to raise the wrecks. Several of his cables broke, and he called a halt until he could find stronger cables. When he returned, he found that the locals had dismantled his platform to make wine barrels. This led him to abandon the project. In 1895, with the support of the Ministry of Education, Signor Eliseo Borghi began a systematic study of the wreck site and discovered that the site contained two wrecks instead of the one expected. Among the material Borghi recovered was the bronze tiller head of one of the rudders and many bronze heads of wild animals. Borghi placed all of his finds in his own museum and offered to sell the collection to the Government. The timbers he recovered were discarded and lost, while no contextual referencing was documented for any of his finds. Felice Barnabei, director general of the Department of \nAntiquity and Fine Art, claimed all of the artefacts for the National Museum and submitted a report requesting the recovery cease because of the \"devastation of the two wrecks\".\n\nSOURCE smithsonianmag.com (https://www.smithsonianmag.com/smart-news/brittle-coating-on-2200-year-old-roman-shipwreck-revealing-how-ancient-soliders-kept-ships-afloat-180989394):\n# A Brittle Coating on a 2,200-Year-Old Roman Shipwreck Reveals How Ancient Sailors Kept Their Ships Afloat ## Traces of pine tar and beeswax preserved on the vessel reveal the painstaking techniques shipbuilders millennia ago used to protect their ships from the briny deep More than two millennia ago, a Roman Republic ship carrying timber and wine sank in the Adriatic Sea, off the coast of what is now Croatia. Remarkably, the wreck offers clear evidence of an elaborate effort to waterproof its wooden hull, shielding the vessel from the corrosive effects of seawater. Discovered in 2016 and named *Ilovik-Paržine 1*, the ship offers a detailed glimpse into ancient shipbuilding techniques. According to a study published this spring in *Frontiers in Materials*, the hull was coated with conifer-derived pitch, and one sample contained a mixture of pitch and beeswax. The findings highlight an often overlooked aspect of ancient seafaring: the organic materials used to keep wooden vessels watertight. “In archaeology, little attention is paid to organic waterproofing materials,” says lead study author Armelle Charrié-Duhaut, an archaeometrist at the Laboratory of Mass Spectrometry of Interactions and Systems at the University of Strasbourg, in a statement. “Yet they are essential for navigation at sea or on rivers and are true witnesses of past naval technologies.” The materials used for that purpose varied widely across time and place. As Charrié-Duhaut told *Chemistry World*’s Mason Wakley in April, “There’s a long history of coating” in shipbuilding. Because shipbuilders would have had access to different raw materials depending on where they lived, the coatings differ as well, she said, “Each boat has its own history.” Did you know? Waterlogged wood Water can actually preserve ancient wood. When timber stays submerged, low oxygen slows the bacteria and fungi that normally cause decay. Charrié-Duhaut and her coauthors analyzed ten samples of the *Ilovik–Paržine 1*’s coating. They found molecular fingerprints characteristic of heat-treated conifer material, particularly from the *Pinaceae* family, indicating that the coating was made from conifer-derived tar or pitch. O\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2026/08/260820202907.htm):\n# 2,200-year-old Roman shipwreck reveals ancient waterproofing secrets ## Pollen trapped in 2,200-year-old ship coatings is revealing how Roman sailors waterproofed and repeatedly repaired their vessels. Date: August 21, 2026 Source: Frontiers Summary: Scientists analyzing a 2,200-year-old Roman shipwreck found that its hull was coated with pine tar and, in one area, a mixture of tar and beeswax. Pollen trapped in those ancient coatings acted like a geographic fingerprint, revealing the landscapes surrounding the ship when repairs were made. Share: For as long as people have traveled by sea, ships have needed protection from water, salt, microorganisms, and marine animals such as worms. Yet until the mid-20th century, researchers paid relatively little attention to the non-wood materials used in ancient shipbuilding. Waterproofing materials in particular remain understudied. A new study published in *Frontiers in Materials* is helping fill that gap. Researchers in France and Croatia analyzed the protective coating on the Roman Republic shipwreck Ilovik-Paržine 1, which sank about 2,200 years ago off the coast of what is now Croatia. \"In archaeology, little attention is paid to organic waterproofing materials. Yet they are essential for navigation at sea or on rivers and are true witnesses of past naval technologies,\" said first author Dr. Armelle Charrié, an archaeometrist at the Laboratory of Mass Spectrometry of Interactions and Systems in Strasbourg. \"Studying the coatings, we found two different kinds on this vessel: one made of pine tar, also called pitch, and the other of a mixture of pine tar and beeswax. Analysis of pollen in the coating made it possible to identify the plant taxa present in the immediate environment during the construction or repairs of the ship.\" **Pine Tar and Beeswax Protected the Hull** The wreck was discovered in 2016, and both the vessel and its cargo have been investigated several times since then. This study is the first to combine molecular and pollen analysis to identify the ship's coatings and reconstruct the vegetation present when those materials were produced and applied to the hull. The research was carried out through a \n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC5874049):\n# Rome in its setting. Post-glacial aggradation history of the Tiber River alluvial deposits and tectonic origin of the Tiber Island Fabrizio Marra, Laura Motta, Andrea L. Brock, Patrizia Macrì, Fabio Florindo, Laura Sadori, Nicola Terrenato PLoS ONE · 2018-03-28 · 13(3):e0194838 · DOI: 10.1371/journal.pone.0194838 · PMID: 29590208 · PMCID: PMC5874049 ## Abstract The Tiber valley is a prominent feature in the landscape of ancient Rome and an important element for understanding its urban development. However, little is known about the city’s original setting. Our research provides new data on the Holocene sedimentary history and human-environment interactions in the Forum Boarium, the location of the earliest harbor of the city. Since the Last Glacial Maximum, when the fluvial valley was incised to a depth of tens of meters below the present sea level, 14C and ceramic ages coupled with paleomagnetic analysis show the occurrence of three distinct aggradational phases until the establishment of a relatively stable alluvial plain at 6–8 m a.s.l. during the late 3rd century BCE. Moreover, we report evidence of a sudden and anomalous increase in sedimentation rate around 2600 yr BP, leading to the deposition of a 4-6m thick package of alluvial deposits in approximately one century. We discuss this datum in the light of possible tectonic activity along a morpho-structural lineament, revealed by the digital elevation model of this area, crossing the Forum Boarium and aligned with the Tiber Island. We formulate the hypothesis that fault displacement along this structural lineament may be responsible for the sudden collapse of the investigated area, which provided new space for the observed unusually large accumulation of sediments. We also posit that, as a consequence of the diversion of the Tiber course and the loss in capacity of transport by the river, this faulting activity triggered the origin of the Tiber Island. ## Introduction Despite Rome’s prominent position in the development of Mediterranean civilization, scholars actually know frustratingly little about the city’s original setting and early history. The present cross-disciplinary investigation of Rome’s rive\n\nSOURCE science.nasa.gov (https://science.nasa.gov/astrophysics/programs/exep/exopag/announcements/announcements-2022):\n![NASA Logo](https://www.nasa.gov) ![NASA Logo](https://www.nasa.gov) ## Suggested Searches * Artemis * ISS * Roman * Webb * Quesst * Moon Base * View All Topics A-Z * Home * Missions * Humans in Space * Earth * The Solar System * The Universe * Science * Aeronautics * Technology * Learning Resources * About NASA * Español --- * News & Events * Multimedia * NASA+ ### Highlights ![TIME Best Inventions of 2026 1 min read ### TIME Best Inventions of 2026 article5 days ago](https://science.nasa.gov/blogs/honors/2026/10/15/time-best-inventions-of-2026/)![NASA to Help Unlock Mysteries of Mars’ Moons in Upcoming Mission 4 min read ### NASA to Help Unlock Mysteries of Mars’ Moons in Upcoming Mission article5 days ago](https://science.nasa.gov/directorates/smd/planetary-science-division/nasa-to-help-unlock-mysteries-of-mars-moons-in-upcoming-mission/)![What’s Up: October 2026 Skywatching Tips from NASA 3 min read ### What’s Up: October 2026 Skywatching Tips from NASA article3 weeks ago](https://science.nasa.gov/solar-system/skywatching/whats-up-october-2026-skywatching-tips-from-nasa/) ### Missions * Search All NASA Missions * A to Z List of Missions * Upcoming Launches and Landings * Spaceships and Rockets * Communicating with Missions * Artemis * James Webb Space Telescope * Hubble Space Telescope * International Space Station * OSIRIS-REx ### Humans in Space * Why Go to Space * Astronauts * Commercial Space * Destinations * Spaceships and Rockets * Living in Space ### Earth * Explore Earth Science * Climate Change * Earth, Our Planet * Earth Science in Action * Earth Multimedia * Earth Data * Earth Science Researchers ### The Solar System * The Sun * Mercury * Venus * Earth * The Moon * Mars * Jupiter * Saturn * Uranus * Neptune * Pluto & Dwarf Planets * Asteroids, Comets & Meteors * The Kuiper Belt * The Oort Cloud * Skywatching ### The Universe * Exoplanets * The Search for Life in the Universe * Stars * Galaxies * Black Holes * The Big Bang * Dark Matter * Dark Energy ### Science * Earth Science * Planetary Science * Astrophysics & Space Science * The Sun & Heliophysics * Biological & Physical Sciences * Lunar Science * Citizen Science * Astromaterials * Aeronautic\n\nSOURCE spo.nmfs.noaa.gov (https://spo.nmfs.noaa.gov/sites/default/files/pdf-content/fish-bull/hildebrand.pdf):\nFISHES OF CHESAPEAKE BAY $ By SAMUEL F. HILDEBRAND, Director, U. S. Fisheries Biological Station, Beaufort, N. C., and WILLIAM C. SCHROEDER, Assistant Aquatic Biologist, U. S. Bureau of Fisheries .:I-CONTENTS Introduction • .. . _ Literature on fishes of Chesapeake Bay .. .. _ General character of the fauna . _ Distribution of species ,_. __ ,. _ General statistics and remarks on fisheries of Chesapeake Bay ., _ Buchanan Brothers' fishery ,. __ .. . _ Systematic catalogue of the fishes of Chesapeake Bay .. __ . .. . _ Interpretation of descriptions . .. ~ ~_ .. _ Use of keys . _.. . - __ ... _-. _. _,. ,. __ Key to the families .. __ . __ - - __ - _--.. _. __ ~ ~ _ Class Leptocardii. .. - _- _.. __ --.. _ Order Amphioxi. --~ - - ,. -_ Family I-Branchiostomidre. The lancelets .. _ 1. Branchiostoma virginire . . _ Class MarsipobranchiL .. -- - - - ,. - -.. _. - - __ --_ Order Hyperoartia .. -- _- - - _- -- - __ - _- - --. __ Family II-Petromyzonidre. The lampreys. ,. . _ 2. Petromyzon marinus .. . _ Class ElasmobranchiL - _- - - - - - - -- - - - - - - - - - - _- - - - - - - - - - .. - - _- _. - -- -_ Subclass SelachiL -- - - .. - _- .. - - - - - - -- - . - - - - - - - - - . - - - _- - -- _- . - _- _ Order Euselachii -_. _ Family Ill-Orectolobidre. The nurse sharks__. __ 3. Ginglymostoma cirratum _ Family IV- Lamnidre. The mackerel sharks and the man-eater sharks _ 4. Carcharodon carcharias _ Family V-Galeidre. The gray sharks _ 5. Mustelus 'mustelus _ 6. Carcharhinus milbertL .. . _ 7. Scoliodon terrre-novre _ Family VI-Sphyrinidre. The hammerhead sharks _ 8. Sphyrna zygrena _ 9. Sphyrna tiburo _ Order Tectospondyli. . .. _ Family VII-Squalidre. The dogfishes _ 10. Squalus acanthias _ Family VIII-Squatinidre. The angel sharks _ 11. Squatina durneril _ Order BatoideL -- .. - -- - - --- --- _. _ Family IX- Pristidre. The sawfishes .. .. --_ 12. Pristis pectinatus .. . .. _ Family X-Rajidre. The skates . .. . __ .. c .. • _ 13. Rajadiaphanes _ 14. Raja eglanteria__ .. .. .. __ .. _ 15. Raja stabuliforis ~ _ 16. Raja erinacea . .. _ I Page 8 10 11 12 13 17 32' 32 33 33 42' 42 42 42 43 43 43 43 44 44 44 44 45-45 46-46-47 4l:l 4~ 49-50· 51 51 51 52' 54 54 55 !)5 55 56-5",
+  "extra_sources": [
+   "https://www.smithsonianmag.com/smart-news/brittle-coating-on-2200-year-old-roman-shipwreck-revealing-how-ancient-soliders-kept-ships-afloat-180989394",
+   "https://www.sciencedaily.com/releases/2026/08/260820202907.htm",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC5874049",
+   "https://science.nasa.gov/astrophysics/programs/exep/exopag/announcements/announcements-2022",
+   "https://spo.nmfs.noaa.gov/sites/default/files/pdf-content/fish-bull/hildebrand.pdf"
+  ]
+ },
+ "_writer": "opencode"
+}
