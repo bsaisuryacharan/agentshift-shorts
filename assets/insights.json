@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T13:13:08+00:00",
+ "generated_at": "2026-11-26T12:53:29+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -13,16 +13,16 @@
  "trending": [
   "When the camera captures the most unexpected animal encounters",
   "The Most Astonishing Animal Encounters Caught On Camera",
-  "How submarine works",
   "The Wildest Animal Encounters Caught on Camera",
   "Real Life Monsters Still Walking Earth 💀",
   "Mot Unexpected Animal Moments Caught On Camera",
   "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
-  "These animal moments are so wild you won't Believe they were real",
   "Bro Just Explained the Future of Computing 🤯",
-  "A space telescope hunting for dark matter just discovered something unexpected",
-  "Physicists trap antimatter in a breakthrough that could explain why the universe exists",
-  "What is a thought made of? Why human consciousness may be beyond AI’s reach"
+  "hamare desh ne kya khoja",
+  "Mystery of The Kentucky Meat Shower 😲",
+  "This 345-million-year-old fossil had scientists fooled for decades",
+  "Scientists discover mysterious lakes more than a mile beneath the Red Sea",
+  "A space telescope hunting for dark matter just discovered something unexpected"
  ],
  "learned": {
   "shorts_scored": 34,
@@ -68,10 +68,10 @@
  },
  "stage_averages": {
   "hook": 7.7,
-  "story": 6.6,
+  "story": 6.5,
   "visuals": 6.0,
-  "polish": 6.0,
-  "policy": 8.8
+  "polish": 6.1,
+  "policy": 8.9
  },
  "weakest_stage": "visuals",
  "region": "IN",
@@ -80,57 +80,57 @@
  "niche_winners": [
   {
    "title": "When the camera captures the most unexpected animal encounters",
-   "views": 11522440,
+   "views": 14133066,
    "url": "https://www.youtube.com/watch?v=7UekPIdjdvw"
   },
   {
-   "title": "The Wildest Animal Encounters Caught on Camera",
-   "views": 5970835,
-   "url": "https://www.youtube.com/watch?v=77yTZXiBlmo"
-  },
-  {
    "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
-   "views": 14631561,
+   "views": 14787722,
    "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
   },
   {
+   "title": "The Wildest Animal Encounters Caught on Camera",
+   "views": 6025213,
+   "url": "https://www.youtube.com/watch?v=77yTZXiBlmo"
+  },
+  {
    "title": "TOP 5 Zwierząt, które mają najdziwniejszych wrogów #shorts",
-   "views": 7611714,
+   "views": 7952528,
    "url": "https://www.youtube.com/watch?v=0h2uXKVVer0"
   },
   {
-   "title": "How submarine works #science #fun #shorts #entertainment",
-   "views": 6210234,
-   "url": "https://www.youtube.com/watch?v=NFsLFx0I264"
+   "title": "How Crayfish Survive When Rice Fields Dry Up",
+   "views": 8311182,
+   "url": "https://www.youtube.com/watch?v=IyLsiTlhFcE"
   },
   {
    "title": "Why Milk is Fighting Your Truck",
-   "views": 5914741,
+   "views": 6163849,
    "url": "https://www.youtube.com/watch?v=fQYmEG460Sc"
   },
   {
    "title": "The Most Astonishing Animal Encounters Caught On Camera",
-   "views": 6285690,
+   "views": 6339256,
    "url": "https://www.youtube.com/watch?v=qT1ePxFsjEE"
   },
   {
    "title": "Why Pothole Always Coming Back",
-   "views": 1826814,
+   "views": 2050893,
    "url": "https://www.youtube.com/watch?v=qeYe2Sw9qi8"
   }
  ],
  "news": [
+  "This 345-million-year-old fossil had scientists fooled for decades",
+  "The surprising reason women seem better at multitasking than men",
+  "Scientists discover mysterious lakes more than a mile beneath the Red Sea",
+  "Deep beneath Australia, hidden caves could unlock the secrets of alien worlds",
   "A space telescope hunting for dark matter just discovered something unexpected",
   "Physicists trap antimatter in a breakthrough that could explain why the universe exists",
   "What is a thought made of? Why human consciousness may be beyond AI’s reach",
   "2,200-year-old Roman shipwreck reveals an ingenious waterproofing trick",
-  "Earth's next ice age may have already begun. Global warming stopped it",
-  "Physicists just sent an unblockable message through a brick wall using gravity",
-  "Earth's core may be leaking a 4.5-billion-year-old secret",
-  "APOD: 2026 November 25 – SPHEREx Seeing Through Dust",
-  "Georgia’s Pecan Belt",
-  "NASA+ Content Coming to Big Screen at Greenbelt, Maryland Cinema",
-  "Teams Lock in Mission Architecture for NASA’s SR-1 Freedom",
-  "Amateur Astronomer? Be a Kilonova Catcher!"
+  "APOD: 2026 November 26 – Eye in the Sky: The Milky Way over Lençóis",
+  "Seeking Refuge on Resolution Island",
+  "NASA Enhances Supplier Program, Announces Mentor-Protégé Agreement",
+  "NASA Eyes Crop Candidates for Future Menus"
  ]
 }

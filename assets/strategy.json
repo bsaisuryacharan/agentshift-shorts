@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-25T13:13+00:00",
+ "updated": "2026-11-26T12:53+00:00",
  "progress": {
   "goal": 1000000,
   "start": "2026-10-30",
   "deadline": "2026-11-29",
   "days_total": 30,
-  "days_left": 4,
+  "days_left": 3,
   "measured": true,
   "baseline_views": 5781,
-  "channel_views": 14724,
-  "gained": 8943,
-  "pct": 0.89,
-  "pace_per_day": 194,
-  "needed_per_day": 247764,
-  "projected": 9720,
+  "channel_views": 15031,
+  "gained": 9250,
+  "pct": 0.93,
+  "pace_per_day": 281,
+  "needed_per_day": 330250,
+  "projected": 10093,
   "on_track": false,
   "subs": 18
  },
@@ -26,8 +26,8 @@
   },
   "awe_scale": {
    "n": 7,
-   "mean_log_views": 2.32,
-   "boost": 0.31
+   "mean_log_views": 2.31,
+   "boost": 0.3
   },
   "jargon_science": {
    "n": 2,
@@ -42,7 +42,7 @@
   "inside_machine": {
    "n": 7,
    "mean_log_views": 2.5,
-   "boost": 0.55
+   "boost": 0.56
   },
   "tech_explainer": {
    "n": 1,
@@ -66,7 +66,7 @@
   },
   "ai_tips": {
    "n": 1,
-   "mean_log_views": 1.63,
+   "mean_log_views": 1.64,
    "boost": -0.23
   }
  },
@@ -133,8 +133,8 @@
   "ai_tips"
  ],
  "cohort": {
-  "n": 45,
-  "median": 94,
+  "n": 46,
+  "median": 98.5,
   "p75": 358
  },
  "ladder": [
@@ -142,7 +142,7 @@
    "name": "typical Short",
    "metric": "median views per Short at 7 days",
    "goal": 1000,
-   "now": 94
+   "now": 98.5
   },
   {
    "name": "first breakout",
@@ -160,7 +160,7 @@
    "name": "volume",
    "metric": "channel views in 30 days",
    "goal": 100000,
-   "now": 8943
+   "now": 9250
   }
  ],
  "focus_words": [
@@ -190,11 +190,11 @@
  "winners": [
   {
    "title": "How a Torpedo Breaks a Warship Without Touching It #shorts",
-   "views": 152
+   "views": 229
   },
   {
    "title": "Earth, Jupiter, and the Sun to Scale",
-   "views": 500
+   "views": 501
   },
   {
    "title": "Why Jet Engine Blades Have Tiny Holes #shorts",
@@ -223,7 +223,7 @@
  "actions": [
   "Make 2 Shorts a day (behind the pace: more good Shorts = more chances of a breakout).",
   "Topic classes on the channel's own results: more of inside_machine, awe_scale, myth_fact; less of jargon_science, general, ai_tips.",
-  "Double down on what already wins on this channel: 'How a Torpedo Breaks a Warship Without Touching It' (152 views); 'Earth, Jupiter, and the Sun to Scale' (500 views); 'Why Jet Engine Blades Have Tiny Holes #shorts' (565 views).",
+  "Double down on what already wins on this channel: 'How a Torpedo Breaks a Warship Without Touching It' (229 views); 'Earth, Jupiter, and the Sun to Scale' (501 views); 'Why Jet Engine Blades Have Tiny Holes #shorts' (565 views).",
   "Drop what flopped: 'Earth Stops. The Air Keeps Moving. #shor' (0); 'How Submarines Make Air From Seawater #s' (4); 'What If the Moon Vanished Tonight? #shor' (9).",
   "Prefer the formats the judge scores best: myth_vs_fact, versus.",
   "Every Short: 25-35 s; a concrete, surprising claim with a number in the first 2 s; real footage; one twist per beat; end on a one-word question.",
