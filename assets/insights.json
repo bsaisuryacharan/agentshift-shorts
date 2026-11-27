@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T12:53:29+00:00",
+ "generated_at": "2026-11-27T12:47:18+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -12,20 +12,20 @@
  },
  "trending": [
   "When the camera captures the most unexpected animal encounters",
+  "How A Tiny Bird Solved High Speed Bullet Train Physics",
+  "NASA Again Did the IMPOSSIBLE! 1 Light Day in Space By Humans! Astronauts HAPPY",
+  "How submarine works",
   "The Most Astonishing Animal Encounters Caught On Camera",
   "The Wildest Animal Encounters Caught on Camera",
-  "Real Life Monsters Still Walking Earth 💀",
   "Mot Unexpected Animal Moments Caught On Camera",
-  "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
   "Bro Just Explained the Future of Computing 🤯",
-  "hamare desh ne kya khoja",
-  "Mystery of The Kentucky Meat Shower 😲",
-  "This 345-million-year-old fossil had scientists fooled for decades",
-  "Scientists discover mysterious lakes more than a mile beneath the Red Sea",
-  "A space telescope hunting for dark matter just discovered something unexpected"
+  "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
+  "These animal moments are so wild you won't Believe they were real",
+  "Why the Moon Looks Bigger Tonight 🤯",
+  "The narwhal’s legendary “unicorn horn” holds a remarkable engineering secret"
  ],
  "learned": {
-  "shorts_scored": 34,
+  "shorts_scored": 36,
   "best": [
    {
     "title": "The Sun's Worst Storms, Ranked",
@@ -61,76 +61,76 @@
    }
   ],
   "weakest_dimensions": [
-   "visual_quality",
    "originality",
+   "visual_quality",
    "visual_variety"
   ]
  },
  "stage_averages": {
-  "hook": 7.7,
+  "hook": 7.5,
   "story": 6.5,
-  "visuals": 6.0,
+  "visuals": 6.1,
   "polish": 6.1,
-  "policy": 8.9
+  "policy": 8.7
  },
  "weakest_stage": "visuals",
  "region": "IN",
  "trend_signals_total": 62,
- "trend_signals_on_niche": 32,
+ "trend_signals_on_niche": 35,
  "niche_winners": [
   {
    "title": "When the camera captures the most unexpected animal encounters",
-   "views": 14133066,
+   "views": 15635432,
    "url": "https://www.youtube.com/watch?v=7UekPIdjdvw"
   },
   {
-   "title": "4 Masters of Disguise You’ll Struggle to Find!🙄#birds #facts #newpost #invisible #city #yt",
-   "views": 14787722,
-   "url": "https://www.youtube.com/watch?v=UIJ3_pTOv7g"
+   "title": "NASA Again Did the IMPOSSIBLE! 1 Light Day in Space By Humans! Astronauts HAPPY! #shorts",
+   "views": 8279995,
+   "url": "https://www.youtube.com/watch?v=nVRrtW7EsqY"
   },
   {
-   "title": "The Wildest Animal Encounters Caught on Camera",
-   "views": 6025213,
-   "url": "https://www.youtube.com/watch?v=77yTZXiBlmo"
+   "title": "How A Tiny Bird Solved High Speed Bullet Train Physics #shorts",
+   "views": 14832156,
+   "url": "https://www.youtube.com/watch?v=Z7aUqz03TTY"
   },
   {
    "title": "TOP 5 Zwierząt, które mają najdziwniejszych wrogów #shorts",
-   "views": 7952528,
+   "views": 8814174,
    "url": "https://www.youtube.com/watch?v=0h2uXKVVer0"
   },
   {
+   "title": "The Wildest Animal Encounters Caught on Camera",
+   "views": 6061200,
+   "url": "https://www.youtube.com/watch?v=77yTZXiBlmo"
+  },
+  {
+   "title": "How submarine works #science #fun #shorts #entertainment",
+   "views": 6662212,
+   "url": "https://www.youtube.com/watch?v=NFsLFx0I264"
+  },
+  {
    "title": "How Crayfish Survive When Rice Fields Dry Up",
-   "views": 8311182,
+   "views": 8358587,
    "url": "https://www.youtube.com/watch?v=IyLsiTlhFcE"
   },
   {
    "title": "Why Milk is Fighting Your Truck",
-   "views": 6163849,
+   "views": 6376722,
    "url": "https://www.youtube.com/watch?v=fQYmEG460Sc"
-  },
-  {
-   "title": "The Most Astonishing Animal Encounters Caught On Camera",
-   "views": 6339256,
-   "url": "https://www.youtube.com/watch?v=qT1ePxFsjEE"
-  },
-  {
-   "title": "Why Pothole Always Coming Back",
-   "views": 2050893,
-   "url": "https://www.youtube.com/watch?v=qeYe2Sw9qi8"
   }
  ],
  "news": [
+  "The narwhal’s legendary “unicorn horn” holds a remarkable engineering secret",
+  "Scientists turn one of the world’s hardest-to-recycle plastics into high-performance lubricating oil",
+  "Scientists identify two ages when children may be most vulnerable to screen time",
+  "These bizarre prehistoric mammals may have been misunderstood for 150 years",
   "This 345-million-year-old fossil had scientists fooled for decades",
   "The surprising reason women seem better at multitasking than men",
+  "For decades, scientists may have misunderstood how brain cells work",
   "Scientists discover mysterious lakes more than a mile beneath the Red Sea",
-  "Deep beneath Australia, hidden caves could unlock the secrets of alien worlds",
-  "A space telescope hunting for dark matter just discovered something unexpected",
-  "Physicists trap antimatter in a breakthrough that could explain why the universe exists",
-  "What is a thought made of? Why human consciousness may be beyond AI’s reach",
-  "2,200-year-old Roman shipwreck reveals an ingenious waterproofing trick",
+  "APOD: 2026 November 27 – The Moon Watchers",
+  "Shivelyuch Socked In",
   "APOD: 2026 November 26 – Eye in the Sky: The Milky Way over Lençóis",
-  "Seeking Refuge on Resolution Island",
-  "NASA Enhances Supplier Program, Announces Mentor-Protégé Agreement",
-  "NASA Eyes Crop Candidates for Future Menus"
+  "Seeking Refuge on Resolution Island"
  ]
 }
