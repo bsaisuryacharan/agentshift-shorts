@@ -1,0 +1,263 @@
+{
+ "id": "everest-vs-olympus-mons-a2",
+ "title": "Everest vs Olympus Mons: Mars Wins by 2.5x",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "format": "versus",
+ "series_label": "VERSUS",
+ "theme": "cool",
+ "look": "explainer-diagram",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Olympus Mons - Wikipedia, https://en.wikipedia.org/wiki/Olympus_Mons",
+  "b1": "Olympus Mons - Wikipedia, https://en.wikipedia.org/wiki/Olympus_Mons",
+  "b2": "Olympus Mons - Wikipedia, https://en.wikipedia.org/wiki/Olympus_Mons",
+  "b3": "Olympus Mons - Wikipedia, https://en.wikipedia.org/wiki/Olympus_Mons",
+  "b4": "Olympus Mons: Largest Volcano in the Solar System - NASA Science, https://science.nasa.gov/image-article/apod-2023-april-4-olympus-mons-largest-volcano-in-the-solar-system",
+  "b5": "Olympus Mons - Wikipedia, https://en.wikipedia.org/wiki/Olympus_Mons",
+  "b6": "Olympus Mons - Wikipedia, https://en.wikipedia.org/wiki/Olympus_Mons",
+  "outro": "Olympus Mons - Wikipedia, https://en.wikipedia.org/wiki/Olympus_Mons",
+  "wiki": "https://en.wikipedia.org/wiki/Olympus_Mons",
+  "ref1": "https://science.nasa.gov/image-article/apod-2023-april-4-olympus-mons-largest-volcano-in-the-solar-system",
+  "ref2": "https://www.space.com/20133-olympus-mons-giant-mountain-of-mars.html",
+  "ref3": "https://www.jpl.nasa.gov/images/pia03763-olympus-mons-lava-flows",
+  "ref4": "https://www.sciencedaily.com/releases/2016/05/160509085751.htm",
+  "ref5": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Landslides_at_the_foot_of_Olympus_Mons"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Olympus Mons Mars",
+   "prompt": "Photoreal cinematic 9:16 view of the vast shield volcano Olympus Mons on Mars rising above rust-red plains at dawn, thin dusty atmosphere, documentary spacecraft-observation look, natural muted light, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "The tallest mountain in the Solar System is not on Earth. It beats Everest by 2.5 times.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "vs",
+     "at": "mountain"
+    },
+    {
+     "t": "title",
+     "html": "Olympus Mons *vs* Everest",
+     "at": "beats"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Mars wins by *2.5 times*"
+     },
+     "at": "2.5",
+     "dur": 2.5,
+     "accent": "green"
+    }
+   ],
+   "sfx": [
+    [
+     "vs",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Mount Everest summit",
+   "prompt": "Photoreal cinematic 9:16 aerial of snow-covered Himalayan peaks at blue hour, Mount Everest massif centre frame, documentary natural light, no text, no people",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "Everest is Earth's undisputed champion.",
+   "hud": [
+    {
+     "t": "label",
+     "text": "Side one: Everest",
+     "at": "Everest"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "Olympus Mons Mars Express",
+   "prompt": "Photoreal cinematic 9:16 orbital view of Olympus Mons on Mars, enormous circular shield volcano with calderas at summit, rust-red terrain, documentary satellite imagery look, natural light, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Olympus Mons on Mars stands 21.287 kilometres high. That is 2.5 times the elevation of Everest above sea level.",
+   "hud": [
+    {
+     "t": "rows",
+     "at": "21.287",
+     "items": [
+      [
+       "Olympus Mons",
+       "21.287",
+       "km",
+       "cy"
+      ],
+      [
+       "vs Everest",
+       "2.5",
+       "x",
+       "am"
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    [
+     "high",
+     "whoosh",
+     0.6
+    ]
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "Mars surface lava plains",
+   "prompt": "Photoreal cinematic 9:16 wide shot of ancient basaltic lava flows on the Martian surface, cracked dark rock channels across rust-red plains, documentary rover-style perspective, natural dusty light, no text, no people",
+   "focal": [
+    0.5,
+    0.55
+   ],
+   "say": "Why so tall? Mars has no moving tectonic plates, so one stationary hotspot piled lava in the same spot for ages.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "Mars crust stays",
+      "options": "moving, drifting, fixed",
+      "suffix": "over its hotspot"
+     },
+     "at": "plates",
+     "dur": 2.5,
+     "accent": "blue"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "graphic": true,
+   "say": "And it is huge sideways too: 600 kilometres wide, covering about 300,000 square kilometres.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 300000,
+      "suffix": "km2"
+     },
+     "at": "300,000",
+     "dur": 2.5,
+     "accent": "green"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b5",
+   "img": "s4.jpg",
+   "photo": "Olympus Mons slopes",
+   "prompt": "Photoreal cinematic 9:16 low-angle view across the gently sloping flanks of Olympus Mons, shallow lava-covered slopes stretching to horizon under pink Martian sky, documentary look, natural light, no text, no people",
+   "focal": [
+    0.5,
+    0.6
+   ],
+   "say": "The catch? Its slopes average just 5 percent, and Mars' low gravity would make the climb surprisingly easy.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Slopes average only 5 percent",
+      "keyword": "5 percent",
+      "note": "an easy walk"
+     },
+     "at": "5",
+     "dur": 2.5,
+     "accent": "green"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s5.jpg",
+   "photo": "Olympus Mons caldera",
+   "prompt": "Photoreal cinematic 9:16 close orbital view of the nested calderas at the summit of Olympus Mons, collapsed volcanic craters on rust-red rock, documentary satellite look, natural light, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "It last erupted 25 million years ago, and its edge cliffs rise 8 kilometres.",
+   "hud": [
+    {
+     "t": "kinetic",
+     "text": "dormant *25 million years*",
+     "at": "erupted"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "photo": "Olympus Mons Mars",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Everest wins on Earth. Mars wins everywhere else. Follow for more versus battles.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "MARS WINS",
+     "col": "cy",
+     "at": "Mars"
+    }
+   ],
+   "sfx": [
+    [
+     "wins",
+     "impact",
+     0.8
+    ]
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "inside_machine",
+  "why": "topic fit",
+  "lemo_style": [
+   "Exploded Teardown",
+   "Blueprint",
+   "Engineering Briefing Board"
+  ]
+ },
+ "_facts": {
+  "title": "Olympus Mons",
+  "url": "https://en.wikipedia.org/wiki/Olympus_Mons",
+  "text": "Olympus Mons (; Latin for 'Mount Olympus') is a large shield volcano on Mars. As measured by the Mars Orbiter Laser Altimeter (MOLA), it is 21.287 kilometres (69,840 ft) high, about 2.5 times the elevation of Mount Everest above sea level. It is Mars's tallest volcano, its tallest planetary mountain, and is approximately tied with Rheasilvia on Vesta as the tallest mountain currently discovered in the Solar System. It is associated with the volcanic region of Tharsis Montes. It last erupted 25 million years ago. Olympus Mons is the youngest of the large volcanoes on Mars, having formed during the Martian Hesperian Period with eruptions continuing well into the Amazonian Period. It has been known to astronomers since the late 19th century as the albedo feature Nix Olympica (Latin for \"Olympic Snow\"), and its mountainous nature was suspected well before space probes confirmed it as a mountain. Two impact craters on Olympus Mons have been assigned provisional names by the International Astronomical Union: the 15.6-kilometre-diameter (9.7 mi) Karzok crater and the 10.4-kilometre-diameter (6.5 mi) Pangboche crater. They are two of several suspected source areas for shergottites, the most abundant class of Martian meteorites. == Description ==\n\nAs a shield volcano, Olympus Mons resembles the shape of the large volcanoes making up the Hawaiian Islands. The edifice is about 600 km (370 mi) wide. Because the mountain is so large, with complex structure at its edges, allocating a height to it is difficult. Olympus Mons stands nearly 22 kilometres (14 mi) above the Martian surface, growing to such heights primarily as a result of prolonged volcanic activity, weaker gravity, a lack of movement relative to the hotspot due to a lack of continental drift, and less intense weather systems that cause erosion. Its local relief, from the foot of the cliffs which form its northwest margin to its peak, is over 21 km (13 mi) (a little over twice the height of Mauna Kea as measured from its base on the ocean floor). The total elevation change from the plains of Amazonis Planitia, over 1,000 km (620 mi) to the northwest, to the summit approaches 26 km (16 mi). The summit of the mountain has six nested calderas (collapsed craters) forming an irregular depression 60 km (37 mi) × 80 km (50 mi) across and up to 3.2 km (2.0 mi) deep. The volcano's outer edge consists of an escarpment, or cliff, up to 8 km (5.0 mi) tall (although obscured by lava flows in places), a feature unique among the shield volcanoes of Mars, which may have been created by enormous flank landslides. Olympus Mons covers an area of about 300,000 km2 (120,000 sq mi), which is approximately the size of Italy or the Philippines, and it is supported by a 70 km (43 mi) thick lithosphere. The extraordinary size of Olympus Mons is likely because Mars lacks mobile tectonic plates. Unlike on Earth, the crust of Mars remains fixed over a stationary hotspot, and a volcano can continue to discharge lava until it reaches an enormous height. Being a shield volcano, Olympus Mons has a very gently sloping profile. The average slope on the volcano's flanks is only 5%. Slopes are steepest near the middle part of the flanks and grow shallower toward the base, giving the flanks a concave upward profile. Its flanks are shallower and extend farther from the summit in the northwestern direction than they do to the southeast. The volcano's shape and profile have been likened to a \"circus tent\" held up by a single pole that is shifted off center. Because of the size and shallow slopes of Olympus Mons, an observer standing on the Martian surface would be unable to view the entire profile of the volcano, even from a great distance. The curvature of the planet and the volcano itself would obscure such a synoptic view. Similarly, an observer near the summit would be unaware of standing on a very high mountain, as the slope of the volcano would extend far beyond the horizon, a mere 3 kilometers away. The typical atmospheric pressure at the top of Olympus Mons is 72 pascals, about 12% of the average Martian surface pressure of 600 pascals. Both are exceedingly low by terrestrial standards; by comparison, the atmospheric pressure at the summit of Mount Everest is 32,000 pascals, or about 32% of Earth's sea level pressure. Even so, high-altitude orographic clouds frequently drift over the Olympus Mons summit, and airborne Martian dust is still present. Although the average Martian surface atmospheric pressure is less than one percent of Earth's, the much lower gravity of Mars increases the atmosphere's scale height; in other words, Mars's atmosphere is expansive and does not drop off in density with height as sharply as Earth's. The composition of Olympus Mons is approximately 44% silicates, 17.5% iron oxides (which give the planet its red coloration), 7% aluminium, 6% magnesium, 6% calcium, and particularly high proportions of sulfur dioxide with 7%. These results point to the surface being largely composed of basalts and other mafic rocks, which would have erupted as low viscosity lava flows and hence lead to the low gradients on the surface of the planet. == Geology ==\nOlympus Mons is the result of many thousands of highly fluid, basaltic lava flows that poured from volcanic vents over a long period of time (the Hawaiian Islands exemplify similar shield volcanoes on a smaller scale – see Mauna Kea). Like the basalt volcanoes on Earth, Martian basaltic volcanoes are capable of erupting enormous quantities of ash. Due to the reduced gravity of Mars compared to Earth, there are lesser buoyant forces on the magma rising out of the crust. In addition, the magma chambers are thought to be much larger and deeper than the ones found on Earth. The flanks of Olympus Mons are made up of innumerable lava flows and channels. Many of the flows have levees along their margins (pictured).\n\nSOURCE science.nasa.gov (https://science.nasa.gov/image-article/apod-2023-april-4-olympus-mons-largest-volcano-in-the-solar-system):\nAPOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. # Olympus Mons: Largest Volcano in the Solar System **Explanation:** The largest volcano in our Solar System is on Mars. Although three times higher than Earth's Mount Everest , Olympus Mons will not be difficult for humans to climb because of the volcano's shallow slopes and Mars' low gravity. Covering an area greater than the entire Hawaiian volcano chain , the slopes of Olympus Mons typically rise only a few degrees at a time. Olympus Mons is an immense shield volcano , built long ago by fluid lava. A relatively static surface crust allowed it to build up over time. Its last eruption is thought to have been about 25 million years ago. The featured image was taken by the European Space Agency's robotic Mars Express spacecraft currently orbiting the Red Planet . Your Sky Surprise: What picture did APOD feature on your birthday? (post 1995) | Date | April 4, 2023 | |---|---| | Credit | Image Credit: ESA , DLR , FU Berlin , Mars Express ; Processing & CC BY 2.0 License : Andrea Luck | | Authors & editors: | Robert Nemiroff (MTU) & Jerry Bonnell (UMCP) | | A service of: | ASD at NASA / GSFC,NASA Science Activation & Michigan Tech. U. |\n\nSOURCE space.com (https://www.space.com/20133-olympus-mons-giant-mountain-of-mars.html):\nJoin - Join our community Expert insights In-depth guides and features Curated newsletters Handpicked inspiration Early Access Preview new releases first Earn badges as you explore Join the conversation Comment and connect Tailored for you Personalised recommendations Get Space+ Access Quick For the quickest way to join, enter your email below. We’ll send a confirmation email and sign you up to Space.com newsletters with the latest inspiration, expert advice and exclusive offers. By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. FIND OUT ABOUT OUR MAGAZINE Want to subscribe to the magazine? Click the button below to find out more information. Find out more Get Space+ Access Quick Join The Club for quick access. Enter your email below and we'll send confirmation, and sign you up to our newsletter. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions. Geographical rules apply. Welcome to Space+ ! Hi , Your membership journey starts here. Keep exploring and earning more as a member. MY ACCOUNT --- Earn your first badge Start reading to unlock your first badge Keep earning badges Explore ways to get more involved as a member. Space Exploration Latest space missions, discoveries and exploration updates. Explore Astronomy Stargazing tips, cosmic events and expert insights on the universe Explore --- Your membership perks Start exploring exclusive deals, expert advice and more Explore now Never Miss a Discovery Space news, cosmic updates and expert insights straight to your inbox. Choose your newsletters --- Sign Out Jump To: * Size, shape and age * How did Olympus Mons form? * Exploring Martian volcanoes * Additional resources Get the Space.com Newsletter Breaking space news, the latest updates on rocket launches, skywatching events and more! --- By submitting your information you agree to the Terms & Conditions and Privacy Policy and are aged 16 or over. You are now subscribed Your newsletter sign-up was successful --- Want to add more newsletters? --- Join the club Get full access to premium articles, exclusive features and a \n\nSOURCE jpl.nasa.gov (https://www.jpl.nasa.gov/images/pia03763-olympus-mons-lava-flows):\n# Olympus Mons Lava Flows Jet Propulsion Laboratory https://www.jpl.nasa.gov/ May 21, 2002 (Released 05 April 2002) Olympus Mons stands 26 km above the surrounding plains, which is three times taller than Mt. Everest, and is the tallest volcano in the solar system. Olympus Mons is also wider (585 km) than the state of Arizona. Although these are impressive dimensions an astronaut would find walking these slopes easy, as they are typically only 2 to 5 degrees. This image contains numerous lava flows, leveed lava channels, a discontinuous sinuous rille (thought to be a collapsed lava tube) and lava plains. Close examination of the sinuous rille reveals that portions of the roof of the lava tube have not completely collapsed. All of these features can be seen in basaltic (iron and magnesium rich black rock) volcanic regions on Earth like Hawaii and Iceland. Impact craters are scarce, indicating a relatively young age (several hundred million years old) for these surfaces.\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2016/05/160509085751.htm):\n# Simulating the evolution of Mars volcano Olympus Mons Date: May 9, 2016 Source: Freie Universitaet Berlin Summary: Scientists have succeeded in creating a model simulating the formation of mysterious structures on the surface of the Mars volcano, Olympus Mons. The research project is based on image data of the High Resolution Stereo Camera (HRSC) that is installed on the European Mars Express spacecraft, which has been orbiting the red planet since December 2003. Using the camera images, the scientists in the Planetary Sciences and Remote Sensing group generated a mosaic and a terrain model of the Olympus Mons volcano. The image data show that the volcano shield is shaped in the form of arched terraces and the foot of the otherwise very flat volcano drops steeply. The origin of the terraces and the steep slope of Olympus Mons were discussed heatedly in previous publications. Share: Scientists from the Division of Planetary Sciences and Remote Sensing in the Institute of Geological Sciences at Freie Universität Berlin have succeeded in creating a model simulating the formation of mysterious structures on the surface of the Mars volcano, Olympus Mons. The study was conducted in collaboration with the German Research Centre for Geosciences in Potsdam and Arizona State University. The findings were published in the latest issue of the international scientific journal, *Journal of Geophysical Research -- Planets.* The research project is based on image data of the High Resolution Stereo Camera (HRSC) that is installed on the European Mars Express spacecraft, which has been orbiting the red planet since December 2003. Using the camera images, the scientists in the Planetary Sciences and Remote Sensing group generated a mosaic and a terrain model of the Olympus Mons volcano. The image data show that the volcano shield is shaped in the form of arched terraces and the foot of the otherwise very flat volcano drops steeply. The origin of the terraces and the steep slope of Olympus Mons were discussed heatedly in previous publications. This study indicates that the observed deformations of the volcano are due to gravity, which on Mars is about 40 percent of the Earth's gr\n\nSOURCE esa.int (https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Landslides_at_the_foot_of_Olympus_Mons):\n## stay updated Subscribe to our newsletter to receive the latest news, mission updates, and exclusive insights directly in your inbox. Be the first to know about our upcoming projects and breakthroughs. ESA’s Mars Express has turned its trusty High Resolution Stereo Camera (HRSC) towards Mars’s most imposing volcano, revealing its dramatic surroundings and turbulent past. Mars is home to the largest volcanoes in the Solar System. The tallest of these is Olympus Mons, a giant shield volcano spotted in 1971 by NASA’s Mariner 9 spacecraft. Olympus Mons is 21.9 km tall at its peak, about 2.5 times higher than Earth’s Mount Everest rises above sea level. Mariner scientists spied not just Olympus Mons’s peak but also its surroundings, noticing an ‘aureole’ spreading out from the volcano’s base for hundreds of kilometres. This aureole in turn surrounds the volcano’s ‘basal scarp’, an immediate perimeter around Olympus Mons that is remarkably steep, hitting seven km tall in some places. These new images show a crumpled feature named Lycus Sulci, on the edges of the aureole; the volcano itself is located out of frame to the bottom left (south-east), many hundreds of km away. The aureole – seen especially well in this 2004 image from NASA’s Mars Orbiter Laser Altimeter, and in the contextual map associated with this new Mars Express release – tells the story of how Olympus Mons’s lower flanks catastrophically collapsed several 100 million years ago. Large amounts of lava once flowed down the volcano, triggering landslides that tumbled down its flanks to meet bedrock – in this case, bedrock containing ice and water. The swelteringly hot lava caused this ice to melt and become unstable; as a result, the rocky rim of Olympus Mons broke off and partially slid away. This collapse came in the form of huge rockfalls and landslides, which slipped downwards and spread widely across the surrounding plains. As the landslides moved away from Olympus Mons and travelled across the martian surface they became alternately compressed and stretched – crumpled and pulled apart. This created the characteristic wrinkles seen in these new images of Lycus Sulci. Following its formation, Lycus ",
+  "extra_sources": [
+   "https://science.nasa.gov/image-article/apod-2023-april-4-olympus-mons-largest-volcano-in-the-solar-system",
+   "https://www.space.com/20133-olympus-mons-giant-mountain-of-mars.html",
+   "https://www.jpl.nasa.gov/images/pia03763-olympus-mons-lava-flows",
+   "https://www.sciencedaily.com/releases/2016/05/160509085751.htm",
+   "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Landslides_at_the_foot_of_Olympus_Mons"
+  ]
+ },
+ "_writer": "opencode"
+}

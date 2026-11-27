@@ -1,5 +1,5 @@
 {
- "current": "roman-ship-waterproof-trick-a2",
+ "current": "everest-vs-olympus-mons-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1212,6 +1212,25 @@
     "safe_zone": 10
    },
    "run_id": "45877645234"
+  },
+  "everest-vs-olympus-mons-a2": {
+   "title": "Everest vs Olympus Mons: Mars Wins by 2.5x",
+   "base": "everest-vs-olympus-mons-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 8,
+    "accuracy": 10,
+    "originality": 6,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 8,
+    "hierarchy": 9,
+    "consistency": 8,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "46000174704"
   }
  }
 }
