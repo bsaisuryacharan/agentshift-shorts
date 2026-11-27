@@ -1,5 +1,5 @@
 {
- "current": "everest-vs-olympus-mons-a2",
+ "current": "neurons-backwards-a1",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1231,6 +1231,25 @@
     "safe_zone": 10
    },
    "run_id": "46000174704"
+  },
+  "neurons-backwards-a1": {
+   "title": "What If Your Brain Cells Work Backwards?",
+   "base": "neurons-backwards-a1",
+   "status": "approved",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 6,
+    "accuracy": 10,
+    "originality": 8,
+    "policy": 10,
+    "visual_variety": 8,
+    "polish": 6,
+    "hierarchy": 8,
+    "consistency": 9,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "46011260151"
   }
  }
 }

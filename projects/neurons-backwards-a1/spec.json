@@ -1,0 +1,224 @@
+{
+ "id": "neurons-backwards-a1",
+ "title": "What If Your Brain Cells Work Backwards?",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+28%",
+ "brand": "AGENT SHIFT",
+ "series_label": "WHAT IF",
+ "format": "what_if",
+ "theme": "cool",
+ "look": "midnight-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b1": "https://en.wikipedia.org/wiki/Neuron",
+  "b3": "https://en.wikipedia.org/wiki/Neuron",
+  "b4": "https://en.wikipedia.org/wiki/Neuron",
+  "b5": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3191246",
+  "b6": "https://en.wikipedia.org/wiki/Neuron",
+  "wiki": "https://en.wikipedia.org/wiki/Neuron",
+  "ref1": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3191246",
+  "ref2": "https://www.sciencedaily.com/releases/2026/05/260528082459.htm",
+  "ref3": "https://www.scientificamerican.com/article/10-mind-blowing-brain-discoveries-from-2025",
+  "ref4": "https://www.bbc.com/future/article/20230912-how-i-hacked-my-brain"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "prompt": "photoreal cinematic 9:16 macro of a single neuron cell under a microscope, branching dendrites glowing faintly silver against a dark blue laboratory background, documentary look, natural practical light, no text, no people",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "86 billion neurons, 100 trillion synapses. What if they fired backwards?",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "what if?",
+     "at": "backwards"
+    },
+    {
+     "t": "title",
+     "html": "*86 billion* neurons",
+     "at": "billion"
+    }
+   ],
+   "sfx": [
+    [
+     "pulse",
+     "impact",
+     0.7
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "neuron fluorescence microscopy",
+   "prompt": "photoreal cinematic 9:16 macro of stained neurons in a brain tissue sample, delicate branching fibres on a deep navy field, documentary microscopy look, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Normally a neuron receives signals on its dendrites, then fires down its axon. One direction only.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "Signals enter through the dendrites and leave down the axon.",
+      "keyword": "dendrites",
+      "note": "the receiving end"
+     },
+     "at": "dendrites",
+     "dur": 2.5,
+     "accent": "blue"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "graphic": true,
+   "say": "So flip it. Signals would arrive at the axon and rush back to the dendrites.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "axon",
+       "dendrites"
+      ],
+      [
+       "input",
+       "output"
+      ]
+     ],
+     "at": "arrive"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b3",
+   "graphic": true,
+   "say": "First casualty: reflexes. Motor neurons carry commands from your brain to muscles. Reversed, your muscles would command your brain.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "Your muscles would command your brain.",
+      "accent": "green"
+     },
+     "at": "muscles",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "neuron axon diagram",
+   "prompt": "photoreal cinematic 9:16 macro of a single long nerve fibre stretching across a dark frame, thin silver filament over deep blue, documentary look, natural light, no text, no people",
+   "focal": [
+    0.4,
+    0.5
+   ],
+   "say": "Some axons stretch 1 meter. A backwards pulse would travel that whole length before the signal even registered.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "1 meter axon",
+     "col": "cy",
+     "at": "meter"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "graphic": true,
+   "say": "And learning? New brain cells die within weeks unless effortful learning keeps them alive. A reversed network would integrate them the wrong way round, so memories would form before experiences.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "Memories form",
+      "options": "after, before, during",
+      "suffix": "the experience.",
+      "accent": "violet"
+     },
+     "at": "Memories",
+     "dur": 2.5
+    },
+    {
+     "t": "delta",
+     "text": "cells die",
+     "dir": "down",
+     "col": "ir",
+     "at": "weeks"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "brain neural network illustration",
+   "prompt": "photoreal cinematic 9:16 wide shot of a dense neural network of glowing fibres inside a dark brain-like structure, deep blue and silver, documentary look, no text, no people",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The verdict: a fully reversed brain could not see, move or remember. Direction is not a detail. It is the design.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "titlecard-lockup",
+     "vars": {
+      "wordmark": "DIRECTION IS DESIGN",
+      "accent": "blue"
+     },
+     "at": "design",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "say": "Follow for more what ifs your brain can't unthink.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "Follow for more <b>what ifs</b>",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "what_if",
+  "why": "topic fit",
+  "lemo_style": [
+   "Sci-fi Hologram HUD",
+   "Isometric Infographic",
+   "Sports Telestrator"
+  ]
+ },
+ "_facts": {
+  "title": "Neuron",
+  "url": "https://en.wikipedia.org/wiki/Neuron",
+  "text": "A neuron (American English), neurone (British English), or nerve cell, is an electrically excitable cell that communicates with other cells by firing electric signals called action potentials. Neurons form neural networks in the nervous system, predominantly within the brain and spinal cord of the central nervous system. Neurons receive and conduct impulses, communicating with other cells via synapses. These are specialized connections that commonly use minute amounts of chemical neurotransmitters to pass the electric signal from the presynaptic neuron to the target cell through the synaptic gap. Neurons are the main components of nervous tissue in all animals except sponges and placozoans. Plants and fungi do not have nerve cells. Molecular evidence suggests that the ability to generate electric signals first appeared in life some 700 to 800 million years ago, during the Tonian period. Predecessors of neurons were the peptidergic secretory cells. They eventually gained new gene modules which enabled cells to create post-synaptic scaffolds and ion channels that generate fast electrical signals. The ability to generate electric signals was a key innovation in the evolution of the nervous system. Neurons are typically classified into three types based on their function. Sensory neurons respond to stimuli such as touch, sound, or light that affect the cells of the sensory organs, and they send signals to the spinal cord and then to the sensorial area in the brain. Motor neurons receive signals from the brain and spinal cord to control everything from muscle contractions to glandular output. Interneurons connect neurons to other neurons within the same region of the brain or spinal cord. When multiple neurons are functionally connected together, they form what is called a neural circuit. A neuron contains all the structures of other cells such as a nucleus, mitochondria, and Golgi bodies, but has additional unique structures such as an axon, and dendrites. The soma or cell body, is a compact structure, and the axon and dendrites are filaments extruding from the soma. Dendrites typically branch profusely and extend a few hundred micrometers from the soma. The axon leaves the soma at a swelling called the axon hillock and travels for as far as 1 meter in humans or more in other species. It branches but usually maintains a constant diameter. At the farthest tip of the axon's branches are axon terminals, where the neuron can transmit a signal across the synapse to another cell. Neurons may lack dendrites or have no axons. The term neurite is used to describe either a dendrite or an axon, particularly when the cell is undifferentiated. Most neurons receive signals via the dendrites and soma and send out signals down the axon. At the majority of synapses, signals cross from the axon of one neuron to the dendrite of another. However, synapses can connect an axon to another axon or a dendrite to another dendrite. The signaling process is partly electrical and partly chemical. Neurons are electrically excitable, due to the maintenance of voltage gradients across their membranes. If the voltage changes by a large enough amount over a short interval, the neuron generates an all-or-nothing electrochemical pulse called an action potential. This potential travels rapidly along the axon and activates synaptic connections as it reaches them. Synaptic signals may be excitatory or inhibitory, increasing or reducing the net voltage that reaches the soma. In most cases, neurons are generated by neural stem cells during brain development and childhood. Neurogenesis largely ceases during adulthood in most areas of the brain. == Nervous system ==\nNeurons are the primary components of the nervous system, along with the glial cells that give them structural and metabolic support. The nervous system is made up of the central nervous system, which includes the brain and spinal cord, and the peripheral nervous system, which includes the autonomic, enteric and somatic nervous systems. In vertebrates, the majority of neurons belong to the central nervous system, but some reside in peripheral ganglia, and many sensory neurons are situated in sensory organs such as the retina and cochlea. Axons may bundle into nerve fascicles that make up the nerves in the peripheral nervous system (like strands of wire that make up a cable). In the central nervous system bundles of axons are called nerve tracts. == Anatomy and histology ==\n\nNeurons are highly specialized for the processing and transmission of cellular signals. Given the diversity of functions performed in different parts of the nervous system, there is a wide variety in their shape, size, and electrochemical properties.\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC3191246):\n# Use it or lose it: How neurogenesis keeps the brain fit for learning T.J Shors, LM Anderson, D. M. Curlik, SM Nokia Behavioural Brain Research · 2011-04-22 · 227(2):450-458 · DOI: 10.1016/j.bbr.2011.04.023 · PMID: 21536076 · PMCID: PMC3191246 ## Abstract The presence of new neurons in the adult hippocampus indicates that this structure incorporates new neurons into its circuitry and uses them for some function related to learning and/or related thought processes. Their generation depends on a variety of factors ranging from age to aerobic exercise to sexual behavior to alcohol consumption. However, most of the cells will die unless the animal engages in some kind of effortful learning experience when the cells are about one week of age. If learning does occur, the new cells become incorporated into brain circuits used for learning. In turn, some processes of learning and mental activity appear to depend on their presence. In this review, we discuss the now rather extensive literature showing that new neurons are kept alive by effortful learning, a process that involves concentration in the present moment of experience over some extended period of time. As these thought processes occur, endogenous patterns of rhythmic electrophysiological activity engage the new cells with cell networks that already exist in the hippocampus and at efferent locations. Concurrent and synchronous activity provides a mechanism whereby the new neurons become integrated with the other neurons. This integration allows the present experience to become integrated with memories from the recent past in order to learn and predict when events will occur in the near future. In this way, neurogenesis and learning interact to maintain a fit brain. ## Introduction Thousands of new neurons are added into the adult hippocampus each day. However, most of the new cells do not survive. In fact, over half of them, if not more, die within just a few weeks of their birth. One of the most effective ways to keep these cells from dying is by learning. Animals that learn a new and difficult task retain more of these new cells than animals that do not learn or learn a very easy task [1–4]. Thus, effortful a\n\nSOURCE sciencedaily.com (https://www.sciencedaily.com/releases/2026/05/260528082459.htm):\n![ScienceDaily](/ \"ScienceDaily\") --- Your source for the latest research news Follow: *Facebook* *X/Twitter* Subscribe: *RSS Feeds* *Newsletter* **New!** Sign up for our free **email newsletter**. Science News from research organizations --- # Human organoids reveal how to reverse “irreversible” nerve damage Date: : May 28, 2026 Source: : University of Cambridge Summary: : Cambridge researchers created miniature brain-and-spinal-cord systems in the lab that can send signals and even trigger tiny muscle contractions. They discovered that human neurons gradually lose their ability to regrow after damage during development — but that ability can potentially be switched back on. The team identified a gene network controlling this process and found that an existing hormone drug dramatically boosted nerve fiber regrowth. Share: : Facebook Twitter Pinterest LinkedIN Email FULL STORY --- Scientists may have found a way to “switch back on” the human nervous system’s lost ability to repair itself. Credit: Shutterstock Scientists at the University of Cambridge have created tiny lab-grown brain and spinal cord systems that mimic how movement signals travel through the human nervous system. Using this model, the team discovered that nerve damage once believed to be permanent may actually be reversible under certain conditions. As the human body develops from an embryo into a fetus and eventually an infant, neurons form complex communication networks between the brain and spinal cord. These signals travel through axons, the long nerve fibers that allow neurons to send messages and control muscle movement. Over time, however, the central nervous system largely loses its ability to regrow damaged axons. As a result, injuries to the brain or spinal cord often become permanent, leading to serious disabilities such as paralysis or loss of movement. This loss of regenerative ability is also linked to neurological diseases including motor neurone disease and multiple sclerosis. **Mini Human Brain and Spinal Cord Models** In 2021, Dr. András Lakatos and his colleagues at the University of Cambridge developed miniature human brain models using stem cells taken from patients. These pe\n\nSOURCE scientificamerican.com (https://www.scientificamerican.com/article/10-mind-blowing-brain-discoveries-from-2025):\nScientific American SubscribeSign In Save 50% on Unlimited Subscriptions December 18, 2025 4min read ![Google Logo Add Us On GoogleAdd SciAm](https://www.google.com/preferences/source?q=scientificamerican.com) The 10 Most Mind-Blowing Discoveries About the Brain in 2025 From glowing neurons to newborn memories, here are the most fascinating brain discoveries of 2025 By Allison Parshall edited by Andrea Thompson Getty Images/Andriy Onufriyenko The human brain has 86 billion neurons connected by roughly 100 *trillion* synapses, making it one of the most complex objects in the known universe. Each year neuroscientists make fascinating, important and downright strange discoveries about how this resilient structure works, and 2025 didn’t disappoint. Here are 10 of the most fascinating brain discoveries of this year for your own brain to noodle on. A representative MRI tractography image of the first era of the human brain. This image is representative of the general pattern seen across the brains in the study during the second era of neural wiring, the adolescent phase. Dr Alexa Mousley, University of Cambridge ## The Eras Tour --- ## On supporting science journalism If you're enjoying this article, consider supporting our award-winning journalism bysubscribing. By purchasing a subscription you are helping to ensure the future of impactful stories about the discoveries and ideas shaping our world today. --- Brain scans of thousands of people revealed that the human brain has five distinct eras, with turning points in the way it is organized occurring at age nine, 32, 66 and 83. Across each of these stages—for example, the “adolescent” period between age nine and 32—people’s brains tend to experience the same types of changes. ## Missing Memories You don’t remember being a newborn or even a toddler. Adults’ earliest memories tend to start around preschool and no earlier. But recent research suggests that your brain *was* making memories back then; you just don’t have access to them now. A study of the infant hippocampus, a deep-brain structure crucial for memory formation, found that it can store memories once babies are around one year old—though it’s not clear why w\n\nSOURCE bbc.com (https://www.bbc.com/future/article/20230912-how-i-hacked-my-brain):\n# How I rewired my brain in six weeks **There is growing evidence that simple, everyday changes to our lives can alter our brains and change how they work. Melissa Hogenboom put herself into a scanner to find out.** \"It's surprisingly hard to think of nothing at all\", is one of my first thoughts as I'm lying in the maw of a machine that is scanning my brain. I was told to focus on a black cross while the functional Magnetic Resonance Imagine (fMRI) machine does its noisy work. It also feels impossible to keep my eyes open. The hum of the scanner is somewhat hypnotic, and I worry a little bit that drifting off will affect how my brain appears on the resulting images. As a science journalist I've always been fascinated by the workings of the mind, which is how I found myself inside a scanner at Royal Holloway, University of London, to have my brain examined before embarking on a six-week brain-altering course. My goal was to investigate whether there's a way we can influence meaningful brain change ourselves. By altering aspects of my daily life, I hoped to find out if it is possible to strengthen crucial connections in our brain, and keep our mind healthier in the process. Along the way I learnt techniques we can all use – with some powerful results. Our brain has an incredible ability to adapt, learn and grow because by its nature, it is plastic – that is, it changes. This is called neuroplasticity, which simply means the brain's ability to adapt and evolve over time in structure and function. It was once thought to be limited to youth but we now know it's a constant force in shaping who we are. Every time we learn a new skill, our brain adapts. Neuroscientists and psychologists are now finding that we have the power to control that to some extent. And there's good reason to *want* to boost our brain – an increasing number of studies suggest it can play a role in delaying or preventing degenerative brain diseases. So, with the help of Thorsten Barnhofer, a professor of clinical psychology at the University of Surrey in the UK, that's what I set out to do. He's currently running a study on the effects of mindfulness in managing stress and difficult emotions, with",
+  "extra_sources": [
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC3191246",
+   "https://www.sciencedaily.com/releases/2026/05/260528082459.htm",
+   "https://www.scientificamerican.com/article/10-mind-blowing-brain-discoveries-from-2025",
+   "https://www.bbc.com/future/article/20230912-how-i-hacked-my-brain"
+  ]
+ },
+ "_writer": "opencode"
+}
