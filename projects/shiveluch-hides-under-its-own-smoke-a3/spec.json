@@ -1,0 +1,240 @@
+{
+ "id": "shiveluch-hides-under-its-own-smoke-a3",
+ "title": "This Volcano Hides Under Its Own Smoke",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+28%",
+ "brand": "AGENT SHIFT",
+ "series_label": "MYTH VS FACT",
+ "format": "myth_vs_fact",
+ "theme": "mono",
+ "look": "poster-pop",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "b3": "Wikipedia: Shiveluch — https://en.wikipedia.org/wiki/Shiveluch",
+  "b4": "Wikipedia: Shiveluch — https://en.wikipedia.org/wiki/Shiveluch",
+  "b5": "New Scientist — https://www.newscientist.com/article/2368480-shiveluch-volcano-eruption-in-russia-smothers-nearby-villages-in-ash",
+  "b6": "Wikipedia: Shiveluch — https://en.wikipedia.org/wiki/Shiveluch",
+  "wiki": "https://en.wikipedia.org/wiki/Shiveluch",
+  "ref1": "https://www.newscientist.com/article/2368480-shiveluch-volcano-eruption-in-russia-smothers-nearby-villages-in-ash",
+  "ref2": "https://earthobservatory.nasa.gov/images/45872/activity-at-shiveluch-volcano",
+  "ref3": "https://science.nasa.gov/earth/earth-observatory/activity-at-shiveluch-volcano-39666",
+  "ref4": "https://www.livescience.com/planet-earth/volcanoes/growing-lava-dome-oozes-like-toothpaste-from-superactive-snow-covered-volcano-in-russia-earth-from-space",
+  "ref5": "https://assets.science.nasa.gov/content/dam/science/esd/earth-observer/2008/Mar_Apr08.pdf"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "Shiveluch eruption",
+   "prompt": "Photoreal cinematic 9:16 aerial view of a snow-dusted Kamchatka stratovolcano venting a thick grey ash plume into an overcast sky, cold muted documentary light, no people, no text",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "You've heard this volcano sleeps between eruptions. That belief is dead wrong.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "true?",
+     "at": "volcano"
+    },
+    {
+     "t": "title",
+     "html": "MYTH vs *FACT*",
+     "at": "wrong"
+    }
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "Kamchatka volcano aerial",
+   "prompt": "Photoreal cinematic 9:16 wide shot of a remote volcanic peninsula of grey ridges and snow patches under heavy cloud, muted documentary palette, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "The myth says Shiveluch, in Russia's far east, sits quiet for centuries, then explodes once and rests again.",
+   "hud": [
+    {
+     "t": "stamp",
+     "text": "MYTH",
+     "col": "ir",
+     "at": "Shiveluch"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "volcano fumarole steam",
+   "prompt": "Photoreal cinematic 9:16 close view of a rocky volcanic slope with pale steam rising from cracks, cold grey daylight, real mineral textures, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "People believe it because between the headlines it just smokes, like a mountain taking a break.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "it just smokes between headlines",
+      "keyword": "smokes",
+      "note": "that smoke is the eruption"
+     },
+     "at": "smokes",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s3.jpg",
+   "photo": "Shiveluch lava dome",
+   "prompt": "Photoreal cinematic 9:16 documentary view of a rugged grey lava dome inside a volcanic crater, wisps of gas drifting, overcast light, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The evidence: Shiveluch has been erupting continuously since 1999, pushing out 0.015 cubic kilometres of magma every year.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "since 1999",
+     "col": "cy",
+     "at": "1999"
+    }
+   ]
+  },
+  {
+   "key": "b4",
+   "img": "s4.jpg",
+   "photo": "volcano ash plume satellite",
+   "prompt": "Photoreal cinematic 9:16 wide shot of an enormous grey ash column rising from a volcano into the stratosphere, seen from a distant ridge, cold documentary light, no people, no text",
+   "focal": [
+    0.5,
+    0.35
+   ],
+   "say": "In April 2023 its ash column hit 20 kilometres high and spread over 108,000 square kilometres.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "count-up",
+     "vars": {
+      "end": 108000,
+      "suffix": "km2"
+     },
+     "at": "108,000",
+     "dur": 2.5
+    },
+    {
+     "t": "delta",
+     "text": "20 km high",
+     "dir": "up",
+     "col": "ir",
+     "at": "kilometres"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "img": "s5.jpg",
+   "photo": "volcanic ash village",
+   "prompt": "Photoreal cinematic 9:16 view of a small remote village street coated in grey volcanic ash, rooftops and ground dusted grey, muted overcast documentary light, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Nearby villages got the region's heaviest ashfall in 60 years, with up to 8.5 centimetres coating the ground.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "8.5 cm of ash",
+     "col": "am",
+     "at": "8.5"
+    }
+   ]
+  },
+  {
+   "key": "b6",
+   "img": "s6.jpg",
+   "photo": "Shiveluch volcano",
+   "prompt": "Photoreal cinematic 9:16 silhouette of a smoking volcano ridge against a pale grey dawn sky, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "So the fact: Shiveluch never stopped. It is still erupting as of 2025, hiding in plain smoke.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "It never",
+      "options": "sleeps, rests, stops"
+     },
+     "at": "stopped",
+     "dur": 2.5
+    },
+    {
+     "t": "stamp",
+     "text": "FACT",
+     "col": "ok",
+     "at": "fact"
+    }
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s0.jpg",
+   "focal": [
+    0.5,
+    0.4
+   ],
+   "say": "The smoke is the tell. Follow for more myths that don't survive the facts.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "the smoke is the tell",
+      "accent": "green"
+     },
+     "at": "smoke",
+     "dur": 2.5
+    },
+    {
+     "t": "sub",
+     "html": "Follow *for more*",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "myth_fact",
+  "why": "exploring a fresh fit",
+  "lemo_style": [
+   "Caption News",
+   "Swiss Motion Graphics",
+   "Visual Investigation"
+  ]
+ },
+ "_facts": {
+  "title": "Shiveluch",
+  "url": "https://en.wikipedia.org/wiki/Shiveluch",
+  "text": "Shiveluch (Russian: Шивелуч, IPA: [ʂɨˈvʲeɫʊt͡ɕ]), also called Sheveluch, which originates from the name \"suelich\" which means \"smoking mountain\" in Itelmen, is the northernmost active volcano in Kamchatka Krai, Russia. It and Karymsky are Kamchatka's largest, most active and most continuously erupting volcanoes, as well as one of the most active on the planet. Shiveluch erupts around 0.015 km3 (0.0036 mi3) of magma per year, which causes frequent and large hot avalanches and lava dome formations at the summit. Volcanic ash emissions from this volcano often disrupt air traffic connecting the Asian and North American continents. == Geography ==\nShiveluch belongs to the Kliuchevskaya volcano group, located in central Kamchatka 84 kilometers (52 mi) northwest of Ust-Kamchatsk. The nearest settlement from the volcano is Klyuchi, situated 50 km (31 mi) from the mountain. The settlement is small enough to evacuate rapidly in case of a major eruption. == Geologic setting ==\nShiveluch is a volcano within the Kuril–Kamchatka volcanic arc which hosts tens of other volcanoes. As the Pacific Plate crust subducts deeper under the Okhotsk Plate, the melting points of minerals underground are reduced by other materials including water which results in the materials melting and forming into magma which rises onto the surface and forms the volcanoes. === Structure ===\nThere are three elements of the volcano: the stratovolcano Old Shiveluch (Старый Шивелуч); an ancient caldera; and the active Young Shiveluch (Молодой Шивелуч), with an elevation of about 2,800 meters (9,200 ft). Shiveluch is one of Kamchatka's largest and most active volcanic structures. It is a stratovolcano composed of alternating layers of solidified ash, hardened lava and volcanic rocks. === Geologic history ===\nShiveluch began forming about 60,000 to 70,000 years ago during the Late Pleistocene, and it has had at least 60 large eruptions during the Holocene. During this era, the most intense period of volcanism — including frequent large and moderate eruptions — occurred around 6500–6400 BC, 2250–2000 BC, and AD 50–650. This coincides with the peak of activity in other Kamchatka volcanoes. The current active period started around 900 BC. Since then, the large and moderate eruptions have been following each other at 50-to-400-year-long intervals. Chemically a full spectrum of subduction-zone lava types occur:\tbasalt, mafic andesite, two-pyroxene andesite, hornblende-hypersthene andesite, hornblende andesite, hornblende dacite, rhyolite. == Modern activity ==\nCatastrophic eruptions took place in 1854 and 1964, when a large part of the lava dome collapsed and created a devastating debris avalanche. The most recent period of volcanic activity began with the eruption of Young Shiveluch on 15 August 1999, and continues as of 2025. On 27 February 2015, Shiveluch erupted shooting ash into the atmosphere about 9,100 meters (30,000 ft) crossing the Bering Sea and into Alaska. === April 2023 eruption ===\nSince mid-2022, volcanologists were expecting an imminent large eruption of Shiveluch due to the unstable state of its lava dome. A strong eruption occurred on 11 April 2023 at 00.54 local time. A progressive increase in activity was observed since 28 March in the form of continued extrusion, fumarole activity, and ash emissions. During the initial paroxysmal explosive phase on 11 April, the volcano ejected a cloud of volcanic gas and ash that reached a height of 20 km (12 mi) and spread over an area of 108,000 km2 (42,000 sq mi). Pyroclastic flows from the eruption traveled up to 19 km (12 mi) away from the volcano. The next day, other summit explosions followed, the eruption column of one of which reached an altitude of 10 km (6.2 mi). The initial phase resulted in the region's largest ashfall in 60 years. The Federal Air Transport Agency assigned the eruption a “red” (maximum) hazard code. Because the height of the eruption columns reached the stratosphere, 200,000 tons of sulfur dioxide were released into the upper atmosphere. According to authorities, this eruption, with the exception of heavy ashfall, did not lead to any damage to local settlements and transport infrastructure. Analysis of radar images from satellites on 15 April showed that the main eruption occurred as a result of the collapse of the lava dome of the volcano to the south, with the formation of a 2 km × 2.6 km (1.2 mi × 1.6 mi) collapse scar in its place. Initially, the collapse process was triggered by a breach of the dome at its base and by the subsequent lateral explosion to the southeast. Thus, the eruption classifies as Peléan. Since 12 April, the activity of the volcano decreased, but the eruption continued in the form of ash ejections of lower intensity and height, and strong fumarole activity continued. Infra-red satellite images on 16 April showed that the volcano is forming a new lava dome inside its new crater. === Post 2023 eruptions ===\nOn 18 August 2024 an eruption of Shiveluch occurred following a magnitude 7.0 earthquake off the coast of Kamchatka Krai, sending an ash cloud 8 kilometres (5 mi) high, and with a length of 490 kilometres (304 mi) heading east and southeast. A \"code red\" warning was issued for aircraft in the area. Another eruption happened on November 7, 2024 evening. In the morning the volcano was quiet, there were no damages, and the level of volcanic ash settled in populated areas was less than 1mm.\n\nSOURCE newscientist.com (https://www.newscientist.com/article/2368480-shiveluch-volcano-eruption-in-russia-smothers-nearby-villages-in-ash):\nAdvertisement ### Explore by section ### Explore by subject ### Explore our products and services #### Manage your subscription Check your subscription status, update your details and more. Activate your subscription #### Earth # Shiveluch volcano eruption in Russia smothers nearby villages in ash The Shiveluch volcano, one of Russia’s most active, has erupted, ejecting a huge cloud of ash that has coated nearby villages and triggered aviation warnings. The volcano, which is in the country’s far eastern Kamchatka Peninsula, began erupting just after midnight on 11 April, launching a huge cloud of smoke and ash into the sky, according to Russian authorities. Its last major eruption was in 2007. Up to 8.5 centimetres of volcanic ash have settled in the village of Klyuchi, according to news reports. Advertisement Danila Chebrov, director of the Kamchatka branch of Russia’s Geophysical Survey, told news agency Reuters that “the ash reached 20 kilometres high, the ash cloud moved westwards and there was a very strong fall of ash on nearby villages”. However, the Kamchatka Volcanic Eruption Response Team (KVERT) reported that the plume reached only 8 kilometres above sea level. Free newsletter #### Sign up to The Daily If the plume reached 20 kilometres high, it may have penetrated the stratosphere, which could have consequences for the global climate. In the stratosphere, volcanic gases like sulphur dioxide can quickly condense to form sulphate aerosols, reflecting more of the sun’s radiation back into space and having a short-term cooling effect. The 1991 eruption of Mount Pinatubo in the Philippines, for example, sent an ash cloud 19 kilometres into the atmosphere. It cooled Earth’s surface for three years following the eruption, by as much as 0.7°C at its peak impact, according to US Geological Survey. KVERT has issued a code red notice for aviation given Shiveluch’s ongoing eruption, warning that ash explosions of up to 15 kilometres high “could occur at any time” and affect “international and low-flying aircraft”. Tonga volcano eruption was the most explosive of the 21st century It said ash clouds are drifting about 430 kilometres to the south and west of the vo\n\nSOURCE earthobservatory.nasa.gov (https://earthobservatory.nasa.gov/images/45872/activity-at-shiveluch-volcano):\nShiveluch (also spelled Sheveluch) is one of the largest and most active volcanoes on Russia’s Kamchatka Peninsula. It has been spewing ash and steam intermittently—with occasional dome collapses, pyroclastic flows, and lava flows, as well—for the past decade. Shiveluch is a stratovolcano, a steep-sloped formation of alternating layers of hardened lava, ash, and rocks thrown out by earlier eruptions. A lava dome has been growing southwest of the 3,283-meter (10,771-foot) summit. The Advanced Land Imager (ALI) on NASA’s Earth Observing-1 (EO-1) satellite acquired this image on September 7, 2010. Brown and tan debris—perhaps ash falls, perhaps mud from lahars—covers the southern landscape of the volcano, while the hills on the northern side remain covered in snow and ice. The Kamchatkan Volcanic Eruption Response Team (KVERT) reported that seismic activity at Shiveluch was \"above background levels\" from September 3-10. Ash plumes rose to an altitude of 6.5 kilometers (21,300 feet) on September 3-4, and gas-and-ash plumes were reported on September 7, when this image was acquired. According to the Smithsonian Institution's volcano program, at least 60 large eruptions of Shiveluch have occurred during the current Holocene Epoch of geological history. Intermittent explosive eruptions began in the 1990s, and the largest historical eruptions from Shiveluch occurred in 1854 and 1964. *NASA Earth Observatory image created by Jesse Allen and Robert Simmon, using EO-1 ALI data provided courtesy of the NASA EO-1 team. Caption by Mike Carlowicz.* ## Downloads\n\nSOURCE science.nasa.gov (https://science.nasa.gov/earth/earth-observatory/activity-at-shiveluch-volcano-39666):\nShiveluch Volcano on Russia’s Kamchatka Peninsula released a plume in early August 2009. On August 2, 2009, the U.S. Air Force Weather Agency reported that a plume had extended 28 kilometers (15 nautical miles) south-southeast of the volcanic summit. The Moderate Resolution Imaging Spectroradiometer (MODIS) on NASA’s Aqua satellite captured this true-color image of Shiveluch on August 3, 2009. The volcanic plume blows away from the summit, crossing the coastline and fanning out over the Bering Sea. The plume’s relatively dark color compared to nearby clouds suggests that the plume contains volcanic ash as well as water vapor. Shiveluch (also spelled Sheveluch) is a stratovolcano—a steep-sloped volcano composed of alternating layers of solidified ash, hardened lava, and volcanic rocks. One of Kamchatka’s largest volcanoes, it sports a summit reaching 3,283 meters (10,771 feet). Shiveluch is also one of the peninsula’s most active volcanoes, with an estimated 60 substantial eruptions in the past 10,000 years. ### References & Resources *NASA image courtesy MODIS Rapid Response Team, Goddard Space Flight Center. The Rapid Response Team provides daily images of this region. Caption by Michon Scott.* ## Downloads\n\nSOURCE livescience.com (https://www.livescience.com/planet-earth/volcanoes/growing-lava-dome-oozes-like-toothpaste-from-superactive-snow-covered-volcano-in-russia-earth-from-space):\n# Growing lava dome oozes 'like toothpaste' from superactive snow-covered volcano in Russia — Earth from space A recent satellite image captured a striking scene at the Shiveluch volcano, which has been erupting for nearly 30 years in Russia's Kamchatka Peninsula. Follow us **Where is it?** Shiveluch volcano, Kamchatka Peninsula, Russia \\[56.66230841, 161.3449064] **What's in the photo?** Snow melting around a growing lava dome at the volcano's summit **Which satellite took the photo?** Landsat 9 **When was it taken?** April 23, 2026 This striking satellite snap shows a heavy blanket of snow surrounding a growing lava dome at the summit of one of Russia's most active and unstable volcanoes. The snow-covered peak, called Shiveluch (also spelled Shivelyuch or Sheveluch), is a 10,771-foot-tall (3,283 meters) stratovolcano. The name Shiveluch loosely translates to \"smoking mountain\" in the language of the region's Indigenous Itelmen people. It is the northernmost active peak in the Kamchatka Peninsula, a highly volcanic region in eastern Russia that's famous for its unusually powerful and dramatically beautiful eruptions. Shiveluch stands out even among its extremely active volcanic neighbors and is one of the planet's most active volcanoes, according to NASA's Earth Observatory. It has experienced at least 15 eruptions in the past 100 years, the most recent of which has been going on since 1999, according to the Smithsonian Institution's Global Volcanism Program. On average, the volcano spews around 530 million cubic feet (15 million cubic meters) of lava every year — enough to fill 6,000 Olympic-size swimming pools, according to a 2007 study. As a result, its appearance constantly changes when viewed from above. \"On a near-daily basis, satellites detect new signs of activity within \\[Shiveluch's] horseshoe-shaped caldera, including thermal anomalies, hot avalanches and debris flows,\" Earth Observatory representatives wrote. The volcano is also constantly spitting out \"ash deposits that darken the surrounding landscape,\" they added. A massive lava dome was growing from Shiveluch's summit. It likely looked something like this dome, which grew from the same place in \n\nSOURCE assets.science.nasa.gov (https://assets.science.nasa.gov/content/dam/science/esd/earth-observer/2008/Mar_Apr08.pdf):\nI’m happy to report that The Earth Observer is beginning its 20th year as a NASA publication. The first issue was released in March 1989, and from the beginning, it has been dedicated to keeping our readers abreast of the latest developments in the Earth Observing System (EOS) program. I have been pleased to serve as EOS Senior Project Scientist since September 1992, and thus have been around for most of The Earth Observer’s 20-year history. It has been my privilege to work with a wide variety of talented individuals over the years who have made contributions to the publication as authors, designers, editors, etc. The names are too many to list, but I would particularly like to recognize the members of the current EOS Project Science Office who are involved. Alan Ward (Executive Editor) and Charlotte Griner (former Executive Editor) thoroughly review the content of every issue and are constantly on the lookout for interesting articles for future issues. Tim Suttles, and Chris Chris­ sotimos also serve as Technical Editors and review each issue. Debbi McLean does the layout of the newsletter and handles the production of each issue. Cindy Trapp and Leon Middleton help with the distribution of each issue. Steve Graham maintains a database that keeps track of over 6000 subscribers. PDFs of every issue from 1995 to the present are posted on the EOS Project Science Office website that Maura Tokay maintains—eospso. gsfc.nasa.gov/eos_homepage/for_scientists/earth_observer.php. (Archived hard copies of all issues are also on file in the EOSPSO library.) The publication is and always has been a true team effort from start to finish. To the current staff and to every individual that has contributed to making The Earth Observer such a top-notch publication for so many years, I say: “Congratulations and keep up the outstanding work!” On page 4 of this issue our Executive Editor has written an article sharing his perspective on The Earth Observer’s important role in compiling a written history of the EOS program and its ongoing role in communicating news about the pro­ continued on page 2NASA logo www.nasa.gov the earth observer Editor’s Corner Michael King EOS Senior Projec",
+  "extra_sources": [
+   "https://www.newscientist.com/article/2368480-shiveluch-volcano-eruption-in-russia-smothers-nearby-villages-in-ash",
+   "https://earthobservatory.nasa.gov/images/45872/activity-at-shiveluch-volcano",
+   "https://science.nasa.gov/earth/earth-observatory/activity-at-shiveluch-volcano-39666",
+   "https://www.livescience.com/planet-earth/volcanoes/growing-lava-dome-oozes-like-toothpaste-from-superactive-snow-covered-volcano-in-russia-earth-from-space",
+   "https://assets.science.nasa.gov/content/dam/science/esd/earth-observer/2008/Mar_Apr08.pdf"
+  ]
+ },
+ "_writer": "opencode"
+}

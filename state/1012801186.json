@@ -1,5 +1,5 @@
 {
- "current": "plastic-to-chemicals-how-a2",
+ "current": "shiveluch-hides-under-its-own-smoke-a3",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1269,6 +1269,25 @@
     "safe_zone": 10
    },
    "run_id": "46106880068"
+  },
+  "shiveluch-hides-under-its-own-smoke-a3": {
+   "title": "This Volcano Hides Under Its Own Smoke",
+   "base": "shiveluch-hides-under-its-own-smoke-a3",
+   "status": "approved",
+   "scores": {
+    "hook": 9,
+    "visual_quality": 8,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 6,
+    "polish": 6,
+    "hierarchy": 6,
+    "consistency": 7,
+    "payoff": 8,
+    "safe_zone": 10
+   },
+   "run_id": "46127482189"
   }
  }
 }
