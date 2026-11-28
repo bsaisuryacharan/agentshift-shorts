@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T12:47:18+00:00",
+ "generated_at": "2026-11-28T12:00:03+00:00",
  "channel": {
   "period": "2026-10-14..2026-11-12",
   "views": 10876.0,
@@ -12,20 +12,20 @@
  },
  "trending": [
   "When the camera captures the most unexpected animal encounters",
-  "How A Tiny Bird Solved High Speed Bullet Train Physics",
   "NASA Again Did the IMPOSSIBLE! 1 Light Day in Space By Humans! Astronauts HAPPY",
   "How submarine works",
   "The Most Astonishing Animal Encounters Caught On Camera",
   "The Wildest Animal Encounters Caught on Camera",
   "Mot Unexpected Animal Moments Caught On Camera",
   "Bro Just Explained the Future of Computing 🤯",
-  "The Dinosaurs' Killer Left a Fingerprint Everywhere on Earth | Neil deGrasse Tyson",
   "These animal moments are so wild you won't Believe they were real",
+  "Strange Animal Facts Most People Don't Know!🙄",
+  "My favorite piece of tech lifts my legs for me…",
   "Why the Moon Looks Bigger Tonight 🤯",
   "The narwhal’s legendary “unicorn horn” holds a remarkable engineering secret"
  ],
  "learned": {
-  "shorts_scored": 36,
+  "shorts_scored": 40,
   "best": [
    {
     "title": "The Sun's Worst Storms, Ranked",
@@ -67,56 +67,56 @@
   ]
  },
  "stage_averages": {
-  "hook": 7.5,
-  "story": 6.5,
-  "visuals": 6.1,
-  "polish": 6.1,
-  "policy": 8.7
+  "hook": 7.8,
+  "story": 6.7,
+  "visuals": 6.3,
+  "polish": 6.2,
+  "policy": 8.8
  },
- "weakest_stage": "visuals",
+ "weakest_stage": "polish",
  "region": "IN",
- "trend_signals_total": 62,
- "trend_signals_on_niche": 35,
+ "trend_signals_total": 60,
+ "trend_signals_on_niche": 33,
  "niche_winners": [
   {
    "title": "When the camera captures the most unexpected animal encounters",
-   "views": 15635432,
+   "views": 15991211,
    "url": "https://www.youtube.com/watch?v=7UekPIdjdvw"
   },
   {
+   "title": "Strange Animal Facts Most People Don't Know!🙄#city #facts #new #tending #shorts #vairal #a",
+   "views": 3728678,
+   "url": "https://www.youtube.com/watch?v=08WPV1wAYGk"
+  },
+  {
    "title": "NASA Again Did the IMPOSSIBLE! 1 Light Day in Space By Humans! Astronauts HAPPY! #shorts",
-   "views": 8279995,
+   "views": 8324912,
    "url": "https://www.youtube.com/watch?v=nVRrtW7EsqY"
   },
   {
-   "title": "How A Tiny Bird Solved High Speed Bullet Train Physics #shorts",
-   "views": 14832156,
-   "url": "https://www.youtube.com/watch?v=Z7aUqz03TTY"
-  },
-  {
    "title": "TOP 5 Zwierząt, które mają najdziwniejszych wrogów #shorts",
-   "views": 8814174,
+   "views": 9247757,
    "url": "https://www.youtube.com/watch?v=0h2uXKVVer0"
   },
   {
    "title": "The Wildest Animal Encounters Caught on Camera",
-   "views": 6061200,
+   "views": 6088300,
    "url": "https://www.youtube.com/watch?v=77yTZXiBlmo"
   },
   {
    "title": "How submarine works #science #fun #shorts #entertainment",
-   "views": 6662212,
+   "views": 6787709,
    "url": "https://www.youtube.com/watch?v=NFsLFx0I264"
   },
   {
    "title": "How Crayfish Survive When Rice Fields Dry Up",
-   "views": 8358587,
+   "views": 8385262,
    "url": "https://www.youtube.com/watch?v=IyLsiTlhFcE"
   },
   {
-   "title": "Why Milk is Fighting Your Truck",
-   "views": 6376722,
-   "url": "https://www.youtube.com/watch?v=fQYmEG460Sc"
+   "title": "Bro Just Explained the Future of Computing 🤯 #nvidia #shorts",
+   "views": 5757443,
+   "url": "https://www.youtube.com/watch?v=Z-HYbC9sfGQ"
   }
  ],
  "news": [
@@ -128,9 +128,9 @@
   "The surprising reason women seem better at multitasking than men",
   "For decades, scientists may have misunderstood how brain cells work",
   "Scientists discover mysterious lakes more than a mile beneath the Red Sea",
+  "APOD: 2026 November 28 – Apollo 17 VIP Site Anaglyph",
+  "NASA’s NG-25 Mission to Launch Pioneering Space Crops Research",
   "APOD: 2026 November 27 – The Moon Watchers",
-  "Shivelyuch Socked In",
-  "APOD: 2026 November 26 – Eye in the Sky: The Milky Way over Lençóis",
-  "Seeking Refuge on Resolution Island"
+  "Shivelyuch Socked In"
  ]
 }
