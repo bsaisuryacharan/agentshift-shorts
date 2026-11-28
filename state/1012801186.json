@@ -1,5 +1,5 @@
 {
- "current": "neurons-backwards-a1",
+ "current": "plastic-to-chemicals-how-a2",
  "projects": {
   "ball-lightning-energy-a1": {
    "title": "What if we harnessed Ball Lightning?",
@@ -1250,6 +1250,25 @@
     "safe_zone": 10
    },
    "run_id": "46011260151"
+  },
+  "plastic-to-chemicals-how-a2": {
+   "title": "How Unrecyclable Plastic Gets Rebuilt",
+   "base": "plastic-to-chemicals-how-a2",
+   "status": "approved",
+   "scores": {
+    "hook": 8,
+    "visual_quality": 7,
+    "accuracy": 10,
+    "originality": 7,
+    "policy": 10,
+    "visual_variety": 7,
+    "polish": 6,
+    "hierarchy": 8,
+    "consistency": 7,
+    "payoff": 9,
+    "safe_zone": 10
+   },
+   "run_id": "46106880068"
   }
  }
 }

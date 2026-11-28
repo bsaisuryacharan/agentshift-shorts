@@ -1,0 +1,260 @@
+{
+ "id": "plastic-to-chemicals-how-a2",
+ "title": "How Unrecyclable Plastic Gets Rebuilt",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+20%",
+ "brand": "AGENT SHIFT",
+ "series_label": "HOW IT WORKS",
+ "format": "how_it_works",
+ "theme": "cool",
+ "look": "midnight-grid",
+ "subscribe": {
+  "title": "SUBSCRIBE",
+  "sub": "for more like this"
+ },
+ "sources": {
+  "hook": "Plastic recycling - https://en.wikipedia.org/wiki/Plastic_recycling",
+  "b1": "Plastic recycling - https://en.wikipedia.org/wiki/Plastic_recycling",
+  "b2": "Plastic recycling - https://en.wikipedia.org/wiki/Plastic_recycling",
+  "b3": "Plastic recycling - https://en.wikipedia.org/wiki/Plastic_recycling",
+  "b4": "Plastic recycling - https://en.wikipedia.org/wiki/Plastic_recycling",
+  "b5": "Plastic recycling - https://en.wikipedia.org/wiki/Plastic_recycling",
+  "b6": "Plastic recycling - https://en.wikipedia.org/wiki/Plastic_recycling",
+  "wiki": "https://en.wikipedia.org/wiki/Plastic_recycling",
+  "ref1": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12557311",
+  "ref2": "https://www.nature.com/articles/s41598-025-25951-z",
+  "ref3": "https://www.scientificamerican.com/article/how-fossil-fuel-companies-are-driving-plastic-production-and-pollution",
+  "ref4": "https://www.britannica.com/science/plastic-pollution"
+ },
+ "beats": [
+  {
+   "key": "hook",
+   "img": "s0.jpg",
+   "photo": "plastic waste bales recycling",
+   "prompt": "photoreal cinematic 9:16 shot inside a recycling facility, huge compressed cubes of mixed plastic waste stacked in rows, cold industrial daylight through high windows, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.45
+   ],
+   "say": "Humanity made 6.3 billion tonnes of plastic waste. Only 9% was ever recycled.",
+   "hud": [
+    {
+     "t": "bubble",
+     "text": "how?",
+     "at": "plastic"
+    },
+    {
+     "t": "hf",
+     "name": "per-word-rise",
+     "vars": {
+      "text": "only *9%* ever recycled",
+      "split": "word",
+      "accent": "green"
+     },
+     "at": "recycled",
+     "dur": 2.5
+    }
+   ],
+   "sfx": [
+    [
+     "recycled",
+     "impact",
+     0.8
+    ]
+   ]
+  },
+  {
+   "key": "b1",
+   "img": "s1.jpg",
+   "photo": "plastic waste landfill",
+   "prompt": "photoreal cinematic 9:16 aerial top-down of a landfill site, pale plastic waste scattered across dark earth, overcast natural light, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The rest? 79% went to landfill or straight into nature.",
+   "hud": [
+    {
+     "t": "bars",
+     "items": [
+      [
+       "Recycled",
+       9,
+       "ok"
+      ],
+      [
+       "Burned",
+       12,
+       "am"
+      ],
+      [
+       "Landfill",
+       79,
+       "ir"
+      ]
+     ],
+     "unit": "%",
+     "at": "79%"
+    }
+   ]
+  },
+  {
+   "key": "b2",
+   "img": "s2.jpg",
+   "photo": "plastic bottles sorting conveyor",
+   "prompt": "photoreal cinematic 9:16 close-up of a conveyor belt carrying mixed plastic bottles under factory lighting, shallow depth of field, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Normal recycling just melts plastic and remoulds it. But heating degrades the polymer chains, so quality drops every time.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "vox-annotate",
+     "vars": {
+      "text": "melting degrades the polymer chains",
+      "keyword": "degrades",
+      "note": "quality drops",
+      "style": "circle",
+      "accent": "blue"
+     },
+     "at": "degrades",
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "key": "b3",
+   "img": "s2.jpg",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "graphic": true,
+   "say": "Worse, it must first be sorted by colour and polymer type. That sorting is slow and expensive.",
+   "hud": [
+    {
+     "t": "chain",
+     "steps": [
+      [
+       "Collect",
+       "Sort"
+      ],
+      [
+       "Sort",
+       "Melt"
+      ]
+     ],
+     "at": "sorted"
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b4",
+   "img": "s3.jpg",
+   "photo": "industrial chemical plant pipes",
+   "prompt": "photoreal cinematic 9:16 wide shot of an industrial chemical plant, steel pipes and towers under grey daylight, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "So for plastic nobody can recycle, there is plan B: feedstock recycling. It breaks waste plastic back down into its starting chemicals.",
+   "hud": [
+    {
+     "t": "tape",
+     "text": "plan B",
+     "col": "cy",
+     "at": "feedstock"
+    }
+   ]
+  },
+  {
+   "key": "b5",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "graphic": true,
+   "say": "Those raw chemicals can become fresh plastic again, or even replace fossil fuels burned for energy.",
+   "hud": [
+    {
+     "t": "hf",
+     "name": "kinetic-type-swap",
+     "vars": {
+      "prefix": "waste becomes",
+      "options": "trash, pollution, fresh plastic, fuel",
+      "accent": "green"
+     },
+     "at": "chemicals",
+     "dur": 2.5
+    }
+   ],
+   "prompt": "graphic ground"
+  },
+  {
+   "key": "b6",
+   "img": "s4.jpg",
+   "photo": "ocean plastic pollution",
+   "prompt": "photoreal cinematic 9:16 shot of plastic bottles and debris floating on dark ocean water near a shoreline, natural grey light, documentary look, no people, no text",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "The stakes: around 8 million tonnes of plastic entered the oceans every year as of 2015.",
+   "hud": [
+    {
+     "t": "big",
+     "text": "8 million tonnes",
+     "col": "ir",
+     "at": "8"
+    }
+   ],
+   "sfx": [
+    [
+     "oceans",
+     "whoosh",
+     0.7
+    ]
+   ]
+  },
+  {
+   "key": "outro",
+   "img": "s2.jpg",
+   "focal": [
+    0.5,
+    0.5
+   ],
+   "say": "Your bin was never the whole solution. Follow for more machines behind the mess.",
+   "hud": [
+    {
+     "t": "sub",
+     "html": "Follow for <b>more</b>",
+     "at": "Follow"
+    }
+   ]
+  }
+ ],
+ "style_map": {
+  "class": "awe_scale",
+  "why": "topic fit",
+  "lemo_style": [
+   "Data Storytelling",
+   "Satellite Briefing",
+   "Time-lapse Symphony"
+  ]
+ },
+ "_facts": {
+  "title": "Plastic recycling",
+  "url": "https://en.wikipedia.org/wiki/Plastic_recycling",
+  "text": "Plastic recycling is the processing of plastic waste into other products. Recycling can reduce dependence on landfills, conserve resources and protect the environment from plastic pollution and greenhouse gas emissions. Recycling rates lag behind those of other recoverable materials, such as aluminium, glass and paper. From the start of plastic production through to 2015, the world produced around 6.3 billion tonnes of plastic waste, only 9% of which has been recycled and only ~1% has been recycled more than once. Of the remaining waste, 12% was incinerated and 79% was either sent to landfills or released into the environment as pollution. Almost all plastic is non-biodegradable and without recycling, spreads across the environment where it causes plastic pollution. For example, as of 2015, approximately 8 million tonnes of waste plastic enters the oceans annually, damaging oceanic ecosystems and forming ocean garbage patches. Most plastic recycling is currently mechanical and involves the melting and reforming of plastic into other items. This can cause polymer degradation at the molecular level, and requires that waste be sorted by colour and polymer type before processing, which is often complicated and expensive. Errors can lead to material with inconsistent properties, rendering it unappealing to industry. Though filtration in mechanical recycling reduces microplastic release, even the most efficient filtration systems cannot prevent the release of microplastics into wastewater. In feedstock recycling, waste plastic is converted into its starting chemicals, which can then become fresh plastic. This involves higher energy and capital costs. Alternatively, plastic can be burned in place of fossil fuels in energy recovery facilities, or biochemically converted into other useful chemicals for industry. In some countries, burning is the dominant form of plastic waste disposal, particularly where landfill diversion policies are in place. Plastic recycling is low in the waste hierarchy; waste reduction and plastic reuse are more favourable and long-term solutions for environmental sustainability. Recycling of plastics has been encouraged since the early 1970s, however, due to economic and technical challenges, such recycling did not impact the management of plastic waste to any significant extent until the late 1980s. == History ==\nAlthough plastics were discovered before the 20th century, large-scale production was not realised until World War II. Nylon replaced silk in parachutes, while Perspex was a light-weight alternative to glass in aeroplanes. After the war these materials were commercialized. The plastic age began around 1950, part of the post-war economic boom. Global environmental movements in the 1960s and 1970s led to the formation of environmental agencies in the US (EPA, 1970), EU (DG ENV, 1973) Australia (EPA, 1971) and Japan (JEA 1971). Environmental awareness put plastic waste under scrutiny. The earliest effort to abate plastic pollution was arguably the 1973 and 1978 MARPOL agreements, whose Annex V banned dumping plastics in the oceans. === Industry lobbying ===\n\nAs regulations expanded, the plastics industry responded with lobbying to preserve their business interests. In the U.S., the 1970 Resource Recovery Act directed the nation towards recycling and energy recovery. More than a thousand attempts to pass legislation to ban or tax packaging, including plastics, came by 1976. The plastics industry responded by lobbying for plastic to be recycled. A $50 million per year campaign was run by organisations such as Keep America Beautiful with the message that plastic could and would be recycled, as well as lobbying for the establishment of curbside recycling. However, plastic could not be economically recycled using the technology of the time. For example, an April 1973 report written by industry scientists stated that, \"There is no recovery from obsolete products\" and that, \"A degradation of resin properties and performance occurs during the initial fabrication, through aging, and in any reclamation process.\" The report concluded that sorting the plastic is \"infeasible\". Contemporary scientific reports highlighted numerous technical barriers. Globally, plastic waste was almost entirely disposed of via landfill until the 1980s when rates of incineration increased. Although better technology was known, these early incinerators often lacked advanced combustors or emission-control systems, leading to the release of dioxins and dioxin-like compounds. In the late 1980s plastic recycling began in earnest. In 1988 the U.S. Society of the Plastics Industry created the Council for Solid Waste Solutions as a trade association to promote the idea of plastic recycling to the public. The association lobbied American municipalities to launch or expand plastic waste collection programmes and lobbied U.S. states to require the labelling of plastic containers and products with recycling symbols. The industry introduced resin identification codes in 1988, which provided a standard system for the identification of various polymer types at materials recovery facilities.\n\nSOURCE pmc.ncbi.nlm.nih.gov (https://pmc.ncbi.nlm.nih.gov/articles/PMC12557311):\n# Toxic threats from plastic waste: human health impacts, challenges, and policy solutions Abdulaziz A. M. Abahussain, Fahd A. Nasr, Abdulrahman bin Jumah, P. Saravanan, Nadavala Siva Kumar, Mohammed Al-zharani, L. Guganathan, G. Sasikumar, Sulaiman A. Alsalamah, Ashraf Ahmed Qurtam, J. Senthilkumar, P. Tamizhdurai RSC Advances · 2025-10-27 · 15(48):40761-40788 · DOI: 10.1039/d5ra05845g · PMID: 41159081 · PMCID: PMC12557311 ## Abstract Plastic pollution has escalated into a global crisis, undermining both environmental sustainability and public health. Each year, nearly eight billion tons of plastic enter aquatic ecosystems, disrupting marine biodiversity and increasing risks of human exposure to toxic byproducts. As plastics degrade, they release hazardous compounds such as bisphenol A (BPA), dioxins, phthalates, furans, and heavy metals—substances linked to respiratory illnesses, endocrine disruption, and cancer. These pollutants find pathways into the environment through soil leaching, air transport, and bioaccumulation across the food chain. Alarming data points highlight the gravity of the issue: BPA concentrations in freshwater bodies have exceeded 12 μg L−1, and dioxin levels near open waste combustion sites have reached over 1000 ng TEQ per kg both surpassing WHO's safety thresholds. In Poland, phthalate levels in leachate from landfills have been recorded at more than 303 μg L−1, while fish specimens from Swedish waters have shown heavy metal concentrations more than 2.26 ng g−1 moist weight, raising potential food safety hazards and chronic exposure risks. Ineffective trash disposal infrastructure disproportionately affects vulnerable communities in countries with low to middle-incomes (LMICs), especially in Sub-Saharan Africa, where only 39–45% of solid waste is adequately treated due to infrastructural and financial limitations. The problem is most severe in Sub-Saharan Africa, where the most vulnerable people are at the greatest risk of exposure. On a global scale, effective recycling remains minimal, with less than 10% of plastic waste being repurposed. Most of it is incinerated or dumped, releasing hazardous emissions such as dioxins and furans in\n\nSOURCE nature.com (https://www.nature.com/articles/s41598-025-25951-z):\n## Abstract This study tackles the environmental challenges associated with the growing accumulation of waste plastic (WP), specifically recycled low-density polyethylene (R-LDPE), by examining its impact on the performance of asphalt binders amid extreme weather and heavy traffic conditions. The research investigates how R-LDPE modifies both virgin asphalt binder (VAB) and recycled asphalt binder (RAB) rejuvenated with 15% waste engine oil (WEO). Three proportions of R-LDPE (2%, 3%, and 4% by weight of VAB) were evaluated, with findings indicating that 2% is the optimal amount for enhancing binder properties. The study involved morphological, thermal, and chemical evaluations using scanning electronic microscope (SEM), energy dispersive X-ray spectroscopy (EDX), Fourier transform infrared spectroscopy (FTIR), and thermogravimetric analysis (TGA). Additionally, comprehensive rheological and mechanical properties were assessed, including tests for penetration, softening point, rotational viscosity (RV), dynamic shear at high and intermediate temperatures, multiple stress creep and recovery (MSCR), and linear amplitude sweep (LAS). The results revealed that R-LDPE incorporation significantly improves the thermal stability, stiffness, and rutting resistance of asphalt binders, with modified RAB outperforming VAB in rutting resistance, while fatigue resistance was optimized with 2% R-LDPE. The MSCR test results further revealed enhanced elastic recovery and reduced creep, indicating superior resistance to repeated loading. The LAS test indicated an improvement in fatigue life and better resistance to crack propagation under cyclic loading. Overall, the use of R-LDPE and WEO enhanced the investigated binder’s durability and performance, making them more suitable for hot climates and high-stress applications. ### Similar content being viewed by others ## Introduction Asphalt binder is a dark, solid or semi-solid hydrocarbon material, either naturally occurring or derived from petroleum distillation1,2,3,4,5. Asphalt, a viscous petroleum derivative, is essential for constructing roads, parking lots, airports, and embankment dams1,2,5,6,7,8,9,10,11,12. Asphalt binder co\n\nSOURCE scientificamerican.com (https://www.scientificamerican.com/article/how-fossil-fuel-companies-are-driving-plastic-production-and-pollution):\nScientific American SubscribeSign In Read the November Issue: Social Media Addiction November 18, 2025 19min read ![Google Logo Add Us On GoogleAdd SciAm](https://www.google.com/preferences/source?q=scientificamerican.com) The Fossil-Fuel Industry Has a Plan to Drown Earth in Plastic To keep profits rolling in, oil and gas companies want to turn fossil fuels into a mounting pile of packaging and other plastic products By Beth Gardiner edited by Andrea Thompson Ross Woodhall/Getty Images/Image Source In 2018, at a Dubai resort next to the blue-green waters of the Persian Gulf, Amin Nasser, CEO of Saudi Aramco, stood before an audience of hundreds of petrochemical executives to set out his vision for the future of the world’s largest oil company. The goals he described weren’t primarily about energy. Instead he announced plans to pour $100 billion into expanding production of plastic and other petrochemicals. Nasser predicted that with a growing global population wielding more purchasing power every year, petrochemicals—compounds derived from petroleum and other fossil fuels and of which plastics and their ingredients constitute as much as 80 percent—would drive nearly half of oil-demand growth by mid-century. About 98 percent of virgin plastics are made from fossil fuels. In sectors that include packaging, cars and construction, he said, “the tremendous growth in chemicals demand provides us with a fantastic window of opportunity.” In the years since Nasser’s 2018 speech, Saudi Aramco, owned mainly by the government of Saudi Arabia, has acquired a majority stake in the country’s petrochemical conglomerate SABIC. Together the companies have bought into huge Chinese plastic projects and built petrochemical plants from South Korea to the Texas coast. Aramco aims to turn more than a third of its crude into petrochemicals by the 2030s—a near tripling in 15 years. --- ## On supporting science journalism If you're enjoying this article, consider supporting our award-winning journalism bysubscribing. By purchasing a subscription you are helping to ensure the future of impactful stories about the discoveries and ideas shaping our world today. --- Although the industry has\n\nSOURCE britannica.com (https://www.britannica.com/science/plastic-pollution):\n**Preferred Source**tells Google you trust our content, so our articles show up more often in your Google Search, Discover feed, and AI Overviews. # plastic pollution ### How does plastic pollute the environment? ### What happens to plastic in the United States? ### To which countries does the U.S. export plastic waste? ### What are some ways to prevent plastic pollution? ### What are the harmful effects of plastic pollution on humans? ### How much plastic is recycled? **plastic pollution**, accumulation in the environment of synthetic plastic products to the point that they create problems for wildlife and their habitats as well as for human populations. In 1907 the invention of Bakelite brought about a revolution in materials by introducing truly synthetic plastic resins into world commerce. By the end of the 20th century, plastics had been found to be persistent polluters of many environmental niches, from Mount Everest to the bottom of the sea. Whether being mistaken for food by animals, flooding low-lying areas by clogging drainage systems, or simply causing significant aesthetic blight, plastics have attracted increasing attention as a large-scale pollutant. ## The problem of plastics Plastic is a polymeric material—that is, a material whose molecules are very large, often resembling long chains made up of a seemingly endless series of interconnected links. Natural polymers such as rubber and silk exist in abundance, but nature’s “plastics” have not been implicated in environmental pollution, because they do not persist in the environment. Today, however, the average consumer comes into daily contact with all kinds of plastic materials that have been developed specifically to defeat natural decay processes—materials derived mainly from petroleum that can be molded, cast, spun, or applied as a coating. Since synthetic plastics are largely nonbiodegradable, they tend to persist in natural environments. Moreover, many lightweight single-use plastic products and packaging materials, which account for approximately 50 percent of all plastics produced, are not deposited in containers for subsequent removal to landfills, recycling centers, or incinerators. Instea",
+  "extra_sources": [
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC12557311",
+   "https://www.nature.com/articles/s41598-025-25951-z",
+   "https://www.scientificamerican.com/article/how-fossil-fuel-companies-are-driving-plastic-production-and-pollution",
+   "https://www.britannica.com/science/plastic-pollution"
+  ]
+ },
+ "_writer": "opencode"
+}
